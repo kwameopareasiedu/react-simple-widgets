@@ -27,6 +27,12 @@ const ExampleApp = (): any => {
         showDialog(helper => <DialogContent onClose={helper.dismiss} />, { size: dialogSize });
     };
 
+    const openAllDialogs = (): void => {
+        openDialog(DialogSize.SMALL);
+        openDialog(DialogSize.MEDIUM);
+        openDialog(DialogSize.WIDE);
+    };
+
     return (
         <div>
             <button className="btn btn-primary btn-sm" onClick={(): void => openDialog(DialogSize.SMALL)}>
@@ -39,6 +45,10 @@ const ExampleApp = (): any => {
             <span>&nbsp;</span>
             <button className="btn btn-primary btn-sm" onClick={(): void => openDialog(DialogSize.WIDE)}>
                 Open wide dialog
+            </button>
+            <span>&nbsp;</span>
+            <button className="btn btn-info btn-sm" onClick={openAllDialogs}>
+                Open all dialogs
             </button>
         </div>
     );
