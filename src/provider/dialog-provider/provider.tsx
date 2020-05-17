@@ -25,6 +25,8 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         newDialogHolder.setup(dialogBuilder({ dismiss }), options);
         setDialogHolders(dialogHolders => [...dialogHolders, newDialogHolder]);
         setupWindowEscapeHandlerForDialog(dismiss);
+
+        // TODO: Implement window pop state to handle back button on mobile devices
     };
 
     const setupWindowEscapeHandlerForDialog = (dismiss: Function): void => {

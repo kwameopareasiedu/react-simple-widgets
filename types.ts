@@ -20,3 +20,13 @@ export interface IDialogProviderContext {
 export interface IDialogProvider {
     children: any;
 }
+
+export interface ILocalStorageProviderContext {
+    store: any;
+    put: (key: string, value: any, keepInMemoryOnly?: boolean) => void;
+}
+
+export interface ILocalStorageProvider {
+    children: any;
+    initialKeys?: Array<string>;
+}
