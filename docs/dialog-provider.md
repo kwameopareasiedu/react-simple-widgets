@@ -1,10 +1,10 @@
-[Back to components]()
+[Back to components](../README.md)
 
 # DialogProvider
 
 The DialogProvider provides a dialog API for your app. This widget renders dialogs on top of its children.
 This prevents any possible stacking context issues between the dialogs and components of your application
-(especially) issues with the CSS grid system.
+(especially issues with any CSS grid you might have).
 
 ## API
 
@@ -15,7 +15,7 @@ This prevents any possible stacking context issues between the dialogs and compo
 ```jsx
 ReactDOM.render(
     <DialogProvider>
-        <App/> // <- Children is required
+        <App/> // Children is a required prop
     </DialogProvider>,
     document.getElementById("root")
 );
@@ -58,3 +58,7 @@ showDialog(builderFunction, options);
     -   `onDialogDismissed?: (returnedValue: any) => void`
 
         If your dialog returns a value and this callback is provided, it will be called with that value
+
+## Usage
+
+A complete usage can be found in the [Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
