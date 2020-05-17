@@ -1,6 +1,6 @@
+import "./dialog-view.scss";
 import React from "react";
 import { DialogSize, IDialogOptions } from "../../../types";
-import "./dialog-view.scss";
 
 interface IDialogView {
     dialogHolder: DialogViewHolder;

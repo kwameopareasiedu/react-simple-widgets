@@ -15,3 +15,7 @@ export interface IDialogHelper {
 export interface IDialogProviderContext {
     showDialog: (dialogBuilder: (helper: IDialogHelper) => any, options?: IDialogOptions) => void;
 }
+
+export interface IDialogProvider {
+    children: any;
+}

@@ -1,12 +1,8 @@
+import "./provider.scss";
 import React, { useRef, useState } from "react";
 import { DialogProviderContext } from "./context";
-import { IDialogHelper, IDialogOptions } from "../../../types";
 import { DialogView, DialogViewHolder } from "./dialog-view";
-import "./provider.scss";
-
-interface IDialogProvider {
-    children: any;
-}
+import { IDialogHelper, IDialogOptions, IDialogProvider } from "../../../types";
 
 type DialogEscapeCallback = (e: KeyboardEvent) => void;
 
