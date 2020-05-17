@@ -7,7 +7,7 @@ import { IDialogHelper, IDialogOptions, IDialogProvider } from "../../../types";
 type DialogEscapeCallback = (e: KeyboardEvent) => void;
 
 /**
- * The DialogProvider allows for dialogs to be displayed over it's children. Because of the top-level nature,
+ * The DialogProvider allows for dialogs to be displayed over its children. Because of the top-level nature,
  * dialogs won't interfere with the application's existing CSS, especially the grid implementation across
  * different browsers
  */
