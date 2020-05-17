@@ -6,7 +6,7 @@ export enum DialogSize {
 
 export interface IDialogOptions {
     size?: DialogSize;
-    onDialogDismissed?: (returnValue: any) => void;
+    onDialogDismissed?: (returnValue?: any) => void;
 }
 
 export interface IDialogHelper {

@@ -55,9 +55,10 @@ showDialog(builderFunction, options);
         Controls the maximum width of the dialog. It can be `DialogSize.SMALL`, `DialogSize.MEDIUM` or `DialogSize.WIDE`.
         It defaults to `DialogSize.SMALL`
 
-    -   `onDialogDismissed?: (returnedValue: any) => void`
+    -   `onDialogDismissed?: (returnedValue?: any) => void`
 
-        If your dialog returns a value and this callback is provided, it will be called with that value
+        If provided, this function will be called when the `dismiss` function is.
+        If `dismiss` is called with a value, the value will be passed into this function also.
 
 ## Usage
 

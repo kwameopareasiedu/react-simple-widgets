@@ -19,7 +19,7 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         const newDialogHolder = new DialogViewHolder();
         const dismiss = (returnValue: any) => {
             setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
-            if (options && options.onDialogDismissed && returnValue) options.onDialogDismissed(returnValue);
+            if (options && options.onDialogDismissed) options.onDialogDismissed(returnValue);
         };
 
         newDialogHolder.setup(dialogBuilder({ dismiss }), options);
