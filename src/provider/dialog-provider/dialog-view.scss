@@ -1,0 +1,25 @@
+.dialog-view {
+    --dialog-view-vertical-margin: 75px;
+
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000099;
+    overflow: auto;
+
+    .dialog-view-content {
+        margin: auto;
+
+        .card {
+            margin: var(--dialog-view-vertical-margin) 0;
+            border-radius: 12px;
+
+            .card-body {
+                padding: 30px;
+            }
+        }
+    }
+}

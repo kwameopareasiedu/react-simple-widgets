@@ -60,5 +60,14 @@
     "peerDependencies": {
         "react": "^16.13.1"
     },
-    "keywords": ["react", "widget", "form", "context", "provider", "axios", "transition", "list"]
+    "keywords": [
+        "react",
+        "widget",
+        "form",
+        "context",
+        "provider",
+        "axios",
+        "transition",
+        "list"
+    ]
 }
