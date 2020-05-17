@@ -18,11 +18,7 @@ export const DialogView = ({ dialogHolder }: IDialogView): any => {
 
     return (
         <div className="dialog-view">
-            <div className={dialogViewContentClassName()}>
-                <div className="card">
-                    <div className="card-body">{dialogHolder.widget}</div>
-                </div>
-            </div>
+            <div className={dialogViewContentClassName()}>{dialogHolder.widget}</div>
         </div>
     );
 };

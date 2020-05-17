@@ -11,15 +11,29 @@
     overflow: auto;
 
     .dialog-view-content {
+        width: 100%;
         margin: auto;
 
-        .card {
-            margin: var(--dialog-view-vertical-margin) 0;
-            border-radius: 12px;
+        > * {
+            margin: var(--dialog-view-vertical-margin) 15px;
+        }
+    }
 
-            .card-body {
-                padding: 30px;
-            }
+    .dialog-view-content.small-dialog {
+        @media screen and (min-width: 576px) {
+            max-width: 360px;
+        }
+    }
+
+    .dialog-view-content.medium-dialog {
+        @media screen and (min-width: 768px) {
+            max-width: 480px;
+        }
+    }
+
+    .dialog-view-content.wide-dialog {
+        @media screen and (min-width: 992px) {
+            max-width: 640px;
         }
     }
 }
