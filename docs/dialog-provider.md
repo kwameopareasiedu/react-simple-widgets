@@ -66,8 +66,9 @@ A complete usage can be found in the [Storybook stories for this widget](../src/
 
 ## Sidenotes
 
-> DialogProvider only controls the positioning and display of your dialogs.
-> The UI of the dialog is entirely up to the developer.
+> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the most recent dialog receives the keyboard event first.
+
+> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the developer.
 
 > The vertical margins on the dialogs can be overriden using the `--dialog-view-vertical-margin` CSS variable.
 

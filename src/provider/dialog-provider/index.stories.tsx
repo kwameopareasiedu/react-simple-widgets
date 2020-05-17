@@ -62,7 +62,9 @@ const ExampleApp = (): any => {
     const openDialogForValue = () => {
         showDialog(helper => <DialogWithReturnValue dismiss={helper.dismiss} />, {
             size: DialogSize.MEDIUM,
-            onDialogDismissed: val => alert(`Dialog returned a value of ${val}`)
+            onDialogDismissed: val => {
+                if (val) alert(`Dialog returned a value of ${val}`);
+            }
         });
     };
 
