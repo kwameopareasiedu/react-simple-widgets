@@ -15,7 +15,7 @@ This prevents any possible stacking context issues between the dialogs and compo
 ```jsx
 ReactDOM.render(
     <DialogProvider>
-        <App/> // Children is a required prop
+        <App /> // Children is a required prop
     </DialogProvider>,
     document.getElementById("root")
 );
@@ -62,3 +62,18 @@ showDialog(builderFunction, options);
 ## Usage
 
 A complete usage can be found in the [Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
+
+## Sidenotes
+
+> DialogProvider only controls the positioning and display of your dialogs.
+> The UI of the dialog is entirely up to the developer.
+
+> The vertical margins on the dialogs can be overriden using the `--dialog-view-vertical-margin` CSS variable.
+
+```css
+body {
+    .dialog-view {
+        --dialog-view-vertical-margin: 75px;
+    }
+}
+```
