@@ -17,7 +17,11 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
 
     const showDialog = (dialogBuilder: (helper: IDialogHelper) => any, options?: IDialogOptions): void => {
         const newDialogHolder = new DialogViewHolder();
-        const dismiss = () => setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
+        const dismiss = (returnValue: any) => {
+            setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
+            if (options && options.onDialogDismissed && returnValue) options.onDialogDismissed(returnValue);
+        };
+
         newDialogHolder.setup(dialogBuilder({ dismiss }), options);
         setDialogHolders(dialogHolders => [...dialogHolders, newDialogHolder]);
         setupWindowEscapeHandlerForDialog(dismiss);

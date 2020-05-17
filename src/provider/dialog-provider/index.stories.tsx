@@ -3,7 +3,7 @@ import { DialogProvider } from "./provider";
 import { DialogProviderContext } from "./context";
 import { DialogSize } from "../../../types";
 
-const DialogContent = ({ onClose }: any): any => {
+const Dialog = ({ dismiss }: any): any => {
     return (
         <div className="card">
             <div className="card-body">
@@ -12,8 +12,34 @@ const DialogContent = ({ onClose }: any): any => {
                     turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
                 </p>
 
-                <button className="btn btn-secondary btn-sm" onClick={onClose}>
+                <button className="btn btn-secondary btn-sm" onClick={dismiss}>
                     Close dialog
+                </button>
+            </div>
+        </div>
+    );
+};
+
+const DialogWithReturnValue = ({ dismiss }: any): any => {
+    return (
+        <div className="card">
+            <div className="card-body">
+                <p>Click on a button to send the value to the component which launched it</p>
+
+                <button className="btn btn-secondary btn-sm" onClick={() => dismiss("A")}>
+                    A
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-secondary btn-sm" onClick={() => dismiss("B")}>
+                    B
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-secondary btn-sm" onClick={() => dismiss("C")}>
+                    C
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-link btn-sm" onClick={() => dismiss()}>
+                    Cancel
                 </button>
             </div>
         </div>
@@ -24,13 +50,20 @@ const ExampleApp = (): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const openDialog = (dialogSize: DialogSize): void => {
-        showDialog(helper => <DialogContent onClose={helper.dismiss} />, { size: dialogSize });
+        showDialog(helper => <Dialog dismiss={helper.dismiss} />, { size: dialogSize });
     };
 
     const openAllDialogs = (): void => {
         openDialog(DialogSize.SMALL);
         openDialog(DialogSize.MEDIUM);
         openDialog(DialogSize.WIDE);
+    };
+
+    const openDialogForValue = () => {
+        showDialog(helper => <DialogWithReturnValue dismiss={helper.dismiss} />, {
+            size: DialogSize.MEDIUM,
+            onDialogDismissed: val => alert(`Dialog returned a value of ${val}`)
+        });
     };
 
     return (
@@ -49,6 +82,10 @@ const ExampleApp = (): any => {
             <span>&nbsp;</span>
             <button className="btn btn-info btn-sm" onClick={openAllDialogs}>
                 Open all dialogs
+            </button>
+            <span>&nbsp;</span>
+            <button className="btn btn-success btn-sm" onClick={openDialogForValue}>
+                Open dialog for value
             </button>
         </div>
     );
