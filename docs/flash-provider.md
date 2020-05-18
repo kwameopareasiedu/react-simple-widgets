@@ -14,9 +14,7 @@ ancestor to be available up your component tree.
 
 ```jsx
 ReactDOM.render(
-    <DialogProvider>
-        {" "}
-        // DialogProvider is required as an ancestor
+    <DialogProvider> // DialogProvider is required as an ancestor
         <FlashProvider>
             <App /> // Children is a required prop
         </FlashProvider>

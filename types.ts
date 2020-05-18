@@ -1,3 +1,6 @@
+import { AnchorHTMLAttributes } from "react";
+
+/* DialogProvider interfaces */
 export enum DialogSize {
     SMALL,
     MEDIUM,
@@ -23,6 +26,7 @@ export interface IDialogProvider {
     children: any;
 }
 
+/* ValueStoreProvider interfaces */
 export type IValueStoreUpdater = (currentValue: any) => any;
 
 export interface IValueStoreProviderContext {
@@ -36,6 +40,7 @@ export interface IValueStoreProvider {
     initialLocalStorageKeys?: Array<string>;
 }
 
+/* FlashProvider interfaces */
 export enum FlashType {
     ERROR,
     WARNING,
@@ -52,4 +57,39 @@ export interface IFlashProviderContext {
 
 export interface IFlashProvider {
     children: any;
+}
+
+/* PageTransitionProvider interfaces */
+export interface IPageTransitionProviderConfig {
+    path: string;
+    animate: boolean;
+    replace: boolean;
+}
+
+export interface IPageTransitionOptions {
+    dontAnimate?: boolean;
+    replaceUrl?: boolean;
+}
+
+export interface IPageTransitionProviderContext {
+    __finishRedirect: () => void;
+    __incrementPageTransitionsInScope: () => void;
+    __decrementPageTransitionsInScope: () => void;
+    __config: IPageTransitionProviderConfig;
+    redirect: (to: string, config?: IPageTransitionOptions) => void;
+}
+
+export interface IPageTransitionProvider {
+    children: any;
+}
+
+export interface IPageTransitionView {
+    children: any;
+}
+
+export interface IPageTransitionLink extends AnchorHTMLAttributes<HTMLAnchorElement> {
+    to: string;
+    children?: any;
+    dontAnimate?: boolean;
+    replaceUrl?: boolean;
 }

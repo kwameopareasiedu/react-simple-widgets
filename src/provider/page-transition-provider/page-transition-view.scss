@@ -1,0 +1,40 @@
+.page-transition-view {
+    --page-transition-view-animation-duration: 0.25s;
+
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform: translateX(50px);
+    animation: page-transition-view-entry-animation var(--page-transition-view-animation-duration) forwards;
+}
+
+.page-transition-view.page-transition-view-redirecting {
+    pointer-events: none;
+    animation: page-transition-view-exit-animation var(--page-transition-view-animation-duration) forwards;
+}
+
+@keyframes page-transition-view-entry-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    99% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes page-transition-view-exit-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
