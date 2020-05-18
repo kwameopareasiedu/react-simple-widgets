@@ -23,14 +23,17 @@ export interface IDialogProvider {
     children: any;
 }
 
-export interface ILocalStorageProviderContext {
-    store: any;
-    put: (key: string, value: any, keepInMemoryOnly?: boolean) => void;
+export type IValueStoreUpdater = (currentValue: any) => any;
+
+export interface IValueStoreProviderContext {
+    get: (key: string) => any;
+    store: (key: string, value: any, storeInLocalStorage?: boolean) => void;
+    update: (key: string, update: IValueStoreUpdater, storeInLocalStorageIfNotExists?: boolean) => void;
 }
 
-export interface ILocalStorageProvider {
+export interface IValueStoreProvider {
     children: any;
-    initialKeys?: Array<string>;
+    initialLocalStorageKeys?: Array<string>;
 }
 
 export enum FlashType {

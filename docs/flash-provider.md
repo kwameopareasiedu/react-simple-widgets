@@ -2,8 +2,9 @@
 
 # FlashProvider
 
-The FlashProvider allows an app to display different types of flash messages. FlashProvider uses dialogs to display these
-flash messages and thus depends on a [DialogProvider](./dialog-provider.md) ancestor to be available up your component tree.
+The FlashProvider allows an app to display different types of flash messages. FlashProvider uses
+dialogs to display these flash messages and thus depends on a [DialogProvider](./dialog-provider.md)
+ancestor to be available up your component tree.
 
 ## API
 
@@ -13,7 +14,9 @@ flash messages and thus depends on a [DialogProvider](./dialog-provider.md) ance
 
 ```jsx
 ReactDOM.render(
-    <DialogProvider> // DialogProvider is required as an ancestor
+    <DialogProvider>
+        {" "}
+        // DialogProvider is required as an ancestor
         <FlashProvider>
             <App /> // Children is a required prop
         </FlashProvider>

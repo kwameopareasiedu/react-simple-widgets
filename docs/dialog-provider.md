@@ -2,9 +2,9 @@
 
 # DialogProvider
 
-The DialogProvider provides a dialog API for your app. This widget renders dialogs on top of its children.
-This prevents any possible stacking context issues between the dialogs and components of your application
-(especially issues with any CSS grid you might have).
+The DialogProvider provides a dialog API for your app. This widget renders dialogs on top of its
+children. This prevents any possible stacking context issues between the dialogs and components of
+your application (especially issues with any CSS grid you might have).
 
 ## API
 
@@ -39,12 +39,14 @@ showDialog(builderFunction, options);
 
 -   `builderFunction: (dialogHelper: IDialogHelper) => any`
 
-    This is a function that takes a helper object provided by the `DialogProvider` and should return the component to show in the dialog.
-    The `dialogHelper` parameter is an object which provides the dialog's `dismiss` method:
+    This is a function that takes a helper object provided by the `DialogProvider` and should return
+    the component to show in the dialog. The `dialogHelper` parameter is an object which provides
+    the dialog's `dismiss` method:
 
     -   `dismiss: (returnValue?: any) => void`
 
-        This function closes the dialog. If it is called with a return value, it will be passed to `options.onDialogDismissed` (if declared)
+        This function closes the dialog. If it is called with a return value, it will be passed to
+        `options.onDialogDismissed` (if declared)
 
 -   `options: IDialogOptions`
 
@@ -52,7 +54,8 @@ showDialog(builderFunction, options);
 
     -   `size?: DialogSize`
 
-        Controls the maximum width of the dialog. It can be `DialogSize.SMALL`, `DialogSize.MEDIUM` or `DialogSize.WIDE`.
+        Controls the maximum width of the dialog. It can be `DialogSize.SMALL`, `DialogSize.MEDIUM`
+        or `DialogSize.WIDE`.
         It defaults to `DialogSize.SMALL`
 
     -   `onDialogDismissed?: (returnedValue?: any) => void`
@@ -66,11 +69,14 @@ A complete usage can be found in the [Storybook stories for this widget](../src/
 
 ## Sidenotes
 
-> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the most recent dialog receives the keyboard event first.
+> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the most
+> recent dialog receives the keyboard event first.
 
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the developer.
+> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is
+> entirely up to the developer.
 
-> The vertical margins on the dialogs can be overriden using the `--dialog-view-vertical-margin` CSS variable.
+> The vertical margins on the dialogs can be overriden using the `--dialog-view-vertical-margin`
+> CSS variable.
 
 ```css
 body {
