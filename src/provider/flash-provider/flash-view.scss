@@ -1,0 +1,66 @@
+.flash-view {
+    --flash-title-color: #e3e3e3;
+    --flash-button-shadow-color: #e3e3e3;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    .card-body {
+        padding: 35px 50px;
+        color: #545454;
+
+        .flash-icon {
+            width: 80px;
+            margin-bottom: 30px;
+        }
+
+        .flash-title {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--flash-title-color);
+            text-transform: uppercase;
+        }
+
+        .flash-message {
+            margin-bottom: 35px;
+        }
+
+        .flash-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            overflow: hidden;
+            background-color: var(--flash-title-color);
+            box-shadow: 0 20px 60px var(--flash-button-shadow-color);
+            transition: box-shadow 0.5s;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        .flash-button:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+.flash-state-error {
+    --flash-title-color: #ff5555;
+    --flash-button-shadow-color: #ff5555;
+}
+
+.flash-state-warning {
+    --flash-title-color: #ffdd55;
+    --flash-button-shadow-color: #ffdd55;
+}
+
+.flash-state-info {
+    --flash-title-color: #55ddff;
+    --flash-button-shadow-color: #55ddff;
+}
+
+.flash-state-success {
+    --flash-title-color: #7fff2a;
+    --flash-button-shadow-color: #7fff2a;
+}

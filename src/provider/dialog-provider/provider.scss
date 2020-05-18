@@ -6,6 +6,7 @@
     bottom: 0;
     overflow: hidden;
     pointer-events: none;
+    z-index: 10;
 
     > * {
         pointer-events: all;

@@ -2,7 +2,7 @@ import "./provider.scss";
 import React, { useRef, useState } from "react";
 import { DialogProviderContext } from "./context";
 import { DialogView, DialogViewHolder } from "./dialog-view";
-import { IDialogHelper, IDialogOptions, IDialogProvider } from "../../../types";
+import { IDialogBuilder, IDialogOptions, IDialogProvider } from "../../../types";
 
 type DialogEscapeCallback = (e: KeyboardEvent) => void;
 
@@ -15,7 +15,7 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
     const [dialogHolders, setDialogHolders] = useState<Array<DialogViewHolder>>([]);
     const escapeHandlers = useRef<Array<DialogEscapeCallback>>([]);
 
-    const showDialog = (dialogBuilder: (helper: IDialogHelper) => any, options?: IDialogOptions): void => {
+    const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions): void => {
         const newDialogHolder = new DialogViewHolder();
         const dismiss = (returnValue: any) => {
             setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
