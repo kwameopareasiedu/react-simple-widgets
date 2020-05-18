@@ -48,7 +48,7 @@ showDialog(builderFunction, options);
         This function closes the dialog. If it is called with a return value, it will be passed to
         `options.onDialogDismissed` (if declared)
 
--   `options: IDialogOptions`
+-   `options: { size?: DialogSize, onDialogDismissed?: (returnedValue?: any) => void }`
 
     This is a configuration object for the dialog. It contains the following properties:
 

@@ -26,7 +26,7 @@ ReactDOM.render(
 );
 ```
 
--   `initialLocalStorageKeys: Array<string>`
+-   `initialLocalStorageKeys?: Array<string>`
 
     If specified, the `ValueStoreProvider` reads the values of these keys from the local storage
     **before** the first render of the children
@@ -53,7 +53,7 @@ get(key);
 
 #### store
 
-`store` stores a value under a specified _key_ the `ValueStoreProvider`. This will cause any
+`store` stores a value under a specified _key_ in the `ValueStoreProvider`. This will cause any
 dependent components to update.
 
 ```jsx
@@ -72,3 +72,26 @@ store(key, value, storeInLocalStorage);
 
     If set to true, the value is also stored in the localStorage. It is recommended to set this to
     false if you need to hold some sensitive data using this `ValueStoreProvider`.
+
+#### update
+
+`update` updates a value under a specified _key_ the `ValueStoreProvider`. This will cause any
+dependent components to update.
+
+```jsx
+update(key, updater, storeInLocalStorageIfNotExists);
+```
+
+-   `key: string`
+
+    This is the key under which a value is stored
+
+-   `updater: (currentValue: any) => any`
+
+    This function is called by the store with the current value under the _key_ (or null if value 
+    does not exist). It should return the new value to be stored under that key
+
+-   `storeInLocalStorageIfNotExists?: boolean = false`
+
+    If no value exists for the specified _key_ and this is set to true, the `ValueStoreProvider` 
+    will persist the value to the localStorage 
