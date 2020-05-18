@@ -9,6 +9,7 @@ It provides customizable widgets that perform commonly needed tasks within your 
 
 -   [DialogProvider](./docs/dialog-provider.md) - Provides a simple dialog framework within your app
 -   [LocalStorageProvider](./docs/local-storage-provider.md) - Provides a reactive wrapper around the local storage API
+-   [FlashProvider](./docs/flash-provider.md) - Provides a flash message framework built using the dialog framework
 
 ### Maintainers
 
