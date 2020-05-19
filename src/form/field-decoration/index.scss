@@ -1,0 +1,133 @@
+.react-simple-widget.field-decoration {
+    --field-decoration-label-color: #474747;
+    --field-decoration-error-color: #bf2742;
+    --field-decoration-border-color: #b3b3b3;
+    --field-decoration-border-focus-color: blueviolet;
+    --field-decoration-transition-duration: 0.3s;
+
+    > .field {
+        > label {
+            font-size: 80%;
+            color: var(--field-decoration-label-color);
+            margin-bottom: 2px;
+        }
+
+        > .widget {
+            input,
+            input:hover,
+            input:focus,
+            input:active {
+                width: 100%;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    > .error {
+        font-size: 80%;
+        color: var(--field-decoration-error-color);
+        margin: 3px 0 0 0;
+    }
+}
+
+/* Flat decoration */
+.react-simple-widget.field-decoration.flat-decoration {
+    > .error,
+    > .field > label {
+        padding: 0 8px;
+    }
+
+    > .field > .widget {
+        padding: 4px 8px;
+        border-radius: 2px;
+        border: 1px solid var(--field-decoration-border-color);
+        transition: border-color var(--field-decoration-transition-duration);
+    }
+}
+
+.react-simple-widget.field-decoration.flat-decoration.field-decoration-has-focus {
+    > .field > .widget {
+        border-width: 2px;
+        border-color: var(--field-decoration-border-focus-color);
+    }
+}
+
+/* Underline decoration */
+.react-simple-widget.field-decoration.underline-decoration {
+    > .field {
+        position: relative;
+
+        > label {
+            margin: 0;
+        }
+
+        > .widget {
+            border-bottom: 1px solid var(--field-decoration-border-color);
+            padding: 0 0 4px 0;
+        }
+    }
+
+    > .field::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background-color: var(--field-decoration-border-focus-color);
+        transition-timing-function: ease-in;
+        transition: right var(--field-decoration-transition-duration);
+    }
+}
+
+.react-simple-widget.field-decoration.underline-decoration.field-decoration-has-focus {
+    > .field::after {
+        right: 0;
+    }
+}
+
+/* Floating label decoration */
+.react-simple-widget.field-decoration.floating-label-decoration {
+    > .field {
+        position: relative;
+        border-radius: 2px;
+        padding: 0.7rem 4px 0.4rem;
+        border: 1px solid var(--field-decoration-border-color);
+        transition: all var(--field-decoration-transition-duration);
+
+        > label {
+            position: absolute;
+            top: calc(50% - 10px);
+            padding: 0 4px;
+            transition: top var(--field-decoration-transition-duration);
+            pointer-events: none;
+        }
+
+        > .widget {
+            padding: 0 4px;
+        }
+    }
+
+    > .error {
+        padding: 0 8px;
+    }
+}
+
+.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-focus {
+    > .field {
+        border-width: 2px;
+        border-color: var(--field-decoration-border-focus-color);
+    }
+}
+
+.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-focus,
+.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-value {
+    > .field > label {
+        top: -0.65rem;
+        background-color: white;
+    }
+}

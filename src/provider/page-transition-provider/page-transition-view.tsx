@@ -17,8 +17,8 @@ export const PageTransitionView = ({ children }: IPageTransitionView): any => {
     }, []);
 
     useEffect(() => {
-        const classes = ["page-transition-view"];
-        if (__config && __config.path != pathname + search) classes.push("page-transition-view-redirecting");
+        const classes = ["react-simple-widget", "page-transition-view"];
+        if (__config && __config.path != pathname + search) classes.push("react-simple-widget", "page-transition-view-redirecting");
         setClassName(classes.join(" "));
     }, [__config]);
 

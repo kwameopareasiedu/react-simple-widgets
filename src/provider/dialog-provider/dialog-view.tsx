@@ -17,7 +17,7 @@ export const DialogView = ({ dialogHolder }: IDialogView): any => {
     };
 
     return (
-        <div className="dialog-view">
+        <div className="react-simple-widget dialog-view">
             <div className={dialogViewContentClassName()}>{dialogHolder.widget}</div>
         </div>
     );

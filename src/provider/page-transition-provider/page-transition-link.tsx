@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { IPageTransitionLink } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
 
-export const Link = ({ children, to, dontAnimate, replaceUrl, onClick, ...props }: IPageTransitionLink): any => {
+export const Link = ({ children, to, dontAnimate, replaceUrl, onClick, className, ...props }: IPageTransitionLink): any => {
     const { redirect } = useContext(PageTransitionProviderContext);
 
     const interceptOnClick = (e: any): void => {
@@ -12,7 +12,7 @@ export const Link = ({ children, to, dontAnimate, replaceUrl, onClick, ...props 
     };
 
     return (
-        <a href={to} onClick={interceptOnClick} {...props}>
+        <a href={to} className={`react-simple-widget page-transition-link ${className || ""}`} onClick={interceptOnClick} {...props}>
             {children}
         </a>
     );

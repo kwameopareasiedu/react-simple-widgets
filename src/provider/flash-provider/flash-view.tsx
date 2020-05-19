@@ -16,7 +16,7 @@ interface IFlashView {
 
 export const FlashView = ({ type, title, message, onDismiss }: IFlashView): any => {
     const className = (): string => {
-        const classes = ["flash-view", "card"];
+        const classes = ["react-simple-widget", "flash-view", "card"];
         if (type === FlashType.ERROR) classes.push("flash-state-error");
         if (type === FlashType.WARNING) classes.push("flash-state-warning");
         if (type === FlashType.INFO) classes.push("flash-state-info");

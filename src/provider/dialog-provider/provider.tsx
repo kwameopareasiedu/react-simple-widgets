@@ -52,7 +52,7 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
     return (
         <DialogProviderContext.Provider value={{ showDialog }}>
             {children}
-            <div id="dialog-view-container">
+            <div id="dialog-view-container" className="react-simple-widget">
                 {dialogHolders.map(holder => (
                     <DialogView key={holder.id} dialogHolder={holder} />
                 ))}

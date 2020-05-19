@@ -1,4 +1,5 @@
-import { AnchorHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, InputHTMLAttributes } from "react";
+import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /* DialogProvider interfaces */
 export enum DialogSize {
@@ -92,4 +93,28 @@ export interface IPageTransitionLink extends AnchorHTMLAttributes<HTMLAnchorElem
     children?: any;
     dontAnimate?: boolean;
     replaceUrl?: boolean;
+}
+
+/* CustomField */
+export type ICustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
+
+export interface ICustomField extends InputHTMLAttributes<HTMLInputElement> {
+    children: ICustomFieldBuilder;
+    errorTransformer?: (err: any) => string;
+}
+
+export type IFieldDecorationBuilder = ({ onFocus, onBlur }: { onFocus: () => void; onBlur: () => void }) => any;
+
+export enum FieldDecorationType {
+    FLAT,
+    UNDERLINE,
+    FLOATING_LABEL
+}
+
+export interface IFieldDecoration {
+    label?: string;
+    error?: string;
+    hasValue?: boolean;
+    decoration?: FieldDecorationType;
+    children: IFieldDecorationBuilder;
 }

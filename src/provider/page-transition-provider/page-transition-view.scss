@@ -1,4 +1,4 @@
-.page-transition-view {
+.react-simple-widget.page-transition-view {
     --page-transition-view-animation-duration: 0.25s;
 
     width: 100%;
@@ -8,7 +8,7 @@
     animation: page-transition-view-entry-animation var(--page-transition-view-animation-duration) forwards;
 }
 
-.page-transition-view.page-transition-view-redirecting {
+.react-simple-widget.page-transition-view.page-transition-view-redirecting {
     pointer-events: none;
     animation: page-transition-view-exit-animation var(--page-transition-view-animation-duration) forwards;
 }
