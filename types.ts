@@ -103,7 +103,10 @@ export interface ICustomField extends InputHTMLAttributes<HTMLInputElement> {
     errorTransformer?: (err: any) => string;
 }
 
-export type IFieldDecorationBuilder = ({ onFocus, onBlur }: { onFocus: () => void; onBlur: () => void }) => any;
+/* FieldDecoration */
+export interface IFieldDecorationBuilderProps { onFieldFocus: () => void; onFieldBlur: () => void }
+
+export type IFieldDecorationBuilder = ({ onFieldFocus, onFieldBlur }: IFieldDecorationBuilderProps) => any;
 
 export enum FieldDecorationType {
     FLAT,
@@ -117,4 +120,21 @@ export interface IFieldDecoration {
     hasValue?: boolean;
     decoration?: FieldDecorationType;
     children: IFieldDecorationBuilder;
+}
+
+/* TextField */
+export enum TextFieldMode {
+    INPUT,
+    EDITOR
+}
+
+export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
+    name: string;
+    label?: string;
+    mode?: TextFieldMode;
+    decoration?: FieldDecorationType;
+    errorTransformer?: (err: any) => string;
+    onEditorChange?: (value: any) => void;
+    onEditorFocus?: () => void;
+    onEditorBlur?: () => void;
 }

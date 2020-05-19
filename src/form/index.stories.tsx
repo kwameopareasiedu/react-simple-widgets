@@ -1,12 +1,11 @@
 import React from "react";
 import { Formik } from "formik";
-import { CustomField } from "./custom-field";
-import { FieldDecoration } from "./field-decoration";
-import { FieldDecorationType } from "../../types";
+import { TextField } from "./text-field";
+import { FieldDecorationType, TextFieldMode } from "../../types";
 
 export default {
     title: "React simple widget - Form",
-    decorators: [(storyFn: any) => <div style={{ width: "960px", padding: "30px" }}>{storyFn()}</div>]
+    decorators: [(storyFn: any) => <div style={{ padding: "30px" }}>{storyFn()}</div>]
 };
 
 export const index = (): any => {
@@ -21,7 +20,9 @@ export const index = (): any => {
         const initialValues = {
             firstName: "",
             otherNames: "",
-            lastName: ""
+            lastName: "",
+            age: "",
+            about: ""
         };
 
         const validate = (values: any) => {
@@ -29,6 +30,8 @@ export const index = (): any => {
             if (!values.firstName) errors.firstName = "Required";
             if (!values.otherNames) errors.otherNames = "Required";
             if (!values.lastName) errors.lastName = "Required";
+            if (!values.age) errors.age = "Required";
+            if (parseInt(values.age) < 18) errors.age = "You must be 18+ years";
             return errors;
         };
 
@@ -51,71 +54,36 @@ export const index = (): any => {
                 <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
                     {formik => (
                         <form onSubmit={formik.handleSubmit}>
-                            <CustomField name="firstName">
-                                {({ value, error, touched, setValue, setTouched }) => (
-                                    <FieldDecoration label="First name" error={touched && error} hasValue={!!value}>
-                                        {({ onFocus, onBlur }) => (
-                                            <input
-                                                value={value}
-                                                onChange={e => setValue(e.target.value)}
-                                                onFocus={(): void => {
-                                                    setTouched(true);
-                                                    onFocus();
-                                                }}
-                                                onBlur={onBlur}
-                                            />
-                                        )}
-                                    </FieldDecoration>
-                                )}
-                            </CustomField>
+                            <TextField name="firstName" label="First name" placeholder="Enter first name" className="form-control" />
 
                             <br />
 
-                            <CustomField name="lastName">
-                                {({ value, error, touched, setValue, setTouched }) => (
-                                    <FieldDecoration
-                                        label="Last name"
-                                        error={touched && error}
-                                        hasValue={!!value}
-                                        decoration={FieldDecorationType.UNDERLINE}>
-                                        {({ onFocus, onBlur }) => (
-                                            <input
-                                                value={value}
-                                                onChange={e => setValue(e.target.value)}
-                                                onFocus={(): void => {
-                                                    setTouched(true);
-                                                    onFocus();
-                                                }}
-                                                onBlur={onBlur}
-                                            />
-                                        )}
-                                    </FieldDecoration>
-                                )}
-                            </CustomField>
+                            <TextField name="lastName" label="Last name" decoration={FieldDecorationType.UNDERLINE} placeholder="Enter last name" />
 
                             <br />
 
-                            <CustomField name="otherNames">
-                                {({ value, error, touched, setValue, setTouched }) => (
-                                    <FieldDecoration
-                                        label="Other names"
-                                        error={touched && error}
-                                        hasValue={!!value}
-                                        decoration={FieldDecorationType.FLOATING_LABEL}>
-                                        {({ onFocus, onBlur }) => (
-                                            <input
-                                                value={value}
-                                                onChange={e => setValue(e.target.value)}
-                                                onFocus={(): void => {
-                                                    setTouched(true);
-                                                    onFocus();
-                                                }}
-                                                onBlur={onBlur}
-                                            />
-                                        )}
-                                    </FieldDecoration>
-                                )}
-                            </CustomField>
+                            <TextField name="otherNames" label="Other names" decoration={FieldDecorationType.FLOATING_LABEL} />
+
+                            <br />
+
+                            <TextField
+                                name="age"
+                                label="Age"
+                                type="number"
+                                decoration={FieldDecorationType.UNDERLINE}
+                                placeholder="Enter your age"
+                                max={50}
+                                min={1}
+                            />
+
+                            <br />
+
+                            <TextField
+                                name="about"
+                                label="Tell us more about yourself"
+                                decoration={FieldDecorationType.FLOATING_LABEL}
+                                mode={TextFieldMode.EDITOR}
+                            />
                             {/*<FormikEffect*/}
                             {/*    formik={formik}*/}
                             {/*    onChange={({ previousValues, values }) => {*/}

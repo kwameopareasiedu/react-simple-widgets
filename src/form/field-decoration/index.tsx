@@ -9,9 +9,9 @@ import { FieldDecorationType, IFieldDecoration } from "../../../types";
 export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, error, hasValue, children }: IFieldDecoration) => {
     const [focused, setFocused] = useState(false);
 
-    const onFocus = (): void => setFocused(true);
+    const onFieldFocus = (): void => setFocused(true);
 
-    const onBlur = (): void => setFocused(false);
+    const onFieldBlur = (): void => setFocused(false);
 
     const className = (): string => {
         const classes = ["react-simple-widget", "field-decoration"];
@@ -28,7 +28,7 @@ export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, 
         <div className={className()}>
             <div className="field">
                 {label ? <label>{label}</label> : null}
-                <div className="widget">{children({ onFocus, onBlur })}</div>
+                <div className="widget">{children({ onFieldFocus, onFieldBlur })}</div>
             </div>
 
             {error ? <div className="error">{error}</div> : null}

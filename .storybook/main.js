@@ -3,10 +3,12 @@ module.exports = {
     addons: ["@storybook/addon-actions/register", "@storybook/addon-knobs/register"],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("svg") === -1);
+        config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("scss") === -1);
+        config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("css") === -1);
 
         config.module.rules.unshift(
             {
-                test: /\.(scss|css)$/,
+                test: /\.s?css$/,
                 exclude: /\node_modules/,
                 use: [
                     { loader: "style-loader" },
