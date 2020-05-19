@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
 import { FieldDecorationType, TextFieldMode } from "../../types";
+import { DropdownField } from "./dropdown-field";
 
 export default {
     title: "React simple widget - Form",
@@ -21,8 +22,8 @@ export const index = (): any => {
             firstName: "",
             otherNames: "",
             lastName: "",
-            age: "",
-            about: ""
+            about: "",
+            language: ""
         };
 
         const validate = (values: any) => {
@@ -30,8 +31,6 @@ export const index = (): any => {
             if (!values.firstName) errors.firstName = "Required";
             if (!values.otherNames) errors.otherNames = "Required";
             if (!values.lastName) errors.lastName = "Required";
-            if (!values.age) errors.age = "Required";
-            if (parseInt(values.age) < 18) errors.age = "You must be 18+ years";
             return errors;
         };
 
@@ -54,36 +53,44 @@ export const index = (): any => {
                 <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
                     {formik => (
                         <form onSubmit={formik.handleSubmit}>
-                            <TextField name="firstName" label="First name" placeholder="Enter first name" className="form-control" />
+                            <div className="row">
+                                <div className="col-12 col-md-6">
+                                    <TextField name="firstName" label="First name" placeholder="Enter first name" className="form-control" />
 
-                            <br />
+                                    <br />
 
-                            <TextField name="lastName" label="Last name" decoration={FieldDecorationType.UNDERLINE} placeholder="Enter last name" />
+                                    <TextField
+                                        name="lastName"
+                                        label="Last name"
+                                        decoration={FieldDecorationType.UNDERLINE}
+                                        placeholder="Enter last name"
+                                    />
 
-                            <br />
+                                    <br />
 
-                            <TextField name="otherNames" label="Other names" decoration={FieldDecorationType.FLOATING_LABEL} />
+                                    <TextField name="otherNames" label="Other names" decoration={FieldDecorationType.FLOATING_LABEL} />
 
-                            <br />
+                                    <br />
 
-                            <TextField
-                                name="age"
-                                label="Age"
-                                type="number"
-                                decoration={FieldDecorationType.UNDERLINE}
-                                placeholder="Enter your age"
-                                max={50}
-                                min={1}
-                            />
+                                    <TextField
+                                        name="about"
+                                        label="Tell us more about yourself"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        mode={TextFieldMode.EDITOR}
+                                    />
 
-                            <br />
+                                    <br className="d-block d-md-none" />
+                                </div>
 
-                            <TextField
-                                name="about"
-                                label="Tell us more about yourself"
-                                decoration={FieldDecorationType.FLOATING_LABEL}
-                                mode={TextFieldMode.EDITOR}
-                            />
+                                <div className="col-12 col-md-6">
+                                    <DropdownField name="language" label="Primary language" decoration={FieldDecorationType.FLOATING_LABEL}>
+                                        <option value="english">English</option>
+                                        <option value="twi">Twi</option>
+                                        <option value="ga">Ga</option>
+                                        <option value="Ewe">Ewe</option>
+                                    </DropdownField>
+                                </div>
+                            </div>
                             {/*<FormikEffect*/}
                             {/*    formik={formik}*/}
                             {/*    onChange={({ previousValues, values }) => {*/}

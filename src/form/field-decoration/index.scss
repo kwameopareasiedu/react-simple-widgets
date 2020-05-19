@@ -1,5 +1,6 @@
 .react-simple-widget.field-decoration {
     --field-decoration-label-color: #474747;
+    --field-decoration-label-bg: white;
     --field-decoration-error-color: #bf2742;
     --field-decoration-border-color: #b3b3b3;
     --field-decoration-border-focus-color: blueviolet;
@@ -16,11 +17,16 @@
             input,
             input:hover,
             input:focus,
-            input:active {
+            input:active,
+            select,
+            select:hover,
+            select:focus,
+            select:active {
                 width: 100%;
                 border: none;
                 outline: none;
                 box-shadow: none;
+                background: transparent;
                 padding: 0;
                 margin: 0;
             }
@@ -36,11 +42,6 @@
 
 /* Flat decoration */
 .react-simple-widget.field-decoration.flat-decoration {
-    > .error,
-    > .field > label {
-        padding: 0 8px;
-    }
-
     > .field > .widget {
         padding: 4px 8px;
         border-radius: 2px;
@@ -128,6 +129,6 @@
 .react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-value {
     > .field > label {
         top: -0.65rem;
-        background-color: white;
+        background-color: var(--field-decoration-label-bg);
     }
 }

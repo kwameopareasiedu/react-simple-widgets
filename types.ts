@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, InputHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /* DialogProvider interfaces */
@@ -104,7 +104,10 @@ export interface ICustomField extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 /* FieldDecoration */
-export interface IFieldDecorationBuilderProps { onFieldFocus: () => void; onFieldBlur: () => void }
+export interface IFieldDecorationBuilderProps {
+    onFieldFocus: () => void;
+    onFieldBlur: () => void;
+}
 
 export type IFieldDecorationBuilder = ({ onFieldFocus, onFieldBlur }: IFieldDecorationBuilderProps) => any;
 
@@ -137,4 +140,13 @@ export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
     onEditorChange?: (value: any) => void;
     onEditorFocus?: () => void;
     onEditorBlur?: () => void;
+}
+
+/* DropdownField */
+export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement>{
+    name: string;
+    label?: string;
+    decoration?: FieldDecorationType;
+    errorTransformer?: (err: any) => string;
+    children: any;
 }
