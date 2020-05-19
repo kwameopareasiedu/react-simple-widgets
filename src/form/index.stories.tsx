@@ -1,8 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
-import { FieldDecorationType, TextFieldMode } from "../../types";
+import { FieldDecorationType, SelectFieldType, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
+import { SelectField } from "./select-field";
 
 export default {
     title: "React simple widget - Form",
@@ -23,7 +24,10 @@ export const index = (): any => {
             otherNames: "",
             lastName: "",
             about: "",
-            language: ""
+            language: "",
+            acceptTOS: false,
+            gender: "",
+            multiOptions: ""
         };
 
         const validate = (values: any) => {
@@ -31,6 +35,7 @@ export const index = (): any => {
             if (!values.firstName) errors.firstName = "Required";
             if (!values.otherNames) errors.otherNames = "Required";
             if (!values.lastName) errors.lastName = "Required";
+            if (!values.acceptTOS) errors.acceptTOS = "You must accept the Terms of Service to continue";
             return errors;
         };
 
@@ -89,6 +94,72 @@ export const index = (): any => {
                                         <option value="ga">Ga</option>
                                         <option value="Ewe">Ewe</option>
                                     </DropdownField>
+
+                                    <br />
+
+                                    <SelectField
+                                        name="acceptTOS"
+                                        type={SelectFieldType.BINARY}
+                                        label="Accept terms of agreement"
+                                        onChange={v => console.log("Terms of Service", v)}
+                                    />
+
+                                    <br />
+
+                                    <SelectField
+                                        name="gender"
+                                        label="Gender"
+                                        type={SelectFieldType.SINGLE}
+                                        options={[
+                                            ["Male", "male"],
+                                            ["Female", "female"]
+                                        ]}
+                                        onChange={v => console.log("Gender", v)}
+                                    />
+
+                                    <br />
+
+                                    <SelectField
+                                        name="gender"
+                                        inline={true}
+                                        label="Gender (Inline)"
+                                        type={SelectFieldType.SINGLE}
+                                        options={[
+                                            ["Male", "male"],
+                                            ["Female", "female"]
+                                        ]}
+                                        onChange={v => console.log("Gender", v)}
+                                    />
+
+                                    <br />
+
+                                    <SelectField
+                                        name="multiOptions"
+                                        inline={false}
+                                        label="Multi selection"
+                                        type={SelectFieldType.MULTI}
+                                        options={[
+                                            ["Foo", "foo"],
+                                            ["Bar", "bar"],
+                                            ["Baz", "baz"]
+                                        ]}
+                                        onChange={v => console.log("Multi-selection", v)}
+                                    />
+
+                                    <br />
+
+                                    <SelectField
+                                        name="multiOptions"
+                                        inline={true}
+                                        label="Multi selection (inline)"
+                                        type={SelectFieldType.MULTI}
+                                        options={[
+                                            ["Foo", "foo"],
+                                            ["Bar", "bar"],
+                                            ["Baz", "baz"]
+                                        ]}
+                                        onChange={v => console.log("Multi-selection", v)}
+                                    />
                                 </div>
                             </div>
                             {/*<FormikEffect*/}

@@ -1,0 +1,120 @@
+.react-simple-widget.select-option {
+    --select-option-indicator-size: 1.5rem;
+    --select-option-indicator-color: blueviolet;
+    --select-option-transition-duration: 0.3s;
+
+    .indicator {
+        position: relative;
+        display: inline-block;
+        width: var(--select-option-indicator-size);
+        height: var(--select-option-indicator-size);
+        border: 2px solid var(--select-option-indicator-color);
+        margin: 0 8px 0 0;
+        opacity: 0.99;
+    }
+
+    .indicator::before {
+        position: absolute;
+        display: block;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        transform: scale(0);
+        opacity: 0;
+        background-color: #00000014;
+        transition: transform var(--select-option-transition-duration), opacity var(--select-option-transition-duration);
+        pointer-events: none;
+        z-index: -1;
+        content: "";
+    }
+
+    .indicator::after {
+        position: absolute;
+        display: block;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: var(--select-option-indicator-color);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    label,
+    .indicator {
+        vertical-align: middle;
+    }
+
+    label {
+        margin: 0;
+    }
+}
+
+.react-simple-widget.select-option:hover {
+    cursor: pointer;
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.react-simple-widget.select-option:focus,
+.react-simple-widget.select-option:active {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    .indicator::before {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Selected state */
+.react-simple-widget.select-option.select-option-selected {
+    .indicator::after {
+        content: "";
+    }
+}
+
+/* Inline state */
+.react-simple-widget.select-option.select-option-inline {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+}
+
+.react-simple-widget.select-option:not(.select-option-inline) {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+
+    label {
+        margin: 0;
+    }
+}
+
+.react-simple-widget.select-option.select-option-inline:last-child {
+    margin-right: 0;
+}
+
+.react-simple-widget.select-option:not(.select-option-inline):first-child {
+    margin-top: 0;
+}
+
+/* Checkbox select */
+.react-simple-widget.select-option.select-option-check {
+    .indicator {
+        border-radius: 4px;
+    }
+}
+
+/* Radio select */
+.react-simple-widget.select-option.select-option-radio {
+    .indicator,
+    .indicator::after {
+        border-radius: calc(var(--select-option-indicator-size) / 2);
+    }
+}

@@ -112,6 +112,7 @@ export interface IFieldDecorationBuilderProps {
 export type IFieldDecorationBuilder = ({ onFieldFocus, onFieldBlur }: IFieldDecorationBuilderProps) => any;
 
 export enum FieldDecorationType {
+    NONE,
     FLAT,
     UNDERLINE,
     FLOATING_LABEL
@@ -143,10 +144,27 @@ export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 /* DropdownField */
-export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement>{
+export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;
     label?: string;
     decoration?: FieldDecorationType;
     errorTransformer?: (err: any) => string;
     children: any;
+}
+
+/* SelectField */
+export enum SelectFieldType {
+    BINARY,
+    SINGLE,
+    MULTI
+}
+
+export interface ISelectField {
+    name: string;
+    label?: string;
+    inline?: boolean;
+    type: SelectFieldType;
+    options?: Array<[string, string]>;
+    errorTransformer?: (err: any) => string;
+    onChange?: (value: Array<string> | string | boolean) => void;
 }
