@@ -80,7 +80,7 @@ A complete usage can be found in the [Storybook stories for this widget](../src/
 
 ```css
 body {
-    .dialog-view {
+    .react-simple-widget.dialog-view {
         --dialog-view-vertical-margin: 75px;
     }
 }

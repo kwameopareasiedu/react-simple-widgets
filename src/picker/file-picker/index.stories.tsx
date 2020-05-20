@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DialogProvider } from "../../provider/dialog-provider";
-import { FilePicker } from "./index";
 import { FieldDecorationType } from "../../../types";
+import { FilePicker } from "./index";
 
 export default {
     title: "File Picker",

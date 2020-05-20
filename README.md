@@ -22,6 +22,12 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 
 **TBD**
 
+#### Pickers
+
+Pickers allow you to select some complex data type
+
+-   [FilePicker](./docs/file-picker.md) - A simple file picker which supports drag-and-drop feature
+
 ### Maintainers
 
 -   [Kwame Opare Asiedu](https://github.com/kwameopareasiedu/)
