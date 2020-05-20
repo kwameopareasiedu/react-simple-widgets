@@ -7,10 +7,7 @@ import { Link } from "./page-transition-link";
 
 export default {
     title: "PageTransitionProvider",
-    decorators: [
-        (storyFn: any) => <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>{storyFn()}</div>,
-        (storyFn: any) => <BrowserRouter basename="/iframe.html/">{storyFn()}</BrowserRouter>
-    ]
+    decorators: [(storyFn: any) => <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>{storyFn()}</div>]
 };
 
 export const usage = () => {
@@ -78,57 +75,22 @@ export const usage = () => {
     };
 
     return (
-        <PageTransitionProvider>
-            <Switch>
-                <Route exact path="/">
-                    <PageTransitionView>
-                        <IndexPage />
-                    </PageTransitionView>
-                </Route>
+        <BrowserRouter basename="/iframe.html/">
+            <PageTransitionProvider>
+                <Switch>
+                    <Route exact path="/">
+                        <PageTransitionView>
+                            <IndexPage />
+                        </PageTransitionView>
+                    </Route>
 
-                <Route exact path="/secondary">
-                    <PageTransitionView>
-                        <SecondaryPage />
-                    </PageTransitionView>
-                </Route>
-            </Switch>
-        </PageTransitionProvider>
+                    <Route exact path="/secondary">
+                        <PageTransitionView>
+                            <SecondaryPage />
+                        </PageTransitionView>
+                    </Route>
+                </Switch>
+            </PageTransitionProvider>
+        </BrowserRouter>
     );
 };
-
-// export const useQueryParamsUsage = () => {
-//     const QPComponent = () => {
-//         const { qp, updateParameter, removeParameter } = useQueryParams();
-//
-//         useEffect(() => {
-//             console.log(qp);
-//         }, [qp]);
-//
-//         return (
-//             <div>
-//                 <p className="text-center">
-//                     Open the console to see the current query URL parameters. <br />
-//                     Then click on the buttons below to observe the change
-//                 </p>
-//
-//                 <div className="text-center">
-//                     <button
-//                         className="btn btn-primary btn-sm"
-//                         onClick={() => updateParameter("key1", "value3", { dontAnimate: false, replaceUrl: true })}>
-//                         Change parameter &quot;key1&quot; with value &quot;<strong>value3</strong>&quot;
-//                     </button>
-//                     <span>&nbsp;</span>
-//                     <button className="btn btn-primary btn-sm" onClick={() => removeParameter("key1", { dontAnimate: false, replaceUrl: true })}>
-//                         Remove parameter &quot;key1&quot; from the URL
-//                     </button>
-//                 </div>
-//             </div>
-//         );
-//     };
-//
-//     return (
-//         <TransitionProvider>
-//             <QPComponent />
-//         </TransitionProvider>
-//     );
-// };
