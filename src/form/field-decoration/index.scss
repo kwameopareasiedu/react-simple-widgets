@@ -1,3 +1,15 @@
+// This mixin resets the outline, border and box-shadows for the child of a field decoration widget
+// in its normal and hover states
+@mixin resetWidgetChild {
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
 .react-simple-widget.field-decoration {
     --field-decoration-label-color: #474747;
     --field-decoration-label-bg: white;
@@ -11,21 +23,6 @@
             font-size: 80%;
             color: var(--field-decoration-label-color);
             margin-bottom: 2px;
-        }
-
-        > .widget {
-            > *,
-            > *:hover,
-            > *:focus,
-            > *:active {
-                width: 100%;
-                border: none;
-                outline: none;
-                box-shadow: none;
-                background: transparent;
-                padding: 0;
-                margin: 0;
-            }
         }
     }
 

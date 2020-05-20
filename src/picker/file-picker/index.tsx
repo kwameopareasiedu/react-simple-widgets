@@ -127,7 +127,7 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
  * FilePicker is a widget that allows the user select a file from the file system. It uses the
  * dialog to show the picker and thus required DialogProvider to be an ancestor
  */
-export const FilePicker = ({ file, error, limit, label, extensions, decoration, validator, onChange }: IFilePicker) => {
+export const FilePicker = ({ file, error, limit, label, extensions, decoration, validator, onFocus, onBlur, onChange }: IFilePicker) => {
     const { showDialog } = useContext(DialogProviderContext);
     const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -160,11 +160,17 @@ export const FilePicker = ({ file, error, limit, label, extensions, decoration, 
             {({ onFieldFocus, onFieldBlur }): any => (
                 <div
                     className="react-simple-widget file-picker"
-                    tabIndex={0}
-                    onFocus={onFieldFocus}
-                    onBlur={onFieldBlur}
                     onKeyUp={e => onKeyUp(e, onFieldFocus)}
-                    onClick={(): void => openFileDialog(onFieldFocus)}>
+                    onClick={(): void => openFileDialog(onFieldFocus)}
+                    onFocus={() => {
+                        onFieldFocus();
+                        if (onFocus) onFocus();
+                    }}
+                    onBlur={() => {
+                        onFieldBlur();
+                        if (onBlur) onBlur();
+                    }}
+                    tabIndex={0}>
                     {!file && <p className="no-selection">No file selected</p>}
                     {file && <p className="meta">{file.name}</p>}
 

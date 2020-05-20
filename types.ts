@@ -170,6 +170,19 @@ export interface ISelectField {
 }
 
 /* FilePicker */
+export interface IFileField {
+    name: string;
+    limit?: number;
+    label?: string;
+    extensions?: Array<string>;
+    decoration?: FieldDecorationType;
+    validator?: (file: File) => string;
+    errorTransformer?: (err: any) => string;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
+
+/* FilePicker */
 export interface IFilePicker {
     file: File;
     error?: string;
@@ -179,4 +192,6 @@ export interface IFilePicker {
     decoration?: FieldDecorationType;
     validator?: (file: File) => string;
     onChange: (file: File) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
 }

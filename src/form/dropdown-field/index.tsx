@@ -1,3 +1,4 @@
+import "./index.scss";
 import React from "react";
 import { CustomField } from "../custom-field";
 import { FieldDecoration } from "../field-decoration";

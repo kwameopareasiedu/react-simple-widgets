@@ -1,0 +1,10 @@
+@import "../field-decoration";
+
+.react-simple-widget.dropdown-field > .field-decoration > .field > .widget {
+    > select,
+    > select:hover,
+    > select:focus,
+    > select:active {
+        @include resetWidgetChild;
+    }
+}

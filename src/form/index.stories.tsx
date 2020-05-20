@@ -1,9 +1,11 @@
 import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
+import { DialogProvider } from "../provider/dialog-provider";
 import { FieldDecorationType, SelectFieldType, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
+import { FileField } from "./file-field";
 
 export default {
     title: "React simple widget - Form",
@@ -12,14 +14,7 @@ export default {
 
 export const index = (): any => {
     const SampleForm = (): any => {
-        // const [alertShown, setAlertShown] = useState(false);
-        // const [previousFormValues, setPreviousFormValues] = useState(null);
-        // const [formValues, setFormValues] = useState(null);
-        // const [loading, setLoading] = useState(false);
-        //
-        // useEffect(() => console.log("Form values changed", { currentValues: formValues }, { previousValues: previousFormValues }), [formValues]);
-
-        const initialValues = {
+        const initialValues: any = {
             firstName: "",
             otherNames: "",
             lastName: "",
@@ -27,7 +22,8 @@ export const index = (): any => {
             language: "",
             acceptTOS: false,
             gender: "",
-            multiOptions: ""
+            multiOptions: "",
+            file: null
         };
 
         const validate = (values: any) => {
@@ -36,6 +32,7 @@ export const index = (): any => {
             if (!values.otherNames) errors.otherNames = "Required";
             if (!values.lastName) errors.lastName = "Required";
             if (!values.acceptTOS) errors.acceptTOS = "You must accept the Terms of Service to continue";
+            if (!values.file) errors.file = "Required";
             return errors;
         };
 
@@ -84,10 +81,8 @@ export const index = (): any => {
                                         mode={TextFieldMode.EDITOR}
                                     />
 
-                                    <br className="d-block d-md-none" />
-                                </div>
+                                    <br />
 
-                                <div className="col-12 col-md-6">
                                     <DropdownField name="language" label="Primary language" decoration={FieldDecorationType.FLOATING_LABEL}>
                                         <option value="english">English</option>
                                         <option value="twi">Twi</option>
@@ -97,6 +92,12 @@ export const index = (): any => {
 
                                     <br />
 
+                                    <FileField name="file" label="File upload (1MB limit)" limit={1024 * 1024} />
+
+                                    <br className="d-block d-md-none" />
+                                </div>
+
+                                <div className="col-12 col-md-6">
                                     <SelectField
                                         name="acceptTOS"
                                         type={SelectFieldType.BINARY}
@@ -162,74 +163,6 @@ export const index = (): any => {
                                     />
                                 </div>
                             </div>
-                            {/*<FormikEffect*/}
-                            {/*    formik={formik}*/}
-                            {/*    onChange={({ previousValues, values }) => {*/}
-                            {/*        setPreviousFormValues(previousValues);*/}
-                            {/*        setFormValues(values);*/}
-                            {/*    }}*/}
-                            {/*/>*/}
-
-                            {/*<StringInput label="String Input" name="string" />*/}
-                            {/*<StringInput label="Password Input" name="password" type="password" />*/}
-
-                            {/*<TextInput label="Text Input" name="text" />*/}
-
-                            {/*<SelectInput label="Select Input" name="select">*/}
-                            {/*    <option value="optionA">Option A</option>*/}
-                            {/*    <option value="optionB">Option B</option>*/}
-                            {/*</SelectInput>*/}
-
-                            {/*<CheckboxInput label="Checkbox Input" name="checkbox" />*/}
-
-                            {/*<CheckGroupInput*/}
-                            {/*    options={[*/}
-                            {/*        ["Check option 1 label", "checkOption1"],*/}
-                            {/*        ["Check option 2 label", "checkOption2"]*/}
-                            {/*    ]}*/}
-                            {/*    label="CheckGroup Input"*/}
-                            {/*    name="checkgroup"*/}
-                            {/*/>*/}
-
-                            {/*<RadioGroupInput*/}
-                            {/*    options={[*/}
-                            {/*        ["Radio option 1 label", "radioOption1"],*/}
-                            {/*        ["Radio option 2 label", "radioOption2"]*/}
-                            {/*    ]}*/}
-                            {/*    label="RadioGroup Input"*/}
-                            {/*    name="radiogroup"*/}
-                            {/*/>*/}
-
-                            {/*<FileInput*/}
-                            {/*    label="File Input"*/}
-                            {/*    name="file"*/}
-                            {/*    ext={["png", "jpg"]}*/}
-                            {/*    maxSize={50 * 1024}*/}
-                            {/*    validate={file => (file.name.length > 30 ? "File name cannot be greater than 30 chars" : "")}*/}
-                            {/*/>*/}
-
-                            {/*<FormikFieldWrapper*/}
-                            {/*    label="Custom Input (Use this if you have a custom component whose value should be part of the form)"*/}
-                            {/*    name="custom">*/}
-                            {/*    {({ value, setValue }) => (*/}
-                            {/*        <SingleDatePicker*/}
-                            {/*            value={value}*/}
-                            {/*            dateFormat="YYYY-MM-DD"*/}
-                            {/*            displayFormat="Do MMMM YYYY"*/}
-                            {/*            displayClassName="form-control"*/}
-                            {/*            onChange={date => setValue(date)}*/}
-                            {/*            validateDate={date => {*/}
-                            {/*                if (date !== "2020-01-01") throw new Error("Please select 1st January 2020");*/}
-                            {/*            }}*/}
-                            {/*        />*/}
-                            {/*    )}*/}
-                            {/*</FormikFieldWrapper>*/}
-
-                            {/*<Loader className="text-center" childrenVisibleWhileLoading={false} isLoading={loading}>*/}
-                            {/*    <button type="submit" className="btn btn-primary btn-block">*/}
-                            {/*        Proceed*/}
-                            {/*    </button>*/}
-                            {/*</Loader>*/}
                         </form>
                     )}
                 </Formik>
@@ -238,30 +171,12 @@ export const index = (): any => {
     };
 
     return (
-        <div>
+        <DialogProvider>
             <div className="card">
                 <div className="card-body">
                     <SampleForm />
                 </div>
             </div>
-        </div>
+        </DialogProvider>
     );
 };
-
-// export const fileField = () => {
-//     const [file, setFile] = useState(null);
-//
-//     return (
-//         <div>
-//             <p>Use the FileField component if you just want a file upload without including it in a form</p>
-//
-//             <FileField onChange={file => setFile(file)} />
-//
-//             {file && (
-//                 <p>
-//                     File name: <strong>{file.name}</strong>
-//                 </p>
-//             )}
-//         </div>
-//     );
-// };
