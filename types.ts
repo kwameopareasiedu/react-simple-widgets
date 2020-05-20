@@ -168,3 +168,15 @@ export interface ISelectField {
     errorTransformer?: (err: any) => string;
     onChange?: (value: Array<string> | string | boolean) => void;
 }
+
+/* FilePicker */
+export interface IFilePicker {
+    file: File;
+    error?: string;
+    limit?: number;
+    label?: string;
+    extensions?: Array<string>;
+    decoration?: FieldDecorationType;
+    validator?: (file: File) => string;
+    onChange: (file: File) => void;
+}

@@ -14,14 +14,10 @@
         }
 
         > .widget {
-            input,
-            input:hover,
-            input:focus,
-            input:active,
-            select,
-            select:hover,
-            select:focus,
-            select:active {
+            > *,
+            > *:hover,
+            > *:focus,
+            > *:active {
                 width: 100%;
                 border: none;
                 outline: none;

@@ -1,8 +1,8 @@
 import "./provider.scss";
-import React, { useRef, useState } from "react";
-import { DialogProviderContext } from "./context";
+import React, { useEffect, useRef, useState } from "react";
 import { DialogView, DialogViewHolder } from "./dialog-view";
 import { IDialogBuilder, IDialogOptions, IDialogProvider } from "../../../types";
+import { DialogProviderContext } from "./context";
 
 type DialogEscapeCallback = (e: KeyboardEvent) => void;
 
@@ -14,6 +14,15 @@ type DialogEscapeCallback = (e: KeyboardEvent) => void;
 export const DialogProvider = ({ children }: IDialogProvider): any => {
     const [dialogHolders, setDialogHolders] = useState<Array<DialogViewHolder>>([]);
     const escapeHandlers = useRef<Array<DialogEscapeCallback>>([]);
+    const bodyOverflow = useRef<string>();
+
+    useEffect(() => {
+        if (dialogHolders.length > 0) {
+            // Store the overflow style to restore when all dialogs are dismissed
+            bodyOverflow.current = document.body.style.overflow;
+            document.body.style.overflow = "hidden";
+        } else document.body.style.overflow = bodyOverflow.current;
+    }, [dialogHolders]);
 
     const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions): void => {
         const newDialogHolder = new DialogViewHolder();
