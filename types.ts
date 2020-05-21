@@ -195,3 +195,24 @@ export interface IFilePicker {
     onFocus?: () => void;
     onBlur?: () => void;
 }
+
+/* DatePicker */
+export enum DatePickerMode {
+    SINGLE,
+    MULTI,
+    MONTH
+}
+
+export interface IDatePicker {
+    label?: string;
+    error?: string;
+    format?: string;
+    mode?: DatePickerMode;
+    displayFormat?: string;
+    date: string | Array<string>;
+    decoration?: FieldDecorationType;
+    onChange: (date: string | Array<string>) => void;
+    validator?: (date: string) => string;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
