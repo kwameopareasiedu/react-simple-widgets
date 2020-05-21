@@ -1,9 +1,6 @@
-@import "../../form/field-decoration";
+@import "../../mixin";
 
 .react-simple-widget.file-picker-dialog {
-    --file-picker-dialog-hover-color: blueviolet;
-    --file-picker-dialog-error-color: #ff5555;
-
     border-radius: 8px;
 
     .card-body {
@@ -60,7 +57,7 @@
             outline: none;
             box-shadow: none;
             border-style: solid;
-            border-color: var(--file-picker-dialog-hover-color);
+            border-color: var(--rsw-primary-theme-color);
         }
 
         .meta,
@@ -75,7 +72,7 @@
 
         .error {
             font-size: 80%;
-            color: var(--file-picker-dialog-error-color);
+            color: var(--rsw-error-color);
             font-weight: bold;
         }
 

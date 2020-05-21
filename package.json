@@ -15,7 +15,7 @@
     "main": "dist/bundle.js",
     "typings": "dist/index.d.ts",
     "scripts": {
-        "storybook": "start-storybook -p 9001 -c .storybook",
+        "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
         "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
         "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
         "test": "echo \"Error: no test specified\" && exit 1"

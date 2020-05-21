@@ -1,34 +1,15 @@
-// This mixin resets the outline, border and box-shadows for the child of a field decoration widget
-// in its normal and hover states
-@mixin resetWidgetChild {
-    width: 100%;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-}
-
 .react-simple-widget.field-decoration {
-    --field-decoration-label-color: #474747;
-    --field-decoration-label-bg: white;
-    --field-decoration-error-color: #bf2742;
-    --field-decoration-border-color: #b3b3b3;
-    --field-decoration-border-focus-color: blueviolet;
-    --field-decoration-transition-duration: 0.3s;
-
     > .field {
         > label {
             font-size: 80%;
-            color: var(--field-decoration-label-color);
+            color: var(--rsw-label-color);
             margin-bottom: 2px;
         }
     }
 
     > .error {
         font-size: 80%;
-        color: var(--field-decoration-error-color);
+        color: var(--rsw-error-color);
         margin: 3px 0 0 0;
     }
 }
@@ -38,15 +19,15 @@
     > .field > .widget {
         padding: 4px 8px;
         border-radius: 2px;
-        border: 1px solid var(--field-decoration-border-color);
-        transition: border-color var(--field-decoration-transition-duration);
+        border: 1px solid var(--rsw-secondary-theme-color);
+        transition: border-color var(--rsw-transition-duration);
     }
 }
 
 .react-simple-widget.field-decoration.flat-decoration.field-decoration-has-focus {
     > .field > .widget {
         border-width: 2px;
-        border-color: var(--field-decoration-border-focus-color);
+        border-color: var(--rsw-primary-theme-color);
     }
 }
 
@@ -60,7 +41,7 @@
         }
 
         > .widget {
-            border-bottom: 1px solid var(--field-decoration-border-color);
+            border-bottom: 1px solid var(--rsw-secondary-theme-color);
             padding: 0 0 4px 0;
         }
     }
@@ -72,9 +53,9 @@
         left: 0;
         right: 100%;
         bottom: 0;
-        background-color: var(--field-decoration-border-focus-color);
+        background-color: var(--rsw-primary-theme-color);
         transition-timing-function: ease-in;
-        transition: right var(--field-decoration-transition-duration);
+        transition: right var(--rsw-transition-duration);
     }
 }
 
@@ -90,14 +71,14 @@
         position: relative;
         border-radius: 2px;
         padding: 0.7rem 4px 0.4rem;
-        border: 1px solid var(--field-decoration-border-color);
-        transition: all var(--field-decoration-transition-duration);
+        border: 1px solid var(--rsw-secondary-theme-color);
+        transition: all var(--rsw-transition-duration);
 
         > label {
             position: absolute;
             top: calc(50% - 10px);
             padding: 0 4px;
-            transition: top var(--field-decoration-transition-duration);
+            transition: top var(--rsw-transition-duration);
             pointer-events: none;
         }
 
@@ -114,7 +95,7 @@
 .react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-focus {
     > .field {
         border-width: 2px;
-        border-color: var(--field-decoration-border-focus-color);
+        border-color: var(--rsw-primary-theme-color);
     }
 }
 
@@ -122,6 +103,6 @@
 .react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-value {
     > .field > label {
         top: -0.65rem;
-        background-color: var(--field-decoration-label-bg);
+        background-color: var(--rsw-field-decoration-label-bg-color);
     }
 }

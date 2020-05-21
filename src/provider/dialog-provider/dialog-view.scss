@@ -1,6 +1,4 @@
 .react-simple-widget.dialog-view {
-    --dialog-view-vertical-margin: 75px;
-
     position: fixed;
     display: flex;
     top: 0;
@@ -15,7 +13,7 @@
         margin: auto;
 
         > * {
-            margin: var(--dialog-view-vertical-margin) 15px;
+            margin: var(--rsw-dialog-view-vertical-margin) 15px;
         }
     }
 

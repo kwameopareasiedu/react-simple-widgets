@@ -1,6 +1,6 @@
 .flash-view.react-simple-widget {
-    --flash-title-color: #e3e3e3;
-    --flash-button-shadow-color: #e3e3e3;
+    --flash-title-color: var(--rsw-flash-view-default-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-default-theme-color);
 
     border-radius: 12px;
     overflow: hidden;
@@ -46,21 +46,21 @@
 }
 
 .flash-view.react-simple-widget.flash-state-error {
-    --flash-title-color: #ff5555;
-    --flash-button-shadow-color: #ff5555;
+    --flash-title-color: var(--rsw-flash-view-error-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-error-theme-color);
 }
 
 .flash-view.react-simple-widget.flash-state-warning {
-    --flash-title-color: #ffdd55;
-    --flash-button-shadow-color: #ffdd55;
+    --flash-title-color: var(--rsw-flash-view-warning-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-warning-theme-color);
 }
 
 .flash-view.react-simple-widget.flash-state-info {
-    --flash-title-color: #55ddff;
-    --flash-button-shadow-color: #55ddff;
+    --flash-title-color: var(--rsw-flash-view-info-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-info-theme-color);
 }
 
 .flash-view.react-simple-widget.flash-state-success {
-    --flash-title-color: #7fff2a;
-    --flash-button-shadow-color: #7fff2a;
+    --flash-title-color: var(--rsw-flash-view-success-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-success-theme-color);
 }

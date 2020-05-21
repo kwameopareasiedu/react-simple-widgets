@@ -1,10 +1,6 @@
-@import "../../form/field-decoration";
+@import "../../mixin";
 
 .react-simple-widget.date-picker-dialog {
-    --date-picker-dialog-theme: #2b49e2;
-    --date-picker-dialog-theme-bg: #2b49e211;
-    --date-picker-dialog-error-color: #ff5555;
-
     border-radius: 8px;
 
     label {
@@ -33,7 +29,7 @@
         select:focus,
         select:active {
             outline: none;
-            border-color: var(--date-picker-dialog-theme);
+            border-color: var(--rsw-primary-theme-color);
             cursor: pointer;
         }
 
@@ -42,12 +38,12 @@
             border: none;
             border-radius: 8px;
             background-color: transparent;
-            color: var(--date-picker-dialog-theme);
+            color: var(--rsw-primary-theme-color);
             transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: var(--date-picker-dialog-theme-bg);
+            background-color: var(--rsw-primary-theme-bg-color);
             text-decoration: none;
         }
 
@@ -65,12 +61,12 @@
             display: grid;
             padding: 6px 1.25rem;
             margin: 0 -1.25rem 15px;
-            background-color: var(--date-picker-dialog-theme-bg);
+            background-color: var(--rsw-primary-theme-bg-color);
             grid-template-columns: repeat(7, 1fr);
 
             span {
                 text-align: center;
-                color: var(--date-picker-dialog-theme);
+                color: var(--rsw-primary-theme-color);
             }
         }
 
@@ -95,13 +91,13 @@
 
             .calendar-day.calendar-day-valid:hover {
                 cursor: pointer;
-                background-color: var(--date-picker-dialog-theme-bg);
+                background-color: var(--rsw-primary-theme-bg-color);
             }
 
             .calendar-day.calendar-day-active,
             .calendar-day.calendar-day-active:hover {
                 color: white;
-                background-color: var(--date-picker-dialog-theme);
+                background-color: var(--rsw-primary-theme-color);
             }
         }
     }
@@ -122,13 +118,13 @@
 
         .calendar-month:hover {
             cursor: pointer;
-            background-color: var(--date-picker-dialog-theme-bg);
+            background-color: var(--rsw-primary-theme-bg-color);
         }
 
         .calendar-month.calendar-month-active,
         .calendar-month.calendar-month-active:hover {
             color: white;
-            background-color: var(--date-picker-dialog-theme);
+            background-color: var(--rsw-primary-theme-color);
         }
     }
 
@@ -148,7 +144,7 @@
         font-style: italic;
         text-align: center;
         font-size: 80%;
-        color: var(--date-picker-dialog-error-color);
+        color: var(--rsw-error-color);
         font-weight: bold;
     }
 

@@ -1,14 +1,10 @@
 .react-simple-widget.select-option {
-    --select-option-indicator-size: 1.5rem;
-    --select-option-indicator-color: blueviolet;
-    --select-option-transition-duration: 0.3s;
-
     .indicator {
         position: relative;
         display: inline-block;
-        width: var(--select-option-indicator-size);
-        height: var(--select-option-indicator-size);
-        border: 2px solid var(--select-option-indicator-color);
+        width: var(--rsw-select-field-indicator-size);
+        height: var(--rsw-select-field-indicator-size);
+        border: 2px solid var(--rsw-primary-theme-color);
         margin: 0 8px 0 0;
         opacity: 0.99;
     }
@@ -24,7 +20,7 @@
         transform: scale(0);
         opacity: 0;
         background-color: #00000014;
-        transition: transform var(--select-option-transition-duration), opacity var(--select-option-transition-duration);
+        transition: transform var(--rsw-transition-duration), opacity var(--rsw-transition-duration);
         pointer-events: none;
         z-index: -1;
         content: "";
@@ -37,7 +33,7 @@
         left: 2px;
         right: 2px;
         bottom: 2px;
-        background-color: var(--select-option-indicator-color);
+        background-color: var(--rsw-primary-theme-color);
         pointer-events: none;
         z-index: 1;
     }
