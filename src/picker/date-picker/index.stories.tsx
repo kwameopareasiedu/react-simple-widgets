@@ -24,7 +24,7 @@ export const usage = (): any => {
                     format="YYYY-MM-DD"
                     label="Select date"
                     mode={DatePickerMode.SINGLE}
-                    decoration={FieldDecorationType.FLOATING_LABEL}
+                    decoration={FieldDecorationType.FLAT}
                     validator={date => (moment(date, "YYYY-MM-DD").year() > 2020 ? "Must be before 2021" : null)}
                     onChange={date => {
                         if (date) setDate(date);
@@ -40,7 +40,7 @@ export const usage = (): any => {
                     label="Select date"
                     displayFormat="MMMM YYYY"
                     mode={DatePickerMode.MONTH}
-                    decoration={FieldDecorationType.FLOATING_LABEL}
+                    decoration={FieldDecorationType.UNDERLINE}
                     onChange={date => {
                         if (date) setDate1(date);
                     }}

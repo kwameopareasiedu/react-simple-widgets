@@ -90,7 +90,6 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
     };
 
     const returnDate = (): void => {
-        if (dates.length === 0) return;
         if (mode === DatePickerMode.SINGLE) helper.dismiss(dates[0]);
         if (mode === DatePickerMode.MULTI) helper.dismiss(dates);
         if (mode === DatePickerMode.MONTH) helper.dismiss(dates[0]);
@@ -194,24 +193,22 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
 
                     {error && <div className="error">{error}</div>}
 
-                    <div className="row">
-                        <div className="col-12 col-sm-4">
-                            <button type="button" className="btn btn-light btn-sm btn-block" disabled={dates.length === 0} onClick={returnDate}>
-                                Select
-                            </button>
-                        </div>
+                    <div className="actions">
+                        <button type="button" className="btn btn-light btn-sm btn-block" onClick={returnDate}>
+                            {dates.length === 0 ? "Select none" : "Select"}
+                        </button>
 
-                        <div className="col-12 col-sm-4">
-                            <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => setDates([])}>
-                                Clear
-                            </button>
-                        </div>
+                        <span>&nbsp;</span>
 
-                        <div className="col-12 col-sm-4">
-                            <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => helper.dismiss()}>
-                                Close
-                            </button>
-                        </div>
+                        <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => setDates([])}>
+                            Clear
+                        </button>
+
+                        <span>&nbsp;</span>
+
+                        <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => helper.dismiss()}>
+                            Close
+                        </button>
                     </div>
                 </div>
             )}

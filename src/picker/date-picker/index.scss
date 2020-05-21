@@ -151,6 +151,11 @@
         color: var(--date-picker-dialog-error-color);
         font-weight: bold;
     }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .react-simple-widget.date-picker {
