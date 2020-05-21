@@ -111,6 +111,6 @@
 .react-simple-widget.select-option.select-option-radio {
     .indicator,
     .indicator::after {
-        border-radius: calc(var(--select-option-indicator-size) / 2);
+        border-radius: calc(var(--rsw-select-field-indicator-size) / 2);
     }
 }
