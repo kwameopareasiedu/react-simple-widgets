@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomField } from "../custom-field";
-import { FieldDecorationType, ISelectField, SelectFieldType } from "../../../types";
+import { FieldDecorationType, ISelectField, SelectFieldMode } from "../../../types";
 import { SelectOption, SelectOptionType } from "./select-option";
 import { FieldDecoration } from "../field-decoration";
 
@@ -9,14 +9,14 @@ import { FieldDecoration } from "../field-decoration";
  * larger lists of options. This widget can take the form of a checkbox (for boolean selection), a
  * radio group (for single selection), or a check group (for multi-selections)
  */
-export const SelectField = ({ name, label, type = SelectFieldType.BINARY, options, inline, onChange, errorTransformer }: ISelectField): any => {
+export const SelectField = ({ name, label, mode = SelectFieldMode.BINARY, options, inline, onChange, errorTransformer }: ISelectField): any => {
     return (
         <div className="react-simple-widget select-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
                 {({ value, error, touched, setValue, setTouched }): any => (
                     <FieldDecoration
                         decoration={FieldDecorationType.NONE}
-                        label={type === SelectFieldType.BINARY ? null : label}
+                        label={mode === SelectFieldMode.BINARY ? null : label}
                         error={touched && error}>
                         {(): any => {
                             const interceptOnChange = (value: any): void => {
@@ -26,7 +26,7 @@ export const SelectField = ({ name, label, type = SelectFieldType.BINARY, option
 
                             const interceptOnFocus = (): void => setTouched(true);
 
-                            if (type === SelectFieldType.BINARY) {
+                            if (mode === SelectFieldMode.BINARY) {
                                 return (
                                     <SelectOption
                                         value={null}
@@ -38,7 +38,7 @@ export const SelectField = ({ name, label, type = SelectFieldType.BINARY, option
                                         onFocus={interceptOnFocus}
                                     />
                                 );
-                            } else if (type === SelectFieldType.SINGLE) {
+                            } else if (mode === SelectFieldMode.SINGLE) {
                                 return options.map(([optionLabel, optionValue]) => (
                                     <SelectOption
                                         key={optionValue}
@@ -51,7 +51,7 @@ export const SelectField = ({ name, label, type = SelectFieldType.BINARY, option
                                         onFocus={interceptOnFocus}
                                     />
                                 ));
-                            } else if (type === SelectFieldType.MULTI) {
+                            } else if (mode === SelectFieldMode.MULTI) {
                                 return options.map(([optionLabel, optionValue]) => (
                                     <SelectOption
                                         key={optionValue}

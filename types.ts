@@ -153,7 +153,7 @@ export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement> 
 }
 
 /* SelectField */
-export enum SelectFieldType {
+export enum SelectFieldMode {
     BINARY,
     SINGLE,
     MULTI
@@ -163,7 +163,7 @@ export interface ISelectField {
     name: string;
     label?: string;
     inline?: boolean;
-    type: SelectFieldType;
+    mode: SelectFieldMode;
     options?: Array<[string, string]>;
     errorTransformer?: (err: any) => string;
     onChange?: (value: Array<string> | string | boolean) => void;

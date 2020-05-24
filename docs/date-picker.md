@@ -2,7 +2,7 @@
 
 # DatePicker
 
-The DatePicker widget allows you to select a date using a picker dialog. Since it uses a dialog to 
+The `DatePicker` widget allows you to select a date using a picker dialog. Since it uses a dialog to 
 provide the picker and thus requires a [DialogProvider](./dialog-provider.md) ancestor to be 
 available up the component tree.
 
@@ -10,7 +10,7 @@ available up the component tree.
 
 ### DatePicker
 
-`DatePicker` is a [controlled widget](https://reactjs.org/docs/forms.html#controlled-components) so
+This widget is a [controlled widget](https://reactjs.org/docs/forms.html#controlled-components) so
 your app can define it's state.
 
 ```jsx
@@ -33,7 +33,7 @@ your app can define it's state.
     The selected date of the widget. This is a **string** if `mode` is set to `DatePicker.SINGLE` or
     `DatePicker.MONTH`. It should be an array of dates if `mode` is set to `DatePicker.MULTI`
 
--   `label? string`
+-   `label?: string`
 
     The label to display on the widget
 
@@ -67,11 +67,11 @@ your app can define it's state.
     This function is called with the selected date(s) when the user finalizes by pressing the select
     button
     
--   `onFocus: () => void`
+-   `onFocus?: () => void`
 
     If provided, the widget calls this function anytime it receives focus
     
--   `onBlur: () => void`
+-   `onBlur?: () => void`
 
     If provided, the widget calls this function anytime it loses focus
 

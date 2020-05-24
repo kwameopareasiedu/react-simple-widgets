@@ -22,7 +22,7 @@ your app can define it's state.
 
     The selected file of the widget
 
--   `label? string`
+-   `label?: string`
 
     The label to display on the widget
 
@@ -57,11 +57,11 @@ your app can define it's state.
     This function is called with the selected file when the user finalizes by pressing the select
     button
     
--   `onFocus: () => void`
+-   `onFocus?: () => void`
 
     If provided, the widget calls this function anytime it receives focus
     
--   `onBlur: () => void`
+-   `onBlur?: () => void`
 
     If provided, the widget calls this function anytime it loses focus
 

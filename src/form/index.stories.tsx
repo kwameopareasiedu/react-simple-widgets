@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
 import { DialogProvider } from "../provider/dialog-provider";
-import { FieldDecorationType, SelectFieldType, TextFieldMode } from "../../types";
+import { FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
@@ -100,7 +100,7 @@ export const index = (): any => {
                                 <div className="col-12 col-md-6">
                                     <SelectField
                                         name="acceptTOS"
-                                        type={SelectFieldType.BINARY}
+                                        mode={SelectFieldMode.BINARY}
                                         label="Accept terms of agreement"
                                         onChange={v => console.log("Terms of Service", v)}
                                     />
@@ -110,7 +110,7 @@ export const index = (): any => {
                                     <SelectField
                                         name="gender"
                                         label="Gender"
-                                        type={SelectFieldType.SINGLE}
+                                        mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
                                             ["Female", "female"]
@@ -124,7 +124,7 @@ export const index = (): any => {
                                         name="gender"
                                         inline={true}
                                         label="Gender (Inline)"
-                                        type={SelectFieldType.SINGLE}
+                                        mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
                                             ["Female", "female"]
@@ -138,7 +138,7 @@ export const index = (): any => {
                                         name="multiOptions"
                                         inline={false}
                                         label="Multi selection"
-                                        type={SelectFieldType.MULTI}
+                                        mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
                                             ["Bar", "bar"],
@@ -153,7 +153,7 @@ export const index = (): any => {
                                         name="multiOptions"
                                         inline={true}
                                         label="Multi selection (inline)"
-                                        type={SelectFieldType.MULTI}
+                                        mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
                                             ["Bar", "bar"],

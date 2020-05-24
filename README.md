@@ -12,15 +12,25 @@ It provides customizable widgets that perform commonly needed tasks within your 
 Providers wrap around you app and provide globally accessible functionality to all pages of your app
 
 -   [DialogProvider](./docs/dialog-provider.md) - Provides a simple dialog framework within your app
--   [ValueStoreProvider](docs/value-store-provider.md) - Provides a global value storage which can utilize the local storage API to persist data
--   [FlashProvider](./docs/flash-provider.md) - Provides a flash message framework built using the dialog framework
--   [PageTransitionProvider](./docs/page-transition-provider.md) - Provides a page transition framework for navigating between different pages of your app
+-   [ValueStoreProvider](docs/value-store-provider.md) - Provides a global value storage which can 
+    utilize the local storage API to persist data
+-   [FlashProvider](./docs/flash-provider.md) - Provides a flash message framework built using the 
+    dialog framework
+-   [PageTransitionProvider](./docs/page-transition-provider.md) - Provides a page transition 
+    framework for navigating between different pages of your app
 
 #### Form
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
-**TBD**
+-   [CustomField](./docs/custom-field.md) - A widget that allows custom components to be integrated 
+    with a form 
+-   [TextField](./docs/text-field.md) - A text field that doubles as a rich text editor
+-   [DropdownField](./docs/dropdown-field.md) - A widget that allows selection from a dropdown
+-   [SelectField](./docs/text-field.md) - A widget that allows binary, single or multi selection 
+    from a list of options
+-   [FileField](./docs/field-field.md) - A form wrapper widget for the 
+    [FilePicker](./docs/file-picker.md)
 
 #### Pickers
 
@@ -36,6 +46,8 @@ Pickers allow you to select some complex data type
 
 ### Support
 
-If you'd like to support this project, you can do so by becoming a patreon on [Patreon](https://www.patreon.com/kwameopareasiedu)
+If you'd like to support this project, you can do so by becoming a patreon on 
+[Patreon](https://www.patreon.com/kwameopareasiedu)
 
-It would be really helpful if you can star the project on [Github](https://github.com/kwameopareasiedu/react-simple-widgets)
+It would be really helpful if you can star the project on 
+[Github](https://github.com/kwameopareasiedu/react-simple-widgets)

@@ -2,7 +2,7 @@
 
 # PageTransitionProvider
 
-The PageTransitionProvider provides smooth transitions between pages of your app. It manages the 
+The `PageTransitionProvider` provides smooth transitions between pages of your app. It manages the 
 page transition animation and then uses a 
 [Router](https://reacttraining.com/react-router/web/api/Router) to actually change the pages. 
 It therefore requires a Router instance as an ancestor widget.
