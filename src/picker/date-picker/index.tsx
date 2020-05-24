@@ -222,10 +222,10 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
  */
 export const DatePicker = ({
     date,
-    mode,
+    mode = DatePickerMode.SINGLE,
     label,
     error,
-    format,
+    format = "YYYY-MM-DD",
     displayFormat = "dddd, Do MMMM YYYY",
     decoration,
     validator,
@@ -251,6 +251,7 @@ export const DatePicker = ({
             helper => <DatePickerDialog helper={helper} mode={mode} date={date} label={label} format={format} validator={validator} />,
             options
         );
+
         setDialogOpen(true);
         onFocus();
     };
@@ -264,7 +265,7 @@ export const DatePicker = ({
     };
 
     return (
-        <FieldDecoration label={label} decoration={decoration} error={error} hasValue={!!date}>
+        <FieldDecoration label={label} decoration={decoration} error={error} hasValue={!!date || dialogOpen}>
             {({ onFieldFocus, onFieldBlur }): any => (
                 <div
                     className="react-simple-widget date-picker"

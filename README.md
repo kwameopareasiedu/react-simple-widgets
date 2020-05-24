@@ -27,6 +27,8 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 Pickers allow you to select some complex data type
 
 -   [FilePicker](./docs/file-picker.md) - A simple file picker which supports drag-and-drop feature
+-   [DatePicker](./docs/date-picker.md) - A date picker which supports single and multiple date 
+    selection as well as month selection
 
 ### Maintainers
 

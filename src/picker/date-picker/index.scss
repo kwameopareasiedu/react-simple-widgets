@@ -43,7 +43,7 @@
         }
 
         button:hover {
-            background-color: var(--rsw-primary-theme-bg-color);
+            background-color: var(--rsw-date-picker-header-bg-color);
             text-decoration: none;
         }
 
@@ -61,7 +61,7 @@
             display: grid;
             padding: 6px 1.25rem;
             margin: 0 -1.25rem 15px;
-            background-color: var(--rsw-primary-theme-bg-color);
+            background-color: var(--rsw-date-picker-header-bg-color);
             grid-template-columns: repeat(7, 1fr);
 
             span {
@@ -91,7 +91,7 @@
 
             .calendar-day.calendar-day-valid:hover {
                 cursor: pointer;
-                background-color: var(--rsw-primary-theme-bg-color);
+                background-color: var(--rsw-date-picker-header-bg-color);
             }
 
             .calendar-day.calendar-day-active,
@@ -118,7 +118,7 @@
 
         .calendar-month:hover {
             cursor: pointer;
-            background-color: var(--rsw-primary-theme-bg-color);
+            background-color: var(--rsw-date-picker-header-bg-color);
         }
 
         .calendar-month.calendar-month-active,
