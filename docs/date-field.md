@@ -1,28 +1,28 @@
 [Back to components](../README.md#form)
 
-# FileField
+# DateField
 
-This widget is a form wrapper over the [FilePicker](file-picker.md)
+This widget is a form wrapper over the [DatePicker](date-picker.md)
 
 ## API
 
-### FileField
+### DateField
 
-Because this widget wraps the [FilePicker](file-picker.md) widget, it accepts all its props as well
+Because this widget wraps the [DatePicker](date-picker.md) widget, it accepts all its props as well
 as the props specified here.
 
-It however does not accept the `file` prop as this is provided by the 
+It however does not accept the `date` prop as this is provided by the 
 [Formik](https://jaredpalmer.com/formik/) holder.
 
 ```jsx
-<FileField name={name} errorTransformer={errorTransformer} />
+<DateField name={name} errorTransformer={errorTransformer} onChange={onChange} />
 ```
 
 -   `name: string`
 
     The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
     
--   `onChange?: (file: File) => void`
+-   `onChange?: (date: Array<string> | string) => void`
 
     If provided, this function is called when the value of the widget changes
 

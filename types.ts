@@ -170,19 +170,6 @@ export interface ISelectField {
 }
 
 /* FilePicker */
-export interface IFileField {
-    name: string;
-    limit?: number;
-    label?: string;
-    extensions?: Array<string>;
-    decoration?: FieldDecorationType;
-    validator?: (file: File) => string;
-    errorTransformer?: (err: any) => string;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
-
-/* FilePicker */
 export interface IFilePicker {
     file: File;
     error?: string;
@@ -192,6 +179,20 @@ export interface IFilePicker {
     decoration?: FieldDecorationType;
     validator?: (file: File) => string;
     onChange: (file: File) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
+
+/* FileField */
+export interface IFileField {
+    name: string;
+    limit?: number;
+    label?: string;
+    extensions?: Array<string>;
+    decoration?: FieldDecorationType;
+    validator?: (file: File) => string;
+    errorTransformer?: (err: any) => string;
+    onChange?: (file: File) => void;
     onFocus?: () => void;
     onBlur?: () => void;
 }
@@ -211,8 +212,24 @@ export interface IDatePicker {
     displayFormat?: string;
     date: string | Array<string>;
     decoration?: FieldDecorationType;
-    onChange: (date: string | Array<string>) => void;
     validator?: (date: string) => string;
+    onChange: (date: string | Array<string>) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
+
+/* DateField */
+export interface IDateField {
+    name: string;
+    label?: string;
+    error?: string;
+    format?: string;
+    mode?: DatePickerMode;
+    displayFormat?: string;
+    decoration?: FieldDecorationType;
+    validator?: (date: string) => string;
+    errorTransformer?: (err: any) => string;
+    onChange?: (date: string | Array<string>) => void;
     onFocus?: () => void;
     onBlur?: () => void;
 }

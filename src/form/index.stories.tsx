@@ -2,10 +2,11 @@ import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
 import { DialogProvider } from "../provider/dialog-provider";
-import { FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
+import { DatePickerMode, FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
+import { DateField } from "./date-field";
 
 export default {
     title: "React simple widget - Form",
@@ -23,7 +24,8 @@ export const index = (): any => {
             acceptTOS: false,
             gender: "",
             multiOptions: "",
-            file: null
+            file: null,
+            date: null
         };
 
         const validate = (values: any) => {
@@ -160,6 +162,16 @@ export const index = (): any => {
                                             ["Baz", "baz"]
                                         ]}
                                         onChange={v => console.log("Multi-selection", v)}
+                                    />
+
+                                    <br />
+
+                                    <DateField
+                                        name="date"
+                                        format="YYYY-MM-DD"
+                                        label="Date picker"
+                                        displayFormat="dddd, Do MMMM YYYY"
+                                        mode={DatePickerMode.SINGLE}
                                     />
                                 </div>
                             </div>
