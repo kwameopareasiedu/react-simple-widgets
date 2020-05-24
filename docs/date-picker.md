@@ -17,9 +17,9 @@ your app can define it's state.
 <DatePicker mode={mode} date={date} label={label} decoration={decoration} error={error} format={format} displayFormat={displayFormat} validator={validator} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
 ```
 
--   `mode?: DatePickerMode`
+-   `mode?: DatePickerMode = DatePicker.SINGLE`
 
-    The mode of the picker. This defaults to `DatePickerMode.SINGLE`
+    The mode of the picker
     
     -   `DatePicker.SINGLE` - Configures the widget to select a single date
     
@@ -46,17 +46,16 @@ your app can define it's state.
 
     An optional error message to show under the widget
 
--   `format?: Array<string>`
+-   `format?: Array<string> = "YYYY-MM-DD"`
 
     This is the date format for use within the widget. It is also the format the `date` prop should
-    be in. The widget will also return the selected date in this format. This defaults to 
-    `YYYY-MM-DD`
+    be in. The widget will also return the selected date in this format
 
--   `displayFormat?: number`
+-   `displayFormat?: string = "dddd, Do MMMM YYYY"`
 
     This is the format for the display of the selected date(s). This only affects the display of the
-    dates. This defaults to `dddd, Do MMMM YYYY`. See the documentation on 
-    [Moment](https://momentjs.com/docs/#/parsing/string-format/) for supported formats.
+    dates. See the documentation on [Moment](https://momentjs.com/docs/#/parsing/string-format/) 
+    for supported formats.
 
 -   `validator?: (date: string) => string`
 

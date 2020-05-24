@@ -2,7 +2,7 @@
 
 # ValueStoreProvider
 
-The ValueStoreProvider provides a global value store for your application. You can use this to
+The `ValueStoreProvider` provides a global value store for your application. You can use this to
 persist shared objects across different parts of your application. Each value stored can be
 configured to be stored only in memory or in the local storage. If initialLocalStorageKeys array is
 provided, this provider will read the values corresponding to these keys from the local storage and

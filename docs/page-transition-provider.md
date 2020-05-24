@@ -3,11 +3,12 @@
 # PageTransitionProvider
 
 The PageTransitionProvider provides smooth transitions between pages of your app. It manages the 
-page transition animation and then uses a [Router](https://reacttraining.com/react-router/web/api/Router)
-to actually change the pages. It therefore requires a Router instance as an ancestor widget.
+page transition animation and then uses a 
+[Router](https://reacttraining.com/react-router/web/api/Router) to actually change the pages. 
+It therefore requires a Router instance as an ancestor widget.
 
-This provider is designed to work seamlessly with ReactRouterDOM's routers to parameters such as 
-`basename` on the Router will not break any functionality in your app.
+This provider works seamlessly with ReactRouterDOM's routers and parameters such as `basename` on 
+the Router will not break any functionality in your app.
 
 ## API
 

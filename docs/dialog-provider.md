@@ -2,9 +2,9 @@
 
 # DialogProvider
 
-The DialogProvider provides a dialog API for your app. This widget renders dialogs on top of its
-children. This prevents any possible stacking context issues between the dialogs and components of
-your application (especially issues with any CSS grid you might have).
+The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its
+children. This prevents any possible stacking context issues between the full page dialogs and 
+components of your application (especially issues with any CSS grid you might have).
 
 ## API
 
@@ -31,7 +31,7 @@ const { showDialog } = useContext(DialogProviderContext);
 
 #### showDialog
 
-`showDialog` is a function to send a component up to the `DialogProvider` to be rendered in a dialog
+`showDialog` is a function to render your component in a dialog
 
 ```jsx
 showDialog(builderFunction, options);
@@ -39,8 +39,8 @@ showDialog(builderFunction, options);
 
 -   `builderFunction: (dialogHelper: IDialogHelper) => any`
 
-    This is a function that takes a helper object provided by the `DialogProvider` and should return
-    the component to show in the dialog. The `dialogHelper` parameter is an object which provides
+    This is a function that takes a helper object provided by the widget and should return the 
+    component to render in the dialog. The `dialogHelper` parameter is an object which provides
     the dialog's `dismiss` method:
 
     -   `dismiss: (returnValue?: any) => void`
@@ -52,20 +52,20 @@ showDialog(builderFunction, options);
 
     This is a configuration object for the dialog. It contains the following properties:
 
-    -   `size?: DialogSize`
+    -   `size?: DialogSize = DialogSize.SMALL`
 
         Controls the maximum width of the dialog. It can be `DialogSize.SMALL`, `DialogSize.MEDIUM`
-        or `DialogSize.WIDE`.
-        It defaults to `DialogSize.SMALL`
+        or `DialogSize.WIDE`
 
     -   `onDialogDismissed?: (returnedValue?: any) => void`
 
         If provided, this function will be called when the `dismiss` function is.
-        If `dismiss` is called with a value, the value will be passed into this function also.
+        If `dismiss` is called with a value, the value will be passed into this function as well.
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
+A complete usage can be found in the 
+[Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
 
 ## Sidenotes
 
@@ -74,14 +74,3 @@ A complete usage can be found in the [Storybook stories for this widget](../src/
 
 > DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is
 > entirely up to the developer.
-
-> The vertical margins on the dialogs can be overriden using the `--dialog-view-vertical-margin`
-> CSS variable.
-
-```css
-body {
-    .react-simple-widget.dialog-view {
-        --dialog-view-vertical-margin: 75px;
-    }
-}
-```
