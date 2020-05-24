@@ -27,7 +27,7 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
     with a form 
 -   [TextField](./docs/text-field.md) - A text field that doubles as a rich text editor
 -   [DropdownField](./docs/dropdown-field.md) - A widget that allows selection from a dropdown
--   [SelectField](./docs/text-field.md) - A widget that allows binary, single or multi selection 
+-   [SelectField](./docs/select-field.md) - A widget that allows binary, single or multi selection 
     from a list of options
 -   [FileField](./docs/field-field.md) - A form wrapper widget for the 
     [FilePicker](./docs/file-picker.md)
