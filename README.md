@@ -29,8 +29,10 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 -   [DropdownField](./docs/dropdown-field.md) - A widget that allows selection from a dropdown
 -   [SelectField](./docs/select-field.md) - A widget that allows binary, single or multi selection 
     from a list of options
--   [FileField](./docs/field-field.md) - A form wrapper widget for the 
+-   [FileField](./docs/file-field.md) - A form wrapper widget for the 
     [FilePicker](./docs/file-picker.md)
+-   [DateField](./docs/date-field.md) - A form wrapper widget for the 
+    [DatePicker](./docs/date-picker.md)
 
 #### Pickers
 
