@@ -87,6 +87,10 @@ export const withSorting = () => {
             }, 1000 + Math.random() * 2000);
         }, [page]);
 
+        useEffect(() => {
+            console.log(sortInfo);
+        }, [sortInfo]);
+
         return (
             <ListView
                 total={20}
@@ -117,7 +121,6 @@ export const withSorting = () => {
 
 export const withActions = () => {
     const ExampleApp = () => {
-        const [sortInfo, setSortInfo] = useState<any>();
         const [page, setPage] = useState<any>(1);
         const [loading, setLoading] = useState<any>(false);
         const [items, setItems] = useState(collection.slice(0, 5));
@@ -136,7 +139,6 @@ export const withActions = () => {
                 page={page}
                 pageSize={5}
                 items={items}
-                sort={sortInfo}
                 busy={loading}
                 props={[
                     ["Name", "name"],
@@ -150,7 +152,6 @@ export const withActions = () => {
                     ["Action #2", (): void => console.log("Action #2 clicked")],
                     ["Action #3", (): void => console.log("Action #3 clicked")]
                 ]}
-                onSort={(label, order) => setSortInfo([label, order])}
                 onPageChange={setPage}
             />
         );

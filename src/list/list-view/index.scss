@@ -6,10 +6,7 @@
     flex-direction: column;
     overflow: hidden;
 
-    header {
-        top: 0;
-        left: 0;
-        right: 0;
+    header.desktop-header {
         display: flex;
         box-shadow: 2px 2px 15px #00000011;
 
@@ -57,7 +54,7 @@
         }
     }
 
-    header.items-overflow {
+    header.desktop-header.items-overflow {
         .react-simple-widget.list-view-header-item:last-child {
             padding-right: 23px;
 
@@ -67,19 +64,19 @@
         }
     }
 
-    header.items-options {
+    header.desktop-header.items-options {
         .react-simple-widget.list-view-header-item:last-child {
             padding-right: 34px;
         }
     }
 
-    header.items-overflow.items-options {
+    header.desktop-header.items-overflow.items-options {
         .react-simple-widget.list-view-header-item:last-child {
             padding-right: 45px;
         }
     }
 
-    section.items {
+    section.desktop-items {
         flex: 1 1;
         overflow: auto;
 
@@ -143,7 +140,7 @@
         }
     }
 
-    section.items.items-loading {
+    section.desktop-items.items-loading {
         position: relative;
         min-height: 4rem;
         pointer-events: none;
@@ -153,8 +150,8 @@
         }
     }
 
-    section.items.items-loading::before,
-    section.items.items-loading::after {
+    section.desktop-items.items-loading::before,
+    section.desktop-items.items-loading::after {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -166,7 +163,7 @@
         z-index: 2;
     }
 
-    section.items.items-loading::before {
+    section.desktop-items.items-loading::before {
         bottom: unset;
         top: 0;
     }

@@ -1,11 +1,12 @@
 import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { IDialogHelper, IListView, ListViewSortOrder } from "../../../types";
+import { DialogProviderContext } from "../../provider/dialog-provider";
+import { ListViewMobileHeader } from "./mobile-header";
 import SortNoneIcon from "../../assets/sort-none.svg";
 import SortDownIcon from "../../assets/sort-down.svg";
 import SortUpIcon from "../../assets/sort-up.svg";
 import MoreIcon from "../../assets/more.svg";
-import { DialogProviderContext } from "../../provider/dialog-provider";
 
 /**
  * ListView is a widget which displays a list of items with pagination and sorting features. For each item, it can also
@@ -19,6 +20,7 @@ export const ListView = ({
     items,
     props,
     options,
+    breakpoint = 768,
     sort,
     onSort,
     onPageChange,
@@ -28,24 +30,22 @@ export const ListView = ({
     const pages = Math.ceil(total / pageSize);
     const minPage = Math.max(1, page - 4);
     const maxPage = Math.min(page + 4, pages);
-    const [maxHeightOverflow, setMaxHeightOverflow] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [itemOverflow, setItemOverflow] = useState(false);
     const { showDialog } = useContext(DialogProviderContext);
-    const sectionRef = useRef();
+    const itemsRef = useRef();
 
     useEffect(() => {
-        const l = (): void => updateOverflowStatus();
+        const l = (): void => {
+            updateDesktopItemsOverflowStatus();
+            setWindowWidth(window.innerWidth);
+        };
+
         window.addEventListener("resize", l);
         return () => window.removeEventListener("resize", l);
     }, []);
 
-    useEffect(() => updateOverflowStatus(), [items]);
-
-    const updateOverflowStatus = (): void => {
-        // Check if the items section is overflowing and apply the appropriate overflow class to
-        // the header to keep it aligned with the items section which would now have a scrollbar
-        const sectionDOMElement: Element = sectionRef.current;
-        setMaxHeightOverflow(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
-    };
+    useEffect(() => updateDesktopItemsOverflowStatus(), [items]);
 
     const itemPropValue = (item: any, itemIndex: number, propIndex: number): any => {
         const propResolution = props[propIndex][1];
@@ -72,60 +72,78 @@ export const ListView = ({
         return propertyValue.value || "---";
     };
 
+    const updateDesktopItemsOverflowStatus = (): void => {
+        // Check if the items section is overflowing and apply the appropriate overflow class to
+        // the header to keep it aligned with the items section which would now have a scrollbar
+        const sectionDOMElement: Element = itemsRef.current;
+
+        if (!sectionDOMElement) return;
+
+        setItemOverflow(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
+    };
+
     const showItemDialog = (item: any): void => {
         if (!!onOptionsClick) return onOptionsClick(item);
         showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={options} />);
     };
 
-    const headerClassName = (): string => {
-        const classes = [];
-        if (maxHeightOverflow) classes.push("items-overflow");
-        if (!!options) classes.push("items-options");
+    const desktopHeaderClassName = (): string => {
+        const classes = ["desktop-header"];
+        if (itemOverflow) classes.push("items-overflow");
+        if (!!options || !!onOptionsClick) classes.push("items-options");
         return classes.join(" ");
     };
 
     return (
         <div className="react-simple-widget list-view">
-            <header className={headerClassName()}>
-                {props.map(([label], i) => {
-                    const [sortedLabel, sortedLabelOrder] = sort || [];
-                    const isActiveSortLabel = sortedLabel === label;
-                    const sortOrder = !!onSort && isActiveSortLabel ? sortedLabelOrder : ListViewSortOrder.NONE;
-                    const onSortLabel = (order: ListViewSortOrder) => onSort(label, order);
+            {windowWidth < breakpoint ? (
+                <React.Fragment>
+                    <ListViewMobileHeader props={props} sort={sort} onSort={onSort} />
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    <header className={desktopHeaderClassName()}>
+                        {props.map(([label], i) => {
+                            const [sortedLabel, sortedLabelOrder] = sort || [];
+                            const isActiveSortLabel = sortedLabel === label;
+                            const sortOrder = !!onSort && isActiveSortLabel ? sortedLabelOrder : ListViewSortOrder.NONE;
+                            const onSortLabel = (order: ListViewSortOrder) => onSort(label, order);
 
-                    return (
-                        <ListViewHeaderItem
-                            key={label + i}
-                            label={label}
-                            sortEnabled={!!onSort}
-                            actionHeader={false}
-                            sortOrder={sortOrder}
-                            isActiveSortLabel={isActiveSortLabel}
-                            onSort={onSortLabel}
-                        />
-                    );
-                })}
-            </header>
+                            return (
+                                <ListViewHeaderItem
+                                    key={label + i}
+                                    label={label}
+                                    sortEnabled={!!onSort}
+                                    actionHeader={false}
+                                    sortOrder={sortOrder}
+                                    isActiveSortLabel={isActiveSortLabel}
+                                    onSort={onSortLabel}
+                                />
+                            );
+                        })}
+                    </header>
 
-            <section ref={sectionRef} className={busy ? "items items-loading" : "items"}>
-                {items
-                    .filter(item => (!!skipIf ? !skipIf(item) : true))
-                    .map((item, itemIndex) => {
-                        return (
-                            <div key={itemIndex} className="item">
-                                {props.map((prop: any, propIndex: number) => (
-                                    <span key={"item" + itemIndex + propIndex}>{itemPropValue(item, itemIndex, propIndex)}</span>
-                                ))}
+                    <section ref={itemsRef} className={busy ? "desktop-items items-loading" : "desktop-items"}>
+                        {items
+                            .filter(item => (!!skipIf ? !skipIf(item) : true))
+                            .map((item, itemIndex) => {
+                                return (
+                                    <div key={itemIndex} className="item">
+                                        {props.map((prop: any, propIndex: number) => (
+                                            <span key={"item" + itemIndex + propIndex}>{itemPropValue(item, itemIndex, propIndex)}</span>
+                                        ))}
 
-                                {!!options && (
-                                    <span className="item-options" onClick={(): void => showItemDialog(item)}>
-                                        <img src={MoreIcon} alt="More" />
-                                    </span>
-                                )}
-                            </div>
-                        );
-                    })}
-            </section>
+                                        {(!!options || !!onOptionsClick) && (
+                                            <span className="item-options" onClick={(): void => showItemDialog(item)}>
+                                                <img src={MoreIcon} alt="More" />
+                                            </span>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                    </section>
+                </React.Fragment>
+            )}
 
             <section className="footer">
                 <div className="row">
