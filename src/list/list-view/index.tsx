@@ -1,10 +1,11 @@
 import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { DialogProviderContext } from "../../provider/dialog-provider";
-import { IDialogHelper, IListView } from "../../../types";
+import { ListViewItemOptionsDialog } from "./options-dialog";
 import { ListViewDesktopHeader } from "./desktop-header";
 import { ListViewMobileHeader } from "./mobile-header";
 import MoreIcon from "../../assets/more.svg";
+import { IListView } from "../../../types";
 import { ListViewFooter } from "./footer";
 
 /**
@@ -122,71 +123,6 @@ export const ListView = ({
             )}
 
             <ListViewFooter page={page} total={total} pageSize={pageSize} onPageChange={onPageChange} />
-
-            {/*<section className="footer">*/}
-            {/*    <div className="row">*/}
-            {/*        <div className="col-12 col-md-6">*/}
-            {/*            <p>*/}
-            {/*                Showing {(page - 1) * pageSize + 1} - {Math.min(total, page * pageSize)} of {total} items*/}
-            {/*            </p>*/}
-            {/*        </div>*/}
-
-            {/*        <div className="col-12 col-md-6">*/}
-            {/*            <button type="button" className="btn btn-link btn-sm" disabled={page === 1} onClick={(): void => onPageChange(page - 1)}>*/}
-            {/*                Prev*/}
-            {/*            </button>*/}
-
-            {/*            {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {*/}
-            {/*                const isPrimary = i + minPage === page;*/}
-            {/*                const onClick = (): void => onPageChange(minPage + i);*/}
-            {/*                const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";*/}
-            {/*                const props: any = { key: i, type: "button", className, onClick };*/}
-            {/*                return <button {...props}>{i + minPage}</button>;*/}
-            {/*            })}*/}
-
-            {/*            <button type="button" className="btn btn-link btn-sm" disabled={page === pages} onClick={(): void => onPageChange(page + 1)}>*/}
-            {/*                Next*/}
-            {/*            </button>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</section>*/}
-        </div>
-    );
-};
-
-interface IListViewItemOptionsDialog {
-    item: any;
-    helper: IDialogHelper;
-    options?: Array<[string, (item: any, optionIndex: number) => void]>;
-}
-
-const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewItemOptionsDialog): any => {
-    const interceptOnClick = (optionIndex: number, callback: Function): void => {
-        callback(item, optionIndex);
-        helper.dismiss();
-    };
-
-    return (
-        <div className="react-simple-widget list-view-item-options-dialog card">
-            <div className="card-body">
-                <p className="text-center">Select an option</p>
-
-                <div className="list-group list-group-flush">
-                    {options.map(([label, callback], i) => (
-                        <button
-                            type="button"
-                            key={label + i}
-                            className="list-group-item list-group-item-action"
-                            onClick={(): void => interceptOnClick(i, callback)}>
-                            {label}
-                        </button>
-                    ))}
-                </div>
-
-                <button type="button" className="btn btn-link btn-sm btn-block" onClick={helper.dismiss}>
-                    Close
-                </button>
-            </div>
         </div>
     );
 };
