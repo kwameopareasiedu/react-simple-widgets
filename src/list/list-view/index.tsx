@@ -1,13 +1,11 @@
 import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { IDialogHelper, IListView, ListViewSortOrder } from "../../../types";
 import { DialogProviderContext } from "../../provider/dialog-provider";
+import { IDialogHelper, IListView } from "../../../types";
 import { ListViewDesktopHeader } from "./desktop-header";
 import { ListViewMobileHeader } from "./mobile-header";
-import SortNoneIcon from "../../assets/sort-none.svg";
-import SortDownIcon from "../../assets/sort-down.svg";
-import SortUpIcon from "../../assets/sort-up.svg";
 import MoreIcon from "../../assets/more.svg";
+import { ListViewFooter } from "./footer";
 
 /**
  * ListView is a widget which displays a list of items with pagination and sorting features. For each item, it can also
@@ -28,9 +26,6 @@ export const ListView = ({
     onOptionsClick,
     skipIf
 }: IListView): any => {
-    const pages = Math.ceil(total / pageSize);
-    const minPage = Math.max(1, page - 4);
-    const maxPage = Math.min(page + 4, pages);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [itemOverflow, setItemOverflow] = useState(false);
     const { showDialog } = useContext(DialogProviderContext);
@@ -126,69 +121,36 @@ export const ListView = ({
                 </React.Fragment>
             )}
 
-            <section className="footer">
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <p>
-                            Showing {(page - 1) * pageSize + 1} - {Math.min(total, page * pageSize)} of {total} items
-                        </p>
-                    </div>
+            <ListViewFooter page={page} total={total} pageSize={pageSize} onPageChange={onPageChange} />
 
-                    <div className="col-12 col-md-6">
-                        <button type="button" className="btn btn-link btn-sm" disabled={page === 1} onClick={(): void => onPageChange(page - 1)}>
-                            Prev
-                        </button>
+            {/*<section className="footer">*/}
+            {/*    <div className="row">*/}
+            {/*        <div className="col-12 col-md-6">*/}
+            {/*            <p>*/}
+            {/*                Showing {(page - 1) * pageSize + 1} - {Math.min(total, page * pageSize)} of {total} items*/}
+            {/*            </p>*/}
+            {/*        </div>*/}
 
-                        {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {
-                            const isPrimary = i + minPage === page;
-                            const onClick = (): void => onPageChange(minPage + i);
-                            const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";
-                            const props: any = { key: i, type: "button", className, onClick };
-                            return <button {...props}>{i + minPage}</button>;
-                        })}
+            {/*        <div className="col-12 col-md-6">*/}
+            {/*            <button type="button" className="btn btn-link btn-sm" disabled={page === 1} onClick={(): void => onPageChange(page - 1)}>*/}
+            {/*                Prev*/}
+            {/*            </button>*/}
 
-                        <button type="button" className="btn btn-link btn-sm" disabled={page === pages} onClick={(): void => onPageChange(page + 1)}>
-                            Next
-                        </button>
-                    </div>
-                </div>
-            </section>
+            {/*            {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {*/}
+            {/*                const isPrimary = i + minPage === page;*/}
+            {/*                const onClick = (): void => onPageChange(minPage + i);*/}
+            {/*                const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";*/}
+            {/*                const props: any = { key: i, type: "button", className, onClick };*/}
+            {/*                return <button {...props}>{i + minPage}</button>;*/}
+            {/*            })}*/}
+
+            {/*            <button type="button" className="btn btn-link btn-sm" disabled={page === pages} onClick={(): void => onPageChange(page + 1)}>*/}
+            {/*                Next*/}
+            {/*            </button>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
         </div>
-    );
-};
-
-interface IListViewHeaderItem {
-    label: string;
-    sortEnabled: boolean;
-    actionHeader: boolean;
-    isActiveSortLabel: boolean;
-    sortOrder: ListViewSortOrder;
-    onSort: (order: ListViewSortOrder) => void;
-}
-
-const ListViewHeaderItem = ({ label, sortEnabled, actionHeader, sortOrder, isActiveSortLabel, onSort }: IListViewHeaderItem): any => {
-    const className = (): string => {
-        const classes = ["react-simple-widget", "list-view-header-item"];
-        if (sortEnabled) classes.push("list-view-header-item-sort-enabled");
-        if (actionHeader) classes.push("list-view-header-item-action");
-        return classes.join(" ");
-    };
-
-    const interceptOnSort = () => {
-        if (isActiveSortLabel) {
-            if (sortOrder === ListViewSortOrder.NONE) onSort(ListViewSortOrder.ASC);
-            if (sortOrder === ListViewSortOrder.ASC) onSort(ListViewSortOrder.DESC);
-            if (sortOrder === ListViewSortOrder.DESC) onSort(ListViewSortOrder.NONE);
-        } else onSort(ListViewSortOrder.ASC);
-    };
-
-    return (
-        <span className={className()} onClick={interceptOnSort}>
-            <span>{label}</span>
-            {sortEnabled && sortOrder === ListViewSortOrder.ASC && <img src={SortUpIcon} alt="Sort up" />}
-            {sortEnabled && sortOrder === ListViewSortOrder.DESC && <img src={SortDownIcon} alt="Sort down" />}
-            {sortEnabled && sortOrder === ListViewSortOrder.NONE && <img src={SortNoneIcon} alt="Sort none" />}
-        </span>
     );
 };
 
