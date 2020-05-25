@@ -2,6 +2,7 @@ import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { IDialogHelper, IListView, ListViewSortOrder } from "../../../types";
 import { DialogProviderContext } from "../../provider/dialog-provider";
+import { ListViewDesktopHeader } from "./desktop-header";
 import { ListViewMobileHeader } from "./mobile-header";
 import SortNoneIcon from "../../assets/sort-none.svg";
 import SortDownIcon from "../../assets/sort-down.svg";
@@ -87,13 +88,6 @@ export const ListView = ({
         showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={options} />);
     };
 
-    const desktopHeaderClassName = (): string => {
-        const classes = ["desktop-header"];
-        if (itemOverflow) classes.push("items-overflow");
-        if (!!options || !!onOptionsClick) classes.push("items-options");
-        return classes.join(" ");
-    };
-
     return (
         <div className="react-simple-widget list-view">
             {windowWidth < breakpoint ? (
@@ -102,26 +96,13 @@ export const ListView = ({
                 </React.Fragment>
             ) : (
                 <React.Fragment>
-                    <header className={desktopHeaderClassName()}>
-                        {props.map(([label], i) => {
-                            const [sortedLabel, sortedLabelOrder] = sort || [];
-                            const isActiveSortLabel = sortedLabel === label;
-                            const sortOrder = !!onSort && isActiveSortLabel ? sortedLabelOrder : ListViewSortOrder.NONE;
-                            const onSortLabel = (order: ListViewSortOrder) => onSort(label, order);
-
-                            return (
-                                <ListViewHeaderItem
-                                    key={label + i}
-                                    label={label}
-                                    sortEnabled={!!onSort}
-                                    actionHeader={false}
-                                    sortOrder={sortOrder}
-                                    isActiveSortLabel={isActiveSortLabel}
-                                    onSort={onSortLabel}
-                                />
-                            );
-                        })}
-                    </header>
+                    <ListViewDesktopHeader
+                        props={props}
+                        sort={sort}
+                        overflow={itemOverflow}
+                        showOptions={!!options || !!onOptionsClick}
+                        onSort={onSort}
+                    />
 
                     <section ref={itemsRef} className={busy ? "desktop-items items-loading" : "desktop-items"}>
                         {items
