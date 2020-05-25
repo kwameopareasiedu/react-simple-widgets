@@ -233,3 +233,23 @@ export interface IDateField {
     onFocus?: () => void;
     onBlur?: () => void;
 }
+
+/* ListViewer */
+export enum ListViewSortOrder {
+    NONE,
+    ASC,
+    DESC
+}
+
+export interface IListView {
+    actions?: any;
+    page: number;
+    total: number;
+    pageSize: number;
+    items: Array<any>;
+    sort?: [string, ListViewSortOrder];
+    props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
+    onSort?: (prop: string, order: ListViewSortOrder) => void;
+    onPageChange: (page: number) => void;
+    skipIf?: (item: any) => boolean;
+}
