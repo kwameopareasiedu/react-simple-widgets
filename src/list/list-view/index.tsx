@@ -1,5 +1,5 @@
 import "./index.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IListView, ListViewSortOrder } from "../../../types";
 import SortNoneIcon from "../../assets/sort-none.svg";
 import SortDownIcon from "../../assets/sort-down.svg";
@@ -17,11 +17,23 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
     const pages = Math.ceil(total / pageSize);
     const minPage = Math.max(1, page - 4);
     const maxPage = Math.min(page + 4, pages);
+    const [maxHeightOverflow, setMaxHeightOverflow] = useState(false);
+    const sectionRef = useRef();
 
     useEffect(() => {
-        // Anytime the items list changes, we should check if the items section is overflowing. This enables us apply the appropriate
-        // overflow class to the header to keep it aligned with the items section which would now have a scrollbar
-    }, [items]);
+        const l = (): void => updateOverflowStatus();
+        window.addEventListener("resize", l);
+        return () => window.removeEventListener("resize", l);
+    }, []);
+
+    useEffect(() => updateOverflowStatus(), [items]);
+
+    const updateOverflowStatus = (): void => {
+        // Check if the items section is overflowing and apply the appropriate overflow class to
+        // the header to keep it aligned with the items section which would now have a scrollbar
+        const sectionDOMElement: Element = sectionRef.current;
+        setMaxHeightOverflow(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
+    };
 
     const itemPropValue = (item: any, itemIndex: number, propIndex: number): any => {
         const propResolution = props[propIndex][1];
@@ -50,7 +62,7 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
 
     return (
         <div className="react-simple-widget list-view">
-            <header>
+            <header className={maxHeightOverflow ? "items-overflow" : ""}>
                 {props.map(([label], i) => {
                     const [sortedLabel, sortedLabelOrder] = sort || [];
                     const isActiveSortLabel = sortedLabel === label;
@@ -70,7 +82,7 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
                 })}
             </header>
 
-            <section className={loading ? "items items-loading" : "items"}>
+            <section ref={sectionRef} className={loading ? "items items-loading" : "items"}>
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))
                     .map((item, itemIndex) => {

@@ -242,12 +242,12 @@ export enum ListViewSortOrder {
 }
 
 export interface IListView {
+    items: Array<any>;
+    loading: boolean;
+    actions?: any;
     page: number;
     total: number;
-    actions?: any;
     pageSize: number;
-    loading: boolean;
-    items: Array<any>;
     sort?: [string, ListViewSortOrder];
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
     onSort?: (prop: string, order: ListViewSortOrder) => void;

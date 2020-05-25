@@ -57,6 +57,14 @@
         }
     }
 
+    header.items-overflow .react-simple-widget.list-view-header-item:last-child {
+        padding-right: 23px;
+
+        @-moz-document url-prefix() {
+            padding-right: 15px;
+        }
+    }
+
     section.items {
         flex: 1 1;
         overflow: auto;
@@ -80,7 +88,7 @@
         }
 
         .item:nth-of-type(2n + 1) {
-            background-color: #0000000f;
+            background-color: #00000009;
         }
 
         .item:last-child {
@@ -91,31 +99,25 @@
     section.items.items-loading {
         position: relative;
         min-height: 4rem;
-        overflow: hidden;
+        pointer-events: none;
     }
 
-    section.items.items-loading::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        padding: 0.85rem 15px;
-        background-color: white;
-        content: "Loading...";
-        z-index: 1;
-    }
-
+    section.items.items-loading::before,
     section.items.items-loading::after {
         position: absolute;
-        top: 0;
         left: 0;
+        bottom: 0;
         height: 2px;
         text-align: center;
         animation: list-view-loading-animation 5s cubic-bezier(0.58, 0.03, 0.19, 0.97) forwards;
         background-color: var(--rsw-primary-theme-color);
         content: "";
         z-index: 2;
+    }
+
+    section.items.items-loading::before {
+        bottom: unset;
+        top: 0;
     }
 
     section.footer {
