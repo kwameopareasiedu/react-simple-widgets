@@ -1,0 +1,58 @@
+.react-simple-widget.list-view-desktop-item {
+    display: flex;
+    border: 1px solid #e3e3e3;
+
+    span {
+        padding: 8px 4px;
+        flex: 1 1;
+    }
+
+    span:first-child {
+        padding-left: 8px;
+    }
+
+    span:last-child {
+        padding-right: 8px;
+    }
+
+    span.item-options {
+        position: relative;
+        flex: 0;
+        padding-left: 8px;
+
+        img {
+            width: 14px;
+            vertical-align: middle;
+        }
+    }
+
+    span.item-options::after {
+        content: "Options";
+        position: absolute;
+        top: 40%;
+        right: 0;
+        font-size: 75%;
+        color: #ffffff;
+        padding: 2px 6px;
+        background-color: #444444;
+        transition: opacity var(--rsw-transition-duration);
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    span.item-options:hover {
+        cursor: pointer;
+    }
+
+    span.item-options:hover::after {
+        opacity: 1;
+    }
+}
+
+.react-simple-widget.list-view-desktop-item:nth-of-type(2n + 1) {
+    background-color: #00000009;
+}
+
+.react-simple-widget.list-view-desktop-item:last-child {
+    border: none;
+}

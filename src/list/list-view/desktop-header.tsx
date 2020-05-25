@@ -6,18 +6,18 @@ import SortDownIcon from "../../assets/sort-down.svg";
 import SortNoneIcon from "../../assets/sort-none.svg";
 
 interface IListViewDesktopHeader {
-    overflow: boolean;
+    overflowing: boolean;
     showOptions: boolean;
     sort: [string, ListViewSortOrder];
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
     onSort: (prop: string, order: ListViewSortOrder) => void;
 }
 
-export const ListViewDesktopHeader = ({ props, sort, overflow, showOptions, onSort }: IListViewDesktopHeader): any => {
+export const ListViewDesktopHeader = ({ props, sort, overflowing, showOptions, onSort }: IListViewDesktopHeader): any => {
     const className = (): string => {
         const classes = ["react-simple-widget", "list-view-desktop-header"];
         if (showOptions) classes.push("with-actions");
-        if (overflow) classes.push("with-overflow");
+        if (overflowing) classes.push("with-overflow");
         return classes.join(" ");
     };
 

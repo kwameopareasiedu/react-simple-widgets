@@ -6,99 +6,28 @@
     flex-direction: column;
     overflow: hidden;
 
-    section.desktop-items {
+    section.items {
         flex: 1 1;
         overflow: auto;
-
-        .item {
-            display: flex;
-            border: 1px solid #e3e3e3;
-
-            span {
-                padding: 8px 4px;
-                flex: 1 1;
-            }
-
-            span:first-child {
-                padding-left: 8px;
-            }
-
-            span:last-child {
-                padding-right: 8px;
-            }
-
-            span.item-options {
-                position: relative;
-                flex: 0;
-                padding-left: 8px;
-
-                img {
-                    width: 14px;
-                    vertical-align: middle;
-                }
-            }
-
-            span.item-options::after {
-                content: "Options";
-                position: absolute;
-                top: 40%;
-                right: 0;
-                font-size: 75%;
-                color: #ffffff;
-                padding: 2px 6px;
-                background-color: #444444;
-                transition: opacity var(--rsw-transition-duration);
-                pointer-events: none;
-                opacity: 0;
-            }
-
-            span.item-options:hover {
-                cursor: pointer;
-            }
-
-            span.item-options:hover::after {
-                opacity: 1;
-            }
-        }
-
-        .item:nth-of-type(2n + 1) {
-            background-color: #00000009;
-        }
-
-        .item:last-child {
-            border: none;
-        }
     }
 
-    section.desktop-items.items-loading {
+    .busy-indicator {
         position: relative;
-        min-height: 4rem;
-        pointer-events: none;
-
-        .item {
-            opacity: 0.5;
-        }
+        height: 2px;
     }
 
-    section.desktop-items.items-loading::before,
-    section.desktop-items.items-loading::after {
+    .busy-indicator.busy::before {
         position: absolute;
+        top: 0;
         left: 0;
         bottom: 0;
-        height: 2px;
-        text-align: center;
-        animation: list-view-loading-animation 5s cubic-bezier(0.58, 0.03, 0.19, 0.97) forwards;
+        animation: list-view-busy-animation 5s cubic-bezier(0.58, 0.03, 0.19, 0.97) forwards;
         background-color: var(--rsw-primary-theme-color);
         content: "";
         z-index: 2;
     }
 
-    section.desktop-items.items-loading::before {
-        bottom: unset;
-        top: 0;
-    }
-
-    @keyframes list-view-loading-animation {
+    @keyframes list-view-busy-animation {
         from {
             right: 100%;
         }

@@ -1,10 +1,8 @@
 import "./index.scss";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { DialogProviderContext } from "../../provider/dialog-provider";
-import { ListViewItemOptionsDialog } from "./options-dialog";
+import React, { useEffect, useRef, useState } from "react";
 import { ListViewDesktopHeader } from "./desktop-header";
 import { ListViewMobileHeader } from "./mobile-header";
-import MoreIcon from "../../assets/more.svg";
+import { ListViewDesktopItem } from "./desktop-item";
 import { IListView } from "../../../types";
 import { ListViewFooter } from "./footer";
 
@@ -28,8 +26,7 @@ export const ListView = ({
     skipIf
 }: IListView): any => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [itemOverflow, setItemOverflow] = useState(false);
-    const { showDialog } = useContext(DialogProviderContext);
+    const [overflowing, setOverflowing] = useState(false);
     const itemsRef = useRef();
 
     useEffect(() => {
@@ -70,57 +67,38 @@ export const ListView = ({
     };
 
     const updateDesktopItemsOverflowStatus = (): void => {
+        const sectionDOMElement: Element = itemsRef.current;
         // Check if the items section is overflowing and apply the appropriate overflow class to
         // the header to keep it aligned with the items section which would now have a scrollbar
-        const sectionDOMElement: Element = itemsRef.current;
-
-        if (!sectionDOMElement) return;
-
-        setItemOverflow(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
-    };
-
-    const showItemDialog = (item: any): void => {
-        if (!!onOptionsClick) return onOptionsClick(item);
-        showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={options} />);
+        if (sectionDOMElement) setOverflowing(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
     };
 
     return (
         <div className="react-simple-widget list-view">
-            {windowWidth < breakpoint ? (
-                <React.Fragment>
-                    <ListViewMobileHeader props={props} sort={sort} onSort={onSort} />
-                </React.Fragment>
-            ) : (
-                <React.Fragment>
-                    <ListViewDesktopHeader
-                        props={props}
-                        sort={sort}
-                        overflow={itemOverflow}
-                        showOptions={!!options || !!onOptionsClick}
-                        onSort={onSort}
-                    />
-
-                    <section ref={itemsRef} className={busy ? "desktop-items items-loading" : "desktop-items"}>
-                        {items
-                            .filter(item => (!!skipIf ? !skipIf(item) : true))
-                            .map((item, itemIndex) => {
-                                return (
-                                    <div key={itemIndex} className="item">
-                                        {props.map((prop: any, propIndex: number) => (
-                                            <span key={"item" + itemIndex + propIndex}>{itemPropValue(item, itemIndex, propIndex)}</span>
-                                        ))}
-
-                                        {(!!options || !!onOptionsClick) && (
-                                            <span className="item-options" onClick={(): void => showItemDialog(item)}>
-                                                <img src={MoreIcon} alt="More" />
-                                            </span>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                    </section>
-                </React.Fragment>
+            {windowWidth < breakpoint && <ListViewMobileHeader props={props} sort={sort} onSort={onSort} />}
+            {windowWidth >= breakpoint && (
+                <ListViewDesktopHeader
+                    props={props}
+                    sort={sort}
+                    overflowing={overflowing}
+                    showOptions={!!options || !!onOptionsClick}
+                    onSort={onSort}
+                />
             )}
+
+            <div className={busy ? "busy-indicator busy" : "busy-indicator"} />
+
+            <section ref={itemsRef} className="items">
+                {items
+                    .filter(item => (!!skipIf ? !skipIf(item) : true))
+                    .map((item, i) => {
+                        return (
+                            <ListViewDesktopItem key={i} item={item} index={i} props={props} options={options} propValueEvaluator={itemPropValue} />
+                        );
+                    })}
+            </section>
+
+            <div className={busy ? "busy-indicator busy" : "busy-indicator"} />
 
             <ListViewFooter page={page} total={total} pageSize={pageSize} onPageChange={onPageChange} />
         </div>
