@@ -1,23 +1,35 @@
 import "./index.scss";
-import React, { useEffect, useRef, useState } from "react";
-import { IListView, ListViewSortOrder } from "../../../types";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { IDialogHelper, IListView, ListViewSortOrder } from "../../../types";
 import SortNoneIcon from "../../assets/sort-none.svg";
 import SortDownIcon from "../../assets/sort-down.svg";
 import SortUpIcon from "../../assets/sort-up.svg";
+import MoreIcon from "../../assets/more.svg";
+import { DialogProviderContext } from "../../provider/dialog-provider";
 
-interface IListViewerHeaderItem {
-    label: string;
-    sortEnabled: boolean;
-    isActiveSortLabel: boolean;
-    sortOrder: ListViewSortOrder;
-    onSort: (order: ListViewSortOrder) => void;
-}
-
-export const ListView = ({ items, page, pageSize, total, props, loading, actions, sort, onSort, skipIf, onPageChange }: IListView): any => {
+/**
+ * ListView is a widget which displays a list of items with pagination and sorting features. For each item, it can also
+ * display a dialog popup of actions on that item. Since it uses dialogs, it needs a DialogProvider as an ancestor widget
+ */
+export const ListView = ({
+    busy,
+    page,
+    total,
+    pageSize,
+    items,
+    props,
+    options,
+    sort,
+    onSort,
+    onPageChange,
+    onOptionsClick,
+    skipIf
+}: IListView): any => {
     const pages = Math.ceil(total / pageSize);
     const minPage = Math.max(1, page - 4);
     const maxPage = Math.min(page + 4, pages);
     const [maxHeightOverflow, setMaxHeightOverflow] = useState(false);
+    const { showDialog } = useContext(DialogProviderContext);
     const sectionRef = useRef();
 
     useEffect(() => {
@@ -60,9 +72,21 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
         return propertyValue.value || "---";
     };
 
+    const showItemDialog = (item: any): void => {
+        if (!!onOptionsClick) return onOptionsClick(item);
+        showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={options} />);
+    };
+
+    const headerClassName = (): string => {
+        const classes = [];
+        if (maxHeightOverflow) classes.push("items-overflow");
+        if (!!options) classes.push("items-options");
+        return classes.join(" ");
+    };
+
     return (
         <div className="react-simple-widget list-view">
-            <header className={maxHeightOverflow ? "items-overflow" : ""}>
+            <header className={headerClassName()}>
                 {props.map(([label], i) => {
                     const [sortedLabel, sortedLabelOrder] = sort || [];
                     const isActiveSortLabel = sortedLabel === label;
@@ -70,10 +94,11 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
                     const onSortLabel = (order: ListViewSortOrder) => onSort(label, order);
 
                     return (
-                        <ListViewerHeaderItem
+                        <ListViewHeaderItem
                             key={label + i}
                             label={label}
                             sortEnabled={!!onSort}
+                            actionHeader={false}
                             sortOrder={sortOrder}
                             isActiveSortLabel={isActiveSortLabel}
                             onSort={onSortLabel}
@@ -82,15 +107,21 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
                 })}
             </header>
 
-            <section ref={sectionRef} className={loading ? "items items-loading" : "items"}>
+            <section ref={sectionRef} className={busy ? "items items-loading" : "items"}>
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))
                     .map((item, itemIndex) => {
                         return (
-                            <div className="item">
+                            <div key={itemIndex} className="item">
                                 {props.map((prop: any, propIndex: number) => (
                                     <span key={"item" + itemIndex + propIndex}>{itemPropValue(item, itemIndex, propIndex)}</span>
                                 ))}
+
+                                {!!options && (
+                                    <span className="item-options" onClick={(): void => showItemDialog(item)}>
+                                        <img src={MoreIcon} alt="More" />
+                                    </span>
+                                )}
                             </div>
                         );
                     })}
@@ -110,21 +141,11 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
                         </button>
 
                         {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {
+                            const isPrimary = i + minPage === page;
                             const onClick = (): void => onPageChange(minPage + i);
-
-                            if (i + minPage === page) {
-                                return (
-                                    <button className="btn btn-primary btn-sm" onClick={onClick}>
-                                        {i + minPage}
-                                    </button>
-                                );
-                            }
-
-                            return (
-                                <button className="btn btn-link btn-sm" onClick={onClick}>
-                                    {i + minPage}
-                                </button>
-                            );
+                            const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";
+                            const props: any = { key: i, type: "button", className, onClick };
+                            return <button {...props}>{i + minPage}</button>;
                         })}
 
                         <button type="button" className="btn btn-link btn-sm" disabled={page === pages} onClick={(): void => onPageChange(page + 1)}>
@@ -137,10 +158,20 @@ export const ListView = ({ items, page, pageSize, total, props, loading, actions
     );
 };
 
-const ListViewerHeaderItem = ({ label, sortEnabled, sortOrder, isActiveSortLabel, onSort }: IListViewerHeaderItem): any => {
+interface IListViewHeaderItem {
+    label: string;
+    sortEnabled: boolean;
+    actionHeader: boolean;
+    isActiveSortLabel: boolean;
+    sortOrder: ListViewSortOrder;
+    onSort: (order: ListViewSortOrder) => void;
+}
+
+const ListViewHeaderItem = ({ label, sortEnabled, actionHeader, sortOrder, isActiveSortLabel, onSort }: IListViewHeaderItem): any => {
     const className = (): string => {
         const classes = ["react-simple-widget", "list-view-header-item"];
         if (sortEnabled) classes.push("list-view-header-item-sort-enabled");
+        if (actionHeader) classes.push("list-view-header-item-action");
         return classes.join(" ");
     };
 
@@ -159,5 +190,42 @@ const ListViewerHeaderItem = ({ label, sortEnabled, sortOrder, isActiveSortLabel
             {sortEnabled && sortOrder === ListViewSortOrder.DESC && <img src={SortDownIcon} alt="Sort down" />}
             {sortEnabled && sortOrder === ListViewSortOrder.NONE && <img src={SortNoneIcon} alt="Sort none" />}
         </span>
+    );
+};
+
+interface IListViewItemOptionsDialog {
+    item: any;
+    helper: IDialogHelper;
+    options?: Array<[string, (item: any, optionIndex: number) => void]>;
+}
+
+const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewItemOptionsDialog): any => {
+    const interceptOnClick = (optionIndex: number, callback: Function): void => {
+        callback(item, optionIndex);
+        helper.dismiss();
+    };
+
+    return (
+        <div className="react-simple-widget list-view-item-options-dialog card">
+            <div className="card-body">
+                <p className="text-center">Select an option</p>
+
+                <div className="list-group list-group-flush">
+                    {options.map(([label, callback], i) => (
+                        <button
+                            type="button"
+                            key={label + i}
+                            className="list-group-item list-group-item-action"
+                            onClick={(): void => interceptOnClick(i, callback)}>
+                            {label}
+                        </button>
+                    ))}
+                </div>
+
+                <button type="button" className="btn btn-link btn-sm btn-block" onClick={helper.dismiss}>
+                    Close
+                </button>
+            </div>
+        </div>
     );
 };

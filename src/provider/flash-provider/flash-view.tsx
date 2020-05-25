@@ -37,7 +37,7 @@ export const FlashView = ({ type, title, message, onDismiss }: IFlashView): any 
                 <img src={icon()} alt="Flash icon" className="flash-icon" />
                 <h5 className="flash-title">{title}</h5>
                 <p className="flash-message">{message}</p>
-                <button className="btn btn-lg flash-button" onClick={onDismiss}>
+                <button type="button" className="btn btn-lg flash-button" onClick={onDismiss}>
                     <img src={ChevronIcon} alt="Continue" />
                 </button>
             </div>

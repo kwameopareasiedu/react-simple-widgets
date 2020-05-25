@@ -1,8 +1,8 @@
 .react-simple-widget.list-view {
     display: flex;
-    max-height: 550px;
-    border-radius: 4px;
+    max-height: var(--rsw-list-view-max-height);
     border: 1px solid #e3e3e3;
+    border-radius: 4px;
     flex-direction: column;
     overflow: hidden;
 
@@ -57,11 +57,25 @@
         }
     }
 
-    header.items-overflow .react-simple-widget.list-view-header-item:last-child {
-        padding-right: 23px;
+    header.items-overflow {
+        .react-simple-widget.list-view-header-item:last-child {
+            padding-right: 23px;
 
-        @-moz-document url-prefix() {
-            padding-right: 15px;
+            @-moz-document url-prefix() {
+                padding-right: 15px;
+            }
+        }
+    }
+
+    header.items-options {
+        .react-simple-widget.list-view-header-item:last-child {
+            padding-right: 34px;
+        }
+    }
+
+    header.items-overflow.items-options {
+        .react-simple-widget.list-view-header-item:last-child {
+            padding-right: 45px;
         }
     }
 
@@ -85,6 +99,39 @@
             span:last-child {
                 padding-right: 8px;
             }
+
+            span.item-options {
+                position: relative;
+                flex: 0;
+                padding-left: 8px;
+
+                img {
+                    width: 14px;
+                    vertical-align: middle;
+                }
+            }
+
+            span.item-options::after {
+                content: "Options";
+                position: absolute;
+                top: 40%;
+                right: 0;
+                font-size: 75%;
+                color: #ffffff;
+                padding: 2px 6px;
+                background-color: #444444;
+                transition: opacity var(--rsw-transition-duration);
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            span.item-options:hover {
+                cursor: pointer;
+            }
+
+            span.item-options:hover::after {
+                opacity: 1;
+            }
         }
 
         .item:nth-of-type(2n + 1) {
@@ -100,6 +147,10 @@
         position: relative;
         min-height: 4rem;
         pointer-events: none;
+
+        .item {
+            opacity: 0.5;
+        }
     }
 
     section.items.items-loading::before,
@@ -164,6 +215,36 @@
         }
         to {
             right: 1%;
+        }
+    }
+}
+
+.react-simple-widget.list-view-item-options-dialog {
+    border-radius: 6px;
+    overflow: hidden;
+
+    .card-body {
+        margin: 0 -1.25rem;
+        padding: 1rem 1.25rem 0;
+
+        p {
+            font-size: 75%;
+            font-style: italic;
+            opacity: 0.65;
+        }
+
+        .list-group {
+            .list-group-item:first-child {
+                border-width: 1px 0;
+            }
+
+            .list-group-item:last-child {
+                border-width: 0 0 1px 0;
+            }
+        }
+
+        button.btn {
+            padding: 15px 0;
         }
     }
 }
