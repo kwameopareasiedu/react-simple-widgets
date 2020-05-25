@@ -1,5 +1,5 @@
 import "./index.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { IListView, ListViewSortOrder } from "../../../types";
 import SortNoneIcon from "../../assets/sort-none.svg";
 import SortDownIcon from "../../assets/sort-down.svg";
@@ -13,10 +13,15 @@ interface IListViewerHeaderItem {
     onSort: (order: ListViewSortOrder) => void;
 }
 
-export const ListView = ({ items, page, pageSize, total, props, actions, sort, onSort, skipIf, onPageChange }: IListView): any => {
+export const ListView = ({ items, page, pageSize, total, props, loading, actions, sort, onSort, skipIf, onPageChange }: IListView): any => {
     const pages = Math.ceil(total / pageSize);
     const minPage = Math.max(1, page - 4);
     const maxPage = Math.min(page + 4, pages);
+
+    useEffect(() => {
+        // Anytime the items list changes, we should check if the items section is overflowing. This enables us apply the appropriate
+        // overflow class to the header to keep it aligned with the items section which would now have a scrollbar
+    }, [items]);
 
     const itemPropValue = (item: any, itemIndex: number, propIndex: number): any => {
         const propResolution = props[propIndex][1];
@@ -65,7 +70,7 @@ export const ListView = ({ items, page, pageSize, total, props, actions, sort, o
                 })}
             </header>
 
-            <section className="items">
+            <section className={loading ? "items items-loading" : "items"}>
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))
                     .map((item, itemIndex) => {
@@ -82,7 +87,9 @@ export const ListView = ({ items, page, pageSize, total, props, actions, sort, o
             <section className="footer">
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        <p>Showing {(page - 1) * pageSize + 1} - {Math.min(total, page * pageSize)} of {total} items</p>
+                        <p>
+                            Showing {(page - 1) * pageSize + 1} - {Math.min(total, page * pageSize)} of {total} items
+                        </p>
                     </div>
 
                     <div className="col-12 col-md-6">

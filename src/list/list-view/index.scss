@@ -11,12 +11,12 @@
         left: 0;
         right: 0;
         display: flex;
-        box-shadow: 2px 2px 15px #b3b3b3;
+        box-shadow: 2px 2px 15px #00000011;
 
         .react-simple-widget.list-view-header-item {
             flex: 1 1;
             font-size: 85%;
-            padding: 8px 4px;
+            padding: 18px 4px;
             font-style: italic;
 
             img {
@@ -88,16 +88,55 @@
         }
     }
 
+    section.items.items-loading {
+        position: relative;
+        min-height: 4rem;
+        overflow: hidden;
+    }
+
+    section.items.items-loading::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 0.85rem 15px;
+        background-color: white;
+        content: "Loading...";
+        z-index: 1;
+    }
+
+    section.items.items-loading::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2px;
+        text-align: center;
+        animation: list-view-loading-animation 5s cubic-bezier(0.58, 0.03, 0.19, 0.97) forwards;
+        background-color: var(--rsw-primary-theme-color);
+        content: "";
+        z-index: 2;
+    }
+
     section.footer {
         padding: 15px 8px;
         border-top: 1px solid #e3e3e3;
+        opacity: 0.85;
 
-        .col-12:first-child{
-            text-align: left;
+        .col-12:first-child {
+            text-align: center;
+            margin-bottom: 15px;
+
+            @media screen and (min-width: 768px) {
+                text-align: left;
+            }
         }
 
-        .col-12:last-child{
-            text-align: right;
+        .col-12:last-child {
+            text-align: center;
+            @media screen and (min-width: 768px) {
+                text-align: right;
+            }
         }
 
         p {
@@ -110,9 +149,19 @@
             box-shadow: none;
         }
 
-        p, button {
+        p,
+        button {
             font-size: 85%;
             font-style: italic;
+        }
+    }
+
+    @keyframes list-view-loading-animation {
+        from {
+            right: 100%;
+        }
+        to {
+            right: 1%;
         }
     }
 }
