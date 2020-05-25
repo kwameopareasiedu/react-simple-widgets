@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ListViewDesktopHeader } from "./desktop-header";
 import { ListViewMobileHeader } from "./mobile-header";
 import { ListViewDesktopItem } from "./desktop-item";
+import { ListViewMobileItem } from "./mobile-item";
 import { IListView } from "../../../types";
 import { ListViewFooter } from "./footer";
 
@@ -18,11 +19,11 @@ export const ListView = ({
     items,
     props,
     options,
-    breakpoint = 768,
     sort,
-    onSort,
+    breakpoint = 768,
     onPageChange,
     onOptionsClick,
+    onSort,
     skipIf
 }: IListView): any => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -92,9 +93,9 @@ export const ListView = ({
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))
                     .map((item, i) => {
-                        return (
-                            <ListViewDesktopItem key={i} item={item} index={i} props={props} options={options} propValueEvaluator={itemPropValue} />
-                        );
+                        const itemProps = { key: i, item: item, index: i, options: options, props: props, propValueEvaluator: itemPropValue };
+                        if (windowWidth < breakpoint) return <ListViewMobileItem {...itemProps} />;
+                        else return <ListViewDesktopItem {...itemProps} />;
                     })}
             </section>
 

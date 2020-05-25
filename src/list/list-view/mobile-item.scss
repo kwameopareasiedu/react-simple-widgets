@@ -1,0 +1,30 @@
+.react-simple-widget.list-view-mobile-item {
+    display: grid;
+    padding: 12px;
+    border-bottom: 1px solid #e3e3e3;
+    grid-template-columns: 30% 70%;
+    grid-gap: 4px 8px;
+
+    .prop-label {
+        font-size: 85%;
+        font-style: italic;
+    }
+
+    span.item-options {
+        text-align: right;
+        padding-right: 15px;
+
+        img {
+            width: 14px;
+            vertical-align: middle;
+        }
+    }
+
+    span.item-options:hover {
+        cursor: pointer;
+    }
+}
+
+.react-simple-widget.list-view-mobile-item:last-child {
+    border-bottom: none;
+}
