@@ -42,14 +42,14 @@ Pickers allow you to select some complex data type
 -   [DatePicker](docs/date-picker.md) - A date picker which supports single and multiple date
     selection as well as month selection
 
-### List
+#### List
 
 Widgets here operate on list data
 
 -   [ListView](docs/list-view.md) - A widget that provides responsive display of tabular data
 -   [ObjectView](docs/object-view.md) - A widget that renders an object's data in a tabular form
 
-### Misc
+#### Misc
 
 Widgets under this category are for convenience
 
