@@ -17,7 +17,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
 
     useEffect(() => {
         for (const value of values) {
-            if (value.isStoredInLocalStorage) localStorage.setItem(value.key, value.value);
+            if (value.isStoredInLocalStorage && !!value.value) localStorage.setItem(value.key, value.value);
             else localStorage.removeItem(value.key);
         }
     }, [values]);
