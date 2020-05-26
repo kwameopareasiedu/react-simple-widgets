@@ -86,6 +86,12 @@
         "value",
         "flash",
         "form",
-        "formik"
+        "formik",
+        "list",
+        "object",
+        "date",
+        "file",
+        "picker",
+        "breadcrumbs"
     ]
 }
