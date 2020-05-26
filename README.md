@@ -1,9 +1,19 @@
 # react-simple-widgets
 
-###### _This library is currently under development and more widgets will be available soon._
-
 This is a collection of widgets to help accelerate your React app development.
 It provides customizable widgets that perform commonly needed tasks within your app.
+
+### Installing
+
+```
+npm i -D react-simple-widgets
+```
+
+This libraries requires [formik](https://jaredpalmer.com/formik/), [react](https://reactjs.org/) and
+[react-router-dom](https://reacttraining.com/react-router/web) as peer dependencies, so you need to
+have these installed in your application as well.
+
+You can install these dependencies with `npm i -D react react-router-dom formik`
 
 ### Widgets
 
