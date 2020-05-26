@@ -263,3 +263,10 @@ export interface IObjectView {
     props: Array<[string, string | ((object: any) => any)]>;
     splitRatio?: number;
 }
+
+/* ConfirmDialog */
+export interface IConfirmDialog {
+    children: any;
+    onConfirm: () => void;
+    onCancel?: () => void;
+}
