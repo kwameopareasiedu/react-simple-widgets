@@ -30,7 +30,7 @@ This widget renders properties of an object using a table
     > For more information, see the [stories](../src/list/object-view/index.stories.tsx) for this
     > widget
 
--   `splitRation?: number = 0.3`
+-   `splitRatio?: number = 0.3`
 
     The width ratio of the label column to the value column. It ranges from 0 to 1
 
