@@ -1,4 +1,4 @@
-[Back to components](../README.md)
+[Home](../README.md)
 
 # ValueStoreProvider
 
