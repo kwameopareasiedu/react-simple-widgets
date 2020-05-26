@@ -32,7 +32,7 @@ export type IValueStoreUpdater = (currentValue: any) => any;
 
 export interface IValueStoreProviderContext {
     get: (key: string) => any;
-    store: (key: string, value: any, storeInLocalStorage?: boolean) => void;
+    put: (key: string, value: any, storeInLocalStorage?: boolean) => void;
     update: (key: string, update: IValueStoreUpdater, storeInLocalStorageIfNotExists?: boolean) => void;
 }
 

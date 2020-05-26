@@ -27,7 +27,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
         return target ? target.value : null;
     };
 
-    const store = (key: string, value: any, storeInLocalStorage?: boolean): void => {
+    const put = (key: string, value: any, storeInLocalStorage?: boolean): void => {
         const existing = values.filter(v => v.key === key)[0];
 
         if (existing) values[values.indexOf(existing)] = new Value(existing.key, value, storeInLocalStorage);
@@ -41,8 +41,8 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
         if (existing) {
             values.push(new Value(key, updater(existing.value), existing.isStoredInLocalStorage));
             setValues([...values]);
-        } else store(key, updater(null), storeInLocalStorageIfNotExists);
+        } else put(key, updater(null), storeInLocalStorageIfNotExists);
     };
 
-    return <ValueStoreProviderContext.Provider value={{ get, store, update }}>{children}</ValueStoreProviderContext.Provider>;
+    return <ValueStoreProviderContext.Provider value={{ get, put, update }}>{children}</ValueStoreProviderContext.Provider>;
 };

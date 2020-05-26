@@ -36,7 +36,7 @@ ReactDOM.render(
 `LocalStorageProviderContext` provides the `get`, `store` and `update` functions to your component
 
 ```jsx
-const { get, store, update } = useContext(ValueStoreProviderContext);
+const { get, put, update } = useContext(ValueStoreProviderContext);
 ```
 
 #### get
@@ -51,13 +51,13 @@ get(key);
 
     This is the key under which the value is stored
 
-#### store
+#### put
 
-`store` stores a value under a specified _key_ in the `ValueStoreProvider`. This will cause any
+`put` stores a value under a specified _key_ in the `ValueStoreProvider`. This will cause any
 dependent components to update.
 
 ```jsx
-store(key, value, storeInLocalStorage);
+put(key, value, storeInLocalStorage);
 ```
 
 -   `key: string`
@@ -71,7 +71,7 @@ store(key, value, storeInLocalStorage);
 -   `storeInLocalStorage?: boolean = false`
 
     If set to true, the value is also stored in the localStorage. It is recommended to set this to
-    false if you need to hold some sensitive data using this `ValueStoreProvider`.
+    false (default) if you need to hold some sensitive data in memory using this provider.
 
 #### update
 

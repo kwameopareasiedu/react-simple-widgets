@@ -9,7 +9,7 @@ export default {
 
 export const usage = (): any => {
     const ExampleApp = (): any => {
-        const { get, store } = useContext(ValueStoreProviderContext);
+        const { get, put } = useContext(ValueStoreProviderContext);
 
         return (
             <div>
@@ -28,7 +28,7 @@ export const usage = (): any => {
                                 <input
                                     className="form-control"
                                     value={get("favourite-web-framework")}
-                                    onChange={e => store("favourite-web-framework", e.target.value, true)}
+                                    onChange={e => put("favourite-web-framework", e.target.value, true)}
                                 />
                             </div>
 
@@ -42,7 +42,7 @@ export const usage = (): any => {
                                 <input
                                     className="form-control"
                                     value={get("favourite-mobile-framework")}
-                                    onChange={e => store("favourite-mobile-framework", e.target.value, true)}
+                                    onChange={e => put("favourite-mobile-framework", e.target.value, true)}
                                 />
                             </div>
                         </div>
@@ -60,7 +60,7 @@ export const usage = (): any => {
                         <input
                             className="form-control"
                             value={get("favourite-desktop-framework")}
-                            onChange={e => store("favourite-desktop-framework", e.target.value)}
+                            onChange={e => put("favourite-desktop-framework", e.target.value)}
                         />
 
                         <br />
