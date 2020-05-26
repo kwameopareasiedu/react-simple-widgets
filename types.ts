@@ -256,3 +256,10 @@ export interface IListView {
     onPageChange: (page: number) => void;
     skipIf?: (item: any) => boolean;
 }
+
+/* ObjectView */
+export interface IObjectView {
+    object: any;
+    props: Array<[string, string | ((object: any) => any)]>;
+    splitRatio?: number;
+}
