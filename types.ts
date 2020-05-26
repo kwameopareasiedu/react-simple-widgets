@@ -250,9 +250,9 @@ export interface IListView {
     breakpoint?: number;
     sort?: [string, ListViewSortOrder];
     options?: Array<[string, (item: any, optionIndex: number) => void]>;
-    props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
+    props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
     onSort?: (prop: string, order: ListViewSortOrder) => void;
-    onOptionsClick?: (item: any, index: number) => void;
+    onOptionsClick?: (item: any, itemIndex?: number) => void;
     onPageChange: (page: number) => void;
     skipIf?: (item: any) => boolean;
 }

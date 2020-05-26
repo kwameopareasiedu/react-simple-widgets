@@ -88,10 +88,14 @@ update(key, updater, storeInLocalStorageIfNotExists);
 
 -   `updater: (currentValue: any) => any`
 
-    This function is called by the store with the current value under the _key_ (or null if value 
+    This function is called by the store with the current value under the _key_ (or null if value
     does not exist). It should return the new value to be stored under that key
 
 -   `storeInLocalStorageIfNotExists?: boolean = false`
 
-    If no value exists for the specified _key_ and this is set to true, the `ValueStoreProvider` 
-    will persist the value to the localStorage 
+    If no value exists for the specified _key_ and this is set to true, the `ValueStoreProvider`
+    will persist the value to the localStorage
+
+## Usage
+
+A complete usage can be found in the [Storybook stories for the form using this widget](../src/provider/value-store-provider/index.stories.tsx)

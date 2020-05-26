@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { ListView } from "./index";
 import { DialogProvider } from "../../provider/dialog-provider";
+import { ListView } from "./index";
 
 const collection = [
     { name: "Item 1", created_at: "2019-01-01", nested_property: { current_value: "Item 1 nested property current value" } },
