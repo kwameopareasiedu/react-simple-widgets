@@ -27,6 +27,7 @@
         "@babel/plugin-transform-spread": "^7.8.3",
         "@babel/preset-env": "^7.9.6",
         "@babel/preset-react": "^7.9.4",
+        "@rollup/plugin-image": "^2.0.5",
         "@storybook/addon-actions": "^5.3.19",
         "@storybook/addon-knobs": "^5.3.19",
         "@storybook/addons": "^5.3.19",

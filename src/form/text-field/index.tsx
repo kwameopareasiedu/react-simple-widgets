@@ -1,4 +1,4 @@
-import "react-quill/dist/quill.snow.css";
+import "./quill-snow.scss";
 import "./index.scss";
 import React from "react";
 import Quill from "react-quill";
