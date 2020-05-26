@@ -83,9 +83,9 @@ This widget is the wrapper which provides properties and functions to integrate 
 ## Usage
 
 This widget is used to style the other form widgets provided in this library. You can view each
-widget's stories to see how this widget is used
+widget's source code to see how this widget is used
 
--   [TextField](text-field.md)
--   [DropdownField](dropdown-field.md)
--   [SelectField](select-field.md)
--   [FileField](file-field.md)
+-   [TextField](../src/form/text-field/index.tsx)
+-   [DropdownField](../src/form/dropdown-field/index.tsx)
+-   [SelectField](../src/form/select-field/index.tsx)
+-   [FileField](../src/form/file-field/index.tsx)
