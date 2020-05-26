@@ -28,7 +28,7 @@ This widget is the wrapper which provides properties and functions to integrate 
 -   `children: ICustomFieldBuilder`
 
     The child of a `CustomField` is a function that returns the component to include in the form. 
-    Its signature is
+    Its signature is:
     
     ```jsx
     ({ value, touched, error, setValue, setTouched, setError }): any => {

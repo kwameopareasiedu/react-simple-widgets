@@ -33,6 +33,8 @@ Providers wrap around you app and provide globally accessible functionality to a
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
+-   [FieldDecoration](docs/field-decoration.md) - A widget that provides a label and error component
+    together with focus and blur styling to a wrapped component
 -   [CustomField](docs/custom-field.md) - A widget that allows custom components to be integrated
     with a form
 -   [TextField](docs/text-field.md) - A text field that doubles as a rich text editor
@@ -89,7 +91,7 @@ The following variables are widget specific
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- |
 | `--rsw-list-view-max-height`            | Controls the maximum height of the `ListView` widget. Scrolling of items is enabled beyond this height | `550px`       |
 | `--rsw-date-picker-header-bg-color`     | Controls the background color of the day label display in the `DatePicker` widget                      | `#209d5811`   |
-| `--rsw-field-decoration-label-bg-color` | Controls the background color of the label component of the `FieldDecorator` widget                    | `white`       |
+| `--rsw-field-decoration-label-bg-color` | Controls the background color of the label component of the `FieldDecoration` widget                   | `white`       |
 | `--rsw-select-field-indicator-size`     | Controls the width and height of options in the `SelectField` widget                                   | `1.5rem`      |
 | `--rsw-dialog-view-vertical-margin`     | Controls the top and bottom margins of dialogs created by the `DialogProvider` widget                  | `1.2rem`      |
 | `--rsw-flash-view-default-theme-color`  | Controls the default theme color of flash message dialogs created by the `FlashProvider` widget        | `#e3e3e3`     |
