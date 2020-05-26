@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { DialogProvider } from "../../provider/dialog-provider";
+import { BusyButton } from "../busy-button";
 import { ConfirmDialog } from "./index";
 
 export default { title: "ConfirmDialog", component: ConfirmDialog };
@@ -17,14 +18,10 @@ export const usage = () => {
 
         return (
             <ConfirmDialog onConfirm={interceptSetBusy} onCancel={action("Dialog dismissed")}>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                    turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Do you want to proceed?
-                </p>
-                <button className="btn btn-primary" disabled={busy}>
-                    {busy && <span className="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true" />}
+                <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
+                <BusyButton busy={busy} className="btn btn-primary">
                     Start
-                </button>
+                </BusyButton>
             </ConfirmDialog>
         );
     };

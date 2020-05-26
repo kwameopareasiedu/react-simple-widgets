@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /* DialogProvider interfaces */
@@ -269,4 +269,9 @@ export interface IConfirmDialog {
     children: any;
     onConfirm: () => void;
     onCancel?: () => void;
+}
+
+/* BusyButton */
+export interface IBusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+    busy?: boolean;
 }
