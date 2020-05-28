@@ -280,3 +280,6 @@ export interface IBusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
     children: any;
 }
+
+/* Loader */
+export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {}

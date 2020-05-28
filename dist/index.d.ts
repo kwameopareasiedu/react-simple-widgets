@@ -23,7 +23,7 @@ import {
     IFieldDecoration,
     IBreadcrumbs,
     IBusyButton,
-    IConfirmDialog
+    IConfirmDialog, ILoader
 } from "../types";
 
 export const DialogProviderContext: Context<IDialogProviderContext>;
@@ -50,3 +50,4 @@ export const FieldDecoration: FunctionComponent<IFieldDecoration>;
 export const Breadcrumbs: FunctionComponent<IBreadcrumbs>;
 export const BusyButton: FunctionComponent<IBusyButton>;
 export const ConfirmDialog: FunctionComponent<IConfirmDialog>;
+export const Loader: FunctionComponent<ILoader>;

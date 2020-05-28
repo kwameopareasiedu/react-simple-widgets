@@ -73,6 +73,7 @@ Widgets under this category are for convenience
 -   [ConfirmDialog](docs/confirm-dialog.md) - A widget which displays a confirmation dialog before
     calling an action
 -   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
+-   [Loader](docs/loader.md) - A widget that displays a spinner
 
 ### Customization
 
