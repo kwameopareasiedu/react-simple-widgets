@@ -62,30 +62,30 @@ showDialog(builderFunction, options, bind);
         If provided, this function will be called when the `dismiss` function is.
         If `dismiss` is called with a value, the value will be passed into this function as well.
 
--   `bind?: any`
-
-    The way this provider works is render dialogs above the main application. The illustration
-    below depicts this:
-
-    ```jsx
-    <ProviderA>
-        <DialogProvider>
-            <ProviderB>
-                <App />
-            </ProviderB>
-        </DialogProvider>
-    </ProviderA>
-    ```
-
-    This means a dialog displayed by the provider only has access to the DialogProvider context
-    and all other contexts above it, **never below**.
-
-    Suppose your dialog required a function from ProviderB, trying to access the function from
-    ProviderB's context within your dialog will result in an error since that context does not
-    exist at the level of the DialogProvider (where the dialog is instantiated).
-
-    To circumvent this, your app should retrieve the required parameters from ProviderB and "hoist"
-    them up to your dialog via the `bind` object.
+    -   `bind?: any`
+    
+        The way this provider works is render dialogs above the main application. The illustration
+        below depicts this:
+    
+        ```jsx
+        <ProviderA>
+            <DialogProvider>
+                <ProviderB>
+                    <App />
+                </ProviderB>
+            </DialogProvider>
+        </ProviderA>
+        ```
+    
+        This means a dialog displayed by the provider only has access to the DialogProvider context
+        and all other contexts above it, **never below**.
+    
+        Suppose your dialog required a function from ProviderB, trying to access the function from
+        ProviderB's context within your dialog will result in an error since that context does not
+        exist at the level of the DialogProvider (where the dialog is instantiated).
+    
+        To circumvent this, your app should retrieve the required parameters from ProviderB and "hoist"
+        them up to your dialog via the `bind` object.
 
 ## Usage
 

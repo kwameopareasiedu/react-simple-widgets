@@ -24,7 +24,7 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         } else document.body.style.overflow = bodyOverflow.current;
     }, [dialogHolders]);
 
-    const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions, bind?: any): void => {
+    const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions): void => {
         const newDialogHolder = new DialogViewHolder();
 
         // Bind targets are provided by the host to include in the helper object so that they are
@@ -32,7 +32,7 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         // other contexts lower than the DialogProvider while the dialog itself is rendered above
         // those contexts.
         // I.e. It allows the host hoist parameters and functions to the dialog rendered above it
-        const bindTargets = bind || {};
+        const bindTargets = options && options.bind ? options.bind : {};
 
         const dismiss = (returnValue: any) => {
             setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
