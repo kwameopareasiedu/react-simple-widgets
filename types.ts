@@ -11,10 +11,12 @@ export enum DialogSize {
 export interface IDialogOptions {
     size?: DialogSize;
     onDialogDismissed?: (returnValue?: any) => void;
+    bind?: any;
 }
 
 export interface IDialogHelper {
     dismiss: (returnValue?: any) => void;
+    [key: string]: any;
 }
 
 export type IDialogBuilder = (helper: IDialogHelper) => any;

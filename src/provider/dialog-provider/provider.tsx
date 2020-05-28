@@ -24,14 +24,22 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         } else document.body.style.overflow = bodyOverflow.current;
     }, [dialogHolders]);
 
-    const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions): void => {
+    const showDialog = (dialogBuilder: IDialogBuilder, options?: IDialogOptions, bind?: any): void => {
         const newDialogHolder = new DialogViewHolder();
+
+        // Bind targets are provided by the host to include in the helper object so that they are
+        // available in the dialog. This solves the issue where the dialog might need access to
+        // other contexts lower than the DialogProvider while the dialog itself is rendered above
+        // those contexts.
+        // I.e. It allows the host hoist parameters and functions to the dialog rendered above it
+        const bindTargets = bind || {};
+
         const dismiss = (returnValue: any) => {
             setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
             if (options && options.onDialogDismissed) options.onDialogDismissed(returnValue);
         };
 
-        newDialogHolder.setup(dialogBuilder({ dismiss }), options);
+        newDialogHolder.setup(dialogBuilder({ dismiss, ...bindTargets }), options);
         setDialogHolders(dialogHolders => [...dialogHolders, newDialogHolder]);
         setupWindowEscapeHandlerForDialog(dismiss);
 

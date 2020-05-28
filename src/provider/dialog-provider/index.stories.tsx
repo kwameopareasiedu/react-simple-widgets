@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DialogProvider } from "./provider";
 import { DialogProviderContext } from "./context";
-import { DialogSize } from "../../../types";
+import { DialogSize, IDialogHelper } from "../../../types";
 
 export default {
     title: "Dialog Provider",
@@ -9,7 +9,7 @@ export default {
 };
 
 export const usage = (): any => {
-    const Dialog = ({ dismiss }: any): any => {
+    const Dialog = ({ helper }: { helper: IDialogHelper }): any => {
         return (
             <div className="card">
                 <div className="card-body">
@@ -18,7 +18,7 @@ export const usage = (): any => {
                         turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
                     </p>
 
-                    <button className="btn btn-secondary btn-sm" onClick={dismiss}>
+                    <button className="btn btn-secondary btn-sm" onClick={helper.dismiss}>
                         Close dialog
                     </button>
                 </div>
@@ -26,25 +26,25 @@ export const usage = (): any => {
         );
     };
 
-    const DialogWithReturnValue = ({ dismiss }: any): any => {
+    const DialogWithReturnValue = ({ helper }: { helper: IDialogHelper }): any => {
         return (
             <div className="card">
                 <div className="card-body">
                     <p>Click on a button to send the value to the component which launched it</p>
 
-                    <button className="btn btn-secondary btn-sm" onClick={() => dismiss("A")}>
+                    <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("A")}>
                         A
                     </button>
                     <span>&nbsp;</span>
-                    <button className="btn btn-secondary btn-sm" onClick={() => dismiss("B")}>
+                    <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("B")}>
                         B
                     </button>
                     <span>&nbsp;</span>
-                    <button className="btn btn-secondary btn-sm" onClick={() => dismiss("C")}>
+                    <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("C")}>
                         C
                     </button>
                     <span>&nbsp;</span>
-                    <button className="btn btn-link btn-sm" onClick={() => dismiss()}>
+                    <button className="btn btn-link btn-sm" onClick={() => helper.dismiss()}>
                         Cancel
                     </button>
                 </div>
@@ -56,7 +56,7 @@ export const usage = (): any => {
         const { showDialog } = useContext(DialogProviderContext);
 
         const openDialog = (dialogSize: DialogSize): void => {
-            showDialog(helper => <Dialog dismiss={helper.dismiss} />, { size: dialogSize });
+            showDialog(helper => <Dialog helper={helper} />, { size: dialogSize });
         };
 
         const openAllDialogs = (): void => {
@@ -66,7 +66,7 @@ export const usage = (): any => {
         };
 
         const openDialogForValue = () => {
-            showDialog(helper => <DialogWithReturnValue dismiss={helper.dismiss} />, {
+            showDialog(helper => <DialogWithReturnValue helper={helper} />, {
                 size: DialogSize.MEDIUM,
                 onDialogDismissed: val => {
                     if (val) alert(`Dialog returned a value of ${val}`);
