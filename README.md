@@ -74,6 +74,8 @@ Widgets under this category are for convenience
     calling an action
 -   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
 -   [Loader](docs/loader.md) - A widget that displays a spinner
+-   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
+    search string parameters
 
 ### Customization
 
