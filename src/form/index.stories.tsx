@@ -19,6 +19,7 @@ export const index = (): any => {
             firstName: "",
             otherNames: "",
             lastName: "",
+            password: "",
             about: "",
             language: "",
             acceptTOS: false,
@@ -73,6 +74,10 @@ export const index = (): any => {
                                     <br />
 
                                     <TextField name="otherNames" label="Other names" decoration={FieldDecorationType.FLOATING_LABEL} />
+
+                                    <br />
+
+                                    <TextField name="password" type="password" label="Password" decoration={FieldDecorationType.FLOATING_LABEL} />
 
                                     <br />
 

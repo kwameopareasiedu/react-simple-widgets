@@ -121,6 +121,8 @@ export enum FieldDecorationType {
 export interface IFieldDecoration {
     label?: string;
     error?: string;
+    leading?: any;
+    trailing?: any;
     hasValue?: boolean;
     decoration?: FieldDecorationType;
     children: IFieldDecorationBuilder;

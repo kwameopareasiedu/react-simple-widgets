@@ -5,6 +5,14 @@
             color: var(--rsw-label-color);
             margin-bottom: 2px;
         }
+
+        > .widgets {
+            display: flex;
+
+            > .widget {
+                flex: 1 1;
+            }
+        }
     }
 
     > .error {
@@ -16,7 +24,7 @@
 
 /* Flat decoration */
 .react-simple-widget.field-decoration.flat-decoration {
-    > .field > .widget {
+    > .field > .widgets > .widget {
         padding: 4px 8px;
         border-radius: 2px;
         border: 1px solid var(--rsw-secondary-theme-color);
@@ -25,7 +33,7 @@
 }
 
 .react-simple-widget.field-decoration.flat-decoration.field-decoration-has-focus {
-    > .field > .widget {
+    > .field > .widgets > .widget {
         border-width: 2px;
         border-color: var(--rsw-primary-theme-color);
     }
@@ -40,7 +48,7 @@
             margin: 0;
         }
 
-        > .widget {
+        > .widgets > .widget {
             border-bottom: 1px solid var(--rsw-secondary-theme-color);
             padding: 0 0 4px 0;
         }
@@ -82,7 +90,7 @@
             pointer-events: none;
         }
 
-        > .widget {
+        > .widgets > .widget {
             padding: 0 4px;
         }
     }

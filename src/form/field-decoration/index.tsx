@@ -6,7 +6,7 @@ import { FieldDecorationType, IFieldDecoration } from "../../../types";
  * FieldDecoration provides the label and error components as well as styling and theming
  * to a form field.
  */
-export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, error, hasValue, children }: IFieldDecoration) => {
+export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, leading, trailing, error, hasValue, children }: IFieldDecoration) => {
     const [focused, setFocused] = useState(false);
 
     const onFieldFocus = (): void => setFocused(true);
@@ -28,7 +28,11 @@ export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, 
         <div className={className()}>
             <div className="field">
                 {label ? <label>{label}</label> : null}
-                <div className="widget">{children({ onFieldFocus, onFieldBlur })}</div>
+                <div className="widgets">
+                    {leading && <span className="leading">{leading}</span>}
+                    <div className="widget">{children({ onFieldFocus, onFieldBlur })}</div>
+                    {trailing && <span className="trailing">{trailing}</span>}
+                </div>
             </div>
 
             {error ? <div className="error">{error}</div> : null}

@@ -1,28 +1,40 @@
 @import "../../mixin";
 
-.react-simple-widget.text-field .field-decoration > .field > .widget {
-    > input,
-    > input:hover,
-    > input:focus,
-    > input:active {
-        @include resetWidgetChild;
+.react-simple-widget.text-field .field-decoration > .field > .widgets > {
+    .widget {
+        > input,
+        > input:hover,
+        > input:focus,
+        > input:active {
+            @include resetWidgetChild;
+        }
+
+        > input::placeholder {
+            font-size: 80%;
+        }
+
+        .ql-toolbar {
+            border: none;
+            padding: 0;
+        }
+
+        .ql-container {
+            border: none;
+            font-size: unset;
+        }
+
+        .ql-editor {
+            padding: 8px;
+        }
     }
 
-    > input::placeholder {
-        font-size: 80%;
+    .trailing {
+        display: inline-block;
+        width: 1.3rem;
+        margin-right: 0.4rem;
     }
 
-    .ql-toolbar {
-        border: none;
-        padding: 0;
-    }
-
-    .ql-container {
-        border: none;
-        font-size: unset;
-    }
-
-    .ql-editor {
-        padding: 8px;
+    .trailing:hover {
+        cursor: pointer;
     }
 }

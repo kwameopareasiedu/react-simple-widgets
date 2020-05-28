@@ -12,7 +12,7 @@ decoration of its child components with three preconfigured styles
 This widget is the wrapper which provides properties and functions to integrate with the form
 
 ```jsx
-<FieldDecoration decoration={decoration} label={label} error={error} hasValue={hasValue}>
+<FieldDecoration decoration={decoration} label={label} leading={leading} trailing={trailing} error={error} hasValue={hasValue}>
     {children} // Children is required
 </FieldDecoration>
 ```
@@ -52,6 +52,16 @@ This widget is the wrapper which provides properties and functions to integrate 
 -   `error?: string`
 
     The error text to display below the widget
+
+-   `leading?: any`
+
+    A component to render to the left of the wrapped component. You can use this to perhaps add an
+    icon before the component.
+
+-   `trailing?: any`
+
+    A component to render to the right of the wrapped component. You can use this to perhaps add an
+    icon after the component.
 
 -   `hasValue?: boolean = false`
 
