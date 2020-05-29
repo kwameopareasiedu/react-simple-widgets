@@ -51,3 +51,4 @@ export const Breadcrumbs: FunctionComponent<IBreadcrumbs>;
 export const BusyButton: FunctionComponent<IBusyButton>;
 export const ConfirmDialog: FunctionComponent<IConfirmDialog>;
 export const Loader: FunctionComponent<ILoader>;
+export const useQueryParams: () => any;
