@@ -63,22 +63,12 @@ export interface IFlashProvider {
 }
 
 /* PageTransitionProvider interfaces */
-export interface IPageTransitionProviderConfig {
-    path: string;
-    animate: boolean;
-    replace: boolean;
-}
-
 export interface IPageTransitionOptions {
     dontAnimate?: boolean;
     replaceUrl?: boolean;
 }
 
 export interface IPageTransitionProviderContext {
-    __finishRedirect: () => void;
-    __incrementPageTransitionsInScope: () => void;
-    __decrementPageTransitionsInScope: () => void;
-    __config: IPageTransitionProviderConfig;
     redirect: (to: string, config?: IPageTransitionOptions) => void;
 }
 

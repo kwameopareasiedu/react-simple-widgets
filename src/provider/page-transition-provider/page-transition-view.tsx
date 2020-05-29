@@ -1,41 +1,36 @@
 import "./page-transition-view.scss";
 import { useLocation } from "react-router-dom";
 import React, { useContext, useEffect, useState } from "react";
+import { IPageTransitionOptions, IPageTransitionView } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
-import { IPageTransitionView } from "../../../types";
 
 export const PageTransitionView = ({ children }: IPageTransitionView): any => {
-    const { pathname, search } = useLocation();
-    const [className, setClassName] = useState("page-transition-view");
-    const { __config, __incrementPageTransitionsInScope, __decrementPageTransitionsInScope, __finishRedirect } = useContext(
-        PageTransitionProviderContext
-    );
+    const { pathname } = useLocation();
+    const [redirectData, setRedirectData] = useState(null);
+    const [className, setClassName] = useState("react-simple-widget page-transition-view");
+    const { redirect: providerRedirect } = useContext(PageTransitionProviderContext);
 
-    useEffect(() => {
-        __incrementPageTransitionsInScope();
-        return __decrementPageTransitionsInScope;
-    }, []);
+    useEffect(() => setClassName("react-simple-widget page-transition-view"), [pathname]);
 
-    useEffect(() => {
-        const classes = ["react-simple-widget", "page-transition-view"];
-        if (__config && __config.path != pathname + search) classes.push("react-simple-widget", "page-transition-view-redirecting");
-        setClassName(classes.join(" "));
-    }, [__config]);
+    const redirect = (to: string, options?: IPageTransitionOptions): void => {
+        if (!options || !options.dontAnimate) {
+            setRedirectData([to, options]);
+            setClassName("react-simple-widget page-transition-view page-transition-view-redirecting");
+        } else providerRedirect(to, options);
+    };
 
     const onAnimationEnd = (e: any): void => {
         const animationName = getAnimationName(e);
-        if (animationName === "page-transition-view-exit-animation") __finishRedirect();
+        if (animationName === "page-transition-view-exit-animation") providerRedirect(redirectData[0], redirectData[1]);
     };
 
-    const getAnimationName = (e: any): string => {
-        if (e.originalEvent) {
-            return e.originalEvent.animationname;
-        } else return e.animationName;
-    };
+    const getAnimationName = (e: any): string => (e.originalEvent ? e.originalEvent.animationname : e.animationName);
 
     return (
-        <div className={className} onAnimationEnd={onAnimationEnd}>
-            {children}
-        </div>
+        <PageTransitionProviderContext.Provider value={{ redirect }}>
+            <div className={className} onAnimationEnd={onAnimationEnd}>
+                {children}
+            </div>
+        </PageTransitionProviderContext.Provider>
     );
 };
