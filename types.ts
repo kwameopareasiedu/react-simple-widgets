@@ -52,10 +52,10 @@ export enum FlashType {
 }
 
 export interface IFlashProviderContext {
-    flashError: (title: string, message: string, onFlashDismissed?: () => void) => void;
-    flashWarning: (title: string, message: string, onFlashDismissed?: () => void) => void;
-    flashInfo: (title: string, message: string, onFlashDismissed?: () => void) => void;
-    flashSuccess: (title: string, message: string, onFlashDismissed?: () => void) => void;
+    flashError: (title: string, message?: string, onFlashDismissed?: () => void) => void;
+    flashWarning: (title: string, message?: string, onFlashDismissed?: () => void) => void;
+    flashInfo: (title: string, message?: string, onFlashDismissed?: () => void) => void;
+    flashSuccess: (title: string, message?: string, onFlashDismissed?: () => void) => void;
 }
 
 export interface IFlashProvider {

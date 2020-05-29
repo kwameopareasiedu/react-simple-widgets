@@ -17,16 +17,16 @@ export const FlashProvider = ({ children }: IFlashProvider): any => {
         showDialog(builder, { onDialogDismissed: onFlashDismissed });
     };
 
-    const flashError = (title: string, message: string, onFlashDismissed?: () => void): void =>
+    const flashError = (title: string, message?: string, onFlashDismissed?: () => void): void =>
         flash(FlashType.ERROR, title, message, onFlashDismissed);
 
-    const flashWarning = (title: string, message: string, onFlashDismissed?: () => void): void =>
+    const flashWarning = (title: string, message?: string, onFlashDismissed?: () => void): void =>
         flash(FlashType.WARNING, title, message, onFlashDismissed);
 
-    const flashInfo = (title: string, message: string, onFlashDismissed?: () => void): void =>
+    const flashInfo = (title: string, message?: string, onFlashDismissed?: () => void): void =>
         flash(FlashType.INFO, title, message, onFlashDismissed);
 
-    const flashSuccess = (title: string, message: string, onFlashDismissed?: () => void): void =>
+    const flashSuccess = (title: string, message?: string, onFlashDismissed?: () => void): void =>
         flash(FlashType.SUCCESS, title, message, onFlashDismissed);
 
     return <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>{children}</FlashProviderContext.Provider>;
