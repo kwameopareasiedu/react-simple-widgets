@@ -1,42 +1,38 @@
 import "./desktop-header.scss";
 import React from "react";
-import { ListViewSortOrder } from "../../../types";
-import SortUpIcon from "../../assets/sort-up.svg";
+import { IListViewSort, ListViewSortOrder } from "../../../types";
 import SortDownIcon from "../../assets/sort-down.svg";
 import SortNoneIcon from "../../assets/sort-none.svg";
+import SortUpIcon from "../../assets/sort-up.svg";
 
 interface IListViewDesktopHeader {
+    sort: IListViewSort;
     overflowing: boolean;
-    showOptions: boolean;
-    sort: [string, ListViewSortOrder];
+    optionsEnabled: boolean;
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
-    onSort: (prop: string, order: ListViewSortOrder) => void;
 }
 
-export const ListViewDesktopHeader = ({ props, sort, overflowing, showOptions, onSort }: IListViewDesktopHeader): any => {
+export const ListViewDesktopHeader = ({ props, sort, overflowing, optionsEnabled }: IListViewDesktopHeader): any => {
     const className = (): string => {
         const classes = ["react-simple-widget", "list-view-desktop-header"];
-        if (showOptions) classes.push("with-actions");
-        if (overflowing) classes.push("with-overflow");
+        if (optionsEnabled) classes.push("options-enabled");
+        if (overflowing) classes.push("overflowing");
         return classes.join(" ");
     };
 
     return (
         <header className={className()}>
             {props.map(([label], i) => {
-                const [sortedColumn, sortedOrder] = sort || [];
-                const isActiveSortLabel = sortedColumn === label;
-                const sortOrder = !!onSort && isActiveSortLabel ? sortedOrder : ListViewSortOrder.NONE;
-                const onSortLabel = (order: ListViewSortOrder) => onSort(label, order);
+                const sortingEnabled = !!sort;
 
                 return (
                     <ListViewDesktopHeaderItem
                         key={label + i}
                         label={label}
-                        sortEnabled={!!onSort}
-                        sortOrder={sortOrder}
-                        isActiveSortLabel={isActiveSortLabel}
-                        onSort={onSortLabel}
+                        sortEnabled={sortingEnabled}
+                        isActiveSortLabel={sortingEnabled && sort.column === label}
+                        sortOrder={sortingEnabled && sort.column === label ? sort.order : ListViewSortOrder.NONE}
+                        onSort={sortingEnabled ? (order: ListViewSortOrder) => sort.onSort(label, order) : null}
                     />
                 );
             })}

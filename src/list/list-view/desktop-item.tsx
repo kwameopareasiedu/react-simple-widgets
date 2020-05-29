@@ -3,22 +3,24 @@ import React, { useContext } from "react";
 import MoreIcon from "../../assets/more.svg";
 import { ListViewItemOptionsDialog } from "./options-dialog";
 import { DialogProviderContext } from "../../provider/dialog-provider";
+import { IListViewOptions } from "../../../types";
 
 interface IListViewDesktopItem {
     item: any;
     index: number;
-    options: Array<[string, (item: any, optionIndex: number) => void]>;
+    options: IListViewOptions;
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
     propValueEvaluator: (item: any, itemIndex: number, propIndex: number) => any;
-    onOptionsClick?: (item: any, index: number) => void;
 }
 
-export const ListViewDesktopItem = ({ item, index, props, options, onOptionsClick, propValueEvaluator }: IListViewDesktopItem): any => {
+export const ListViewDesktopItem = ({ item, index, props, options, propValueEvaluator }: IListViewDesktopItem): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const showItemDialog = (item: any): void => {
-        if (!!onOptionsClick) return onOptionsClick(item, index);
-        showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={options} />);
+        if (!options.handleOptions) {
+            const optionItems = options.items;
+            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={optionItems} />);
+        } else return options.handleOptions(item);
     };
 
     return (
@@ -27,7 +29,7 @@ export const ListViewDesktopItem = ({ item, index, props, options, onOptionsClic
                 <span key={"item" + propIndex}>{propValueEvaluator(item, index, propIndex)}</span>
             ))}
 
-            {(!!options || !!onOptionsClick) && (
+            {options && (
                 <span className="item-options" onClick={(): void => showItemDialog(item)}>
                     <img src={MoreIcon} alt="More" />
                 </span>

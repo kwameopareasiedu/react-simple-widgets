@@ -140,10 +140,10 @@ export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
 /* DropdownField */
 export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;
+    children: any;
     label?: string;
     decoration?: FieldDecorationType;
     errorTransformer?: (err: any) => string;
-    children: any;
 }
 
 /* SelectField */
@@ -235,19 +235,32 @@ export enum ListViewSortOrder {
     DESC
 }
 
-export interface IListView {
-    busy: boolean;
+export interface IListViewPagination {
     page: number;
     total: number;
     pageSize: number;
+    onPageChange: (page: number) => void;
+}
+
+export interface IListViewSort {
+    column: string;
+    order: ListViewSortOrder;
+    onSort: (column: string, order: ListViewSortOrder) => void;
+}
+
+export interface IListViewOptions {
+    items?: Array<[string, (item: any) => any]>;
+    handleOptions?: (item: any) => void;
+}
+
+export interface IListView {
+    busy?: boolean;
     items: Array<any>;
     breakpoint?: number;
-    sort?: [string, ListViewSortOrder];
-    options?: Array<[string, (item: any, optionIndex: number) => void]>;
+    sort?: IListViewSort;
+    options?: IListViewOptions;
+    pagination?: IListViewPagination;
     props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
-    onSort?: (prop: string, order: ListViewSortOrder) => void;
-    onOptionsClick?: (item: any, itemIndex?: number) => void;
-    onPageChange: (page: number) => void;
     skipIf?: (item: any) => boolean;
 }
 

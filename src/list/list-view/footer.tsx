@@ -1,14 +1,10 @@
 import "./footer.scss";
 import React from "react";
+import { IListViewPagination } from "../../../types";
 
-interface IListViewFooter {
-    page: number;
-    total: number;
-    pageSize: number;
-    onPageChange: (page: number) => void;
-}
+export const ListViewFooter = ({ page, total, pageSize, onPageChange }: IListViewPagination): any => {
+    if (!page || !total || !pageSize) return null;
 
-export const ListViewFooter = ({ page, total, pageSize, onPageChange }: IListViewFooter): any => {
     const pages = Math.ceil(parseInt(String(total)) / parseInt(String(pageSize)));
     const minPage = Math.max(1, parseInt(String(page)) - 4);
     const maxPage = Math.min(parseInt(String(page)) + 4, pages);

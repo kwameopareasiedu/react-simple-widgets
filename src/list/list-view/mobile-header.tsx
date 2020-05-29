@@ -1,22 +1,23 @@
 import "./mobile-header.scss";
 import React from "react";
-import { ListViewSortOrder } from "../../../types";
+import { IListViewSort, ListViewSortOrder } from "../../../types";
 
 interface IListViewMobileHeader {
-    sort?: [string, ListViewSortOrder];
+    sort?: IListViewSort;
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
-    onSort?: (prop: string, order: ListViewSortOrder) => void;
 }
 
-export const ListViewMobileHeader = ({ props, sort, onSort }: IListViewMobileHeader): any => {
-    if (!onSort) return null;
+export const ListViewMobileHeader = ({ props, sort }: IListViewMobileHeader): any => {
+    if (!sort) return null;
+
+    const { column: currentColumn, order: currentOrder, onSort } = sort;
 
     const interceptOnSort = (value: string): void => {
         if (value) {
-            const [label, order] = value.split("-");
-            // If the incoming sort config is the same as the current config, do nothing
-            if (sort && label === sort[0] && parseInt(order) === sort[1]) return;
-            onSort(label, parseInt(order));
+            const [selectedColumn, selectedOrder] = value.split("-");
+            // If the selected sort is the same as the current sort, do nothing
+            if (selectedColumn === currentColumn && parseInt(selectedOrder) === currentOrder) return;
+            else onSort(selectedColumn, parseInt(selectedOrder));
         } else onSort(null, ListViewSortOrder.NONE);
     };
 
@@ -26,7 +27,7 @@ export const ListViewMobileHeader = ({ props, sort, onSort }: IListViewMobileHea
 
             <select
                 className="form-control"
-                value={sort && sort[1] > ListViewSortOrder.NONE ? `${sort[0]}-${sort[1]}` : ""}
+                value={currentOrder > ListViewSortOrder.NONE ? `${currentColumn}-${currentOrder}` : ""}
                 onChange={e => interceptOnSort(e.target.value)}>
                 <option value="">None</option>
 

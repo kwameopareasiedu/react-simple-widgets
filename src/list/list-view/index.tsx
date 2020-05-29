@@ -11,21 +11,7 @@ import { ListViewFooter } from "./footer";
  * ListView is a widget which displays a list of items with pagination and sorting features. For each item, it can also
  * display a dialog popup of actions on that item. Since it uses dialogs, it needs a DialogProvider as an ancestor widget
  */
-export const ListView = ({
-    busy,
-    page,
-    total,
-    pageSize,
-    items,
-    props,
-    options,
-    sort,
-    breakpoint = 768,
-    onPageChange,
-    onOptionsClick,
-    onSort,
-    skipIf
-}: IListView): any => {
+export const ListView = ({ busy, sort, items, options, pagination, props, breakpoint = 768, skipIf }: IListView): any => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [overflowing, setOverflowing] = useState(false);
     const itemsRef = useRef();
@@ -76,16 +62,8 @@ export const ListView = ({
 
     return (
         <div className="react-simple-widget list-view">
-            {windowWidth < breakpoint && <ListViewMobileHeader props={props} sort={sort} onSort={onSort} />}
-            {windowWidth >= breakpoint && (
-                <ListViewDesktopHeader
-                    props={props}
-                    sort={sort}
-                    overflowing={overflowing}
-                    showOptions={!!options || !!onOptionsClick}
-                    onSort={onSort}
-                />
-            )}
+            {windowWidth < breakpoint && <ListViewMobileHeader props={props} sort={sort} />}
+            {windowWidth >= breakpoint && <ListViewDesktopHeader props={props} sort={sort} overflowing={overflowing} optionsEnabled={!!options} />}
 
             <div className={busy ? "busy-indicator busy" : "busy-indicator"} />
 
@@ -101,7 +79,7 @@ export const ListView = ({
 
             <div className={busy ? "busy-indicator busy" : "busy-indicator"} />
 
-            <ListViewFooter page={page} total={total} pageSize={pageSize} onPageChange={onPageChange} />
+            {pagination && <ListViewFooter {...pagination} />}
         </div>
     );
 };

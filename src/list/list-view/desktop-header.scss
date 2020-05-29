@@ -38,7 +38,7 @@
     }
 }
 
-.react-simple-widget.list-view-desktop-header.with-overflow {
+.react-simple-widget.list-view-desktop-header.overflowing {
     padding-right: 15px;
 
     @-moz-document url-prefix() {
@@ -46,11 +46,11 @@
     }
 }
 
-.react-simple-widget.list-view-desktop-header.with-actions {
+.react-simple-widget.list-view-desktop-header.options-enabled {
     padding-right: 28px;
 }
 
-.react-simple-widget.list-view-desktop-header.with-actions.with-overflow {
+.react-simple-widget.list-view-desktop-header.options-enabled.overflowing {
     padding-right: 40px;
 
     @-moz-document url-prefix() {

@@ -5,15 +5,10 @@ import { IDialogHelper } from "../../../types";
 interface IListViewItemOptionsDialog {
     item: any;
     helper: IDialogHelper;
-    options?: Array<[string, (item: any, optionIndex: number) => void]>;
+    options?: Array<[string, (item: any) => any]>;
 }
 
 export const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewItemOptionsDialog): any => {
-    const interceptOnClick = (optionIndex: number, callback: Function): void => {
-        callback(item, optionIndex);
-        helper.dismiss();
-    };
-
     return (
         <div className="react-simple-widget list-view-item-options-dialog card">
             <div className="card-body">
@@ -25,7 +20,10 @@ export const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewIt
                             type="button"
                             key={label + i}
                             className="list-group-item list-group-item-action"
-                            onClick={(): void => interceptOnClick(i, callback)}>
+                            onClick={(): void => {
+                                callback(item);
+                                helper.dismiss();
+                            }}>
                             {label}
                         </button>
                     ))}
