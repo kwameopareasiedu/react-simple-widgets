@@ -14,7 +14,7 @@ ancestor to be available up your component tree.
 
 ```jsx
 ReactDOM.render(
-    <DialogProvider> // DialogProvider is required as an ancestor
+    <DialogProvider>// DialogProvider is required as an ancestor
         <FlashProvider>
             <App /> // Children is a required prop
         </FlashProvider>
@@ -43,7 +43,7 @@ flashInfo(title, message, onFlashDismissed);
 
     The title of the flash dialog
 
--   `message: string`
+-   `message?: string`
 
     The message text of the flash dialog
 

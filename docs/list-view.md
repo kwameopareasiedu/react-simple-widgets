@@ -12,7 +12,7 @@ the widget tree
 ### ListView
 
 ```jsx
-<ListView items={items} props={props} page={page} total={total} pageSize={pageSize} sort={sort} busy={busy} options={options} breakpoint={breakpoint} onPageChange={onPageChange} onOptionsClick={onOptionsClick} onSort={onSort} skipIf={skipIf} />
+<ListView busy={busy} items={items} props={props} pagination={pagination} sort={sort} options={options} breakpoint={breakpoint} skipIf={skipIf} />
 ```
 
 -   `items: Array<any>`
@@ -33,70 +33,81 @@ the widget tree
     > For more information, see the [stories](../src/list/list-view/index.stories.tsx) for this
     > widget
 
--   `page: number`
-
-    The current page of the list being viewed. This is for paginated lists
-
--   `total: number`
-
-    The size of the item collection being viewed
-
--   `pageSize: number`
-
-    The size of each page of the list.
-
-    > `page`, `total` and `pageSize` are used to setup the pagination links
-
--   `busy: boolean`
+-   `busy?: boolean`
 
     Indicates whether item data is loading. When true, a busy animation is displayed in the widget
+
+-   `pagination?: IListViewPagination`
+
+    If specified, the pagination footer will be enabled for this widget. This has the structure
+    of `{ page: number, total: number, pageSize: number, onPageChange: (page: number) => void }`.
+    The pagination footer contain the links for traversing the pages.
+
+    -   `page: number`
+
+        The current page of the list being viewed. This is for paginated lists
+
+    -   `total: number`
+
+        The size of the item collection being viewed
+
+    -   `pageSize: number`
+
+        The size of each page of the list.
+
+    -   `onPageChange: (page: number) => void`
+
+        Called when the pagination/navigation buttons are clicked. The page number corresponding to
+        the pagination/navigation button is passed to this function. This is used in conjunction
+        with `page` to navigate the list
 
 -   `breakpoint?: number = 768`
 
     The window width, below which items are rendered in cards to make them viewable on small screen
     devices
 
--   `sort?: [label: string, order: ListViewSortOrder]`
+-   `sort?: IListViewSort`
 
-    The sorting data of this widget. This is a two-element array containing the column being sorted
-    and the sorting order. The order can be one of `ListViewSortOrder.NONE`,
-    `ListViewSortOrder.ASC` or `ListViewSortOrder.DESC`
+    If specified, the sorting feature will be enabled. This displays the sorting icons on the
+    column headers. The has the structure of `{ column: string, order: ListViewSortOrder, onSort: (column: string, order: ListViewSortOrder) => void }`
 
--   `options?: Array<[string, (item: any, optionIndex: number) => void]>`
+    -   `column: string`
 
-    An optional list of options to display for each item. This is a two-element array consisting
-    of the option message string and the function to call when it is clicked. The item and the
-    option's index is passed to this function
+        This is the column being sorted. This should be the same as the first items in the `props`
 
--   `onPageChange: (page: number) => void`
+    -   `order: ListViewSortOrder`
 
-    Called when the pagination/navigation buttons are clicked. The page number corresponding to the
-    pagination/navigation button is passed to this function. This is used in conjunction with
-    `page` to navigate the list
+        This is the sorting order. It can be `ListViewSortOrder.NONE`, `ListViewSortOrder.ASC` or
+        `ListViewSortOrder.DESC`
 
--   `onOptionsClick?: (item: any, itemIndex?: number)`
+    -   `onSort: (label: string, order: ListViewSortOrder) => void`
 
-    Called when the options button on an item is clicked. It is passed the item whose options
-    button was clicked and its index.
+        Called when a column is sorted. It is called with the column name (as specified by `props`)
+        and the sorting order.
 
-    > Specifying this will prevent default handling of the options and ignore `options` prop.
-    > As such, the responsibility of handling the options dialog will now belong to your
-    > application
+-   `options?: IListViewOptions`
 
--   `onSort?: (label: string, order: ListViewSortOrder) => void`
+    If specified, the options button is enabled for each list item.
 
-    If specified, the column sorting buttons are enabled and sorting a column will call this
-    function with the column name (as specified by `props`) and the sorting order. The sorting
-    order can be one of `ListViewSortOrder.NONE`, `ListViewSortOrder.ASC` or
-    `ListViewSortOrder.DESC`
+    -   `items?: Array<[string, (item: any) => void]>`
 
-    > `ListView` does not store soring data internally and you'll need to update the `sort` prop
-    > to make the widget aware of the sorting update.
+        Each item is a two-element array consisting of the option string and the function to call
+        when it is clicked. The item is passed to this function.
+
+        If `items` is specified, the widget handles the dialog display, item listing and calls the
+        associated provider to handle the click.
+
+    -   `handleOptions?: (item: any) => void`
+
+        This is specified when you want to handle what happens when the options of each item is
+        clicked. It is passed the item on which the options is clicked.
+
+    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`
 
 -   `skipIf?: (item: any) => boolean`
 
     Determines if an item is skipped during rendering. It is passed the item under iteration and
-    should return `true` to skip it or `false` otherwise 
+    should return `true` to skip it or `false` otherwise
 
 ## Usage
 
