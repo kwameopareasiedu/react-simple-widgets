@@ -91,3 +91,8 @@ allows you to do this declaratively.
 ## Usage
 
 A complete usage can be found in the [Storybook stories for this widget](../src/provider/page-transition-provider/index.stories.tsx)
+
+## Sidenotes
+
+>   To make the page animations work as intended, your should assign a unique key to each `PageTransitionView`.
+>   This is illustrated in the [Storybook stories for this widget](../src/provider/page-transition-provider/index.stories.tsx)

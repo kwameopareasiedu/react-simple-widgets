@@ -1,16 +1,12 @@
 import "./page-transition-view.scss";
-import { useLocation } from "react-router-dom";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { IPageTransitionOptions, IPageTransitionView } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
 
 export const PageTransitionView = ({ children }: IPageTransitionView): any => {
-    const { pathname } = useLocation();
     const [redirectData, setRedirectData] = useState(null);
     const [className, setClassName] = useState("react-simple-widget page-transition-view");
     const { redirect: providerRedirect } = useContext(PageTransitionProviderContext);
-
-    useEffect(() => setClassName("react-simple-widget page-transition-view"), [pathname]);
 
     const redirect = (to: string, options?: IPageTransitionOptions): void => {
         if (!options || !options.dontAnimate) {

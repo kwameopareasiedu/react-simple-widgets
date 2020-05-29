@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { PageTransitionView } from "./page-transition-view";
 import { PageTransitionProviderContext } from "./context";
@@ -81,18 +81,18 @@ export const usage = () => {
             <PageTransitionProvider>
                 <Switch>
                     <Route exact path="/">
-                        <PageTransitionView>
+                        <PageTransitionView key="index">
                             <IndexPage />
                         </PageTransitionView>
                     </Route>
 
                     <Route exact path="/secondary">
-                        <PageTransitionView>
+                        <PageTransitionView key="secondary">
                             <SecondaryPage />
                         </PageTransitionView>
                     </Route>
 
-                    <Route exact path="/tertiary">
+                    <Route exact path="/tertiary" key="tertiary">
                         <TertiaryPage />
                     </Route>
                 </Switch>
