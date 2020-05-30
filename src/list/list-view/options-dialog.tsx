@@ -4,11 +4,12 @@ import { IDialogHelper } from "../../../types";
 
 interface IListViewItemOptionsDialog {
     item: any;
+    index: number;
     helper: IDialogHelper;
-    options?: Array<[string, (item: any) => any]>;
+    options?: Array<[string, (item: any, itemIndex?: number) => any]>;
 }
 
-export const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewItemOptionsDialog): any => {
+export const ListViewItemOptionsDialog = ({ helper, item, index, options }: IListViewItemOptionsDialog): any => {
     return (
         <div className="react-simple-widget list-view-item-options-dialog card">
             <div className="card-body">
@@ -21,7 +22,7 @@ export const ListViewItemOptionsDialog = ({ helper, item, options }: IListViewIt
                             key={label + i}
                             className="list-group-item list-group-item-action"
                             onClick={(): void => {
-                                callback(item);
+                                callback(item, index);
                                 helper.dismiss();
                             }}>
                             {label}

@@ -248,8 +248,9 @@ export interface IListViewSort {
 }
 
 export interface IListViewOptions {
-    items?: Array<[string, (item: any) => any]>;
-    handleOptions?: (item: any) => void;
+    busy?: (item: any, itemIndex?: number) => boolean;
+    items?: Array<[string, (item: any, itemIndex?: number) => any]>;
+    handleOptions?: (item: any, itemIndex?: number) => void;
 }
 
 export interface IListView {

@@ -197,6 +197,7 @@ export const withOptions = () => {
             <ListView
                 items={collection}
                 options={{
+                    busy: (item, itemIndex) => itemIndex % 2 == 0,
                     items: [
                         ["Option #1", (): void => console.log("Option #1 clicked")],
                         ["Option #2", (): void => console.log("Option #2 clicked")],
@@ -221,9 +222,9 @@ export const withCustomOptionHandler = () => {
             <ListView
                 items={collection}
                 options={{
-                    handleOptions: item => {
-                        console.log("Item clicked", item);
-                        alert("Handle options click. Check the console for the item clicked");
+                    handleOptions: (item, index) => {
+                        console.log({ item, index });
+                        alert("Handle options click. Check the console for the item clicked and its index");
                     }
                 }}
                 props={[

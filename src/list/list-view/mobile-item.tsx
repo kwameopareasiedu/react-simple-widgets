@@ -4,6 +4,7 @@ import { ListViewItemOptionsDialog } from "./options-dialog";
 import { DialogProviderContext } from "../../provider/dialog-provider";
 import { IListViewOptions } from "../../../types";
 import MoreIcon from "../../assets/more.svg";
+import { Loader } from "../../misc/loader";
 
 interface IListViewMobileItem {
     item: any;
@@ -19,8 +20,8 @@ export const ListViewMobileItem = ({ item, index, props, options, propValueEvalu
     const showItemDialog = (item: any): void => {
         if (!options.handleOptions) {
             const optionItems = options.items;
-            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={optionItems} />);
-        } else return options.handleOptions(item);
+            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={index} options={optionItems} />);
+        } else return options.handleOptions(item, index);
     };
 
     return (
@@ -41,9 +42,14 @@ export const ListViewMobileItem = ({ item, index, props, options, propValueEvalu
             <span className="prop-label" />
 
             {options && (
-                <span className="prop-value item-options" onClick={(): void => showItemDialog(item)}>
-                    <img src={MoreIcon} alt="More" />
-                </span>
+                <React.Fragment>
+                    {options.busy && options.busy(item, index) && <Loader className="item-options" />}
+                    {(!options.busy || !options.busy(item, index)) && (
+                        <span className="item-options" onClick={(): void => showItemDialog(item)}>
+                            <img src={MoreIcon} alt="More" />
+                        </span>
+                    )}
+                </React.Fragment>
             )}
         </div>
     );

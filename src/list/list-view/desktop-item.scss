@@ -47,6 +47,26 @@
     span.item-options:hover::after {
         opacity: 1;
     }
+
+    span.item-options.loader {
+        .spinner-border {
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            border-color: var(--rsw-primary-theme-color);
+            border-right-color: transparent;
+            margin: 0 !important;
+            padding: 0.23rem;
+        }
+    }
+
+    span.item-options.loader:hover {
+        cursor: unset;
+    }
+
+    span.item-options.loader::after {
+        content: "Busy";
+    }
 }
 
 .react-simple-widget.list-view-desktop-item:nth-of-type(2n + 1) {

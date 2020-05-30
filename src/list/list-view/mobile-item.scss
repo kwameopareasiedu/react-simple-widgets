@@ -23,6 +23,22 @@
     span.item-options:hover {
         cursor: pointer;
     }
+
+    span.item-options.loader {
+        .spinner-border {
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            border-color: var(--rsw-primary-theme-color);
+            border-right-color: transparent;
+            margin: 0 !important;
+            padding: 0.23rem;
+        }
+    }
+
+    span.item-options.loader:hover {
+        cursor: unset;
+    }
 }
 
 .react-simple-widget.list-view-mobile-item:last-child {

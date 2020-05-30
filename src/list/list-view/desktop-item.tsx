@@ -4,6 +4,7 @@ import MoreIcon from "../../assets/more.svg";
 import { ListViewItemOptionsDialog } from "./options-dialog";
 import { DialogProviderContext } from "../../provider/dialog-provider";
 import { IListViewOptions } from "../../../types";
+import { Loader } from "../../misc/loader";
 
 interface IListViewDesktopItem {
     item: any;
@@ -19,8 +20,8 @@ export const ListViewDesktopItem = ({ item, index, props, options, propValueEval
     const showItemDialog = (item: any): void => {
         if (!options.handleOptions) {
             const optionItems = options.items;
-            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} options={optionItems} />);
-        } else return options.handleOptions(item);
+            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={index} options={optionItems} />);
+        } else return options.handleOptions(item, index);
     };
 
     return (
@@ -30,9 +31,14 @@ export const ListViewDesktopItem = ({ item, index, props, options, propValueEval
             ))}
 
             {options && (
-                <span className="item-options" onClick={(): void => showItemDialog(item)}>
-                    <img src={MoreIcon} alt="More" />
-                </span>
+                <React.Fragment>
+                    {options.busy && options.busy(item, index) && <Loader className="item-options" />}
+                    {(!options.busy || !options.busy(item, index)) && (
+                        <span className="item-options" onClick={(): void => showItemDialog(item)}>
+                            <img src={MoreIcon} alt="More" />
+                        </span>
+                    )}
+                </React.Fragment>
             )}
         </div>
     );

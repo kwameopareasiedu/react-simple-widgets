@@ -89,10 +89,16 @@ the widget tree
 
     If specified, the options button is enabled for each list item.
 
-    -   `items?: Array<[string, (item: any) => void]>`
+    -   `busy?: (item: any, itemIndex?: number) => boolean`
+
+        If specified and returns true, the options button for the item is disabled and a loading
+        indicator is shown in its place. This is useful if some long-running operation is being
+        carried out on the item
+
+    -   `items?: Array<[string, (item: any, itemIndex?: number) => void]>`
 
         Each item is a two-element array consisting of the option string and the function to call
-        when it is clicked. The item is passed to this function.
+        when it is clicked. The item and its index are passed to this function.
 
         If `items` is specified, the widget handles the dialog display, item listing and calls the
         associated provider to handle the click.
@@ -102,7 +108,8 @@ the widget tree
         This is specified when you want to handle what happens when the options of each item is
         clicked. It is passed the item on which the options is clicked.
 
-    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`
+    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`,
+    > ignoring `items`
 
 -   `skipIf?: (item: any) => boolean`
 
