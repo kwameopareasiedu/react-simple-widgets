@@ -67,6 +67,8 @@ export const ListView = ({ busy, sort, items, options, pagination, props, breakp
 
             <div className={busy ? "busy-indicator busy" : "busy-indicator"} />
 
+            {items.length === 0 && <p className="no-items mb-0 text-center">No items to display</p>}
+
             <section ref={itemsRef} className="items">
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))

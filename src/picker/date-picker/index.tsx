@@ -228,6 +228,7 @@ export const DatePicker = ({
     format = "YYYY-MM-DD",
     displayFormat = "dddd, Do MMMM YYYY",
     decoration,
+    placeholder = "None selected",
     validator,
     onFocus,
     onBlur,
@@ -280,8 +281,9 @@ export const DatePicker = ({
                         if (onBlur) onBlur();
                     }}
                     tabIndex={0}>
-                    {mode !== DatePickerMode.MULTI && date && moment(date).format(displayFormat)}
-                    {mode === DatePickerMode.MULTI && date && (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
+                    {!date && placeholder}
+                    {date && mode !== DatePickerMode.MULTI && moment(date).format(displayFormat)}
+                    {date && mode === DatePickerMode.MULTI && (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
                 </div>
             )}
         </FieldDecoration>

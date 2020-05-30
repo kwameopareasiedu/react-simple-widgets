@@ -26,6 +26,12 @@
         z-index: 2;
     }
 
+    .no-items {
+        font-size: 85%;
+        padding: 1rem 0;
+        font-style: italic;
+    }
+
     @keyframes list-view-busy-animation {
         from {
             right: 100%;

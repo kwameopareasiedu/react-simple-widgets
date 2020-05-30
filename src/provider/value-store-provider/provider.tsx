@@ -32,7 +32,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
 
         if (existing) values[values.indexOf(existing)] = new Value(existing.key, value, storeInLocalStorage);
         else values.push(new Value(key, value, storeInLocalStorage));
-        setValues([...values]);
+        setValues(existing => [...existing, ...values]);
     };
 
     const update = (key: string, updater: IValueStoreUpdater, storeInLocalStorageIfNotExists?: boolean): void => {
@@ -40,7 +40,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
 
         if (existing) {
             values.push(new Value(key, updater(existing.value), existing.isStoredInLocalStorage));
-            setValues([...values]);
+            setValues(existing => [...existing, ...values]);
         } else put(key, updater(null), storeInLocalStorageIfNotExists);
     };
 

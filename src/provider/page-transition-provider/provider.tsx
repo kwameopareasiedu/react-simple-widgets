@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { IPageTransitionOptions, IPageTransitionProvider } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
 
@@ -10,9 +10,11 @@ import { PageTransitionProviderContext } from "./context";
  * ancestor tree.
  */
 export const PageTransitionProvider = ({ children }: IPageTransitionProvider): any => {
+    const { pathname } = useLocation();
     const history = useHistory();
 
     const redirect = (to: string, options?: IPageTransitionOptions): void => {
+        if (pathname === to) return;
         if (options && options.replaceUrl) history.replace(to);
         else history.push(to);
     };

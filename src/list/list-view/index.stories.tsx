@@ -50,6 +50,23 @@ export const normal = () => {
     );
 };
 
+export const withNoItems = () => {
+    return (
+        <DialogProvider>
+            <ListView
+                items={[]}
+                props={[
+                    ["Name", "name"],
+                    ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY")],
+                    ["Undefined property", "status"],
+                    ["Nested property", "nested_property.current_value"],
+                    ["Undefined nested property", "nested_property.ability"]
+                ]}
+            />
+        </DialogProvider>
+    );
+};
+
 export const withSorting = () => {
     const ExampleApp = () => {
         const [sortData, setSortData] = useState(["Name", ListViewSortOrder.NONE]);
