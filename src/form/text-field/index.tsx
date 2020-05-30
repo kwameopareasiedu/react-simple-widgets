@@ -43,6 +43,7 @@ export const TextField = ({ label, name, decoration, mode = TextFieldMode.INPUT,
                         {({ onFieldFocus, onFieldBlur }) =>
                             mode === TextFieldMode.INPUT ? (
                                 <input
+                                    name={name}
                                     value={value}
                                     onChange={e => {
                                         setValue(e.target.value);

@@ -81,18 +81,18 @@ export const usage = () => {
             <PageTransitionProvider>
                 <Switch>
                     <Route exact path="/">
-                        <PageTransitionView key="index">
+                        <PageTransitionView>
                             <IndexPage />
                         </PageTransitionView>
                     </Route>
 
                     <Route exact path="/secondary">
-                        <PageTransitionView key="secondary">
+                        <PageTransitionView>
                             <SecondaryPage />
                         </PageTransitionView>
                     </Route>
 
-                    <Route exact path="/tertiary" key="tertiary">
+                    <Route exact path="/tertiary">
                         <TertiaryPage />
                     </Route>
                 </Switch>

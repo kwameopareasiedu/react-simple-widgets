@@ -10,11 +10,11 @@ import { PageTransitionProviderContext } from "./context";
  * ancestor tree.
  */
 export const PageTransitionProvider = ({ children }: IPageTransitionProvider): any => {
-    const { pathname } = useLocation();
+    const { pathname, search, hash } = useLocation();
     const history = useHistory();
 
     const redirect = (to: string, options?: IPageTransitionOptions): void => {
-        if (pathname === to) return;
+        if (!to || pathname + search + hash === to) return;
         if (options && options.replaceUrl) history.replace(to);
         else history.push(to);
     };

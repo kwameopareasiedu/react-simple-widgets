@@ -19,6 +19,7 @@ export const DropdownField = ({ label, name, decoration, errorTransformer, child
                         decoration={decoration || FieldDecorationType.FLAT}>
                         {({ onFieldFocus, onFieldBlur }): any => (
                             <select
+                                name={name}
                                 value={value}
                                 onChange={e => {
                                     setValue(e.target.value);

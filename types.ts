@@ -200,7 +200,6 @@ export interface IDatePicker {
     error?: string;
     format?: string;
     mode?: DatePickerMode;
-    placeholder?: string;
     displayFormat?: string;
     date: string | Array<string>;
     decoration?: FieldDecorationType;
@@ -217,7 +216,6 @@ export interface IDateField {
     error?: string;
     format?: string;
     mode?: DatePickerMode;
-    placeholder?: string;
     displayFormat?: string;
     decoration?: FieldDecorationType;
     validator?: (date: string) => string;
