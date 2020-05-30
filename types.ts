@@ -30,12 +30,9 @@ export interface IDialogProvider {
 }
 
 /* ValueStoreProvider interfaces */
-export type IValueStoreUpdater = (currentValue: any) => any;
-
 export interface IValueStoreProviderContext {
     get: (key: string) => any;
-    put: (key: string, value: any, storeInLocalStorage?: boolean) => void;
-    update: (key: string, update: IValueStoreUpdater, storeInLocalStorageIfNotExists?: boolean) => void;
+    put: (key: string, value: any, persist?: boolean) => void;
 }
 
 export interface IValueStoreProvider {
