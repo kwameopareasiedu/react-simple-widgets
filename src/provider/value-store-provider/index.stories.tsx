@@ -9,7 +9,7 @@ export default {
 
 export const usage = (): any => {
     const ExampleApp = (): any => {
-        const { get, put } = useContext(ValueStoreProviderContext);
+        const { get, put, del } = useContext(ValueStoreProviderContext);
 
         return (
             <div>
@@ -67,6 +67,15 @@ export const usage = (): any => {
 
                         <p className="text-center">Now refresh the page to see the data persistence</p>
                     </div>
+                </div>
+
+                <br />
+                <br />
+
+                <div className="text-center">
+                    <button className="btn btn-danger" onClick={(): void => del("favourite-web-framework", "favourite-mobile-framework")}>
+                        Clear all values from store
+                    </button>
                 </div>
             </div>
         );

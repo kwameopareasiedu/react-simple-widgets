@@ -36,7 +36,7 @@ ReactDOM.render(
 `LocalStorageProviderContext` provides the `get`, `store` and `update` functions to your component
 
 ```jsx
-const { get, put, update } = useContext(ValueStoreProviderContext);
+const { get, put, del } = useContext(ValueStoreProviderContext);
 ```
 
 #### get
@@ -57,7 +57,7 @@ get(key);
 dependent components to update.
 
 ```jsx
-put(key, value, storeInLocalStorage);
+put(key, value, persist);
 ```
 
 -   `key: string`
@@ -68,33 +68,23 @@ put(key, value, storeInLocalStorage);
 
     This is the value to be stored under the specified key
 
--   `storeInLocalStorage?: boolean = false`
+-   `persist?: boolean = false`
 
     If set to true, the value is also stored in the localStorage. It is recommended to set this to
     false (default) if you need to hold some sensitive data in memory using this provider.
 
-#### update
+#### del
 
-`update` updates a value under a specified _key_ the `ValueStoreProvider`. This will cause any
-dependent components to update.
+`del` removes the values under a specified _keys_ from the `provider. It also removes them from the
+local storage if they exist
 
 ```jsx
-update(key, updater, storeInLocalStorageIfNotExists);
+del(...keys);
 ```
 
--   `key: string`
+-   `keys: Array<string>`
 
-    This is the key under which a value is stored
-
--   `updater: (currentValue: any) => any`
-
-    This function is called by the store with the current value under the _key_ (or null if value
-    does not exist). It should return the new value to be stored under that key
-
--   `storeInLocalStorageIfNotExists?: boolean = false`
-
-    If no value exists for the specified _key_ and this is set to true, the `ValueStoreProvider`
-    will persist the value to the localStorage
+    The keys whose values are to be removed
 
 ## Usage
 

@@ -25,7 +25,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
 
     const get = (key: string): any => {
         const target = items.filter(v => v.key === key).slice(-1)[0];
-        return target ? target.value : null;
+        return target && target.value ? target.value : "";
     };
 
     const put = (key: string, value: any, persist?: boolean): void => {
@@ -33,7 +33,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
             const item = items.filter(v => v.key === key)[0];
 
             if (item) {
-                item.value = value;
+                item.value = value || "";
                 item.persist = persist;
             } else items.push(new ValueStoreItem(key, value, persist));
 
@@ -41,7 +41,11 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
         });
     };
 
-    return <ValueStoreProviderContext.Provider value={{ get, put }}>{children}</ValueStoreProviderContext.Provider>;
+    const del = (...keys: Array<string>): void => {
+        for (const key of keys) put(key, null, true);
+    };
+
+    return <ValueStoreProviderContext.Provider value={{ get, put, del }}>{children}</ValueStoreProviderContext.Provider>;
 };
 
 /**
