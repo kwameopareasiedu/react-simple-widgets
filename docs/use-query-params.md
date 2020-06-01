@@ -3,8 +3,7 @@
 # useQueryParams
 
 useQueryParams is a React [hook](https://reactjs.org/docs/hooks-intro.html) that parses the URL
-search string with [query-string](https://www.npmjs.com/package/query-string) and returns a state
-object containing the data
+search string and returns a state object containing the data which updates when the URL does
 
 ## API
 
