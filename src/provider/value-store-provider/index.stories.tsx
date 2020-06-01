@@ -27,7 +27,7 @@ export const usage = (): any => {
 
                                 <input
                                     className="form-control"
-                                    value={get("favourite-web-framework")}
+                                    value={get("favourite-web-framework") || ""}
                                     onChange={e => put("favourite-web-framework", e.target.value, true)}
                                 />
                             </div>
@@ -41,7 +41,7 @@ export const usage = (): any => {
 
                                 <input
                                     className="form-control"
-                                    value={get("favourite-mobile-framework")}
+                                    value={get("favourite-mobile-framework") || ""}
                                     onChange={e => put("favourite-mobile-framework", e.target.value, true)}
                                 />
                             </div>

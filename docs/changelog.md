@@ -2,6 +2,11 @@
 
 # ChangeLog
 
+-   `1.3.1`
+
+    -   Modified [ValueStoreProvider](value-store-provider.md) to store null values as-is instead
+        of an empty string
+
 -   `1.3.0`
 
     -   Added `del` feature to [ValueStoreProvider](value-store-provider.md) to remove values from
