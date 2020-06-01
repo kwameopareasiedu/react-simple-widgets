@@ -4,7 +4,7 @@ This is a collection of widgets to help accelerate your React app development.
 It provides customizable widgets that perform commonly needed tasks within your app.
 
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-906.8%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-902.2%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 ### Installing
