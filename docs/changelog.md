@@ -2,6 +2,16 @@
 
 # ChangeLog
 
+-   `1.3.2`
+
+    -   [useQueryParams](use-query-params.md) now returns and empty object if no query parameter
+        are present in the URL
+    -   Modified [DatePicker](date-picker.md) with `DatePickerMode.MULTI` to clear text selection
+        when shift key is pressed while a date is selected
+    -   Modified [DatePicker](date-picker.md) with `DatePickerMode.MULTI` to return null date when
+        no date is selected instead of an empty array which makes is function the same as
+        `DatePickerMode.SINGLE` and `DatePickerMode.MONTH` when no dates are selected
+
 -   `1.3.1`
 
     -   Modified [ValueStoreProvider](value-store-provider.md) to store null values as-is instead

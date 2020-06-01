@@ -45,8 +45,18 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
         setReady(true);
     }, []);
 
+    const clearWindowSelect = (): void => {
+        if (window.getSelection) {
+            if (window.getSelection().empty) window.getSelection().empty();
+            else if (window.getSelection().removeAllRanges) window.getSelection().removeAllRanges();
+        } else if ((document as any).selection) (document as any).selection.empty();
+    };
+
     const selectDate = (e: React.MouseEvent, year: number, month: number, day: number): void => {
         const dateMoment = moment([year, month, day]);
+
+        // Clear the text selection caused by the Shift key being engaged
+        clearWindowSelect();
 
         if (validator) {
             const error = validator(dateMoment.format(format));
@@ -91,7 +101,7 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
 
     const returnDate = (): void => {
         if (mode === DatePickerMode.SINGLE) helper.dismiss(dates[0]);
-        if (mode === DatePickerMode.MULTI) helper.dismiss(dates);
+        if (mode === DatePickerMode.MULTI) helper.dismiss(dates.length > 0 ? dates : null);
         if (mode === DatePickerMode.MONTH) helper.dismiss(dates[0]);
     };
 

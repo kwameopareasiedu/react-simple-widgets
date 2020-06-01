@@ -26,9 +26,7 @@ export const usage = (): any => {
                     mode={DatePickerMode.SINGLE}
                     decoration={FieldDecorationType.FLAT}
                     validator={date => (moment(date, "YYYY-MM-DD").year() > 2020 ? "Must be before 2021" : null)}
-                    onChange={date => {
-                        if (date) setDate(date);
-                    }}
+                    onChange={setDate}
                 />
 
                 <br />
@@ -41,9 +39,7 @@ export const usage = (): any => {
                     displayFormat="MMMM YYYY"
                     mode={DatePickerMode.MONTH}
                     decoration={FieldDecorationType.UNDERLINE}
-                    onChange={date => {
-                        if (date) setDate1(date);
-                    }}
+                    onChange={setDate1}
                 />
 
                 <br />
@@ -55,9 +51,7 @@ export const usage = (): any => {
                     label="Select date"
                     mode={DatePickerMode.MULTI}
                     decoration={FieldDecorationType.FLOATING_LABEL}
-                    onChange={date => {
-                        if (date) setDate2(date);
-                    }}
+                    onChange={setDate2}
                 />
             </div>
         );
