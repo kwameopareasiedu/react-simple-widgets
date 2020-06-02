@@ -2,6 +2,27 @@
 
 # ChangeLog
 
+-   `1.3.6`
+
+    -   Added 100% width and height and auto overflow styling to
+        [PageTransitionView](src/provider/page-transition-provider/page-transition-view.tsx) widget
+
+-   `1.3.5`
+
+    -   Added the `clear` function to the [ValueStoreProvider](docs/value-store-provider.md) which
+        deletes all values in the store and removes them from the local storage if they are
+        persisted
+
+-   `1.3.4`
+
+    -   Modified [ListView](docs/list-view.md) to limit styling to immediate children and not
+        affect content within the cells
+
+-   `1.3.3`
+
+    -   Replaced `query-string` with a simpler algorithm for query string to query parameter
+        resolution in [useQueryParams](docs/use-query-params.md)
+
 -   `1.3.2`
 
     -   [useQueryParams](use-query-params.md) now returns and empty object if no query parameter
