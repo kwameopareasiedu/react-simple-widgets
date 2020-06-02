@@ -2,20 +2,20 @@
     display: flex;
     border: 1px solid #e3e3e3;
 
-    span {
+    > span {
         padding: 8px 4px;
         flex: 1 1;
     }
 
-    span:first-child {
+    > span:first-child {
         padding-left: 8px;
     }
 
-    span:last-child {
+    > span:last-child {
         padding-right: 8px;
     }
 
-    span.item-options {
+    > span.item-options {
         position: relative;
         flex: 0;
         padding-left: 8px;
@@ -26,7 +26,7 @@
         }
     }
 
-    span.item-options::after {
+    > span.item-options::after {
         content: "Options";
         position: absolute;
         top: 40%;
@@ -40,15 +40,15 @@
         opacity: 0;
     }
 
-    span.item-options:hover {
+    > span.item-options:hover {
         cursor: pointer;
     }
 
-    span.item-options:hover::after {
+    > span.item-options:hover::after {
         opacity: 1;
     }
 
-    span.item-options.loader {
+    > span.item-options.loader {
         .spinner-border {
             width: 6px;
             height: 6px;
@@ -60,11 +60,11 @@
         }
     }
 
-    span.item-options.loader:hover {
+    > span.item-options.loader:hover {
         cursor: unset;
     }
 
-    span.item-options.loader::after {
+    > span.item-options.loader::after {
         content: "Busy";
     }
 }

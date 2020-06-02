@@ -5,17 +5,22 @@
     flex-direction: column;
     overflow: hidden;
 
-    section.items {
+    > section.items {
         flex: 1 1;
         overflow: auto;
     }
 
-    .busy-indicator {
+    > .busy-indicator {
         position: relative;
+        height: 0;
+        transition: height var(--rsw-transition-duration);
+    }
+
+    > .busy-indicator.busy {
         height: 2px;
     }
 
-    .busy-indicator.busy::before {
+    > .busy-indicator.busy::before {
         position: absolute;
         top: 0;
         left: 0;
@@ -26,7 +31,7 @@
         z-index: 2;
     }
 
-    .no-items {
+    > .no-items {
         font-size: 85%;
         padding: 1rem 0;
         font-style: italic;

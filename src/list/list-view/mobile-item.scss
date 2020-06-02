@@ -5,12 +5,12 @@
     grid-template-columns: 30% 70%;
     grid-gap: 4px 8px;
 
-    .prop-label {
+    > span.prop-label {
         font-size: 85%;
         font-style: italic;
     }
 
-    span.item-options {
+    > span.item-options {
         text-align: right;
         padding-right: 15px;
 
@@ -20,11 +20,11 @@
         }
     }
 
-    span.item-options:hover {
+    > span.item-options:hover {
         cursor: pointer;
     }
 
-    span.item-options.loader {
+    > span.item-options.loader {
         .spinner-border {
             width: 6px;
             height: 6px;
@@ -36,7 +36,7 @@
         }
     }
 
-    span.item-options.loader:hover {
+    > span.item-options.loader:hover {
         cursor: unset;
     }
 }
