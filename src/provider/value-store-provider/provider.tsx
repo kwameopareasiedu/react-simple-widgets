@@ -45,7 +45,11 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
         for (const key of keys) put(key, null, true);
     };
 
-    return <ValueStoreProviderContext.Provider value={{ get, put, del }}>{children}</ValueStoreProviderContext.Provider>;
+    const clear = (): void => {
+        for (const item of items) put(item.key, null, true);
+    };
+
+    return <ValueStoreProviderContext.Provider value={{ get, put, del, clear }}>{children}</ValueStoreProviderContext.Provider>;
 };
 
 /**

@@ -36,7 +36,7 @@ ReactDOM.render(
 `LocalStorageProviderContext` provides the `get`, `store` and `update` functions to your component
 
 ```jsx
-const { get, put, del } = useContext(ValueStoreProviderContext);
+const { get, put, del, clear } = useContext(ValueStoreProviderContext);
 ```
 
 #### get
@@ -85,6 +85,14 @@ del(...keys);
 -   `keys: Array<string>`
 
     The keys whose values are to be removed
+
+#### clear
+
+`clear` removes all values the `provider. It also removes them from the local storage if they exist
+
+```jsx
+clear();
+```
 
 ## Usage
 

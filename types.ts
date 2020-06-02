@@ -34,6 +34,7 @@ export interface IValueStoreProviderContext {
     get: (key: string) => any;
     put: (key: string, value: any, persist?: boolean) => void;
     del: (...keys: Array<string>) => void;
+    clear: () => void;
 }
 
 export interface IValueStoreProvider {

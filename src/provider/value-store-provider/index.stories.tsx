@@ -9,7 +9,7 @@ export default {
 
 export const usage = (): any => {
     const ExampleApp = (): any => {
-        const { get, put, del } = useContext(ValueStoreProviderContext);
+        const { get, put, del, clear } = useContext(ValueStoreProviderContext);
 
         return (
             <div>
@@ -30,6 +30,10 @@ export const usage = (): any => {
                                     value={get("favourite-web-framework") || ""}
                                     onChange={e => put("favourite-web-framework", e.target.value, true)}
                                 />
+
+                                <button className="btn btn-link btn-sm" onClick={(): void => del("favourite-web-framework")}>
+                                    Remove key for this input
+                                </button>
                             </div>
 
                             <div className="col-6">
@@ -44,6 +48,10 @@ export const usage = (): any => {
                                     value={get("favourite-mobile-framework") || ""}
                                     onChange={e => put("favourite-mobile-framework", e.target.value, true)}
                                 />
+
+                                <button className="btn btn-link btn-sm" onClick={(): void => del("favourite-mobile-framework")}>
+                                    Remove key for this input
+                                </button>
                             </div>
                         </div>
 
@@ -59,7 +67,7 @@ export const usage = (): any => {
 
                         <input
                             className="form-control"
-                            value={get("favourite-desktop-framework")}
+                            value={get("favourite-desktop-framework") || ""}
                             onChange={e => put("favourite-desktop-framework", e.target.value)}
                         />
 
@@ -73,7 +81,7 @@ export const usage = (): any => {
                 <br />
 
                 <div className="text-center">
-                    <button className="btn btn-danger" onClick={(): void => del("favourite-web-framework", "favourite-mobile-framework")}>
+                    <button className="btn btn-danger" onClick={clear}>
                         Clear all values from store
                     </button>
                 </div>
