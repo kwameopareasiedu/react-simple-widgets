@@ -2,6 +2,12 @@
 
 # ChangeLog
 
+-   `1.3.7`
+
+    -   Added focus indicator to [SelectField](select-field.md) options
+    -   Modified [useQueryParams](use-query-params.md) to update `qp` state object if the whole
+        location object changes instead of just `location.search`
+
 -   `1.3.6`
 
     -   Added 100% width and height and auto overflow styling to
