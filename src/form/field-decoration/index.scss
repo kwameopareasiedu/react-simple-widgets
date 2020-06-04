@@ -1,7 +1,7 @@
 .react-simple-widget.field-decoration {
     > .field {
         > label {
-            font-size: 80%;
+            font-size: 87.5%;
             color: var(--rsw-label-color);
             margin-bottom: 2px;
         }
@@ -11,6 +11,7 @@
 
             > .widget {
                 flex: 1 1;
+                overflow: hidden;
             }
         }
     }

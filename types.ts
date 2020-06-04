@@ -273,10 +273,19 @@ export interface IObjectView {
 }
 
 /* ConfirmDialog */
+export enum ConfirmDialogTheme {
+    ERROR,
+    WARNING,
+    INFO,
+    SUCCESS,
+    PRIMARY
+}
+
 export interface IConfirmDialog {
     children: any;
     onConfirm: () => void;
     onCancel?: () => void;
+    theme?: ConfirmDialogTheme;
 }
 
 /* BusyButton */

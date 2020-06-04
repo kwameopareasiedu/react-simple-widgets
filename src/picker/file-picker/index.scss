@@ -1,8 +1,6 @@
 @import "../../mixin";
 
 .react-simple-widget.file-picker-dialog {
-    border-radius: 8px;
-
     .card-body {
         padding: 30px;
 
@@ -77,7 +75,7 @@
         }
 
         button.btn-primary {
-            margin-bottom: 20px;
+            margin-bottom: 0.5rem;
 
             @media screen and(min-width: 576px) {
                 margin-bottom: 0;
@@ -90,10 +88,13 @@
     @include resetWidgetChild;
 
     > p {
-        margin: 0;
-        font-style: italic;
-        padding: 0;
         height: 20px;
+        margin: 0;
+        padding: 0;
+        font-style: italic;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 

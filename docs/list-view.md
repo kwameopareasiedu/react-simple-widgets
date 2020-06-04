@@ -83,11 +83,11 @@ the widget tree
     -   `onSort: (label: string, order: ListViewSortOrder) => void`
 
         Called when a column is sorted. It is called with the column name (as specified by `props`)
-        and the sorting order.
+        and the sorting order
 
 -   `options?: IListViewOptions`
 
-    If specified, the options button is enabled for each list item.
+    If specified, the options button is enabled for each list item
 
     -   `busy?: (item: any, itemIndex?: number) => boolean`
 
@@ -98,18 +98,24 @@ the widget tree
     -   `items?: Array<[string, (item: any, itemIndex?: number) => void]>`
 
         Each item is a two-element array consisting of the option string and the function to call
-        when it is clicked. The item and its index are passed to this function.
+        when it is clicked. The item and its index are passed to this function
 
         If `items` is specified, the widget handles the dialog display, item listing and calls the
-        associated provider to handle the click.
+        associated provider to handle the click
 
     -   `handleOptions?: (item: any) => void`
 
         This is specified when you want to handle what happens when the options of each item is
-        clicked. It is passed the item on which the options is clicked.
+        clicked. It is passed the item on which the options is clicked
 
     > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`,
     > ignoring `items`
+
+-   `onClick?: (item: any, itemIndex?: number) => void`
+
+    If specified the click handler is enabled for each item. The item and its index are passed to
+    this function. When specified, hovering on an item will highlight it and the cursor will be a
+    pointer
 
 -   `skipIf?: (item: any) => boolean`
 

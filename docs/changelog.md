@@ -1,6 +1,13 @@
 [Home](../README.md)
 
-# ChangeLog
+# Changelog
+
+-   `1.4.0`
+
+    -   Added `onClick` prop to [ListView](list-view.md) widget
+    -   Added `theme` prop to [ConfirmDialog](confirm-dialog.md) widget
+    -   Adjusted label font size of [FieldDecoration](field-decoration.md) to 87.5%
+    -   Adjusted [FieldDecoration](field-decoration.md) labels to be single lines
 
 -   `1.3.7`
 
