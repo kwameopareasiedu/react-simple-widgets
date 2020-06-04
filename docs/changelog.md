@@ -2,6 +2,12 @@
 
 # Changelog
 
+-   `1.4.1`
+
+    -   Added overflow styling to [DatePicker](date-picker.md) and [FilePicker](file-picker.md)
+        widgets
+    -   Increased `z-index` of [DialogProvider](dialog-provider.md) dialog container div to 999999
+
 -   `1.4.0`
 
     -   Added `onClick` prop to [ListView](list-view.md) widget
