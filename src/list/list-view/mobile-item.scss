@@ -44,3 +44,8 @@
 .react-simple-widget.list-view-mobile-item:last-child {
     border-bottom: none;
 }
+
+.react-simple-widget.list-view-mobile-item.list-view-mobile-item-clickable:hover {
+    background-color: #00000009;
+    cursor: pointer;
+}

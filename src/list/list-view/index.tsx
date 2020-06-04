@@ -11,7 +11,7 @@ import { ListViewFooter } from "./footer";
  * ListView is a widget which displays a list of items with pagination and sorting features. For each item, it can also
  * display a dialog popup of actions on that item. Since it uses dialogs, it needs a DialogProvider as an ancestor widget
  */
-export const ListView = ({ busy, sort, items, options, pagination, props, breakpoint = 768, skipIf }: IListView): any => {
+export const ListView = ({ busy, sort, items, options, pagination, props, breakpoint = 768, onClick, skipIf }: IListView): any => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [overflowing, setOverflowing] = useState(false);
     const itemsRef = useRef();
@@ -73,7 +73,7 @@ export const ListView = ({ busy, sort, items, options, pagination, props, breakp
                 {items
                     .filter(item => (!!skipIf ? !skipIf(item) : true))
                     .map((item, i) => {
-                        const itemProps = { key: i, item: item, index: i, options: options, props: props, propValueEvaluator: itemPropValue };
+                        const itemProps = { key: i, item, index: i, options, props, propValueEvaluator: itemPropValue, onClick };
                         if (windowWidth < breakpoint) return <ListViewMobileItem {...itemProps} />;
                         else return <ListViewDesktopItem {...itemProps} />;
                     })}

@@ -261,6 +261,7 @@ export interface IListView {
     options?: IListViewOptions;
     pagination?: IListViewPagination;
     props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
+    onClick?: (item: any, itemIndex?: number) => void;
     skipIf?: (item: any) => boolean;
 }
 

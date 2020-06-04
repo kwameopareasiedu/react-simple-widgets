@@ -76,3 +76,8 @@
 .react-simple-widget.list-view-desktop-item:last-child {
     border: none;
 }
+
+.react-simple-widget.list-view-desktop-item.list-view-desktop-item-clickable:hover {
+    background-color: #00000009;
+    cursor: pointer;
+}

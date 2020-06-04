@@ -12,20 +12,34 @@ interface IListViewMobileItem {
     options: IListViewOptions;
     props: Array<[string, string | ((item: any, itemIndex: number) => any)]>;
     propValueEvaluator: (item: any, itemIndex: number, propIndex: number) => any;
+    onClick?: (item: any, itemIndex?: number) => void;
 }
 
-export const ListViewMobileItem = ({ item, index, props, options, propValueEvaluator }: IListViewMobileItem): any => {
+export const ListViewMobileItem = ({ item, index, props, options, propValueEvaluator, onClick }: IListViewMobileItem): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
-    const showItemDialog = (item: any): void => {
+    const className = (): string => {
+        const classes = ["react-simple-widget", "list-view-mobile-item"];
+        if (onClick) classes.push("list-view-mobile-item-clickable");
+        return classes.join(" ");
+    };
+
+    const showOptionsDialog = (e: React.MouseEvent, item: any): void => {
+        e.preventDefault();
+        e.stopPropagation();
+
         if (!options.handleOptions) {
             const optionItems = options.items;
             showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={index} options={optionItems} />);
         } else return options.handleOptions(item, index);
     };
 
+    const interceptOnClick = (): void => {
+        if (onClick) onClick(item, index);
+    };
+
     return (
-        <div className="react-simple-widget list-view-mobile-item">
+        <div className={className()} onClick={interceptOnClick}>
             {props.reduce(
                 (items, [label], propIndex) => [
                     ...items,
@@ -45,7 +59,7 @@ export const ListViewMobileItem = ({ item, index, props, options, propValueEvalu
                 <React.Fragment>
                     {options.busy && options.busy(item, index) && <Loader className="item-options" />}
                     {(!options.busy || !options.busy(item, index)) && (
-                        <span className="item-options" onClick={(): void => showItemDialog(item)}>
+                        <span className="item-options" onClick={e => showOptionsDialog(e, item)}>
                             <img src={MoreIcon} alt="More" />
                         </span>
                     )}

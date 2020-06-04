@@ -1,8 +1,8 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { DialogProvider } from "../../provider/dialog-provider";
-import { ListView } from "./index";
 import { ListViewSortOrder } from "../../../types";
+import { ListView } from "./index";
 
 const collection = [
     { name: "Item-01", created_at: "2019-01-01", nested_property: { current_value: "Item 01 nested property current value" } },
@@ -234,6 +234,35 @@ export const withCustomOptionHandler = () => {
                     ["Nested property", "nested_property.current_value"],
                     ["Undefined nested property", "nested_property.ability"]
                 ]}
+            />
+        </DialogProvider>
+    );
+};
+
+export const withOnClick = () => {
+    return (
+        <DialogProvider>
+            <ListView
+                items={collection}
+                props={[
+                    ["Name", "name"],
+                    ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY")],
+                    ["Undefined property", "status"],
+                    ["Nested property", "nested_property.current_value"],
+                    ["Undefined nested property", "nested_property.ability"]
+                ]}
+                options={{
+                    busy: (item, itemIndex) => itemIndex % 2 == 0,
+                    items: [
+                        ["Option #1", (): void => console.log("Option #1 clicked")],
+                        ["Option #2", (): void => console.log("Option #2 clicked")],
+                        ["Option #3", (): void => console.log("Option #3 clicked")]
+                    ]
+                }}
+                onClick={(item, index) => {
+                    console.log({ item, index });
+                    alert("Item clicked. Check the console for the item clicked and its index");
+                }}
             />
         </DialogProvider>
     );
