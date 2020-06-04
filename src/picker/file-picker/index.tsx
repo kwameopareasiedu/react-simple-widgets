@@ -1,6 +1,6 @@
 import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { DialogSize, IDialogHelper, IFilePicker } from "../../../types";
+import { DialogSize, FieldDecorationType, IDialogHelper, IFilePicker } from "../../../types";
 import { DialogProviderContext } from "../../provider/dialog-provider";
 import { FieldDecoration } from "../../form/field-decoration";
 
@@ -156,29 +156,35 @@ export const FilePicker = ({ file, error, limit, label, extensions, decoration, 
     };
 
     return (
-        <FieldDecoration label={label} decoration={decoration} error={error} hasValue={true}>
-            {({ onFieldFocus, onFieldBlur }): any => (
-                <div
-                    className="react-simple-widget file-picker"
-                    onKeyUp={e => onKeyUp(e, onFieldFocus)}
-                    onClick={(): void => openFileDialog(onFieldFocus)}
-                    onFocus={() => {
-                        onFieldFocus();
-                        if (onFocus) onFocus();
-                    }}
-                    onBlur={() => {
-                        onFieldBlur();
-                        if (onBlur) onBlur();
-                    }}
-                    tabIndex={0}>
-                    {!file && <p className="no-selection">No file selected</p>}
-                    {file && <p className="meta">{file.name}</p>}
+        <div className="react-simple-widget file-picker">
+            <FieldDecoration
+                label={label}
+                error={error}
+                decoration={decoration}
+                hasValue={decoration === FieldDecorationType.FLOATING_LABEL ? true : !!file || dialogOpen}>
+                {({ onFieldFocus, onFieldBlur }): any => (
+                    <div
+                        className="trigger"
+                        onKeyUp={e => onKeyUp(e, onFieldFocus)}
+                        onClick={(): void => openFileDialog(onFieldFocus)}
+                        onFocus={() => {
+                            onFieldFocus();
+                            if (onFocus) onFocus();
+                        }}
+                        onBlur={() => {
+                            onFieldBlur();
+                            if (onBlur) onBlur();
+                        }}
+                        tabIndex={0}>
+                        {!file && <p className="no-selection">No file selected</p>}
+                        {file && <p className="meta">{file.name}</p>}
 
-                    <small>
-                        <i>Click to select a file</i>
-                    </small>
-                </div>
-            )}
-        </FieldDecoration>
+                        <small>
+                            <i>Click to select a file</i>
+                        </small>
+                    </div>
+                )}
+            </FieldDecoration>
+        </div>
     );
 };

@@ -154,18 +154,21 @@
     }
 }
 
-.react-simple-widget.date-picker {
-    @include resetWidgetChild;
+.react-simple-widget.date-picker .field-decoration > .field > .widgets > .widget {
+    overflow: hidden;
 
-    min-height: 1.5rem;
+    .trigger {
+        @include resetWidgetChild;
+        min-height: 1.5rem;
 
-    > p {
-        margin: 0;
-        font-style: italic;
-        padding: 0;
+        > p {
+            margin: 0;
+            font-style: italic;
+            padding: 0;
+        }
     }
-}
 
-.react-simple-widget.date-picker:hover {
-    cursor: pointer;
+    .trigger:hover {
+        cursor: pointer;
+    }
 }

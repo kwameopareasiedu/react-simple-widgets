@@ -1,7 +1,7 @@
 import "./index.scss";
 import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
-import { DatePickerMode, DialogSize, IDatePicker, IDialogHelper } from "../../../types";
+import { DatePickerMode, DialogSize, FieldDecorationType, IDatePicker, IDialogHelper } from "../../../types";
 import { DialogProviderContext } from "../../provider/dialog-provider";
 import { FieldDecoration } from "../../form/field-decoration";
 
@@ -275,25 +275,27 @@ export const DatePicker = ({
     };
 
     return (
-        <FieldDecoration label={label} decoration={decoration} error={error} hasValue={!!date || dialogOpen}>
-            {({ onFieldFocus, onFieldBlur }): any => (
-                <div
-                    className="react-simple-widget date-picker"
-                    onKeyUp={e => onKeyUp(e, onFieldFocus)}
-                    onClick={(): void => openFileDialog(onFieldFocus)}
-                    onFocus={() => {
-                        onFieldFocus();
-                        if (onFocus) onFocus();
-                    }}
-                    onBlur={() => {
-                        onFieldBlur();
-                        if (onBlur) onBlur();
-                    }}
-                    tabIndex={0}>
-                    {date && mode !== DatePickerMode.MULTI && moment(date).format(displayFormat)}
-                    {date && mode === DatePickerMode.MULTI && (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
-                </div>
-            )}
-        </FieldDecoration>
+        <div className="react-simple-widget date-picker">
+            <FieldDecoration label={label} decoration={decoration} error={error} hasValue={!!date || dialogOpen}>
+                {({ onFieldFocus, onFieldBlur }): any => (
+                    <div
+                        className="trigger"
+                        onKeyUp={e => onKeyUp(e, onFieldFocus)}
+                        onClick={(): void => openFileDialog(onFieldFocus)}
+                        onFocus={() => {
+                            onFieldFocus();
+                            if (onFocus) onFocus();
+                        }}
+                        onBlur={() => {
+                            onFieldBlur();
+                            if (onBlur) onBlur();
+                        }}
+                        tabIndex={0}>
+                        {date && mode !== DatePickerMode.MULTI && moment(date).format(displayFormat)}
+                        {date && mode === DatePickerMode.MULTI && (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
+                    </div>
+                )}
+            </FieldDecoration>
+        </div>
     );
 };
