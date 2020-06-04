@@ -1,6 +1,6 @@
 import "./page-transition-view.scss";
 import { useLocation } from "react-router-dom";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { IPageTransitionOptions, IPageTransitionView } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
 
@@ -15,13 +15,19 @@ export const PageTransitionView = ({ children }: IPageTransitionView): any => {
         if (!options || !options.dontAnimate) {
             setRedirectData([to, options]);
             setClassName("react-simple-widget page-transition-view page-transition-view-redirecting");
-        } else providerRedirect(to, options);
+        } else {
+            if (options && options.dontAnimate) setClassName("react-simple-widget page-transition-view page-transition-view-static");
+            else setClassName("react-simple-widget page-transition-view");
+            providerRedirect(to, options);
+        }
     };
 
     const onAnimationEnd = (e: any): void => {
         const animationName = getAnimationName(e);
         if (animationName === "page-transition-view-exit-animation") {
-            setClassName("react-simple-widget page-transition-view");
+            const options = redirectData[1];
+            if (options && options.dontAnimate) setClassName("react-simple-widget page-transition-view page-transition-view-static");
+            else setClassName("react-simple-widget page-transition-view");
             providerRedirect(redirectData[0], redirectData[1]);
         }
     };

@@ -33,9 +33,11 @@ export const usage = () => {
                     </Link>
                 </div>
 
-                <Link to="/tertiary" className="btn btn-secondary btn-sm">
-                    Transition to tertiary page (This is a link)
-                </Link>
+                <div className="mb-4">
+                    <Link to="/secondary" className="btn btn-secondary btn-sm" dontAnimate={true}>
+                        Transition to secondary page (Will not animate)
+                    </Link>
+                </div>
             </div>
         );
     };
@@ -51,26 +53,14 @@ export const usage = () => {
                     Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
                 </p>
 
-                <button className="btn btn-secondary btn-sm" onClick={() => redirect("/")}>
-                    Transition to previous page (This is a button with onClick)
-                </button>
-            </div>
-        );
-    };
+                <div className="mb-4">
+                    <button className="btn btn-info btn-sm" onClick={() => redirect("/")}>
+                        Transition to previous page (This is a button with onClick)
+                    </button>
+                </div>
 
-    const TertiaryPage = () => {
-        const { redirect } = useContext(PageTransitionProviderContext);
-
-        return (
-            <div id="tertiary" className="container text-center">
-                <h3>Tertiary page</h3>
-                <p>
-                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
-                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
-                </p>
-
-                <button className="btn btn-secondary btn-sm" onClick={() => redirect("/")}>
-                    Just redirect to previous page (This is a button with onClick)
+                <button className="btn btn-secondary btn-sm" onClick={() => redirect("/", { dontAnimate: true })}>
+                    Transition to previous page (Will not animate)
                 </button>
             </div>
         );
@@ -90,10 +80,6 @@ export const usage = () => {
                         <PageTransitionView>
                             <SecondaryPage />
                         </PageTransitionView>
-                    </Route>
-
-                    <Route exact path="/tertiary">
-                        <TertiaryPage />
                     </Route>
                 </Switch>
             </PageTransitionProvider>
