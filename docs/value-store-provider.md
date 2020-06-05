@@ -19,17 +19,12 @@ layer of security**
 
 ```jsx
 ReactDOM.render(
-    <ValueStoreProvider initialLocalStorageKeys={[]}>
+    <ValueStoreProvider>
         <App /> // Children is a required prop
     </ValueStoreProvider>,
     document.getElementById("root")
 );
 ```
-
--   `initialLocalStorageKeys?: Array<string>`
-
-    If specified, the `ValueStoreProvider` reads the values of these keys from the local storage
-    **before** the first render of the children
 
 ### ValueStoreProviderContext
 

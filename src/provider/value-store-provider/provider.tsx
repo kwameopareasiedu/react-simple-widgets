@@ -12,16 +12,27 @@ import { ValueStoreProviderContext } from "./context";
  * NB: It is recommended not to persist sensitive data to the local storage as this has absolutely
  * no layer of security
  */
-export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: IValueStoreProvider): any => {
+export const ValueStoreProvider = ({ children }: IValueStoreProvider): any => {
     // Read values of specified initial values from localStorage
-    const [items, setItems] = useState(initialLocalStorageKeys.map(key => new ValueStoreItem(key, localStorage.getItem(key), true)));
+    const persistedKeysKey = "react-simple-widgets-value-store-provider-persisted-keys";
+    const [persistedKeys, setPersistedKeys] = useState<Array<string>>(JSON.parse(localStorage.getItem(persistedKeysKey) || "[]"));
+    const [items, setItems] = useState(persistedKeys.map(key => new ValueStoreItem(key, localStorage.getItem(key), true)));
 
     useEffect(() => {
         for (const value of items) {
-            if (value.persist && !!value.value) localStorage.setItem(value.key, value.value);
-            else localStorage.removeItem(value.key);
+            if (value.persist && !!value.value) {
+                localStorage.setItem(value.key, value.value);
+                if (!persistedKeys.includes(value.key)) setPersistedKeys([...persistedKeys, value.key]);
+            } else {
+                setPersistedKeys(persistedKeys.filter(key => key !== value.key));
+                localStorage.removeItem(value.key);
+            }
         }
     }, [items]);
+
+    useEffect(() => {
+        localStorage.setItem(persistedKeysKey, JSON.stringify(persistedKeys));
+    }, [persistedKeys]);
 
     const get = (key: string): any => {
         const target = items.filter(v => v.key === key).slice(-1)[0];
@@ -47,6 +58,7 @@ export const ValueStoreProvider = ({ children, initialLocalStorageKeys = [] }: I
 
     const clear = (): void => {
         for (const item of items) put(item.key, null, true);
+        setPersistedKeys([]);
     };
 
     return <ValueStoreProviderContext.Provider value={{ get, put, del, clear }}>{children}</ValueStoreProviderContext.Provider>;

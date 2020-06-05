@@ -39,7 +39,6 @@ export interface IValueStoreProviderContext {
 
 export interface IValueStoreProvider {
     children: any;
-    initialLocalStorageKeys?: Array<string>;
 }
 
 /* FlashProvider interfaces */

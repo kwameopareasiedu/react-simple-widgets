@@ -90,7 +90,7 @@ export const usage = (): any => {
     };
 
     return (
-        <ValueStoreProvider initialLocalStorageKeys={["favourite-web-framework", "favourite-mobile-framework"]}>
+        <ValueStoreProvider>
             <ExampleApp />
         </ValueStoreProvider>
     );
