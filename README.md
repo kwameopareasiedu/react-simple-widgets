@@ -4,7 +4,7 @@ This is a collection of widgets to help accelerate your React app development.
 It provides customizable widgets that perform commonly needed tasks within your app.
 
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-904.6%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-904.9%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 ### Installing
@@ -108,6 +108,18 @@ The following variables are widget specific
 | `--rsw-flash-view-warning-theme-color`  | Controls the theme color of warning flash message dialogs created by the `FlashProvider` widget        | `#ffdd55`     |
 | `--rsw-flash-view-info-theme-color`     | Controls the theme color of information flash message dialogs created by the `FlashProvider` widget    | `#55ddff`     |
 | `--rsw-flash-view-success-theme-color`  | Controls the theme color of success flash message dialogs created by the `FlashProvider` widget        | `#7fff2a`     |
+
+### Storybook samples
+
+This library is built with [Storybook](https://storybook.js.org/) and each widget has its own set
+of stories demonstrating use cases of the widget. When executed, Storybook will open a web page
+containing all the stories for you to interact with.
+
+To execute the storybook, follow these steps:
+
+1.  Clone the project from [Github](https://github.com/kwameopareasiedu/react-simple-widgets)
+2.  Run `npm install` to install the project dependencies
+3.  Run `npm run storybook`
 
 ### Maintainers
 

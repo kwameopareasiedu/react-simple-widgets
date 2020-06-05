@@ -2,6 +2,15 @@
 
 # Changelog
 
+-   `1.5.0`
+
+    -   Added [useLoadMore hook](use-load-more.md)
+    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](value-store-provider.md)
+        widget. Once a value is persisted, it will automatically be remembered until removed, even
+        when the page is refreshed
+    -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
+        [ConfirmDialog](confirm-dialog.md)
+
 -   `1.4.1`
 
     -   Added overflow styling to [DatePicker](date-picker.md) and [FilePicker](file-picker.md)
