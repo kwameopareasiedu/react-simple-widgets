@@ -19,7 +19,7 @@ export const usage = () => {
 
         return (
             <div>
-                <ConfirmDialog onConfirm={interceptSetBusy} theme={ConfirmDialogTheme.ERROR} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog onConfirm={interceptSetBusy} theme={ConfirmDialogTheme.DANGER} onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-danger">
                         Start

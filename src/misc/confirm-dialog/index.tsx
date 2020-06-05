@@ -35,7 +35,7 @@ interface IConfirmDialogConfirmation {
 const ConfirmDialogConfirmation = ({ message, theme, helper }: IConfirmDialogConfirmation): any => {
     const confirmBtnClassname = (): string => {
         const classes = ["btn", "btn-sm", "btn-block"];
-        if (theme === ConfirmDialogTheme.ERROR) classes.push("btn-danger");
+        if (theme === ConfirmDialogTheme.DANGER) classes.push("btn-danger");
         if (theme === ConfirmDialogTheme.WARNING) classes.push("btn-warning");
         if (theme === ConfirmDialogTheme.INFO) classes.push("btn-info");
         if (theme === ConfirmDialogTheme.SUCCESS) classes.push("btn-success");

@@ -273,7 +273,7 @@ export interface IObjectView {
 
 /* ConfirmDialog */
 export enum ConfirmDialogTheme {
-    ERROR,
+    DANGER,
     WARNING,
     INFO,
     SUCCESS,

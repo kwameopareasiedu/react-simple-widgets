@@ -18,7 +18,7 @@ widgettree.
 -   `theme?: ConfirmDialogTheme = ConfirmDialogTheme.PRIMARY`
 
     This represents the theme of the confirm button within the dialog. It can be one of
-    `ConfirmDialogTheme.ERROR`, `ConfirmDialogTheme.WARNING`, `ConfirmDialogTheme.INFO`,
+    `ConfirmDialogTheme.DANGER`, `ConfirmDialogTheme.WARNING`, `ConfirmDialogTheme.INFO`,
     `ConfirmDialogTheme.SUCCESS` and `ConfirmDialogTheme.PRIMARY`. The theme colors are applied
     from Bootstrap
 
