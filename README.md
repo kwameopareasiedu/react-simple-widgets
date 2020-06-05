@@ -76,6 +76,8 @@ Widgets under this category are for convenience
 -   [Loader](docs/loader.md) - A widget that displays a spinner
 -   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
     search string parameters
+-   [useLoadMore](docs/use-load-more.md) - A hook that provides methods and state variables to
+    implement a load-more-items feature for a list of items that cannot be displayed in a ListView
 
 ### Customization
 

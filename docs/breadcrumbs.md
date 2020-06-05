@@ -20,4 +20,4 @@ Breadcrumbs is a widget that provides breadcrumb styling for its link children
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for the form using this widget](../src/misc/breadcrumbs/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/misc/breadcrumbs/index.stories.tsx)

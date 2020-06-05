@@ -19,4 +19,4 @@ button, it accepts all attributes of a `<button/>` tag
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for the form using this widget](../src/misc/busy-button/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/misc/busy-button/index.stories.tsx)

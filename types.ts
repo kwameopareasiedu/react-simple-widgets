@@ -300,3 +300,14 @@ export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
 
 /* Loader */
 export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {}
+
+/* UseLoadMore */
+export interface IUseLoadMore {
+    page: number;
+    items: Array<any>;
+    canLoadMore: boolean;
+    shouldLoadMore: number;
+    onLoadMore: (resetBeforeLoad?: boolean) => void;
+    onLoadMoreSuccess: (newItems: Array<any>, total: number) => void;
+    onLoadMoreFailed: () => void;
+}

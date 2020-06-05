@@ -32,4 +32,4 @@ widgettree.
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for the form using this widget](../src/misc/confirm-dialog/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/misc/confirm-dialog/index.stories.tsx)

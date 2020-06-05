@@ -36,4 +36,4 @@ This widget renders properties of an object using a table
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for the form using this widget](../src/list/list-view/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/list/list-view/index.stories.tsx)

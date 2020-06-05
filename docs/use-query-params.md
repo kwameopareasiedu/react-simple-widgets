@@ -15,4 +15,4 @@ const qp = useQueryParams();
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for the form using this widget](../src/misc/use-query-params/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/misc/use-query-params/index.stories.tsx)
