@@ -23,7 +23,9 @@ import {
     IFieldDecoration,
     IBreadcrumbs,
     IBusyButton,
-    IConfirmDialog, ILoader
+    IConfirmDialog,
+    ILoader,
+    IUseLoadMore
 } from "../types";
 
 export const DialogProviderContext: Context<IDialogProviderContext>;
@@ -52,3 +54,4 @@ export const BusyButton: FunctionComponent<IBusyButton>;
 export const ConfirmDialog: FunctionComponent<IConfirmDialog>;
 export const Loader: FunctionComponent<ILoader>;
 export const useQueryParams: () => any;
+export const useLoadMore: () => IUseLoadMore;
