@@ -2,6 +2,10 @@
 
 # Changelog
 
+-   `1.6.1`
+
+    -   Added inline styling to `Loader` in [BusyButton](docs/busy-button.md)
+
 -   `1.6.0`
 
     -   Corrected path to [useLoadMore](docs/use-load-more.md) stories in its docs

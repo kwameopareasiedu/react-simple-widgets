@@ -6,7 +6,7 @@ import { Loader } from "../loader";
 export const BusyButton = ({ busy, disabled, className, children, ...props }: IBusyButton): any => {
     return (
         <button className={`react-simple-widget busy-button ${className ? className : ""}`} disabled={busy || disabled} {...props}>
-            {busy && <Loader role="status" aria-hidden="true" />}
+            {busy && <Loader className="d-inline" role="status" aria-hidden="true" />}
             {children}
         </button>
     );
