@@ -114,6 +114,7 @@ export interface IFieldDecoration {
     leading?: any;
     trailing?: any;
     hasValue?: boolean;
+    disabled?: boolean;
     decoration?: FieldDecorationType;
     children: IFieldDecorationBuilder;
 }
@@ -293,9 +294,7 @@ export interface IBusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /* Breadcrumbs */
-export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
-    children: any;
-}
+export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {}
 
 /* Loader */
 export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {}
@@ -310,3 +309,6 @@ export interface IUseLoadMore {
     onLoadMoreSuccess: (newItems: Array<any>, total: number) => void;
     onLoadMoreFailed: () => void;
 }
+
+/* PageActions */
+export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {}

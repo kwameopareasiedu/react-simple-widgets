@@ -6,7 +6,7 @@ export default { title: "Breadcrumbs", component: Breadcrumbs };
 
 export const usage = () => (
     <BrowserRouter>
-        <Breadcrumbs>
+        <Breadcrumbs className="mt-4">
             <Link to="">Home</Link>
             <Link to="">Page 1</Link>
             <Link to="">Path 1</Link>

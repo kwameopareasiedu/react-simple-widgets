@@ -6,7 +6,7 @@ import { FieldDecorationType, IDropdownField } from "../../../types";
 
 /** DropdownField allows the user to select from a list of items in a dropdown menu */
 export const DropdownField = ({ label, name, decoration, errorTransformer, children, ...rest }: IDropdownField) => {
-    const { className, onChange, onFocus, onBlur, ...restOfRest } = rest;
+    const { className, disabled, onChange, onFocus, onBlur, ...restOfRest } = rest;
 
     return (
         <div className="react-simple-widget dropdown-field">
@@ -16,7 +16,8 @@ export const DropdownField = ({ label, name, decoration, errorTransformer, child
                         label={label}
                         error={touched && error}
                         hasValue={decoration === FieldDecorationType.FLOATING_LABEL || !!value}
-                        decoration={decoration || FieldDecorationType.FLAT}>
+                        decoration={decoration || FieldDecorationType.FLAT}
+                        disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }): any => (
                             <select
                                 name={name}

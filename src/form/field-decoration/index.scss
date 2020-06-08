@@ -22,6 +22,11 @@
     }
 }
 
+.react-simple-widget.field-decoration.field-decoration-disabled {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
 /* Flat decoration */
 .react-simple-widget.field-decoration.flat-decoration {
     > .field > .widgets > .widget {
@@ -36,6 +41,12 @@
     > .field > .widgets > .widget {
         border-width: 2px;
         border-color: var(--rsw-primary-theme-color);
+    }
+}
+
+.react-simple-widget.field-decoration.flat-decoration.field-decoration-disabled {
+    > .field > .widgets > .widget {
+        border-style: dashed;
     }
 }
 
@@ -70,6 +81,12 @@
 .react-simple-widget.field-decoration.underline-decoration.field-decoration-has-focus {
     > .field::after {
         right: 0;
+    }
+}
+
+.react-simple-widget.field-decoration.underline-decoration.field-decoration-disabled {
+    > .field > .widgets > .widget {
+        border-bottom-style: dashed;
     }
 }
 
@@ -112,5 +129,11 @@
     > .field > label {
         top: -0.65rem;
         background-color: var(--rsw-field-decoration-label-bg-color);
+    }
+}
+
+.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-disabled {
+    > .field {
+        border-style: dashed;
     }
 }

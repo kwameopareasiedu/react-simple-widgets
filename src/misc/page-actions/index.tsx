@@ -1,0 +1,17 @@
+import "./index.scss";
+import React, { Children } from "react";
+import { IPageActions } from "../../../types";
+
+/**
+ * PageActions is a widget that displays a row of spaced options for a page. If no children are
+ * present, it returns null
+ */
+export const PageActions = ({ children, className, ...rest }: IPageActions): any => {
+    if (Children.toArray(children).length === 0) return null;
+
+    return (
+        <div className={`react-simple-widget page-actions ${className || ""}`} {...rest}>
+            {children}
+        </div>
+    );
+};

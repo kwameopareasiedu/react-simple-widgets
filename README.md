@@ -4,7 +4,7 @@ This is a collection of widgets to help accelerate your React app development.
 It provides customizable widgets that perform commonly needed tasks within your app.
 
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-904.9%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-906.4%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 ### Installing
@@ -73,6 +73,8 @@ Widgets under this category are for convenience
 -   [ConfirmDialog](docs/confirm-dialog.md) - A widget which displays a confirmation dialog before
     calling an action
 -   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
+-   [PageActions](docs/page-actions.md) - A widget that displays a row of spaced buttons or nothing
+    if no children are specified
 -   [Loader](docs/loader.md) - A widget that displays a spinner
 -   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
     search string parameters
@@ -135,4 +137,4 @@ It would be really helpful if you can star the project on
 
 ### Changelog
 
-[View changelog](docs/changelog.md)
+[View changelog](CHANGELOG.md)

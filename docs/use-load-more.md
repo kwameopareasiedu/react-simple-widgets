@@ -34,7 +34,7 @@ const { page, items, canLoadMore, shouldLoadMore, onLoadMore, onLoadMoreSuccess,
 
 -   `onLoadMore(resetBeforeLoad?: boolean) => void`
 
-    When this function is called, `page` is incremented and `shouldLoadMore` is updated to trigger 
+    When this function is called, `page` is incremented and `shouldLoadMore` is updated to trigger
     any connected effect to run. Within that effect, `page` will have the new incremented value
 
     -   `resetBeforeLoad?: boolean`
@@ -61,4 +61,4 @@ const { page, items, canLoadMore, shouldLoadMore, onLoadMore, onLoadMoreSuccess,
 
 ## Usage
 
-A complete usage can be found in the [Storybook stories for this widget](../src/misc/use-query-params/index.stories.tsx)
+A complete usage can be found in the [Storybook stories for this widget](../src/misc/use-load-more/index.stories.tsx)

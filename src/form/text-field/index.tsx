@@ -10,7 +10,7 @@ import PasswordHiddenIcon from "../../assets/hide.svg";
 
 /** TextField uses the CustomField to provider a textual field to the user. It behaves as a standard input but also doubles down as a WYSIWYG editor */
 export const TextField = ({ label, name, decoration, mode = TextFieldMode.INPUT, errorTransformer, placeholder, type, ...rest }: ITextField): any => {
-    const { className, onChange, onFocus, onBlur, onEditorChange, onEditorFocus, onEditorBlur, ...restOfRest } = rest;
+    const { className, disabled, onChange, onFocus, onBlur, onEditorChange, onEditorFocus, onEditorBlur, ...restOfRest } = rest;
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const inputType = (): string => {
@@ -39,6 +39,7 @@ export const TextField = ({ label, name, decoration, mode = TextFieldMode.INPUT,
                         error={touched && error}
                         hasValue={mode === TextFieldMode.EDITOR || !!value}
                         decoration={decoration || FieldDecorationType.FLAT}
+                        disabled={disabled}
                         trailing={trailing()}>
                         {({ onFieldFocus, onFieldBlur }) =>
                             mode === TextFieldMode.INPUT ? (

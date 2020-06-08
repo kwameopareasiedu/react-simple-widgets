@@ -40,6 +40,7 @@ export const index = (): any => {
         };
 
         const onSubmit = (values: any) => {
+            console.log(values);
             // setTimeout(() => {
             //     console.log(values);
             //     setLoading(false);
@@ -90,6 +91,34 @@ export const index = (): any => {
 
                                     <br />
 
+                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.FLAT} disabled />
+
+                                    <br />
+
+                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.UNDERLINE} disabled />
+
+                                    <br />
+
+                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.FLOATING_LABEL} disabled />
+
+                                    <br />
+
+                                    <DropdownField
+                                        name="something"
+                                        label="Disabled dropdown"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        disabled>
+                                        <option value="option">An options</option>
+                                    </DropdownField>
+
+                                    <br className="d-block d-md-none" />
+                                </div>
+
+                                <div className="col-12 col-md-6">
+                                    <FileField name="file" label="File upload (1MB limit)" limit={1024 * 1024} />
+
+                                    <br />
+
                                     <DropdownField name="language" label="Primary language" decoration={FieldDecorationType.FLOATING_LABEL}>
                                         <option value="english">English</option>
                                         <option value="twi">Twi</option>
@@ -99,12 +128,6 @@ export const index = (): any => {
 
                                     <br />
 
-                                    <FileField name="file" label="File upload (1MB limit)" limit={1024 * 1024} />
-
-                                    <br className="d-block d-md-none" />
-                                </div>
-
-                                <div className="col-12 col-md-6">
                                     <SelectField
                                         name="acceptTOS"
                                         mode={SelectFieldMode.BINARY}

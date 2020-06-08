@@ -6,7 +6,7 @@ import { FieldDecorationType, IFieldDecoration } from "../../../types";
  * FieldDecoration provides the label and error components as well as styling and theming
  * to a form field.
  */
-export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, leading, trailing, error, hasValue, children }: IFieldDecoration) => {
+export const FieldDecoration = ({ decoration, label, leading, trailing, error, hasValue, disabled, children }: IFieldDecoration) => {
     const [focused, setFocused] = useState(false);
 
     const onFieldFocus = (): void => setFocused(true);
@@ -14,11 +14,14 @@ export const FieldDecoration = ({ decoration = FieldDecorationType.FLAT, label, 
     const onFieldBlur = (): void => setFocused(false);
 
     const className = (): string => {
+        decoration = ![null, undefined].includes(decoration) ? decoration : FieldDecorationType.FLAT;
+
         const classes = ["react-simple-widget", "field-decoration"];
         if (decoration === FieldDecorationType.FLAT) classes.push("flat-decoration");
         if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline-decoration");
         if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label-decoration");
         if (hasValue) classes.push("field-decoration-has-value");
+        if (disabled) classes.push("field-decoration-disabled");
         if (focused) classes.push("field-decoration-has-focus");
         if (error) classes.push("field-decoration-has-error");
         return classes.join(" ");
