@@ -7,14 +7,13 @@
         padding: 1rem 1.25rem 0;
 
         p {
-            font-size: 90%;
             font-style: italic;
-            opacity: 0.65;
+            opacity: 0.75;
         }
 
         .list-group {
             .list-group-item:first-child {
-                border-width: 1px 0;
+                border-width: 1px 0 1px 0;
             }
 
             .list-group-item:last-child {
