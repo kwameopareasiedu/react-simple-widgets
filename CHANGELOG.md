@@ -2,6 +2,19 @@
 
 # Changelog
 
+-   `1.6.2`
+
+    -   Added `middle` vertical alignment to labels `<td/>` elements of
+        [ObjectView](docs/object-view.md)
+    -   Added `word-break` styling to cells of [ListView](docs/list-view.md) to force text overflow
+        if content cannot fit on one line
+    -   Added auto scroll-to-top-of-list feature to [ListView](docs/list-view.md) when the items
+        list is modified by a page change
+    -   Modified [SelectField](docs/select-field.md) to accept `any` type for options values
+        instead of just `string`
+    -   Reduces header vertical padding in [ListView](docs/list-view.md)
+    -   Added item options confirmation feature to [ListView](docs/list-view.md)
+
 -   `1.6.1`
 
     -   Added inline styling to `Loader` in [BusyButton](docs/busy-button.md)

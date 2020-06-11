@@ -95,21 +95,28 @@ the widget tree
         indicator is shown in its place. This is useful if some long-running operation is being
         carried out on the item
 
-    -   `items?: Array<[string, (item: any, itemIndex?: number) => void]>`
+    -   `items?: Array<[string, (item: any, itemIndex?: number) => void, IListViewOptionsConfirmation | boolean]>`
 
-        Each item is a two-element array consisting of the option string and the function to call
-        when it is clicked. The item and its index are passed to this function
+        If specified, the widget handles the dialog display, item listing and calls the associated
+        provider to handle the click
 
-        If `items` is specified, the widget handles the dialog display, item listing and calls the
-        associated provider to handle the click
+        Each item is a three-element array consisting of the option label, the function to call
+        when it is clicked and a confirmation object. The item and its index are passed to this
+        function
+
+        _The third element of each array is an object with the signature
+        `{ label: string, theme?: ConfirmDialogTheme }`. Specify this object if the option needs to
+        be confirmed after it is clicked. The `label` is displayed as the confirmation message and
+        the `theme` controls the appearance of the [confirmation dialog](confirm-dialog.md#api)_
+
+        _If no confirmation is required for the option, set the third element to `false`_
 
     -   `handleOptions?: (item: any) => void`
 
         This is specified when you want to handle what happens when the options of each item is
         clicked. It is passed the item on which the options is clicked
 
-    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`,
-    > ignoring `items`
+    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`, ignoring `items`
 
 -   `onClick?: (item: any, itemIndex?: number) => void`
 
