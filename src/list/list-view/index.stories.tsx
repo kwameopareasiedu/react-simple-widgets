@@ -1,17 +1,17 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { DialogProvider } from "../../provider/dialog-provider";
-import { ListViewSortOrder } from "../../../types";
+import { ConfirmDialogTheme, ListViewSortOrder } from "../../../types";
 import { ListView } from "./index";
 
 const collection = [
-    { name: "Item-01", created_at: "2019-01-01", nested_property: { current_value: "Item 01 nested property current value" } },
+    { name: "Item-01", created_at: "2019-01-01", nested_property: { current_value: "Item_01_nested_property_current_value" } },
     { name: "Item-02", created_at: "2019-01-02", nested_property: { current_value: "Item 02 nested property current value" } },
     { name: "Item-03", created_at: "2019-01-03", nested_property: { current_value: "Item 03 nested property current value" } },
     { name: "Item-04", created_at: "2019-01-04", nested_property: { current_value: "Item 04 nested property current value" } },
     { name: "Item-05", created_at: "2019-01-05", nested_property: { current_value: "Item 05 nested property current value" } },
     { name: "Item-06", created_at: "2019-01-06", nested_property: { current_value: "Item 06 nested property current value" } },
-    { name: "Item-07", created_at: "2019-01-07", nested_property: { current_value: "Item 07 nested property current value" } },
+    { name: "Item-07", created_at: "2019-01-07", nested_property: { current_value: "Item_07_nested_property_current_value" } },
     { name: "Item-08", created_at: "2019-01-08", nested_property: { current_value: "Item 08 nested property current value" } },
     { name: "Item-09", created_at: "2019-01-09", nested_property: { current_value: "Item 09 nested property current value" } },
     { name: "Item-10", created_at: "2019-01-10", nested_property: { current_value: "Item 10 nested property current value" } },
@@ -199,9 +199,17 @@ export const withOptions = () => {
                 options={{
                     busy: (item, itemIndex) => itemIndex % 2 == 0,
                     items: [
-                        ["Option #1", (): void => console.log("Option #1 clicked")],
-                        ["Option #2", (): void => console.log("Option #2 clicked")],
-                        ["Option #3", (): void => console.log("Option #3 clicked")]
+                        ["Option #1", (): void => console.log("Option #1 clicked"), false],
+                        [
+                            "Option #2 (Requires confirmation)",
+                            (): void => console.log("Option #2 clicked"),
+                            { label: "Are you sure?", theme: ConfirmDialogTheme.SUCCESS }
+                        ],
+                        [
+                            "Option #3 (Requires confirmation)",
+                            (): void => console.log("Option #3 clicked"),
+                            { label: "Are you sure?", theme: ConfirmDialogTheme.DANGER }
+                        ]
                     ]
                 }}
                 props={[
@@ -254,9 +262,9 @@ export const withOnClick = () => {
                 options={{
                     busy: (item, itemIndex) => itemIndex % 2 == 0,
                     items: [
-                        ["Option #1", (): void => console.log("Option #1 clicked")],
-                        ["Option #2", (): void => console.log("Option #2 clicked")],
-                        ["Option #3", (): void => console.log("Option #3 clicked")]
+                        ["Option #1", (): void => console.log("Option #1 clicked"), false],
+                        ["Option #2", (): void => console.log("Option #2 clicked"), false],
+                        ["Option #3", (): void => console.log("Option #3 clicked"), false]
                     ]
                 }}
                 onClick={(item, index) => {

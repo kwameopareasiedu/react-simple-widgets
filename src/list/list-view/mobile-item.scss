@@ -10,6 +10,10 @@
         font-style: italic;
     }
 
+    > span.prop-value {
+        word-break: break-all;
+    }
+
     > span.item-options {
         text-align: right;
         padding-right: 15px;
@@ -38,6 +42,10 @@
 
     > span.item-options.loader:hover {
         cursor: unset;
+    }
+
+    > .react-simple-widget.loader {
+        text-align: right !important;
     }
 }
 

@@ -157,9 +157,9 @@ export interface ISelectField {
     label?: string;
     inline?: boolean;
     mode: SelectFieldMode;
-    options?: Array<[string, string]>;
+    options?: Array<[string, any]>;
     errorTransformer?: (err: any) => string;
-    onChange?: (value: Array<string> | string | boolean) => void;
+    onChange?: (value: any) => void;
 }
 
 /* FilePicker */
@@ -247,9 +247,14 @@ export interface IListViewSort {
     onSort: (column: string, order: ListViewSortOrder) => void;
 }
 
+export interface IListViewOptionsConfirmation {
+    label: any;
+    theme?: ConfirmDialogTheme;
+}
+
 export interface IListViewOptions {
     busy?: (item: any, itemIndex?: number) => boolean;
-    items?: Array<[string, (item: any, itemIndex?: number) => any]>;
+    items?: Array<[string, (item: any, itemIndex?: number) => any, IListViewOptionsConfirmation | boolean]>;
     handleOptions?: (item: any, itemIndex?: number) => void;
 }
 

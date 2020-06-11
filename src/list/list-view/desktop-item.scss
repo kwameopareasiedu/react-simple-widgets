@@ -3,8 +3,9 @@
     border: 1px solid #e3e3e3;
 
     > span {
-        padding: 8px 4px;
         flex: 1 1;
+        padding: 8px 4px;
+        word-break: break-all;
     }
 
     > span:first-child {
@@ -31,6 +32,7 @@
         position: absolute;
         top: 40%;
         right: 0;
+        width: max-content;
         font-size: 75%;
         color: #ffffff;
         padding: 2px 6px;

@@ -18,7 +18,7 @@ export const ListView = ({ busy, sort, items, options, pagination, props, breakp
 
     useEffect(() => {
         const l = (): void => {
-            updateDesktopItemsOverflowStatus();
+            updateOverflowStatus();
             setWindowWidth(window.innerWidth);
         };
 
@@ -26,7 +26,10 @@ export const ListView = ({ busy, sort, items, options, pagination, props, breakp
         return () => window.removeEventListener("resize", l);
     }, []);
 
-    useEffect(() => updateDesktopItemsOverflowStatus(), [items]);
+    useEffect(() => {
+        if (pagination && pagination.page) scrollNearestScrollableElementToTop();
+        updateOverflowStatus();
+    }, [items]);
 
     const itemPropValue = (item: any, itemIndex: number, propIndex: number): any => {
         const propResolution = props[propIndex][1];
@@ -53,11 +56,32 @@ export const ListView = ({ busy, sort, items, options, pagination, props, breakp
         return propertyValue.value || "---";
     };
 
-    const updateDesktopItemsOverflowStatus = (): void => {
+    const updateOverflowStatus = (): void => {
         const sectionDOMElement: Element = itemsRef.current;
         // Check if the items section is overflowing and apply the appropriate overflow class to
         // the header to keep it aligned with the items section which would now have a scrollbar
         if (sectionDOMElement) setOverflowing(sectionDOMElement.scrollHeight > sectionDOMElement.clientHeight);
+    };
+
+    const scrollNearestScrollableElementToTop = (): void => {
+        const sectionDOMElement: Element = itemsRef.current;
+
+        if (sectionDOMElement) {
+            if (overflowing) {
+                sectionDOMElement.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                return;
+            }
+
+            let el = sectionDOMElement;
+
+            while (true) {
+                if (!el.parentElement) break;
+                else if (el.parentElement.scrollHeight > el.parentElement.clientHeight) {
+                    el.parentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                    break;
+                } else el = el.parentElement;
+            }
+        }
     };
 
     return (
