@@ -11,7 +11,7 @@ export default {
 export const usage = (): any => {
     const ExampleApp = (): any => {
         const { flashInfo, flashWarning, flashError, flashSuccess } = useContext(FlashProviderContext);
-        const message = "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. dignissim pellentesque felis.";
+        const message = "Donec_nec_justo_eget_felis_facilisis_fermentum. Aliquam porttitor mauris sit amet orci. dignissim pellentesque felis.";
 
         return (
             <div>

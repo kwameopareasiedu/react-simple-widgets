@@ -12,12 +12,12 @@
         }
 
         .list-group {
-            .list-group-item:first-child {
-                border-width: 1px 0 1px 0;
+            .list-group-item {
+                border-width: 1px 0 0 0;
             }
 
             .list-group-item:last-child {
-                border-width: 0 0 1px 0;
+                border-width: 1px 0 1px 0;
             }
         }
 

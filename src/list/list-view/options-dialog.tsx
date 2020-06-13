@@ -1,13 +1,13 @@
 import "./options-dialog.scss";
 import React from "react";
-import { IDialogHelper, IListViewOptionsConfirmation } from "../../../types";
 import { ConfirmDialog } from "../../misc/confirm-dialog";
+import { IDialogHelper, IListViewOptionItem } from "../../../types";
 
 interface IListViewItemOptionsDialog {
     item: any;
     index: number;
     helper: IDialogHelper;
-    options?: Array<[string, (item: any, itemIndex?: number) => any, IListViewOptionsConfirmation | boolean]>;
+    options?: Array<IListViewOptionItem>;
 }
 
 export const ListViewItemOptionsDialog = ({ helper, item, index, options }: IListViewItemOptionsDialog): any => {
@@ -17,19 +17,18 @@ export const ListViewItemOptionsDialog = ({ helper, item, index, options }: ILis
                 <p className="text-center">Select an option</p>
 
                 <div className="list-group list-group-flush">
-                    {options.map(([label, callback, confirmationData], i) => {
+                    {options.length === 0 && <p className="no-options">No options for this item</p>}
+
+                    {options.map(({ label, confirmation, confirmationTheme, onClick }, i) => {
                         const callbackWrapper = (): void => {
-                            callback(item, index);
+                            onClick(item, index);
                             helper.dismiss();
                         };
 
-                        if (confirmationData) {
+                        if (confirmation) {
                             return (
-                                <ConfirmDialog
-                                    key={label + i}
-                                    onConfirm={callbackWrapper}
-                                    theme={(confirmationData as IListViewOptionsConfirmation).theme}>
-                                    <p>{(confirmationData as IListViewOptionsConfirmation).label}</p>
+                                <ConfirmDialog key={label + i} onConfirm={callbackWrapper} theme={confirmationTheme}>
+                                    <p>{confirmation}</p>
                                     <button type="button" key={label + i} className="list-group-item list-group-item-action">
                                         {label}
                                     </button>

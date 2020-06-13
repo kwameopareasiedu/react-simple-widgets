@@ -93,30 +93,30 @@ the widget tree
 
         If specified and returns true, the options button for the item is disabled and a loading
         indicator is shown in its place. This is useful if some long-running operation is being
-        carried out on the item
+        carried out specific list items
 
-    -   `items?: Array<[string, (item: any, itemIndex?: number) => void, IListViewOptionsConfirmation | boolean]>`
+    -   `builder: (item: any, itemIndex?: number) => Array<IListViewOptionItem>`
 
-        If specified, the widget handles the dialog display, item listing and calls the associated
-        provider to handle the click
+        The options builder function. For each list item, the item and its index are passed to it
+        and it must return the list of options for the item. The properties of an option item are:
 
-        Each item is a three-element array consisting of the option label, the function to call
-        when it is clicked and a confirmation object. The item and its index are passed to this
-        function
+        -   `label: string`
 
-        _The third element of each array is an object with the signature
-        `{ label: string, theme?: ConfirmDialogTheme }`. Specify this object if the option needs to
-        be confirmed after it is clicked. The `label` is displayed as the confirmation message and
-        the `theme` controls the appearance of the [confirmation dialog](confirm-dialog.md#api)_
+            The label of the option
 
-        _If no confirmation is required for the option, set the third element to `false`_
+        -   `onClick: (item: any, itemIndex?: number) => void`
 
-    -   `handleOptions?: (item: any) => void`
+            Called when the options is clicked. It receives the item that was clicked and its index
 
-        This is specified when you want to handle what happens when the options of each item is
-        clicked. It is passed the item on which the options is clicked
+        -   `confirmation?: any`
 
-    > If both `items` and `handleOptions` are specified, the widget will call the `handleOptions`, ignoring `items`
+            If specified, this is shown as a confirmation message when the option is clicked before
+            `builder.onClick` is called
+
+        -   `confirmationTheme?: ConfirmDialogTheme`
+
+            The theme of the [confirmation dialog](confirm-dialog.md#api). This is ignored if
+            `builder.confirmation` is not specified
 
 -   `onClick?: (item: any, itemIndex?: number) => void`
 

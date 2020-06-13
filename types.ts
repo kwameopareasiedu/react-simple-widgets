@@ -247,15 +247,16 @@ export interface IListViewSort {
     onSort: (column: string, order: ListViewSortOrder) => void;
 }
 
-export interface IListViewOptionsConfirmation {
+export interface IListViewOptionItem {
     label: any;
-    theme?: ConfirmDialogTheme;
+    confirmation?: any;
+    confirmationTheme?: ConfirmDialogTheme;
+    onClick: (item: any, itemIndex?: number) => void;
 }
 
 export interface IListViewOptions {
     busy?: (item: any, itemIndex?: number) => boolean;
-    items?: Array<[string, (item: any, itemIndex?: number) => any, IListViewOptionsConfirmation | boolean]>;
-    handleOptions?: (item: any, itemIndex?: number) => void;
+    builder: (item: any, itemIndex?: number) => Array<IListViewOptionItem>;
 }
 
 export interface IListView {

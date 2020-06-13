@@ -2,6 +2,17 @@
 
 # Changelog
 
+-   `1.7.0`
+
+    -   Modified theme color of success messages of [FlashProvider](docs/flash-provider.md)
+    -   Added CSS property `word-break: break-word` to messages of
+        [FlashProvider](docs/flash-provider.md)
+    -   Changed CSS property `word-break` of [ListView](docs/list-view.md) cells from `break-all`
+        to `break-word`
+    -   Fixed bug causing inconsistent borders in [ListView](docs/list-view.md) item options
+    -   Modified [ListView](docs/list-view.md) options to use a builder pattern instead of an array
+        of options. This allows for more control over options shown for each list item
+
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of

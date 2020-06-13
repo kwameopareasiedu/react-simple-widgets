@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { DialogProvider } from "../../provider/dialog-provider";
-import { ConfirmDialogTheme, ListViewSortOrder } from "../../../types";
+import { ConfirmDialogTheme, IListViewOptionItem, ListViewSortOrder } from "../../../types";
 import { ListView } from "./index";
 
 const collection = [
@@ -198,42 +198,20 @@ export const withOptions = () => {
                 items={collection}
                 options={{
                     busy: (item, itemIndex) => itemIndex % 2 == 0,
-                    items: [
-                        ["Option #1", (): void => console.log("Option #1 clicked"), false],
-                        [
-                            "Option #2 (Requires confirmation)",
-                            (): void => console.log("Option #2 clicked"),
-                            { label: "Are you sure?", theme: ConfirmDialogTheme.SUCCESS }
-                        ],
-                        [
-                            "Option #3 (Requires confirmation)",
-                            (): void => console.log("Option #3 clicked"),
-                            { label: "Are you sure?", theme: ConfirmDialogTheme.DANGER }
-                        ]
+                    builder: (item, itemIndex) => [
+                        { label: "Option #1", onClick: () => console.log(`Option #1 of item #${itemIndex + 1} clicked`) },
+                        {
+                            label: "Option #2",
+                            confirmation: "A confirmation question",
+                            onClick: () => console.log(`Option #2 of item #${itemIndex + 1} clicked`)
+                        },
+                        {
+                            label: "Option #3",
+                            confirmation: "A confirmation question",
+                            confirmationTheme: ConfirmDialogTheme.DANGER,
+                            onClick: () => console.log(`Option #3 of item #${itemIndex + 1} clicked`)
+                        }
                     ]
-                }}
-                props={[
-                    ["Name", "name"],
-                    ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY")],
-                    ["Undefined property", "status"],
-                    ["Nested property", "nested_property.current_value"],
-                    ["Undefined nested property", "nested_property.ability"]
-                ]}
-            />
-        </DialogProvider>
-    );
-};
-
-export const withCustomOptionHandler = () => {
-    return (
-        <DialogProvider>
-            <ListView
-                items={collection}
-                options={{
-                    handleOptions: (item, index) => {
-                        console.log({ item, index });
-                        alert("Handle options click. Check the console for the item clicked and its index");
-                    }
                 }}
                 props={[
                     ["Name", "name"],
@@ -259,14 +237,6 @@ export const withOnClick = () => {
                     ["Nested property", "nested_property.current_value"],
                     ["Undefined nested property", "nested_property.ability"]
                 ]}
-                options={{
-                    busy: (item, itemIndex) => itemIndex % 2 == 0,
-                    items: [
-                        ["Option #1", (): void => console.log("Option #1 clicked"), false],
-                        ["Option #2", (): void => console.log("Option #2 clicked"), false],
-                        ["Option #3", (): void => console.log("Option #3 clicked"), false]
-                    ]
-                }}
                 onClick={(item, index) => {
                     console.log({ item, index });
                     alert("Item clicked. Check the console for the item clicked and its index");
