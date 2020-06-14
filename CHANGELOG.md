@@ -2,6 +2,13 @@
 
 # Changelog
 
+-   `1.7.1`
+
+    -   Changed `display` of links in [Breadcrumbs](docs/breadcrumbs.md) from `inline-block` to
+        `inline`
+    -   Modify [ListView](docs/list-view.md) to do nothing if options builder returns `null` or an
+        empty array of options instead of displaying a dialog with no options
+
 -   `1.7.0`
 
     -   Modified theme color of success messages of [FlashProvider](docs/flash-provider.md)

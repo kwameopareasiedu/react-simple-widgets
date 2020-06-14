@@ -27,7 +27,10 @@ export const ListViewDesktopItem = ({ item, index, props, options, propValueEval
     const showItemDialog = (e: React.MouseEvent, item: any): void => {
         e.preventDefault();
         e.stopPropagation();
-        showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={index} options={options.builder(item, index)} />);
+
+        const optionsList = options.builder(item, index);
+        if (!optionsList || optionsList.length === 0) return;
+        showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={index} options={optionsList} />);
     };
 
     const interceptOnClick = (): void => {

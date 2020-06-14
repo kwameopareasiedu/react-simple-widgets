@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { DialogProvider } from "../../provider/dialog-provider";
-import { ConfirmDialogTheme, IListViewOptionItem, ListViewSortOrder } from "../../../types";
+import { ConfirmDialogTheme, ListViewSortOrder } from "../../../types";
 import { ListView } from "./index";
 
 const collection = [
@@ -143,7 +143,7 @@ export const withDelayedLoading = () => {
 
     return (
         <DialogProvider>
-            <p className="text-center mb-4">Data would load in 3s</p>
+            <p className="text-center mb-4">Data will load in 3s</p>
             <ExampleApp />
         </DialogProvider>
     );

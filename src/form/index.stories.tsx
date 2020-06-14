@@ -61,51 +61,70 @@ export const index = (): any => {
                         <form onSubmit={formik.handleSubmit}>
                             <div className="row">
                                 <div className="col-12 col-md-6">
-                                    <TextField name="firstName" label="First name" placeholder="Enter first name" className="form-control" />
+                                    <TextField
+                                        name="firstName"
+                                        label="TextField (Flat decoration)"
+                                        placeholder="Enter first name"
+                                        className="form-control"
+                                    />
 
                                     <br />
 
                                     <TextField
                                         name="lastName"
-                                        label="Last name"
+                                        label="TextField (Underline decoration)"
                                         decoration={FieldDecorationType.UNDERLINE}
                                         placeholder="Enter last name"
                                     />
 
                                     <br />
 
-                                    <TextField name="otherNames" label="Other names" decoration={FieldDecorationType.FLOATING_LABEL} />
+                                    <TextField
+                                        name="otherNames"
+                                        label="TextField (Floating label decoration)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                    />
 
                                     <br />
 
-                                    <TextField name="password" type="password" label="Password" decoration={FieldDecorationType.FLOATING_LABEL} />
+                                    <TextField
+                                        name="password"
+                                        type="password"
+                                        label="TextField (Password type, Floating label decoration)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                    />
 
                                     <br />
 
                                     <TextField
                                         name="about"
-                                        label="Tell us more about yourself"
+                                        label="TextField (Editor mode, Floating label decoration)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                         mode={TextFieldMode.EDITOR}
                                     />
 
                                     <br />
 
-                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.FLAT} disabled />
+                                    <TextField name="something" label="TextField (Disabled)" decoration={FieldDecorationType.FLAT} disabled />
 
                                     <br />
 
-                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.UNDERLINE} disabled />
+                                    <TextField name="something" label="TextField (Disabled)" decoration={FieldDecorationType.UNDERLINE} disabled />
 
                                     <br />
 
-                                    <TextField name="something" label="Disabled field" decoration={FieldDecorationType.FLOATING_LABEL} disabled />
+                                    <TextField
+                                        name="something"
+                                        label="TextField (Disabled)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        disabled
+                                    />
 
                                     <br />
 
                                     <DropdownField
                                         name="something"
-                                        label="Disabled dropdown"
+                                        label="DropdownField (Disabled)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                         disabled>
                                         <option value="option">An options</option>
@@ -115,11 +134,7 @@ export const index = (): any => {
                                 </div>
 
                                 <div className="col-12 col-md-6">
-                                    <FileField name="file" label="File upload (1MB limit)" limit={1024 * 1024} />
-
-                                    <br />
-
-                                    <DropdownField name="language" label="Primary language" decoration={FieldDecorationType.FLOATING_LABEL}>
+                                    <DropdownField name="language" label="DropdownField" decoration={FieldDecorationType.FLOATING_LABEL}>
                                         <option value="english">English</option>
                                         <option value="twi">Twi</option>
                                         <option value="ga">Ga</option>
@@ -128,10 +143,14 @@ export const index = (): any => {
 
                                     <br />
 
+                                    <FileField name="file" label="FileField (with 1MB limit)" limit={1024 * 1024} />
+
+                                    <br />
+
                                     <SelectField
                                         name="acceptTOS"
                                         mode={SelectFieldMode.BINARY}
-                                        label="Accept terms of agreement"
+                                        label="SelectField (Binary-select mode)"
                                         onChange={v => console.log("Terms of Service", v)}
                                     />
 
@@ -139,7 +158,7 @@ export const index = (): any => {
 
                                     <SelectField
                                         name="gender"
-                                        label="Gender"
+                                        label="SelectField (Single-select mode)"
                                         mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
@@ -153,7 +172,7 @@ export const index = (): any => {
                                     <SelectField
                                         name="gender"
                                         inline={true}
-                                        label="Gender (Inline)"
+                                        label="SelectField (Single-select mode, Inline)"
                                         mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
@@ -166,8 +185,7 @@ export const index = (): any => {
 
                                     <SelectField
                                         name="multiOptions"
-                                        inline={false}
-                                        label="Multi selection"
+                                        label="SelectField (Multi-select mode)"
                                         mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
@@ -182,7 +200,7 @@ export const index = (): any => {
                                     <SelectField
                                         name="multiOptions"
                                         inline={true}
-                                        label="Multi selection (inline)"
+                                        label="SelectField (Multi-select mode, Inline)"
                                         mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
@@ -197,7 +215,7 @@ export const index = (): any => {
                                     <DateField
                                         name="date"
                                         format="YYYY-MM-DD"
-                                        label="Date picker"
+                                        label="DateField (Single Mode)"
                                         displayFormat="dddd, Do MMMM YYYY"
                                         mode={DatePickerMode.SINGLE}
                                     />
