@@ -6,10 +6,6 @@
     animation: page-transition-view-entry-animation var(--rsw-transition-duration) forwards;
 }
 
-.react-simple-widget.page-transition-view.page-transition-view-static {
-    animation: none;
-}
-
 .react-simple-widget.page-transition-view.page-transition-view-redirecting {
     pointer-events: none;
     animation: page-transition-view-exit-animation var(--rsw-transition-duration) forwards;

@@ -4,6 +4,7 @@ import { PageTransitionView } from "./page-transition-view";
 import { PageTransitionProviderContext } from "./context";
 import { PageTransitionProvider } from "./provider";
 import { Link } from "./page-transition-link";
+import { useQueryParams } from "../../misc/use-query-params";
 
 export default {
     title: "PageTransitionProvider",
@@ -44,6 +45,7 @@ export const usage = () => {
 
     const SecondaryPage = () => {
         const { redirect } = useContext(PageTransitionProviderContext);
+        const qp = useQueryParams();
 
         return (
             <div id="secondary" className="container text-center">
@@ -52,6 +54,85 @@ export const usage = () => {
                     Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
                     Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
                 </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p>
+                    Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+
+                {qp.other && (
+                    <React.Fragment>
+                        <hr />
+
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                        <p>
+                            Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat
+                            volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                        </p>
+                    </React.Fragment>
+                )}
 
                 <div className="mb-4">
                     <button className="btn btn-info btn-sm" onClick={() => redirect("/")}>
@@ -61,6 +142,10 @@ export const usage = () => {
 
                 <button className="btn btn-secondary btn-sm" onClick={() => redirect("/", { dontAnimate: true })}>
                     Transition to previous page (Will not animate)
+                </button>
+
+                <button className="btn btn-link btn-sm" onClick={() => redirect("/secondary?other=true", { dontAnimate: true })}>
+                    Redirect with query params
                 </button>
             </div>
         );

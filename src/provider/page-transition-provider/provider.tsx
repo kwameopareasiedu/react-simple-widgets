@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { IPageTransitionOptions, IPageTransitionProvider } from "../../../types";
+import { IPageTransitionConfig, IPageTransitionOptions, IPageTransitionProvider } from "../../../types";
 import { PageTransitionProviderContext } from "./context";
 
 /**
@@ -10,14 +10,43 @@ import { PageTransitionProviderContext } from "./context";
  * ancestor tree.
  */
 export const PageTransitionProvider = ({ children }: IPageTransitionProvider): any => {
-    const { pathname, search, hash } = useLocation();
     const history = useHistory();
+    const { pathname, search, hash } = useLocation();
+    const [config, setConfig] = useState<IPageTransitionConfig>(null);
+    const [pageTransitionViewCount, setPageTransitionViewCount] = useState(0);
 
-    const redirect = (to: string, options?: IPageTransitionOptions): void => {
+    const beginRedirect = (to: string, options?: IPageTransitionOptions): void => {
         if (!to || pathname + search + hash === to) return;
-        if (options && options.replaceUrl) history.replace(to);
-        else history.push(to);
+
+        // If there is no PageTransitionView in scope, redirect from here...
+        if (pageTransitionViewCount === 0) {
+            if (options && options.replaceUrl) history.replace(to);
+            else history.push(to);
+        } else setConfig({ to, options });
+        // ... else set the config to notify it to begin the redirect
     };
 
-    return <PageTransitionProviderContext.Provider value={{ redirect }}>{children}</PageTransitionProviderContext.Provider>;
+    // Called by a PageTransitionView when done with its transition animation sequence
+    const endRedirect = () => {
+        setConfig(null);
+        if (config.options && config.options.replaceUrl) history.replace(config.to);
+        else history.push(config.to);
+    };
+
+    const incrementPageTransitionViewCount = (): void => setPageTransitionViewCount(pageTransitionViewCount + 1);
+
+    const decrementPageTransitionViewCount = (): void => setPageTransitionViewCount(pageTransitionViewCount - 1);
+
+    return (
+        <PageTransitionProviderContext.Provider
+            value={{
+                __internal_config: config,
+                __internal_incrementPageTransitionViewCount: incrementPageTransitionViewCount,
+                __internal_decrementPageTransitionViewCount: decrementPageTransitionViewCount,
+                __internal_endRedirect: endRedirect,
+                redirect: beginRedirect
+            }}>
+            {children}
+        </PageTransitionProviderContext.Provider>
+    );
 };

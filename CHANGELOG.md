@@ -2,6 +2,12 @@
 
 # Changelog
 
+-   `1.7.2`
+
+    -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to reuse the root
+        component between page transitions. This preserves scroll positions if query parameters
+        were modified on the same URL path
+
 -   `1.7.1`
 
     -   Changed `display` of links in [Breadcrumbs](docs/breadcrumbs.md) from `inline-block` to

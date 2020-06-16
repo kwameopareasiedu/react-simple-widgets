@@ -66,7 +66,16 @@ export interface IPageTransitionOptions {
     replaceUrl?: boolean;
 }
 
+export interface IPageTransitionConfig {
+    to: string;
+    options: IPageTransitionOptions;
+}
+
 export interface IPageTransitionProviderContext {
+    __internal_config: IPageTransitionConfig;
+    __internal_incrementPageTransitionViewCount: () => void;
+    __internal_decrementPageTransitionViewCount: () => void;
+    __internal_endRedirect: () => void;
     redirect: (to: string, config?: IPageTransitionOptions) => void;
 }
 
