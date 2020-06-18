@@ -2,6 +2,13 @@
 
 # Changelog
 
+-   `1.7.3`
+
+    -   Added [debounce](docs/debounce.md) utility
+    -   Added [useCountdown](docs/use-countdown.md) hook
+    -   Added `initialStorageKeys` prop to [ValueStoreProvider](docs/value-store-provider.md) to
+        allow pre-existing local storage values to be added to the value store
+
 -   `1.7.2`
 
     -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to reuse the root
