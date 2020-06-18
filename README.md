@@ -5,7 +5,7 @@ It provides customizable widgets that perform commonly needed tasks within your 
 
 ![](https://img.shields.io/badge/version-1.6.2-blue)
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-907.2%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-907.7%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 ### Installing
@@ -81,6 +81,9 @@ Widgets under this category are for convenience
     search string parameters
 -   [useLoadMore](docs/use-load-more.md) - A hook that provides methods and state variables to
     implement a load-more-items feature for a list of items that cannot be displayed in a ListView
+-   [useCountdown](docs/use-countdown.md) - A hook which provides numeric countdown functionality
+-   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
+    delay after a caller has called it
 
 ### Customization
 
@@ -89,13 +92,13 @@ Widgets under this category are for convenience
 The colors used by the widgets are controlled by CSS variables and you can customize them to suit
 your application's theme
 
-| CSS variable                | Description                                              | Default value |
-| --------------------------- | -------------------------------------------------------- | ------------- |
-| `--rsw-label-color`         | Controls the label color of field decorator              | `#777777`     |
-| `--rsw-error-color`         | Controls the error color of components indicating errors | `#ff5555`     |
-| `--rsw-primary-theme-color` | Controls the primary color used by all widgets           | `#209d58`     |
-| `--rsw-primary-theme-color` | Controls the secondary color used by all widgets         | `#b3b3b3`     |
-| `--rsw-transition-duration` | Controls the duration of transitions used by all widgets | `0.3s`        |
+| CSS variable                  | Description                                              | Default value |
+| ----------------------------- | -------------------------------------------------------- | ------------- |
+| `--rsw-label-color`           | Controls the label color of field decorator              | `#777777`     |
+| `--rsw-error-color`           | Controls the error color of components indicating errors | `#ff5555`     |
+| `--rsw-primary-theme-color`   | Controls the primary color used by all widgets           | `#209d58`     |
+| `--rsw-secondary-theme-color` | Controls the secondary color used by all widgets         | `#b3b3b3`     |
+| `--rsw-transition-duration`   | Controls the duration of transitions used by all widgets | `0.3s`        |
 
 The following variables are widget specific
 

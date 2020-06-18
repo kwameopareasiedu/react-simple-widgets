@@ -73,6 +73,15 @@ export const usage = (): any => {
 
                         <br />
 
+                        <input
+                            className="form-control"
+                            value={get("test-key") || ""}
+                            placeholder="Test input"
+                            onChange={e => put("test-key", e.target.value)}
+                        />
+
+                        <br />
+
                         <p className="text-center">Now refresh the page to see the data persistence</p>
                     </div>
                 </div>
@@ -90,7 +99,7 @@ export const usage = (): any => {
     };
 
     return (
-        <ValueStoreProvider>
+        <ValueStoreProvider initialStorageKeys={["test-key"]}>
             <ExampleApp />
         </ValueStoreProvider>
     );

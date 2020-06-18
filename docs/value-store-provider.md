@@ -19,12 +19,17 @@ layer of security**
 
 ```jsx
 ReactDOM.render(
-    <ValueStoreProvider>
+    <ValueStoreProvider initialStorageKeys={[]}>
         <App /> // Children is a required prop
     </ValueStoreProvider>,
     document.getElementById("root")
 );
 ```
+
+-   `initialStorageKeys?: Array<string>`
+
+    To add already existing values from the local storage, the keys of those values can be
+    specified in this optional parameter
 
 ### ValueStoreProviderContext
 

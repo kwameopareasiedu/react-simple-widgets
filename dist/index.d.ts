@@ -26,7 +26,8 @@ import {
     IConfirmDialog,
     ILoader,
     IUseLoadMore,
-    IPageActions
+    IPageActions,
+    IUseCountdown
 } from "../types";
 
 export const DialogProviderContext: Context<IDialogProviderContext>;
@@ -57,3 +58,5 @@ export const Loader: FunctionComponent<ILoader>;
 export const PageActions: FunctionComponent<IPageActions>;
 export const useQueryParams: () => any;
 export const useLoadMore: () => IUseLoadMore;
+export const useCountdown: (delay: number) => IUseCountdown;
+export const debounce: (label: string, callback: Function, delay: number) => void;

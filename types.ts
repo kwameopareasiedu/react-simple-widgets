@@ -38,6 +38,7 @@ export interface IValueStoreProviderContext {
 }
 
 export interface IValueStoreProvider {
+    initialStorageKeys?: Array<string>;
     children: any;
 }
 
@@ -327,3 +328,10 @@ export interface IUseLoadMore {
 
 /* PageActions */
 export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {}
+
+/* UseTimeout */
+export interface IUseCountdown {
+    running: boolean;
+    countdown: number;
+    resetCountdown: () => void;
+}

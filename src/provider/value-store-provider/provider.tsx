@@ -12,10 +12,15 @@ import { ValueStoreProviderContext } from "./context";
  * NB: It is recommended not to persist sensitive data to the local storage as this has absolutely
  * no layer of security
  */
-export const ValueStoreProvider = ({ children }: IValueStoreProvider): any => {
+export const ValueStoreProvider = ({ initialStorageKeys, children }: IValueStoreProvider): any => {
     // Read values of specified initial values from localStorage
     const persistedKeysKey = "react-simple-widgets-value-store-provider-persisted-keys";
-    const [persistedKeys, setPersistedKeys] = useState<Array<string>>(JSON.parse(localStorage.getItem(persistedKeysKey) || "[]"));
+    const [persistedKeys, setPersistedKeys] = useState<Array<string>>(
+        [...JSON.parse(localStorage.getItem(persistedKeysKey) || "[]"), ...(initialStorageKeys || [])].reduce((keys, key) => {
+            if (keys.includes(key)) return keys;
+            return [...keys, key];
+        }, [])
+    );
     const [items, setItems] = useState(persistedKeys.map(key => new ValueStoreItem(key, localStorage.getItem(key), true)));
 
     useEffect(() => {
