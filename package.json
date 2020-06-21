@@ -1,7 +1,7 @@
 {
     "name": "react-simple-widgets",
-    "version": "1.7.4",
-    "description": "A collection of simple to use widgets for building pages easily",
+    "version": "1.7.5",
+    "description": "A collection of simple to use widgets for building react apps easily",
     "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
     "repository": {
         "type": "git",
