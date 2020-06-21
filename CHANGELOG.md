@@ -2,6 +2,10 @@
 
 # Changelog
 
+-   `1.7.4`
+
+    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](docs/use-countdown.md) hook
+
 -   `1.7.3`
 
     -   Added [debounce](docs/debounce.md) utility
