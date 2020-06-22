@@ -335,3 +335,13 @@ export interface IUseCountdown {
     countdown: number;
     resetCountdown: () => void;
 }
+
+/* UseWindowBreakpoints */
+export interface IUseWindowBreakpoints {
+    width: number;
+    xs: boolean;
+    sm: boolean;
+    md: boolean;
+    lg: boolean;
+    xl: boolean;
+}

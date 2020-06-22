@@ -102,8 +102,12 @@
         > label {
             position: absolute;
             top: calc(50% - 10px);
+            max-width: calc(100% - 15px);
             padding: 0 4px;
+            overflow: hidden;
             transition: top var(--rsw-transition-duration);
+            text-overflow: ellipsis;
+            white-space: nowrap;
             pointer-events: none;
         }
 
