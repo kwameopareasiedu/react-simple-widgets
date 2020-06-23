@@ -7,6 +7,7 @@ import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
 import { DateField } from "./date-field";
+import { TimeField } from "./time-field";
 
 export default {
     title: "React simple widget - Form",
@@ -219,6 +220,10 @@ export const index = (): any => {
                                         displayFormat="dddd, Do MMMM YYYY"
                                         mode={DatePickerMode.SINGLE}
                                     />
+
+                                    <br />
+
+                                    <TimeField name="time" label="TimeField"  />
                                 </div>
                             </div>
                         </form>

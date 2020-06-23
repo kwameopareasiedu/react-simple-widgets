@@ -5,3 +5,4 @@ export * from "./dropdown-field";
 export * from "./select-field";
 export * from "./date-field";
 export * from "./file-field";
+export * from "./time-field";

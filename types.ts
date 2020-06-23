@@ -225,7 +225,6 @@ export interface IDatePicker {
 export interface IDateField {
     name: string;
     label?: string;
-    error?: string;
     format?: string;
     mode?: DatePickerMode;
     displayFormat?: string;
@@ -354,6 +353,19 @@ export interface ITimePicker {
     decoration?: FieldDecorationType;
     validator?: (time: string) => string;
     onChange: (time: string) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
+
+/* TimeField */
+export interface ITimeField {
+    name: string;
+    label?: string;
+    error?: string;
+    decoration?: FieldDecorationType;
+    errorTransformer?: (err: any) => string;
+    validator?: (time: string) => string;
+    onChange?: (time: string) => void;
     onFocus?: () => void;
     onBlur?: () => void;
 }
