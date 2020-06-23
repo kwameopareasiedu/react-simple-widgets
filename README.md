@@ -5,7 +5,7 @@ It provides customizable widgets that perform commonly needed tasks within your 
 
 ![](https://img.shields.io/badge/version-1.6.2-blue)
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-908%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-914.7%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 ### Installing
@@ -50,6 +50,8 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
     [FilePicker](docs/file-picker.md)
 -   [DateField](docs/date-field.md) - A form wrapper widget for the
     [DatePicker](docs/date-picker.md)
+-   [TimeField](docs/time-field.md) - A form wrapper widget for the
+    [TimePicker](docs/time-picker.md)
 
 #### Pickers
 
@@ -58,6 +60,7 @@ Pickers allow you to select some complex data type
 -   [FilePicker](docs/file-picker.md) - A simple file picker which supports drag-and-drop feature
 -   [DatePicker](docs/date-picker.md) - A date picker which supports single and multiple date
     selection as well as month selection
+-   [TimePicker](docs/time-picker.md) - A time picker which features an intuitive clock experience
 
 #### List
 
@@ -84,6 +87,9 @@ Widgets under this category are for convenience
 -   [useCountdown](docs/use-countdown.md) - A hook which provides numeric countdown functionality
 -   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
     delay after a caller has called it
+-   [useWindowBreakpoints](docs/use-window-breakpoints.md) - A hook which provides the window width
+    category data according to
+    [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ### Customization
 

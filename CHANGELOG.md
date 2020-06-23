@@ -2,6 +2,13 @@
 
 # Changelog
 
+-   `1.8.0`
+
+    -   Added [TimePicker](docs/time-picker.md) widget
+    -   Added [TimeField](docs/time-field.md) widget
+    -   Modified [SelectField](docs/select-field.md) to make option labels `inline`
+    -   Added [useWindowBreakpoints](docs/use-window-breakpoints.md) hook
+
 -   `1.7.4`
 
     -   Fixed fatal error in `v1.7.3` when importing [useCountdown](docs/use-countdown.md) hook
