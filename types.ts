@@ -345,3 +345,15 @@ export interface IUseWindowBreakpoints {
     lg: boolean;
     xl: boolean;
 }
+
+/* TimePicker */
+export interface ITimePicker {
+    time: string;
+    label?: string;
+    error?: string;
+    decoration?: FieldDecorationType;
+    validator?: (time: string) => string;
+    onChange: (time: string) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}

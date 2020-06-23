@@ -158,7 +158,7 @@
     overflow: hidden;
 
     .trigger {
-        @include resetWidgetChild;
+        @include fieldDecorationWidgetChild;
         min-height: 1.5rem;
 
         > p {

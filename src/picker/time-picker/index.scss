@@ -1,0 +1,79 @@
+@import "../../mixin";
+
+.react-simple-widget.time-picker-dialog {
+    border-radius: 8px;
+
+    header {
+        label {
+            color: #999;
+            font-size: 80%;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        p.preview {
+            font-size: 2.5rem;
+            opacity: 0.55;
+        }
+    }
+
+    canvas:hover {
+        cursor: pointer;
+    }
+
+    .meridian button {
+        width: 50px;
+        height: 50px;
+        font-size: 80%;
+        border-radius: 25px;
+        color: var(--rsw-primary-theme-color);
+        border: 1px solid var(--rsw-primary-theme-color);
+    }
+
+    .meridian button:hover,
+    .meridian button:focus,
+    .meridian button.active {
+        width: 50px;
+        height: 50px;
+        color: white;
+        font-size: 80%;
+        border-radius: 25px;
+        background-color: var(--rsw-primary-theme-color);
+    }
+
+    .meridian button:hover,
+    .meridian button:focus,
+    .meridian button:active {
+        text-decoration: none;
+    }
+
+    .error {
+        padding: 8px 1.25rem;
+        margin: 0 -1.25rem 15px;
+        background-color: #efefef;
+        font-style: italic;
+        text-align: center;
+        font-size: 80%;
+        color: var(--rsw-error-color);
+        font-weight: bold;
+    }
+}
+
+.react-simple-widget.time-picker .field-decoration > .field > .widgets > .widget {
+    overflow: hidden;
+
+    .trigger {
+        @include fieldDecorationWidgetChild;
+        min-height: 1.5rem;
+
+        > p {
+            margin: 0;
+            font-style: italic;
+            padding: 0;
+        }
+    }
+
+    .trigger:hover {
+        cursor: pointer;
+    }
+}

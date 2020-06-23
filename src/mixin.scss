@@ -1,8 +1,6 @@
-// Provides styles to reset the outline, border
-// and box-shadows for the child of a field
-// decoration widget in its normal and hover
-// states
-@mixin resetWidgetChild {
+// Provides styles to reset the outline, border and box-shadows for the child of a field decoration
+// widget in its normal and hover states
+@mixin fieldDecorationWidgetChild {
     width: 100%;
     border: none;
     outline: none;

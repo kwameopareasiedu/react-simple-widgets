@@ -5,6 +5,6 @@
     > select:hover,
     > select:focus,
     > select:active {
-        @include resetWidgetChild;
+        @include fieldDecorationWidgetChild;
     }
 }

@@ -6,7 +6,7 @@
         > input:hover,
         > input:focus,
         > input:active {
-            @include resetWidgetChild;
+            @include fieldDecorationWidgetChild;
         }
 
         > input::placeholder {
