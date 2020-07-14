@@ -5,16 +5,16 @@
     grid-template-columns: 30% 70%;
     grid-gap: 4px 8px;
 
-    > span.prop-label {
+    > .prop-label {
         font-size: 85%;
         font-style: italic;
     }
 
-    > span.prop-value {
+    > .prop-value {
         word-break: break-word;
     }
 
-    > span.item-options {
+    > .item-options {
         text-align: right;
         padding-right: 15px;
 
@@ -24,11 +24,11 @@
         }
     }
 
-    > span.item-options:hover {
+    > .item-options:hover {
         cursor: pointer;
     }
 
-    > span.item-options.loader {
+    > .item-options.loader {
         .spinner-border {
             width: 6px;
             height: 6px;
@@ -46,6 +46,10 @@
 
     > .react-simple-widget.loader {
         text-align: right !important;
+    }
+
+    > .item-options.none img {
+        opacity: 0.3;
     }
 }
 

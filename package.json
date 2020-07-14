@@ -1,6 +1,6 @@
 {
     "name": "react-simple-widgets",
-    "version": "1.8.0",
+    "version": "1.8.1",
     "description": "A collection of simple to use widgets for building react apps easily",
     "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
     "repository": {
@@ -58,9 +58,9 @@
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-terser": "^6.1.0",
         "rollup-plugin-typescript2": "^0.27.1",
-        "sass-loader": "^8.0.2",
+        "sass-loader": "9.0.2",
         "style-loader": "^1.2.1",
-        "ts-loader": "^7.0.5",
+        "ts-loader": "7.0.5",
         "typescript": "^3.9.5",
         "url-loader": "^4.1.0"
     },
@@ -71,7 +71,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run build && git add -A"
+            "pre-commit": "yarn build && git add -A"
         }
     },
     "keywords": [

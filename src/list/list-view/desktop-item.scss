@@ -69,6 +69,14 @@
     > .item-options.loader::after {
         content: "Busy";
     }
+
+    > .item-options.none img {
+        opacity: 0.3;
+    }
+
+    > .item-options.none::after {
+        content: "No options for item";
+    }
 }
 
 .react-simple-widget.list-view-desktop-item:nth-of-type(2n + 1) {

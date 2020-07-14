@@ -30,10 +30,10 @@ const collection = [
 export default {
     title: "ListView",
     component: ListView,
-    decorators: [(storyFn: any) => <div style={{ padding: "30px" }}>{storyFn()}</div>]
+    decorators: [(storyFn: () => any) => <div style={{ padding: "30px" }}>{storyFn()}</div>]
 };
 
-export const normal = () => {
+export const normal = (): any => {
     return (
         <DialogProvider>
             <ListView
@@ -50,7 +50,7 @@ export const normal = () => {
     );
 };
 
-export const withNoItems = () => {
+export const withNoItems = (): any => {
     return (
         <DialogProvider>
             <ListView
@@ -67,7 +67,7 @@ export const withNoItems = () => {
     );
 };
 
-export const withSorting = () => {
+export const withSorting = (): any => {
     const ExampleApp = () => {
         const [sortData, setSortData] = useState(["Name", ListViewSortOrder.NONE]);
         const [items, setItems] = useState(collection);
@@ -114,7 +114,7 @@ export const withSorting = () => {
     );
 };
 
-export const withDelayedLoading = () => {
+export const withDelayedLoading = (): any => {
     const ExampleApp = () => {
         const [loading, setLoading] = useState<any>(true);
         const [items, setItems] = useState([]);
@@ -149,7 +149,7 @@ export const withDelayedLoading = () => {
     );
 };
 
-export const withPagination = () => {
+export const withPagination = (): any => {
     const ExampleApp = () => {
         const [page, setPage] = useState<any>(1);
         const [loading, setLoading] = useState<any>(true);
@@ -191,27 +191,31 @@ export const withPagination = () => {
     );
 };
 
-export const withOptions = () => {
+export const withOptions = (): any => {
     return (
         <DialogProvider>
             <ListView
                 items={collection}
                 options={{
-                    busy: (item, itemIndex) => itemIndex % 2 == 0,
-                    builder: (item, itemIndex) => [
-                        { label: "Option #1", onClick: () => console.log(`Option #1 of item #${itemIndex + 1} clicked`) },
-                        {
-                            label: "Option #2",
-                            confirmation: "A confirmation question",
-                            onClick: () => console.log(`Option #2 of item #${itemIndex + 1} clicked`)
-                        },
-                        {
-                            label: "Option #3",
-                            confirmation: "A confirmation question",
-                            confirmationTheme: ConfirmDialogTheme.DANGER,
-                            onClick: () => console.log(`Option #3 of item #${itemIndex + 1} clicked`)
-                        }
-                    ]
+                    busy: (item, itemIndex) => itemIndex < 3,
+                    builder: (item, itemIndex) => {
+                        if (itemIndex < 8) return null;
+
+                        return [
+                            { label: "Option #1", onClick: () => console.log(`Option #1 of item #${itemIndex + 1} clicked`) },
+                            {
+                                label: "Option #2",
+                                confirmation: "A confirmation question",
+                                onClick: () => console.log(`Option #2 of item #${itemIndex + 1} clicked`)
+                            },
+                            {
+                                label: "Option #3",
+                                confirmation: "A confirmation question",
+                                confirmationTheme: ConfirmDialogTheme.DANGER,
+                                onClick: () => console.log(`Option #3 of item #${itemIndex + 1} clicked`)
+                            }
+                        ];
+                    }
                 }}
                 props={[
                     ["Name", "name"],
@@ -225,7 +229,7 @@ export const withOptions = () => {
     );
 };
 
-export const withOnClick = () => {
+export const withOnClick = (): any => {
     return (
         <DialogProvider>
             <ListView
