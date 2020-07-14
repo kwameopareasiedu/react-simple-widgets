@@ -1,16 +1,8 @@
-[Home](../README.md)
+[Home](../../README.md)
 
-# DialogProvider
+# DialogProvider API
 
-The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its
-children. This prevents any possible stacking context issues between the full page dialogs and
-components of your application (especially issues with any CSS grid you might have).
-
-## API
-
-### DialogProvider
-
-`DialogProvider` is a wrapper for your app and provides the dialog capabilities
+## DialogProvider
 
 ```jsx
 ReactDOM.render(
@@ -21,20 +13,18 @@ ReactDOM.render(
 );
 ```
 
-### DialogProviderContext
-
-`DialogProviderContext` provides the `showDialog` function to render dialogs
+## DialogProviderContext
 
 ```jsx
 const { showDialog } = useContext(DialogProviderContext);
 ```
 
-#### showDialog
+### showDialog
 
 `showDialog` is a function to render your component in a dialog
 
 ```jsx
-showDialog(builderFunction, options, bind);
+showDialog(builderFunction, options);
 ```
 
 -   `builderFunction: (dialogHelper: IDialogHelper) => any`
@@ -91,16 +81,3 @@ showDialog(builderFunction, options, bind);
 
         To circumvent this, your app should retrieve the required parameters from ProviderB and "hoist"
         them up to your dialog via the `bind` object.
-
-## Usage
-
-A complete usage can be found in the
-[Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
-
-## Sidenotes
-
-> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the most
-> recent dialog receives the keyboard event first.
-
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is
-> entirely up to the developer.

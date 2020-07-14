@@ -4,7 +4,7 @@
 
 This widget is a responsive table-like widget for rendering tabular information. It collapses the
 view into cards on smaller displays to allow content to fit on screen. By default, options for
-items are shown as a dialog thus you need a [DialogProvider](dialog-provider.md) as an ancestor in
+items are shown as a dialog thus you need a [DialogProvider](api-reference/dialog-provider.md) as an ancestor in
 the widget tree
 
 ## API

@@ -3,7 +3,7 @@
 # DatePicker
 
 The `DatePicker` widget allows you to select a date using a picker dialog. Since it uses a dialog to 
-provide the picker and thus requires a [DialogProvider](./dialog-provider.md) ancestor to be 
+provide the picker and thus requires a [DialogProvider](api-reference/dialog-provider.md) ancestor to be 
 available up the component tree.
 
 ## API
