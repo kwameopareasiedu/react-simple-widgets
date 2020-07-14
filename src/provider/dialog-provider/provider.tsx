@@ -34,19 +34,19 @@ export const DialogProvider = ({ children }: IDialogProvider): any => {
         // I.e. It allows the host hoist parameters and functions to the dialog rendered above it
         const bindTargets = options && options.bind ? options.bind : {};
 
-        const dismiss = (returnValue: any) => {
+        const dismiss = (returnValue?: any) => {
             setDialogHolders(dialogHolders => dialogHolders.filter(d => d !== newDialogHolder));
             if (options && options.onDialogDismissed) options.onDialogDismissed(returnValue);
         };
 
-        newDialogHolder.setup(dialogBuilder({ dismiss, ...bindTargets }), options);
+        newDialogHolder.setup(dialogBuilder({ dismiss, ...bindTargets }), dismiss, options);
         setDialogHolders(dialogHolders => [...dialogHolders, newDialogHolder]);
         setupWindowEscapeHandlerForDialog(dismiss);
 
         // TODO: Implement window pop state to handle back button on mobile devices
     };
 
-    const setupWindowEscapeHandlerForDialog = (dismiss: Function): void => {
+    const setupWindowEscapeHandlerForDialog = (dismiss: (returnValue?: any) => void): void => {
         const handler = (e: KeyboardEvent): void => {
             if (e.key === "Escape" && !e.defaultPrevented) {
                 e.stopImmediatePropagation();

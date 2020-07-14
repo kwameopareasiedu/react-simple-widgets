@@ -11,6 +11,7 @@ export enum DialogSize {
 export interface IDialogOptions {
     size?: DialogSize;
     onDialogDismissed?: (returnValue?: any) => void;
+    dismissOnBackgroundClick?: boolean;
     bind?: any;
 }
 

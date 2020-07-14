@@ -53,6 +53,16 @@ export const normal = (): any => {
         );
     };
 
+    const BackgroundDismissibleDialog = (): any => {
+        return (
+            <div className="card">
+                <div className="card-body">
+                    <p className="mb-0 text-center">Click the background to dismiss</p>
+                </div>
+            </div>
+        );
+    };
+
     const ExampleApp = (): any => {
         const { showDialog } = useContext(DialogProviderContext);
 
@@ -75,6 +85,10 @@ export const normal = (): any => {
             });
         };
 
+        const openBackgroundDismissibleDialog = (): void => {
+            showDialog(() => <BackgroundDismissibleDialog />, { dismissOnBackgroundClick: true });
+        };
+
         return (
             <div>
                 <button className="btn btn-primary btn-sm" onClick={(): void => openDialog(DialogSize.SMALL)}>
@@ -95,6 +109,10 @@ export const normal = (): any => {
                 <span>&nbsp;</span>
                 <button className="btn btn-success btn-sm" onClick={openDialogForValue}>
                     Open dialog for value
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-warning btn-sm" onClick={openBackgroundDismissibleDialog}>
+                    Open background dismissible dialog
                 </button>
             </div>
         );
