@@ -5,7 +5,7 @@
 The `FilePicker` widget allows you to select a file from the device. When triggered, it launches a
 dialog that allows you to either launch a file select dialog or drag and drop a file from the device.
 FilePicker makes uses dialogs to provide the picker and thus requires a 
-[DialogProvider](./dialog-provider.md) ancestor to be available up the component tree.
+[DialogProvider](api-reference/dialog-provider.md) ancestor to be available up the component tree.
 
 ## API
 

@@ -64,7 +64,7 @@
 -   `1.6.0`
 
     -   Corrected path to [useLoadMore](docs/use-load-more.md) stories in its docs
-    -   Added story for `bind` property of [DialogProvider](docs/dialog-provider.md) widget
+    -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
     -   Added _disabled_ styling to [FieldDecoration](docs/field-decoration.md) widget. Updated usage in
         [TextField](docs/text-field.md) and [DropdownField](docs/dropdown-field.md)
     -   Added `text-center` class to [Loader](docs/loader.md) as its added in majority of use cases
@@ -83,7 +83,7 @@
 
     -   Added overflow styling to [DatePicker](docs/date-picker.md) and [FilePicker](docs/file-picker.md)
         widgets
-    -   Increased `z-index` of [DialogProvider](docs/dialog-provider.md) dialog container div to 999999
+    -   Increased `z-index` of [DialogProvider](docs/api-reference/dialog-provider.md) dialog container div to 999999
 
 -   `1.4.0`
 
@@ -176,5 +176,5 @@
 
     -   Added [useQueryParams hook](docs/use-query-params.md)
     -   Added the [Loader](docs/loader.md) widget
-    -   Added the `bind` prop to [DialogProvider](docs/dialog-provider.md) to allow binding of
+    -   Added the `bind` prop to [DialogProvider](docs/api-reference/dialog-provider.md) to allow binding of
         properties from the host component to the dialog component

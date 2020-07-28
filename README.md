@@ -1,14 +1,21 @@
 # react-simple-widgets
 
-This is a collection of widgets to help accelerate your React app development.
-It provides customizable widgets that perform commonly needed tasks within your app.
-
 ![](https://img.shields.io/badge/version-1.6.2-blue)
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
 ![](https://img.shields.io/badge/minified%20size-914.7%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
+This is a collection of customizable widgets to help accelerate your React app development. These
+widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and
+more.
+
 ### Installing
+
+```
+yarn add -D react-simple-widgets
+```
+
+or
 
 ```
 npm i -D react-simple-widgets
@@ -18,15 +25,16 @@ This libraries requires [formik](https://jaredpalmer.com/formik/), [react](https
 [react-router-dom](https://reacttraining.com/react-router/web) as peer dependencies, so you need to
 have these installed in your application as well.
 
-You can install these dependencies with `npm i -D react react-router-dom formik`
+You can install these dependencies with `yarn add -D react react-router-dom formik` or
+`npm i -D react react-router-dom formik`
 
 ### Widgets
 
 #### Providers
 
-Providers wrap around you app and provide globally accessible functionality to all pages of your app
+Providers wrap around you app and provide globally accessible functionality to all parts of your app
 
--   [DialogProvider](docs/dialog-provider.md) - Provides a simple dialog framework within your app
+-   [DialogProvider](docs/guides/dialog-provider.md) - Provides a simple dialog framework within your app
 -   [ValueStoreProvider](docs/value-store-provider.md) - Provides a global value storage which can
     utilize the local storage API to persist data
 -   [FlashProvider](docs/flash-provider.md) - Provides a flash message framework built using the

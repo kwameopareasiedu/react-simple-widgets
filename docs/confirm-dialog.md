@@ -4,7 +4,7 @@
 
 ConfirmDialog is a widget that shows a confirmation dialog for an action and calls the action when
 the confirmation button is clicked. ConfirmDialog uses dialogs to display the confirmation prompts
-messages and thus depends on a [DialogProvider](dialog-provider.md) ancestor to be available up your
+messages and thus depends on a [DialogProvider](api-reference/dialog-provider.md) ancestor to be available up your
 widgettree.
 
 ## API
