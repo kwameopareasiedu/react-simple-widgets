@@ -5,6 +5,7 @@ module.exports = {
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("svg") === -1);
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("scss") === -1);
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("css") === -1);
+        config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("tsx") === -1);
 
         config.module.rules.unshift(
             {
@@ -13,10 +14,7 @@ module.exports = {
                 use: [
                     { loader: "style-loader" },
                     { loader: "css-loader" },
-                    {
-                        loader: "postcss-loader",
-                        options: { plugins: () => [require("autoprefixer")] }
-                    },
+                    { loader: "postcss-loader", options: { plugins: () => [require("autoprefixer")] } },
                     { loader: "sass-loader" }
                 ]
             },
@@ -25,11 +23,7 @@ module.exports = {
                 exclude: /\node_modules/,
                 use: [{ loader: "babel-loader" }, { loader: "ts-loader" }]
             },
-            {
-                test: /\.svg/,
-                exclude: /\node_modules/,
-                use: "url-loader"
-            }
+            { test: /\.svg/, exclude: /\node_modules/, use: "url-loader" }
         );
 
         config.resolve.extensions.push(".tsx", ".ts", ".jsx", ".js", ".scss", ".svg");

@@ -5,13 +5,13 @@ import { ConfirmDialogTheme, ListViewSortOrder } from "../../../types";
 import { ListView } from "./index";
 
 const collection = [
-    { name: "Item-01", created_at: "2019-01-01", nested_property: { current_value: "Item_01_nested_property_current_value" } },
+    { name: "Item-01", created_at: "2019-01-01", nested_property: { current_value: "Item_01 nested property current value" } },
     { name: "Item-02", created_at: "2019-01-02", nested_property: { current_value: "Item 02 nested property current value" } },
     { name: "Item-03", created_at: "2019-01-03", nested_property: { current_value: "Item 03 nested property current value" } },
     { name: "Item-04", created_at: "2019-01-04", nested_property: { current_value: "Item 04 nested property current value" } },
     { name: "Item-05", created_at: "2019-01-05", nested_property: { current_value: "Item 05 nested property current value" } },
     { name: "Item-06", created_at: "2019-01-06", nested_property: { current_value: "Item 06 nested property current value" } },
-    { name: "Item-07", created_at: "2019-01-07", nested_property: { current_value: "Item_07_nested_property_current_value" } },
+    { name: "Item-07", created_at: "2019-01-07", nested_property: { current_value: "Item_07 nested property current value" } },
     { name: "Item-08", created_at: "2019-01-08", nested_property: { current_value: "Item 08 nested property current value" } },
     { name: "Item-09", created_at: "2019-01-09", nested_property: { current_value: "Item 09 nested property current value" } },
     { name: "Item-10", created_at: "2019-01-10", nested_property: { current_value: "Item 10 nested property current value" } },
@@ -24,7 +24,27 @@ const collection = [
     { name: "Item-17", created_at: "2019-01-17", nested_property: { current_value: "Item 17 nested property current value" } },
     { name: "Item-18", created_at: "2019-01-18", nested_property: { current_value: "Item 18 nested property current value" } },
     { name: "Item-19", created_at: "2019-01-19", nested_property: { current_value: "Item 19 nested property current value" } },
-    { name: "Item-20", created_at: "2019-01-20", nested_property: { current_value: "Item 20 nested property current value" } }
+    { name: "Item-20", created_at: "2019-01-20", nested_property: { current_value: "Item 20 nested property current value" } },
+    { name: "Item-21", created_at: "2019-01-01", nested_property: { current_value: "Item 21 nested property current value" } },
+    { name: "Item-22", created_at: "2019-01-02", nested_property: { current_value: "Item 22 nested property current value" } },
+    { name: "Item-23", created_at: "2019-01-03", nested_property: { current_value: "Item 23 nested property current value" } },
+    { name: "Item-24", created_at: "2019-01-04", nested_property: { current_value: "Item 24 nested property current value" } },
+    { name: "Item-25", created_at: "2019-01-05", nested_property: { current_value: "Item 25 nested property current value" } },
+    { name: "Item-26", created_at: "2019-01-06", nested_property: { current_value: "Item 26 nested property current value" } },
+    { name: "Item-27", created_at: "2019-01-07", nested_property: { current_value: "Item 27 nested property current value" } },
+    { name: "Item-28", created_at: "2019-01-08", nested_property: { current_value: "Item 28 nested property current value" } },
+    { name: "Item-29", created_at: "2019-01-09", nested_property: { current_value: "Item 29 nested property current value" } },
+    { name: "Item-30", created_at: "2019-01-10", nested_property: { current_value: "Item 30 nested property current value" } },
+    { name: "Item-31", created_at: "2019-01-11", nested_property: { current_value: "Item 31 nested property current value" } },
+    { name: "Item-32", created_at: "2019-01-12", nested_property: { current_value: "Item 32 nested property current value" } },
+    { name: "Item-33", created_at: "2019-01-13", nested_property: { current_value: "Item 33 nested property current value" } },
+    { name: "Item-34", created_at: "2019-01-14", nested_property: { current_value: "Item 34 nested property current value" } },
+    { name: "Item-35", created_at: "2019-01-15", nested_property: { current_value: "Item 35 nested property current value" } },
+    { name: "Item-36", created_at: "2019-01-16", nested_property: { current_value: "Item 36 nested property current value" } },
+    { name: "Item-37", created_at: "2019-01-17", nested_property: { current_value: "Item 37 nested property current value" } },
+    { name: "Item-38", created_at: "2019-01-18", nested_property: { current_value: "Item 38 nested property current value" } },
+    { name: "Item-39", created_at: "2019-01-19", nested_property: { current_value: "Item 39 nested property current value" } },
+    { name: "Item-40", created_at: "2019-01-20", nested_property: { current_value: "Item 40 nested property current value" } }
 ];
 
 export default {
@@ -159,7 +179,7 @@ export const withPagination = (): any => {
             setLoading(true);
             setTimeout(() => {
                 setLoading(false);
-                setItems(collection.slice(5 * (page - 1), 5 * page));
+                setItems(collection.slice(2 * (page - 1), 2 * page));
             }, 1000 + Math.random() * 2000);
         }, [page]);
 
@@ -169,7 +189,7 @@ export const withPagination = (): any => {
                 busy={loading}
                 pagination={{
                     page,
-                    pageSize: 5,
+                    pageSize: 2,
                     total: collection.length,
                     onPageChange: (page): void => setPage(page)
                 }}

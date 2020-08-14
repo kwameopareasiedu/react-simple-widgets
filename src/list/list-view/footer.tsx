@@ -23,13 +23,61 @@ export const ListViewFooter = ({ page, total, pageSize, onPageChange }: IListVie
                         Prev
                     </button>
 
+                    {minPage > 1 && (
+                        <React.Fragment>
+                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(1)}>
+                                1
+                            </button>
+
+                            {minPage > 2 && (
+                                <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(2)}>
+                                    2
+                                </button>
+                            )}
+
+                            {minPage > 3 && (
+                                <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(3)}>
+                                    3
+                                </button>
+                            )}
+
+                            <span>...</span>
+                        </React.Fragment>
+                    )}
+
                     {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {
                         const isPrimary = i + minPage === page;
                         const onClick = (): void => onPageChange(minPage + i);
                         const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";
-                        const props: any = { key: i, type: "button", className, onClick };
-                        return <button {...props}>{i + minPage}</button>;
+                        const props: any = { type: "button", className, onClick };
+                        return (
+                            <button key={i} {...props}>
+                                {i + minPage}
+                            </button>
+                        );
                     })}
+
+                    {maxPage < pages && (
+                        <React.Fragment>
+                            <span>...</span>
+
+                            {maxPage < pages - 2 && (
+                                <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(pages - 2)}>
+                                    {pages - 2}
+                                </button>
+                            )}
+
+                            {maxPage < pages - 1 && (
+                                <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(pages - 1)}>
+                                    {pages - 1}
+                                </button>
+                            )}
+
+                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(pages)}>
+                                {pages}
+                            </button>
+                        </React.Fragment>
+                    )}
 
                     <button type="button" className="btn btn-link btn-sm" disabled={page === pages} onClick={(): void => onPageChange(page + 1)}>
                         Next
