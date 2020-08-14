@@ -3,7 +3,7 @@
 # FlashProvider
 
 The `FlashProvider` allows an app to display different types of flash messages. FlashProvider uses
-dialogs to display these flash messages and thus depends on a [DialogProvider](./dialog-provider.md)
+dialogs to display these flash messages and thus depends on a [DialogProvider](api-reference/dialog-provider.md)
 ancestor to be available up your component tree.
 
 ## API

@@ -1,16 +1,8 @@
-[Home](../README.md)
+[Home](../../README.md)
 
-# DialogProvider
+# DialogProvider API
 
-The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its
-children. This prevents any possible stacking context issues between the full page dialogs and
-components of your application (especially issues with any CSS grid you might have).
-
-## API
-
-### DialogProvider
-
-`DialogProvider` is a wrapper for your app and provides the dialog capabilities
+## DialogProvider
 
 ```jsx
 ReactDOM.render(
@@ -21,20 +13,18 @@ ReactDOM.render(
 );
 ```
 
-### DialogProviderContext
-
-`DialogProviderContext` provides the `showDialog` function to render dialogs
+## DialogProviderContext
 
 ```jsx
 const { showDialog } = useContext(DialogProviderContext);
 ```
 
-#### showDialog
+### showDialog
 
 `showDialog` is a function to render your component in a dialog
 
 ```jsx
-showDialog(builderFunction, options, bind);
+showDialog(builderFunction, options);
 ```
 
 -   `builderFunction: (dialogHelper: IDialogHelper) => any`
@@ -48,7 +38,7 @@ showDialog(builderFunction, options, bind);
         This function closes the dialog. If it is called with a return value, it will be passed to
         `options.onDialogDismissed` (if declared)
 
--   `options: { size?: DialogSize, onDialogDismissed?: (returnedValue?: any) => void }`
+-   `options: { size?: DialogSize, onDialogDismissed?: (returnedValue?: any) => void, dismissOnBackgroundClick: boolean, bind: any }`
 
     This is a configuration object for the dialog. It contains the following properties:
 
@@ -62,11 +52,16 @@ showDialog(builderFunction, options, bind);
         If provided, this function will be called when the `dismiss` function is.
         If `dismiss` is called with a value, the value will be passed into this function as well.
 
+    -   `dismissOnBackgroundClick?: boolean`
+
+        If set to `true`, clicking on the modal background will dismiss the current dialog.
+        This defaults to `false`
+
     -   `bind?: any`
-    
+
         The way this provider works is render dialogs above the main application. The illustration
         below depicts this:
-    
+
         ```jsx
         <ProviderA>
             <DialogProvider>
@@ -76,26 +71,13 @@ showDialog(builderFunction, options, bind);
             </DialogProvider>
         </ProviderA>
         ```
-    
+
         This means a dialog displayed by the provider only has access to the DialogProvider context
         and all other contexts above it, **never below**.
-    
+
         Suppose your dialog required a function from ProviderB, trying to access the function from
         ProviderB's context within your dialog will result in an error since that context does not
         exist at the level of the DialogProvider (where the dialog is instantiated).
-    
+
         To circumvent this, your app should retrieve the required parameters from ProviderB and "hoist"
         them up to your dialog via the `bind` object.
-
-## Usage
-
-A complete usage can be found in the
-[Storybook stories for this widget](../src/provider/dialog-provider/index.stories.tsx)
-
-## Sidenotes
-
-> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the most
-> recent dialog receives the keyboard event first.
-
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is
-> entirely up to the developer.
