@@ -19,7 +19,7 @@ export const PageTransitionProvider = ({ children }: IPageTransitionProvider): a
         if (!to || pathname + search + hash === to) return;
 
         // If there is no PageTransitionView in scope, redirect from here...
-        if (pageTransitionViewCount === 0) {
+        if (pageTransitionViewCount <= 0) {
             if (options && options.replaceUrl) history.replace(to);
             else history.push(to);
         } else setConfig({ to, options });
@@ -33,9 +33,9 @@ export const PageTransitionProvider = ({ children }: IPageTransitionProvider): a
         else history.push(config.to);
     };
 
-    const incrementPageTransitionViewCount = (): void => setPageTransitionViewCount(pageTransitionViewCount + 1);
+    const incrementPageTransitionViewCount = (): void => setPageTransitionViewCount(count => count + 1);
 
-    const decrementPageTransitionViewCount = (): void => setPageTransitionViewCount(pageTransitionViewCount - 1);
+    const decrementPageTransitionViewCount = (): void => setPageTransitionViewCount(count => Math.max(0, count - 1));
 
     return (
         <PageTransitionProviderContext.Provider

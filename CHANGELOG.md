@@ -2,6 +2,19 @@
 
 # Changelog
 
+-   `1.10.1`
+
+    -   Fixed bug causing race conditions when `del` is used successively in
+        [ValueStoreProvider](docs/value-store-provider.md)
+    -   Fixed bug causing `pageTransitionViewCount` to go below 0, which in turn caused `<Link/>`s
+        outside `<PageTransitionView/>`s not to work in
+        [PageTransitionProvider](docs/page-transition-provider.md)
+
+-   `1.10.0`
+
+    -   Added start and end pages display if current `page > start + 3` and `page < end - 3` respectively
+        in [ListView](docs/list-view.md) widget
+
 -   `1.8.0`
 
     -   Added [TimePicker](docs/time-picker.md) widget

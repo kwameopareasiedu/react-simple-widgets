@@ -27,9 +27,9 @@ export const ValueStoreProvider = ({ initialStorageKeys, children }: IValueStore
         for (const value of items) {
             if (value.persist && !!value.value) {
                 localStorage.setItem(value.key, value.value);
-                if (!persistedKeys.includes(value.key)) setPersistedKeys([...persistedKeys, value.key]);
+                if (!persistedKeys.includes(value.key)) setPersistedKeys(currentKeys => [...currentKeys, value.key]);
             } else {
-                setPersistedKeys(persistedKeys.filter(key => key !== value.key));
+                setPersistedKeys(currentKeys => currentKeys.filter(key => key !== value.key));
                 localStorage.removeItem(value.key);
             }
         }
@@ -45,15 +45,15 @@ export const ValueStoreProvider = ({ initialStorageKeys, children }: IValueStore
     };
 
     const put = (key: string, value: any, persist?: boolean): void => {
-        setItems(items => {
-            const item = items.filter(v => v.key === key)[0];
+        setItems(currentItems => {
+            const item = currentItems.filter(v => v.key === key)[0];
 
             if (item) {
                 item.value = value;
                 item.persist = persist;
-            } else items.push(new ValueStoreItem(key, value, persist));
+            } else currentItems.push(new ValueStoreItem(key, value, persist));
 
-            return [...items];
+            return [...currentItems];
         });
     };
 
@@ -77,7 +77,7 @@ class ValueStoreItem {
     value: any;
     persist: boolean;
 
-    constructor(key: string, value: any, persist: boolean = false) {
+    constructor(key: string, value: any, persist = false) {
         this.key = key;
         this.value = value;
         this.persist = persist;
