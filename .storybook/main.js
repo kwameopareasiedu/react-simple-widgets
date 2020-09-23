@@ -1,5 +1,5 @@
 module.exports = {
-    stories: ["../src/**/*.stories-dist.tsx"],
+    stories: ["../src/**/*.stories.tsx"],
     addons: ["@storybook/addon-actions/register", "@storybook/addon-knobs/register"],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("svg") === -1);
