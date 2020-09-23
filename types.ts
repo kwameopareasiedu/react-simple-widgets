@@ -1,35 +1,6 @@
 import { AllHTMLAttributes, AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
-/* DialogProvider interfaces */
-export enum DialogSize {
-    SMALL,
-    MEDIUM,
-    WIDE
-}
-
-export interface IDialogOptions {
-    size?: DialogSize;
-    onDialogDismissed?: (returnValue?: any) => void;
-    dismissOnBackgroundClick?: boolean;
-    bind?: any;
-}
-
-export interface IDialogHelper {
-    dismiss: (returnValue?: any) => void;
-    [key: string]: any;
-}
-
-export type IDialogBuilder = (helper: IDialogHelper) => any;
-
-export interface IDialogProviderContext {
-    showDialog: (dialogBuilder: IDialogBuilder, options?: IDialogOptions) => void;
-}
-
-export interface IDialogProvider {
-    children: any;
-}
-
 /* ValueStoreProvider interfaces */
 export interface IValueStoreProviderContext {
     get: (key: string) => any;
