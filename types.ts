@@ -1,19 +1,6 @@
 import { AllHTMLAttributes, AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
-/* ValueStoreProvider interfaces */
-export interface IValueStoreProviderContext {
-    get: (key: string) => any;
-    put: (key: string, value: any, persist?: boolean) => void;
-    del: (...keys: Array<string>) => void;
-    clear: () => void;
-}
-
-export interface IValueStoreProvider {
-    initialStorageKeys?: Array<string>;
-    children: any;
-}
-
 /* PageTransitionProvider interfaces */
 export interface IPageTransitionOptions {
     dontAnimate?: boolean;
