@@ -14,25 +14,6 @@ export interface IValueStoreProvider {
     children: any;
 }
 
-/* FlashProvider interfaces */
-export enum FlashType {
-    ERROR,
-    WARNING,
-    INFO,
-    SUCCESS
-}
-
-export interface IFlashProviderContext {
-    flashError: (title: string, message?: string, onFlashDismissed?: () => void) => void;
-    flashWarning: (title: string, message?: string, onFlashDismissed?: () => void) => void;
-    flashInfo: (title: string, message?: string, onFlashDismissed?: () => void) => void;
-    flashSuccess: (title: string, message?: string, onFlashDismissed?: () => void) => void;
-}
-
-export interface IFlashProvider {
-    children: any;
-}
-
 /* PageTransitionProvider interfaces */
 export interface IPageTransitionOptions {
     dontAnimate?: boolean;

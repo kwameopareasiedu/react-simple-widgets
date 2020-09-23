@@ -4,3 +4,4 @@ import "./index.scss";
 // export * from "./misc";
 // export * from "./picker";
 export * from "./providers/dialog-provider";
+export * from "./providers/flash-provider";
