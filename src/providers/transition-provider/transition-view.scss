@@ -1,0 +1,38 @@
+.react-simple-widget.transition-view {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transform-origin: center;
+    animation: transition-view-entry-animation var(--rsw-transition-duration) forwards;
+}
+
+.react-simple-widget.transition-view.transition-view-redirecting {
+    pointer-events: none;
+    animation: transition-view-exit-animation var(--rsw-transition-duration) forwards;
+}
+
+@keyframes transition-view-entry-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    99% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes transition-view-exit-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}

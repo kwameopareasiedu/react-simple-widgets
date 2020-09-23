@@ -1,39 +1,5 @@
-import { AllHTMLAttributes, AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
-
-/* PageTransitionProvider interfaces */
-export interface IPageTransitionOptions {
-    dontAnimate?: boolean;
-    replaceUrl?: boolean;
-}
-
-export interface IPageTransitionConfig {
-    to: string;
-    options: IPageTransitionOptions;
-}
-
-export interface IPageTransitionProviderContext {
-    __internal_config: IPageTransitionConfig;
-    __internal_incrementPageTransitionViewCount: () => void;
-    __internal_decrementPageTransitionViewCount: () => void;
-    __internal_endRedirect: () => void;
-    redirect: (to: string, config?: IPageTransitionOptions) => void;
-}
-
-export interface IPageTransitionProvider {
-    children: any;
-}
-
-export interface IPageTransitionView {
-    children: any;
-}
-
-export interface IPageTransitionLink extends AnchorHTMLAttributes<HTMLAnchorElement> {
-    to: string;
-    children?: any;
-    dontAnimate?: boolean;
-    replaceUrl?: boolean;
-}
 
 /* CustomField */
 export type ICustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;

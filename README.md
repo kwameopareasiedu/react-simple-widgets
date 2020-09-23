@@ -36,11 +36,11 @@ Providers wrap around you app and provide globally accessible functionality to a
 
 -   [DialogProvider](src/providers/dialog-provider/usage.md) - Provides a simple dialog framework
     within your app
--   [ValueStoreProvider](docs/value-store-provider.md) - Provides a global value storage which can
-    utilize the local storage API to persist data
--   [FlashProvider](docs/flash-provider.md) - Provides a flash message framework built using the
-    dialog framework
--   [PageTransitionProvider](docs/page-transition-provider.md) - Provides a page transition
+-   [ValueStoreProvider](src/providers/value-store-provider/usage.md) - Provides a global value
+    storage which can utilize the local storage API to persist data
+-   [FlashProvider](src/providers/flash-provider/usage.md) - Provides a flash message framework
+    built using the dialog framework
+-   [TransitionProvider](src/providers/transition-provider/usage.md) - Provides a page transition
     framework for navigating between different pages of your app
 
 #### Form
