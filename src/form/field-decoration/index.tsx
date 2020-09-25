@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FieldDecoration as Props, FieldDecorationType } from "./types";
 
 /** FieldDecoration provides the label, error, leading and trailing widget components to complement an input field */
-export const FieldDecoration = ({ decoration, value, label, leading, trailing, error, disabled, children }: Props) => {
+export const FieldDecoration = ({ decoration, stickyLabel, label, leading, trailing, error, disabled, children }: Props) => {
     const [focused, setFocused] = useState(false);
     const [hasValue, setHasValue] = useState(false);
     const [floatingLabelDefaultTop, setFloatingLabelDefaultTop] = useState(0);
@@ -32,7 +32,7 @@ export const FieldDecoration = ({ decoration, value, label, leading, trailing, e
         if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline");
         if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label");
 
-        if (hasValue || value) classes.push("has-value");
+        if (stickyLabel || hasValue) classes.push("has-value");
         if (focused) classes.push("has-focus");
         if (error) classes.push("has-error");
         if (disabled) classes.push("disabled");

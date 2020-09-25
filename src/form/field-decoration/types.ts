@@ -14,10 +14,10 @@ export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => any
 export interface FieldDecoration {
     label?: any;
     error?: any;
-    value?: any;
     leading?: any;
     trailing?: any;
     disabled?: boolean;
+    stickyLabel?: boolean;
     decoration?: FieldDecorationType;
     children: FieldDecorationBuilder;
 }
