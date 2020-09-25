@@ -1,18 +1,19 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # CustomField
 
-This widget is a form field wrapper for a component whose value is to be included in a form.
+This widget is a form field wrapper for an input component whose value is to be included in a
+[Formik](https://jaredpalmer.com/formik/) form.
 
-## API
+The following guide demonstrates how to use the `CustomField`
 
-### CustomField
-
-This widget is the wrapper which provides properties and functions to integrate with the form
+## Usage
 
 ```jsx
 <CustomField name={name} errorTransformer={errorTransformer}>
-    {children} // Children is required
+    {({ value, touched, error, setValue, setTouched, setError }) => {
+        // Return custom component
+    }}
 </CustomField>
 ```
 
@@ -22,45 +23,34 @@ This widget is the wrapper which provides properties and functions to integrate 
 
 -   `errorTransformer?: (err: any) => string`
 
-    An optional error transform function. It is passed the error (if any) from the Formik holder
-    and you can return a custom error message
+    An optional error transform function. It is passed the error (if any) from the Formik form and
+    you can return a custom error message
 
--   `children: ICustomFieldBuilder`
+-   `value: any`
 
-    The child of a `CustomField` is a function that returns the component to include in the form.
-    Its signature is:
+    The value of the widget
 
-    ```jsx
-    ({ value, touched, error, setValue, setTouched, setError }): any => {
-        // Return custom component
-    };
-    ```
+-   `touched: boolean`
 
-    -   `value: any`
+    Determines if the component has received focus previously. This can be used to provide a
+    specific styling
 
-        The value of the widget
+-   `error: any`
 
-    -   `touched: boolean`
+    The error of this component. This is usually provided by the validation schema of the form
 
-        Determines if the component has received focus previously. This can be used to provide a
-        specific styling
+-   `setValue: (value: any) => void`
 
-    -   `error: any`
+    Sets the value of the widget
 
-        The error of this component. This is usually provided by the validation schema of the form
+-   `setTouched: (touched: boolean) => void`
 
-    -   `setValue: (value: any) => void`
+    Sets the touched state of the widget
 
-        Sets the value of the widget
+-   `setError: (error: any) => void`
 
-    -   `setTouched: (touched: boolean) => void`
-
-        Sets the touched state of the widget
-
-    -   `setError: (error: any) => void`
-
-        Sets the error of the widget within the form holder. A widget with an error will prevent
-        the form from submitting
+    Sets the error of the widget within the form holder. A widget with an error will prevent
+    the form from submitting
 
 ## Usage
 

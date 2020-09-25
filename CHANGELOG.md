@@ -79,7 +79,7 @@
     -   Corrected path to [useLoadMore](docs/use-load-more.md) stories in its docs
     -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage in
-        [TextField](docs/text-field.md) and [DropdownField](docs/dropdown-field.md)
+        [TextField](src/form/text-field/usage.md) and [DropdownField](docs/dropdown-field.md)
     -   Added `text-center` class to [Loader](docs/loader.md) as its added in majority of use cases
     -   Added [PageActions](docs/page-actions.md) widget
 
@@ -158,7 +158,7 @@
         URL is same as current URL
     -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to ignore redirect if target
         URL is empty
-    -   Forwarded the `name` prop of [TextField](docs/text-field.md) and
+    -   Forwarded the `name` prop of [TextField](src/form/text-field/usage.md) and
         [DropdownField](docs/dropdown-field.md) to `input` and `select` components respectively to
         trigger browser added feature (such as auto-completion)
 

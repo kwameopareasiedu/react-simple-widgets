@@ -36,7 +36,7 @@ Providers wrap around you app and provide globally accessible functionality to a
 
 -   [DialogProvider](src/providers/dialog-provider/usage.md) - Provides a simple dialog framework
     within your app
--   [ValueStoreProvider](src/providers/value-store-provider/usage.md) - Provides a global value
+-   [ValueStoreProvider](src/providers/value-store-provider/usage.md) - Provides an in-memory value
     storage which can utilize the local storage API to persist data
 -   [FlashProvider](src/providers/flash-provider/usage.md) - Provides a flash message framework
     built using the dialog framework
@@ -49,9 +49,9 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 
 -   [FieldDecoration](src/form/field-decoration/usage.md) - A widget that provides a label and error
     component together with focus and blur styling to a wrapped component
--   [CustomField](docs/custom-field.md) - A widget that allows custom components to be integrated
-    with a form
--   [TextField](docs/text-field.md) - A text field that doubles as a rich text editor
+-   [CustomField](src/form/custom-field/usage.md) - A widget that allows custom components to be
+    integrated with a form
+-   [TextField](src/form/text-field/usage.md) - A text field that doubles as a rich text editor
 -   [DropdownField](docs/dropdown-field.md) - A widget that allows selection from a dropdown
 -   [SelectField](docs/select-field.md) - A widget that allows binary, single or multi selection
     from a list of options

@@ -1,31 +1,5 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
-import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
+import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
-
-/* CustomField */
-export type ICustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
-
-export interface ICustomField extends InputHTMLAttributes<HTMLInputElement> {
-    children: ICustomFieldBuilder;
-    errorTransformer?: (err: any) => string;
-}
-
-/* TextField */
-export enum TextFieldMode {
-    INPUT,
-    EDITOR
-}
-
-export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
-    name: string;
-    label?: string;
-    mode?: TextFieldMode;
-    decoration?: FieldDecorationType;
-    errorTransformer?: (err: any) => string;
-    onEditorChange?: (value: any) => void;
-    onEditorFocus?: () => void;
-    onEditorBlur?: () => void;
-}
 
 /* DropdownField */
 export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
