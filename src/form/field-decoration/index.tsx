@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FieldDecoration as Props, FieldDecorationType } from "./types";
 
 /** FieldDecoration provides the label, error, leading and trailing widget components to complement an input field */
-export const FieldDecoration = ({ decoration, label, leading, trailing, error, disabled, children }: Props) => {
+export const FieldDecoration = ({ decoration, value, label, leading, trailing, error, disabled, children }: Props) => {
     const [focused, setFocused] = useState(false);
     const [hasValue, setHasValue] = useState(false);
     const [floatingLabelDefaultTop, setFloatingLabelDefaultTop] = useState(0);
@@ -26,27 +26,13 @@ export const FieldDecoration = ({ decoration, label, leading, trailing, error, d
         }
     }, []);
 
-    useEffect(() => {
-        if (decoration === FieldDecorationType.FLOATING_LABEL) {
-            const leadingNode: HTMLElement = leadingRef.current;
-
-            if (leadingNode) {
-                const leadingWidth = leadingNode.getBoundingClientRect().width;
-
-                // const contentHeight = contentNode.getBoundingClientRect().height;
-                // setFloatingLabelDefaultTop((contentHeight - labelHeight) / 2);
-                // setFloatingLabelFocusedTop(-labelHeight / 2);
-            }
-        }
-    }, [leading]);
-
     const className = (): string => {
         const classes = ["react-simple-widget", "field-decoration"];
 
         if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline");
         if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label");
 
-        if (hasValue) classes.push("has-value");
+        if (hasValue || value) classes.push("has-value");
         if (focused) classes.push("has-focus");
         if (error) classes.push("has-error");
         if (disabled) classes.push("disabled");
@@ -64,7 +50,7 @@ export const FieldDecoration = ({ decoration, label, leading, trailing, error, d
             "--floating-label-default-top": floatingLabelDefaultTop + "px",
             "--floating-label-default-left": (leadingRef.current ? (leadingRef.current as HTMLElement).getBoundingClientRect().width : 0) + 10 + "px",
             "--floating-label-focused-top": floatingLabelFocusedTop + "px",
-            "--floating-label-focused-left": "6px"
+            "--floating-label-focused-left": "4px"
         }
     };
 

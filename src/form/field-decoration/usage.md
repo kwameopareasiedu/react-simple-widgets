@@ -9,8 +9,6 @@ The following guide demonstrates how to use the `FieldDecoration`
 
 ## Usage
 
-This widget is the wrapper which provides properties and functions to integrate with the form
-
 ```jsx
 <FieldDecoration decoration={decoration} label={label} leading={leading} trailing={trailing} error={error} disabled={disabled}>
     {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
@@ -68,6 +66,12 @@ This widget is the wrapper which provides properties and functions to integrate 
 
     This value indicates whether the widget is disabled or not. If `true`, the widget ignores
     pointer events and reduces opacity to half.
+
+-   `value?: boolean = false`
+
+    This value indicates whether the wrapped component has a value or not. This props is only used
+    if the `mode` is `FieldDecorationType.FLOATING_LABEL`. If `true`, calls to `onFieldFocus()` and
+    `onFieldBlur()` will be ignored and the label will be permanently floated
 
 -   `onFieldFocus: () => void`
 
