@@ -11,7 +11,7 @@ export default {
     decorators: [(storyFn: any) => <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>{storyFn()}</div>]
 };
 
-export const usage = () => {
+export const normal = () => {
     const IndexPage = () => {
         return (
             <div id="primary" className="container text-center">
@@ -152,22 +152,22 @@ export const usage = () => {
     };
 
     return (
-        <BrowserRouter basename="/iframe.html/">
-            <TransitionProvider>
-                <Switch>
-                    <Route exact path="/">
-                        <TransitionView>
-                            <IndexPage />
-                        </TransitionView>
-                    </Route>
+        <TransitionProvider>
+            <Switch>
+                <Route exact path="/">
+                    <TransitionView>
+                        <IndexPage />
+                    </TransitionView>
+                </Route>
 
-                    <Route exact path="/secondary">
-                        <TransitionView>
-                            <SecondaryPage />
-                        </TransitionView>
-                    </Route>
-                </Switch>
-            </TransitionProvider>
-        </BrowserRouter>
+                <Route exact path="/secondary">
+                    <TransitionView>
+                        <SecondaryPage />
+                    </TransitionView>
+                </Route>
+            </Switch>
+        </TransitionProvider>
     );
 };
+
+normal.decorators = [(story: any) => <BrowserRouter basename="/iframe.html/">{story()}</BrowserRouter>];

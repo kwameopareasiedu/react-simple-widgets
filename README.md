@@ -47,20 +47,17 @@ Providers wrap around you app and provide globally accessible functionality to a
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
--   [FieldDecoration](docs/field-decoration.md) - A widget that provides a label and error component
-    together with focus and blur styling to a wrapped component
+-   [FieldDecoration](src/form/field-decoration/usage.md) - A widget that provides a label and error
+    component together with focus and blur styling to a wrapped component
 -   [CustomField](docs/custom-field.md) - A widget that allows custom components to be integrated
     with a form
 -   [TextField](docs/text-field.md) - A text field that doubles as a rich text editor
 -   [DropdownField](docs/dropdown-field.md) - A widget that allows selection from a dropdown
 -   [SelectField](docs/select-field.md) - A widget that allows binary, single or multi selection
     from a list of options
--   [FileField](docs/file-field.md) - A form wrapper widget for the
-    [FilePicker](docs/file-picker.md)
--   [DateField](docs/date-field.md) - A form wrapper widget for the
-    [DatePicker](docs/date-picker.md)
--   [TimeField](docs/time-field.md) - A form wrapper widget for the
-    [TimePicker](docs/time-picker.md)
+-   [FileField](docs/file-field.md) - A form wrapper widget for the [FilePicker](docs/file-picker.md)
+-   [DateField](docs/date-field.md) - A form wrapper widget for the [DatePicker](docs/date-picker.md)
+-   [TimeField](docs/time-field.md) - A form wrapper widget for the [TimePicker](docs/time-picker.md)
 
 #### Pickers
 
@@ -97,8 +94,7 @@ Widgets under this category are for convenience
 -   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
     delay after a caller has called it
 -   [useWindowBreakpoints](docs/use-window-breakpoints.md) - A hook which provides the window width
-    category data according to
-    [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
+    category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ### Customization
 

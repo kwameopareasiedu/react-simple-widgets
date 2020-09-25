@@ -1,5 +1,6 @@
 import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
+import { FieldDecorationType } from "./src/form/field-decoration/types";
 
 /* CustomField */
 export type ICustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
@@ -7,32 +8,6 @@ export type ICustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProp
 export interface ICustomField extends InputHTMLAttributes<HTMLInputElement> {
     children: ICustomFieldBuilder;
     errorTransformer?: (err: any) => string;
-}
-
-/* FieldDecoration */
-export interface IFieldDecorationBuilderProps {
-    onFieldFocus: () => void;
-    onFieldBlur: () => void;
-}
-
-export type IFieldDecorationBuilder = ({ onFieldFocus, onFieldBlur }: IFieldDecorationBuilderProps) => any;
-
-export enum FieldDecorationType {
-    NONE,
-    FLAT,
-    UNDERLINE,
-    FLOATING_LABEL
-}
-
-export interface IFieldDecoration {
-    label?: string;
-    error?: string;
-    leading?: any;
-    trailing?: any;
-    hasValue?: boolean;
-    disabled?: boolean;
-    decoration?: FieldDecorationType;
-    children: IFieldDecorationBuilder;
 }
 
 /* TextField */

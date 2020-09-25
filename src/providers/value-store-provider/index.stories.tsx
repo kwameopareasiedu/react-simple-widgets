@@ -7,7 +7,7 @@ export default {
     component: ValueStoreProvider
 };
 
-export const usage = (): any => {
+export const normal = (): any => {
     const ExampleApp = (): any => {
         const { get, set, del, clear } = useContext(ValueStoreProviderContext);
 

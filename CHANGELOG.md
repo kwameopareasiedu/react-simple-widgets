@@ -78,7 +78,7 @@
 
     -   Corrected path to [useLoadMore](docs/use-load-more.md) stories in its docs
     -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
-    -   Added _disabled_ styling to [FieldDecoration](docs/field-decoration.md) widget. Updated usage in
+    -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage in
         [TextField](docs/text-field.md) and [DropdownField](docs/dropdown-field.md)
     -   Added `text-center` class to [Loader](docs/loader.md) as its added in majority of use cases
     -   Added [PageActions](docs/page-actions.md) widget
@@ -102,8 +102,8 @@
 
     -   Added `onClick` prop to [ListView](docs/list-view.md) widget
     -   Added `theme` prop to [ConfirmDialog](docs/confirm-dialog.md) widget
-    -   Adjusted label font size of [FieldDecoration](docs/field-decoration.md) to 87.5%
-    -   Adjusted [FieldDecoration](docs/field-decoration.md) labels to be single lines
+    -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
+    -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
 
 -   `1.3.7`
 

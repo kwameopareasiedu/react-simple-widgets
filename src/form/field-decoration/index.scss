@@ -1,0 +1,117 @@
+.react-simple-widget.field-decoration {
+    > label {
+        margin: 0;
+        color: var(--rsw-label-color);
+        font-size: 75%;
+    }
+
+    > .error {
+        margin: 0;
+        color: var(--rsw-error-color);
+        font-size: 75%;
+    }
+
+    > .field-decoration-content {
+        display: flex;
+        padding: 0;
+        border-radius: 4px;
+        border: 1px solid var(--rsw-secondary-theme-color);
+        transition: border-color var(--rsw-transition-duration);
+        align-items: center;
+        overflow: hidden;
+
+        > .leading {
+            padding: 0 0 0 10px;
+        }
+
+        > .trailing {
+            padding: 0 10px 0 0;
+        }
+
+        > .widget {
+            flex: 1 1;
+
+            > * {
+                width: 100%;
+                padding: 6px 10px 8px;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
+
+.react-simple-widget.field-decoration.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.react-simple-widget.field-decoration.has-focus {
+    > .field-decoration-content {
+        border-width: 2px;
+        border-color: var(--rsw-primary-theme-color);
+    }
+}
+
+/* Underline decoration */
+.react-simple-widget.field-decoration.underline {
+    position: relative;
+
+    > .field-decoration-content {
+        border: none;
+        border-bottom: 1px solid var(--rsw-secondary-theme-color);
+        border-radius: 0;
+
+        > .widget > * {
+            padding: 4px 10px 6px;
+        }
+    }
+
+    > .field-decoration-content::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: -1px;
+        border-bottom: 2px solid var(--rsw-primary-theme-color);
+        transition: right var(--rsw-transition-duration);
+        transition-timing-function: ease-in;
+        content: "";
+    }
+}
+
+.react-simple-widget.field-decoration.underline.has-focus {
+    > .field-decoration-content::after {
+        right: 0;
+    }
+}
+
+/* Floating label decoration */
+.react-simple-widget.field-decoration.floating-label {
+    position: relative;
+
+    > label {
+        position: absolute;
+        top: var(--floating-label-default-top);
+        left: var(--floating-label-default-left);
+        padding: 0 4px;
+        color: var(--rsw-label-color);
+        background-color: var(--rsw-field-decoration-label-bg-color);
+        transition: all var(--rsw-transition-duration);
+        pointer-events: none;
+        white-space: nowrap;
+    }
+
+    .error {
+        padding: 0 6px;
+    }
+}
+
+.react-simple-widget.field-decoration.floating-label.has-focus,
+.react-simple-widget.field-decoration.floating-label.has-value {
+    > label {
+        top: var(--floating-label-focused-top);
+        left: var(--floating-label-focused-left);
+        margin: 0 4px !important;
+    }
+}

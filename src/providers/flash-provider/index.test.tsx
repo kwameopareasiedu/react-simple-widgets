@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it, jest } from "@jest/globals";
-import { usage as FlashProviderExample } from "./index.stories";
+import { normal as FlashProviderExample } from "./index.stories";
 
 afterEach(cleanup);
 
