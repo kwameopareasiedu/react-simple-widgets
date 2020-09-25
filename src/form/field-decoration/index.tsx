@@ -4,13 +4,10 @@ import { FieldDecoration as Props, FieldDecorationType } from "./types";
 
 /** FieldDecoration provides the label, error, leading and trailing widget components to complement an input field */
 export const FieldDecoration = ({ decoration, label, leading, trailing, error, disabled, children }: Props) => {
-    const LEADING_WIDTH_OFFSET = 6;
-
     const [focused, setFocused] = useState(false);
     const [hasValue, setHasValue] = useState(false);
     const [floatingLabelDefaultTop, setFloatingLabelDefaultTop] = useState(0);
     const [floatingLabelFocusedTop, setFloatingLabelFocusedTop] = useState(0);
-    const [floatingLabelDefaultLeft, setFloatingLabelDefaultLeft] = useState(0);
     const contentRef = useRef();
     const leadingRef = useRef();
     const labelRef = useRef();
@@ -67,7 +64,7 @@ export const FieldDecoration = ({ decoration, label, leading, trailing, error, d
             "--floating-label-default-top": floatingLabelDefaultTop + "px",
             "--floating-label-default-left": (leadingRef.current ? (leadingRef.current as HTMLElement).getBoundingClientRect().width : 0) + 10 + "px",
             "--floating-label-focused-top": floatingLabelFocusedTop + "px",
-            "--floating-label-focused-left": "10px"
+            "--floating-label-focused-left": "6px"
         }
     };
 

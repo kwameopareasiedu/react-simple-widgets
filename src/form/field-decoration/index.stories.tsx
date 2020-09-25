@@ -1,7 +1,6 @@
 import React from "react";
 import { FieldDecoration } from "./index";
 import { FieldDecorationType } from "./types";
-// import { DialogSize, DialogHelper } from "./types";
 
 export default {
     title: "Field Decoration",

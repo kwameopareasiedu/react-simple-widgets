@@ -22,7 +22,7 @@ npm i -D react-simple-widgets
 ```
 
 This libraries requires [formik](https://jaredpalmer.com/formik/), [react](https://reactjs.org/) and
-[react-router-dom](https://reacttraining.com/react-router/web) as peer dependencies, so you need to
+[react-router-dom](https://reacttraining.com/react-router/web/) as peer dependencies, so you need to
 have these installed in your application as well.
 
 You can install these dependencies with `yarn add -D react react-router-dom formik` or
