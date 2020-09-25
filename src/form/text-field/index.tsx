@@ -138,7 +138,7 @@ export const TextField = ({
                         trailing={trailing}
                         decoration={decoration}
                         error={touched && error}
-                        stickyLabel={mode === TextFieldMode.EDITOR || !!value}
+                        stickyFloatingLabel={mode === TextFieldMode.EDITOR || !!value}
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur, onFieldChange }) => {
                             return mode === TextFieldMode.INPUT

@@ -17,7 +17,7 @@ export interface FieldDecoration {
     leading?: any;
     trailing?: any;
     disabled?: boolean;
-    stickyLabel?: boolean;
+    stickyFloatingLabel?: boolean;
     decoration?: FieldDecorationType;
     children: FieldDecorationBuilder;
 }

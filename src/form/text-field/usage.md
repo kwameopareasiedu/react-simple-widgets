@@ -14,7 +14,7 @@ WYSIWYG editor. The editor is provided by [Quill rich text editor](https://quill
     mode={mode}
     decoration={decoration}
     errorTransformer={errorTransformer}
-    stickyLabel={stickyLabel}
+    stickyFloatingLabel={stickyFloatingLabel}
     leading={leading}
     trailing={trailing}
     onEditorChange={onEditorChange}
@@ -54,7 +54,7 @@ WYSIWYG editor. The editor is provided by [Quill rich text editor](https://quill
 
     See [FieldDecoration docs](../field-decoration/usage.md)
 
--   `stickyLabel?: boolean`
+-   `stickyFloatingLabel?: boolean`
 
     See [FieldDecoration docs](../field-decoration/usage.md)
 

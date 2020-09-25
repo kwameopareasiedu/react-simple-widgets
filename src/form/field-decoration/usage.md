@@ -10,7 +10,14 @@ The following guide demonstrates how to use the `FieldDecoration`
 ## Usage
 
 ```jsx
-<FieldDecoration decoration={decoration} label={label} leading={leading} trailing={trailing} error={error} disabled={disabled}>
+<FieldDecoration
+    decoration={decoration}
+    label={label}
+    leading={leading}
+    trailing={trailing}
+    error={error}
+    stickyFloatingLabel={stickyFloatingLabel}
+    disabled={disabled}>
     {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
         <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} onChange={e => onFieldChange(e.target.value)} />
     )}
@@ -18,7 +25,14 @@ The following guide demonstrates how to use the `FieldDecoration`
 ```
 
 ```jsx
-<FieldDecoration decoration={decoration} label={label} leading={leading} trailing={trailing} error={error} disabled={disabled}>
+<FieldDecoration
+    decoration={decoration}
+    label={label}
+    leading={leading}
+    trailing={trailing}
+    error={error}
+    stickyFloatingLabel={stickyFloatingLabel}
+    disabled={disabled}>
     {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
         <select type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} onChange={e => onFieldChange(e.target.value)}>
             <option value="A">A</option>
@@ -67,7 +81,7 @@ The following guide demonstrates how to use the `FieldDecoration`
     This value indicates whether the widget is disabled or not. If `true`, the widget ignores
     pointer events and reduces opacity to half.
 
--   `value?: boolean = false`
+-   `stickyFloatingLabel?: boolean = false`
 
     This value indicates whether the wrapped component has a value or not. This props is only used
     if the `mode` is `FieldDecorationType.FLOATING_LABEL`. If `true`, calls to `onFieldFocus()` and

@@ -17,7 +17,7 @@ export interface TextField extends InputHTMLAttributes<HTMLInputElement> {
     errorTransformer?: (err: any) => string;
     // FieldDecoration props
     decoration?: FieldDecorationType;
-    stickyLabel?: boolean;
+    stickyFloatingLabel?: boolean;
     trailing?: any;
     leading?: any;
 }
