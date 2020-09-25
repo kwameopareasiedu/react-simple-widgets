@@ -99,5 +99,6 @@ The following guide demonstrates how to use the `FieldDecoration`
 
 -   `onFieldChange: (hasValue: boolean) => void`
 
-    This should be called by the custom component has a value. This is used by the
-    `FieldDecoration.FLOATING_LABEL` to keep the label floated even when it loses focus.
+    This should be called by the custom component to indicate that it has a value. This is used by
+    the `FieldDecoration.FLOATING_LABEL` to keep the label floated if a value is present but the
+    field has lost focus.
