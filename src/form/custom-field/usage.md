@@ -10,6 +10,8 @@ The following guide demonstrates how to use the `CustomField`
 ## Usage
 
 ```jsx
+import { CustomField } from "react-simple-widgets";
+
 <CustomField name={name} errorTransformer={errorTransformer}>
     {({ value, touched, error, setValue, setTouched, setError }) => {
         // Return custom component

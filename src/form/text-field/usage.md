@@ -8,6 +8,8 @@ WYSIWYG editor. The editor is provided by [Quill rich text editor](https://quill
 ## Usage
 
 ```jsx
+import { TextField } from "react-simple-widgets";
+
 <TextField
     name={name}
     label={label}
@@ -24,7 +26,7 @@ WYSIWYG editor. The editor is provided by [Quill rich text editor](https://quill
 ```
 
 > This widget is intrinsically an `<input />` component and accepts all other attributes of
-> `input` tags in addition to the ones specified below.
+> `input` tags in addition to the ones specified here.
 
 > As an example, you can set `type=number` with `min={0}` and `max={10}` attributes to make it a
 > number field.

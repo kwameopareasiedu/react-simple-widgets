@@ -10,6 +10,8 @@ The following guide demonstrates how to use the `FieldDecoration`
 ## Usage
 
 ```jsx
+import { FieldDecoration } from "react-simple-widgets";
+
 <FieldDecoration
     decoration={decoration}
     label={label}

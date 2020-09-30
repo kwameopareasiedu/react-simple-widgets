@@ -6,7 +6,7 @@ import { FieldDecorationType } from "./field-decoration/types";
 import { TextFieldMode } from "./text-field/types";
 // import { DialogProvider } from "../provider/dialog-provider";
 // import { DatePickerMode, FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
-// import { DropdownField } from "../../../rsw-components/form/dropdown-field";
+import { DropdownField } from "./dropdown-field";
 // import { SelectField } from "../../../rsw-components/form/select-field";
 // import { FileField } from "../../../rsw-components/form/file-field";
 // import { DateField } from "../../../rsw-components/form/date-field";
@@ -110,13 +110,31 @@ export const index = (): any => {
 
                                     <br />
 
-                                    {/*<DropdownField*/}
-                                    {/*    name="something"*/}
-                                    {/*    label="DropdownField (Disabled)"*/}
-                                    {/*    decoration={FieldDecorationType.FLOATING_LABEL}*/}
-                                    {/*    disabled>*/}
-                                    {/*    <option value="option">An options</option>*/}
-                                    {/*</DropdownField>*/}
+                                    <DropdownField name="something" label="DropdownField (Flat)">
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
+
+                                    <br />
+
+                                    <DropdownField name="something" label="DropdownField (Underline)" decoration={FieldDecorationType.UNDERLINE}>
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
+
+                                    <br />
+
+                                    <DropdownField
+                                        name="something"
+                                        label="DropdownField (Floating label)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        leading={<i className="fa fa-layer-group" />}>
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
 
                                     {/*<br className="d-block d-md-none" />*/}
                                 </div>

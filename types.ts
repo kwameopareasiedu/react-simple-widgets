@@ -1,15 +1,6 @@
 import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
 
-/* DropdownField */
-export interface IDropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
-    name: string;
-    children: any;
-    label?: string;
-    decoration?: FieldDecorationType;
-    errorTransformer?: (err: any) => string;
-}
-
 /* SelectField */
 export enum SelectFieldMode {
     BINARY,
