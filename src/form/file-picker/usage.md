@@ -1,26 +1,40 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # FilePicker
 
 The `FilePicker` widget allows you to select a file from the device. When triggered, it launches a
 dialog that allows you to either launch a file select dialog or drag and drop a file from the device.
-FilePicker makes uses dialogs to provide the picker and thus requires a 
-[DialogProvider](api-reference/dialog-provider.md) ancestor to be available up the component tree.
+FilePicker makes uses dialogs to provide the picker and thus requires a
+[DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be available up the component tree.
 
-## API
-
-### FilePicker
+## Usage
 
 This widget is a [controlled widget](https://reactjs.org/docs/forms.html#controlled-components) so
 your app can define it's state.
 
 ```jsx
-<FilePicker file={file} label={label} decoration={decoration} extensions={extensions} limit={limit} validator={validator} onChange={onChange} />
+import { FilePicker } from "react-simple-widgets";
+
+<FilePicker
+    file={file}
+    label={label}
+    error={error}
+    limit={limit}
+    leading={leading}
+    trailing={trailing}
+    decoration={decoration}
+    extensions={extensions}
+    validator={validator}
+    onChange={onChange}
+    onFocus={onFocus}
+    onBlur={onBlur}
+/>
 ```
 
 -   `file: File`
 
-    The selected file of the widget
+    The selected file of the widget. This should be a state variable as `FilePicker` is a controlled
+    widget
 
 -   `label?: string`
 
@@ -28,16 +42,23 @@ your app can define it's state.
 
 -   `decoration?: FieldDecoration`
 
-    The type of decoration to use on the picker. It can be one be `FieldDecoration.NONE`,
-    `FieldDecoration.FLAT`, `FieldDecoration.UNDERLINE` or `FieldDecoration.FLOATING_LABEL`
-    
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `leading?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `trailing?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
 -   `error?: string`
 
     An optional error message to show under the widget
 
 -   `extensions?: Array<string>`
 
-    The list of valid extensions. If specified, and the selected file's extension is not included, 
+    The list of valid extensions. If specified, and the selected file's extension is not included,
     an error message is displayed and the select button is disabled.
 
     > The extensions should not start with a dot (I.e. Use `["jpg", "png"]`, not `[".jpg", ".png"]`)
@@ -56,15 +77,11 @@ your app can define it's state.
 
     This function is called with the selected file when the user finalizes by pressing the select
     button
-    
+
 -   `onFocus?: () => void`
 
     If provided, the widget calls this function anytime it receives focus
-    
+
 -   `onBlur?: () => void`
 
     If provided, the widget calls this function anytime it loses focus
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/picker/file-picker/index.stories.tsx)

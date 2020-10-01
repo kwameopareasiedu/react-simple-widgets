@@ -3,12 +3,11 @@ import { Formik } from "formik";
 import { TextField } from "./text-field";
 import { DialogProvider } from "../providers/dialog-provider";
 import { FieldDecorationType } from "./field-decoration/types";
+import { SelectFieldMode } from "./select-field/types";
 import { TextFieldMode } from "./text-field/types";
-// import { DialogProvider } from "../provider/dialog-provider";
-// import { DatePickerMode, FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
-import { SelectFieldMode } from "./select-field/types";
+import { FileField } from "./file-field";
 // import { FileField } from "../../../rsw-components/form/file-field";
 // import { DateField } from "../../../rsw-components/form/date-field";
 // import { TimeField } from "../../../rsw-components/form/time-field";
@@ -27,7 +26,7 @@ export const index = (): any => {
             binarySelectFieldValue: "",
             singleSelectFieldValue: "",
             multiSelectFieldValue: "",
-            password: "",
+            fileField: "",
             about: "",
             language: "",
             acceptTOS: false,
@@ -212,16 +211,15 @@ export const index = (): any => {
                                         onChange={v => console.log("Multi-selection", v)}
                                         inline
                                     />
-                                    {/*    <DropdownField name="language" label="DropdownField" decoration={FieldDecorationType.FLOATING_LABEL}>*/}
-                                    {/*        <option value="english">English</option>*/}
-                                    {/*        <option value="twi">Twi</option>*/}
-                                    {/*        <option value="ga">Ga</option>*/}
-                                    {/*        <option value="Ewe">Ewe</option>*/}
-                                    {/*    </DropdownField>*/}
 
-                                    {/*    <br />*/}
+                                    <br />
 
-                                    {/*    <FileField name="file" label="FileField (with 1MB limit)" limit={1024 * 1024} />*/}
+                                    <FileField
+                                        name="file"
+                                        label="FileField (with 1MB limit)"
+                                        leading={<i className="fa fa-file-word" />}
+                                        limit={1024 * 1024}
+                                    />
 
                                     {/*    <br />*/}
 

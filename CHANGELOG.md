@@ -94,7 +94,7 @@
 
 -   `1.4.1`
 
-    -   Added overflow styling to [DatePicker](docs/date-picker.md) and [FilePicker](docs/file-picker.md)
+    -   Added overflow styling to [DatePicker](docs/date-picker.md) and [FilePicker](src/form/file-picker/usage.md)
         widgets
     -   Increased `z-index` of [DialogProvider](docs/api-reference/dialog-provider.md) dialog container div to 999999
 
