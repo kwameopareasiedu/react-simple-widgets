@@ -9,6 +9,8 @@ buttons) or multi-value selection (using checkboxes)
 ## Usage
 
 ```jsx
+import { SelectField } from "react-simple-widgets";
+
 <SelectField name={name} label={label} mode={mode} options={options} errorTransformer={errorTransformer} onChange={onChange} inline={inlne} />
 ```
 
@@ -38,11 +40,6 @@ buttons) or multi-value selection (using checkboxes)
     `SelectFieldMode.SINGLE` or `SelectFieldMode.MULTI`. Each option is a two-element array with
     `[label, value]`
 
--   `errorTransformer?: (err: any) => string`
-
-    An optional error transform function. It is passed the error (if any) from the Formik holder
-    and you can return a custom error message
-
 -   `onChange?: (value: any) => void`
 
     If specified, this function is called with the widget's value. The type depends on what `mode`
@@ -54,3 +51,7 @@ buttons) or multi-value selection (using checkboxes)
 
     -   `SelectFieldMode.MULTI` will return an `Array<any>` value where `any` will take on the same
         type as the options value
+
+-   `errorTransformer?: (err: any) => string`
+
+    See [CustomField docs](../custom-field/usage.md)

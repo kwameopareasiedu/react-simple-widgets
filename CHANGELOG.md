@@ -94,7 +94,7 @@
 
 -   `1.4.1`
 
-    -   Added overflow styling to [DatePicker](docs/date-picker.md) and [FilePicker](src/form/file-picker/usage.md)
+    -   Added overflow styling to [DatePicker](src/form/date-picker/usage.md) and [FilePicker](src/form/file-picker/usage.md)
         widgets
     -   Increased `z-index` of [DialogProvider](docs/api-reference/dialog-provider.md) dialog container div to 999999
 
@@ -136,9 +136,9 @@
 
     -   [useQueryParams](docs/use-query-params.md) now returns and empty object if no query parameter
         are present in the URL
-    -   Modified [DatePicker](docs/date-picker.md) with `DatePickerMode.MULTI` to clear text selection
+    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection
         when shift key is pressed while a date is selected
-    -   Modified [DatePicker](docs/date-picker.md) with `DatePickerMode.MULTI` to return null date when
+    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to return null date when
         no date is selected instead of an empty array which makes is function the same as
         `DatePickerMode.SINGLE` and `DatePickerMode.MONTH` when no dates are selected
 
@@ -164,7 +164,7 @@
 
 -   `1.2.3`
 
-    -   Removed `placeholder` prop from [DatePicker](docs/date-picker.md) because `label` already covers
+    -   Removed `placeholder` prop from [DatePicker](src/form/date-picker/usage.md) because `label` already covers
         its function
 
 -   `1.2.2`
@@ -177,7 +177,7 @@
 
     -   Fixed bug in [ValueStoreProvider](docs/value-store-provider.md) making simultaneous value
         updates persist
-    -   Added `placeholder` prop to [DatePicker](docs/date-picker.md)
+    -   Added `placeholder` prop to [DatePicker](src/form/date-picker/usage.md)
 
 -   `1.2.0`
 

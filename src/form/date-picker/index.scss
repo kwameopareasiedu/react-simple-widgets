@@ -1,0 +1,169 @@
+.react-simple-widget.date-picker-dialog {
+    border-radius: 8px;
+
+    label {
+        color: #999;
+        font-size: 80%;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .controls {
+        display: flex;
+        margin-bottom: 12px;
+        justify-content: space-between;
+
+        select {
+            padding: 4px 0;
+            border: none;
+            color: #888;
+            font-size: 90%;
+            background: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        select:hover,
+        select:focus,
+        select:active {
+            outline: none;
+            border-color: var(--rsw-primary-theme-color);
+            cursor: pointer;
+        }
+
+        button {
+            padding: 4px 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: transparent;
+            color: var(--rsw-primary-theme-color);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--rsw-date-picker-header-bg-color);
+            text-decoration: none;
+        }
+
+        button:focus,
+        button:active {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .day-calendar {
+        margin-bottom: 15px;
+
+        header {
+            display: grid;
+            padding: 6px 1.25rem;
+            margin: 0 -1.25rem 15px;
+            background-color: var(--rsw-date-picker-header-bg-color);
+            grid-template-columns: repeat(7, 1fr);
+
+            span {
+                text-align: center;
+                color: var(--rsw-primary-theme-color);
+            }
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+
+            .calendar-day {
+                padding: 8px 0;
+                font-size: 90%;
+                text-align: center;
+                color: #444;
+            }
+
+            .calendar-day:hover {
+                cursor: not-allowed;
+            }
+
+            .calendar-day.calendar-day-valid {
+                transition: background-color 0.3s;
+            }
+
+            .calendar-day.calendar-day-valid:hover {
+                cursor: pointer;
+                background-color: var(--rsw-date-picker-header-bg-color);
+            }
+
+            .calendar-day.calendar-day-active,
+            .calendar-day.calendar-day-active:hover {
+                color: white;
+                background-color: var(--rsw-primary-theme-color);
+            }
+        }
+    }
+
+    .month-calendar {
+        margin-bottom: 15px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .calendar-month {
+            color: #444;
+            padding: 8px 0;
+            font-size: 90%;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-month:hover {
+            cursor: pointer;
+            background-color: var(--rsw-date-picker-header-bg-color);
+        }
+
+        .calendar-month.calendar-month-active,
+        .calendar-month.calendar-month-active:hover {
+            color: white;
+            background-color: var(--rsw-primary-theme-color);
+        }
+    }
+
+    .hint {
+        color: #888;
+        font-size: 90%;
+        padding: 4px 1.25rem;
+        margin: 0 -1.25rem 15px;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .error {
+        padding: 8px 1.25rem;
+        margin: 0 -1.25rem 15px;
+        background-color: #efefef;
+        font-style: italic;
+        text-align: center;
+        font-size: 80%;
+        color: var(--rsw-error-color);
+        font-weight: bold;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.react-simple-widget.date-picker {
+    .trigger {
+        min-height: 2rem;
+
+        > p {
+            margin: 0;
+            font-style: italic;
+            padding: 0;
+        }
+    }
+
+    .trigger:hover {
+        cursor: pointer;
+    }
+}

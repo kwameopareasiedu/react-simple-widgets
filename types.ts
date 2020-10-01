@@ -1,26 +1,6 @@
 import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
+import { DatePickerMode } from "./src/form/date-picker/types";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
-
-/* DatePicker */
-export enum DatePickerMode {
-    SINGLE,
-    MULTI,
-    MONTH
-}
-
-export interface IDatePicker {
-    label?: string;
-    error?: string;
-    format?: string;
-    mode?: DatePickerMode;
-    displayFormat?: string;
-    date: string | Array<string>;
-    decoration?: FieldDecorationType;
-    validator?: (date: string) => string;
-    onChange: (date: string | Array<string>) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
 
 /* DateField */
 export interface IDateField {

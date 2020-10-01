@@ -1,32 +1,47 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # DatePicker
 
-The `DatePicker` widget allows you to select a date using a picker dialog. Since it uses a dialog to 
-provide the picker and thus requires a [DialogProvider](api-reference/dialog-provider.md) ancestor to be 
+The `DatePicker` widget allows you to select a date using a picker dialog. Since it uses a dialog to
+provide the picker and thus requires a [DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be
 available up the component tree.
 
-## API
-
-### DatePicker
+## Usage
 
 This widget is a [controlled widget](https://reactjs.org/docs/forms.html#controlled-components) so
 your app can define it's state.
 
 ```jsx
-<DatePicker mode={mode} date={date} label={label} decoration={decoration} error={error} format={format} displayFormat={displayFormat} validator={validator} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
+import { DatePicker } from "react-simple-widgets";
+
+<DatePicker
+    mode={mode}
+    date={date}
+    label={label}
+    error={error}
+    format={format}
+    leading={leading}
+    trailing={trailing}
+    decoration={decoration}
+    stickyFloatingLabel={stickyFloatingLabel}
+    displayFormat={displayFormat}
+    validator={validator}
+    onChange={onChange}
+    onFocus={onFocus}
+    onBlur={onBlur}
+/>;
 ```
 
 -   `mode?: DatePickerMode = DatePicker.SINGLE`
 
     The mode of the picker
-    
-    -   `DatePicker.SINGLE` - Configures the widget to select a single date
-    
+
     -   `DatePicker.MULTI` - Configures the widget to select multiple dates
-    
+
     -   `DatePicker.MONTH` - Configures the widget to select a month. In this mode, the day
-    component of the date is always set to 1.
+        component of the date is always set to 1.
+
+    > If `mode` is not provided, the widget is configured to select a single date
 
 -   `date: string | Array<String>`
 
@@ -39,9 +54,20 @@ your app can define it's state.
 
 -   `decoration?: FieldDecoration`
 
-    The type of decoration to use on the picker. It can be one be `FieldDecoration.NONE`,
-    `FieldDecoration.FLAT`, `FieldDecoration.UNDERLINE` or `FieldDecoration.FLOATING_LABEL`
-    
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `leading?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `trailing?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `stickyFloatingLabel?: boolean`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
 -   `error?: string`
 
     An optional error message to show under the widget
@@ -54,7 +80,7 @@ your app can define it's state.
 -   `displayFormat?: string = "dddd, Do MMMM YYYY"`
 
     This is the format for the display of the selected date(s). This only affects the display of the
-    dates. See the documentation on [Moment](https://momentjs.com/docs/#/parsing/string-format/) 
+    dates. See the documentation on [Moment](https://momentjs.com/docs/#/parsing/string-format/)
     for supported formats.
 
 -   `validator?: (date: string) => string`
@@ -66,11 +92,11 @@ your app can define it's state.
 
     This function is called with the selected date(s) when the user finalizes by pressing the select
     button
-    
+
 -   `onFocus?: () => void`
 
     If provided, the widget calls this function anytime it receives focus
-    
+
 -   `onBlur?: () => void`
 
     If provided, the widget calls this function anytime it loses focus

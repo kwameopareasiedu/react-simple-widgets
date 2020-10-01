@@ -2,13 +2,13 @@
 
 # DateField
 
-This widget is a form wrapper over the [DatePicker](date-picker.md)
+This widget is a form wrapper over the [DatePicker](../src/form/date-picker/usage.md)
 
 ## API
 
 ### DateField
 
-Because this widget wraps the [DatePicker](date-picker.md) widget, it accepts all its props as well
+Because this widget wraps the [DatePicker](../src/form/date-picker/usage.md) widget, it accepts all its props as well
 as the props specified here.
 
 It however does not accept the `date` prop as this is provided by the 

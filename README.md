@@ -57,7 +57,7 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
     selection from a list of options
 -   [FileField](src/form/file-field/usage.md) - A form wrapper widget for the
     [FilePicker](src/form/file-picker/usage.md)
--   [DateField](docs/date-field.md) - A form wrapper widget for the [DatePicker](docs/date-picker.md)
+-   [DateField](docs/date-field.md) - A form wrapper widget for the [DatePicker](src/form/date-picker/usage.md)
 -   [TimeField](docs/time-field.md) - A form wrapper widget for the [TimePicker](docs/time-picker.md)
 
 #### Pickers
@@ -66,7 +66,7 @@ Pickers allow you to select some complex data type
 
 -   [FilePicker](src/form/file-picker/usage.md) - A simple file picker which supports drag-and-drop
     feature
--   [DatePicker](docs/date-picker.md) - A date picker which supports single and multiple date
+-   [DatePicker](src/form/date-picker/usage.md) - A date picker which supports single and multiple date
     selection as well as month selection
 -   [TimePicker](docs/time-picker.md) - A time picker which features an intuitive clock experience
 
