@@ -8,6 +8,7 @@ import { TextFieldMode } from "./text-field/types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
+import { DateField } from "./date-field";
 // import { FileField } from "../../../rsw-components/form/file-field";
 // import { DateField } from "../../../rsw-components/form/date-field";
 // import { TimeField } from "../../../rsw-components/form/time-field";
@@ -27,13 +28,7 @@ export const index = (): any => {
             singleSelectFieldValue: "",
             multiSelectFieldValue: "",
             fileField: "",
-            about: "",
-            language: "",
-            acceptTOS: false,
-            gender: "",
-            multiOptions: "",
-            file: null,
-            date: null
+            dateField: ""
         };
 
         const validate = (values: any) => {
@@ -44,8 +39,8 @@ export const index = (): any => {
             if (!values.binarySelectFieldValue) errors.binarySelectFieldValue = "Required";
             if (!values.singleSelectFieldValue) errors.singleSelectFieldValue = "Required";
             if (!values.multiSelectFieldValue) errors.multiSelectFieldValue = "Required";
-            if (!values.acceptTOS) errors.acceptTOS = "You must accept the Terms of Service to continue";
-            if (!values.file) errors.file = "Required";
+            if (!values.dateField) errors.dateField = "Required";
+            if (!values.dateField) errors.dateField = "Required";
             return errors;
         };
 
@@ -221,32 +216,15 @@ export const index = (): any => {
                                         limit={1024 * 1024}
                                     />
 
-                                    {/*    <br />*/}
+                                    <br />
 
-                                    {/*    <br />*/}
-
-                                    {/*    <SelectField*/}
-                                    {/*        name="multiOptions"*/}
-                                    {/*        inline={true}*/}
-                                    {/*        label="SelectField (Multi-select mode, Inline)"*/}
-                                    {/*        mode={SelectFieldMode.MULTI}*/}
-                                    {/*        options={[*/}
-                                    {/*            ["Foo", "foo"],*/}
-                                    {/*            ["Bar", "bar"],*/}
-                                    {/*            ["Baz", "baz"]*/}
-                                    {/*        ]}*/}
-                                    {/*        onChange={v => console.log("Multi-selection", v)}*/}
-                                    {/*    />*/}
-
-                                    {/*    <br />*/}
-
-                                    {/*    <DateField*/}
-                                    {/*        name="date"*/}
-                                    {/*        format="YYYY-MM-DD"*/}
-                                    {/*        label="DateField (Single Mode)"*/}
-                                    {/*        displayFormat="dddd, Do MMMM YYYY"*/}
-                                    {/*        mode={DatePickerMode.SINGLE}*/}
-                                    {/*    />*/}
+                                    <DateField
+                                        name="date"
+                                        format="YYYY-MM-DD"
+                                        label="DateField (Single Mode)"
+                                        leading={<i className="fa fa-calendar-alt" />}
+                                        displayFormat="dddd, Do MMMM YYYY"
+                                    />
 
                                     {/*    <br />*/}
 

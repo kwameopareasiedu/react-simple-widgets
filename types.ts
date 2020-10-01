@@ -1,21 +1,5 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
-import { DatePickerMode } from "./src/form/date-picker/types";
+import { AllHTMLAttributes, ButtonHTMLAttributes } from "react";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
-
-/* DateField */
-export interface IDateField {
-    name: string;
-    label?: string;
-    format?: string;
-    mode?: DatePickerMode;
-    displayFormat?: string;
-    decoration?: FieldDecorationType;
-    validator?: (date: string) => string;
-    errorTransformer?: (err: any) => string;
-    onChange?: (date: string | Array<string>) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
 
 /* ListView */
 export enum ListViewSortOrder {
@@ -90,10 +74,12 @@ export interface IBusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /* Breadcrumbs */
-export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {}
+export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
+}
 
 /* Loader */
-export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {}
+export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {
+}
 
 /* UseLoadMore */
 export interface IUseLoadMore {
@@ -107,7 +93,8 @@ export interface IUseLoadMore {
 }
 
 /* PageActions */
-export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {}
+export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {
+}
 
 /* UseTimeout */
 export interface IUseCountdown {
