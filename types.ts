@@ -1,34 +1,6 @@
 import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
 
-/* FilePicker */
-export interface IFilePicker {
-    file: File;
-    error?: string;
-    limit?: number;
-    label?: string;
-    extensions?: Array<string>;
-    decoration?: FieldDecorationType;
-    validator?: (file: File) => string;
-    onChange: (file: File) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
-
-/* FileField */
-export interface IFileField {
-    name: string;
-    limit?: number;
-    label?: string;
-    extensions?: Array<string>;
-    decoration?: FieldDecorationType;
-    validator?: (file: File) => string;
-    errorTransformer?: (err: any) => string;
-    onChange?: (file: File) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
-
 /* DatePicker */
 export enum DatePickerMode {
     SINGLE,

@@ -73,6 +73,7 @@ export const normal = (): any => {
             openDialog(DialogSize.SMALL);
             openDialog(DialogSize.MEDIUM);
             openDialog(DialogSize.WIDE);
+            openDialog(DialogSize.FULL);
         };
 
         const openDialogForValue = () => {
@@ -100,6 +101,10 @@ export const normal = (): any => {
                 <span>&nbsp;</span>
                 <button className="btn btn-primary btn-sm" onClick={(): void => openDialog(DialogSize.WIDE)}>
                     Open wide dialog
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-primary btn-sm" onClick={(): void => openDialog(DialogSize.FULL)}>
+                    Open full dialog
                 </button>
                 <span>&nbsp;</span>
                 <button className="btn btn-info btn-sm" onClick={openAllDialogs}>

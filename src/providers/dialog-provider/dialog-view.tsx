@@ -15,6 +15,9 @@ export const DialogView = ({ data }: IDialogView): any => {
         const classes = ["dialog-view-content"];
 
         switch (data.options.size) {
+            case DialogSize.FULL:
+                classes.push("full-dialog");
+                break;
             case DialogSize.WIDE:
                 classes.push("wide-dialog");
                 break;

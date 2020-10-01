@@ -1,7 +1,8 @@
 export enum DialogSize {
     SMALL,
     MEDIUM,
-    WIDE
+    WIDE,
+    FULL
 }
 
 export interface DialogOptions {
