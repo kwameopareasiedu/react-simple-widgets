@@ -19,7 +19,7 @@
 
     -   Added [TimePicker](docs/time-picker.md) widget
     -   Added [TimeField](docs/time-field.md) widget
-    -   Modified [SelectField](docs/select-field.md) to make option labels `inline`
+    -   Modified [SelectField](src/form/select-field/usage.md) to make option labels `inline`
     -   Added [useWindowBreakpoints](docs/use-window-breakpoints.md) hook
 
 -   `1.7.4`
@@ -65,7 +65,7 @@
         if content cannot fit on one line
     -   Added auto scroll-to-top-of-list feature to [ListView](docs/list-view.md) when the items
         list is modified by a page change
-    -   Modified [SelectField](docs/select-field.md) to accept `any` type for options values
+    -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values
         instead of just `string`
     -   Reduces header vertical padding in [ListView](docs/list-view.md)
     -   Added item options confirmation feature to [ListView](docs/list-view.md)
@@ -107,7 +107,7 @@
 
 -   `1.3.7`
 
-    -   Added focus indicator to [SelectField](docs/select-field.md) options
+    -   Added focus indicator to [SelectField](src/form/select-field/usage.md) options
     -   Modified [useQueryParams](docs/use-query-params.md) to update `qp` state object if the whole
         location object changes instead of just `location.search`
 

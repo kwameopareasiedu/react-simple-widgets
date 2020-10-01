@@ -7,7 +7,8 @@ import { TextFieldMode } from "./text-field/types";
 // import { DialogProvider } from "../provider/dialog-provider";
 // import { DatePickerMode, FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
 import { DropdownField } from "./dropdown-field";
-// import { SelectField } from "../../../rsw-components/form/select-field";
+import { SelectField } from "./select-field";
+import { SelectFieldMode } from "./select-field/types";
 // import { FileField } from "../../../rsw-components/form/file-field";
 // import { DateField } from "../../../rsw-components/form/date-field";
 // import { TimeField } from "../../../rsw-components/form/time-field";
@@ -22,8 +23,10 @@ export const index = (): any => {
         const initialValues: any = {
             textFieldValue: "",
             textFieldEditorValue: "",
-            otherNames: "",
-            lastName: "",
+            dropdownFieldValue: "",
+            binarySelectFieldValue: "",
+            singleSelectFieldValue: "",
+            multiSelectFieldValue: "",
             password: "",
             about: "",
             language: "",
@@ -38,8 +41,10 @@ export const index = (): any => {
             const errors: any = {};
             if (!values.textFieldValue) errors.textFieldValue = "Required";
             if (!values.textFieldEditorValue) errors.textFieldEditorValue = "Required";
-            if (!values.otherNames) errors.otherNames = "Required";
-            if (!values.lastName) errors.lastName = "Required";
+            if (!values.dropdownFieldValue) errors.dropdownFieldValue = "Required";
+            if (!values.binarySelectFieldValue) errors.binarySelectFieldValue = "Required";
+            if (!values.singleSelectFieldValue) errors.singleSelectFieldValue = "Required";
+            if (!values.multiSelectFieldValue) errors.multiSelectFieldValue = "Required";
             if (!values.acceptTOS) errors.acceptTOS = "You must accept the Terms of Service to continue";
             if (!values.file) errors.file = "Required";
             return errors;
@@ -110,15 +115,8 @@ export const index = (): any => {
 
                                     <br />
 
-                                    <DropdownField name="something" label="DropdownField (Flat)">
-                                        <option value="A">Option A</option>
-                                        <option value="B">Option B</option>
-                                        <option value="C">Option C</option>
-                                    </DropdownField>
-
-                                    <br />
-
-                                    <DropdownField name="something" label="DropdownField (Underline)" decoration={FieldDecorationType.UNDERLINE}>
+                                    <DropdownField name="dropdownFieldValue" label="DropdownField (Flat)">
+                                        <option value="" />
                                         <option value="A">Option A</option>
                                         <option value="B">Option B</option>
                                         <option value="C">Option C</option>
@@ -127,10 +125,23 @@ export const index = (): any => {
                                     <br />
 
                                     <DropdownField
-                                        name="something"
+                                        name="dropdownFieldValue"
+                                        label="DropdownField (Underline)"
+                                        decoration={FieldDecorationType.UNDERLINE}>
+                                        <option value="" />
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
+
+                                    <br />
+
+                                    <DropdownField
+                                        name="dropdownFieldValue"
                                         label="DropdownField (Floating label)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                         leading={<i className="fa fa-layer-group" />}>
+                                        <option value="" />
                                         <option value="A">Option A</option>
                                         <option value="B">Option B</option>
                                         <option value="C">Option C</option>
@@ -139,97 +150,110 @@ export const index = (): any => {
                                     {/*<br className="d-block d-md-none" />*/}
                                 </div>
 
-                                {/*<div className="col-12 col-md-6">*/}
-                                {/*    <DropdownField name="language" label="DropdownField" decoration={FieldDecorationType.FLOATING_LABEL}>*/}
-                                {/*        <option value="english">English</option>*/}
-                                {/*        <option value="twi">Twi</option>*/}
-                                {/*        <option value="ga">Ga</option>*/}
-                                {/*        <option value="Ewe">Ewe</option>*/}
-                                {/*    </DropdownField>*/}
+                                <div className="col-12 col-md-6">
+                                    <SelectField
+                                        name="binarySelectFieldValue"
+                                        label="SelectField (Binary select)"
+                                        onChange={v => console.log("Terms of Service", v)}
+                                    />
 
-                                {/*    <br />*/}
+                                    <br />
 
-                                {/*    <FileField name="file" label="FileField (with 1MB limit)" limit={1024 * 1024} />*/}
+                                    <SelectField
+                                        name="singleSelectFieldValue"
+                                        label="SelectField (Single select)"
+                                        mode={SelectFieldMode.SINGLE}
+                                        options={[
+                                            ["Male", "male"],
+                                            ["Female", "female"]
+                                        ]}
+                                        onChange={v => console.log("Gender", v)}
+                                    />
 
-                                {/*    <br />*/}
+                                    <br />
 
-                                {/*    <SelectField*/}
-                                {/*        name="acceptTOS"*/}
-                                {/*        mode={SelectFieldMode.BINARY}*/}
-                                {/*        label="SelectField (Binary-select mode)"*/}
-                                {/*        onChange={v => console.log("Terms of Service", v)}*/}
-                                {/*    />*/}
+                                    <SelectField
+                                        name="singleSelectFieldValue"
+                                        label="SelectField (Inline single select)"
+                                        mode={SelectFieldMode.SINGLE}
+                                        options={[
+                                            ["Male", "male"],
+                                            ["Female", "female"]
+                                        ]}
+                                        onChange={v => console.log("Gender", v)}
+                                        inline
+                                    />
 
-                                {/*    <br />*/}
+                                    <br />
 
-                                {/*    <SelectField*/}
-                                {/*        name="gender"*/}
-                                {/*        label="SelectField (Single-select mode)"*/}
-                                {/*        mode={SelectFieldMode.SINGLE}*/}
-                                {/*        options={[*/}
-                                {/*            ["Male", "male"],*/}
-                                {/*            ["Female", "female"]*/}
-                                {/*        ]}*/}
-                                {/*        onChange={v => console.log("Gender", v)}*/}
-                                {/*    />*/}
+                                    <SelectField
+                                        name="multiSelectFieldValue"
+                                        label="SelectField (Multi select)"
+                                        mode={SelectFieldMode.MULTI}
+                                        options={[
+                                            ["Foo", "foo"],
+                                            ["Bar", "bar"],
+                                            ["Baz", "baz"]
+                                        ]}
+                                        onChange={v => console.log("Multi-selection", v)}
+                                    />
 
-                                {/*    <br />*/}
+                                    <br />
 
-                                {/*    <SelectField*/}
-                                {/*        name="gender"*/}
-                                {/*        inline={true}*/}
-                                {/*        label="SelectField (Single-select mode, Inline)"*/}
-                                {/*        mode={SelectFieldMode.SINGLE}*/}
-                                {/*        options={[*/}
-                                {/*            ["Male", "male"],*/}
-                                {/*            ["Female", "female"]*/}
-                                {/*        ]}*/}
-                                {/*        onChange={v => console.log("Gender", v)}*/}
-                                {/*    />*/}
+                                    <SelectField
+                                        name="multiSelectFieldValue"
+                                        label="SelectField (Inline multi select)"
+                                        mode={SelectFieldMode.MULTI}
+                                        options={[
+                                            ["Foo", "foo"],
+                                            ["Bar", "bar"],
+                                            ["Baz", "baz"]
+                                        ]}
+                                        onChange={v => console.log("Multi-selection", v)}
+                                        inline
+                                    />
+                                    {/*    <DropdownField name="language" label="DropdownField" decoration={FieldDecorationType.FLOATING_LABEL}>*/}
+                                    {/*        <option value="english">English</option>*/}
+                                    {/*        <option value="twi">Twi</option>*/}
+                                    {/*        <option value="ga">Ga</option>*/}
+                                    {/*        <option value="Ewe">Ewe</option>*/}
+                                    {/*    </DropdownField>*/}
 
-                                {/*    <br />*/}
+                                    {/*    <br />*/}
 
-                                {/*    <SelectField*/}
-                                {/*        name="multiOptions"*/}
-                                {/*        label="SelectField (Multi-select mode)"*/}
-                                {/*        mode={SelectFieldMode.MULTI}*/}
-                                {/*        options={[*/}
-                                {/*            ["Foo", "foo"],*/}
-                                {/*            ["Bar", "bar"],*/}
-                                {/*            ["Baz", "baz"]*/}
-                                {/*        ]}*/}
-                                {/*        onChange={v => console.log("Multi-selection", v)}*/}
-                                {/*    />*/}
+                                    {/*    <FileField name="file" label="FileField (with 1MB limit)" limit={1024 * 1024} />*/}
 
-                                {/*    <br />*/}
+                                    {/*    <br />*/}
 
-                                {/*    <SelectField*/}
-                                {/*        name="multiOptions"*/}
-                                {/*        inline={true}*/}
-                                {/*        label="SelectField (Multi-select mode, Inline)"*/}
-                                {/*        mode={SelectFieldMode.MULTI}*/}
-                                {/*        options={[*/}
-                                {/*            ["Foo", "foo"],*/}
-                                {/*            ["Bar", "bar"],*/}
-                                {/*            ["Baz", "baz"]*/}
-                                {/*        ]}*/}
-                                {/*        onChange={v => console.log("Multi-selection", v)}*/}
-                                {/*    />*/}
+                                    {/*    <br />*/}
 
-                                {/*    <br />*/}
+                                    {/*    <SelectField*/}
+                                    {/*        name="multiOptions"*/}
+                                    {/*        inline={true}*/}
+                                    {/*        label="SelectField (Multi-select mode, Inline)"*/}
+                                    {/*        mode={SelectFieldMode.MULTI}*/}
+                                    {/*        options={[*/}
+                                    {/*            ["Foo", "foo"],*/}
+                                    {/*            ["Bar", "bar"],*/}
+                                    {/*            ["Baz", "baz"]*/}
+                                    {/*        ]}*/}
+                                    {/*        onChange={v => console.log("Multi-selection", v)}*/}
+                                    {/*    />*/}
 
-                                {/*    <DateField*/}
-                                {/*        name="date"*/}
-                                {/*        format="YYYY-MM-DD"*/}
-                                {/*        label="DateField (Single Mode)"*/}
-                                {/*        displayFormat="dddd, Do MMMM YYYY"*/}
-                                {/*        mode={DatePickerMode.SINGLE}*/}
-                                {/*    />*/}
+                                    {/*    <br />*/}
 
-                                {/*    <br />*/}
+                                    {/*    <DateField*/}
+                                    {/*        name="date"*/}
+                                    {/*        format="YYYY-MM-DD"*/}
+                                    {/*        label="DateField (Single Mode)"*/}
+                                    {/*        displayFormat="dddd, Do MMMM YYYY"*/}
+                                    {/*        mode={DatePickerMode.SINGLE}*/}
+                                    {/*    />*/}
 
-                                {/*    <TimeField name="time" label="TimeField"  />*/}
-                                {/*</div>*/}
+                                    {/*    <br />*/}
+
+                                    {/*    <TimeField name="time" label="TimeField"  />*/}
+                                </div>
                             </div>
                         </form>
                     )}

@@ -1,23 +1,6 @@
 import { AllHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldDecorationType } from "./src/form/field-decoration/types";
 
-/* SelectField */
-export enum SelectFieldMode {
-    BINARY,
-    SINGLE,
-    MULTI
-}
-
-export interface ISelectField {
-    name: string;
-    label?: string;
-    inline?: boolean;
-    mode: SelectFieldMode;
-    options?: Array<[string, any]>;
-    errorTransformer?: (err: any) => string;
-    onChange?: (value: any) => void;
-}
-
 /* FilePicker */
 export interface IFilePicker {
     file: File;
