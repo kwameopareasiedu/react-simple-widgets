@@ -1,24 +1,22 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # Loader
 
 Loader is a widget that displays a spinner. Since it is intrinsically a span, it accepts all
 attributes of a `<span/>` tag
 
-## API
-
-### Loader
+## Usage
 
 ```jsx
+import { Loader } from "react-simple-widgets";
+
 <Loader />
 ```
 
 or
 
 ```jsx
+import { Loader } from "react-simple-widgets";
+
 <Loader>Hello world</Loader>
 ```
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/misc/loader/index.stories.tsx)
