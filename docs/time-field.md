@@ -2,13 +2,13 @@
 
 # TimeField
 
-This widget is a form wrapper over the [TimePicker](time-picker.md)
+This widget is a form wrapper over the [TimePicker](../src/form/time-picker/usage.md)
 
 ## API
 
 ### TimeField
 
-Because this widget wraps the [TimePicker](time-picker.md) widget, it accepts all its props as well
+Because this widget wraps the [TimePicker](../src/form/time-picker/usage.md) widget, it accepts all its props as well
 as the props specified here.
 
 It however does not accept the `time` prop as this is provided by the 

@@ -1,20 +1,32 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # TimePicker
 
 The `TimePicker` widget allows you to select a time using a picker dialog. Since it uses a dialog to
-provide the picker and thus requires a [DialogProvider](api-reference/dialog-provider.md) ancestor to be
+provide the picker and thus requires a [DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be
 available up the component tree.
 
-## API
-
-### TimePicker
+## Usage
 
 This widget is a [controlled widget](https://reactjs.org/docs/forms.html#controlled-components) so
 your app can define it's state.
 
 ```jsx
-<TimePicker time={time} label={label} decoration={decoration} error={error} validator={validator} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
+import { TimePicker } from "react-simple-widgets";
+
+<TimePicker
+    time={time}
+    label={label}
+    error={error}
+    leading={leading}
+    trailing={trailing}
+    decoration={decoration}
+    stickyFloatingLabel={stickyFloatingLabel}
+    validator={validator}
+    onChange={onChange}
+    onFocus={onFocus}
+    onBlur={onBlur}
+/>
 ```
 
 -   `time: string | Array<String>`
@@ -27,8 +39,19 @@ your app can define it's state.
 
 -   `decoration?: FieldDecoration`
 
-    The type of decoration to use on the picker. It can be one be `FieldDecoration.NONE`,
-    `FieldDecoration.FLAT`, `FieldDecoration.UNDERLINE` or `FieldDecoration.FLOATING_LABEL`
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `leading?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `trailing?: any`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
+
+-   `stickyFloatingLabel?: boolean`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `error?: string`
 
@@ -51,7 +74,3 @@ your app can define it's state.
 -   `onBlur?: () => void`
 
     If provided, the widget calls this function anytime it loses focus
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/picker/time-picker/index.stories.tsx)

@@ -113,18 +113,6 @@ export interface IUseWindowBreakpoints {
     xl: boolean;
 }
 
-/* TimePicker */
-export interface ITimePicker {
-    time: string;
-    label?: string;
-    error?: string;
-    decoration?: FieldDecorationType;
-    validator?: (time: string) => string;
-    onChange: (time: string) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}
-
 /* TimeField */
 export interface ITimeField {
     name: string;

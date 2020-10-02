@@ -17,7 +17,7 @@
 
 -   `1.8.0`
 
-    -   Added [TimePicker](docs/time-picker.md) widget
+    -   Added [TimePicker](src/form/time-picker/usage.md) widget
     -   Added [TimeField](docs/time-field.md) widget
     -   Modified [SelectField](src/form/select-field/usage.md) to make option labels `inline`
     -   Added [useWindowBreakpoints](docs/use-window-breakpoints.md) hook
