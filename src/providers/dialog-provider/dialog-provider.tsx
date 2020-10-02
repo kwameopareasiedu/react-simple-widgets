@@ -9,14 +9,19 @@ import { DialogData } from "./dialog-data";
 export const DialogProvider = ({ children }: Props): any => {
     const [dialogData, setDialogData] = useState<Array<DialogData>>([]);
     const escapeHandlers = useRef<Array<DialogEscapeCallback>>([]);
-    const bodyOverflowRef = useRef<string>();
+    const bodyOverflowRef = useRef<string>(null);
 
     useEffect(() => {
         if (dialogData.length > 0) {
-            // Store the overflow style to restore when all dialogs are dismissed
-            bodyOverflowRef.current = document.body.style.overflow;
-            document.body.style.overflow = "hidden";
-        } else document.body.style.overflow = bodyOverflowRef.current;
+            if (bodyOverflowRef.current === null) {
+                // Store the overflow style to restore when all dialogs are dismissed
+                bodyOverflowRef.current = document.body.style.overflow;
+                document.body.style.overflow = "hidden";
+            }
+        } else {
+            document.body.style.overflow = bodyOverflowRef.current;
+            bodyOverflowRef.current = null;
+        }
     }, [dialogData]);
 
     // Called from the host application to show a dialog
