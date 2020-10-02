@@ -59,7 +59,8 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
     [FilePicker](src/form/file-picker/usage.md)
 -   [DateField](src/form/date-field/usage.md) - A form wrapper widget for the
     [DatePicker](src/form/date-picker/usage.md)
--   [TimeField](docs/time-field.md) - A form wrapper widget for the [TimePicker](src/form/time-picker/usage.md)
+-   [TimeField](src/form/time-field/usage.md) - A form wrapper widget for the
+    [TimePicker](src/form/time-picker/usage.md)
 
 #### Pickers
 

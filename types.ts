@@ -113,15 +113,3 @@ export interface IUseWindowBreakpoints {
     xl: boolean;
 }
 
-/* TimeField */
-export interface ITimeField {
-    name: string;
-    label?: string;
-    error?: string;
-    decoration?: FieldDecorationType;
-    errorTransformer?: (err: any) => string;
-    validator?: (time: string) => string;
-    onChange?: (time: string) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
-}

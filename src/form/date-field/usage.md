@@ -11,6 +11,8 @@ all its props (except the `date` prop) as well as the props specified here.The `
 provided by the [Formik](https://jaredpalmer.com/formik/) holder.
 
 ```jsx
+import { DateField } from "react-simple-widgets";
+
 <DateField name={name} errorTransformer={errorTransformer} onChange={onChange} />
 ```
 

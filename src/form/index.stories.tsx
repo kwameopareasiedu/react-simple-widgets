@@ -9,9 +9,7 @@ import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
 import { DateField } from "./date-field";
-// import { FileField } from "../../../rsw-components/form/file-field";
-// import { DateField } from "../../../rsw-components/form/date-field";
-// import { TimeField } from "../../../rsw-components/form/time-field";
+import { TimeField } from "./time-field";
 
 export default {
     title: "Form widgets",
@@ -226,9 +224,9 @@ export const index = (): any => {
                                         displayFormat="dddd, Do MMMM YYYY"
                                     />
 
-                                    {/*    <br />*/}
+                                    <br />
 
-                                    {/*    <TimeField name="time" label="TimeField"  />*/}
+                                    <TimeField name="time" label="TimeField" leading={<i className="fa fa-clock" />} />
                                 </div>
                             </div>
                         </form>
