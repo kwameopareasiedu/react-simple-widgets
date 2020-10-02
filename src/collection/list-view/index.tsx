@@ -6,8 +6,9 @@ import { ListView as Props, ListViewOption } from "./types";
 import { Loader } from "../../widgets/loader";
 import MoreIcon from "../../assets/more.svg";
 import { ListViewFooter } from "./footer";
+import { ListViewSorter } from "./sorter";
 
-export const ListView = ({ items, busy, props, condensed, options, breakpoint = 768, pagination, keyFn }: Props): any => {
+export const ListView = ({ items, busy, props, condensed, options, sort, breakpoint = 768, pagination, keyFn }: Props): any => {
     const EMPTY_STRING = "---";
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -122,14 +123,18 @@ export const ListView = ({ items, busy, props, condensed, options, breakpoint = 
 
     return (
         <div className="react-simple-widget list-view">
+            {sort && <ListViewSorter columns={sort.columns} columnIndex={sort.columnIndex} order={sort.order} onSort={sort.onSort} />}
+
             <table className={`table table-striped ${condensed ? " table-sm" : ""}`}>
                 {windowWidth > breakpoint && (
                     <thead>
-                        {props.map(([propLabel]) => (
-                            <th key={propLabel}>{propLabel}</th>
-                        ))}
+                        <tr>
+                            {props.map(([propLabel]) => (
+                                <th key={propLabel}>{propLabel}</th>
+                            ))}
 
-                        {options && <th />}
+                            {options && <th />}
+                        </tr>
                     </thead>
                 )}
 

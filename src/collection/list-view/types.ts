@@ -18,9 +18,23 @@ export interface ListViewPagination {
     onPageChange: (page: number) => void;
 }
 
+export enum ListViewSortOrder {
+    NONE,
+    ASC,
+    DESC
+}
+
+export interface ListViewSort {
+    columnIndex: number;
+    columns: Array<string>;
+    order: ListViewSortOrder;
+    onSort: (columnIndex: number, order: ListViewSortOrder) => void;
+}
+
 export interface ListView {
     busy?: boolean;
     items: Array<any>;
+    sort?: ListViewSort;
     condensed?: boolean;
     breakpoint?: number;
     options?: ListViewOptions;

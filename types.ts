@@ -1,49 +1,4 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes } from "react";
-import { FieldDecorationType } from "./src/form/field-decoration/types";
-
-/* ListView */
-export enum ListViewSortOrder {
-    NONE,
-    ASC,
-    DESC
-}
-
-export interface IListViewPagination {
-    page: number;
-    total: number;
-    pageSize: number;
-    onPageChange: (page: number) => void;
-}
-
-export interface IListViewSort {
-    column: string;
-    order: ListViewSortOrder;
-    onSort: (column: string, order: ListViewSortOrder) => void;
-}
-
-export interface IListViewOptionItem {
-    label: any;
-    confirmation?: any;
-    // confirmationTheme?: ConfirmDialogTheme;
-    onClick: (item: any, itemIndex?: number) => void;
-}
-
-export interface IListViewOptions {
-    busy?: (item: any, itemIndex?: number) => boolean;
-    builder: (item: any, itemIndex?: number) => Array<IListViewOptionItem>;
-}
-
-export interface IListView {
-    busy?: boolean;
-    items: Array<any>;
-    breakpoint?: number;
-    sort?: IListViewSort;
-    options?: IListViewOptions;
-    pagination?: IListViewPagination;
-    props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
-    onClick?: (item: any, itemIndex?: number) => void;
-    skipIf?: (item: any) => boolean;
-}
+import { AllHTMLAttributes } from "react";
 
 /* ObjectView */
 export interface IObjectView {
@@ -52,10 +7,8 @@ export interface IObjectView {
     splitRatio?: number;
 }
 
-
 /* Breadcrumbs */
-export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
-}
+export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {}
 
 /* UseLoadMore */
 export interface IUseLoadMore {
@@ -69,8 +22,7 @@ export interface IUseLoadMore {
 }
 
 /* PageActions */
-export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {
-}
+export interface IPageActions extends AllHTMLAttributes<HTMLDivElement> {}
 
 /* UseTimeout */
 export interface IUseCountdown {
@@ -88,4 +40,3 @@ export interface IUseWindowBreakpoints {
     lg: boolean;
     xl: boolean;
 }
-

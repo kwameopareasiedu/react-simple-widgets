@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Confirmation } from "../../widgets/confirm-dialog/types";
 import { DialogProvider } from "../../providers/dialog-provider";
 import { ListView } from "./index";
+import { ListViewSortOrder } from "./types";
 
 const collection = [
     { name: "Item-01", created_at: "2019-01-01", nested: { value: "Item_01 nested property current value" } },
@@ -178,4 +179,55 @@ export const withPagination = (): any => {
     };
 
     return <ExampleApp />;
+};
+
+export const withSorting = (): any => {
+    const ExampleApp = () => {
+        const [sortColumn, setSortColumn] = useState(0);
+        const [sortOrder, setSortOrder] = useState(ListViewSortOrder.NONE);
+        const [items, setItems] = useState(collection);
+
+        useEffect(() => {
+            setItems(
+                collection.sort((first, second) => {
+                    const item1 = sortOrder !== ListViewSortOrder.ASC ? first : second;
+                    const item2 = sortOrder !== ListViewSortOrder.ASC ? second : first;
+
+                    if (sortColumn === 0) return item1.name.localeCompare(item2.name);
+                    if (sortColumn === 1) return item1.created_at.localeCompare(item2.created_at);
+                    if (sortColumn === 2) return item1.nested.value.localeCompare(item2.nested.value);
+                    return 0;
+                })
+            );
+        }, [sortColumn, sortOrder]);
+
+        return (
+            <ListView
+                items={items}
+                sort={{
+                    order: sortOrder,
+                    columnIndex: sortColumn,
+                    columns: ["Name", "Created at", "Nested"],
+                    onSort: (column, order) => {
+                        setSortColumn(column as any);
+                        setSortOrder(order as any);
+                    }
+                }}
+                props={[
+                    ["Name", "name"],
+                    ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY")],
+                    ["Unknown", "status"],
+                    ["Nested", "nested.value"],
+                    ["Unknown nested", "nested.other_value"]
+                ]}
+                keyFn={item => item.name}
+            />
+        );
+    };
+
+    return (
+        <DialogProvider>
+            <ExampleApp />
+        </DialogProvider>
+    );
 };
