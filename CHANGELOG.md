@@ -72,7 +72,7 @@
 
 -   `1.6.1`
 
-    -   Added inline styling to `Loader` in [BusyButton](docs/busy-button.md)
+    -   Added inline styling to `Loader` in [BusyButton](src/widgets/busy-button/usage.md)
 
 -   `1.6.0`
 
@@ -80,7 +80,7 @@
     -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage in
         [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
-    -   Added `text-center` class to [Loader](docs/loader.md) as its added in majority of use cases
+    -   Added `text-center` class to [Loader](src/widgets/loader/usage.md) as its added in majority of use cases
     -   Added [PageActions](docs/page-actions.md) widget
 
 -   `1.5.0`
@@ -90,7 +90,7 @@
         widget. Once a value is persisted, it will automatically be remembered until removed, even
         when the page is refreshed
     -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
-        [ConfirmDialog](docs/confirm-dialog.md)
+        [ConfirmDialog](src/widgets/confirm-dialog/usage.md)
 
 -   `1.4.1`
 
@@ -101,7 +101,7 @@
 -   `1.4.0`
 
     -   Added `onClick` prop to [ListView](docs/list-view.md) widget
-    -   Added `theme` prop to [ConfirmDialog](docs/confirm-dialog.md) widget
+    -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-dialog/usage.md) widget
     -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
     -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
 
@@ -188,6 +188,6 @@
 -   `1.1.0`
 
     -   Added [useQueryParams hook](docs/use-query-params.md)
-    -   Added the [Loader](docs/loader.md) widget
+    -   Added the [Loader](src/widgets/loader/usage.md) widget
     -   Added the `bind` prop to [DialogProvider](docs/api-reference/dialog-provider.md) to allow binding of
         properties from the host component to the dialog component

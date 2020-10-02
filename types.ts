@@ -24,7 +24,7 @@ export interface IListViewSort {
 export interface IListViewOptionItem {
     label: any;
     confirmation?: any;
-    confirmationTheme?: ConfirmDialogTheme;
+    // confirmationTheme?: ConfirmDialogTheme;
     onClick: (item: any, itemIndex?: number) => void;
 }
 
@@ -52,33 +52,9 @@ export interface IObjectView {
     splitRatio?: number;
 }
 
-/* ConfirmDialog */
-export enum ConfirmDialogTheme {
-    DANGER,
-    WARNING,
-    INFO,
-    SUCCESS,
-    PRIMARY
-}
-
-export interface IConfirmDialog {
-    children: any;
-    onConfirm: () => void;
-    onCancel?: () => void;
-    theme?: ConfirmDialogTheme;
-}
-
-/* BusyButton */
-export interface IBusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-    busy?: boolean;
-}
 
 /* Breadcrumbs */
 export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
-}
-
-/* Loader */
-export interface ILoader extends AllHTMLAttributes<HTMLSpanElement> {
 }
 
 /* UseLoadMore */

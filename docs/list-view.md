@@ -115,7 +115,7 @@ the widget tree
 
         -   `confirmationTheme?: ConfirmDialogTheme`
 
-            The theme of the [confirmation dialog](confirm-dialog.md#api). This is ignored if
+            The theme of the [confirmation dialog](../src/widgets/confirm-dialog/usage.md#api). This is ignored if
             `builder.confirmation` is not specified
 
 -   `onClick?: (item: any, itemIndex?: number) => void`

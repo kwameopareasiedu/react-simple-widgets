@@ -83,13 +83,14 @@ Widgets here operate on list data
 
 Widgets under this category are for convenience
 
--   [BusyButton](docs/busy-button.md) - A button widget that displays a loading indicator if busy
--   [ConfirmDialog](docs/confirm-dialog.md) - A widget which displays a confirmation dialog before
-    calling an action
+-   [Loader](src/widgets/loader/usage.md) - A widget that displays a spinner
+-   [BusyButton](src/widgets/busy-button/usage.md) - A button widget that displays a loading
+    indicator if busy
+-   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation
+    dialog before calling an action
 -   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
 -   [PageActions](docs/page-actions.md) - A widget that displays a row of spaced buttons or nothing
     if no children are specified
--   [Loader](docs/loader.md) - A widget that displays a spinner
 -   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
     search string parameters
 -   [useLoadMore](docs/use-load-more.md) - A hook that provides methods and state variables to
