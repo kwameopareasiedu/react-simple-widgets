@@ -1,12 +1,5 @@
 import { AllHTMLAttributes } from "react";
 
-/* ObjectView */
-export interface IObjectView {
-    object: any;
-    props: Array<[string, string | ((object: any) => any)]>;
-    splitRatio?: number;
-}
-
 /* Breadcrumbs */
 export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {}
 

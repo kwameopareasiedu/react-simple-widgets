@@ -1,15 +1,15 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # ObjectView
 
 This widget renders properties of an object using a table
 
-## API
-
-### ListView
+## Usage
 
 ```jsx
-<ObjectView object={object} props={props} splitRatio={splitRatio} />
+import { ObjectView } from "react-simple-widgets";
+
+<ObjectView object={object} props={props} splitRatio={splitRatio} condensed={condensed} />
 ```
 
 -   `object: any`
@@ -27,13 +27,10 @@ This widget renders properties of an object using a table
     -   If the second array is a `function`, the widget will pass each item along with its index
         to this function, and it should return the value to be displayed in the column
 
-    > For more information, see the [stories](../src/list/object-view/index.stories.tsx) for this
-    > widget
-
--   `splitRatio?: number = 0.3`
+-   `splitRatio?: number = 0.35`
 
     The width ratio of the label column to the value column. It ranges from 0 to 1
 
-## Usage
+-   `condensed?: boolean`
 
-A complete usage can be found in the [Storybook stories for this widget](../src/list/list-view/index.stories.tsx)
+    Indicates whether or not to reduce the space used in the table cells
