@@ -4,7 +4,7 @@ import { ValueStoreProvider as Props } from "./types";
 import { ValueStorePair } from "./value-store-pair";
 
 // Provides a global value store for the application
-export const ValueStoreProvider = ({ initialKeys, children }: Props): any => {
+export const ValueStoreProvider = ({ initialKeys = [], children }: Props): any => {
     // This is the key for array in local storage that holds the keys for values stored by this provider
     const LOCAL_STORAGE_HOLDER_KEY = "react-simple-widgets-value-store-provider-persisted-keys";
 
