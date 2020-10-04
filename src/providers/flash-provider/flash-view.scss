@@ -29,11 +29,12 @@
         .flash-button {
             width: 150px;
             height: 60px;
+            font-size: 1rem;
             border-radius: 24px;
-            overflow: hidden;
             background-color: var(--flash-title-color);
             box-shadow: 0 20px 60px var(--flash-button-shadow-color);
             transition: box-shadow 0.5s;
+            overflow: hidden;
 
             img {
                 width: 30px;
@@ -49,19 +50,35 @@
 .flash-view.react-simple-widget.flash-state-error {
     --flash-title-color: var(--rsw-flash-view-error-theme-color);
     --flash-button-shadow-color: var(--rsw-flash-view-error-theme-color);
+
+    .card-body .flash-button {
+        color: white;
+    }
 }
 
 .flash-view.react-simple-widget.flash-state-warning {
     --flash-title-color: var(--rsw-flash-view-warning-theme-color);
     --flash-button-shadow-color: var(--rsw-flash-view-warning-theme-color);
+
+    .card-body .flash-button {
+        color: #333;
+    }
 }
 
 .flash-view.react-simple-widget.flash-state-info {
     --flash-title-color: var(--rsw-flash-view-info-theme-color);
     --flash-button-shadow-color: var(--rsw-flash-view-info-theme-color);
+
+    .card-body .flash-button {
+        color: #333;
+    }
 }
 
 .flash-view.react-simple-widget.flash-state-success {
     --flash-title-color: var(--rsw-flash-view-success-theme-color);
     --flash-button-shadow-color: var(--rsw-flash-view-success-theme-color);
+
+    .card-body .flash-button {
+        color: white;
+    }
 }

@@ -4,7 +4,6 @@ import { FlashType } from "./types";
 import ErrorIcon from "../../assets/error.svg";
 import WarningIcon from "../../assets/warning.svg";
 import SuccessIcon from "../../assets/success.svg";
-import ChevronIcon from "../../assets/chevron-right.svg";
 import InfoIcon from "../../assets/info.svg";
 
 interface IFlashView {
@@ -58,7 +57,7 @@ export const FlashView = ({ type, title, message, onDismiss }: IFlashView): any 
                 <h5 className="flash-title">{title}</h5>
                 <div className="flash-message">{message || ""}</div>
                 <button type="button" className="btn btn-lg flash-button" onClick={onDismiss}>
-                    <img src={ChevronIcon} alt="Continue" />
+                    Dismiss
                 </button>
             </div>
         </div>

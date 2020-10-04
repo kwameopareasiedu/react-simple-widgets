@@ -139,6 +139,7 @@ export const ListView = ({ items, busy, props, condensed, options, sort, breakpo
                 )}
 
                 <tbody>
+                    {busy && renderLoader()}
                     {items.map(windowWidth > breakpoint ? renderDesktopItem : renderMobileItem)}
                     {busy && renderLoader()}
                 </tbody>

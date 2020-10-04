@@ -116,6 +116,8 @@ migrate your applications to `react-simple-widgets` v2.0.0
 
 -   `ConfirmDialogTheme` has been renamed to `Confirmation`
 
+-   The `theme` prop has been renamed to `type`
+
 ## useLoadMore
 
 -   The `canLoadMore` context option has been renamed to `endOfItems`. `endOfItems` works in an

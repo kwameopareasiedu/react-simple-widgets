@@ -102,6 +102,10 @@
         white-space: nowrap;
     }
 
+    .field-decoration-content > .widget > * {
+        padding: 10px 10px 8px;
+    }
+
     .error {
         padding: 0 12px;
     }
