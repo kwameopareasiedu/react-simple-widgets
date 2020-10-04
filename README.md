@@ -28,6 +28,12 @@ have these installed in your application as well.
 You can install these dependencies with `yarn add -D react react-router-dom formik` or
 `npm i -D react react-router-dom formik`
 
+---
+
+**_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
+
+---
+
 ### Widgets
 
 #### Providers
@@ -52,7 +58,8 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 -   [CustomField](src/form/custom-field/usage.md) - A widget that allows custom components to be
     integrated with a form
 -   [TextField](src/form/text-field/usage.md) - A text field that doubles as a rich text editor
--   [DropdownField](src/form/dropdown-field/usage.md) - A widget that allows selection from a dropdown
+-   [DropdownField](src/form/dropdown-field/usage.md) - A widget that allows selection from a
+    dropdown
 -   [SelectField](src/form/select-field/usage.md) - A widget that allows binary, single or multi
     selection from a list of options
 -   [FileField](src/form/file-field/usage.md) - A form wrapper widget for the
@@ -91,17 +98,20 @@ Widgets under this category are for convenience
 -   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation
     dialog before calling an action
 -   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
--   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons 
+-   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons
     or nothing if no children are specified
--   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing the URL
-    search string parameters
--   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to
-    implement a load-more-items feature for a list of items that cannot be displayed in a ListView
--   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown functionality
--   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
-    delay after a caller has called it
--   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the window width
-    category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
+-   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing
+    the URL search string parameters
+-   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state
+    variables to implement a load-more-items feature for a list of items that cannot be displayed
+    in a ListView
+-   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown
+    functionality
+-   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a
+    specified delay after a caller has called it
+-   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the
+    window width category data according to
+    [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ### Customization
 

@@ -2,18 +2,26 @@
 
 # Changelog
 
+-   `2.0.0`
+
+    -   `DialogSize.FULL` has been added to [DialogProvider](src/providers/dialog-provider/usage.md)
+        to make dialogs as wide as the window
+    -   Added `leading`, `trailing` and `stickyFloatingLabel` props to all widgets which are
+        composed of [FieldDecoration](src/form/field-decoration/usage.md). These include all the
+        form field widgets
+
 -   `1.10.1`
 
     -   Fixed bug causing race conditions when `del` is used successively in
-        [ValueStoreProvider](docs/value-store-provider.md)
+        [ValueStoreProvider](src/providers/value-store-provider/usage.md)
     -   Fixed bug causing `pageTransitionViewCount` to go below 0, which in turn caused `<Link/>`s
         outside `<PageTransitionView/>`s not to work in
-        [PageTransitionProvider](docs/page-transition-provider.md)
+        [PageTransitionProvider](src/providers/transition-provider/usage.md)
 
 -   `1.10.0`
 
-    -   Added start and end pages display if current `page > start + 3` and `page < end - 3` respectively
-        in [ListView](src/collection/list-view/usage.md) widget
+    -   Added start and end pages display if current `page > start + 3` and `page < end - 3`
+        respectively in [ListView](src/collection/list-view/usage.md) widget
 
 -   `1.8.0`
 
@@ -24,49 +32,51 @@
 
 -   `1.7.4`
 
-    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src/hooks/use-countdown/usage.md) hook
+    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src/hooks/use-countdown/usage.md)
+        hook
 
 -   `1.7.3`
 
-    -   Added [debounce](docs/debounce.md) utility
+    -   Added [debounce](src/misc/debounce/usage.md) utility
     -   Added [useCountdown](src/hooks/use-countdown/usage.md) hook
-    -   Added `initialStorageKeys` prop to [ValueStoreProvider](docs/value-store-provider.md) to
-        allow pre-existing local storage values to be added to the value store
+    -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+        to allow pre-existing local storage values to be added to the value store
 
 -   `1.7.2`
 
-    -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to reuse the root
-        component between page transitions. This preserves scroll positions if query parameters
+    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to reuse the
+        root component between page transitions. This preserves scroll positions if query parameters
         were modified on the same URL path
 
 -   `1.7.1`
 
-    -   Changed `display` of links in [Breadcrumbs](src/widgets/breadcrumbs/usage.md) from `inline-block` to
-        `inline`
-    -   Modify [ListView](src/collection/list-view/usage.md) to do nothing if options builder returns `null` or an
-        empty array of options instead of displaying a dialog with no options
+    -   Changed `display` of links in [Breadcrumbs](src/widgets/breadcrumbs/usage.md) from
+        `inline-block` to `inline`
+    -   Modify [ListView](src/collection/list-view/usage.md) to do nothing if options builder
+        returns `null` or an empty array of options instead of displaying a dialog with no options
 
 -   `1.7.0`
 
-    -   Modified theme color of success messages of [FlashProvider](docs/flash-provider.md)
-    -   Added CSS property `word-break: break-word` to messages of
-        [FlashProvider](docs/flash-provider.md)
-    -   Changed CSS property `word-break` of [ListView](src/collection/list-view/usage.md) cells from `break-all`
-        to `break-word`
-    -   Fixed bug causing inconsistent borders in [ListView](src/collection/list-view/usage.md) item options
-    -   Modified [ListView](src/collection/list-view/usage.md) options to use a builder pattern instead of an array
-        of options. This allows for more control over options shown for each list item
+    -   Modified theme color of success messages of [FlashProvider](src/providers/flash-provider/usage.md)
+    -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/providers/flash-provider/usage.md)
+    -   Changed CSS property `word-break` of [ListView](src/collection/list-view/usage.md) cells
+        from `break-all` to `break-word`
+    -   Fixed bug causing inconsistent borders in [ListView](src/collection/list-view/usage.md)
+        item options
+    -   Modified [ListView](src/collection/list-view/usage.md) options to use a builder pattern
+        instead of an array of options. This allows for more control over options shown for each
+        list item
 
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of
         [ObjectView](src/collection/object-view/usage.md)
-    -   Added `word-break` styling to cells of [ListView](src/collection/list-view/usage.md) to force text overflow
-        if content cannot fit on one line
-    -   Added auto scroll-to-top-of-list feature to [ListView](src/collection/list-view/usage.md) when the items
-        list is modified by a page change
-    -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values
-        instead of just `string`
+    -   Added `word-break` styling to cells of [ListView](src/collection/list-view/usage.md) to
+        force text overflow if content cannot fit on one line
+    -   Added auto scroll-to-top-of-list feature to [ListView](src/collection/list-view/usage.md)
+        when the items list is modified by a page change
+    -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options
+        values instead of just `string`
     -   Reduces header vertical padding in [ListView](src/collection/list-view/usage.md)
     -   Added item options confirmation feature to [ListView](src/collection/list-view/usage.md)
 
@@ -77,16 +87,18 @@
 -   `1.6.0`
 
     -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
-    -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
-    -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage in
-        [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
-    -   Added `text-center` class to [Loader](src/widgets/loader/usage.md) as its added in majority of use cases
+    -   Added story for `bind` property of [DialogProvider](src/providers/dialog-provider/usage.md)
+        widget
+    -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget.
+        Updated usage in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
+    -   Added `text-center` class to [Loader](src/widgets/loader/usage.md) as its added in majority
+        of use cases
     -   Added [PageActions](src/widgets/page-actions/usage.md) widget
 
 -   `1.5.0`
 
     -   Added [useLoadMore hook](src/hooks/use-load-more/usage.md)
-    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](docs/value-store-provider.md)
+    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/providers/value-store-provider/usage.md)
         widget. Once a value is persisted, it will automatically be remembered until removed, even
         when the page is refreshed
     -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
@@ -96,7 +108,8 @@
 
     -   Added overflow styling to [DatePicker](src/form/date-picker/usage.md) and [FilePicker](src/form/file-picker/usage.md)
         widgets
-    -   Increased `z-index` of [DialogProvider](docs/api-reference/dialog-provider.md) dialog container div to 999999
+    -   Increased `z-index` of [DialogProvider](src/providers/dialog-provider/usage.md) dialog
+        container div to 999999
 
 -   `1.4.0`
 
@@ -108,24 +121,24 @@
 -   `1.3.7`
 
     -   Added focus indicator to [SelectField](src/form/select-field/usage.md) options
-    -   Modified [useQueryParams](src/hooks/use-query-params/usage.md) to update `qp` state object if the whole
-        location object changes instead of just `location.search`
+    -   Modified [useQueryParams](src/hooks/use-query-params/usage.md) to update `qp` state object
+        if the whole location object changes instead of just `location.search`
 
 -   `1.3.6`
 
     -   Added 100% width and height and auto overflow styling to
-        [PageTransitionView](src/provider/page-transition-provider/page-transition-view.tsx) widget
+        [PageTransitionView](src/providers/transition-provider/transition-view.tsx) widget
 
 -   `1.3.5`
 
-    -   Added the `clear` function to the [ValueStoreProvider](docs/value-store-provider.md) which
-        deletes all values in the store and removes them from the local storage if they are
+    -   Added the `clear` function to the [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+        which deletes all values in the store and removes them from the local storage if they are
         persisted
 
 -   `1.3.4`
 
-    -   Modified [ListView](src/collection/list-view/usage.md) to limit styling to immediate children and not
-        affect content within the cells
+    -   Modified [ListView](src/collection/list-view/usage.md) to limit styling to immediate
+        children and not affect content within the cells
 
 -   `1.3.3`
 
@@ -134,60 +147,62 @@
 
 -   `1.3.2`
 
-    -   [useQueryParams](src/hooks/use-query-params/usage.md) now returns and empty object if no query parameter
-        are present in the URL
-    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection
-        when shift key is pressed while a date is selected
-    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to return null date when
-        no date is selected instead of an empty array which makes is function the same as
-        `DatePickerMode.SINGLE` and `DatePickerMode.MONTH` when no dates are selected
+    -   [useQueryParams](src/hooks/use-query-params/usage.md) now returns and empty object if no
+        query parameter are present in the URL
+    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear
+        text selection when shift key is pressed while a date is selected
+    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to return
+        null date when no date is selected instead of an empty array which makes is function the
+        same as `DatePickerMode.SINGLE` and `DatePickerMode.MONTH` when no dates are selected
 
 -   `1.3.1`
 
-    -   Modified [ValueStoreProvider](docs/value-store-provider.md) to store null values as-is instead
-        of an empty string
+    -   Modified [ValueStoreProvider](src/providers/value-store-provider/usage.md) to store null
+        values as-is instead of an empty string
 
 -   `1.3.0`
 
-    -   Added `del` feature to [ValueStoreProvider](docs/value-store-provider.md) to remove values from
-        the provider
+    -   Added `del` feature to [ValueStoreProvider](src/providers/value-store-provider/usage.md) to
+        remove values from the provider
 
 -   `1.2.4`
 
-    -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to ignore redirect if target
-        URL is same as current URL
-    -   Modified [PageTransitionProvider](docs/page-transition-provider.md) to ignore redirect if target
-        URL is empty
+    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to ignore
+        redirect if target URL is same as current URL
+    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to ignore
+        redirect if target URL is empty
     -   Forwarded the `name` prop of [TextField](src/form/text-field/usage.md) and
-        [DropdownField](src/form/dropdown-field/usage.md) to `input` and `select` components respectively to
-        trigger browser added feature (such as auto-completion)
+        [DropdownField](src/form/dropdown-field/usage.md) to `input` and `select` components
+        respectively to trigger browser added feature (such as auto-completion)
 
 -   `1.2.3`
 
-    -   Removed `placeholder` prop from [DatePicker](src/form/date-picker/usage.md) because `label` already covers
-        its function
+    -   Removed `placeholder` prop from [DatePicker](src/form/date-picker/usage.md) because `label`
+        already covers its function
 
 -   `1.2.2`
 
-    -   Added a "No items to display" message to [ListView](src/collection/list-view/usage.md) if list is empty
-    -   Added `options.busy` prop to [ListView](src/collection/list-view/usage.md) to determine if a busy indicator
-        should be displayed beside and item
+    -   Added a "No items to display" message to [ListView](src/collection/list-view/usage.md) if
+        list is empty
+    -   Added `options.busy` prop to [ListView](src/collection/list-view/usage.md) to determine if
+        a busy indicator should be displayed beside and item
 
 -   `1.2.1`
 
-    -   Fixed bug in [ValueStoreProvider](docs/value-store-provider.md) making simultaneous value
-        updates persist
+    -   Fixed bug in [ValueStoreProvider](src/providers/value-store-provider/usage.md) making
+        simultaneous value updates persist
     -   Added `placeholder` prop to [DatePicker](src/form/date-picker/usage.md)
 
 -   `1.2.0`
 
-    -   Grouped props of [ListView](src/collection/list-view/usage.md). This puts related props in similar objects which
-        are enabled when specified or disabled when not
-    -   Made `message` parameter of flash functions in [FlashProvider](docs/flash-provider.md) optional
+    -   Grouped props of [ListView](src/collection/list-view/usage.md). This puts related props in
+        similar objects which are enabled when specified or disabled when not
+    -   Made `message` parameter of flash functions in [FlashProvider](src/providers/flash-provider/usage.md)
+        optional
 
 -   `1.1.0`
 
     -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
     -   Added the [Loader](src/widgets/loader/usage.md) widget
-    -   Added the `bind` prop to [DialogProvider](docs/api-reference/dialog-provider.md) to allow binding of
-        properties from the host component to the dialog component
+    -   Added the `bind` prop to [DialogProvider](src/providers/dialog-provider/usage.md)
+        to allow binding of properties from the host component to the dialog component
