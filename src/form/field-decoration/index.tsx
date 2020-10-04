@@ -1,44 +1,76 @@
 import "./index.scss";
-import React, { useState } from "react";
-import { FieldDecorationType, IFieldDecoration } from "../../../types";
+import React, { useEffect, useRef, useState } from "react";
+import { FieldDecoration as Props, FieldDecorationType } from "./types";
 
-/**
- * FieldDecoration provides the label and error components as well as styling and theming
- * to a form field.
- */
-export const FieldDecoration = ({ decoration, label, leading, trailing, error, hasValue, disabled, children }: IFieldDecoration) => {
+/** FieldDecoration provides the label, error, leading and trailing widget components to complement an input field */
+export const FieldDecoration = ({ decoration, stickyFloatingLabel, label, leading, trailing, error, disabled, children }: Props) => {
     const [focused, setFocused] = useState(false);
+    const [hasValue, setHasValue] = useState(false);
+    const [floatingLabelDefaultTop, setFloatingLabelDefaultTop] = useState(0);
+    const [floatingLabelFocusedTop, setFloatingLabelFocusedTop] = useState(0);
+    const contentRef = useRef();
+    const leadingRef = useRef();
+    const labelRef = useRef();
+
+    useEffect(() => {
+        if (decoration === FieldDecorationType.FLOATING_LABEL) {
+            const labelNode: HTMLElement = labelRef.current;
+            const contentNode: HTMLElement = contentRef.current;
+
+            if (labelNode) {
+                const labelHeight = labelNode.getBoundingClientRect().height;
+                const contentHeight = contentNode.getBoundingClientRect().height;
+                setFloatingLabelDefaultTop((contentHeight - labelHeight) / 2);
+                setFloatingLabelFocusedTop(-labelHeight / 2);
+            }
+        }
+    }, []);
+
+    const className = (): string => {
+        const classes = ["react-simple-widget", "field-decoration"];
+
+        if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline");
+        if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label");
+
+        if (stickyFloatingLabel || hasValue) classes.push("has-value");
+        if (focused) classes.push("has-focus");
+        if (error) classes.push("has-error");
+        if (disabled) classes.push("disabled");
+
+        return classes.join(" ");
+    };
 
     const onFieldFocus = (): void => setFocused(true);
 
     const onFieldBlur = (): void => setFocused(false);
 
-    const className = (): string => {
-        decoration = ![null, undefined].includes(decoration) ? decoration : FieldDecorationType.FLAT;
-
-        const classes = ["react-simple-widget", "field-decoration"];
-        if (decoration === FieldDecorationType.FLAT) classes.push("flat-decoration");
-        if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline-decoration");
-        if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label-decoration");
-        if (hasValue) classes.push("field-decoration-has-value");
-        if (disabled) classes.push("field-decoration-disabled");
-        if (focused) classes.push("field-decoration-has-focus");
-        if (error) classes.push("field-decoration-has-error");
-        return classes.join(" ");
+    const labelProps: any = {
+        ref: labelRef,
+        style: {
+            "--floating-label-default-top": floatingLabelDefaultTop + "px",
+            "--floating-label-default-left": (leadingRef.current ? (leadingRef.current as HTMLElement).getBoundingClientRect().width : 0) + 10 + "px",
+            "--floating-label-focused-top": floatingLabelFocusedTop + "px",
+            "--floating-label-focused-left": "4px"
+        }
     };
 
     return (
         <div className={className()}>
-            <div className="field">
-                {label ? <label>{label}</label> : null}
-                <div className="widgets">
-                    {leading && <span className="leading">{leading}</span>}
-                    <div className="widget">{children({ onFieldFocus, onFieldBlur })}</div>
-                    {trailing && <span className="trailing">{trailing}</span>}
-                </div>
+            {label && <label {...labelProps}>{label}</label>}
+
+            <div ref={contentRef} className="field-decoration-content">
+                {leading && (
+                    <span ref={leadingRef} className="leading">
+                        {leading}
+                    </span>
+                )}
+
+                <div className="widget">{children({ onFieldFocus, onFieldBlur, onFieldChange: setHasValue })}</div>
+
+                {trailing && <span className="trailing">{trailing}</span>}
             </div>
 
-            {error ? <div className="error">{error}</div> : null}
+            {error && <div className="error">{error}</div>}
         </div>
     );
 };

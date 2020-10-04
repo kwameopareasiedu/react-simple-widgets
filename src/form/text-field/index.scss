@@ -1,31 +1,20 @@
-@import "../../mixin";
+.react-simple-widget.text-field .field-decoration {
+    > input::placeholder {
+        font-size: 80%;
+    }
 
-.react-simple-widget.text-field .field-decoration > .field > .widgets > {
-    .widget {
-        > input,
-        > input:hover,
-        > input:focus,
-        > input:active {
-            @include fieldDecorationWidgetChild;
-        }
+    .ql-toolbar {
+        border: none;
+        padding: 0;
+    }
 
-        > input::placeholder {
-            font-size: 80%;
-        }
+    .ql-container {
+        border: none;
+        font-size: unset;
+    }
 
-        .ql-toolbar {
-            border: none;
-            padding: 0;
-        }
-
-        .ql-container {
-            border: none;
-            font-size: unset;
-        }
-
-        .ql-editor {
-            padding: 8px;
-        }
+    .ql-editor {
+        padding: 8px;
     }
 
     .trailing {

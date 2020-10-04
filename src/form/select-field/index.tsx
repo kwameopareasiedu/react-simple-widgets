@@ -1,6 +1,7 @@
+import "./index.scss";
 import React from "react";
 import { CustomField } from "../custom-field";
-import { FieldDecorationType, ISelectField, SelectFieldMode } from "../../../types";
+import { SelectField as Props, SelectFieldMode } from "./types";
 import { SelectOption, SelectOptionType } from "./select-option";
 import { FieldDecoration } from "../field-decoration";
 
@@ -9,15 +10,12 @@ import { FieldDecoration } from "../field-decoration";
  * larger lists of options. This widget can take the form of a checkbox (for boolean selection), a
  * radio group (for single selection), or a check group (for multi-selections)
  */
-export const SelectField = ({ name, label, mode = SelectFieldMode.BINARY, options, inline, onChange, errorTransformer }: ISelectField): any => {
+export const SelectField = ({ name, label, mode, options, inline, onChange, errorTransformer }: Props): any => {
     return (
         <div className="react-simple-widget select-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
                 {({ value, error, touched, setValue, setTouched }): any => (
-                    <FieldDecoration
-                        decoration={FieldDecorationType.NONE}
-                        label={mode === SelectFieldMode.BINARY ? null : label}
-                        error={touched && error}>
+                    <FieldDecoration label={mode !== undefined ? label : null} error={touched && error}>
                         {(): any => {
                             const interceptOnChange = (value: any): void => {
                                 setValue(value);
@@ -26,19 +24,7 @@ export const SelectField = ({ name, label, mode = SelectFieldMode.BINARY, option
 
                             const interceptOnFocus = (): void => setTouched(true);
 
-                            if (mode === SelectFieldMode.BINARY) {
-                                return (
-                                    <SelectOption
-                                        value={null}
-                                        label={label}
-                                        inline={false}
-                                        selected={!!value}
-                                        type={SelectOptionType.CHECK}
-                                        onChange={(): void => interceptOnChange(!value)}
-                                        onFocus={interceptOnFocus}
-                                    />
-                                );
-                            } else if (mode === SelectFieldMode.SINGLE) {
+                            if (mode === SelectFieldMode.SINGLE) {
                                 return options.map(([optionLabel, optionValue]) => (
                                     <SelectOption
                                         key={optionValue}
@@ -69,7 +55,18 @@ export const SelectField = ({ name, label, mode = SelectFieldMode.BINARY, option
                                         }}
                                     />
                                 ));
-                            }
+                            } else
+                                return (
+                                    <SelectOption
+                                        value={null}
+                                        label={label}
+                                        inline={false}
+                                        selected={!!value}
+                                        type={SelectOptionType.CHECK}
+                                        onChange={(): void => interceptOnChange(!value)}
+                                        onFocus={interceptOnFocus}
+                                    />
+                                );
                         }}
                     </FieldDecoration>
                 )}

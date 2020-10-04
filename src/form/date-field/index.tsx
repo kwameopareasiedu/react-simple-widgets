@@ -1,22 +1,25 @@
 import React from "react";
-import { DatePickerMode, IDateField } from "../../../types";
 import { CustomField } from "../custom-field";
-import { DatePicker } from "../../picker/date-picker";
+import { DatePicker } from "../date-picker";
+import { DateField as Props } from "./types";
 
 /** DateField is a form wrapper for the DatePicker widget */
 export const DateField = ({
     name,
+    mode,
     label,
+    leading,
+    trailing,
     format = "YYYY-MM-DD",
-    mode = DatePickerMode.SINGLE,
     displayFormat = "dddd, Do MMMM YYYY",
+    stickyFloatingLabel,
     errorTransformer,
     decoration,
     validator,
     onChange,
     onFocus,
     onBlur
-}: IDateField) => {
+}: Props) => {
     return (
         <div className="react-simple-widget date-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
@@ -26,11 +29,14 @@ export const DateField = ({
                         mode={mode}
                         label={label}
                         format={format}
+                        leading={leading}
+                        trailing={trailing}
                         error={touched && error}
+                        stickyFloatingLabel={stickyFloatingLabel}
                         displayFormat={displayFormat}
                         decoration={decoration}
                         validator={validator}
-                        onChange={(date) => {
+                        onChange={date => {
                             setValue(date);
                             if (onChange) onChange(date);
                         }}

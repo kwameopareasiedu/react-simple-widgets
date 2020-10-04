@@ -1,22 +1,35 @@
-import "./index.scss";
 import React from "react";
 import { CustomField } from "../custom-field";
 import { FieldDecoration } from "../field-decoration";
-import { FieldDecorationType, IDropdownField } from "../../../types";
+import { DropdownField as Props } from "./types";
 
 /** DropdownField allows the user to select from a list of items in a dropdown menu */
-export const DropdownField = ({ label, name, decoration, errorTransformer, children, ...rest }: IDropdownField) => {
-    const { className, disabled, onChange, onFocus, onBlur, ...restOfRest } = rest;
-
+export const DropdownField = ({
+    label,
+    name,
+    children,
+    decoration,
+    errorTransformer,
+    stickyFloatingLabel,
+    leading,
+    trailing,
+    disabled,
+    onChange,
+    onFocus,
+    onBlur,
+    ...rest
+}: Props) => {
     return (
         <div className="react-simple-widget dropdown-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
                 {({ value, error, touched, setTouched, setValue }): any => (
                     <FieldDecoration
                         label={label}
+                        leading={leading}
+                        trailing={trailing}
                         error={touched && error}
-                        hasValue={decoration === FieldDecorationType.FLOATING_LABEL || !!value}
-                        decoration={decoration || FieldDecorationType.FLAT}
+                        stickyFloatingLabel={stickyFloatingLabel || !!value}
+                        decoration={decoration}
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }): any => (
                             <select
@@ -35,7 +48,7 @@ export const DropdownField = ({ label, name, decoration, errorTransformer, child
                                     onFieldBlur();
                                     if (onBlur) onBlur(e);
                                 }}
-                                {...restOfRest}>
+                                {...rest}>
                                 {children}
                             </select>
                         )}

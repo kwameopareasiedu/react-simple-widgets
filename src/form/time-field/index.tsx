@@ -1,10 +1,22 @@
 import React from "react";
-import { ITimeField } from "../../../types";
+import { TimeField as Props } from "./types";
 import { CustomField } from "../custom-field";
-import { TimePicker } from "../../picker/time-picker";
+import { TimePicker } from "../time-picker";
 
 /** TimeField is a form wrapper for the TimePicker widget */
-export const TimeField = ({ name, label, errorTransformer, decoration, validator, onChange, onFocus, onBlur }: ITimeField) => {
+export const TimeField = ({
+    name,
+    label,
+    leading,
+    trailing,
+    decoration,
+    stickyFloatingLabel,
+    errorTransformer,
+    validator,
+    onChange,
+    onFocus,
+    onBlur
+}: Props) => {
     return (
         <div className="react-simple-widget time-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
@@ -12,6 +24,9 @@ export const TimeField = ({ name, label, errorTransformer, decoration, validator
                     <TimePicker
                         time={value}
                         label={label}
+                        leading={leading}
+                        trailing={trailing}
+                        stickyFloatingLabel={stickyFloatingLabel}
                         error={touched && error}
                         decoration={decoration}
                         validator={validator}

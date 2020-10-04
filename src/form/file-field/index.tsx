@@ -1,10 +1,23 @@
 import React from "react";
-import { IFileField } from "../../../types";
+import { FileField as Props } from "./types";
 import { CustomField } from "../custom-field";
-import { FilePicker } from "../../picker/file-picker";
+import { FilePicker } from "../file-picker";
 
 /** FileField is a form wrapper for the FilePicker widget */
-export const FileField = ({ name, label, limit, extensions, decoration, errorTransformer, validator, onChange, onFocus, onBlur }: IFileField) => {
+export const FileField = ({
+    name,
+    label,
+    limit,
+    extensions,
+    decoration,
+    leading,
+    trailing,
+    errorTransformer,
+    validator,
+    onChange,
+    onFocus,
+    onBlur
+}: Props) => {
     return (
         <div className="react-simple-widget file-field">
             <CustomField name={name} errorTransformer={errorTransformer}>
@@ -13,6 +26,8 @@ export const FileField = ({ name, label, limit, extensions, decoration, errorTra
                         file={value}
                         label={label}
                         limit={limit}
+                        leading={leading}
+                        trailing={trailing}
                         decoration={decoration}
                         extensions={extensions}
                         error={touched && error}

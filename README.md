@@ -22,11 +22,17 @@ npm i -D react-simple-widgets
 ```
 
 This libraries requires [formik](https://jaredpalmer.com/formik/), [react](https://reactjs.org/) and
-[react-router-dom](https://reacttraining.com/react-router/web) as peer dependencies, so you need to
+[react-router-dom](https://reacttraining.com/react-router/web/) as peer dependencies, so you need to
 have these installed in your application as well.
 
 You can install these dependencies with `yarn add -D react react-router-dom formik` or
 `npm i -D react react-router-dom formik`
+
+---
+
+**_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
+
+---
 
 ### Widgets
 
@@ -34,69 +40,77 @@ You can install these dependencies with `yarn add -D react react-router-dom form
 
 Providers wrap around you app and provide globally accessible functionality to all parts of your app
 
--   [DialogProvider](docs/guides/dialog-provider.md) - Provides a simple dialog framework within your app
--   [ValueStoreProvider](docs/value-store-provider.md) - Provides a global value storage which can
-    utilize the local storage API to persist data
--   [FlashProvider](docs/flash-provider.md) - Provides a flash message framework built using the
-    dialog framework
--   [PageTransitionProvider](docs/page-transition-provider.md) - Provides a page transition
+-   [DialogProvider](src/providers/dialog-provider/usage.md) - Provides a simple dialog framework
+    within your app
+-   [ValueStoreProvider](src/providers/value-store-provider/usage.md) - Provides an in-memory value
+    storage which can utilize the local storage API to persist data
+-   [FlashProvider](src/providers/flash-provider/usage.md) - Provides a flash message framework
+    built using the dialog framework
+-   [TransitionProvider](src/providers/transition-provider/usage.md) - Provides a page transition
     framework for navigating between different pages of your app
 
 #### Form
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
--   [FieldDecoration](docs/field-decoration.md) - A widget that provides a label and error component
-    together with focus and blur styling to a wrapped component
--   [CustomField](docs/custom-field.md) - A widget that allows custom components to be integrated
-    with a form
--   [TextField](docs/text-field.md) - A text field that doubles as a rich text editor
--   [DropdownField](docs/dropdown-field.md) - A widget that allows selection from a dropdown
--   [SelectField](docs/select-field.md) - A widget that allows binary, single or multi selection
-    from a list of options
--   [FileField](docs/file-field.md) - A form wrapper widget for the
-    [FilePicker](docs/file-picker.md)
--   [DateField](docs/date-field.md) - A form wrapper widget for the
-    [DatePicker](docs/date-picker.md)
--   [TimeField](docs/time-field.md) - A form wrapper widget for the
-    [TimePicker](docs/time-picker.md)
+-   [FieldDecoration](src/form/field-decoration/usage.md) - A widget that provides a label and error
+    component together with focus and blur styling to a wrapped component
+-   [CustomField](src/form/custom-field/usage.md) - A widget that allows custom components to be
+    integrated with a form
+-   [TextField](src/form/text-field/usage.md) - A text field that doubles as a rich text editor
+-   [DropdownField](src/form/dropdown-field/usage.md) - A widget that allows selection from a
+    dropdown
+-   [SelectField](src/form/select-field/usage.md) - A widget that allows binary, single or multi
+    selection from a list of options
+-   [FileField](src/form/file-field/usage.md) - A form wrapper widget for the
+    [FilePicker](src/form/file-picker/usage.md)
+-   [DateField](src/form/date-field/usage.md) - A form wrapper widget for the
+    [DatePicker](src/form/date-picker/usage.md)
+-   [TimeField](src/form/time-field/usage.md) - A form wrapper widget for the
+    [TimePicker](src/form/time-picker/usage.md)
 
 #### Pickers
 
 Pickers allow you to select some complex data type
 
--   [FilePicker](docs/file-picker.md) - A simple file picker which supports drag-and-drop feature
--   [DatePicker](docs/date-picker.md) - A date picker which supports single and multiple date
-    selection as well as month selection
--   [TimePicker](docs/time-picker.md) - A time picker which features an intuitive clock experience
+-   [FilePicker](src/form/file-picker/usage.md) - A simple file picker which supports drag-and-drop
+    feature
+-   [DatePicker](src/form/date-picker/usage.md) - A date picker which supports single and multiple
+    date selection as well as month selection
+-   [TimePicker](src/form/time-picker/usage.md) - A 12-hour time picker
 
 #### List
 
 Widgets here operate on list data
 
--   [ListView](docs/list-view.md) - A widget that provides responsive display of tabular data
--   [ObjectView](docs/object-view.md) - A widget that renders an object's data in a tabular form
+-   [ListView](src/collection/list-view/usage.md) - A widget that displays a list of items in a
+    responsive tabular form
+-   [ObjectView](src/collection/object-view/usage.md) - A widget that renders an object's data in a
+    tabular form
 
 #### Misc
 
 Widgets under this category are for convenience
 
--   [BusyButton](docs/busy-button.md) - A button widget that displays a loading indicator if busy
--   [ConfirmDialog](docs/confirm-dialog.md) - A widget which displays a confirmation dialog before
-    calling an action
--   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
--   [PageActions](docs/page-actions.md) - A widget that displays a row of spaced buttons or nothing
-    if no children are specified
--   [Loader](docs/loader.md) - A widget that displays a spinner
--   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
-    search string parameters
--   [useLoadMore](docs/use-load-more.md) - A hook that provides methods and state variables to
-    implement a load-more-items feature for a list of items that cannot be displayed in a ListView
--   [useCountdown](docs/use-countdown.md) - A hook which provides numeric countdown functionality
--   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
-    delay after a caller has called it
--   [useWindowBreakpoints](docs/use-window-breakpoints.md) - A hook which provides the window width
-    category data according to
+-   [Loader](src/widgets/loader/usage.md) - A widget that displays a spinner
+-   [BusyButton](src/widgets/busy-button/usage.md) - A button widget that displays a loading
+    indicator if busy
+-   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation
+    dialog before calling an action
+-   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
+-   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons
+    or nothing if no children are specified
+-   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing
+    the URL search string parameters
+-   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state
+    variables to implement a load-more-items feature for a list of items that cannot be displayed
+    in a ListView
+-   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown
+    functionality
+-   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a
+    specified delay after a caller has called it
+-   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the
+    window width category data according to
     [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ### Customization

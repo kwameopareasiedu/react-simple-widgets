@@ -1,0 +1,67 @@
+.flash-view.react-simple-widget {
+    --flash-title-color: var(--rsw-flash-view-default-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-default-theme-color);
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    .card-body {
+        padding: 35px 50px;
+        color: #545454;
+
+        .flash-icon {
+            width: 80px;
+            margin-bottom: 30px;
+        }
+
+        .flash-title {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--flash-title-color);
+            text-transform: uppercase;
+        }
+
+        .flash-message {
+            margin-bottom: 35px;
+            word-break: break-word;
+        }
+
+        .flash-button {
+            width: 150px;
+            height: 60px;
+            border-radius: 24px;
+            overflow: hidden;
+            background-color: var(--flash-title-color);
+            box-shadow: 0 20px 60px var(--flash-button-shadow-color);
+            transition: box-shadow 0.5s;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        .flash-button:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+.flash-view.react-simple-widget.flash-state-error {
+    --flash-title-color: var(--rsw-flash-view-error-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-error-theme-color);
+}
+
+.flash-view.react-simple-widget.flash-state-warning {
+    --flash-title-color: var(--rsw-flash-view-warning-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-warning-theme-color);
+}
+
+.flash-view.react-simple-widget.flash-state-info {
+    --flash-title-color: var(--rsw-flash-view-info-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-info-theme-color);
+}
+
+.flash-view.react-simple-widget.flash-state-success {
+    --flash-title-color: var(--rsw-flash-view-success-theme-color);
+    --flash-button-shadow-color: var(--rsw-flash-view-success-theme-color);
+}

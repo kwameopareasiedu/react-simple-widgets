@@ -1,8 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
-import { DialogProvider } from "../provider/dialog-provider";
-import { DatePickerMode, FieldDecorationType, SelectFieldMode, TextFieldMode } from "../../types";
+import { DialogProvider } from "../providers/dialog-provider";
+import { FieldDecorationType } from "./field-decoration/types";
+import { SelectFieldMode } from "./select-field/types";
+import { TextFieldMode } from "./text-field/types";
 import { DropdownField } from "./dropdown-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
@@ -10,33 +12,33 @@ import { DateField } from "./date-field";
 import { TimeField } from "./time-field";
 
 export default {
-    title: "React simple widget - Form",
+    title: "Form widgets",
     decorators: [(storyFn: any) => <div style={{ padding: "30px" }}>{storyFn()}</div>]
 };
 
 export const index = (): any => {
     const SampleForm = (): any => {
         const initialValues: any = {
-            firstName: "",
-            otherNames: "",
-            lastName: "",
-            password: "",
-            about: "",
-            language: "",
-            acceptTOS: false,
-            gender: "",
-            multiOptions: "",
-            file: null,
-            date: null
+            textFieldValue: "",
+            textFieldEditorValue: "",
+            dropdownFieldValue: "",
+            binarySelectFieldValue: "",
+            singleSelectFieldValue: "",
+            multiSelectFieldValue: "",
+            fileField: "",
+            dateField: ""
         };
 
         const validate = (values: any) => {
             const errors: any = {};
-            if (!values.firstName) errors.firstName = "Required";
-            if (!values.otherNames) errors.otherNames = "Required";
-            if (!values.lastName) errors.lastName = "Required";
-            if (!values.acceptTOS) errors.acceptTOS = "You must accept the Terms of Service to continue";
-            if (!values.file) errors.file = "Required";
+            if (!values.textFieldValue) errors.textFieldValue = "Required";
+            if (!values.textFieldEditorValue) errors.textFieldEditorValue = "Required";
+            if (!values.dropdownFieldValue) errors.dropdownFieldValue = "Required";
+            if (!values.binarySelectFieldValue) errors.binarySelectFieldValue = "Required";
+            if (!values.singleSelectFieldValue) errors.singleSelectFieldValue = "Required";
+            if (!values.multiSelectFieldValue) errors.multiSelectFieldValue = "Required";
+            if (!values.dateField) errors.dateField = "Required";
+            if (!values.dateField) errors.dateField = "Required";
             return errors;
         };
 
@@ -62,18 +64,13 @@ export const index = (): any => {
                         <form onSubmit={formik.handleSubmit}>
                             <div className="row">
                                 <div className="col-12 col-md-6">
-                                    <TextField
-                                        name="firstName"
-                                        label="TextField (Flat decoration)"
-                                        placeholder="Enter first name"
-                                        className="form-control"
-                                    />
+                                    <TextField name="textFieldValue" label="TextField (Flat)" placeholder="Enter value" />
 
                                     <br />
 
                                     <TextField
-                                        name="lastName"
-                                        label="TextField (Underline decoration)"
+                                        name="textFieldValue"
+                                        label="TextField (Underline)"
                                         decoration={FieldDecorationType.UNDERLINE}
                                         placeholder="Enter last name"
                                     />
@@ -81,85 +78,82 @@ export const index = (): any => {
                                     <br />
 
                                     <TextField
-                                        name="otherNames"
-                                        label="TextField (Floating label decoration)"
+                                        name="textFieldValue"
+                                        label="TextField (Floating label)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                     />
 
                                     <br />
 
+                                    <TextField name="textFieldEditorValue" label="TextField (Flat editor)" mode={TextFieldMode.EDITOR} />
+
+                                    <br />
+
                                     <TextField
-                                        name="password"
-                                        type="password"
-                                        label="TextField (Password type, Floating label decoration)"
-                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        name="textFieldEditorValue"
+                                        label="TextField (Underline editor)"
+                                        decoration={FieldDecorationType.UNDERLINE}
+                                        mode={TextFieldMode.EDITOR}
                                     />
 
                                     <br />
 
                                     <TextField
-                                        name="about"
-                                        label="TextField (Editor mode, Floating label decoration)"
+                                        name="textFieldEditorValue"
+                                        label="TextField (Floating label editor)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                         mode={TextFieldMode.EDITOR}
                                     />
 
                                     <br />
 
-                                    <TextField name="something" label="TextField (Disabled)" decoration={FieldDecorationType.FLAT} disabled />
-
-                                    <br />
-
-                                    <TextField name="something" label="TextField (Disabled)" decoration={FieldDecorationType.UNDERLINE} disabled />
-
-                                    <br />
-
-                                    <TextField
-                                        name="something"
-                                        label="TextField (Disabled)"
-                                        decoration={FieldDecorationType.FLOATING_LABEL}
-                                        disabled
-                                    />
+                                    <DropdownField name="dropdownFieldValue" label="DropdownField (Flat)">
+                                        <option value="" />
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
 
                                     <br />
 
                                     <DropdownField
-                                        name="something"
-                                        label="DropdownField (Disabled)"
-                                        decoration={FieldDecorationType.FLOATING_LABEL}
-                                        disabled>
-                                        <option value="option">An options</option>
+                                        name="dropdownFieldValue"
+                                        label="DropdownField (Underline)"
+                                        decoration={FieldDecorationType.UNDERLINE}>
+                                        <option value="" />
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
                                     </DropdownField>
 
-                                    <br className="d-block d-md-none" />
+                                    <br />
+
+                                    <DropdownField
+                                        name="dropdownFieldValue"
+                                        label="DropdownField (Floating label)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        leading={<i className="fa fa-layer-group" />}>
+                                        <option value="" />
+                                        <option value="A">Option A</option>
+                                        <option value="B">Option B</option>
+                                        <option value="C">Option C</option>
+                                    </DropdownField>
+
+                                    {/*<br className="d-block d-md-none" />*/}
                                 </div>
 
                                 <div className="col-12 col-md-6">
-                                    <DropdownField name="language" label="DropdownField" decoration={FieldDecorationType.FLOATING_LABEL}>
-                                        <option value="english">English</option>
-                                        <option value="twi">Twi</option>
-                                        <option value="ga">Ga</option>
-                                        <option value="Ewe">Ewe</option>
-                                    </DropdownField>
-
-                                    <br />
-
-                                    <FileField name="file" label="FileField (with 1MB limit)" limit={1024 * 1024} />
-
-                                    <br />
-
                                     <SelectField
-                                        name="acceptTOS"
-                                        mode={SelectFieldMode.BINARY}
-                                        label="SelectField (Binary-select mode)"
+                                        name="binarySelectFieldValue"
+                                        label="SelectField (Binary select)"
                                         onChange={v => console.log("Terms of Service", v)}
                                     />
 
                                     <br />
 
                                     <SelectField
-                                        name="gender"
-                                        label="SelectField (Single-select mode)"
+                                        name="singleSelectFieldValue"
+                                        label="SelectField (Single select)"
                                         mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
@@ -171,22 +165,22 @@ export const index = (): any => {
                                     <br />
 
                                     <SelectField
-                                        name="gender"
-                                        inline={true}
-                                        label="SelectField (Single-select mode, Inline)"
+                                        name="singleSelectFieldValue"
+                                        label="SelectField (Inline single select)"
                                         mode={SelectFieldMode.SINGLE}
                                         options={[
                                             ["Male", "male"],
                                             ["Female", "female"]
                                         ]}
                                         onChange={v => console.log("Gender", v)}
+                                        inline
                                     />
 
                                     <br />
 
                                     <SelectField
-                                        name="multiOptions"
-                                        label="SelectField (Multi-select mode)"
+                                        name="multiSelectFieldValue"
+                                        label="SelectField (Multi select)"
                                         mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
@@ -199,9 +193,8 @@ export const index = (): any => {
                                     <br />
 
                                     <SelectField
-                                        name="multiOptions"
-                                        inline={true}
-                                        label="SelectField (Multi-select mode, Inline)"
+                                        name="multiSelectFieldValue"
+                                        label="SelectField (Inline multi select)"
                                         mode={SelectFieldMode.MULTI}
                                         options={[
                                             ["Foo", "foo"],
@@ -209,6 +202,16 @@ export const index = (): any => {
                                             ["Baz", "baz"]
                                         ]}
                                         onChange={v => console.log("Multi-selection", v)}
+                                        inline
+                                    />
+
+                                    <br />
+
+                                    <FileField
+                                        name="file"
+                                        label="FileField (with 1MB limit)"
+                                        leading={<i className="fa fa-file-word" />}
+                                        limit={1024 * 1024}
                                     />
 
                                     <br />
@@ -217,13 +220,13 @@ export const index = (): any => {
                                         name="date"
                                         format="YYYY-MM-DD"
                                         label="DateField (Single Mode)"
+                                        leading={<i className="fa fa-calendar-alt" />}
                                         displayFormat="dddd, Do MMMM YYYY"
-                                        mode={DatePickerMode.SINGLE}
                                     />
 
                                     <br />
 
-                                    <TimeField name="time" label="TimeField"  />
+                                    <TimeField name="time" label="TimeField" leading={<i className="fa fa-clock" />} />
                                 </div>
                             </div>
                         </form>
@@ -235,11 +238,7 @@ export const index = (): any => {
 
     return (
         <DialogProvider>
-            <div className="card">
-                <div className="card-body">
-                    <SampleForm />
-                </div>
-            </div>
+            <SampleForm />
         </DialogProvider>
     );
 };

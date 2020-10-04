@@ -20,10 +20,10 @@ interface ISelectOption {
 export const SelectOption = ({ type, label, value, selected, inline, onChange, onFocus }: ISelectOption) => {
     const className = (): string => {
         const classes = ["react-simple-widget", "select-option"];
-        if (type === SelectOptionType.CHECK) classes.push("select-option-check");
-        if (type === SelectOptionType.RADIO) classes.push("select-option-radio");
-        if (selected) classes.push("select-option-selected");
-        if (inline) classes.push("select-option-inline");
+        if (type === SelectOptionType.CHECK) classes.push("check");
+        if (type === SelectOptionType.RADIO) classes.push("radio");
+        if (selected) classes.push("selected");
+        if (inline) classes.push("inline");
         return classes.join(" ");
     };
 

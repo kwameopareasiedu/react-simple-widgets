@@ -1,6 +1,6 @@
 {
     "name": "react-simple-widgets",
-    "version": "1.10.1",
+    "version": "2.0.0",
     "description": "A collection of simple to use widgets for building react apps easily",
     "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
     "repository": {
@@ -18,7 +18,7 @@
         "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
         "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
         "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "dependencies": {},
     "devDependencies": {
@@ -27,26 +27,31 @@
         "@babel/plugin-transform-spread": "^7.10.1",
         "@babel/preset-env": "^7.10.3",
         "@babel/preset-react": "^7.10.1",
+        "@babel/preset-typescript": "^7.10.4",
+        "@jest/globals": "^26.4.2",
         "@rollup/plugin-image": "^2.0.5",
-        "@storybook/addon-actions": "6.0.7",
-        "@storybook/addon-knobs": "6.0.7",
-        "@storybook/addons": "6.0.7",
-        "@storybook/react": "6.0.7",
+        "@storybook/addon-actions": "6.0.21",
+        "@storybook/addon-knobs": "6.0.21",
+        "@storybook/addons": "6.0.21",
+        "@storybook/react": "6.0.21",
+        "@testing-library/react": "^11.0.4",
+        "@testing-library/user-event": "^12.1.6",
         "@types/react": "^16.9.38",
         "@types/react-router-dom": "^5.1.5",
-        "@typescript-eslint/eslint-plugin": "^3.3.0",
-        "@typescript-eslint/parser": "^3.3.0",
-        "autoprefixer": "^9.8.2",
+        "@typescript-eslint/eslint-plugin": "4.2.0",
+        "@typescript-eslint/parser": "4.2.0",
+        "autoprefixer": "10.0.0",
         "babel-loader": "^8.1.0",
-        "css-loader": "4.2.1",
+        "css-loader": "4.3.0",
         "eslint": "^7.3.0",
         "eslint-plugin-react": "^7.20.0",
         "formik": "^2.1.4",
         "husky": "^4.2.5",
+        "jest": "^26.4.2",
         "moment": "^2.27.0",
         "node-sass": "^4.14.1",
-        "postcss": "^7.0.32",
-        "postcss-loader": "^3.0.0",
+        "postcss": "8.0.8",
+        "postcss-loader": "4.0.2",
         "prettier": "^2.0.5",
         "react": "^16.13.1",
         "react-quill": "^1.3.5",
@@ -56,12 +61,12 @@
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-sass": "^1.2.2",
-        "rollup-plugin-terser": "7.0.0",
+        "rollup-plugin-terser": "7.0.2",
         "rollup-plugin-typescript2": "^0.27.1",
-        "sass-loader": "9.0.3",
+        "sass-loader": "10.0.2",
         "style-loader": "^1.2.1",
-        "ts-loader": "8.0.2",
-        "typescript": "^3.9.5",
+        "ts-loader": "8.0.4",
+        "typescript": "4.0.3",
         "url-loader": "^4.1.0"
     },
     "peerDependencies": {
@@ -71,7 +76,12 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn build && git add -A"
+            "pre-commit": "yarn build && git add dist/bundle.js"
+        }
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(s?css|jpg|png|svg)$": "<rootDir>/empty-module.js"
         }
     },
     "keywords": [

@@ -1,143 +1,117 @@
 .react-simple-widget.field-decoration {
-    > .field {
-        > label {
-            font-size: 87.5%;
-            color: var(--rsw-label-color);
-            margin-bottom: 2px;
-        }
-
-        > .widgets {
-            display: flex;
-
-            > .widget {
-                flex: 1 1;
-            }
-        }
+    > label {
+        margin: 0;
+        color: var(--rsw-label-color);
+        font-size: 75%;
     }
 
     > .error {
-        font-size: 80%;
+        margin: 0;
         color: var(--rsw-error-color);
-        margin: 3px 0 0 0;
+        font-size: 75%;
     }
-}
 
-.react-simple-widget.field-decoration.field-decoration-disabled {
-    pointer-events: none;
-    opacity: 0.75;
-}
-
-/* Flat decoration */
-.react-simple-widget.field-decoration.flat-decoration {
-    > .field > .widgets > .widget {
-        padding: 4px 8px;
-        border-radius: 2px;
+    > .field-decoration-content {
+        display: flex;
+        padding: 0;
+        border-radius: 4px;
         border: 1px solid var(--rsw-secondary-theme-color);
         transition: border-color var(--rsw-transition-duration);
+        align-items: center;
+        overflow: hidden;
+
+        > .leading {
+            padding: 0 0 0 10px;
+        }
+
+        > .trailing {
+            padding: 0 10px 0 0;
+        }
+
+        > .widget {
+            flex: 1 1;
+
+            > * {
+                width: 100%;
+                padding: 6px 10px 8px;
+                outline: none;
+                border: none;
+            }
+        }
     }
 }
 
-.react-simple-widget.field-decoration.flat-decoration.field-decoration-has-focus {
-    > .field > .widgets > .widget {
+.react-simple-widget.field-decoration.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.react-simple-widget.field-decoration.has-focus {
+    > .field-decoration-content {
         border-width: 2px;
         border-color: var(--rsw-primary-theme-color);
-    }
-}
-
-.react-simple-widget.field-decoration.flat-decoration.field-decoration-disabled {
-    > .field > .widgets > .widget {
-        border-style: dashed;
     }
 }
 
 /* Underline decoration */
-.react-simple-widget.field-decoration.underline-decoration {
-    > .field {
-        position: relative;
+.react-simple-widget.field-decoration.underline {
+    position: relative;
 
-        > label {
-            margin: 0;
-        }
+    > .field-decoration-content {
+        border: none;
+        border-bottom: 1px solid var(--rsw-secondary-theme-color);
+        border-radius: 0;
 
-        > .widgets > .widget {
-            border-bottom: 1px solid var(--rsw-secondary-theme-color);
-            padding: 0 0 4px 0;
+        > .widget > * {
+            padding: 4px 10px 6px;
         }
     }
 
-    > .field::after {
-        content: "";
+    > .field-decoration-content::after {
         position: absolute;
-        height: 2px;
+        top: 0;
         left: 0;
         right: 100%;
-        bottom: 0;
-        background-color: var(--rsw-primary-theme-color);
-        transition-timing-function: ease-in;
+        bottom: -1px;
+        border-bottom: 2px solid var(--rsw-primary-theme-color);
         transition: right var(--rsw-transition-duration);
+        transition-timing-function: ease-in;
+        content: "";
     }
 }
 
-.react-simple-widget.field-decoration.underline-decoration.field-decoration-has-focus {
-    > .field::after {
+.react-simple-widget.field-decoration.underline.has-focus {
+    > .field-decoration-content::after {
         right: 0;
     }
 }
 
-.react-simple-widget.field-decoration.underline-decoration.field-decoration-disabled {
-    > .field > .widgets > .widget {
-        border-bottom-style: dashed;
-    }
-}
-
 /* Floating label decoration */
-.react-simple-widget.field-decoration.floating-label-decoration {
-    > .field {
-        position: relative;
-        border-radius: 2px;
-        padding: 0.7rem 4px 0.4rem;
-        border: 1px solid var(--rsw-secondary-theme-color);
-        transition: all var(--rsw-transition-duration);
+.react-simple-widget.field-decoration.floating-label {
+    position: relative;
 
-        > label {
-            position: absolute;
-            top: calc(50% - 10px);
-            max-width: calc(100% - 15px);
-            padding: 0 4px;
-            overflow: hidden;
-            transition: top var(--rsw-transition-duration);
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        > .widgets > .widget {
-            padding: 0 4px;
-        }
-    }
-
-    > .error {
-        padding: 0 8px;
-    }
-}
-
-.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-focus {
-    > .field {
-        border-width: 2px;
-        border-color: var(--rsw-primary-theme-color);
-    }
-}
-
-.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-focus,
-.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-has-value {
-    > .field > label {
-        top: -0.65rem;
+    > label {
+        position: absolute;
+        top: var(--floating-label-default-top);
+        left: var(--floating-label-default-left);
+        padding: 0 4px;
+        color: var(--rsw-label-color);
         background-color: var(--rsw-field-decoration-label-bg-color);
+        transition: all var(--rsw-transition-duration);
+        pointer-events: none;
+        white-space: nowrap;
+    }
+
+    .error {
+        padding: 0 12px;
     }
 }
 
-.react-simple-widget.field-decoration.floating-label-decoration.field-decoration-disabled {
-    > .field {
-        border-style: dashed;
+.react-simple-widget.field-decoration.floating-label.has-focus,
+.react-simple-widget.field-decoration.floating-label.has-value {
+    > label {
+        top: var(--floating-label-focused-top);
+        left: var(--floating-label-focused-left);
+        margin: 0 4px !important;
     }
 }
