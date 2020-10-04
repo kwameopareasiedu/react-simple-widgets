@@ -20,16 +20,16 @@
     -   Added [TimePicker](src/form/time-picker/usage.md) widget
     -   Added [TimeField](src/form/time-field/usage.md) widget
     -   Modified [SelectField](src/form/select-field/usage.md) to make option labels `inline`
-    -   Added [useWindowBreakpoints](docs/use-window-breakpoints.md) hook
+    -   Added [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) hook
 
 -   `1.7.4`
 
-    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](docs/use-countdown.md) hook
+    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src/hooks/use-countdown/usage.md) hook
 
 -   `1.7.3`
 
     -   Added [debounce](docs/debounce.md) utility
-    -   Added [useCountdown](docs/use-countdown.md) hook
+    -   Added [useCountdown](src/hooks/use-countdown/usage.md) hook
     -   Added `initialStorageKeys` prop to [ValueStoreProvider](docs/value-store-provider.md) to
         allow pre-existing local storage values to be added to the value store
 
@@ -76,16 +76,16 @@
 
 -   `1.6.0`
 
-    -   Corrected path to [useLoadMore](docs/use-load-more.md) stories in its docs
+    -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
     -   Added story for `bind` property of [DialogProvider](docs/api-reference/dialog-provider.md) widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage in
         [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
     -   Added `text-center` class to [Loader](src/widgets/loader/usage.md) as its added in majority of use cases
-    -   Added [PageActions](docs/page-actions.md) widget
+    -   Added [PageActions](src/widgets/page-actions/usage.md) widget
 
 -   `1.5.0`
 
-    -   Added [useLoadMore hook](docs/use-load-more.md)
+    -   Added [useLoadMore hook](src/hooks/use-load-more/usage.md)
     -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](docs/value-store-provider.md)
         widget. Once a value is persisted, it will automatically be remembered until removed, even
         when the page is refreshed
@@ -108,7 +108,7 @@
 -   `1.3.7`
 
     -   Added focus indicator to [SelectField](src/form/select-field/usage.md) options
-    -   Modified [useQueryParams](docs/use-query-params.md) to update `qp` state object if the whole
+    -   Modified [useQueryParams](src/hooks/use-query-params/usage.md) to update `qp` state object if the whole
         location object changes instead of just `location.search`
 
 -   `1.3.6`
@@ -130,11 +130,11 @@
 -   `1.3.3`
 
     -   Replaced `query-string` with a simpler algorithm for query string to query parameter
-        resolution in [useQueryParams](docs/use-query-params.md)
+        resolution in [useQueryParams](src/hooks/use-query-params/usage.md)
 
 -   `1.3.2`
 
-    -   [useQueryParams](docs/use-query-params.md) now returns and empty object if no query parameter
+    -   [useQueryParams](src/hooks/use-query-params/usage.md) now returns and empty object if no query parameter
         are present in the URL
     -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection
         when shift key is pressed while a date is selected
@@ -187,7 +187,7 @@
 
 -   `1.1.0`
 
-    -   Added [useQueryParams hook](docs/use-query-params.md)
+    -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
     -   Added the [Loader](src/widgets/loader/usage.md) widget
     -   Added the `bind` prop to [DialogProvider](docs/api-reference/dialog-provider.md) to allow binding of
         properties from the host component to the dialog component

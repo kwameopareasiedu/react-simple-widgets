@@ -91,16 +91,16 @@ Widgets under this category are for convenience
 -   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation
     dialog before calling an action
 -   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
--   [PageActions](docs/page-actions.md) - A widget that displays a row of spaced buttons or nothing
-    if no children are specified
--   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL
+-   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons 
+    or nothing if no children are specified
+-   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing the URL
     search string parameters
--   [useLoadMore](docs/use-load-more.md) - A hook that provides methods and state variables to
+-   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to
     implement a load-more-items feature for a list of items that cannot be displayed in a ListView
--   [useCountdown](docs/use-countdown.md) - A hook which provides numeric countdown functionality
+-   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown functionality
 -   [debounce](docs/debounce.md) - Creates a debounced function which is invoked after a specified
     delay after a caller has called it
--   [useWindowBreakpoints](docs/use-window-breakpoints.md) - A hook which provides the window width
+-   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the window width
     category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ### Customization

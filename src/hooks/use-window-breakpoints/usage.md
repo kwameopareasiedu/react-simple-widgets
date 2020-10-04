@@ -1,4 +1,4 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # useWindowBreakpoints
 
@@ -6,12 +6,21 @@ useWindowBreakpoints is a React [hook](https://reactjs.org/docs/hooks-intro.html
 app to be aware of the current window width category. The categories are computed using
 [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
-## API
-
-### useWindowBreakpoints
+## Usage
 
 ```jsx
-const { xs, sm, md, lg, xl, width } = useWindowBreakpoints();
+import { useEffect } from "react";
+import { useWindowBreakpoints } from "react-simple-widgets";
+
+export function WindowBreakpointsUsage() {
+    const { xs, sm, md, lg, xl, width } = useWindowBreakpoints();
+
+    useEffect(() => {
+        // Query parameters have changed
+    }, [xs, sm, md, lg, xl, width]);
+
+    return null;
+}
 ```
 
 -   `xs: boolean`
@@ -37,7 +46,3 @@ const { xs, sm, md, lg, xl, width } = useWindowBreakpoints();
 -   `width: number`
 
     The current `innerWidth` of the window
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/misc/use-window-breakpoints/index.stories.tsx)

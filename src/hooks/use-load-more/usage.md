@@ -1,4 +1,4 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # useLoadMore
 
@@ -6,12 +6,16 @@ useLoadMore is a React [hook](https://reactjs.org/docs/hooks-intro.html) that pr
 state variables to implement a load-more-items feature for a list of items that cannot be displayed
 in a ListView
 
-## API
-
-### useQueryParams
+## Usage
 
 ```jsx
-const { page, items, canLoadMore, shouldLoadMore, onLoadMore, onLoadMoreSuccess, onLoadMoreFailed } = useLoadMore();
+import { useLoadMore } from "react-simple-widgets";
+
+export function LoadMoreUsage() {
+    const { page, items, endOfItems, loadTriggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed } = useLoadMore();
+
+    return null;
+}
 ```
 
 -   `page: number`
@@ -22,19 +26,19 @@ const { page, items, canLoadMore, shouldLoadMore, onLoadMore, onLoadMoreSuccess,
 
     This is the list of loaded items
 
--   `canLoadMore: boolean`
+-   `endOfItems: boolean`
 
-    This indicates whether your load-more button should be enabled/visible. When the items length
-    reaches the total number of items, this is false
+    Indicates whether the source of the items has reached its end. You can use this to show/hide
+    your button to load more items
 
--   `shouldLoadMore: number`
+-   `loadTriggered: number`
 
     This is updated anytime `onLoadMore()` is called. You should connect this to the effect that
     loads the items from your API service
 
--   `onLoadMore(resetBeforeLoad?: boolean) => void`
+-   `loadMore(resetBeforeLoad?: boolean) => void`
 
-    When this function is called, `page` is incremented and `shouldLoadMore` is updated to trigger
+    When this function is called, `page` is incremented and `loadTriggered` is updated to trigger
     any connected effect to run. Within that effect, `page` will have the new incremented value
 
     -   `resetBeforeLoad?: boolean`
@@ -58,7 +62,3 @@ const { page, items, canLoadMore, shouldLoadMore, onLoadMore, onLoadMoreSuccess,
 
     This should be called when the API could not fetch the specified page of items. It decrements
     the `page` to make the next request have the correct page number
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/misc/use-load-more/index.stories.tsx)

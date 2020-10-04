@@ -4,9 +4,7 @@
 
 Breadcrumbs is a widget that provides breadcrumb styling for its link children
 
-## API
-
-### Breadcrumbs
+## Usage
 
 ```jsx
 import { Breadcrumbs, Link } from "react-simple-widgets";
