@@ -13,7 +13,7 @@
 -   `1.10.0`
 
     -   Added start and end pages display if current `page > start + 3` and `page < end - 3` respectively
-        in [ListView](docs/list-view.md) widget
+        in [ListView](src/collection/list-view/usage.md) widget
 
 -   `1.8.0`
 
@@ -43,7 +43,7 @@
 
     -   Changed `display` of links in [Breadcrumbs](docs/breadcrumbs.md) from `inline-block` to
         `inline`
-    -   Modify [ListView](docs/list-view.md) to do nothing if options builder returns `null` or an
+    -   Modify [ListView](src/collection/list-view/usage.md) to do nothing if options builder returns `null` or an
         empty array of options instead of displaying a dialog with no options
 
 -   `1.7.0`
@@ -51,24 +51,24 @@
     -   Modified theme color of success messages of [FlashProvider](docs/flash-provider.md)
     -   Added CSS property `word-break: break-word` to messages of
         [FlashProvider](docs/flash-provider.md)
-    -   Changed CSS property `word-break` of [ListView](docs/list-view.md) cells from `break-all`
+    -   Changed CSS property `word-break` of [ListView](src/collection/list-view/usage.md) cells from `break-all`
         to `break-word`
-    -   Fixed bug causing inconsistent borders in [ListView](docs/list-view.md) item options
-    -   Modified [ListView](docs/list-view.md) options to use a builder pattern instead of an array
+    -   Fixed bug causing inconsistent borders in [ListView](src/collection/list-view/usage.md) item options
+    -   Modified [ListView](src/collection/list-view/usage.md) options to use a builder pattern instead of an array
         of options. This allows for more control over options shown for each list item
 
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of
         [ObjectView](src/collection/object-view/usage.md)
-    -   Added `word-break` styling to cells of [ListView](docs/list-view.md) to force text overflow
+    -   Added `word-break` styling to cells of [ListView](src/collection/list-view/usage.md) to force text overflow
         if content cannot fit on one line
-    -   Added auto scroll-to-top-of-list feature to [ListView](docs/list-view.md) when the items
+    -   Added auto scroll-to-top-of-list feature to [ListView](src/collection/list-view/usage.md) when the items
         list is modified by a page change
     -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values
         instead of just `string`
-    -   Reduces header vertical padding in [ListView](docs/list-view.md)
-    -   Added item options confirmation feature to [ListView](docs/list-view.md)
+    -   Reduces header vertical padding in [ListView](src/collection/list-view/usage.md)
+    -   Added item options confirmation feature to [ListView](src/collection/list-view/usage.md)
 
 -   `1.6.1`
 
@@ -100,7 +100,7 @@
 
 -   `1.4.0`
 
-    -   Added `onClick` prop to [ListView](docs/list-view.md) widget
+    -   Added `onClick` prop to [ListView](src/collection/list-view/usage.md) widget
     -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-dialog/usage.md) widget
     -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
     -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
@@ -124,7 +124,7 @@
 
 -   `1.3.4`
 
-    -   Modified [ListView](docs/list-view.md) to limit styling to immediate children and not
+    -   Modified [ListView](src/collection/list-view/usage.md) to limit styling to immediate children and not
         affect content within the cells
 
 -   `1.3.3`
@@ -169,8 +169,8 @@
 
 -   `1.2.2`
 
-    -   Added a "No items to display" message to [ListView](docs/list-view.md) if list is empty
-    -   Added `options.busy` prop to [ListView](docs/list-view.md) to determine if a busy indicator
+    -   Added a "No items to display" message to [ListView](src/collection/list-view/usage.md) if list is empty
+    -   Added `options.busy` prop to [ListView](src/collection/list-view/usage.md) to determine if a busy indicator
         should be displayed beside and item
 
 -   `1.2.1`
@@ -181,7 +181,7 @@
 
 -   `1.2.0`
 
-    -   Grouped props of [ListView](docs/list-view.md). This puts related props in similar objects which
+    -   Grouped props of [ListView](src/collection/list-view/usage.md). This puts related props in similar objects which
         are enabled when specified or disabled when not
     -   Made `message` parameter of flash functions in [FlashProvider](docs/flash-provider.md) optional
 

@@ -1,18 +1,28 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # ListView
 
 This widget is a responsive table-like widget for rendering tabular information. It collapses the
-view into cards on smaller displays to allow content to fit on screen. By default, options for
-items are shown as a dialog thus you need a [DialogProvider](api-reference/dialog-provider.md) as an ancestor in
-the widget tree
+view into cards on smaller displays to allow content to fit on screen. Options for list items
+are displayed using a dialog thus you need a
+[DialogProvider](../../../docs/api-reference/dialog-provider.md) as an ancestor in the widget tree
 
-## API
-
-### ListView
+## Usage
 
 ```jsx
-<ListView busy={busy} items={items} props={props} pagination={pagination} sort={sort} options={options} breakpoint={breakpoint} skipIf={skipIf} />
+import { ListView } from "react-simple-widgets";
+
+<ListView
+    busy={busy}
+    sort={sort}
+    items={items}
+    props={props}
+    options={options}
+    breakpoint={breakpoint}
+    condensed={condensed}
+    pagination={pagination}
+    keyFn={skipIf}
+/>;
 ```
 
 -   `items: Array<any>`
@@ -30,8 +40,9 @@ the widget tree
     -   If the second array is a `function`, the widget will pass each item along with its index
         to this function, and it should return the value to be displayed in the column
 
-    > For more information, see the [stories](../src/list/list-view/index.stories.tsx) for this
-    > widget
+-   `condensed?: boolean`
+
+    Indicates whether or not to reduce the space used in the table cells
 
 -   `busy?: boolean`
 
@@ -69,25 +80,30 @@ the widget tree
 -   `sort?: IListViewSort`
 
     If specified, the sorting feature will be enabled. This displays the sorting icons on the
-    column headers. The has the structure of `{ column: string, order: ListViewSortOrder, onSort: (column: string, order: ListViewSortOrder) => void }`
+    column headers. The `sort` prop is an object whose properties are described below:
 
-    -   `column: string`
+    -   `columns: Array<string>`
 
-        This is the column being sorted. This should be the same as the first items in the `props`
+        The array of sortable column names
+
+    -   `columnIndex: number`
+
+        This is the index of `columns` which is the active sorted column
 
     -   `order: ListViewSortOrder`
 
         This is the sorting order. It can be `ListViewSortOrder.NONE`, `ListViewSortOrder.ASC` or
         `ListViewSortOrder.DESC`
 
-    -   `onSort: (label: string, order: ListViewSortOrder) => void`
+    -   `onSort: (columnIndex: number, order: ListViewSortOrder) => void`
 
-        Called when a column is sorted. It is called with the column name (as specified by `props`)
+        Called when a column is sorted. It is called with the selected column index of `columns`
         and the sorting order
 
 -   `options?: IListViewOptions`
 
-    If specified, the options button is enabled for each list item
+    If specified, the options button is enabled for each list item. The options are provided by
+    the [ConfirmDialog](../../widgets/confirm-dialog/usage.md) widget
 
     -   `busy?: (item: any, itemIndex?: number) => boolean`
 
@@ -98,7 +114,8 @@ the widget tree
     -   `builder: (item: any, itemIndex?: number) => Array<IListViewOptionItem>`
 
         The options builder function. For each list item, the item and its index are passed to it
-        and it must return the list of options for the item. The properties of an option item are:
+        and it must return the list of options for the item. `IListViewOptionItem` represents an
+        object whose properties are described below:
 
         -   `label: string`
 
@@ -108,27 +125,23 @@ the widget tree
 
             Called when the options is clicked. It receives the item that was clicked and its index
 
-        -   `confirmation?: any`
+        -   `confirmation?: [Confirmation, any]`
 
-            If specified, this is shown as a confirmation message when the option is clicked before
-            `builder.onClick` is called
+            This is a two-element array representing the confirmation type and the confirmation
+            message to be show in the [ConfirmDialog](../../widgets/confirm-dialog/usage.md) widget.
 
-        -   `confirmationTheme?: ConfirmDialogTheme`
+            -   Element 1 - `Confirmation`
 
-            The theme of the [confirmation dialog](../src/widgets/confirm-dialog/usage.md#api). This is ignored if
-            `builder.confirmation` is not specified
+                See [ConfirmDialog docs](../../widgets/confirm-dialog/usage.md)
 
--   `onClick?: (item: any, itemIndex?: number) => void`
+            -   Element 2 - `any`
 
-    If specified the click handler is enabled for each item. The item and its index are passed to
-    this function. When specified, hovering on an item will highlight it and the cursor will be a
-    pointer
+                This is the confirmation message to be displayed in the dialog
 
--   `skipIf?: (item: any) => boolean`
+            > If this prop is specified for an options item, the `ConfirmDialog` will popup when
+            > that options is selected
 
-    Determines if an item is skipped during rendering. It is passed the item under iteration and
-    should return `true` to skip it or `false` otherwise
+-   `keyFn: (item: any, itemIndex?: number) => void`
 
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/list/list-view/index.stories.tsx)
+    `ListView` renders its items as a list and in React, each item requires a unique key. This prop
+    is a function which is passed the item and its index and should return a unique key for each

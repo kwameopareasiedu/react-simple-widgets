@@ -7,11 +7,7 @@ import SortDownIcon from "../../assets/sort-down.svg";
 import SortUpIcon from "../../assets/sort-up.svg";
 import SortIcon from "../../assets/sort-none.svg";
 
-interface IListViewSorter extends ListViewSort {
-    columns: Array<string>;
-}
-
-export const ListViewSorter = ({ columns, columnIndex, order, onSort }: IListViewSorter): any => {
+export const ListViewSorter = ({ columns, columnIndex, order, onSort }: ListViewSort): any => {
     return (
         <div className="react-simple-widget sorter">
             <div className="sorter-content">
