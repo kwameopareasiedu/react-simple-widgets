@@ -1,66 +1,55 @@
-import { Context, FunctionComponent } from "react";
-import {
-    IBreadcrumbs,
-    IBusyButton,
-    IConfirmDialog,
-    ICustomField,
-    IDateField,
-    IDatePicker,
-    IDialogProvider,
-    IDialogProviderContext,
-    IDropdownField,
-    IFieldDecoration,
-    IFileField,
-    IFilePicker,
-    IFlashProvider,
-    IFlashProviderContext,
-    IListView,
-    ILoader,
-    IObjectView,
-    IPageActions,
-    IPageTransitionLink,
-    IPageTransitionProvider,
-    IPageTransitionProviderContext,
-    IPageTransitionView,
-    ISelectField,
-    ITextField,
-    ITimeField,
-    ITimePicker,
-    IUseCountdown,
-    IUseLoadMore,
-    IValueStoreProvider,
-    IValueStoreProviderContext
-} from "../types";
+import { AllHTMLAttributes, Context, FunctionComponent } from "react";
+import { DialogProviderContext, DialogProvider } from "../src/providers/dialog-provider/types";
+import { FlashProviderContext, FlashProvider } from "../src/providers/flash-provider/types";
+import { ValueStoreProviderContext, ValueStoreProvider } from "../src/providers/value-store-provider/types";
+import { TransitionProviderContext, TransitionProvider, TransitionView, TransitionLink } from "../src/providers/transition-provider/types";
+import { FieldDecoration } from "../src/form/field-decoration/types";
+import { CustomField } from "../src/form/custom-field/types";
+import { TextField } from "../src/form/text-field/types";
+import { DropdownField } from "../src/form/dropdown-field/types";
+import { SelectField } from "../src/form/select-field/types";
+import { DateField } from "../src/form/date-field/types";
+import { FileField } from "../src/form/file-field/types";
+import { TimeField } from "../src/form/time-field/types";
+import { DatePicker } from "../src/form/date-picker/types";
+import { FilePicker } from "../src/form/file-picker/types";
+import { TimePicker } from "../src/form/time-picker/types";
+import { ListView } from "../src/collection/list-view/types";
+import { ObjectView } from "../src/collection/object-view/types";
+import { BusyButton } from "../src/widgets/busy-button/types";
+import { ConfirmDialog } from "../src/widgets/confirm-dialog/types";
+import { UseLoadMore } from "../src/hooks/use-load-more/types";
+import { UseCountdown } from "../src/hooks/use-countdown/types";
 
-export const DialogProviderContext: Context<IDialogProviderContext>;
-export const DialogProvider: FunctionComponent<IDialogProvider>;
-export const FlashProviderContext: Context<IFlashProviderContext>;
-export const FlashProvider: FunctionComponent<IFlashProvider>;
-export const ValueStoreProviderContext: Context<IValueStoreProviderContext>;
-export const ValueStoreProvider: FunctionComponent<IValueStoreProvider>;
-export const PageTransitionProviderContext: Context<IPageTransitionProviderContext>;
-export const PageTransitionProvider: FunctionComponent<IPageTransitionProvider>;
-export const PageTransitionView: FunctionComponent<IPageTransitionView>;
-export const Link: FunctionComponent<IPageTransitionLink>;
-export const DatePicker: FunctionComponent<IDatePicker>;
-export const FilePicker: FunctionComponent<IFilePicker>;
-export const TimePicker: FunctionComponent<ITimePicker>;
-export const ListView: FunctionComponent<IListView>;
-export const ObjectView: FunctionComponent<IObjectView>;
-export const TextField: FunctionComponent<ITextField>;
-export const DropdownField: FunctionComponent<IDropdownField>;
-export const SelectField: FunctionComponent<ISelectField>;
-export const DateField: FunctionComponent<IDateField>;
-export const FileField: FunctionComponent<IFileField>;
-export const TimeField: FunctionComponent<ITimeField>;
-export const CustomField: FunctionComponent<ICustomField>;
-export const FieldDecoration: FunctionComponent<IFieldDecoration>;
-export const Breadcrumbs: FunctionComponent<IBreadcrumbs>;
-export const BusyButton: FunctionComponent<IBusyButton>;
-export const ConfirmDialog: FunctionComponent<IConfirmDialog>;
-export const Loader: FunctionComponent<ILoader>;
-export const PageActions: FunctionComponent<IPageActions>;
+export const DialogProviderContext: Context<DialogProviderContext>;
+export const DialogProvider: FunctionComponent<DialogProvider>;
+export const FlashProviderContext: Context<FlashProviderContext>;
+export const FlashProvider: FunctionComponent<FlashProvider>;
+export const ValueStoreProviderContext: Context<ValueStoreProviderContext>;
+export const ValueStoreProvider: FunctionComponent<ValueStoreProvider>;
+export const TransitionProviderContext: Context<TransitionProviderContext>;
+export const TransitionProvider: FunctionComponent<TransitionProvider>;
+export const TransitionView: FunctionComponent<TransitionView>;
+export const Link: FunctionComponent<TransitionLink>;
+export const FieldDecoration: FunctionComponent<FieldDecoration>;
+export const CustomField: FunctionComponent<CustomField>;
+export const TextField: FunctionComponent<TextField>;
+export const DropdownField: FunctionComponent<DropdownField>;
+export const SelectField: FunctionComponent<SelectField>;
+export const DateField: FunctionComponent<DateField>;
+export const FileField: FunctionComponent<FileField>;
+export const TimeField: FunctionComponent<TimeField>;
+export const DatePicker: FunctionComponent<DatePicker>;
+export const FilePicker: FunctionComponent<FilePicker>;
+export const TimePicker: FunctionComponent<TimePicker>;
+export const ListView: FunctionComponent<ListView>;
+export const ObjectView: FunctionComponent<ObjectView>;
+export const Breadcrumbs: FunctionComponent<AllHTMLAttributes<HTMLDivElement>>;
+export const BusyButton: FunctionComponent<BusyButton>;
+export const ConfirmDialog: FunctionComponent<ConfirmDialog>;
+export const Loader: FunctionComponent<AllHTMLAttributes<HTMLSpanElement>>;
+export const PageActions: FunctionComponent<AllHTMLAttributes<HTMLDivElement>>;
 export const useQueryParams: () => any;
-export const useLoadMore: () => IUseLoadMore;
-export const useCountdown: (delay: number) => IUseCountdown;
+export const useLoadMore: () => UseLoadMore;
+export const useCountdown: (delay: number) => UseCountdown;
 export const debounce: (label: string, callback: Function, delay: number) => void;
