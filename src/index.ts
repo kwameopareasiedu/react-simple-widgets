@@ -20,6 +20,7 @@ export * from "./form/time-field";
 export * from "./widgets/loader";
 export * from "./widgets/busy-button";
 export * from "./widgets/confirm-dialog";
+export * from "./widgets/breadcrumbs";
 
 export * from "./collection/list-view";
 export * from "./collection/object-view";

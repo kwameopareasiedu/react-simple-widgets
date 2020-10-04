@@ -1,4 +1,4 @@
-[Home](../README.md)
+[Home](../../../README.md)
 
 # Breadcrumbs
 
@@ -9,6 +9,8 @@ Breadcrumbs is a widget that provides breadcrumb styling for its link children
 ### Breadcrumbs
 
 ```jsx
+import { Breadcrumbs, Link } from "react-simple-widgets";
+
 <Breadcrumbs>
     <Link to="">Home</Link>
     <Link to="">Page 1</Link>
@@ -17,7 +19,3 @@ Breadcrumbs is a widget that provides breadcrumb styling for its link children
     <Link to="">Sub-sub-path 1</Link>
 </Breadcrumbs>
 ```
-
-## Usage
-
-A complete usage can be found in the [Storybook stories for this widget](../src/misc/breadcrumbs/index.stories.tsx)

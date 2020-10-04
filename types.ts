@@ -1,8 +1,5 @@
 import { AllHTMLAttributes } from "react";
 
-/* Breadcrumbs */
-export interface IBreadcrumbs extends AllHTMLAttributes<HTMLDivElement> {}
-
 /* UseLoadMore */
 export interface IUseLoadMore {
     page: number;

@@ -90,7 +90,7 @@ Widgets under this category are for convenience
     indicator if busy
 -   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation
     dialog before calling an action
--   [Breadcrumbs](docs/breadcrumbs.md) - A breadcrumb link container widget
+-   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
 -   [PageActions](docs/page-actions.md) - A widget that displays a row of spaced buttons or nothing
     if no children are specified
 -   [useQueryParams](docs/use-query-params.md) - A hook that returns a object containing the URL

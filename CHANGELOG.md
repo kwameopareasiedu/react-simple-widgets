@@ -41,7 +41,7 @@
 
 -   `1.7.1`
 
-    -   Changed `display` of links in [Breadcrumbs](docs/breadcrumbs.md) from `inline-block` to
+    -   Changed `display` of links in [Breadcrumbs](src/widgets/breadcrumbs/usage.md) from `inline-block` to
         `inline`
     -   Modify [ListView](src/collection/list-view/usage.md) to do nothing if options builder returns `null` or an
         empty array of options instead of displaying a dialog with no options
