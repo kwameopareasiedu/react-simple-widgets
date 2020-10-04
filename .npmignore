@@ -4,6 +4,8 @@
 .storybook
 node_modules
 src
+!src/**/types.ts
+*.tgz
 *.iml
 .babelrc.js
 .eslintrc
