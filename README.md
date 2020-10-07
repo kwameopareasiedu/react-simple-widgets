@@ -9,6 +9,14 @@ This is a collection of customizable widgets to help accelerate your React app d
 widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and
 more.
 
+## Is react-simple-widgets right for me?
+
+As with any UI library, it's best to get a feel of it before installing. We've compiled the
+storybook samples of all widgets in this library. 
+
+Click [here](https://kwameopareasiedu.github.io/react-simple-widgets/) to test them out to seem if 
+this library offers what you want before committing to installing it in your project.
+
 ## Installing
 
 ```
