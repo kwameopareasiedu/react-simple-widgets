@@ -42,7 +42,7 @@ First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 `my-dialog.tsx`
 
 ```tsx
-import { DialogHelper } from "react-simple-widgets/types";
+import { DialogHelper } from "react-simple-widgets/dist/constants";
 
 interface MyDialogProps {
     helper: DialogHelper;
@@ -70,7 +70,7 @@ Next, we show `MyDialog` from our application.
 ```tsx
 import { useContext } from "react";
 import { DialogProviderContext } from "react-simple-widgets";
-import { DialogSize } from "react-simple-widgets/types";
+import { DialogSize } from "react-simple-widgets/dist/constants";
 import { MyDialog } from "./my-dialog.tsx";
 
 export function App() {
@@ -103,7 +103,7 @@ First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 `my-dialog.tsx`
 
 ```tsx
-import { IDialogHelper } from "react-simple-widgets/types";
+import { IDialogHelper } from "react-simple-widgets/dist/constants";
 
 interface MyDialogProps {
     helper: IDialogHelper;
@@ -141,7 +141,7 @@ Next, we show `MyDialog` from our application.
 ```tsx
 import { useContext } from "react";
 import { DialogProviderContext } from "react-simple-widgets";
-import { DialogSize } from "react-simple-widgets/types";
+import { DialogSize } from "react-simple-widgets/dist/constants";
 import { MyDialog } from "./my-dialog.tsx";
 
 export function App() {

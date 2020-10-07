@@ -31,8 +31,8 @@ ReactDOM.render(
 This makes the `ValueStoreProvider` context available to the rest of the application. The context
 contains the function needed to use the storage functions.
 
-> If you have existing keys in your local storage you want to be managed by the provider, specify
-> their keys in `initialKeys` prop
+> If you have existing values in your local storage that you want to be managed by the provider,
+> specify their keys in the optional `initialKeys` prop
 
 ## Persist/Save values within your app
 
