@@ -9,16 +9,10 @@ This is a collection of customizable widgets to help accelerate your React app d
 widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and
 more.
 
-### Installing
+## Installing
 
 ```
 yarn add -D react-simple-widgets
-```
-
-or
-
-```
-npm i -D react-simple-widgets
 ```
 
 This libraries requires [formik](https://jaredpalmer.com/formik/), [react](https://reactjs.org/) and
@@ -28,15 +22,11 @@ have these installed in your application as well.
 You can install these dependencies with `yarn add -D react react-router-dom formik` or
 `npm i -D react react-router-dom formik`
 
----
+## Migrating
 
 **_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
 
----
-
-### Widgets
-
-#### Providers
+## Providers
 
 Providers wrap around you app and provide globally accessible functionality to all parts of your app
 
@@ -49,7 +39,7 @@ Providers wrap around you app and provide globally accessible functionality to a
 -   [TransitionProvider](src/providers/transition-provider/usage.md) - Provides a page transition
     framework for navigating between different pages of your app
 
-#### Form
+## Form
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
@@ -69,7 +59,7 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 -   [TimeField](src/form/time-field/usage.md) - A form wrapper widget for the
     [TimePicker](src/form/time-picker/usage.md)
 
-#### Pickers
+## Pickers
 
 Pickers allow you to select some complex data type
 
@@ -79,7 +69,7 @@ Pickers allow you to select some complex data type
     date selection as well as month selection
 -   [TimePicker](src/form/time-picker/usage.md) - A 12-hour time picker
 
-#### List
+## List
 
 Widgets here operate on list data
 
@@ -88,7 +78,7 @@ Widgets here operate on list data
 -   [ObjectView](src/collection/object-view/usage.md) - A widget that renders an object's data in a
     tabular form
 
-#### Misc
+## Misc
 
 Widgets under this category are for convenience
 
@@ -100,6 +90,9 @@ Widgets under this category are for convenience
 -   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
 -   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons
     or nothing if no children are specified
+
+## Hooks
+
 -   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing
     the URL search string parameters
 -   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state
@@ -107,15 +100,18 @@ Widgets under this category are for convenience
     in a ListView
 -   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown
     functionality
--   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a
-    specified delay after a caller has called it
 -   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the
     window width category data according to
     [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
-### Customization
+## Utils
 
-#### Theming
+-   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a
+    specified delay after a caller has called it
+
+## Customization
+
+### Theming
 
 The colors used by the widgets are controlled by CSS variables and you can customize them to suit
 your application's theme
@@ -143,7 +139,7 @@ The following variables are widget specific
 | `--rsw-flash-view-info-theme-color`     | Controls the theme color of information flash message dialogs created by the `FlashProvider` widget    | `#55ddff`     |
 | `--rsw-flash-view-success-theme-color`  | Controls the theme color of success flash message dialogs created by the `FlashProvider` widget        | `#7fff2a`     |
 
-### Storybook samples
+## Storybook samples
 
 This library is built with [Storybook](https://storybook.js.org/) and each widget has its own set
 of stories demonstrating use cases of the widget. When executed, Storybook will open a web page
@@ -155,11 +151,11 @@ To execute the storybook, follow these steps:
 2.  Run `npm install` to install the project dependencies
 3.  Run `npm run storybook`
 
-### Maintainers
+## Maintainers
 
 -   [Kwame Opare Asiedu](https://github.com/kwameopareasiedu/)
 
-### Support
+## Support
 
 If you'd like to support this project, you can do so by becoming a patreon on
 [Patreon](https://www.patreon.com/kwameopareasiedu)
@@ -167,6 +163,6 @@ If you'd like to support this project, you can do so by becoming a patreon on
 It would be really helpful if you can star the project on
 [Github](https://github.com/kwameopareasiedu/react-simple-widgets)
 
-### Changelog
+## Changelog
 
 [View changelog](CHANGELOG.md)
