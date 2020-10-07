@@ -18,6 +18,7 @@
         "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
         "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
         "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
+        "build-storybook": "build-storybook -o ./docs",
         "test": "jest"
     },
     "dependencies": {},

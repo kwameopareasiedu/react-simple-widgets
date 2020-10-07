@@ -5,6 +5,7 @@
 node_modules
 src
 !src/**/types.ts
+docs
 *.tgz
 *.iml
 .babelrc.js
