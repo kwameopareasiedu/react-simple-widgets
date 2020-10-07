@@ -9,7 +9,7 @@ This widget renders properties of an object using a table
 ```jsx
 import { ObjectView } from "react-simple-widgets";
 
-<ObjectView object={object} props={props} splitRatio={splitRatio} condensed={condensed} />
+<ObjectView object={object} props={props} splitRatio={splitRatio} condensed={condensed} />;
 ```
 
 -   `object: any`
@@ -19,7 +19,8 @@ import { ObjectView } from "react-simple-widgets";
 -   `props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>`
 
     The properties to display as columns for each list item. This is a two element array which
-    of `[label, value property or function]`. The **label** is displayed as the column header
+    of is composed of `[label, value property or function]`. The **label** is displayed as the
+    column header
 
     -   If the second array item is a `string`, then for each item in `items` the widget will
         display the property matching this string and display that as the column value
@@ -33,4 +34,4 @@ import { ObjectView } from "react-simple-widgets";
 
 -   `condensed?: boolean`
 
-    Indicates whether or not to reduce the space used in the table cells
+    Indicates whether or not to reduce the padding used in the table cells

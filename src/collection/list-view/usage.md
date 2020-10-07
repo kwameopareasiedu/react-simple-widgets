@@ -4,13 +4,14 @@
 
 This widget is a responsive table-like widget for rendering tabular information. It collapses the
 view into cards on smaller displays to allow content to fit on screen. Options for list items
-are displayed using a dialog thus you need a
-[DialogProvider](../../../docs/api-reference/dialog-provider.md) as an ancestor in the widget tree
+are displayed using a dialog thus you need a [DialogProvider](../../providers/dialog-provider/usage.md)
+as an ancestor in the widget tree
 
 ## Usage
 
 ```jsx
 import { ListView } from "react-simple-widgets";
+import { ListViewSortOrder, Confirmation } from "react-simple-widgets/dist/constants";
 
 <ListView
     busy={busy}
@@ -18,10 +19,10 @@ import { ListView } from "react-simple-widgets";
     items={items}
     props={props}
     options={options}
-    breakpoint={breakpoint}
     condensed={condensed}
+    breakpoint={breakpoint}
     pagination={pagination}
-    keyFn={skipIf}
+    keyFn={keyFn}
 />;
 ```
 
@@ -32,7 +33,8 @@ import { ListView } from "react-simple-widgets";
 -   `props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>`
 
     The properties to display as columns for each list item. This is a two element array which
-    of `[label, value property or function]`. The **label** is displayed as the column header
+    of is composed of `[label, value property or function]`. The **label** is displayed as the
+    column header
 
     -   If the second array item is a `string`, then for each item in `items` the widget will
         display the property matching this string and display that as the column value
@@ -42,7 +44,7 @@ import { ListView } from "react-simple-widgets";
 
 -   `condensed?: boolean`
 
-    Indicates whether or not to reduce the space used in the table cells
+    Indicates whether or not to reduce the padding used in the table cells
 
 -   `busy?: boolean`
 
@@ -50,9 +52,17 @@ import { ListView } from "react-simple-widgets";
 
 -   `pagination?: IListViewPagination`
 
-    If specified, the pagination footer will be enabled for this widget. This has the structure
-    of `{ page: number, total: number, pageSize: number, onPageChange: (page: number) => void }`.
-    The pagination footer contain the links for traversing the pages.
+    If specified, the pagination footer will be enabled for this widget. The pagination footer
+    contain the links for traversing the pages. This property has the following structure:
+
+    ```
+    {
+        page: number,
+        total: number,
+        pageSize: number,
+        onPageChange: (page: number) => void
+    }
+    ```
 
     -   `page: number`
 
@@ -79,8 +89,18 @@ import { ListView } from "react-simple-widgets";
 
 -   `sort?: IListViewSort`
 
-    If specified, the sorting feature will be enabled. This displays the sorting icons on the
-    column headers. The `sort` prop is an object whose properties are described below:
+    If specified, the sorting feature will be enabled. This displays the sorting select above the
+    widget with the order button beside it. The `sort` prop is an object with the following
+    structure:
+
+    ```
+    {
+        columns: Array<string>,
+        columnIndex: number,
+        order: ListViewSortOrder,
+        onSort: (columnIndex: number, order: ListViewSortOrder) => void
+    }
+    ```
 
     -   `columns: Array<string>`
 
@@ -103,19 +123,41 @@ import { ListView } from "react-simple-widgets";
 -   `options?: IListViewOptions`
 
     If specified, the options button is enabled for each list item. The options are provided by
-    the [ConfirmDialog](../../widgets/confirm-dialog/usage.md) widget
+    the [ConfirmDialog](../../widgets/confirm-dialog/usage.md) widget. This has the following
+    structure:
+
+    ```
+    {
+        busy?: (item: any, itemIndex: number) => boolean,
+        builder: (item: any, itemIndex: number) => Array<ListViewOption>
+    }
+    ```
 
     -   `busy?: (item: any, itemIndex?: number) => boolean`
 
-        If specified and returns true, the options button for the item is disabled and a loading
-        indicator is shown in its place. This is useful if some long-running operation is being
-        carried out specific list items
+        This is a function that is passed each item in the [`items`](#usage) and the corresponding
+        indices.
 
-    -   `builder: (item: any, itemIndex?: number) => Array<IListViewOptionItem>`
+        If it is specified and returns `true` for an item, the options button for the item in the
+        list is disabled and a loading indicator is shown in its place. This is useful if some
+        long-running operation is being carried out for specific list items
 
-        The options builder function. For each list item, the item and its index are passed to it
-        and it must return the list of options for the item. `IListViewOptionItem` represents an
-        object whose properties are described below:
+    -   `builder: (item: any, itemIndex?: number) => Array<ListViewOption>`
+
+        This is a function that is passed each item in the [`items`](#usage) and the corresponding
+        indices.
+
+        For each list item, the item and its index are passed to it and it must return the list of
+        options for the item. An option item is represented by the `ListViewOption` whose structure
+        is shown below:
+
+        ```
+        {
+            label: string,
+            confirmation?: [Confirmation, any],
+            onClick: (item: any, itemIndex?: number) => void
+        }
+        ```
 
         -   `label: string`
 
@@ -130,11 +172,11 @@ import { ListView } from "react-simple-widgets";
             This is a two-element array representing the confirmation type and the confirmation
             message to be show in the [ConfirmDialog](../../widgets/confirm-dialog/usage.md) widget.
 
-            -   Element 1 - `Confirmation`
+            -   Index 0 - `Confirmation`
 
                 See [ConfirmDialog docs](../../widgets/confirm-dialog/usage.md)
 
-            -   Element 2 - `any`
+            -   Index 1 - `any`
 
                 This is the confirmation message to be displayed in the dialog
 
@@ -145,3 +187,4 @@ import { ListView } from "react-simple-widgets";
 
     `ListView` renders its items as a list and in React, each item requires a unique key. This prop
     is a function which is passed the item and its index and should return a unique key for each
+    item

@@ -3,6 +3,11 @@
 This guide covers all the breaking changes that you need to know in this version as well as how to
 migrate your applications to `react-simple-widgets` v2.0.0
 
+## Types
+
+-   Imports from `react-simple-widgets/types` have been moved to
+    `react-simple-widgets/dist/constants`
+
 ## DialogProvider
 
 -   `onDialogDismissed` function option has been replaced with `onDismissed`
