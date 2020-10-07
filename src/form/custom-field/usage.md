@@ -5,8 +5,6 @@
 This widget is a form field wrapper for an input component whose value is to be included in a
 [Formik](https://jaredpalmer.com/formik/) form.
 
-The following guide demonstrates how to use the `CustomField`
-
 ## Usage
 
 ```jsx
@@ -16,17 +14,12 @@ import { CustomField } from "react-simple-widgets";
     {({ value, touched, error, setValue, setTouched, setError }) => {
         // Return custom component
     }}
-</CustomField>
+</CustomField>;
 ```
 
 -   `name: string`
 
     The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
-
--   `errorTransformer?: (err: any) => string`
-
-    An optional error transform function. It is passed the error (if any) from the Formik form and
-    you can return a custom error message
 
 -   `value: any`
 
@@ -54,12 +47,17 @@ import { CustomField } from "react-simple-widgets";
     Sets the error of the widget within the form holder. A widget with an error will prevent
     the form from submitting
 
-## Usage
+-   `errorTransformer?: (err: any) => string`
 
-This widget is used to style the other form widgets provided in this library. You can view each
+    An optional error transform function. It is passed the error (if any) from the Formik form and
+    you can return a custom error message
+
+---
+
+This widget is the base for the other form widgets provided in this library. You can view each
 widget's source code to see how this widget is used
 
--   [TextField](../src/form/text-field/index.tsx)
--   [DropdownField](../src/form/dropdown-field/index.tsx)
--   [SelectField](../src/form/select-field/index.tsx)
--   [FileField](../src/form/file-field/index.tsx)
+-   [TextField](../text-field/index.tsx)
+-   [DropdownField](../dropdown-field/index.tsx)
+-   [SelectField](../select-field/index.tsx)
+-   [FileField](../file-field/index.tsx)

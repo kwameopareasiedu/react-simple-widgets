@@ -3,8 +3,8 @@
 # TimePicker
 
 The `TimePicker` widget allows you to select a time using a picker dialog. Since it uses a dialog to
-provide the picker and thus requires a [DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be
-available up the component tree.
+provide the picker and thus requires a [DialogProvider](../../providers/dialog-provider/usage.md)
+ancestor to be available up the component tree.
 
 ## Usage
 
@@ -26,7 +26,7 @@ import { TimePicker } from "react-simple-widgets";
     onChange={onChange}
     onFocus={onFocus}
     onBlur={onBlur}
-/>
+/>;
 ```
 
 -   `time: string | Array<String>`
@@ -35,7 +35,7 @@ import { TimePicker } from "react-simple-widgets";
 
 -   `label?: string`
 
-    The label to display on the widget
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `decoration?: FieldDecoration`
 
@@ -55,7 +55,7 @@ import { TimePicker } from "react-simple-widgets";
 
 -   `error?: string`
 
-    An optional error message to show under the widget
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `validator?: (time: string) => string`
 

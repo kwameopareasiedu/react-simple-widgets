@@ -10,8 +10,9 @@ buttons) or multi-value selection (using checkboxes)
 
 ```jsx
 import { SelectField } from "react-simple-widgets";
+import { SelectFieldMode } from "react-simple-widgets/dist/constants";
 
-<SelectField name={name} label={label} mode={mode} options={options} errorTransformer={errorTransformer} onChange={onChange} inline={inlne} />
+<SelectField name={name} label={label} mode={mode} options={options} errorTransformer={errorTransformer} onChange={onChange} inline={inlne} />;
 ```
 
 -   `name: string`
@@ -20,7 +21,7 @@ import { SelectField } from "react-simple-widgets";
 
 -   `label?: string`
 
-    The label to display on the widget
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `mode?: SelectFieldMode`
 

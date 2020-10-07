@@ -9,20 +9,21 @@ WYSIWYG editor. The editor is provided by [Quill rich text editor](https://quill
 
 ```jsx
 import { TextField } from "react-simple-widgets";
+import { TextFieldMode } from "react-simple-widgets/dist/constants";
 
 <TextField
     name={name}
     label={label}
     mode={mode}
-    decoration={decoration}
-    errorTransformer={errorTransformer}
-    stickyFloatingLabel={stickyFloatingLabel}
-    leading={leading}
-    trailing={trailing}
     onEditorChange={onEditorChange}
     onEditorFocus={onEditorFocus}
     onEditorBlur={onEditorBlur}
-/>
+    leading={leading}
+    trailing={trailing}
+    decoration={decoration}
+    stickyFloatingLabel={stickyFloatingLabel}
+    errorTransformer={errorTransformer}
+/>;
 ```
 
 > This widget is intrinsically an `<input />` component and accepts all other attributes of
@@ -39,10 +40,6 @@ import { TextField } from "react-simple-widgets";
 
     The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
 
--   `label?: string`
-
-    The label to display on the widget
-
 -   `mode?: TextFieldMode = TextFieldMode.INPUT`
 
     The mode of the widget
@@ -51,6 +48,10 @@ import { TextField } from "react-simple-widgets";
 
     -   `TextFieldMode.EDITOR` configures the widget to be a rich text editor provided by
         [Quill rich text editor](https://quilljs.com/)
+
+-   `label?: string`
+
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `decoration?: FieldDecoration`
 

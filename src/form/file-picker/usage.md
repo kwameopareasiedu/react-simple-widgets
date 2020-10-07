@@ -5,7 +5,8 @@
 The `FilePicker` widget allows you to select a file from the device. When triggered, it launches a
 dialog that allows you to either launch a file select dialog or drag and drop a file from the device.
 FilePicker makes uses dialogs to provide the picker and thus requires a
-[DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be available up the component tree.
+[DialogProvider](../../providers/dialog-provider/usage.md) ancestor to be available up the component
+tree.
 
 ## Usage
 
@@ -28,7 +29,7 @@ import { FilePicker } from "react-simple-widgets";
     onChange={onChange}
     onFocus={onFocus}
     onBlur={onBlur}
-/>
+/>;
 ```
 
 -   `file: File`
@@ -38,7 +39,7 @@ import { FilePicker } from "react-simple-widgets";
 
 -   `label?: string`
 
-    The label to display on the widget
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `decoration?: FieldDecoration`
 
@@ -54,7 +55,7 @@ import { FilePicker } from "react-simple-widgets";
 
 -   `error?: string`
 
-    An optional error message to show under the widget
+    See [FieldDecoration docs](../field-decoration/usage.md)
 
 -   `extensions?: Array<string>`
 
