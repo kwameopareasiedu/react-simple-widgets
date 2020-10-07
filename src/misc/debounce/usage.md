@@ -3,11 +3,15 @@
 # debounce
 
 Debounce a specified function. Debouncing limits the number of times a function is called within a
-specified time period. 
+specified time period.
 
-As an example, if a function is an action emits 100 events within a second and the handler is 
-supposed to call an API function, this may trigger rate limiting on the server. As such, the 
-function can be debounced to be called once after no new events have been emitted in 1 second.  
+As an example, let's assume we have an action that calls a specific function several times a second.
+If the called function is supposed to call an API endpoint, this may trigger rate limiting on the
+server. As such, the function should be debounced. This makes it such that, the rate at which the
+function is actually called is much lower that the caller is triggering.
+
+This way, the action can be triggering the function at 100 times per second, but the debounced
+version will only be called once no new triggers have occurred after 1 second
 
 ## Usage
 
@@ -25,4 +29,4 @@ debounce(label, func, delay);
 
 -   `delay: number`
 
-    The debounce delay of the function in milliseconds
+    The debounce delay of the function in milliseconds (ms)

@@ -52,7 +52,7 @@ export function LoadMoreUsage() {
 
     -   `newItems: Array<any>`
 
-        The list of items on the specified page
+        The new list of items on the specified page
 
     -   `total: number`
 
