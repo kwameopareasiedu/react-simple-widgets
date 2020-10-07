@@ -6,18 +6,19 @@ ConfirmDialog is a widget that shows a confirmation dialog for an action and cal
 the confirmation button is clicked.
 
 ConfirmDialog uses dialogs to display the confirmation prompts messages and thus depends on a
-[DialogProvider](../../../docs/api-reference/dialog-provider.md) ancestor to be available up your
-widget tree.
+[DialogProvider](../../providers/dialog-provider/usage.md) ancestor to be available up your widget
+tree.
 
 ## Usage
 
 ```jsx
 import { ConfirmDialog } from "react-simple-widgets";
+import { Confirmation } from "react-simple-widgets/dist/constants";
 
 <ConfirmDialog type={type} onConfirm={onConfirm} onCancel={onCancel}>
     <p>Confirmation message goes here</p>
     <button>Confirm button</button>
-</ConfirmDialog>
+</ConfirmDialog>;
 ```
 
 -   `type?: Confirmation = Confirmation.PRIMARY`
