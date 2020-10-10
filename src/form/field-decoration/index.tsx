@@ -8,6 +8,7 @@ export const FieldDecoration = ({ decoration, stickyFloatingLabel, label, leadin
     const [hasValue, setHasValue] = useState(false);
     const [floatingLabelDefaultTop, setFloatingLabelDefaultTop] = useState(0);
     const [floatingLabelFocusedTop, setFloatingLabelFocusedTop] = useState(0);
+    const [underlineIndicatorFocusedTop, setUnderlineIndicatorFocusedTop] = useState(0);
     const contentRef = useRef();
     const leadingRef = useRef();
     const labelRef = useRef();
@@ -23,6 +24,13 @@ export const FieldDecoration = ({ decoration, stickyFloatingLabel, label, leadin
                 setFloatingLabelDefaultTop((contentHeight - labelHeight) / 2);
                 setFloatingLabelFocusedTop(-labelHeight / 2);
             }
+        } else if (decoration === FieldDecorationType.UNDERLINE) {
+            const labelNode: HTMLElement = labelRef.current;
+            const contentNode: HTMLElement = contentRef.current;
+            let indicatorFocusedTop = contentNode.getBoundingClientRect().height;
+
+            if (labelNode) indicatorFocusedTop += labelNode.getBoundingClientRect().height;
+            setUnderlineIndicatorFocusedTop(indicatorFocusedTop + 5);
         }
     }, []);
 
@@ -31,7 +39,6 @@ export const FieldDecoration = ({ decoration, stickyFloatingLabel, label, leadin
 
         if (decoration === FieldDecorationType.UNDERLINE) classes.push("underline");
         if (decoration === FieldDecorationType.FLOATING_LABEL) classes.push("floating-label");
-
         if (stickyFloatingLabel || hasValue) classes.push("has-value");
         if (focused) classes.push("has-focus");
         if (error) classes.push("has-error");
@@ -54,11 +61,15 @@ export const FieldDecoration = ({ decoration, stickyFloatingLabel, label, leadin
         }
     };
 
+    const contentStyle: any = {
+        "--underline-after-top": underlineIndicatorFocusedTop + "px"
+    };
+
     return (
         <div className={className()}>
             {label && <label {...labelProps}>{label}</label>}
 
-            <div ref={contentRef} className="field-decoration-content">
+            <div ref={contentRef} className="field-decoration-content" style={contentStyle}>
                 {leading && (
                     <span ref={leadingRef} className="leading">
                         {leading}

@@ -69,10 +69,9 @@
 
     > .field-decoration-content::after {
         position: absolute;
-        top: 0;
+        top: var(--underline-after-top);
         left: 0;
         right: 100%;
-        bottom: -1px;
         border-bottom: 2px solid var(--rsw-primary-theme-color);
         transition: right var(--rsw-transition-duration);
         transition-timing-function: ease-in;

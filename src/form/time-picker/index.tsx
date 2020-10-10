@@ -2,9 +2,11 @@ import "./index.scss";
 import moment from "moment";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { DialogHelper, DialogSize } from "../../providers/dialog-provider/types";
-import { TimePicker as Props } from "./types";
 import { DialogProviderContext } from "../../providers/dialog-provider";
 import { FieldDecoration } from "../field-decoration";
+import { TimePicker as Props } from "./types";
+import DownIcon from "../../assets/down.svg";
+import UpIcon from "../../assets/up.svg";
 
 interface ITimePickerDialog {
     time: string;
@@ -90,7 +92,7 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             onMouseDown={() => setRepeatHourOffset(1)}
                             onMouseLeave={() => setRepeatHourOffset(null)}
                             onMouseUp={() => setRepeatHourOffset(null)}>
-                            <i className="fa fa-chevron-up" />
+                            <img src={UpIcon} alt="Up icon" />
                         </button>
 
                         <input type="text" className="form-control" value={hour === 0 ? "12" : hour.toString().padStart(2, "0")} readOnly />
@@ -102,7 +104,7 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             onMouseDown={() => setRepeatHourOffset(-1)}
                             onMouseLeave={() => setRepeatHourOffset(null)}
                             onMouseUp={() => setRepeatHourOffset(null)}>
-                            <i className="fa fa-chevron-down" />
+                            <img src={DownIcon} alt="Down icon" />
                         </button>
                     </section>
 
@@ -116,7 +118,7 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             onMouseDown={() => setRepeatMinuteOffset(1)}
                             onMouseLeave={() => setRepeatMinuteOffset(null)}
                             onMouseUp={() => setRepeatMinuteOffset(null)}>
-                            <i className="fa fa-chevron-up" />
+                            <img src={UpIcon} alt="Up icon" />
                         </button>
 
                         <input type="text" className="form-control" value={minute.toString().padStart(2, "0")} readOnly />
@@ -128,7 +130,7 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             onMouseDown={() => setRepeatMinuteOffset(-1)}
                             onMouseLeave={() => setRepeatMinuteOffset(null)}
                             onMouseUp={() => setRepeatMinuteOffset(null)}>
-                            <i className="fa fa-chevron-down" />
+                            <img src={DownIcon} alt="Down icon" />
                         </button>
                     </section>
 

@@ -2,6 +2,19 @@
 
 # Changelog
 
+-   `2.0.2`
+
+    -   Reduced top padding of [FilePicker](./src/form/file-picker/usage.md) dialog
+    -   Fixed the position of underline indicator
+        in [FieldDecoration](./src/form/field-decoration/usage.md) when the error widget is visible
+    -   Removed unused theming CSS variables from [ReadMe](./README.md)
+    -   Replaced increase/decrease button content from Fontawesome icons with images. This is
+        because not all projects will use Fontawesome icons
+
+-   `2.0.1`
+
+    -   Updated [ReadMe](./README.md)
+
 -   `2.0.0`
 
     -   `DialogSize.FULL` has been added to [DialogProvider](src/providers/dialog-provider/usage.md)

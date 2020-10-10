@@ -12,9 +12,9 @@ more.
 ## Is react-simple-widgets right for me?
 
 As with any UI library, it's best to get a feel of it before installing. We've compiled the
-storybook samples of all widgets in this library. 
+storybook samples of all widgets in this library.
 
-Click [here](https://kwameopareasiedu.github.io/react-simple-widgets/) to test them out to seem if 
+Click [here](https://kwameopareasiedu.github.io/react-simple-widgets/) to test them out to seem if
 this library offers what you want before committing to installing it in your project.
 
 ## Installing
@@ -117,9 +117,7 @@ Widgets under this category are for convenience
 -   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a
     specified delay after a caller has called it
 
-## Customization
-
-### Theming
+## Theming
 
 The colors used by the widgets are controlled by CSS variables and you can customize them to suit
 your application's theme
@@ -134,18 +132,16 @@ your application's theme
 
 The following variables are widget specific
 
-| CSS variable                            | Description                                                                                            | Default value |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- |
-| `--rsw-list-view-max-height`            | Controls the maximum height of the `ListView` widget. Scrolling of items is enabled beyond this height | `550px`       |
-| `--rsw-date-picker-header-bg-color`     | Controls the background color of the day label display in the `DatePicker` widget                      | `#209d5811`   |
-| `--rsw-field-decoration-label-bg-color` | Controls the background color of the label component of the `FieldDecoration` widget                   | `white`       |
-| `--rsw-select-field-indicator-size`     | Controls the width and height of options in the `SelectField` widget                                   | `1.5rem`      |
-| `--rsw-dialog-view-vertical-margin`     | Controls the top and bottom margins of dialogs created by the `DialogProvider` widget                  | `1.2rem`      |
-| `--rsw-flash-view-default-theme-color`  | Controls the default theme color of flash message dialogs created by the `FlashProvider` widget        | `#e3e3e3`     |
-| `--rsw-flash-view-error-theme-color`    | Controls the theme color of error flash message dialogs created by the `FlashProvider` widget          | `#ff5555`     |
-| `--rsw-flash-view-warning-theme-color`  | Controls the theme color of warning flash message dialogs created by the `FlashProvider` widget        | `#ffdd55`     |
-| `--rsw-flash-view-info-theme-color`     | Controls the theme color of information flash message dialogs created by the `FlashProvider` widget    | `#55ddff`     |
-| `--rsw-flash-view-success-theme-color`  | Controls the theme color of success flash message dialogs created by the `FlashProvider` widget        | `#7fff2a`     |
+| CSS variable                            | Description                                                                                         | Default value |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------- |
+| `--rsw-date-picker-header-bg-color`     | Controls the background color of the day label display in the `DatePicker` widget                   | `#209d5811`   |
+| `--rsw-field-decoration-label-bg-color` | Controls the background color of the label component of the `FieldDecoration` widget                | `white`       |
+| `--rsw-select-field-indicator-size`     | Controls the width and height of options in the `SelectField` widget                                | `1.5rem`      |
+| `--rsw-dialog-view-vertical-margin`     | Controls the top and bottom margins of dialogs created by the `DialogProvider` widget               | `1.2rem`      |
+| `--rsw-flash-view-error-theme-color`    | Controls the theme color of error flash message dialogs created by the `FlashProvider` widget       | `#ff5555`     |
+| `--rsw-flash-view-warning-theme-color`  | Controls the theme color of warning flash message dialogs created by the `FlashProvider` widget     | `#ffdd55`     |
+| `--rsw-flash-view-info-theme-color`     | Controls the theme color of information flash message dialogs created by the `FlashProvider` widget | `#55ddff`     |
+| `--rsw-flash-view-success-theme-color`  | Controls the theme color of success flash message dialogs created by the `FlashProvider` widget     | `#7fff2a`     |
 
 ## Storybook samples
 

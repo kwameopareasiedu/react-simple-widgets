@@ -65,7 +65,8 @@ export const normal = (): any => {
                             <FieldDecoration
                                 label="Underline field"
                                 leading={<i className="fa fa-user" />}
-                                decoration={FieldDecorationType.UNDERLINE}>
+                                decoration={FieldDecorationType.UNDERLINE}
+                                error="Required">
                                 {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
                                     <input
                                         type="text"
