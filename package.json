@@ -77,7 +77,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn build && git add dist/bundle.js"
+            "pre-commit": "yarn build && git add dist/bundle.js docs"
         }
     },
     "jest": {
