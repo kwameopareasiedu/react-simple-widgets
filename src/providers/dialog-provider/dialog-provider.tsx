@@ -37,7 +37,9 @@ export const DialogProvider = ({ children }: Props): any => {
 
         _data.setup(widget, dismiss, options);
         setDialogData(data => [...data, _data]);
-        setupWindowEscapeHandlerForDialog(dismiss);
+
+        // Only setup a keyboard listener if persistent is false
+        if (!options || !options.persistent) setupWindowEscapeHandlerForDialog(dismiss);
 
         // TODO: Implement window pop state to handle back button on mobile devices
     };

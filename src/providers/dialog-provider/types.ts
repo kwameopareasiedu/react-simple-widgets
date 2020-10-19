@@ -7,6 +7,7 @@ export enum DialogSize {
 
 export interface DialogOptions {
     size?: DialogSize;
+    persistent?: boolean;
     dismissible?: boolean;
     onDismissed?: (returnValue?: any) => void;
 }

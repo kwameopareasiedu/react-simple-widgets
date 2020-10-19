@@ -103,10 +103,10 @@ First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 `my-dialog.tsx`
 
 ```tsx
-import { IDialogHelper } from "react-simple-widgets/dist/constants";
+import { DialogHelper } from "react-simple-widgets/dist/constants";
 
 interface MyDialogProps {
-    helper: IDialogHelper;
+    helper: DialogHelper;
 }
 
 export function MyDialog({ helper }: MyDialogProps) {

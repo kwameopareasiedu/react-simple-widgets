@@ -62,6 +62,23 @@ export const normal = (): any => {
         );
     };
 
+    const PersistentDialog = ({ helper }: { helper: DialogHelper }): any => {
+        return (
+            <div className="card">
+                <div className="card-body">
+                    <p className="text-center">
+                        This is a persistent dialog. These types of dialog can only be closed from the dialog itself. <br />
+                        As such, neither the <strong>escape key</strong> nor the <strong>clicking the background</strong> will dismiss it.
+                    </p>
+
+                    <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
+                        Close
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
     const ExampleApp = (): any => {
         const { showDialog } = useContext(DialogProviderContext);
 
@@ -87,6 +104,10 @@ export const normal = (): any => {
 
         const openBackgroundDismissibleDialog = (): void => {
             showDialog(() => <BackgroundDismissibleDialog />, { dismissible: true });
+        };
+
+        const openPersistentDialog = (): void => {
+            showDialog(helper => <PersistentDialog helper={helper} />, { dismissible: true, persistent: true });
         };
 
         return (
@@ -117,6 +138,10 @@ export const normal = (): any => {
                 <span>&nbsp;</span>
                 <button className="btn btn-warning btn-sm" onClick={openBackgroundDismissibleDialog}>
                     Open background dismissible dialog
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-danger btn-sm" onClick={openPersistentDialog}>
+                    Open persistent dialog
                 </button>
             </div>
         );
