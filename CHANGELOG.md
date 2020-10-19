@@ -2,6 +2,15 @@
 
 # Changelog
 
+-   `2.1.0`
+
+    -   Added `persistent` option to `DialogOptions` of [DialogProvider](./src/providers/dialog-provider/usage.md)
+        widget
+    -   Changed [ListView](src/collection/list-view/usage.md) widget loader from a circular loader
+        to a horizontal loader
+    -   Added optional `emptyMessage` prop to [ListView](src/collection/list-view/usage.md) widget
+    -   Added new [PasswordField](src/form/password-field/usage.md) widget
+
 -   `2.0.2`
 
     -   Reduced top padding of [FilePicker](./src/form/file-picker/usage.md) dialog
