@@ -3,12 +3,23 @@ import React, { Fragment, useContext, useEffect, useState } from "react";
 import { DialogProviderContext } from "../../providers/dialog-provider";
 import { ListViewItemOptionsDialog } from "./options-dialog";
 import { ListView as Props, ListViewOption } from "./types";
-import { Loader } from "../../widgets/loader";
+import Loader from "../../assets/loading.svg";
 import MoreIcon from "../../assets/more.svg";
 import { ListViewFooter } from "./footer";
 import { ListViewSorter } from "./sorter";
 
-export const ListView = ({ items, busy, props, condensed, options, sort, breakpoint = 768, pagination, keyFn }: Props): any => {
+export const ListView = ({
+    items,
+    busy,
+    props,
+    condensed,
+    options,
+    sort,
+    breakpoint = 768,
+    emptyMessage = "No items to display",
+    pagination,
+    keyFn
+}: Props): any => {
     const EMPTY_STRING = "---";
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -52,12 +63,18 @@ export const ListView = ({ items, busy, props, condensed, options, sort, breakpo
             showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={itemIndex} options={optionsList} />);
     };
 
-    const renderLoader = (): any => (
+    const renderEmptyMessageItem = (): any => (
         <tr>
-            <td colSpan={100}>
-                <Loader className="text-center">
-                    <small>Loading items</small>
-                </Loader>
+            <td className="empty-message-item" colSpan={100}>
+                <p>{emptyMessage}</p>
+            </td>
+        </tr>
+    );
+
+    const renderLoaderItem = (): any => (
+        <tr>
+            <td className="loader-item" colSpan={100}>
+                <img src={Loader} alt="Loader" />
             </td>
         </tr>
     );
@@ -139,9 +156,10 @@ export const ListView = ({ items, busy, props, condensed, options, sort, breakpo
                 )}
 
                 <tbody>
-                    {busy && renderLoader()}
+                    {busy && renderLoaderItem()}
                     {items.map(windowWidth > breakpoint ? renderDesktopItem : renderMobileItem)}
-                    {busy && renderLoader()}
+                    {items.length === 0 ? renderEmptyMessageItem() : null}
+                    {busy && renderLoaderItem()}
                 </tbody>
             </table>
 

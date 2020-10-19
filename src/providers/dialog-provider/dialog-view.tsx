@@ -1,7 +1,7 @@
 import "./dialog-view.scss";
 import React, { useRef } from "react";
-import { DialogSize } from "./types";
 import { DialogData } from "./dialog-data";
+import { DialogSize } from "./types";
 
 interface IDialogView {
     data: DialogData;

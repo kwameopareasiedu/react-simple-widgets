@@ -37,6 +37,7 @@ export interface ListView {
     sort?: ListViewSort;
     condensed?: boolean;
     breakpoint?: number;
+    emptyMessage?: string;
     options?: ListViewOptions;
     pagination?: ListViewPagination;
     props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;

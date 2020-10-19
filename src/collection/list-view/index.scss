@@ -54,6 +54,22 @@
                 .item-options-trigger.none::after {
                     content: "No options for item";
                 }
+
+                td.loader-item {
+                    text-align: center;
+                    padding: 0;
+
+                    img {
+                        height: 12px;
+                    }
+                }
+
+                td.empty-message-item p {
+                    margin: 0;
+                    font-size: 85%;
+                    font-style: italic;
+                    text-align: center;
+                }
             }
 
             tr.mobile-item {

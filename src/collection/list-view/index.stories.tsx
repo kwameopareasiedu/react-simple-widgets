@@ -70,6 +70,23 @@ export const normal = (): any => {
     );
 };
 
+export const withNoItems = (): any => {
+    return (
+        <ListView
+            items={[]}
+            props={[
+                ["Name", "name"],
+                ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY")],
+                ["Unknown", "status"],
+                ["Nested", "nested.value"],
+                ["Unknown nested", "nested.other_value"]
+            ]}
+            keyFn={item => item.name}
+            condensed
+        />
+    );
+};
+
 export const condensed = (): any => {
     return (
         <ListView
