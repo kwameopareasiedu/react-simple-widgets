@@ -6,6 +6,7 @@ import { FieldDecorationType } from "./field-decoration/types";
 import { SelectFieldMode } from "./select-field/types";
 import { TextFieldMode } from "./text-field/types";
 import { DropdownField } from "./dropdown-field";
+import { PasswordField } from "./password-field";
 import { SelectField } from "./select-field";
 import { FileField } from "./file-field";
 import { DateField } from "./date-field";
@@ -21,6 +22,7 @@ export const index = (): any => {
         const initialValues: any = {
             textFieldValue: "",
             textFieldEditorValue: "",
+            passwordFieldValue: "",
             dropdownFieldValue: "",
             binarySelectFieldValue: "",
             singleSelectFieldValue: "",
@@ -33,6 +35,7 @@ export const index = (): any => {
             const errors: any = {};
             if (!values.textFieldValue) errors.textFieldValue = "Required";
             if (!values.textFieldEditorValue) errors.textFieldEditorValue = "Required";
+            if (!values.passwordFieldValue) errors.passwordFieldValue = "Required";
             if (!values.dropdownFieldValue) errors.dropdownFieldValue = "Required";
             if (!values.binarySelectFieldValue) errors.binarySelectFieldValue = "Required";
             if (!values.singleSelectFieldValue) errors.singleSelectFieldValue = "Required";
@@ -44,17 +47,6 @@ export const index = (): any => {
 
         const onSubmit = (values: any) => {
             console.log(values);
-            // setTimeout(() => {
-            //     console.log(values);
-            //     setLoading(false);
-            //
-            //     if (!alertShown) {
-            //         alert("Form values have been logged in the console");
-            //         setAlertShown(true);
-            //     }
-            // }, 2000);
-            //
-            // setLoading(true);
         };
 
         return (
@@ -101,6 +93,15 @@ export const index = (): any => {
                                     <TextField
                                         name="textFieldEditorValue"
                                         label="TextField (Floating label editor)"
+                                        decoration={FieldDecorationType.FLOATING_LABEL}
+                                        mode={TextFieldMode.EDITOR}
+                                    />
+
+                                    <br />
+
+                                    <PasswordField
+                                        name="PasswordField"
+                                        label="PasswordField (Floating label editor)"
                                         decoration={FieldDecorationType.FLOATING_LABEL}
                                         mode={TextFieldMode.EDITOR}
                                     />

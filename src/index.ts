@@ -8,6 +8,7 @@ export * from "./providers/flash-provider";
 export * from "./form/field-decoration";
 export * from "./form/custom-field";
 export * from "./form/text-field";
+export * from "./form/password-field";
 export * from "./form/dropdown-field";
 export * from "./form/select-field";
 export * from "./form/file-picker";

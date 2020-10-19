@@ -34,6 +34,7 @@ export const Link: FunctionComponent<TransitionLink>;
 export const FieldDecoration: FunctionComponent<FieldDecoration>;
 export const CustomField: FunctionComponent<CustomField>;
 export const TextField: FunctionComponent<TextField>;
+export const PasswordField: FunctionComponent<TextField>;
 export const DropdownField: FunctionComponent<DropdownField>;
 export const SelectField: FunctionComponent<SelectField>;
 export const DateField: FunctionComponent<DateField>;

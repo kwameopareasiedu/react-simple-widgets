@@ -6,14 +6,12 @@ import { CustomField } from "../custom-field";
 import { FieldDecoration } from "../field-decoration";
 import { TextField as Props, TextFieldMode } from "./types";
 import { FieldDecorationType } from "../field-decoration/types";
-// import PasswordVisibleIcon from "../../assets/eye.svg";
-// import PasswordHiddenIcon from "../../assets/hide.svg";
 
 /** TextField uses the CustomField to provider a text field to the user. It behaves as a standard input but also doubles down as a WYSIWYG editor */
 export const TextField = ({
     name,
     label,
-    mode,
+    mode = TextFieldMode.INPUT,
     errorTransformer,
     decoration,
     leading,
@@ -30,25 +28,6 @@ export const TextField = ({
 }: Props): any => {
     // Override classname
     rest.className = "";
-
-    // const [passwordVisible, setPasswordVisible] = useState(false);
-
-    // const inputType = (): string => {
-    //     if (type !== "password") return type;
-    //     if (passwordVisible) return "text";
-    //     return "password";
-    // };
-    //
-    // const trailing = (): any => {
-    //     if (type !== "password") return null;
-    //     return (
-    //         <img
-    //             alt="Visibility"
-    //             src={passwordVisible ? PasswordHiddenIcon : PasswordVisibleIcon}
-    //             onClick={(): void => setPasswordVisible(!passwordVisible)}
-    //         />
-    //     );
-    // };
 
     const renderInput = (
         value: any,
@@ -125,8 +104,6 @@ export const TextField = ({
             />
         );
     };
-
-    if (!mode) mode = TextFieldMode.INPUT;
 
     return (
         <div className="react-simple-widget text-field">
