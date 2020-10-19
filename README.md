@@ -1,8 +1,8 @@
 # react-simple-widgets
 
-![](https://img.shields.io/badge/version-1.6.2-blue)
+![](https://img.shields.io/badge/version-2.1.0-blue)
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-880%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-918.9%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 This is a collection of customizable widgets to help accelerate your React app development. These
