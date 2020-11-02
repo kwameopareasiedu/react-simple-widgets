@@ -1,7 +1,8 @@
-# V3 Migration Guide
+# V3Migration Guide
 
 This guide covers all the breaking changes that you need to know in this version as well as how to
 migrate your applications from 2.x.x to 3.x.x
 
--   `import { ... } from "react-simple-widgets/dist/constants"` and `import { ... } from "react-simple-widgets/types"`
-    have been removed. Types can be imported from the library itself. I.e. `import { ... } from "react-simple-widgets"`
+-   Migrating to this version contains only one breaking change. Imports from `react-simple-widgets/dist/constants` have
+    been moved to `react-simple-widgets/types`. I.e. All `import { ... } from "react-simple-widgets/dist/constants"`
+    should be replaced with `import { ... } from "react-simple-widgets/types"`
