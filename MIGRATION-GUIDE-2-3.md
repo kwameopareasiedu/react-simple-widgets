@@ -1,4 +1,4 @@
-# V3Migration Guide
+# V3 Migration Guide
 
 This guide covers all the breaking changes that you need to know in this version as well as how to
 migrate your applications from 2.x.x to 3.x.x

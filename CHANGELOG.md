@@ -4,8 +4,7 @@
 
 -   `3.0.0`
 
-    -   `import { ... } from "react-simple-widgets/dist/constants"` and `import { ... } from "react-simple-widgets/types"`
-        are now deprecated. Types can be imported from the library itself. I.e. `import { ... } from "react-simple-widgets"`
+    -   `import { ... } from "react-simple-widgets/dist/constants"` has been moved to `import { ... } from "react-simple-widgets/types"`
 
 -   `2.1.0`
 
