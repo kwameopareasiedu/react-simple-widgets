@@ -1,12 +1,13 @@
 import path from "path";
-import postcss from "postcss";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
+import builtins from "rollup-plugin-node-builtins";
+import globals from "rollup-plugin-node-globals";
 import { terser } from "rollup-plugin-terser";
+import postcss from "rollup-plugin-postcss";
 import image from "@rollup/plugin-image";
-import sass from "rollup-plugin-sass";
 
 module.exports = {
     input: path.resolve(__dirname, "./src/index.ts"),
@@ -16,16 +17,12 @@ module.exports = {
     },
     plugins: [
         resolve({ extensions: [".ts", ".tsx", ".js", ".jsx", ".scss", ".css"], preferBuiltins: true }),
-        commonjs({ namedExports: { "node_modules/react-is/index.js": ["isValidElementType", "isContextConsumer"] } }),
-        babel({ exclude: "node_modules/**" }),
+        commonjs(),
+        globals(),
+        builtins(),
         typescript(),
-        sass({
-            insert: true,
-            processor: css =>
-                postcss()
-                    .process(css, { from: "undefined" })
-                    .then(result => result.css)
-        }),
+        babel({ exclude: "node_modules/**" }),
+        postcss({ extract: false, use: ["sass"] }),
         image(),
         terser()
     ],
