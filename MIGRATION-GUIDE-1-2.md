@@ -1,7 +1,7 @@
 # V2 Migration Guide
 
 This guide covers all the breaking changes that you need to know in this version as well as how to
-migrate your applications to `react-simple-widgets` v2.0.0
+migrate your applications from 1.x.x to 2.x.x
 
 ## Types
 

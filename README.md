@@ -1,15 +1,15 @@
 # react-simple-widgets
 
-![](https://img.shields.io/badge/version-2.1.0-blue)
+![](https://img.shields.io/badge/version-3.0.0-blue)
 ![](https://img.shields.io/badge/react-v16.13.1+-blue)
-![](https://img.shields.io/badge/minified%20size-918.9%20kB-blue)
+![](https://img.shields.io/badge/minified%20size-886.1%20kB-blue)
 [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 This is a collection of customizable widgets to help accelerate your React app development. These
 widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and
 more.
 
-## Is react-simple-widgets right for me?
+###### Is react-simple-widgets right for me?
 
 As with any UI library, it's best to get a feel of it before installing. We've compiled the
 storybook samples of all widgets in this library.

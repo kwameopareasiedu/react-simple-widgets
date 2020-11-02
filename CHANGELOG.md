@@ -2,6 +2,11 @@
 
 # Changelog
 
+-   `3.0.0`
+
+    -   `import { ... } from "react-simple-widgets/dist/constants"` and `import { ... } from "react-simple-widgets/types"`
+        are now deprecated. Types can be imported from the library itself. I.e. `import { ... } from "react-simple-widgets"`
+
 -   `2.1.0`
 
     -   Added scroll-to-top feature to [ListView](src/collection/list-view/usage.md) if the `items`
