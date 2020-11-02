@@ -28,6 +28,7 @@ You can install these dependencies with `yarn add -D react react-router-dom form
 ## Migrating
 
 **_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
+
 **_See the [migration guide](MIGRATION-GUIDE-2-3.md) on how to upgrade from v2 to v3_**
 
 ## Providers
@@ -129,8 +130,8 @@ The following variables are widget specific
 
 ## Storybook samples
 
-This library is built with [Storybook](https://storybook.js.org/) and each widget has its own set of stories 
-demonstrating use cases of the widget. When executed, Storybook will open a web page containing all the stories for 
+This library is built with [Storybook](https://storybook.js.org/) and each widget has its own set of stories
+demonstrating use cases of the widget. When executed, Storybook will open a web page containing all the stories for
 you to interact with.
 
 To execute the storybook, follow these steps:
