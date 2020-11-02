@@ -35,7 +35,8 @@ export const DialogView = ({ data }: IDialogView): any => {
 
     const onBackgroundClick = (e: React.MouseEvent): void => {
         const dialogContentElement: any = dialogContentRef.current;
-        if (!dialogContentElement.contains(e.target) && !data.options.persistent && data.options.dismissible) data.dismiss();
+        if (!dialogContentElement.contains(e.target) && !data.options.persistent && data.options.dismissible)
+            data.dismiss();
     };
 
     return (

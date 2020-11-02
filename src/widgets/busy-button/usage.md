@@ -10,7 +10,7 @@ button, it accepts all attributes of a `<button/>` tag
 ```jsx
 import { BusyButton } from "react-simple-widgets";
 
-<BusyButton busy={busy} />
+<BusyButton busy={busy} />;
 ```
 
 -   `busy?: boolean = false`

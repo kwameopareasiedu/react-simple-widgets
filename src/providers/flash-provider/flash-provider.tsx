@@ -10,7 +10,9 @@ export const FlashProvider = ({ children }: Props): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const flash = (type: FlashType, title: string, message: any, onFlashDismissed?: () => void): void => {
-        const builder: DialogBuilder = helper => <FlashView type={type} title={title} message={message} onDismiss={helper.dismiss} />;
+        const builder: DialogBuilder = helper => (
+            <FlashView type={type} title={title} message={message} onDismiss={helper.dismiss} />
+        );
         showDialog(builder, { onDismissed: onFlashDismissed });
     };
 
@@ -26,5 +28,9 @@ export const FlashProvider = ({ children }: Props): any => {
     const flashSuccess = (title: string, message?: any, onFlashDismissed?: () => void): void =>
         flash(FlashType.SUCCESS, title, message, onFlashDismissed);
 
-    return <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>{children}</FlashProviderContext.Provider>;
+    return (
+        <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
+            {children}
+        </FlashProviderContext.Provider>
+    );
 };

@@ -13,7 +13,7 @@ provided by the [Formik](https://jaredpalmer.com/formik/) holder.
 ```jsx
 import { DateField } from "react-simple-widgets";
 
-<DateField name={name} errorTransformer={errorTransformer} onChange={onChange} />
+<DateField name={name} errorTransformer={errorTransformer} onChange={onChange} />;
 ```
 
 -   `name: string`

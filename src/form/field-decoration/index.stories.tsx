@@ -85,7 +85,10 @@ export const normal = (): any => {
                         <div className="card-header">Floating label decoration</div>
 
                         <div className="card-body">
-                            <FieldDecoration label="Field decoration field" error="Required" decoration={FieldDecorationType.FLOATING_LABEL}>
+                            <FieldDecoration
+                                label="Field decoration field"
+                                error="Required"
+                                decoration={FieldDecorationType.FLOATING_LABEL}>
                                 {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
                                     <input
                                         type="text"

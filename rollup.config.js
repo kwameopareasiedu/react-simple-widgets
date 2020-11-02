@@ -1,6 +1,5 @@
 import path from "path";
 import postcss from "postcss";
-import autoprefixer from "autoprefixer";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
@@ -23,7 +22,7 @@ module.exports = {
         sass({
             insert: true,
             processor: css =>
-                postcss([autoprefixer])
+                postcss()
                     .process(css, { from: "undefined" })
                     .then(result => result.css)
         }),

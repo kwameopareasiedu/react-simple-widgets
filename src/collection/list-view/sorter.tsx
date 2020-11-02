@@ -11,7 +11,10 @@ export const ListViewSorter = ({ columns, columnIndex, order, onSort }: ListView
     return (
         <div className="react-simple-widget sorter">
             <div className="sorter-content">
-                <FieldDecoration label="Sort column" decoration={FieldDecorationType.FLOATING_LABEL} stickyFloatingLabel>
+                <FieldDecoration
+                    label="Sort column"
+                    decoration={FieldDecorationType.FLOATING_LABEL}
+                    stickyFloatingLabel>
                     {({ onFieldFocus, onFieldBlur }) => (
                         <select
                             value={columnIndex}

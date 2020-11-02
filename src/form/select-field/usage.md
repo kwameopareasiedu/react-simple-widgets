@@ -12,7 +12,15 @@ buttons) or multi-value selection (using checkboxes)
 import { SelectField } from "react-simple-widgets";
 import { SelectFieldMode } from "react-simple-widgets/dist/constants";
 
-<SelectField name={name} label={label} mode={mode} options={options} errorTransformer={errorTransformer} onChange={onChange} inline={inlne} />;
+<SelectField
+    name={name}
+    label={label}
+    mode={mode}
+    options={options}
+    errorTransformer={errorTransformer}
+    onChange={onChange}
+    inline={inlne}
+/>;
 ```
 
 -   `name: string`

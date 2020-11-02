@@ -12,7 +12,12 @@ export const usage = () => {
 
         return (
             <div style={{ padding: "30px" }}>
-                <input type="text" className="form-control mb-4" value={value} onChange={e => setValue(e.target.value)} />
+                <input
+                    type="text"
+                    className="form-control mb-4"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                />
 
                 <p className="text-center" style={{ color: "red" }}>
                     Raw input value (Updates immediately when input value changes): <strong>{value}</strong>{" "}

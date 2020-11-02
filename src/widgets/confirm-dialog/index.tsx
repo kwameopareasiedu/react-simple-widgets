@@ -21,7 +21,10 @@ export const ConfirmDialog = ({ children, type = Confirmation.PRIMARY, onConfirm
 
     const triggerConfirmation = (): void => {
         const dialogOptions: DialogOptions = { onDismissed: interceptOnChoiceMade };
-        showDialog(helper => <ConfirmDialogConfirmation helper={helper} message={message} type={type} />, dialogOptions);
+        showDialog(
+            helper => <ConfirmDialogConfirmation helper={helper} message={message} type={type} />,
+            dialogOptions
+        );
     };
 
     return React.cloneElement(triggerButton as any, { onClick: triggerConfirmation });
@@ -53,7 +56,10 @@ const ConfirmDialogConfirmation = ({ message, type, helper }: IConfirmDialogConf
                     Confirm action
                 </button>
 
-                <button type="button" className="btn btn-light btn-sm btn-block" onClick={(): void => helper.dismiss(false)}>
+                <button
+                    type="button"
+                    className="btn btn-light btn-sm btn-block"
+                    onClick={(): void => helper.dismiss(false)}>
                     Close dialog
                 </button>
             </div>

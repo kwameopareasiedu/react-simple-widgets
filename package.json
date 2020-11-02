@@ -18,6 +18,8 @@
         "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
         "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
         "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production && yarn build-storybook",
+        "copy-storybook-css": "cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs",
+        "concat-types-file": "(find src/ -type f -name \"types.ts\" -exec cat {} + > types.ts) && sed -i '/from \\\"\\.\\./d' types.ts",
         "build-storybook": "build-storybook -o ./docs",
         "test": "jest"
     },
@@ -31,16 +33,16 @@
         "@babel/preset-typescript": "^7.10.4",
         "@jest/globals": "^26.4.2",
         "@rollup/plugin-image": "^2.0.5",
-        "@storybook/addon-actions": "6.0.26",
-        "@storybook/addon-knobs": "6.0.26",
-        "@storybook/addons": "6.0.26",
-        "@storybook/react": "6.0.26",
+        "@storybook/addon-actions": "6.0.28",
+        "@storybook/addon-knobs": "6.0.28",
+        "@storybook/addons": "6.0.28",
+        "@storybook/react": "6.0.28",
         "@testing-library/react": "^11.0.4",
         "@testing-library/user-event": "^12.1.6",
         "@types/react": "^16.9.38",
         "@types/react-router-dom": "^5.1.5",
-        "@typescript-eslint/eslint-plugin": "4.4.1",
-        "@typescript-eslint/parser": "4.4.1",
+        "@typescript-eslint/eslint-plugin": "4.6.0",
+        "@typescript-eslint/parser": "4.6.0",
         "autoprefixer": "10.0.1",
         "babel-loader": "^8.1.0",
         "css-loader": "5.0.0",
@@ -50,8 +52,8 @@
         "husky": "^4.2.5",
         "jest": "^26.4.2",
         "moment": "^2.27.0",
-        "node-sass": "^4.14.1",
-        "postcss": "8.1.2",
+        "node-sass": "^5.0.0",
+        "postcss": "8.1.4",
         "postcss-loader": "4.0.4",
         "prettier": "^2.0.5",
         "react": "^16.13.1",
@@ -63,11 +65,11 @@
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-terser": "7.0.2",
-        "rollup-plugin-typescript2": "0.28.0",
-        "sass-loader": "10.0.3",
+        "rollup-plugin-typescript2": "0.29.0",
+        "sass-loader": "10.0.4",
         "style-loader": "2.0.0",
-        "ts-loader": "8.0.5",
-        "typescript": "4.0.3",
+        "ts-loader": "8.0.7",
+        "typescript": "4.0.5",
         "url-loader": "^4.1.0"
     },
     "peerDependencies": {
@@ -77,7 +79,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn build && cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs"
+            "pre-commit": "yarn build && yarn copy-storybook-css"
         }
     },
     "jest": {

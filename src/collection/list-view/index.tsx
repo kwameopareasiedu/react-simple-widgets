@@ -1,9 +1,10 @@
 import "./index.scss";
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useRef, useState } from "react";
 import { DialogProviderContext } from "../../providers/dialog-provider";
 import { ListViewItemOptionsDialog } from "./options-dialog";
 import { ListView as Props, ListViewOption } from "./types";
-import Loader from "../../assets/loading.svg";
+import LoaderIcon from "../../assets/loading.svg";
+import { Loader } from "../../widgets/loader";
 import MoreIcon from "../../assets/more.svg";
 import { ListViewFooter } from "./footer";
 import { ListViewSorter } from "./sorter";
@@ -24,12 +25,32 @@ export const ListView = ({
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const { showDialog } = useContext(DialogProviderContext);
+    const rootEl = useRef();
 
     useEffect(() => {
+        // Add a window resize listener to switch between mobile and desktop list items
         const l = (): void => setWindowWidth(window.innerWidth);
         window.addEventListener("resize", l);
         return () => window.removeEventListener("resize", l);
     }, []);
+
+    useEffect(() => {
+        // If the item list changes, find the first scrollable parent and scroll back up
+        const root: HTMLElement = rootEl.current;
+        let parent: HTMLElement = root.parentElement;
+
+        while (parent !== null) {
+            if (!parent) break;
+
+            const clientHeight = parent.clientHeight;
+            const scrollHeight = parent.scrollHeight;
+
+            if (clientHeight !== scrollHeight) {
+                parent.scrollTo({ top: 0, behavior: "smooth" });
+                break;
+            } else parent = parent.parentElement;
+        }
+    }, [items]);
 
     const resolveItemValue = (itemIndex: number, propIndex: number): any => {
         const item = items[itemIndex];
@@ -60,7 +81,9 @@ export const ListView = ({
 
     const showItemDialog = (item: any, itemIndex: number, optionsList: Array<ListViewOption>): void => {
         if (optionsList.length > 0)
-            showDialog(helper => <ListViewItemOptionsDialog helper={helper} item={item} index={itemIndex} options={optionsList} />);
+            showDialog(helper => (
+                <ListViewItemOptionsDialog helper={helper} item={item} index={itemIndex} options={optionsList} />
+            ));
     };
 
     const renderEmptyMessageItem = (): any => (
@@ -74,7 +97,7 @@ export const ListView = ({
     const renderLoaderItem = (): any => (
         <tr>
             <td className="loader-item" colSpan={100}>
-                <img src={Loader} alt="Loader" />
+                <img src={LoaderIcon} alt="Loader" />
             </td>
         </tr>
     );
@@ -139,8 +162,15 @@ export const ListView = ({
     };
 
     return (
-        <div className="react-simple-widget list-view">
-            {sort && <ListViewSorter columns={sort.columns} columnIndex={sort.columnIndex} order={sort.order} onSort={sort.onSort} />}
+        <div className="react-simple-widget list-view" ref={rootEl}>
+            {sort && (
+                <ListViewSorter
+                    columns={sort.columns}
+                    columnIndex={sort.columnIndex}
+                    order={sort.order}
+                    onSort={sort.onSort}
+                />
+            )}
 
             <table className={`table table-striped ${condensed ? " table-sm" : ""}`}>
                 {windowWidth > breakpoint && (

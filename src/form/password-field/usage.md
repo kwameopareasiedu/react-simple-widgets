@@ -12,7 +12,7 @@ all its props.
 ```jsx
 import { PasswordField } from "react-simple-widgets";
 
-<PasswordField name={name} />
+<PasswordField name={name} />;
 ```
 
 -   `name: string`

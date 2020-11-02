@@ -10,7 +10,9 @@ export const usage = () => {
         return (
             <div style={{ padding: "30px" }}>
                 <button className="btn btn-primary btn-sm" onClick={resetCountdown} disabled={running}>
-                    {!running ? "Start 10s countdown" : `Button will be enabled in ${count} second${count > 1 ? "s" : ""}`}
+                    {!running
+                        ? "Start 10s countdown"
+                        : `Button will be enabled in ${count} second${count > 1 ? "s" : ""}`}
                 </button>
             </div>
         );

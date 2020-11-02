@@ -67,11 +67,19 @@ export function App() {
             {/* When the page is refreshed, Value 1 and Value 2 will preserve their values, but Value 3 will be cleared since it wasn't stored in local storage */}
 
             <label htmlFor="value-1">Value 1 (Saved in local storage)</label>
-            <input id="value-1" value={get("value-1")} onChange={e => saveValueInStore("value-1", e.target.value, true)} />
+            <input
+                id="value-1"
+                value={get("value-1")}
+                onChange={e => saveValueInStore("value-1", e.target.value, true)}
+            />
             <button onClick={() => deleteValueInStore("value-1")}>Clear Value 1</button>
 
             <label htmlFor="value-2">Value 2 (Saved in local storage)</label>
-            <input id="value-2" value={get("value-2")} onChange={e => saveValueInStore("value-2", e.target.value, true)} />
+            <input
+                id="value-2"
+                value={get("value-2")}
+                onChange={e => saveValueInStore("value-2", e.target.value, true)}
+            />
             <button onClick={() => deleteValueInStore("value-2")}>Clear Value 2</button>
 
             <label htmlFor="value-3">Value 3</label>

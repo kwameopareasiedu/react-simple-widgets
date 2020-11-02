@@ -41,7 +41,12 @@ export const SelectOption = ({ type, label, value, selected, inline, onChange, o
     };
 
     return (
-        <div className={className()} onClick={interceptChange} tabIndex={0} onFocus={onFocus} onKeyUp={interceptOnKeyUp}>
+        <div
+            className={className()}
+            onClick={interceptChange}
+            tabIndex={0}
+            onFocus={onFocus}
+            onKeyUp={interceptOnKeyUp}>
             <span className="indicator" />
             <label>{label}</label>
         </div>

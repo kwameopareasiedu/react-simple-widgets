@@ -13,7 +13,7 @@ provided by the [Formik](https://jaredpalmer.com/formik/) holder.
 ```jsx
 import { FileField } from "react-simple-widgets";
 
-<FileField name={name} errorTransformer={errorTransformer} onChange = {onChange} />
+<FileField name={name} errorTransformer={errorTransformer} onChange={onChange} />;
 ```
 
 -   `name: string`

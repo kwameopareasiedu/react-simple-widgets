@@ -29,7 +29,9 @@ export const ValueStoreProvider = ({ initialKeys = [], children }: Props): any =
     );
 
     // Read values of specified initial values from localStorage
-    const [valueCache, setValueCache] = useState(keyCache.map(key => new ValueStorePair(key, localStorage.getItem(key), true)));
+    const [valueCache, setValueCache] = useState(
+        keyCache.map(key => new ValueStorePair(key, localStorage.getItem(key), true))
+    );
 
     useEffect(() => {
         for (const { key, value, save } of valueCache) {
@@ -78,5 +80,9 @@ export const ValueStoreProvider = ({ initialKeys = [], children }: Props): any =
         setKeyCache([]);
     };
 
-    return <ValueStoreProviderContext.Provider value={{ get, set, del, clear }}>{children}</ValueStoreProviderContext.Provider>;
+    return (
+        <ValueStoreProviderContext.Provider value={{ get, set, del, clear }}>
+            {children}
+        </ValueStoreProviderContext.Provider>
+    );
 };

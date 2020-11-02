@@ -152,9 +152,10 @@
     }
 }
 
-.react-simple-widget.date-picker {
+.react-simple-widget.date-picker .react-simple-widget.field-decoration > .field-decoration-content > .widget {
     .trigger {
-        min-height: 2rem;
+        min-height: 2.4rem;
+        padding: 8px 10px 8px;
 
         > p {
             margin: 0;

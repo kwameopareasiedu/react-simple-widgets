@@ -13,7 +13,9 @@ export const normal = (): any => {
 
         return (
             <div>
-                <p className="text-center">Change the values in the fields and observe which values changes in your localStorage tab</p>
+                <p className="text-center">
+                    Change the values in the fields and observe which values changes in your localStorage tab
+                </p>
 
                 <div className="card">
                     <div className="card-body">
@@ -31,7 +33,9 @@ export const normal = (): any => {
                                     onChange={e => set("favourite-web-framework", e.target.value, true)}
                                 />
 
-                                <button className="btn btn-link btn-sm" onClick={(): void => del("favourite-web-framework")}>
+                                <button
+                                    className="btn btn-link btn-sm"
+                                    onClick={(): void => del("favourite-web-framework")}>
                                     Remove key for this input
                                 </button>
                             </div>
@@ -49,7 +53,9 @@ export const normal = (): any => {
                                     onChange={e => set("favourite-mobile-framework", e.target.value, true)}
                                 />
 
-                                <button className="btn btn-link btn-sm" onClick={(): void => del("favourite-mobile-framework")}>
+                                <button
+                                    className="btn btn-link btn-sm"
+                                    onClick={(): void => del("favourite-mobile-framework")}>
                                     Remove key for this input
                                 </button>
                             </div>

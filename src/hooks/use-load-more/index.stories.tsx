@@ -4,7 +4,20 @@ import { useLoadMore } from "./index";
 
 export default { title: "UseLoadMore" };
 
-const collection = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12"];
+const collection = [
+    "Item 1",
+    "Item 2",
+    "Item 3",
+    "Item 4",
+    "Item 5",
+    "Item 6",
+    "Item 7",
+    "Item 8",
+    "Item 9",
+    "Item 10",
+    "Item 11",
+    "Item 12"
+];
 
 export const usage = (): any => {
     const ExampleApp = (): any => {
@@ -39,19 +52,25 @@ export const usage = (): any => {
                     <p>{items.length} of 12 items loaded</p>
 
                     {!endOfItems && (
-                        <BusyButton busy={loading} className="btn btn-primary btn-sm mb-4 mr-2" onClick={(): void => loadMore()}>
+                        <BusyButton
+                            busy={loading}
+                            className="btn btn-primary btn-sm mb-4 mr-2"
+                            onClick={(): void => loadMore()}>
                             More
                         </BusyButton>
                     )}
 
-                    <BusyButton busy={loading} className="btn btn-secondary btn-sm mb-4" onClick={(): void => loadMore(true)}>
+                    <BusyButton
+                        busy={loading}
+                        className="btn btn-secondary btn-sm mb-4"
+                        onClick={(): void => loadMore(true)}>
                         Reset page and load more
                     </BusyButton>
 
                     <p>
                         <i>
-                            Each &quot;request&quot; has a 1500ms TTL and a a 20% chance of failure (To simulate network/API lag and failure
-                            respectively)
+                            Each &quot;request&quot; has a 1500ms TTL and a a 20% chance of failure (To simulate
+                            network/API lag and failure respectively)
                         </i>
                     </p>
                 </div>

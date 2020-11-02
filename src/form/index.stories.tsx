@@ -56,7 +56,11 @@ export const index = (): any => {
                         <form onSubmit={formik.handleSubmit}>
                             <div className="row">
                                 <div className="col-12 col-md-6">
-                                    <TextField name="textFieldValue" label="TextField (Flat)" placeholder="Enter value" />
+                                    <TextField
+                                        name="textFieldValue"
+                                        label="TextField (Flat)"
+                                        placeholder="Enter value"
+                                    />
 
                                     <br />
 
@@ -77,7 +81,11 @@ export const index = (): any => {
 
                                     <br />
 
-                                    <TextField name="textFieldEditorValue" label="TextField (Flat editor)" mode={TextFieldMode.EDITOR} />
+                                    <TextField
+                                        name="textFieldEditorValue"
+                                        label="TextField (Flat editor)"
+                                        mode={TextFieldMode.EDITOR}
+                                    />
 
                                     <br />
 

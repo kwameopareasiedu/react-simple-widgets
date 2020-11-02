@@ -19,7 +19,10 @@ export const usage = () => {
 
         return (
             <div>
-                <ConfirmDialog onConfirm={interceptSetBusy} type={Confirmation.DANGER} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog
+                    onConfirm={interceptSetBusy}
+                    type={Confirmation.DANGER}
+                    onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-danger">
                         Start
@@ -28,7 +31,10 @@ export const usage = () => {
 
                 <span>&nbsp;</span>
 
-                <ConfirmDialog onConfirm={interceptSetBusy} type={Confirmation.WARNING} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog
+                    onConfirm={interceptSetBusy}
+                    type={Confirmation.WARNING}
+                    onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-warning">
                         Start
@@ -37,7 +43,10 @@ export const usage = () => {
 
                 <span>&nbsp;</span>
 
-                <ConfirmDialog onConfirm={interceptSetBusy} type={Confirmation.INFO} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog
+                    onConfirm={interceptSetBusy}
+                    type={Confirmation.INFO}
+                    onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-info">
                         Start
@@ -46,7 +55,10 @@ export const usage = () => {
 
                 <span>&nbsp;</span>
 
-                <ConfirmDialog onConfirm={interceptSetBusy} type={Confirmation.SUCCESS} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog
+                    onConfirm={interceptSetBusy}
+                    type={Confirmation.SUCCESS}
+                    onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-success">
                         Start
@@ -55,7 +67,10 @@ export const usage = () => {
 
                 <span>&nbsp;</span>
 
-                <ConfirmDialog onConfirm={interceptSetBusy} type={Confirmation.PRIMARY} onCancel={action("Dialog dismissed")}>
+                <ConfirmDialog
+                    onConfirm={interceptSetBusy}
+                    type={Confirmation.PRIMARY}
+                    onCancel={action("Dialog dismissed")}>
                     <p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>
                     <BusyButton busy={busy} className="btn btn-primary">
                         Start

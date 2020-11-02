@@ -19,7 +19,13 @@ export const usage = (): any => {
             <div className="row">
                 <div className="col-12 col-md-6 mb-4">
                     <p>This file picker has file size limit of 1MB allows only png and jpg extensions</p>
-                    <FilePicker file={file1} limit={1024 * 1024} extensions={["jpg", "png"]} label="Select file" onChange={setFile1} />
+                    <FilePicker
+                        file={file1}
+                        limit={1024 * 1024}
+                        extensions={["jpg", "png"]}
+                        label="Select file"
+                        onChange={setFile1}
+                    />
                 </div>
 
                 <div className="col-12 col-md-6 mb-4">

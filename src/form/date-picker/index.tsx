@@ -118,7 +118,8 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
                 const props: any = {};
                 const classes = ["calendar-day", "calendar-day-valid"];
 
-                if (dates.includes(tempMoment.year(displayYear).month(displayMonth).date(day).format(format))) classes.push("calendar-day-active");
+                if (dates.includes(tempMoment.year(displayYear).month(displayMonth).date(day).format(format)))
+                    classes.push("calendar-day-active");
 
                 props.onClick = (e: React.MouseEvent): void => selectDate(e, displayYear, displayMonth, day);
                 props.className = classes.join(" ");
@@ -139,7 +140,8 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
             const props: any = {};
             const classes = ["calendar-month"];
 
-            if (dates.includes(tempMoment.year(displayYear).month(month).date(1).format(format))) classes.push("calendar-month-active");
+            if (dates.includes(tempMoment.year(displayYear).month(month).date(1).format(format)))
+                classes.push("calendar-month-active");
 
             props.onClick = (e: React.MouseEvent): void => selectDate(e, displayYear, month, 1);
             props.className = classes.join(" ");
@@ -159,7 +161,10 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
 
                     <div className="controls">
                         {mode !== DatePickerMode.MONTH && (
-                            <select className="month-select" value={displayMonth} onChange={e => setDisplayMonth(parseInt(e.target.value))}>
+                            <select
+                                className="month-select"
+                                value={displayMonth}
+                                onChange={e => setDisplayMonth(parseInt(e.target.value))}>
                                 {monthList.map((month, index) => (
                                     <option key={month} value={index}>
                                         {month}
@@ -172,7 +177,10 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
                             {mode !== DatePickerMode.MONTH ? "Today" : "This month"}
                         </button>
 
-                        <select className="year-select" value={displayYear} onChange={e => setDisplayYear(parseInt(e.target.value))}>
+                        <select
+                            className="year-select"
+                            value={displayYear}
+                            onChange={e => setDisplayYear(parseInt(e.target.value))}>
                             {yearList.map((year, index) => (
                                 <option key={index} value={year}>
                                     {year}
@@ -210,13 +218,19 @@ const DatePickerDialog = ({ label, mode, date, format = "YYYY-MM-DD", helper, va
 
                         <span>&nbsp;</span>
 
-                        <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => setDates([])}>
+                        <button
+                            type="button"
+                            className="btn btn-link btn-sm btn-block"
+                            onClick={(): void => setDates([])}>
                             Clear
                         </button>
 
                         <span>&nbsp;</span>
 
-                        <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => helper.dismiss()}>
+                        <button
+                            type="button"
+                            className="btn btn-link btn-sm btn-block"
+                            onClick={(): void => helper.dismiss(date)}>
                             Close
                         </button>
                     </div>
@@ -261,7 +275,16 @@ export const DatePicker = ({
         };
 
         showDialog(
-            helper => <DatePickerDialog helper={helper} mode={mode} date={date} label={label} format={format} validator={validator} />,
+            helper => (
+                <DatePickerDialog
+                    helper={helper}
+                    mode={mode}
+                    date={date}
+                    label={label}
+                    format={format}
+                    validator={validator}
+                />
+            ),
             options
         );
 
@@ -301,7 +324,9 @@ export const DatePicker = ({
                         }}
                         tabIndex={0}>
                         {date && mode !== DatePickerMode.MULTI && moment(date).format(displayFormat)}
-                        {date && mode === DatePickerMode.MULTI && (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
+                        {date &&
+                            mode === DatePickerMode.MULTI &&
+                            (date as Array<string>).map(d => moment(d).format(displayFormat)).join(", ")}
                     </div>
                 )}
             </FieldDecoration>

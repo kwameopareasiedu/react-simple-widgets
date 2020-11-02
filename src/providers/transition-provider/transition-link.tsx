@@ -12,7 +12,11 @@ export const Link = ({ children, to, dontAnimate, replaceUrl, onClick, className
     };
 
     return (
-        <a href={to} className={`react-simple-widget page-transition-link ${className || ""}`} onClick={interceptOnClick} {...props}>
+        <a
+            href={to}
+            className={`react-simple-widget page-transition-link ${className || ""}`}
+            onClick={interceptOnClick}
+            {...props}>
             {children}
         </a>
     );

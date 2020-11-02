@@ -114,7 +114,9 @@ export function Register() {
         <div id="register">
             <h1>Register </h1>
             {/* For programatic redirection, you can use the redirect function */}
-            <button onClick={(): void => redirect("/login", { dontAnimate: false, replaceUrl: false })}>Go back to login</button>
+            <button onClick={(): void => redirect("/login", { dontAnimate: false, replaceUrl: false })}>
+                Go back to login
+            </button>
         </div>
     );
 }

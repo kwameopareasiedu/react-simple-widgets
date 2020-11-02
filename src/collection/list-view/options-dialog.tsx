@@ -26,9 +26,15 @@ export const ListViewItemOptionsDialog = ({ helper, item, index, options }: ILis
 
                         if (confirmation) {
                             return (
-                                <ConfirmDialog key={label + optionIndex} onConfirm={callbackWrapper} type={confirmation[0]}>
+                                <ConfirmDialog
+                                    key={label + optionIndex}
+                                    onConfirm={callbackWrapper}
+                                    type={confirmation[0]}>
                                     <p>{confirmation[1]}</p>
-                                    <button type="button" key={label + optionIndex} className="list-group-item list-group-item-action">
+                                    <button
+                                        type="button"
+                                        key={label + optionIndex}
+                                        className="list-group-item list-group-item-action">
                                         {label}
                                     </button>
                                 </ConfirmDialog>

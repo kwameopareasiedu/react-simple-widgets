@@ -10,7 +10,7 @@ attributes of a `<span/>` tag
 ```jsx
 import { Loader } from "react-simple-widgets";
 
-<Loader />
+<Loader />;
 ```
 
 or
@@ -18,5 +18,5 @@ or
 ```jsx
 import { Loader } from "react-simple-widgets";
 
-<Loader>Hello world</Loader>
+<Loader>Hello world</Loader>;
 ```

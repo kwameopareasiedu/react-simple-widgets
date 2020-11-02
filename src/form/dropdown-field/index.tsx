@@ -10,7 +10,7 @@ export const DropdownField = ({
     children,
     decoration,
     errorTransformer,
-    stickyFloatingLabel,
+    stickyFloatingLabel = true,
     leading,
     trailing,
     disabled,

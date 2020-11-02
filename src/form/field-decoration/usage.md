@@ -20,7 +20,12 @@ import { FieldDecorationType } from "react-simple-widgets/dist/constants";
     stickyFloatingLabel={stickyFloatingLabel}
     disabled={disabled}>
     {({ onFieldFocus, onFieldBlur, onFieldChange }) => (
-        <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} onChange={e => onFieldChange(!!e.target.value)} />
+        <input
+            type="text"
+            onFocus={onFieldFocus}
+            onBlur={onFieldBlur}
+            onChange={e => onFieldChange(!!e.target.value)}
+        />
     )}
 </FieldDecoration>;
 ```

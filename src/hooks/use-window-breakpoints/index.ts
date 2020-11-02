@@ -9,7 +9,7 @@ export const useWindowBreakpoints = (): Props => {
         sm: window.innerWidth >= 540 && window.innerWidth < 720,
         md: window.innerWidth >= 720 && window.innerWidth < 960,
         lg: window.innerWidth >= 960 && window.innerWidth < 1140,
-        xl: window.innerWidth >= 1140,
+        xl: window.innerWidth >= 1140
     });
 
     const [category, setCategory] = useState(getMetrics());

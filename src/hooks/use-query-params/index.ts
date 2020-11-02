@@ -6,7 +6,10 @@ export const useQueryParams = (): any => {
     const qs2qp = (search: string): any => {
         const parts = search.substring(1).split("&");
         const cleanParts = parts.filter(part => !!part);
-        return cleanParts.reduce((acc, part) => ({ ...acc, [part.split("=")[0]]: decodeURIComponent(part.split("=")[1]) }), {});
+        return cleanParts.reduce(
+            (acc, part) => ({ ...acc, [part.split("=")[0]]: decodeURIComponent(part.split("=")[1]) }),
+            {}
+        );
     };
 
     const location = useLocation();

@@ -14,8 +14,9 @@ export const normal = (): any => {
             <div className="card">
                 <div className="card-body">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                        turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                        eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                        posuere a, pede.
                     </p>
 
                     <button className="btn btn-secondary btn-sm" onClick={helper.dismiss}>
@@ -67,8 +68,10 @@ export const normal = (): any => {
             <div className="card">
                 <div className="card-body">
                     <p className="text-center">
-                        This is a persistent dialog. These types of dialog can only be closed from the dialog itself. <br />
-                        As such, neither the <strong>escape key</strong> nor the <strong>clicking the background</strong> will dismiss it.
+                        This is a persistent dialog. These types of dialog can only be closed from the dialog itself.{" "}
+                        <br />
+                        As such, neither the <strong>escape key</strong> nor the{" "}
+                        <strong>clicking the background</strong> will dismiss it.
                     </p>
 
                     <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>

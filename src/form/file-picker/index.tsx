@@ -74,11 +74,14 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
         const extension = fn.substring(fn.lastIndexOf(".") + 1, fn.length).toLowerCase();
         const validationError = validator && validator(file);
 
-        if (extensions && !extensions.includes(extension.toLowerCase())) errors.push(`Valid extensions are: ${extensions.join(", ")}`);
-        if (limit && limit > 0 && file.size > limit) errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
+        if (extensions && !extensions.includes(extension.toLowerCase()))
+            errors.push(`Valid extensions are: ${extensions.join(", ")}`);
+        if (limit && limit > 0 && file.size > limit)
+            errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
         if (validationError) errors.push(validationError);
 
-        if (errors.length > 1) setError(errors.slice(0, errors.length - 1).join(", ") + " and " + errors[errors.length - 1]);
+        if (errors.length > 1)
+            setError(errors.slice(0, errors.length - 1).join(", ") + " and " + errors[errors.length - 1]);
         else if (errors.length === 1) setError(errors[0]);
 
         if (errors.length === 0) {
@@ -94,7 +97,12 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
 
                 {label && <label>{label}</label>}
 
-                <div ref={dropAreaRef} className="drop-area text-center" tabIndex={0} onClick={openFileDialog} onKeyUp={onKeyUp}>
+                <div
+                    ref={dropAreaRef}
+                    className="drop-area text-center"
+                    tabIndex={0}
+                    onClick={openFileDialog}
+                    onKeyUp={onKeyUp}>
                     <p className="text-center">Click to select file</p>
                     <p className="text-center or-separator">or</p>
                     <p className="text-center">Drag and drop file</p>
@@ -115,7 +123,10 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
                         </button>
                     </div>
                     <div className="col-12 col-sm-6">
-                        <button type="button" className="btn btn-link btn-sm btn-block" onClick={(): void => helper.dismiss()}>
+                        <button
+                            type="button"
+                            className="btn btn-link btn-sm btn-block"
+                            onClick={(): void => helper.dismiss()}>
                             Close
                         </button>
                     </div>
@@ -129,7 +140,20 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
  * FilePicker is a widget that allows the user select a file from the file system. It uses the
  * dialog to show the picker and thus required DialogProvider to be an ancestor
  */
-export const FilePicker = ({ file, error, limit, label, leading, trailing, extensions, decoration, validator, onFocus, onBlur, onChange }: Props) => {
+export const FilePicker = ({
+    file,
+    error,
+    limit,
+    label,
+    leading,
+    trailing,
+    extensions,
+    decoration,
+    validator,
+    onFocus,
+    onBlur,
+    onChange
+}: Props) => {
     const { showDialog } = useContext(DialogProviderContext);
     const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -144,7 +168,18 @@ export const FilePicker = ({ file, error, limit, label, leading, trailing, exten
             }
         };
 
-        showDialog(helper => <FilePickerDialog helper={helper} label={label} limit={limit} extensions={extensions} validator={validator} />, options);
+        showDialog(
+            helper => (
+                <FilePickerDialog
+                    helper={helper}
+                    label={label}
+                    limit={limit}
+                    extensions={extensions}
+                    validator={validator}
+                />
+            ),
+            options
+        );
         setDialogOpen(true);
         onFocus();
     };

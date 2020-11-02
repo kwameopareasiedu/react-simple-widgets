@@ -49,8 +49,10 @@ export const SelectField = ({ name, label, mode, options, inline, onChange, erro
                                         onFocus={interceptOnFocus}
                                         onChange={(): void => {
                                             const valueType = Object.prototype.toString.call(value);
-                                            if (!value || valueType !== "[object Array]") interceptOnChange([optionValue]);
-                                            else if (!value.includes(optionValue)) interceptOnChange([...value, optionValue]);
+                                            if (!value || valueType !== "[object Array]")
+                                                interceptOnChange([optionValue]);
+                                            else if (!value.includes(optionValue))
+                                                interceptOnChange([...value, optionValue]);
                                             else interceptOnChange(value.filter((v: any) => v !== optionValue));
                                         }}
                                     />

@@ -7,7 +7,9 @@ import { TransitionView as Props } from "./types";
 export const TransitionView = ({ children }: Props): any => {
     const { pathname, search, hash } = useLocation();
     const [className, setClassName] = useState("react-simple-widget transition-view");
-    const { __config__, __incrementViewCount__, __decrementViewCount__, __endRedirect__ } = useContext(TransitionProviderContext);
+    const { __config__, __incrementViewCount__, __decrementViewCount__, __endRedirect__ } = useContext(
+        TransitionProviderContext
+    );
 
     useEffect(() => {
         // On load notify the TransitionProvider by incrementing the view count

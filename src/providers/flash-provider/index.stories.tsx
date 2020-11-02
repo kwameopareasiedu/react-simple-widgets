@@ -11,11 +11,14 @@ export default {
 export const normal = (): any => {
     const ExampleApp = (): any => {
         const { flashInfo, flashWarning, flashError, flashSuccess } = useContext(FlashProviderContext);
-        const message = "Donec_nec_justo_eget_felis_facilisis_fermentum. Aliquam porttitor mauris sit amet orci. dignissim pellentesque felis.";
+        const message =
+            "Donec_nec_justo_eget_felis_facilisis_fermentum. Aliquam porttitor mauris sit amet orci. dignissim pellentesque felis.";
 
         return (
             <div>
-                <button className="btn btn-danger btn-sm" onClick={(): void => flashError("Error", <i>{message}</i>, () => alert("Dismissed"))}>
+                <button
+                    className="btn btn-danger btn-sm"
+                    onClick={(): void => flashError("Error", <i>{message}</i>, () => alert("Dismissed"))}>
                     Flash error
                 </button>
                 <span>&nbsp;</span>
@@ -25,11 +28,15 @@ export const normal = (): any => {
                     Flash warning
                 </button>
                 <span>&nbsp;</span>
-                <button className="btn btn-info btn-sm" onClick={(): void => flashInfo("Info", <u>{message}</u>, () => alert("Dismissed"))}>
+                <button
+                    className="btn btn-info btn-sm"
+                    onClick={(): void => flashInfo("Info", <u>{message}</u>, () => alert("Dismissed"))}>
                     Flash info
                 </button>
                 <span>&nbsp;</span>
-                <button className="btn btn-success btn-sm" onClick={(): void => flashSuccess("Success", message, () => alert("Dismissed"))}>
+                <button
+                    className="btn btn-success btn-sm"
+                    onClick={(): void => flashSuccess("Success", message, () => alert("Dismissed"))}>
                     Flash success
                 </button>
             </div>

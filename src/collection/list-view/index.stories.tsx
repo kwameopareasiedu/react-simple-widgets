@@ -51,7 +51,9 @@ const collection = [
 export default {
     title: "ListView",
     component: ListView,
-    decorators: [(storyFn: () => any) => <div style={{ padding: "30px" }}>{<DialogProvider>{storyFn()}</DialogProvider>}</div>]
+    decorators: [
+        (storyFn: () => any) => <div style={{ padding: "30px" }}>{<DialogProvider>{storyFn()}</DialogProvider>}</div>
+    ]
 };
 
 export const normal = (): any => {
@@ -122,7 +124,10 @@ export const withOptions = (): any => {
                     if (itemIndex < 8) return null;
 
                     return [
-                        { label: "Option #1", onClick: () => console.log(`Option #1 of item #${itemIndex + 1} clicked`) },
+                        {
+                            label: "Option #1",
+                            onClick: () => console.log(`Option #1 of item #${itemIndex + 1} clicked`)
+                        },
                         {
                             label: "Option #2",
                             confirmation: [Confirmation.PRIMARY, "A confirmation question"],
@@ -169,7 +174,7 @@ export const withPagination = (): any => {
             setLoading(true);
             setTimeout(() => {
                 setLoading(false);
-                setItems(collection.slice(2 * (page - 1), 2 * page));
+                setItems(collection.slice(8 * (page - 1), 8 * page));
             }, 1000 + Math.random() * 500);
         }, [page]);
 
@@ -179,7 +184,7 @@ export const withPagination = (): any => {
                 busy={loading}
                 pagination={{
                     page,
-                    pageSize: 2,
+                    pageSize: 8,
                     total: collection.length,
                     onPageChange: (page): void => setPage(page)
                 }}

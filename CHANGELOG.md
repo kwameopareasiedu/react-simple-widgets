@@ -4,6 +4,10 @@
 
 -   `2.1.0`
 
+    -   Added scroll-to-top feature to [ListView](src/collection/list-view/usage.md) if the `items`
+        list changes
+    -   Fixed bug in [DatePicker](./src/form/date-picker/usage.md) causing the date to be cleared
+        if the picker dialog is closed without selecting any date
     -   Added `persistent` option to `DialogOptions` of [DialogProvider](./src/providers/dialog-provider/usage.md)
         widget
     -   Changed [ListView](src/collection/list-view/usage.md) widget loader from a circular loader

@@ -15,7 +15,13 @@ export const PasswordField = ({ mode, type, ...rest }: Props): any => {
     };
 
     const trailing = (): any => {
-        return <img alt="Visibility" src={passwordVisible ? HiddenIcon : VisibleIcon} onClick={(): void => setPasswordVisible(!passwordVisible)} />;
+        return (
+            <img
+                alt="Visibility"
+                src={passwordVisible ? HiddenIcon : VisibleIcon}
+                onClick={(): void => setPasswordVisible(!passwordVisible)}
+            />
+        );
     };
 
     return (

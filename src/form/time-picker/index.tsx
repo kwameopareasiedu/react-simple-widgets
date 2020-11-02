@@ -95,7 +95,12 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             <img src={UpIcon} alt="Up icon" />
                         </button>
 
-                        <input type="text" className="form-control" value={hour === 0 ? "12" : hour.toString().padStart(2, "0")} readOnly />
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={hour === 0 ? "12" : hour.toString().padStart(2, "0")}
+                            readOnly
+                        />
 
                         <button
                             type="button"
@@ -121,7 +126,12 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             <img src={UpIcon} alt="Up icon" />
                         </button>
 
-                        <input type="text" className="form-control" value={minute.toString().padStart(2, "0")} readOnly />
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={minute.toString().padStart(2, "0")}
+                            readOnly
+                        />
 
                         <button
                             type="button"
@@ -143,7 +153,10 @@ const TimePickerDialog = ({ time, label, helper, validator }: ITimePickerDialog)
                             onClick={() => setMeridian(Meridian.AM)}>
                             AM
                         </button>
-                        <button type="button" className={`btn ${meridian === Meridian.PM ? "active" : ""}`} onClick={() => setMeridian(Meridian.PM)}>
+                        <button
+                            type="button"
+                            className={`btn ${meridian === Meridian.PM ? "active" : ""}`}
+                            onClick={() => setMeridian(Meridian.PM)}>
                             PM
                         </button>
                     </section>
