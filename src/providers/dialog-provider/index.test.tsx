@@ -44,7 +44,7 @@ describe("DialogProvider tests", () => {
         const { findByText, container } = render(<DialogProviderExample />);
 
         fireEvent.click(await findByText("Open all dialogs"));
-        expect(container.querySelectorAll("p").length).toBe(3);
+        expect(container.querySelectorAll("p").length).toBe(4);
     });
 
     it("should open and close a dialog", async () => {
