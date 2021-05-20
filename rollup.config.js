@@ -27,5 +27,5 @@ module.exports = {
         terser()
     ],
     watch: { chokidar: { usePolling: true } },
-    external: ["react", "react-router-dom", "formik"]
+    external: ["react", "react-dom", "react-router-dom", "formik"]
 };

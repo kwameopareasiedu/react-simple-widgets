@@ -1,6 +1,6 @@
 {
     "name": "react-simple-widgets",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "A collection of simple to use widgets for building react apps easily",
     "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
     "repository": {
@@ -79,6 +79,7 @@
     "peerDependencies": {
         "formik": "^2.1.4",
         "react": "^16.14.0",
+        "react-dom": "^16.14.0",
         "react-router-dom": "^5.2.0"
     },
     "husky": {
