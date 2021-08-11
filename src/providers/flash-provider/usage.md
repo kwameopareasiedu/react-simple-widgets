@@ -49,7 +49,7 @@ export function App() {
         <div id="app">
             <button
                 className="btn btn-danger btn-sm"
-                onClick={(): void => flashError("Error", message, () => alert("Error flash message"))}>
+                onClick={(): void => flashError("Error", message, () => alert("Error flash message"), "OK")}>
                 Flash error
             </button>
 

@@ -10,10 +10,11 @@ interface IFlashView {
     type: FlashType;
     title: string;
     message: string;
+    buttonText: string;
     onDismiss: () => void;
 }
 
-export const FlashView = ({ type, title, message, onDismiss }: IFlashView): any => {
+export const FlashView = ({ type, title, message, buttonText, onDismiss }: IFlashView): any => {
     const className = (): string => {
         const classes = ["react-simple-widget", "flash-view", "card"];
 
@@ -57,7 +58,7 @@ export const FlashView = ({ type, title, message, onDismiss }: IFlashView): any 
                 <h5 className="flash-title">{title}</h5>
                 <div className="flash-message">{message || ""}</div>
                 <button type="button" className="btn btn-lg flash-button" onClick={onDismiss}>
-                    Dismiss
+                    {buttonText || "Dismiss"}
                 </button>
             </div>
         </div>

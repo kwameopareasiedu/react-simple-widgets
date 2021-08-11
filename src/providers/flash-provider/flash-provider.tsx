@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { DialogBuilder } from "../dialog-provider/types";
-import { FlashType, FlashProvider as Props } from "./types";
+import { FlashProvider as Props, FlashType } from "./types";
 import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider";
 import { FlashView } from "./flash-view";
@@ -9,24 +8,38 @@ import { FlashView } from "./flash-view";
 export const FlashProvider = ({ children }: Props): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
-    const flash = (type: FlashType, title: string, message: any, onFlashDismissed?: () => void): void => {
-        const builder: DialogBuilder = helper => (
-            <FlashView type={type} title={title} message={message} onDismiss={helper.dismiss} />
+    const flash = (
+        type: FlashType,
+        title: string,
+        message: any,
+        onFlashDismissed?: () => void,
+        btnText?: string
+    ): void => {
+        showDialog(
+            helper => (
+                <FlashView
+                    type={type}
+                    title={title}
+                    message={message}
+                    buttonText={btnText}
+                    onDismiss={helper.dismiss}
+                />
+            ),
+            { onDismissed: onFlashDismissed }
         );
-        showDialog(builder, { onDismissed: onFlashDismissed });
     };
 
-    const flashError = (title: string, message?: any, onFlashDismissed?: () => void): void =>
-        flash(FlashType.ERROR, title, message, onFlashDismissed);
+    const flashError = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void =>
+        flash(FlashType.ERROR, title, message, onFlashDismissed, btnText);
 
-    const flashWarning = (title: string, message?: any, onFlashDismissed?: () => void): void =>
-        flash(FlashType.WARNING, title, message, onFlashDismissed);
+    const flashWarning = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void =>
+        flash(FlashType.WARNING, title, message, onFlashDismissed, btnText);
 
-    const flashInfo = (title: string, message?: any, onFlashDismissed?: () => void): void =>
-        flash(FlashType.INFO, title, message, onFlashDismissed);
+    const flashInfo = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void =>
+        flash(FlashType.INFO, title, message, onFlashDismissed, btnText);
 
-    const flashSuccess = (title: string, message?: any, onFlashDismissed?: () => void): void =>
-        flash(FlashType.SUCCESS, title, message, onFlashDismissed);
+    const flashSuccess = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void =>
+        flash(FlashType.SUCCESS, title, message, onFlashDismissed, btnText);
 
     return (
         <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
