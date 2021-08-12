@@ -3,6 +3,7 @@ export interface UseCountdown {
     running: boolean;
     resetCountdown: () => void;
 }
+
 export interface UseLoadMore {
     page: number;
     items: Array<any>;
@@ -12,6 +13,7 @@ export interface UseLoadMore {
     onLoadMoreSuccess: (newItems: Array<any>, total: number) => void;
     onLoadMoreFailed: () => void;
 }
+
 export interface UseWindowBreakpoints {
     width: number;
     xs: boolean;
@@ -20,6 +22,7 @@ export interface UseWindowBreakpoints {
     lg: boolean;
     xl: boolean;
 }
+
 export interface ValueStoreProviderContext {
     get: (key: string) => any;
     set: (key: string, value: any, persist?: boolean) => void;
@@ -31,6 +34,7 @@ export interface ValueStoreProvider {
     initialKeys?: Array<string>;
     children: any;
 }
+
 export enum FlashType {
     ERROR,
     WARNING,
@@ -39,17 +43,30 @@ export enum FlashType {
 }
 
 export interface FlashProviderContext {
-    flashError: (title: string, message?: any, onFlashDismissed?: () => void) => void;
-    flashWarning: (title: string, message?: any, onFlashDismissed?: () => void) => void;
-    flashInfo: (title: string, message?: any, onFlashDismissed?: () => void) => void;
-    flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void) => void;
+    flashError: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
+    flashWarning: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
+    flashInfo: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
+    flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
 }
+
+export interface FlashArgs {
+    type: FlashType;
+    title: string;
+    message: any;
+    onFlashDismissed?: () => void;
+    btnText?: string;
+}
+
+export type FlashViewBuilder = (args: FlashArgs) => any;
 
 export interface FlashProvider {
     children: any;
+    builder?: FlashViewBuilder;
 }
+
 /* TransitionProvider interfaces */
-import { AnchorHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
+import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 export interface TransitionOptions {
     dontAnimate?: boolean;
@@ -81,6 +98,7 @@ export interface TransitionLink extends TransitionOptions, AnchorHTMLAttributes<
     to: string;
     children?: any;
 }
+
 export enum DialogSize {
     SMALL,
     MEDIUM,
@@ -110,11 +128,11 @@ export interface DialogProviderContext {
 export interface DialogProvider {
     children: any;
 }
-import { ButtonHTMLAttributes } from "react";
 
 export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     busy?: boolean;
 }
+
 export enum Confirmation {
     DANGER,
     WARNING,
@@ -168,7 +186,6 @@ export interface DatePicker {
     trailing?: any;
     leading?: any;
 }
-import { SelectHTMLAttributes } from "react";
 
 export interface DropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;
@@ -182,7 +199,6 @@ export interface DropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     trailing?: any;
     leading?: any;
 }
-import { InputHTMLAttributes } from "react";
 
 export enum TextFieldMode {
     INPUT,
@@ -253,6 +269,7 @@ export interface DateField {
     trailing?: any;
     leading?: any;
 }
+
 export enum FieldDecorationType {
     UNDERLINE,
     FLOATING_LABEL
@@ -276,7 +293,6 @@ export interface FieldDecoration {
     decoration?: FieldDecorationType;
     children: FieldDecorationBuilder;
 }
-import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
 
@@ -300,6 +316,7 @@ export interface FilePicker {
     trailing?: any;
     leading?: any;
 }
+
 export enum SelectFieldMode {
     SINGLE,
     MULTI
@@ -359,6 +376,7 @@ export interface ListView {
     props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
     keyFn: (item: any, itemIndex?: number) => string;
 }
+
 export interface ObjectView {
     object: any;
     condensed?: boolean;

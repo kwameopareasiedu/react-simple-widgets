@@ -5,7 +5,7 @@ import { DialogProviderContext } from "../dialog-provider";
 import { FlashView } from "./flash-view";
 
 // FlashProvider uses the DialogProvider to display flash messages
-export const FlashProvider = ({ children }: Props): any => {
+export const FlashProvider = ({ children, builder }: Props): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const flash = (
@@ -16,15 +16,27 @@ export const FlashProvider = ({ children }: Props): any => {
         btnText?: string
     ): void => {
         showDialog(
-            helper => (
-                <FlashView
-                    type={type}
-                    title={title}
-                    message={message}
-                    buttonText={btnText}
-                    onDismiss={helper.dismiss}
-                />
-            ),
+            helper => {
+                if (builder) {
+                    return builder({
+                        type,
+                        title,
+                        message,
+                        onFlashDismissed,
+                        btnText
+                    });
+                }
+
+                return (
+                    <FlashView
+                        type={type}
+                        title={title}
+                        message={message}
+                        buttonText={btnText}
+                        onDismiss={helper.dismiss}
+                    />
+                );
+            },
             { onDismissed: onFlashDismissed }
         );
     };

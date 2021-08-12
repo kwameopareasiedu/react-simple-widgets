@@ -12,6 +12,17 @@ export interface FlashProviderContext {
     flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
 }
 
+export interface FlashArgs {
+    type: FlashType;
+    title: string;
+    message: any;
+    onFlashDismissed?: () => void;
+    btnText?: string;
+}
+
+export type FlashViewBuilder = (args: FlashArgs) => any;
+
 export interface FlashProvider {
     children: any;
+    builder?: FlashViewBuilder;
 }

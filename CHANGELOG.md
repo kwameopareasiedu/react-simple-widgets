@@ -2,6 +2,11 @@
 
 # Changelog
 
+-   `3.1.0`
+
+    -   Added optional `builder` variable to `<FlashProvider/>` to build a custom flash view component
+        [FlashProvider](src/providers/flash-provider/usage.md)
+
 -   `3.0.3`
 
     -   Added optional `btnText` variable to `flashSuccess`, `flashInfo`, `flashWarning` and

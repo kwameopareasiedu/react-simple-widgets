@@ -1,6 +1,6 @@
 module.exports = {
     stories: ["../src/**/*.stories.tsx"],
-    addons: ["@storybook/addon-actions/register", "@storybook/addon-knobs/register"],
+    addons: ["@storybook/addon-actions", "@storybook/addon-controls"],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("svg") === -1);
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("scss") === -1);
