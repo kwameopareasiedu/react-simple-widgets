@@ -24,6 +24,7 @@ export const TextField = ({
     onEditorChange,
     onEditorFocus,
     onEditorBlur,
+    stickyFloatingLabel,
     ...rest
 }: Props): any => {
     // Override classname
@@ -115,7 +116,7 @@ export const TextField = ({
                         trailing={trailing}
                         decoration={decoration}
                         error={touched && error}
-                        stickyFloatingLabel={mode === TextFieldMode.EDITOR || !!value}
+                        stickyFloatingLabel={stickyFloatingLabel || mode === TextFieldMode.EDITOR || !!value}
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur, onFieldChange }) => {
                             return mode === TextFieldMode.INPUT
