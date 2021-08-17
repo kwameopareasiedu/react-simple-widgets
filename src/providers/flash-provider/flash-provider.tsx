@@ -23,7 +23,7 @@ export const FlashProvider = ({ children, builder }: Props): any => {
                         title,
                         message,
                         onFlashDismissed: () => {
-                            onFlashDismissed();
+                            if (onFlashDismissed) onFlashDismissed();
                             helper.dismiss();
                         },
                         btnText
