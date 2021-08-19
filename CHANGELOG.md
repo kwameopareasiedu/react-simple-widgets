@@ -5,12 +5,12 @@
 -   `3.1.0`
 
     -   Added optional `builder` variable to `<FlashProvider/>` to build a custom flash view component
-        [FlashProvider](src/providers/flash-provider/usage.md)
+        [FlashProvider](src/flash-provider/flash-provider-usage.md)
 
 -   `3.0.3`
 
     -   Added optional `btnText` variable to `flashSuccess`, `flashInfo`, `flashWarning` and
-        `flashError` in [FlashProvider](src/providers/flash-provider/usage.md)
+        `flashError` in [FlashProvider](src/flash-provider/flash-provider-usage.md)
 
 -   `3.0.0`
 
@@ -95,8 +95,8 @@
 
 -   `1.7.0`
 
-    -   Modified theme color of success messages of [FlashProvider](src/providers/flash-provider/usage.md)
-    -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/providers/flash-provider/usage.md)
+    -   Modified theme color of success messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
+    -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
     -   Changed CSS property `word-break` of [ListView](src/collection/list-view/usage.md) cells from `break-all`
         to `break-word`
     -   Fixed bug causing inconsistent borders in [ListView](src/collection/list-view/usage.md)
@@ -231,7 +231,7 @@
 
     -   Grouped props of [ListView](src/collection/list-view/usage.md). This puts related props in similar objects which
         are enabled when specified or disabled when not
-    -   Made `message` parameter of flash functions in [FlashProvider](src/providers/flash-provider/usage.md)
+    -   Made `message` parameter of flash functions in [FlashProvider](src/flash-provider/flash-provider-usage.md)
         optional
 
 -   `1.1.0`

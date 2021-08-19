@@ -1,10 +1,10 @@
 import "./flash-view.scss";
 import React from "react";
-import { FlashType } from "./types";
-import ErrorIcon from "../../assets/error.svg";
-import WarningIcon from "../../assets/warning.svg";
-import SuccessIcon from "../../assets/success.svg";
-import InfoIcon from "../../assets/info.svg";
+import { FlashType } from "./flash-provider-types";
+import ErrorIcon from "../assets/error.svg";
+import WarningIcon from "../assets/warning.svg";
+import SuccessIcon from "../assets/success.svg";
+import InfoIcon from "../assets/info.svg";
 
 interface IFlashView {
     type: FlashType;

@@ -1,17 +1,14 @@
-[Home](../../../README.md) / FlashProvider
+[Home](../../README.md) / FlashProvider
 
 # FlashProvider
 
-The `FlashProvider` allows your app to display different types of flash messages. `FlashProvider`
-uses dialogs to display these flash messages and thus depends on a [DialogProvider](../../dialog-provider/usage.md)
-ancestor to be available up your component tree.
+The `FlashProvider` allows your app to display different types of flash messages. `FlashProvider` uses dialogs to display these flash messages and thus depends on a [DialogProvider](../../dialog-provider/usage.md) ancestor to be available up your component tree.
 
 The following guide demonstrates how to use the `FlashProvider`
 
 ## Wrap your app with the `FlashProvider` widget
 
-The first step to using the `FlashProvider` widget is to make it an ancestor of your app export.
-Again, since `FlashProvider` uses dialogs, the `DialogProvider` is also required to be an ancestor.
+The first step to using the `FlashProvider` widget is to make it an ancestor of your app export. Again, since `FlashProvider` uses dialogs, the `DialogProvider` is also required to be an ancestor.
 
 ```jsx
 import ReactDOM from "react-dom";
@@ -28,8 +25,7 @@ ReactDOM.render(
 );
 ```
 
-This makes the `FlashProvider` context available to the rest of the application. The context
-contains the function needed to display flash messages.
+This makes the `FlashProvider` context available to the rest of the application. The context contains the function needed to display flash messages.
 
 ## Show flash message within your app
 

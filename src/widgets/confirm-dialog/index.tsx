@@ -1,7 +1,7 @@
 import "./index.scss";
 import React, { useContext } from "react";
 import { ConfirmDialog as Props, Confirmation } from "./types";
-import { DialogProviderContext } from "../../dialog-provider";
+import { DialogProviderContext } from "../../dialog-provider/dialog-provider-context";
 import { DialogHelper, DialogOptions } from "../../dialog-provider/dialog-provider-types";
 
 /**

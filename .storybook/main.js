@@ -2,7 +2,7 @@ module.exports = {
     core: {
         builder: "webpack5"
     },
-    stories: ["../src/**/dialog-provider.stories.tsx"],
+    stories: ["../src/**/*.stories.tsx"],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.filter(rule => rule.test.toString().indexOf("svg") === -1);

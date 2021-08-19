@@ -2,10 +2,11 @@ import "./index.scss";
 
 export * from "./dialog-provider/dialog-provider-context";
 export * from "./dialog-provider/dialog-provider";
+export * from "./flash-provider/flash-provider-context";
+export * from "./flash-provider/flash-provider";
 
 export * from "./providers/value-store-provider";
 export * from "./providers/transition-provider";
-export * from "./providers/flash-provider";
 
 export * from "./form/field-decoration";
 export * from "./form/custom-field";

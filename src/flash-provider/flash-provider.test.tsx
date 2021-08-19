@@ -2,7 +2,7 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it, jest } from "@jest/globals";
-import { normal as FlashProviderExample } from "./index.stories";
+import { Default as FlashProviderExample } from "./flash-provider.stories";
 
 afterEach(cleanup);
 

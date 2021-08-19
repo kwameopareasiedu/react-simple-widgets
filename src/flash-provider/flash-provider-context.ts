@@ -1,9 +1,4 @@
-export enum FlashType {
-    ERROR,
-    WARNING,
-    INFO,
-    SUCCESS
-}
+import { createContext } from "react";
 
 export interface FlashProviderContext {
     flashError: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
@@ -12,17 +7,4 @@ export interface FlashProviderContext {
     flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
 }
 
-export interface FlashArgs {
-    type: FlashType;
-    title: string;
-    message: any;
-    onFlashDismissed?: () => void;
-    btnText?: string;
-}
-
-export type FlashViewBuilder = (args: FlashArgs) => any;
-
-export interface FlashProvider {
-    children: any;
-    builder?: FlashViewBuilder;
-}
+export const FlashProviderContext = createContext<FlashProviderContext>(null);

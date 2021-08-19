@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
 import { FlashProvider } from "./flash-provider";
 import { FlashProviderContext } from "./flash-provider-context";
-import { DialogProvider } from "../../dialog-provider/dialog-provider";
+import { DialogProvider } from "../dialog-provider/dialog-provider";
 
 export default {
     title: "FlashProvider",
     component: FlashProvider
 };
 
-export const normal = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
         const { flashInfo, flashWarning, flashError, flashSuccess } = useContext(FlashProviderContext);
-        const message =
-            "Donec_nec_justo_eget_felis_facilisis_fermentum. Aliquam porttitor mauris sit amet orci. dignissim pellentesque felis.";
+        const message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque volutpat mattis eros. ";
 
         return (
             <div>
