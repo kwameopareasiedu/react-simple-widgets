@@ -5,7 +5,7 @@ export * from "./dialog-provider/dialog-provider";
 export * from "./flash-provider/flash-provider-context";
 export * from "./flash-provider/flash-provider";
 
-export * from "./providers/value-store-provider";
+export * from "./local-storage-provider";
 export * from "./providers/transition-provider";
 
 export * from "./form/field-decoration";

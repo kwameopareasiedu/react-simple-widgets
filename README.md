@@ -36,7 +36,7 @@ You can install these dependencies with `yarn add -D react react-router-dom form
 Providers wrap around you app and provide globally accessible functionality to all parts of your app
 
 -   [DialogProvider](src/dialog-provider/usage.md) - Provides a simple dialog framework within your app
--   [ValueStoreProvider](src/providers/value-store-provider/usage.md) - Provides an in-memory value storage which can
+-   [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) - Provides an in-memory value storage which can
     utilize the local storage API to persist data
 -   [FlashProvider](src/flash-provider/flash-provider-usage.md) - Provides a flash message framework built using the dialog
     framework

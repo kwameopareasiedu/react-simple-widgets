@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { ValueStoreProvider } from "./value-store-provider";
-import { ValueStoreProviderContext } from "./value-store-provider-context";
+import { LocalStorageProvider } from "./local-storage-provider";
+import { LocalStorageProviderContext } from "./local-storage-provider-context";
 
 export default {
-    title: "ValueStoreProvider",
-    component: ValueStoreProvider
+    title: "LocalStorageProvider",
+    component: LocalStorageProvider
 };
 
-export const normal = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
-        const { get, set, del, clear } = useContext(ValueStoreProviderContext);
+        const { getItem, setItem, removeItems, clear } = useContext(LocalStorageProviderContext);
 
         return (
             <div>
@@ -29,13 +29,13 @@ export const normal = (): any => {
 
                                 <input
                                     className="form-control"
-                                    value={get("favourite-web-framework") || ""}
-                                    onChange={e => set("favourite-web-framework", e.target.value, true)}
+                                    value={getItem("favourite-web-framework") || ""}
+                                    onChange={e => setItem("favourite-web-framework", e.target.value)}
                                 />
 
                                 <button
                                     className="btn btn-link btn-sm"
-                                    onClick={(): void => del("favourite-web-framework")}>
+                                    onClick={(): void => removeItems("favourite-web-framework")}>
                                     Remove key for this input
                                 </button>
                             </div>
@@ -49,13 +49,13 @@ export const normal = (): any => {
 
                                 <input
                                     className="form-control"
-                                    value={get("favourite-mobile-framework") || ""}
-                                    onChange={e => set("favourite-mobile-framework", e.target.value, true)}
+                                    value={getItem("favourite-mobile-framework") || ""}
+                                    onChange={e => setItem("favourite-mobile-framework", e.target.value)}
                                 />
 
                                 <button
                                     className="btn btn-link btn-sm"
-                                    onClick={(): void => del("favourite-mobile-framework")}>
+                                    onClick={(): void => removeItems("favourite-mobile-framework")}>
                                     Remove key for this input
                                 </button>
                             </div>
@@ -65,25 +65,14 @@ export const normal = (): any => {
 
                         <label>
                             <small>
-                                <i>
-                                    Your favourite desktop framework (<strong>Not persisted in local storage</strong>)
-                                </i>
+                                <i>Your favourite desktop framework</i>
                             </small>
                         </label>
 
                         <input
                             className="form-control"
-                            value={get("favourite-desktop-framework") || ""}
-                            onChange={e => set("favourite-desktop-framework", e.target.value)}
-                        />
-
-                        <br />
-
-                        <input
-                            className="form-control"
-                            value={get("test-key") || ""}
-                            placeholder="Test input"
-                            onChange={e => set("test-key", e.target.value)}
+                            value={getItem("favourite-desktop-framework") || ""}
+                            onChange={e => setItem("favourite-desktop-framework", e.target.value)}
                         />
 
                         <br />
@@ -105,8 +94,8 @@ export const normal = (): any => {
     };
 
     return (
-        <ValueStoreProvider initialKeys={["test-key"]}>
+        <LocalStorageProvider>
             <ExampleApp />
-        </ValueStoreProvider>
+        </LocalStorageProvider>
     );
 };

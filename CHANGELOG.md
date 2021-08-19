@@ -52,7 +52,7 @@
 -   `1.10.1`
 
     -   Fixed bug causing race conditions when `del` is used successively in
-        [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+        [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
     -   Fixed bug causing `pageTransitionViewCount` to go below 0, which in turn caused `<Link/>`s
         outside `<PageTransitionView/>`s not to work in
         [PageTransitionProvider](src/providers/transition-provider/usage.md)
@@ -78,7 +78,7 @@
 
     -   Added [debounce](src/misc/debounce/usage.md) utility
     -   Added [useCountdown](src/hooks/use-countdown/usage.md) hook
-    -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+    -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
         to allow pre-existing local storage values to be added to the value store
 
 -   `1.7.2`
@@ -134,7 +134,7 @@
 -   `1.5.0`
 
     -   Added [useLoadMore hook](src/hooks/use-load-more/usage.md)
-    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
         widget. Once a value is persisted, it will automatically be remembered until removed, even when the page is
         refreshed
     -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
@@ -167,7 +167,7 @@
 
 -   `1.3.5`
 
-    -   Added the `clear` function to the [ValueStoreProvider](src/providers/value-store-provider/usage.md)
+    -   Added the `clear` function to the [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
         which deletes all values in the store and removes them from the local storage if they are persisted
 
 -   `1.3.4`
@@ -192,12 +192,12 @@
 
 -   `1.3.1`
 
-    -   Modified [ValueStoreProvider](src/providers/value-store-provider/usage.md) to store null values as-is instead of
+    -   Modified [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) to store null values as-is instead of
         an empty string
 
 -   `1.3.0`
 
-    -   Added `del` feature to [ValueStoreProvider](src/providers/value-store-provider/usage.md) to remove values from the
+    -   Added `del` feature to [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) to remove values from the
         provider
 
 -   `1.2.4`
@@ -223,7 +223,7 @@
 
 -   `1.2.1`
 
-    -   Fixed bug in [ValueStoreProvider](src/providers/value-store-provider/usage.md) making simultaneous value updates
+    -   Fixed bug in [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) making simultaneous value updates
         persist
     -   Added `placeholder` prop to [DatePicker](src/form/date-picker/usage.md)
 
