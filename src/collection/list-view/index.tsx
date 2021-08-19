@@ -1,6 +1,6 @@
 import "./index.scss";
 import React, { Fragment, useContext, useEffect, useRef, useState } from "react";
-import { DialogProviderContext } from "../../providers/dialog-provider";
+import { DialogProviderContext } from "../../dialog-provider";
 import { ListViewItemOptionsDialog } from "./options-dialog";
 import { ListView as Props, ListViewOption } from "./types";
 import LoaderIcon from "../../assets/loading.svg";

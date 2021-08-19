@@ -2,7 +2,7 @@ import "./options-dialog.scss";
 import React from "react";
 import { ListViewOption } from "./types";
 import { ConfirmDialog } from "../../widgets/confirm-dialog";
-import { DialogHelper } from "../../providers/dialog-provider/types";
+import { DialogHelper } from "../../dialog-provider/dialog-provider-types";
 
 interface IListViewItemOptionsDialog {
     item: any;

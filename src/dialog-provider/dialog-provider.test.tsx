@@ -1,11 +1,12 @@
+/** @jest-environment jsdom */
 import React from "react";
 import { afterEach, describe, expect, it, jest } from "@jest/globals";
 import { cleanup, fireEvent, render } from "@testing-library/react";
-import { normal as DialogProviderExample } from "./index.stories";
+import { Default as DialogProviderExample } from "./dialog-provider.stories";
 
 afterEach(cleanup);
 
-describe("DialogProvider tests", () => {
+describe("DialogProvider Tests", () => {
     it("should render without any problems", () => {
         render(<DialogProviderExample />);
     });
@@ -36,8 +37,7 @@ describe("DialogProvider tests", () => {
     //
     //     await new Promise(resolve => setTimeout(resolve, 50));
     //
-    //     screen.debug();
-    //     // expect(container.querySelector("p")).toBe(null);
+    //     expect(container.querySelector("p")).toBe(null);
     // });
 
     it("should open all dialog when button is pressed", async () => {

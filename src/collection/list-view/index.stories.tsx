@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { Confirmation } from "../../widgets/confirm-dialog/types";
-import { DialogProvider } from "../../providers/dialog-provider";
+import { DialogProvider } from "../../dialog-provider/dialog-provider";
 import { ListView } from "./index";
 import { ListViewSortOrder } from "./types";
 

@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { ConfirmDialog } from "./index";
 import { Confirmation } from "./types";
 import { BusyButton } from "../busy-button";
-import { DialogProvider } from "../../providers/dialog-provider";
+import { DialogProvider } from "../../dialog-provider/dialog-provider";
 
 export default { title: "ConfirmDialog", component: ConfirmDialog };
 

@@ -23,7 +23,7 @@
         list changes
     -   Fixed bug in [DatePicker](./src/form/date-picker/usage.md) causing the date to be cleared if the picker dialog is
         closed without selecting any date
-    -   Added `persistent` option to `DialogOptions` of [DialogProvider](./src/providers/dialog-provider/usage.md)
+    -   Added `persistent` option to `DialogOptions` of [DialogProvider](src/dialog-provider/usage.md)
         widget
     -   Changed [ListView](src/collection/list-view/usage.md) widget loader from a circular loader to a horizontal loader
     -   Added optional `emptyMessage` prop to [ListView](src/collection/list-view/usage.md) widget
@@ -44,7 +44,7 @@
 
 -   `2.0.0`
 
-    -   `DialogSize.FULL` has been added to [DialogProvider](src/providers/dialog-provider/usage.md)
+    -   `DialogSize.FULL` has been added to [DialogProvider](src/dialog-provider/usage.md)
         to make dialogs as wide as the window
     -   Added `leading`, `trailing` and `stickyFloatingLabel` props to all widgets which are composed
         of [FieldDecoration](src/form/field-decoration/usage.md). These include all the form field widgets
@@ -124,7 +124,7 @@
 -   `1.6.0`
 
     -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
-    -   Added story for `bind` property of [DialogProvider](src/providers/dialog-provider/usage.md)
+    -   Added story for `bind` property of [DialogProvider](src/dialog-provider/usage.md)
         widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage
         in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
@@ -145,7 +145,7 @@
     -   Added overflow styling to [DatePicker](src/form/date-picker/usage.md)
         and [FilePicker](src/form/file-picker/usage.md)
         widgets
-    -   Increased `z-index` of [DialogProvider](src/providers/dialog-provider/usage.md) dialog container div to 999999
+    -   Increased `z-index` of [DialogProvider](src/dialog-provider/usage.md) dialog container div to 999999
 
 -   `1.4.0`
 
@@ -238,5 +238,5 @@
 
     -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
     -   Added the [Loader](src/widgets/loader/usage.md) widget
-    -   Added the `bind` prop to [DialogProvider](src/providers/dialog-provider/usage.md)
+    -   Added the `bind` prop to [DialogProvider](src/dialog-provider/usage.md)
         to allow binding of properties from the host component to the dialog component

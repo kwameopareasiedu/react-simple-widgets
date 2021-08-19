@@ -4,7 +4,7 @@
 
 This widget is a responsive table-like widget for rendering tabular information. It collapses the
 view into cards on smaller displays to allow content to fit on screen. Options for list items
-are displayed using a dialog thus you need a [DialogProvider](../../providers/dialog-provider/usage.md)
+are displayed using a dialog thus you need a [DialogProvider](../../dialog-provider/usage.md)
 as an ancestor in the widget tree
 
 ## Usage

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { DatePicker } from "./index";
 import { DatePickerMode } from "./types";
 import { FieldDecorationType } from "../field-decoration/types";
-import { DialogProvider } from "../../providers/dialog-provider";
+import { DialogProvider } from "../../dialog-provider/dialog-provider";
 
 export default {
     title: "Date Picker",

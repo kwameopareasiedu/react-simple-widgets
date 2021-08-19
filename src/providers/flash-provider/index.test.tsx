@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it, jest } from "@jest/globals";

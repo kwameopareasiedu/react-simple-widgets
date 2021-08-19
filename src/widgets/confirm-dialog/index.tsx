@@ -1,8 +1,8 @@
 import "./index.scss";
 import React, { useContext } from "react";
 import { ConfirmDialog as Props, Confirmation } from "./types";
-import { DialogProviderContext } from "../../providers/dialog-provider";
-import { DialogHelper, DialogOptions } from "../../providers/dialog-provider/types";
+import { DialogProviderContext } from "../../dialog-provider";
+import { DialogHelper, DialogOptions } from "../../dialog-provider/dialog-provider-types";
 
 /**
  * ConfirmDialog is a widget that shows a confirmation dialog for an action and calls the action

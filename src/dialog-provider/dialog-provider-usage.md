@@ -1,10 +1,8 @@
-[Home](../../../README.md) / DialogProvider
+[Home](../../README.md) / DialogProvider
 
 # DialogProvider
 
-The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its
-children. This prevents any possible stacking context issues between the full page dialogs and
-components of your application (especially issues with any CSS grid you might have).
+The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its children. This prevents any possible stacking context issues between the full page dialogs and components of your application (especially issues with any CSS grid you might have).
 
 The following guide demonstrates how to use the `DialogProvider`.
 
@@ -25,8 +23,7 @@ ReactDOM.render(
 );
 ```
 
-This makes the `DialogProvider` context available to the rest of the application. The context
-contains the function needed to display the dialogs.
+This makes the `DialogProvider` context available to the rest of the application. The context contains the function needed to display the dialogs.
 
 ## Show dialogs within your app
 
@@ -35,7 +32,7 @@ contains the function needed to display the dialogs.
 1. Showing a regular dialog. This is used to just display information
 2. Showing a value-returning dialog. This can return a value to the caller when closed
 
-#### Show a regular dialog
+### Show a regular dialog
 
 First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 
@@ -48,7 +45,7 @@ interface MyDialogProps {
     helper: DialogHelper;
 }
 
-export function MyDialog({ helper }: MyDialogProps) {
+export const MyDialog = ({ helper }: MyDialogProps) => {
     return (
         <div className="card">
             <div className="card-body">
@@ -73,10 +70,10 @@ import { DialogProviderContext } from "react-simple-widgets";
 import { DialogSize } from "react-simple-widgets/dist/constants";
 import { MyDialog } from "./my-dialog.tsx";
 
-export function App() {
+export const App = () => {
     const { showDialog } = useContext(DialogProviderContext);
 
-    function openDialog() {
+    const openDialog = () => {
         showDialog(
             function (helper) {
                 return <MyDialog helper={helper} />;
@@ -95,10 +92,11 @@ export function App() {
 }
 ```
 
-#### Show a value-returning dialog
 
-This section illustrates how to show a dialog which returns a value to the caller when closed.
-First, create a dialog component in a file (We are using `my-dialog.tsx` here).
+
+### Show a value-returning dialog
+
+This section illustrates how to show a dialog which returns a value to the caller when closed. First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 
 `my-dialog.tsx`
 
@@ -109,7 +107,7 @@ interface MyDialogProps {
     helper: DialogHelper;
 }
 
-export function MyDialog({ helper }: MyDialogProps) {
+export const MyDialog = ({ helper }: MyDialogProps) => {
     return (
         <div className="card">
             <div className="card-body">
@@ -144,7 +142,7 @@ import { DialogProviderContext } from "react-simple-widgets";
 import { DialogSize } from "react-simple-widgets/dist/constants";
 import { MyDialog } from "./my-dialog.tsx";
 
-export function App() {
+export const App = () => {
     const { showDialog } = useContext(DialogProviderContext);
 
     function openDialog() {
@@ -178,10 +176,8 @@ export function App() {
 }
 ```
 
-## Sidenotes
+## Side Notes
 
-> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the top-most
-> dialog receives the keyboard event first.
+> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the top-most dialog receives the keyboard event first.
 
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is
-> entirely up to the developer.
+> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the app.

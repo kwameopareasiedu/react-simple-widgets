@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FlashProvider as Props, FlashType } from "./types";
 import { FlashProviderContext } from "./flash-provider-context";
-import { DialogProviderContext } from "../dialog-provider";
+import { DialogProviderContext } from "../../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
 
 // FlashProvider uses the DialogProvider to display flash messages

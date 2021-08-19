@@ -1,20 +1,19 @@
 import "./dialog-view.scss";
 import React, { useRef } from "react";
-import { DialogData } from "./dialog-data";
-import { DialogSize } from "./types";
+import { Dialog, DialogSize } from "./dialog-provider-types";
 
 interface IDialogView {
-    data: DialogData;
+    dialog: Dialog;
 }
 
 /** DialogView, as the name implies, renders a dialog interface */
-export const DialogView = ({ data }: IDialogView): any => {
-    const dialogContentRef = useRef();
+export const DialogView = ({ dialog }: IDialogView): any => {
+    const dialogContentRef = useRef<HTMLDivElement>();
 
     const dialogViewContentClassName = (): string => {
         const classes = ["dialog-view-content"];
 
-        switch (data.options.size) {
+        switch (dialog.options.size) {
             case DialogSize.FULL:
                 classes.push("full-dialog");
                 break;
@@ -34,15 +33,17 @@ export const DialogView = ({ data }: IDialogView): any => {
     };
 
     const onBackgroundClick = (e: React.MouseEvent): void => {
-        const dialogContentElement: any = dialogContentRef.current;
-        if (!dialogContentElement.contains(e.target) && !data.options.persistent && data.options.dismissible)
-            data.dismiss();
+        const dialogContent: HTMLDivElement = dialogContentRef.current;
+
+        if (!dialogContent.contains(e.target as Node) && dialog.options.backgroundDismissible) {
+            dialog.onDismiss();
+        }
     };
 
     return (
         <div className="react-simple-widget dialog-view" onClick={onBackgroundClick}>
             <div ref={dialogContentRef} className={dialogViewContentClassName()}>
-                {data.widget}
+                {dialog.widget}
             </div>
         </div>
     );

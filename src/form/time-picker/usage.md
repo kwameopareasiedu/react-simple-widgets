@@ -3,7 +3,7 @@
 # TimePicker
 
 The `TimePicker` widget allows you to select a time using a picker dialog. Since it uses a dialog to
-provide the picker and thus requires a [DialogProvider](../../providers/dialog-provider/usage.md)
+provide the picker and thus requires a [DialogProvider](../../dialog-provider/usage.md)
 ancestor to be available up the component tree.
 
 ## Usage
