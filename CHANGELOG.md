@@ -55,7 +55,7 @@
         [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
     -   Fixed bug causing `pageTransitionViewCount` to go below 0, which in turn caused `<Link/>`s
         outside `<PageTransitionView/>`s not to work in
-        [PageTransitionProvider](src/providers/transition-provider/usage.md)
+        [PageTransitionProvider](src/transition-provider/usage.md)
 
 -   `1.10.0`
 
@@ -83,7 +83,7 @@
 
 -   `1.7.2`
 
-    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to reuse the root component between
+    -   Modified [PageTransitionProvider](src/transition-provider/usage.md) to reuse the root component between
         page transitions. This preserves scroll positions if query parameters were modified on the same URL path
 
 -   `1.7.1`
@@ -163,7 +163,7 @@
 -   `1.3.6`
 
     -   Added 100% width and height and auto overflow styling to
-        [PageTransitionView](src/providers/transition-provider/transition-view.tsx) widget
+        [PageTransitionView](src/transition-provider/transition-view.tsx) widget
 
 -   `1.3.5`
 
@@ -202,9 +202,9 @@
 
 -   `1.2.4`
 
-    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to ignore redirect if target URL is
+    -   Modified [PageTransitionProvider](src/transition-provider/usage.md) to ignore redirect if target URL is
         same as current URL
-    -   Modified [PageTransitionProvider](src/providers/transition-provider/usage.md) to ignore redirect if target URL is
+    -   Modified [PageTransitionProvider](src/transition-provider/usage.md) to ignore redirect if target URL is
         empty
     -   Forwarded the `name` prop of [TextField](src/form/text-field/usage.md) and
         [DropdownField](src/form/dropdown-field/usage.md) to `input` and `select` components respectively to trigger

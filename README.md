@@ -40,7 +40,7 @@ Providers wrap around you app and provide globally accessible functionality to a
     utilize the local storage API to persist data
 -   [FlashProvider](src/flash-provider/flash-provider-usage.md) - Provides a flash message framework built using the dialog
     framework
--   [TransitionProvider](src/providers/transition-provider/usage.md) - Provides a page transition framework for
+-   [TransitionProvider](src/transition-provider/usage.md) - Provides a page transition framework for
     navigating between different pages of your app
 
 ## Form
