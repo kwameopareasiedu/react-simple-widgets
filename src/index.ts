@@ -6,6 +6,7 @@ export * from "./flash-provider/flash-provider-context";
 export * from "./flash-provider/flash-provider";
 export * from "./local-storage-provider/local-storage-provider-context";
 export * from "./local-storage-provider/local-storage-provider";
+export * from "./popup-menu/popup-menu";
 
 export * from "./form/field-decoration";
 export * from "./form/custom-field";

@@ -3,7 +3,6 @@ export interface UseCountdown {
     running: boolean;
     resetCountdown: () => void;
 }
-
 export interface UseLoadMore {
     page: number;
     items: Array<any>;
@@ -13,7 +12,6 @@ export interface UseLoadMore {
     onLoadMoreSuccess: (newItems: Array<any>, total: number) => void;
     onLoadMoreFailed: () => void;
 }
-
 export interface UseWindowBreakpoints {
     width: number;
     xs: boolean;
@@ -22,117 +20,11 @@ export interface UseWindowBreakpoints {
     lg: boolean;
     xl: boolean;
 }
-
-export interface ValueStoreProviderContext {
-    get: (key: string) => any;
-    set: (key: string, value: any, persist?: boolean) => void;
-    del: (...keys: Array<string>) => void;
-    clear: () => void;
-}
-
-export interface ValueStoreProvider {
-    initialKeys?: Array<string>;
-    children: any;
-}
-
-export enum FlashType {
-    ERROR,
-    WARNING,
-    INFO,
-    SUCCESS
-}
-
-export interface FlashProviderContext {
-    flashError: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashWarning: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashInfo: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-}
-
-export interface FlashArgs {
-    type: FlashType;
-    title: string;
-    message: any;
-    onFlashDismissed?: () => void;
-    btnText?: string;
-}
-
-export type FlashViewBuilder = (args: FlashArgs) => any;
-
-export interface FlashProvider {
-    children: any;
-    builder?: FlashViewBuilder;
-}
-
-/* TransitionProvider interfaces */
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
-import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
-
-export interface TransitionOptions {
-    dontAnimate?: boolean;
-    replaceUrl?: boolean;
-}
-
-export interface TransitionConfig {
-    to: string;
-    options: TransitionOptions;
-}
-
-export interface TransitionProviderContext {
-    __config__: TransitionConfig;
-    __incrementViewCount__: () => void;
-    __decrementViewCount__: () => void;
-    __endRedirect__: () => void;
-    redirect: (to: string, config?: TransitionOptions) => void;
-}
-
-export interface TransitionProvider {
-    children: any;
-}
-
-export interface TransitionView {
-    children: any;
-}
-
-export interface TransitionLink extends TransitionOptions, AnchorHTMLAttributes<HTMLAnchorElement> {
-    to: string;
-    children?: any;
-}
-
-export enum DialogSize {
-    SMALL,
-    MEDIUM,
-    WIDE,
-    FULL
-}
-
-export interface DialogOptions {
-    size?: DialogSize;
-    persistent?: boolean;
-    dismissible?: boolean;
-    onDismissed?: (returnValue?: any) => void;
-}
-
-export interface DialogHelper {
-    dismiss: (returnValue?: any) => void;
-}
-
-export type DialogBuilder = (helper: DialogHelper) => any;
-
-export type DialogEscapeCallback = (e: KeyboardEvent) => void;
-
-export interface DialogProviderContext {
-    showDialog: (builder: DialogBuilder, options?: DialogOptions) => void;
-}
-
-export interface DialogProvider {
-    children: any;
-}
+import { ButtonHTMLAttributes } from "react";
 
 export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     busy?: boolean;
 }
-
 export enum Confirmation {
     DANGER,
     WARNING,
@@ -186,6 +78,7 @@ export interface DatePicker {
     trailing?: any;
     leading?: any;
 }
+import { SelectHTMLAttributes } from "react";
 
 export interface DropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;
@@ -199,6 +92,7 @@ export interface DropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     trailing?: any;
     leading?: any;
 }
+import { InputHTMLAttributes } from "react";
 
 export enum TextFieldMode {
     INPUT,
@@ -269,7 +163,6 @@ export interface DateField {
     trailing?: any;
     leading?: any;
 }
-
 export enum FieldDecorationType {
     UNDERLINE,
     FLOATING_LABEL
@@ -293,6 +186,8 @@ export interface FieldDecoration {
     decoration?: FieldDecorationType;
     children: FieldDecorationBuilder;
 }
+import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
+import { InputHTMLAttributes } from "react";
 
 export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
 
@@ -316,7 +211,6 @@ export interface FilePicker {
     trailing?: any;
     leading?: any;
 }
-
 export enum SelectFieldMode {
     SINGLE,
     MULTI
@@ -331,6 +225,39 @@ export interface SelectField {
     onChange?: (value: any) => void;
     // CustomField props
     errorTransformer?: (err: any) => string;
+}
+/* TransitionProvider interfaces */
+import { AnchorHTMLAttributes } from "react";
+
+export interface TransitionOptions {
+    dontAnimate?: boolean;
+    replaceUrl?: boolean;
+}
+
+export interface TransitionConfig {
+    to: string;
+    options: TransitionOptions;
+}
+
+export interface TransitionProviderContext {
+    __config__: TransitionConfig;
+    __incrementViewCount__: () => void;
+    __decrementViewCount__: () => void;
+    __endRedirect__: () => void;
+    redirect: (to: string, config?: TransitionOptions) => void;
+}
+
+export interface TransitionProvider {
+    children: any;
+}
+
+export interface TransitionView {
+    children: any;
+}
+
+export interface TransitionLink extends TransitionOptions, AnchorHTMLAttributes<HTMLAnchorElement> {
+    to: string;
+    children?: any;
 }
 
 export interface ListViewOption {
@@ -376,7 +303,6 @@ export interface ListView {
     props: Array<[string, string | ((item: any, itemIndex?: number) => any)]>;
     keyFn: (item: any, itemIndex?: number) => string;
 }
-
 export interface ObjectView {
     object: any;
     condensed?: boolean;

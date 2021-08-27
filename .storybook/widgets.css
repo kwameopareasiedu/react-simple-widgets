@@ -3,7 +3,7 @@ body {
     --rsw-error-color: #ff5555;
     --rsw-primary-theme-color: #402897;
     --rsw-secondary-theme-color: #b3b3b3;
-    --rsw-transition-duration: 0.3s;
+    --rsw-transition-duration: 0.15s;
 
     --rsw-list-view-max-height: 550px;
     --rsw-date-picker-header-bg-color: #40289711;

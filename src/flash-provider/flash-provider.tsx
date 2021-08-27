@@ -4,12 +4,12 @@ import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
 
-export interface FlashProvider {
+interface IFlashProvider {
     children: any;
     builder?: FlashViewBuilder;
 }
 
-export const FlashProvider = ({ children, builder }: FlashProvider): any => {
+export const FlashProvider = ({ children, builder }: IFlashProvider): any => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const flash = (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LocalStorageProviderContext } from "./local-storage-provider-context";
 import { LOCAL_STORAGE_PROVIDER_KEYS } from "./local-storage-provider-types";
 
-export interface ILocalStorageProvider {
+interface ILocalStorageProvider {
     children: any;
 }
 

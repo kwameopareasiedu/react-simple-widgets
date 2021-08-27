@@ -1,0 +1,32 @@
+.react-simple-widget.popup-menu {
+    position: relative;
+
+    .popup-menu-scrim {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #00000009;
+        overflow: auto;
+        z-index: 2;
+    }
+
+    .popup-menu-options {
+        position: absolute;
+        width: max-content;
+        animation: reveal var(--rsw-transition-duration) ease-out forwards;
+        z-index: 3;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

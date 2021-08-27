@@ -4,7 +4,7 @@ import { Dialog, DialogBuilder, DialogOptions } from "./dialog-provider-types";
 import { DialogProviderContext } from "./dialog-provider-context";
 import { DialogView } from "./dialog-view";
 
-export interface IDialogProvider {
+interface IDialogProvider {
     children: any;
 }
 
