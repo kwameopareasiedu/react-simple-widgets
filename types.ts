@@ -163,3 +163,8 @@ export interface ConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     onCancel?: () => void;
     onConfirm: () => void;
 }
+
+/** Breadcrumbs */
+export interface Breadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
+    children?: any;
+}

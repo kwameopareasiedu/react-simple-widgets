@@ -7,16 +7,18 @@
         margin-right: 8px;
         font-style: italic;
         color: var(--rsw-secondary-theme-color);
+        transition: color var(--rsw-transition-duration);
+        text-decoration: none;
     }
 
     > *:hover {
-        text-decoration: none;
+        color: var(--rsw-primary-theme-color);
     }
 
     > *::after {
         margin-left: 8px;
         font-size: 85%;
-        content: "/";
+        content: ">";
         vertical-align: text-bottom;
     }
 
