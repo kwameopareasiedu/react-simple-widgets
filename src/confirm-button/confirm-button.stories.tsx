@@ -5,7 +5,7 @@ import { DialogProvider } from "../dialog-provider/dialog-provider";
 
 export default { title: "ConfirmButton", component: ConfirmButton };
 
-export const usage = () => {
+export const Default = () => {
     const ExampleApp = (): any => {
         const [busy, setBusy] = useState(false);
 

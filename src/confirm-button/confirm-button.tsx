@@ -18,6 +18,7 @@ export const ConfirmButton = ({
 
     const confirm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
         showDialog(helper => <ConfirmDialog helper={helper} message={message} confirmButtonClassName={className} />, {
+            backgroundDismissible: true,
             onDismissed: (proceed: boolean): void => {
                 if (proceed) return onConfirm();
                 if (onCancel) return onCancel();
