@@ -1,6 +1,7 @@
+import "./busy-button.scss";
 import React from "react";
 import { BusyButton as IBusyButton } from "../../types";
-import { Loader } from "../widgets/loader";
+import { Loader } from "../loader/loader";
 
 export const BusyButton = ({ busy, disabled, className, children, ...rest }: IBusyButton): any => {
     return (

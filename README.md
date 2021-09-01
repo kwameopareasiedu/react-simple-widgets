@@ -79,7 +79,7 @@ Widgets here operate on list data
 
 Widgets under this category are for convenience
 
--   [Loader](src/widgets/loader/usage.md) - A widget that displays a spinner
+-   [Loader](src/loader/loader.md) - A widget that displays a spinner
 -   [BusyButton](src/busy-button/busy-button-usage.md) - A button widget that displays a loading indicator if busy
 -   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation dialog before calling
     an action

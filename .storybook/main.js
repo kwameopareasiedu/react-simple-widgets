@@ -10,6 +10,7 @@ module.exports = {
         "../src/popup-menu/*.stories.tsx",
         "../src/table-view/*.stories.tsx",
         "../src/pagination/*.stories.tsx",
+        "../src/loader/*.stories.tsx",
         "../src/busy-button/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],

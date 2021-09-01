@@ -128,7 +128,7 @@
         widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage
         in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
-    -   Added `text-center` class to [Loader](src/widgets/loader/usage.md) as its added in majority of use cases
+    -   Added `text-center` class to [Loader](src/loader/loader.md) as its added in majority of use cases
     -   Added [PageActions](src/widgets/page-actions/usage.md) widget
 
 -   `1.5.0`
@@ -237,6 +237,6 @@
 -   `1.1.0`
 
     -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
-    -   Added the [Loader](src/widgets/loader/usage.md) widget
+    -   Added the [Loader](src/loader/loader.md) widget
     -   Added the `bind` prop to [DialogProvider](src/dialog-provider/usage.md)
         to allow binding of properties from the host component to the dialog component

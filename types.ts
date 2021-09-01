@@ -149,3 +149,9 @@ export interface Pagination extends AllHTMLAttributes<HTMLDivElement> {
 export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     busy?: boolean;
 }
+
+/** Loader */
+export interface Loader extends AllHTMLAttributes<HTMLDivElement> {
+    children?: any;
+    invert?: boolean;
+}
