@@ -81,7 +81,7 @@ Widgets under this category are for convenience
 
 -   [Loader](src/loader/loader.md) - A widget that displays a spinner
 -   [BusyButton](src/busy-button/busy-button-usage.md) - A button widget that displays a loading indicator if busy
--   [ConfirmDialog](src/widgets/confirm-dialog/usage.md) - A widget which displays a confirmation dialog before calling
+-   [ConfirmDialog](src/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
     an action
 -   [Breadcrumbs](src/widgets/breadcrumbs/usage.md) - A breadcrumb link container widget
 -   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons or nothing if no

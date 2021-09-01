@@ -155,3 +155,11 @@ export interface Loader extends AllHTMLAttributes<HTMLDivElement> {
     children?: any;
     invert?: boolean;
 }
+
+/** ConfirmButton */
+export interface ConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+    message?: any;
+    busy?: boolean;
+    onCancel?: () => void;
+    onConfirm: () => void;
+}

@@ -25,7 +25,7 @@ export * from "./form/date-field";
 export * from "./form/time-picker";
 
 export * from "./form/time-field";
-export * from "./widgets/confirm-dialog";
+export * from "./confirm-button/confirm-button";
 export * from "./widgets/breadcrumbs";
 export * from "./widgets/page-actions";
 

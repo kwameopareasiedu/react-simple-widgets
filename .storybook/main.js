@@ -12,6 +12,7 @@ module.exports = {
         "../src/pagination/*.stories.tsx",
         "../src/loader/*.stories.tsx",
         "../src/busy-button/*.stories.tsx",
+        "../src/confirm-button/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {
