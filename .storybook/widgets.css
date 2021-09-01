@@ -5,14 +5,20 @@ body {
     --rsw-secondary-theme-color: #b3b3b3;
     --rsw-transition-duration: 0.15s;
 
-    --rsw-list-view-max-height: 550px;
-    --rsw-date-picker-header-bg-color: #40289711;
-    --rsw-field-decoration-label-bg-color: white;
-    --rsw-select-field-indicator-size: 1.5rem;
+    /* DialogProvider vars */
     --rsw-dialog-view-vertical-margin: 1.2rem;
+
+    /* FlashProvider vars */
     --rsw-flash-view-default-theme-color: #e3e3e3;
     --rsw-flash-view-error-theme-color: #ff5555;
     --rsw-flash-view-warning-theme-color: #ffdd55;
     --rsw-flash-view-info-theme-color: #55ddff;
     --rsw-flash-view-success-theme-color: #6cd924;
+
+    /* PopupMenu vars */
+    --rsw-popup-menu-scrim-bg-color: #0000001f;
+
+    --rsw-date-picker-header-bg-color: #40289711;
+    --rsw-field-decoration-label-bg-color: white;
+    --rsw-select-field-indicator-size: 1.5rem;
 }

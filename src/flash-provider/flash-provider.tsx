@@ -1,15 +1,10 @@
 import React, { useContext } from "react";
-import { FlashType, FlashViewBuilder } from "./flash-provider-types";
+import { FlashType, FlashProvider as IFlashProvider } from "../../types";
 import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
 
-interface IFlashProvider {
-    children: any;
-    builder?: FlashViewBuilder;
-}
-
-export const FlashProvider = ({ children, builder }: IFlashProvider): any => {
+export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Element => {
     const { showDialog } = useContext(DialogProviderContext);
 
     const flash = (

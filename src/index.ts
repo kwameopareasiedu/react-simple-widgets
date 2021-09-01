@@ -7,6 +7,7 @@ export * from "./flash-provider/flash-provider";
 export * from "./local-storage-provider/local-storage-provider-context";
 export * from "./local-storage-provider/local-storage-provider";
 export * from "./popup-menu/popup-menu";
+export * from "./table-view/table-view";
 
 export * from "./form/field-decoration";
 export * from "./form/custom-field";
@@ -27,7 +28,6 @@ export * from "./widgets/confirm-dialog";
 export * from "./widgets/breadcrumbs";
 export * from "./widgets/page-actions";
 
-export * from "./collection/list-view";
 export * from "./collection/object-view";
 
 export * from "./hooks/use-countdown";

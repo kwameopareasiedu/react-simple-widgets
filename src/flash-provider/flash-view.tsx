@@ -1,20 +1,12 @@
 import "./flash-view.scss";
 import React from "react";
-import { FlashType } from "./flash-provider-types";
+import { FlashType, FlashView as IFlashView } from "../../types";
 import ErrorIcon from "../assets/error.svg";
 import WarningIcon from "../assets/warning.svg";
 import SuccessIcon from "../assets/success.svg";
 import InfoIcon from "../assets/info.svg";
 
-interface IFlashView {
-    type: FlashType;
-    title: string;
-    message: string;
-    buttonText: string;
-    onDismiss: () => void;
-}
-
-export const FlashView = ({ type, title, message, buttonText, onDismiss }: IFlashView): any => {
+export const FlashView = ({ type, title, message, buttonText, onDismiss }: IFlashView): JSX.Element => {
     const className = (): string => {
         const classes = ["react-simple-widget", "flash-view", "card"];
 
@@ -57,9 +49,12 @@ export const FlashView = ({ type, title, message, buttonText, onDismiss }: IFlas
                 <img src={icon()} alt="Flash icon" className="flash-icon" />
                 <h5 className="flash-title">{title}</h5>
                 <div className="flash-message">{message || ""}</div>
-                <button type="button" className="btn btn-lg flash-button" onClick={onDismiss}>
-                    {buttonText || "Dismiss"}
-                </button>
+
+                <div className="d-grid">
+                    <button type="button" className="btn flash-button" onClick={onDismiss}>
+                        {buttonText || "Dismiss"}
+                    </button>
+                </div>
             </div>
         </div>
     );

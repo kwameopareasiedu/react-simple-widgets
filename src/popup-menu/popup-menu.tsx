@@ -1,6 +1,5 @@
 import "./popup-menu.scss";
 import React, {
-    AllHTMLAttributes,
     Children,
     cloneElement,
     CSSProperties,
@@ -10,18 +9,17 @@ import React, {
     useRef,
     useState
 } from "react";
+import { PopupMenu as IPopupMenu } from "../../types";
 
-interface IPopupMenu extends AllHTMLAttributes<HTMLDivElement> {
-    children: any;
-}
+export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMenu): JSX.Element => {
+    const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
 
-export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMenu): any => {
     const [optionsOpened, setOptionsOpened] = useState(false);
     const [optionsCssProperties, setOptionsCssProperties] = useState<CSSProperties>(null);
     const [triggerButton, optionsMenu] = Children.toArray(children);
     const triggerRef: MutableRefObject<HTMLDivElement> = useRef();
     const optionsRef: MutableRefObject<HTMLDivElement> = useRef();
-    const rootRef: MutableRefObject<HTMLDivElement> = useRef();
+    const [firstAlignmentPass, setFirstAlignmentPass] = useState(false);
 
     const toggle = (): void => {
         setOptionsOpened(!optionsOpened);
@@ -46,13 +44,12 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
         const optionIsTallerThanWindow = optionsHeight > window.innerHeight;
         const displayOptionsBelowTrigger = optionsHeight <= heightBelowTrigger;
         const displayOptionsAboveTrigger = optionsHeight < heightAboveTrigger;
-        const optionsIsCutoffAtRight = oRight > window.innerWidth;
+        const optionsIsCutoffAtRight =
+            oRight + UNKNOWN_RIGHT_OFFSET_PERCENTAGE * document.body.clientWidth > document.body.clientWidth;
         const optionsTransformOrigin = [0, 0];
         const properties: CSSProperties = {};
 
         if (optionIsTallerThanWindow) {
-            // If options is taller than window, fix to top of window
-            properties.position = "fixed";
             properties.top = 0;
             properties.bottom = 0;
             properties.overflow = "auto";
@@ -67,19 +64,17 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
         } else {
             if (optionsIsCutoffAtRight) {
                 optionsTransformOrigin[0] = 100;
-                properties.right = 0;
+                properties.right = document.body.clientWidth - tRight;
             } else {
                 optionsTransformOrigin[0] = 0;
-                properties.left = 0;
+                properties.left = tLeft;
             }
 
             if (displayOptionsBelowTrigger) {
-                properties.position = "absolute";
-                properties.top = 0;
+                properties.top = tTop;
                 optionsTransformOrigin[1] = 0;
             } else if (displayOptionsAboveTrigger) {
-                properties.position = "absolute";
-                properties.bottom = 0;
+                properties.bottom = window.innerHeight - tBottom;
                 optionsTransformOrigin[1] = 100;
             }
         }
@@ -90,12 +85,22 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
 
     useEffect(() => {
         if (optionsOpened && optionsRef.current) {
+            if (!firstAlignmentPass) setFirstAlignmentPass(true);
             alignOptionsMenu();
-        } else setOptionsCssProperties(null);
+        } else {
+            setOptionsCssProperties(null);
+            setFirstAlignmentPass(false);
+        }
     }, [optionsOpened]);
 
+    useEffect(() => {
+        if (firstAlignmentPass) {
+            alignOptionsMenu();
+        }
+    }, [firstAlignmentPass]);
+
     return (
-        <div {...rest} ref={rootRef} className={className()}>
+        <div {...rest} className={className()}>
             {cloneElement(triggerButton as any, { ref: triggerRef, onClick: toggle })}
 
             {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}

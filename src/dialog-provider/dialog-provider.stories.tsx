@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DialogProvider } from "./dialog-provider";
 import { DialogProviderContext } from "./dialog-provider-context";
-import { DialogSize, DialogHelper } from "./dialog-provider-types";
+import { DialogSize, DialogHelper } from "../../types";
 import { Meta } from "@storybook/react";
 
 export default {

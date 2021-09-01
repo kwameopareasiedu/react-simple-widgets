@@ -19,14 +19,14 @@
 
 -   `2.1.0`
 
-    -   Added scroll-to-top feature to [ListView](src/collection/list-view/usage.md) if the `items`
+    -   Added scroll-to-top feature to [ListView](src/table-view/table-view-usage.md) if the `items`
         list changes
     -   Fixed bug in [DatePicker](./src/form/date-picker/usage.md) causing the date to be cleared if the picker dialog is
         closed without selecting any date
     -   Added `persistent` option to `DialogOptions` of [DialogProvider](src/dialog-provider/usage.md)
         widget
-    -   Changed [ListView](src/collection/list-view/usage.md) widget loader from a circular loader to a horizontal loader
-    -   Added optional `emptyMessage` prop to [ListView](src/collection/list-view/usage.md) widget
+    -   Changed [ListView](src/table-view/table-view-usage.md) widget loader from a circular loader to a horizontal loader
+    -   Added optional `emptyMessage` prop to [ListView](src/table-view/table-view-usage.md) widget
     -   Added new [PasswordField](src/form/password-field/usage.md) widget
 
 -   `2.0.2`
@@ -60,7 +60,7 @@
 -   `1.10.0`
 
     -   Added start and end pages display if current `page > start + 3` and `page < end - 3`
-        respectively in [ListView](src/collection/list-view/usage.md) widget
+        respectively in [ListView](src/table-view/table-view-usage.md) widget
 
 -   `1.8.0`
 
@@ -90,32 +90,32 @@
 
     -   Changed `display` of links in [Breadcrumbs](src/widgets/breadcrumbs/usage.md) from
         `inline-block` to `inline`
-    -   Modify [ListView](src/collection/list-view/usage.md) to do nothing if options builder returns `null` or an empty
+    -   Modify [ListView](src/table-view/table-view-usage.md) to do nothing if options builder returns `null` or an empty
         array of options instead of displaying a dialog with no options
 
 -   `1.7.0`
 
     -   Modified theme color of success messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
     -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
-    -   Changed CSS property `word-break` of [ListView](src/collection/list-view/usage.md) cells from `break-all`
+    -   Changed CSS property `word-break` of [ListView](src/table-view/table-view-usage.md) cells from `break-all`
         to `break-word`
-    -   Fixed bug causing inconsistent borders in [ListView](src/collection/list-view/usage.md)
+    -   Fixed bug causing inconsistent borders in [ListView](src/table-view/table-view-usage.md)
         item options
-    -   Modified [ListView](src/collection/list-view/usage.md) options to use a builder pattern instead of an array of
+    -   Modified [ListView](src/table-view/table-view-usage.md) options to use a builder pattern instead of an array of
         options. This allows for more control over options shown for each list item
 
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of
         [ObjectView](src/collection/object-view/usage.md)
-    -   Added `word-break` styling to cells of [ListView](src/collection/list-view/usage.md) to force text overflow if
+    -   Added `word-break` styling to cells of [ListView](src/table-view/table-view-usage.md) to force text overflow if
         content cannot fit on one line
-    -   Added auto scroll-to-top-of-list feature to [ListView](src/collection/list-view/usage.md)
+    -   Added auto scroll-to-top-of-list feature to [ListView](src/table-view/table-view-usage.md)
         when the items list is modified by a page change
     -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values instead of
         just `string`
-    -   Reduces header vertical padding in [ListView](src/collection/list-view/usage.md)
-    -   Added item options confirmation feature to [ListView](src/collection/list-view/usage.md)
+    -   Reduces header vertical padding in [ListView](src/table-view/table-view-usage.md)
+    -   Added item options confirmation feature to [ListView](src/table-view/table-view-usage.md)
 
 -   `1.6.1`
 
@@ -149,7 +149,7 @@
 
 -   `1.4.0`
 
-    -   Added `onClick` prop to [ListView](src/collection/list-view/usage.md) widget
+    -   Added `onClick` prop to [ListView](src/table-view/table-view-usage.md) widget
     -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-dialog/usage.md) widget
     -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
     -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
@@ -172,7 +172,7 @@
 
 -   `1.3.4`
 
-    -   Modified [ListView](src/collection/list-view/usage.md) to limit styling to immediate children and not affect
+    -   Modified [ListView](src/table-view/table-view-usage.md) to limit styling to immediate children and not affect
         content within the cells
 
 -   `1.3.3`
@@ -217,8 +217,8 @@
 
 -   `1.2.2`
 
-    -   Added a "No items to display" message to [ListView](src/collection/list-view/usage.md) if list is empty
-    -   Added `options.busy` prop to [ListView](src/collection/list-view/usage.md) to determine if a busy indicator should
+    -   Added a "No items to display" message to [ListView](src/table-view/table-view-usage.md) if list is empty
+    -   Added `options.busy` prop to [ListView](src/table-view/table-view-usage.md) to determine if a busy indicator should
         be displayed beside and item
 
 -   `1.2.1`
@@ -229,7 +229,7 @@
 
 -   `1.2.0`
 
-    -   Grouped props of [ListView](src/collection/list-view/usage.md). This puts related props in similar objects which
+    -   Grouped props of [ListView](src/table-view/table-view-usage.md). This puts related props in similar objects which
         are enabled when specified or disabled when not
     -   Made `message` parameter of flash functions in [FlashProvider](src/flash-provider/flash-provider-usage.md)
         optional

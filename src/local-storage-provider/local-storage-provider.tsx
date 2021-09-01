@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LocalStorageProviderContext } from "./local-storage-provider-context";
-import { LOCAL_STORAGE_PROVIDER_KEYS } from "./local-storage-provider-types";
+import { LocalStorageProvider as ILocalStorageProvider } from "../../types";
 
-interface ILocalStorageProvider {
-    children: any;
-}
+const LOCAL_STORAGE_PROVIDER_KEYS = "react-simple-widgets-local-storage-provider-keys";
 
 const initializeStore = (): any => {
     const values: { [k: string]: any } = {};
@@ -65,10 +63,6 @@ export const LocalStorageProvider = ({ children }: ILocalStorageProvider): any =
         for (const key of parsedKeys) localStorage.removeItem(key);
         localStorage.setItem(LOCAL_STORAGE_PROVIDER_KEYS, "[]");
     };
-
-    useEffect(() => {
-        console.log(values)
-    }, [values]);
 
     return (
         <LocalStorageProviderContext.Provider value={{ getItem, setItem, removeItems, clear }}>

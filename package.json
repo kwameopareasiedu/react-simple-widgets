@@ -19,7 +19,6 @@
         "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
         "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production && yarn build-storybook",
         "copy-storybook-css": "cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs",
-        "concat-types-file": "(find src/ -type f -name \"types.ts\" -exec cat {} + > types.ts) && sed -i '/from \\\"\\.\\./d' types.ts",
         "build-storybook": "build-storybook -o ./docs",
         "test": "jest",
         "prepare": "husky install"

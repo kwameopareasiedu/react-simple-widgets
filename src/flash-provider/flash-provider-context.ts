@@ -1,10 +1,4 @@
 import { createContext } from "react";
+import { FlashProviderContext as IFlashProviderContext } from "../../types";
 
-interface FlashProviderContext {
-    flashError: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashWarning: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashInfo: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-}
-
-export const FlashProviderContext = createContext<FlashProviderContext>(null);
+export const FlashProviderContext = createContext<IFlashProviderContext>(null);

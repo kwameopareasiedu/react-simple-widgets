@@ -1,6 +1,12 @@
 import "./footer.scss";
 import React from "react";
-import { ListViewPagination } from "./types";
+
+interface ListViewPagination {
+    page: number;
+    total: number;
+    pageSize: number;
+    onPageChange: (page: number) => void;
+}
 
 export const ListViewFooter = ({ page, total, pageSize, onPageChange }: ListViewPagination): any => {
     if (!page || !total || !pageSize) return null;
