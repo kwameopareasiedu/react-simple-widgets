@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { ConfirmDialog } from "./index";
 import { Confirmation } from "./types";
-import { BusyButton } from "../busy-button";
+import { BusyButton } from "../../busy-button/busy-button";
 import { DialogProvider } from "../../dialog-provider/dialog-provider";
 
 export default { title: "ConfirmDialog", component: ConfirmDialog };

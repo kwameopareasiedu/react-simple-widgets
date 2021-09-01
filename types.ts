@@ -1,4 +1,4 @@
-import { AllHTMLAttributes } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 /** DialogProvider Types */
 export interface Dialog {
@@ -143,4 +143,9 @@ export interface Pagination extends AllHTMLAttributes<HTMLDivElement> {
     total: number;
     pageSize: number;
     onPageChange: (page: number) => void;
+}
+
+/** BusyButton */
+export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+    busy?: boolean;
 }

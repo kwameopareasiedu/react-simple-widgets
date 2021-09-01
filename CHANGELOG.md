@@ -119,7 +119,7 @@
 
 -   `1.6.1`
 
-    -   Added inline styling to `Loader` in [BusyButton](src/widgets/busy-button/usage.md)
+    -   Added inline styling to `Loader` in [BusyButton](src/busy-button/busy-button-usage.md)
 
 -   `1.6.0`
 

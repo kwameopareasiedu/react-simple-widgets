@@ -1,14 +1,13 @@
 import React from "react";
-import { BusyButton as Props } from "./types";
-import { Loader } from "../loader";
+import { BusyButton as IBusyButton } from "../../types";
+import { Loader } from "../widgets/loader";
 
-/** BusyButton is a button widget that displays a spinner when busy is true */
-export const BusyButton = ({ busy, disabled, className, children, ...props }: Props): any => {
+export const BusyButton = ({ busy, disabled, className, children, ...rest }: IBusyButton): any => {
     return (
         <button
             className={`react-simple-widget busy-button ${className ? className : ""}`}
             disabled={busy || disabled}
-            {...props}>
+            {...rest}>
             {busy && <Loader className="d-inline" role="status" aria-hidden="true" />}
             {children}
         </button>
