@@ -129,7 +129,7 @@
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage
         in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
     -   Added `text-center` class to [Loader](src/loader/loader-usage.md) as its added in majority of use cases
-    -   Added [PageActions](src/widgets/page-actions/usage.md) widget
+    -   Added [PageActions](src/action-bar/action-bar-usage.md) widget
 
 -   `1.5.0`
 

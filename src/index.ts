@@ -13,6 +13,7 @@ export * from "./loader/loader";
 export * from "./busy-button/busy-button";
 export * from "./confirm-button/confirm-button";
 export * from "./breadcrumbs/breadcrumbs";
+export * from "./action-bar/action-bar";
 
 export * from "./form/field-decoration";
 export * from "./form/custom-field";
@@ -26,8 +27,6 @@ export * from "./form/date-picker";
 export * from "./form/date-field";
 export * from "./form/time-picker";
 export * from "./form/time-field";
-
-export * from "./widgets/page-actions";
 
 export * from "./collection/object-view";
 

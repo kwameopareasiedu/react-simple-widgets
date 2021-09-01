@@ -84,7 +84,7 @@ Widgets under this category are for convenience
 -   [ConfirmDialog](src/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
     an action
 -   [Breadcrumbs](src/breadcrumbs/breadcrumbs-usage.md) - A breadcrumb link container widget
--   [PageActions](src/widgets/page-actions/usage.md) - A `div` that displays a row of spaced buttons or nothing if no
+-   [PageActions](src/action-bar/action-bar-usage.md) - A `div` that displays a row of spaced buttons or nothing if no
     children are specified
 
 ## Hooks

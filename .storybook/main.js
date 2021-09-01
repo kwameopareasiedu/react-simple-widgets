@@ -14,6 +14,7 @@ module.exports = {
         "../src/busy-button/*.stories.tsx",
         "../src/confirm-button/*.stories.tsx",
         "../src/breadcrumbs/*.stories.tsx",
+        "../src/action-bar/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {

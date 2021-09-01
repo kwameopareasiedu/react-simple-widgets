@@ -168,3 +168,8 @@ export interface ConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 export interface Breadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
     children?: any;
 }
+
+/** ActionBar */
+export interface ActionBar extends AllHTMLAttributes<HTMLDivElement> {
+    children?: any;
+}
