@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FlashType, FlashProvider as IFlashProvider } from "../../types";
 import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
 
+const FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY = "flash-provider-custom-builder-window-key";
+
 export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Element => {
     const { showDialog } = useContext(DialogProviderContext);
+
+    useEffect(() => {
+        if (builder != null) (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY] = builder;
+    }, []);
 
     const flash = (
         type: FlashType,
@@ -27,17 +33,28 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
                         },
                         btnText
                     });
+                } else if ((window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]) {
+                    (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]({
+                        type,
+                        title,
+                        message,
+                        onFlashDismissed: () => {
+                            if (onFlashDismissed) onFlashDismissed();
+                            helper.dismiss();
+                        },
+                        btnText
+                    });
+                } else {
+                    return (
+                        <FlashView
+                            type={type}
+                            title={title}
+                            message={message}
+                            buttonText={btnText}
+                            onDismiss={helper.dismiss}
+                        />
+                    );
                 }
-
-                return (
-                    <FlashView
-                        type={type}
-                        title={title}
-                        message={message}
-                        buttonText={btnText}
-                        onDismiss={helper.dismiss}
-                    />
-                );
             },
             { onDismissed: onFlashDismissed }
         );

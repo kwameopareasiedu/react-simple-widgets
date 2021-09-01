@@ -96,14 +96,21 @@ export interface PopupMenu extends AllHTMLAttributes<HTMLDivElement> {
 
 /** TableView */
 export enum SortDirection {
-    NONE, ASC, DESC
+    NONE,
+    ASC,
+    DESC
+}
+
+export interface TableViewSortData {
+    prop: string;
+    direction: SortDirection;
 }
 
 export type TableViewCellResolverFunction = (item: any, itemIndex?: number) => any;
 
 export type TableViewCellResolver = string | TableViewCellResolverFunction;
 
-export type TableViewHeaderRowBuilder = (columnValues: Array<string>) => JSX.Element;
+export type TableViewHeaderRowBuilder = (columnValues: Array<string>, sort?: TableViewSortData) => JSX.Element;
 
 export type TableViewBodyRowBuilder = (
     item: any,
@@ -128,4 +135,12 @@ export interface TableView extends AllHTMLAttributes<HTMLTableElement> {
     captionBuilder?: TableViewCaptionBuilder;
     optionsBuilder?: TableViewOptionsBuilder;
     onSort?: TableViewSortChangeCallback;
+}
+
+/** Pagination */
+export interface Pagination extends AllHTMLAttributes<HTMLDivElement> {
+    page: number;
+    total: number;
+    pageSize: number;
+    onPageChange: (page: number) => void;
 }

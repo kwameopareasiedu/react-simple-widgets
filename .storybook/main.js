@@ -8,7 +8,8 @@ module.exports = {
         "../src/flash-provider/*.stories.tsx",
         "../src/local-storage-provider/*.stories.tsx",
         "../src/popup-menu/*.stories.tsx",
-        "../src/table-view/*.stories.tsx"
+        "../src/table-view/*.stories.tsx",
+        "../src/pagination/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {

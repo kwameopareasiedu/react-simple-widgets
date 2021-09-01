@@ -4,7 +4,8 @@ import {
     SortDirection,
     TableView as ITableView,
     TableViewCellResolver,
-    TableViewCellResolverFunction
+    TableViewCellResolverFunction,
+    TableViewSortData
 } from "../../types";
 import SortNoneImg from "../assets/sort-none.svg";
 import SortUpImg from "../assets/sort-up.svg";
@@ -27,7 +28,7 @@ export const TableView = ({
     const headerCellValues = useMemo(() => props.map(p => p[0]), [props]);
     const bodyCellResolvers = useMemo(() => props.map(p => p[1]), [props]);
     const headerSortKeys = useMemo(() => (props[0][2] ? props.map(p => p[2]) : null), [props]);
-    const [sort, setSort] = useState({ direction: SortDirection.NONE, prop: null });
+    const [sort, setSort] = useState<TableViewSortData>({ direction: SortDirection.NONE, prop: null });
 
     const className = (): string => {
         const classes = ["react-simple-widget ", "table-view", "table"];
@@ -55,7 +56,7 @@ export const TableView = ({
     };
 
     const headerRowBuilder = (): JSX.Element => {
-        if (_headerRowBuilder) return _headerRowBuilder(headerCellValues);
+        if (_headerRowBuilder) return _headerRowBuilder(headerCellValues, sort);
 
         return (
             <tr>
