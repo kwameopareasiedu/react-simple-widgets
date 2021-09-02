@@ -14,54 +14,8 @@ export const TextField = ({
     onChange,
     onFocus,
     onBlur,
-    // onEditorChange,
-    // onEditorFocus,
-    // onEditorBlur,
     ...rest
 }: ITextField): any => {
-    // const renderEditor = (
-    //     value: any,
-    //     setValue: Function,
-    //     setTouched: Function,
-    //     onFieldChange: Function,
-    //     onFieldFocus: Function,
-    //     onFieldBlur: Function
-    // ): any => {
-    //     return (
-    //         <Quill
-    //             value={value}
-    //             modules={{
-    //                 toolbar: [
-    //                     [{ header: [1, 2, 3, false] }],
-    //                     ["bold", "italic", "underline", "strike", "blockquote"],
-    //                     [{ color: [] }, { background: [] }],
-    //                     [{ font: [] }],
-    //                     [{ align: [] }],
-    //                     [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
-    //                     ["link"],
-    //                     ["clean"]
-    //                 ]
-    //             }}
-    //             onChange={content => {
-    //                 setValue(content);
-    //                 onFieldChange(!!content);
-    //                 if (onEditorChange) onEditorChange(content);
-    //             }}
-    //             onFocus={() => {
-    //                 onFieldFocus();
-    //                 setTouched(true);
-    //                 if (onEditorFocus) onEditorFocus();
-    //             }}
-    //             onBlur={() => {
-    //                 onFieldBlur();
-    //                 if (onEditorBlur) onEditorBlur();
-    //             }}
-    //             // Disable placeholder for floating label decoration
-    //             placeholder={decoration !== FieldDecorationType.FLOATING_LABEL ? placeholder : null}
-    //         />
-    //     );
-    // };
-
     return (
         <div className="react-simple-widget text-field">
             <CustomField name={name}>

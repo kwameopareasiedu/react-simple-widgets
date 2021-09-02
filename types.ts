@@ -227,3 +227,6 @@ export interface TextEditorField extends Pick<FieldDecoration, "label" | "helper
     onFocus?: () => void;
     onBlur?: () => void;
 }
+
+/** PasswordField */
+export type PasswordField = Omit<TextField, "trailing" | "type">

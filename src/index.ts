@@ -17,9 +17,9 @@ export * from "./widgets/action-bar/action-bar";
 export * from "./widgets/object-view/object-view";
 export * from "./widgets/custom-field/custom-field";
 export * from "./widgets/field-decoration/field-decoration";
-
 export * from "./widgets/text-field/text-field";
-export * from "./form/password-field";
+export * from "./widgets/password-field/password-field";
+
 export * from "./form/dropdown-field";
 export * from "./form/select-field";
 export * from "./form/file-picker";

@@ -19,6 +19,7 @@ module.exports = {
         "../src/widgets/field-decoration/*.stories.tsx",
         "../src/widgets/text-field/*.stories.tsx",
         "../src/widgets/text-editor-field/*.stories.tsx",
+        "../src/widgets/password-field/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {
