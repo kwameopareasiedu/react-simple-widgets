@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { UseQueryParams } from "../../../types";
 
-export const useQueryParams = (): any => {
+export const useQueryParams: UseQueryParams = (): any => {
     const qs2qp = (search: string): any => {
         const parts = search.substring(1).split("&");
         const cleanParts = parts.filter(part => !!part);

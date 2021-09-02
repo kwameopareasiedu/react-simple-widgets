@@ -67,7 +67,7 @@
     -   Added [TimePicker](src-old/form/time-picker/usage.md) widget
     -   Added [TimeField](src-old/form/time-field/usage.md) widget
     -   Modified [SelectField](src/widgets/select-field/select-field-usage.md) to make option labels `inline`
-    -   Added [useWindowBreakpoints](src-old/hooks/use-window-breakpoints/usage.md) hook
+    -   Added [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) hook
 
 -   `1.7.4`
 

@@ -274,7 +274,23 @@ export interface MultiSelectField
     onChange?: (value: Array<any>) => void;
 }
 
+/** UseQueryParams */
+export type UseQueryParams = () => any;
+
 /** UseCountdown */
 export type UseCountdownState = [number, boolean, () => void, () => void];
 
 export type UseCountdown = (countdown: number) => UseCountdownState;
+
+/** UseWindowBreakpoints */
+export interface UseWindowBreakpointsState {
+    width: number;
+    xs: boolean;
+    sm: boolean;
+    md: boolean;
+    lg: boolean;
+    xl: boolean;
+    xxl: boolean;
+}
+
+export type UseWindowBreakpoints = () => UseWindowBreakpointsState;

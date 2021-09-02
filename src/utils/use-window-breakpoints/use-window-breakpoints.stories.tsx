@@ -1,5 +1,5 @@
 import React from "react";
-import { useWindowBreakpoints } from "./index";
+import { useWindowBreakpoints } from "./use-window-breakpoints";
 
 export default { title: "UseWindowBreakpoints" };
 

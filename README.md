@@ -94,7 +94,7 @@ Widgets under this category are for convenience
 -   [useLoadMore](src-old/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to implement a
     load-more-items feature for a list of items that cannot be displayed in a ListView
 -   [useCountdown](src/utils/use-countdown/use-countdown-usage.md) - A hook which provides numeric countdown functionality
--   [useWindowBreakpoints](src-old/hooks/use-window-breakpoints/usage.md) - A hook which provides the window width category
+-   [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) - A hook which provides the window width category
     data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ## Utils
