@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 import { DialogProvider } from "../../widgets/dialog-provider/dialog-provider";
 import { FilePicker } from "./index";
 

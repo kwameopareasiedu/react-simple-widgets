@@ -3,7 +3,7 @@ import React from "react";
 import { CustomField } from "../../widgets/custom-field/custom-field";
 import { SelectField as Props, SelectFieldMode } from "./types";
 import { SelectOption, SelectOptionType } from "./select-option";
-import { FieldDecoration } from "../field-decoration";
+import { FieldDecoration } from "../../widgets/field-decoration/field-decoration";
 
 /**
  * SelectField allows selection from a short list of options. The DropdownSelect is recommended for

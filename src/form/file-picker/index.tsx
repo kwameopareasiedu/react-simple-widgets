@@ -2,8 +2,8 @@ import "./index.scss";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { DialogHelper, DialogOptions, DialogSize } from "../../widgets/dialog-provider/dialog-provider-types";
 import { DialogProviderContext } from "../../widgets/dialog-provider/dialog-provider-context";
-import { FieldDecorationType } from "../field-decoration/types";
-import { FieldDecoration } from "../field-decoration";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
+import { FieldDecoration } from "../../widgets/field-decoration/field-decoration";
 import { FilePicker as Props } from "./types";
 
 interface IFilePickerDialog {

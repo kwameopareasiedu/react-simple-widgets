@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from "react";
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 
 export enum TextFieldMode {
     INPUT,

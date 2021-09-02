@@ -32,7 +32,7 @@
 -   `2.0.2`
 
     -   Reduced top padding of [FilePicker](./src/form/file-picker/usage.md) dialog
-    -   Fixed the position of underline indicator in [FieldDecoration](./src/form/field-decoration/usage.md) when the
+    -   Fixed the position of underline indicator in [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) when the
         error widget is visible
     -   Removed unused theming CSS variables from [ReadMe](./README.md)
     -   Replaced increase/decrease button content from Fontawesome icons with images. This is because not all projects
@@ -47,7 +47,7 @@
     -   `DialogSize.FULL` has been added to [DialogProvider](src/widgets/dialog-provider/usage.md)
         to make dialogs as wide as the window
     -   Added `leading`, `trailing` and `stickyFloatingLabel` props to all widgets which are composed
-        of [FieldDecoration](src/form/field-decoration/usage.md). These include all the form field widgets
+        of [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md). These include all the form field widgets
 
 -   `1.10.1`
 
@@ -126,7 +126,7 @@
     -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
     -   Added story for `bind` property of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
-    -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage
+    -   Added _disabled_ styling to [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) widget. Updated usage
         in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
     -   Added `text-center` class to [Loader](src/widgets/loader/loader-usage.md) as its added in majority of use cases
     -   Added [PageActions](src/widgets/action-bar/action-bar-usage.md) widget
@@ -151,8 +151,8 @@
 
     -   Added `onClick` prop to [ListView](src/widgets/table-view/table-view-usage.md) widget
     -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md) widget
-    -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
-    -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
+    -   Adjusted label font size of [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) to 87.5%
+    -   Adjusted [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) labels to be single lines
 
 -   `1.3.7`
 

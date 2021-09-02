@@ -16,6 +16,7 @@ module.exports = {
         "../src/widgets/breadcrumbs/*.stories.tsx",
         "../src/widgets/action-bar/*.stories.tsx",
         "../src/widgets/object-view/*.stories.tsx",
+        "../src/widgets/field-decoration/*.stories.tsx",
     ],
     addons: ["@storybook/addon-actions", "@storybook/addon-knobs"],
     webpackFinal: async config => {

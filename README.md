@@ -47,7 +47,7 @@ Providers wrap around you app and provide globally accessible functionality to a
 
 These are customized form widgets for creating [Formik](https://jaredpalmer.com/formik/) forms
 
--   [FieldDecoration](src/form/field-decoration/usage.md) - A widget that provides a label and error component together
+-   [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) - A widget that provides a label and error component together
     with focus and blur styling to a wrapped component
 -   [CustomField](src/widgets/custom-field/custom-field-usage.md) - A widget that allows custom components to be integrated with a form
 -   [TextField](src/form/text-field/usage.md) - A text field that doubles as a rich text editor

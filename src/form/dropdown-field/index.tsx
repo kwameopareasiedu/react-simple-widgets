@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomField } from "../../widgets/custom-field/custom-field";
-import { FieldDecoration } from "../field-decoration";
+import { FieldDecoration } from "../../widgets/field-decoration/field-decoration";
 import { DropdownField as Props } from "./types";
 
 /** DropdownField allows the user to select from a list of items in a dropdown menu */

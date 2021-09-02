@@ -1,4 +1,4 @@
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 
 export interface TimeField {
     name: string;

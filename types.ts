@@ -2,18 +2,18 @@ import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from "re
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider Types */
-export interface Dialog {
-    id: string;
-    widget?: JSX.Element;
-    options?: DialogOptions;
-    onDismiss?: () => void;
-}
-
 export enum DialogSize {
     SMALL,
     MEDIUM,
     WIDE,
     FULL
+}
+
+export interface Dialog {
+    id: string;
+    widget?: JSX.Element;
+    options?: DialogOptions;
+    onDismiss?: () => void;
 }
 
 export interface DialogOptions {
@@ -194,4 +194,22 @@ export type CustomFieldErrorBuilder = (originalError: any) => string;
 export interface CustomField extends InputHTMLAttributes<HTMLInputElement> {
     errorBuilder?: CustomFieldErrorBuilder;
     children: CustomFieldBuilder;
+}
+
+/** FieldDecoration */
+export interface FieldDecorationBuilderProps {
+    onFieldFocus: () => void;
+    onFieldBlur: () => void;
+}
+
+export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => any;
+
+export interface FieldDecoration extends AllHTMLAttributes<HTMLDivElement> {
+    label?: any;
+    error?: any;
+    helper?: any;
+    disabled?: boolean;
+    leading?: JSX.Element;
+    trailing?: JSX.Element;
+    children: FieldDecorationBuilder;
 }

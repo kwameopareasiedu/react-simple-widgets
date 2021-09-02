@@ -2,7 +2,7 @@ import moment from "moment";
 import React, { useState } from "react";
 import { DatePicker } from "./index";
 import { DatePickerMode } from "./types";
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 import { DialogProvider } from "../../widgets/dialog-provider/dialog-provider";
 
 export default {

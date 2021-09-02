@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { DialogHelper, DialogOptions, DialogSize } from "../../widgets/dialog-provider/dialog-provider-types";
 import { DialogProviderContext } from "../../widgets/dialog-provider/dialog-provider-context";
 import { DatePickerMode, DatePicker as Props } from "./types";
-import { FieldDecoration } from "../field-decoration";
+import { FieldDecoration } from "../../widgets/field-decoration/field-decoration";
 
 interface IDatePickerDialog {
     label?: string;

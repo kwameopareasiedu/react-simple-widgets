@@ -51,23 +51,23 @@ import { TextFieldMode } from "react-simple-widgets/dist/constants";
 
 -   `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `decoration?: FieldDecoration`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `stickyFloatingLabel?: boolean`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `errorTransformer?: (err: any) => string`
 

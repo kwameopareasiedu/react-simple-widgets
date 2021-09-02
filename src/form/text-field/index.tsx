@@ -3,9 +3,9 @@ import "./index.scss";
 import Quill from "react-quill";
 import React from "react";
 import { CustomField } from "../../widgets/custom-field/custom-field";
-import { FieldDecoration } from "../field-decoration";
+import { FieldDecoration } from "../../widgets/field-decoration/field-decoration";
 import { TextField as Props, TextFieldMode } from "./types";
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 
 /** TextField uses the CustomField to provider a text field to the user. It behaves as a standard input but also doubles down as a WYSIWYG editor */
 export const TextField = ({

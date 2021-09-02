@@ -1,5 +1,5 @@
 import { SelectHTMLAttributes } from "react";
-import { FieldDecorationType } from "../field-decoration/types";
+import { FieldDecorationType } from "../../widgets/field-decoration/types";
 
 export interface DropdownField extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;

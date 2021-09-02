@@ -29,7 +29,7 @@ import { SelectFieldMode } from "react-simple-widgets/dist/constants";
 
 -   `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `mode?: SelectFieldMode`
 

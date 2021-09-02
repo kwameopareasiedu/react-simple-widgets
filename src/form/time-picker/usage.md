@@ -35,27 +35,27 @@ import { TimePicker } from "react-simple-widgets";
 
 -   `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `decoration?: FieldDecoration`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `stickyFloatingLabel?: boolean`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `error?: string`
 
-    See [FieldDecoration docs](../field-decoration/usage.md)
+    See [FieldDecoration docs](../../widgets/field-decoration/field-decoration-usage.md)
 
 -   `validator?: (time: string) => string`
 
