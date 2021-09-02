@@ -1,12 +1,12 @@
 import { useField } from "formik";
-import { CustomField as Props } from "./types";
+import { CustomField as ICustomField } from "../../../types";
 
-/** CustomField is a form field that transforms a component into a form field compatible with a formik form */
-export const CustomField = ({ children, errorTransformer, ...rest }: Props): any => {
+export const CustomField = ({ children, errorBuilder: _errorBuilder, ...rest }: ICustomField): any => {
     const [field, meta, helper] = useField(rest as any);
 
-    // Converts any error into a string to be displayed in the error component
-    const defaultErrorHandler = (error: any): string => {
+    const errorBuilder = (error: any): string => {
+        if (_errorBuilder) return _errorBuilder(error);
+
         switch (Object.prototype.toString.call(error)) {
             case "[object Object]":
                 return Object.keys(error)
@@ -21,5 +21,5 @@ export const CustomField = ({ children, errorTransformer, ...rest }: Props): any
         }
     };
 
-    return children({ ...field, ...meta, ...helper, error: (errorTransformer || defaultErrorHandler)(meta.error) });
+    return children({ ...field, ...meta, ...helper, error: errorBuilder(meta.error) });
 };

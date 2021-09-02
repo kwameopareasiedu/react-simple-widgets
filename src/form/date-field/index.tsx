@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomField } from "../custom-field";
+import { CustomField } from "../../widgets/custom-field/custom-field";
 import { DatePicker } from "../date-picker";
 import { DateField as Props } from "./types";
 

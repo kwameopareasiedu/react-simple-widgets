@@ -15,9 +15,9 @@ export * from "./widgets/confirm-button/confirm-button";
 export * from "./widgets/breadcrumbs/breadcrumbs";
 export * from "./widgets/action-bar/action-bar";
 export * from "./widgets/object-view/object-view";
+export * from "./widgets/custom-field/custom-field";
 
 export * from "./form/field-decoration";
-export * from "./form/custom-field";
 export * from "./form/text-field";
 export * from "./form/password-field";
 export * from "./form/dropdown-field";

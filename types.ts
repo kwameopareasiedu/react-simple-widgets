@@ -1,4 +1,5 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from "react";
+import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider Types */
 export interface Dialog {
@@ -179,8 +180,18 @@ export type ObjectViewCellResolverFunction = (item: any) => any;
 
 export type ObjectViewCellResolver = string | ObjectViewCellResolverFunction;
 
-export interface ObjectView extends AllHTMLAttributes<HTMLTableElement>{
+export interface ObjectView extends AllHTMLAttributes<HTMLTableElement> {
     object: any;
     props: Array<[string, ObjectViewCellResolver]>;
     split?: number;
+}
+
+/** CustomField */
+export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
+
+export type CustomFieldErrorBuilder = (originalError: any) => string;
+
+export interface CustomField extends InputHTMLAttributes<HTMLInputElement> {
+    errorBuilder?: CustomFieldErrorBuilder;
+    children: CustomFieldBuilder;
 }

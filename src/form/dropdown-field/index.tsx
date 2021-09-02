@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomField } from "../custom-field";
+import { CustomField } from "../../widgets/custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration";
 import { DropdownField as Props } from "./types";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { FileField as Props } from "./types";
-import { CustomField } from "../custom-field";
+import { CustomField } from "../../widgets/custom-field/custom-field";
 import { FilePicker } from "../file-picker";
 
 /** FileField is a form wrapper for the FilePicker widget */

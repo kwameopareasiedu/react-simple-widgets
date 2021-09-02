@@ -71,7 +71,7 @@ import { TextFieldMode } from "react-simple-widgets/dist/constants";
 
 -   `errorTransformer?: (err: any) => string`
 
-    See [CustomField docs](../custom-field/usage.md)
+    See [CustomField docs](../../widgets/custom-field/custom-field-usage.md)
 
 -   `onEditorChange?: (value: any) => void`
 

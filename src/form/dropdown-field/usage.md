@@ -51,4 +51,4 @@ import { DropdownField } from "react-simple-widgets";
 
 -   `errorTransformer?: (err: any) => string`
 
-    See [CustomField docs](../custom-field/usage.md)
+    See [CustomField docs](../../widgets/custom-field/custom-field-usage.md)

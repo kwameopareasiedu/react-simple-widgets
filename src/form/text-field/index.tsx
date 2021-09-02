@@ -2,7 +2,7 @@ import "./quill-snow.scss";
 import "./index.scss";
 import Quill from "react-quill";
 import React from "react";
-import { CustomField } from "../custom-field";
+import { CustomField } from "../../widgets/custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration";
 import { TextField as Props, TextFieldMode } from "./types";
 import { FieldDecorationType } from "../field-decoration/types";

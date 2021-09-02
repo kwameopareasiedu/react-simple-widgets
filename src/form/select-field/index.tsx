@@ -1,6 +1,6 @@
 import "./index.scss";
 import React from "react";
-import { CustomField } from "../custom-field";
+import { CustomField } from "../../widgets/custom-field/custom-field";
 import { SelectField as Props, SelectFieldMode } from "./types";
 import { SelectOption, SelectOptionType } from "./select-option";
 import { FieldDecoration } from "../field-decoration";

@@ -49,7 +49,7 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 
 -   [FieldDecoration](src/form/field-decoration/usage.md) - A widget that provides a label and error component together
     with focus and blur styling to a wrapped component
--   [CustomField](src/form/custom-field/usage.md) - A widget that allows custom components to be integrated with a form
+-   [CustomField](src/widgets/custom-field/custom-field-usage.md) - A widget that allows custom components to be integrated with a form
 -   [TextField](src/form/text-field/usage.md) - A text field that doubles as a rich text editor
 -   [PasswordField](src/form/password-field/usage.md) - A text field whose `type` is **password**
 -   [DropdownField](src/form/dropdown-field/usage.md) - A widget that allows selection from a dropdown
