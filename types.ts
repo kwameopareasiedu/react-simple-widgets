@@ -1,4 +1,4 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider */
@@ -235,3 +235,8 @@ export interface TextAreaField
 
 /** PasswordField */
 export type PasswordField = Omit<TextField, "trailing" | "type">;
+
+/** DropdownField */
+export interface DropdownField
+    extends SelectHTMLAttributes<HTMLSelectElement>,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {}

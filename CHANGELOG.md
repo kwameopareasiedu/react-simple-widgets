@@ -21,17 +21,17 @@
 
     -   Added scroll-to-top feature to [ListView](src/widgets/table-view/table-view-usage.md) if the `items`
         list changes
-    -   Fixed bug in [DatePicker](./src/form/date-picker/usage.md) causing the date to be cleared if the picker dialog is
+    -   Fixed bug in [DatePicker](src-old/form/date-picker/usage.md) causing the date to be cleared if the picker dialog is
         closed without selecting any date
     -   Added `persistent` option to `DialogOptions` of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
     -   Changed [ListView](src/widgets/table-view/table-view-usage.md) widget loader from a circular loader to a horizontal loader
     -   Added optional `emptyMessage` prop to [ListView](src/widgets/table-view/table-view-usage.md) widget
-    -   Added new [PasswordField](src/form/password-field/usage.md) widget
+    -   Added new [PasswordField](src-old/form/password-field/usage.md) widget
 
 -   `2.0.2`
 
-    -   Reduced top padding of [FilePicker](./src/form/file-picker/usage.md) dialog
+    -   Reduced top padding of [FilePicker](src-old/form/file-picker/usage.md) dialog
     -   Fixed the position of underline indicator in [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) when the
         error widget is visible
     -   Removed unused theming CSS variables from [ReadMe](./README.md)
@@ -64,20 +64,20 @@
 
 -   `1.8.0`
 
-    -   Added [TimePicker](src/form/time-picker/usage.md) widget
-    -   Added [TimeField](src/form/time-field/usage.md) widget
-    -   Modified [SelectField](src/form/select-field/usage.md) to make option labels `inline`
-    -   Added [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) hook
+    -   Added [TimePicker](src-old/form/time-picker/usage.md) widget
+    -   Added [TimeField](src-old/form/time-field/usage.md) widget
+    -   Modified [SelectField](src-old/form/select-field/usage.md) to make option labels `inline`
+    -   Added [useWindowBreakpoints](src-old/hooks/use-window-breakpoints/usage.md) hook
 
 -   `1.7.4`
 
-    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src/hooks/use-countdown/usage.md)
+    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src-old/hooks/use-countdown/usage.md)
         hook
 
 -   `1.7.3`
 
-    -   Added [debounce](src/misc/debounce/usage.md) utility
-    -   Added [useCountdown](src/hooks/use-countdown/usage.md) hook
+    -   Added [debounce](src-old/misc/debounce/usage.md) utility
+    -   Added [useCountdown](src-old/hooks/use-countdown/usage.md) hook
     -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         to allow pre-existing local storage values to be added to the value store
 
@@ -112,7 +112,7 @@
         content cannot fit on one line
     -   Added auto scroll-to-top-of-list feature to [ListView](src/widgets/table-view/table-view-usage.md)
         when the items list is modified by a page change
-    -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values instead of
+    -   Modified [SelectField](src-old/form/select-field/usage.md) to accept `any` type for options values instead of
         just `string`
     -   Reduces header vertical padding in [ListView](src/widgets/table-view/table-view-usage.md)
     -   Added item options confirmation feature to [ListView](src/widgets/table-view/table-view-usage.md)
@@ -123,17 +123,17 @@
 
 -   `1.6.0`
 
-    -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
+    -   Corrected path to [useLoadMore](src-old/hooks/use-load-more/usage.md) stories in its docs
     -   Added story for `bind` property of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
     -   Added _disabled_ styling to [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) widget. Updated usage
-        in [TextField](src/widgets/text-field/text-field-usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
+        in [TextField](src/widgets/text-field/text-field-usage.md) and [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md)
     -   Added `text-center` class to [Loader](src/widgets/loader/loader-usage.md) as its added in majority of use cases
     -   Added [PageActions](src/widgets/action-bar/action-bar-usage.md) widget
 
 -   `1.5.0`
 
-    -   Added [useLoadMore hook](src/hooks/use-load-more/usage.md)
+    -   Added [useLoadMore hook](src-old/hooks/use-load-more/usage.md)
     -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         widget. Once a value is persisted, it will automatically be remembered until removed, even when the page is
         refreshed
@@ -142,8 +142,8 @@
 
 -   `1.4.1`
 
-    -   Added overflow styling to [DatePicker](src/form/date-picker/usage.md)
-        and [FilePicker](src/form/file-picker/usage.md)
+    -   Added overflow styling to [DatePicker](src-old/form/date-picker/usage.md)
+        and [FilePicker](src-old/form/file-picker/usage.md)
         widgets
     -   Increased `z-index` of [DialogProvider](src/widgets/dialog-provider/usage.md) dialog container div to 999999
 
@@ -156,8 +156,8 @@
 
 -   `1.3.7`
 
-    -   Added focus indicator to [SelectField](src/form/select-field/usage.md) options
-    -   Modified [useQueryParams](src/hooks/use-query-params/usage.md) to update `qp` state object if the whole location
+    -   Added focus indicator to [SelectField](src-old/form/select-field/usage.md) options
+    -   Modified [useQueryParams](src-old/hooks/use-query-params/usage.md) to update `qp` state object if the whole location
         object changes instead of just `location.search`
 
 -   `1.3.6`
@@ -178,15 +178,15 @@
 -   `1.3.3`
 
     -   Replaced `query-string` with a simpler algorithm for query string to query parameter resolution
-        in [useQueryParams](src/hooks/use-query-params/usage.md)
+        in [useQueryParams](src-old/hooks/use-query-params/usage.md)
 
 -   `1.3.2`
 
-    -   [useQueryParams](src/hooks/use-query-params/usage.md) now returns and empty object if no query parameter are
+    -   [useQueryParams](src-old/hooks/use-query-params/usage.md) now returns and empty object if no query parameter are
         present in the URL
-    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection when
+    -   Modified [DatePicker](src-old/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection when
         shift key is pressed while a date is selected
-    -   Modified [DatePicker](src/form/date-picker/usage.md) with `DatePickerMode.MULTI` to return null date when no date
+    -   Modified [DatePicker](src-old/form/date-picker/usage.md) with `DatePickerMode.MULTI` to return null date when no date
         is selected instead of an empty array which makes is function the same as `DatePickerMode.SINGLE`
         and `DatePickerMode.MONTH` when no dates are selected
 
@@ -207,12 +207,12 @@
     -   Modified [PageTransitionProvider](src/transition-provider/usage.md) to ignore redirect if target URL is
         empty
     -   Forwarded the `name` prop of [TextField](src/widgets/text-field/text-field-usage.md) and
-        [DropdownField](src/form/dropdown-field/usage.md) to `input` and `select` components respectively to trigger
+        [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md) to `input` and `select` components respectively to trigger
         browser added feature (such as auto-completion)
 
 -   `1.2.3`
 
-    -   Removed `placeholder` prop from [DatePicker](src/form/date-picker/usage.md) because `label`
+    -   Removed `placeholder` prop from [DatePicker](src-old/form/date-picker/usage.md) because `label`
         already covers its function
 
 -   `1.2.2`
@@ -225,7 +225,7 @@
 
     -   Fixed bug in [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) making simultaneous value updates
         persist
-    -   Added `placeholder` prop to [DatePicker](src/form/date-picker/usage.md)
+    -   Added `placeholder` prop to [DatePicker](src-old/form/date-picker/usage.md)
 
 -   `1.2.0`
 
@@ -236,7 +236,7 @@
 
 -   `1.1.0`
 
-    -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
+    -   Added [useQueryParams hook](src-old/hooks/use-query-params/usage.md)
     -   Added the [Loader](src/widgets/loader/loader-usage.md) widget
     -   Added the `bind` prop to [DialogProvider](src/widgets/dialog-provider/usage.md)
         to allow binding of properties from the host component to the dialog component

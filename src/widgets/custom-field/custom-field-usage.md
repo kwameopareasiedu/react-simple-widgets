@@ -53,6 +53,6 @@ import { CustomField } from "react-simple-widgets";
 This widget is the base for the other form widgets provided in this library. You can view each widget's source code to see how this widget is used
 
 -   [TextField](../text-field/text-field.tsx)
--   [DropdownField](../../form/dropdown-field/index.tsx)
--   [SelectField](../../form/select-field/index.tsx)
--   [FileField](../../form/file-field/index.tsx)
+-   [DropdownField](../dropdown-field/dropdown-field.tsx)
+-   [SelectField](../../../src-old/form/select-field/index.tsx)
+-   [FileField](../../../src-old/form/file-field/index.tsx)

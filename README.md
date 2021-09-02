@@ -51,22 +51,22 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
     with focus and blur styling to a wrapped component
 -   [CustomField](src/widgets/custom-field/custom-field-usage.md) - A widget that allows custom components to be integrated with a form
 -   [TextField](src/widgets/text-field/text-field-usage.md) - A text field that doubles as a rich text editor
--   [PasswordField](src/form/password-field/usage.md) - A text field whose `type` is **password**
--   [DropdownField](src/form/dropdown-field/usage.md) - A widget that allows selection from a dropdown
--   [SelectField](src/form/select-field/usage.md) - A widget that allows binary, single or multi selection from a list
+-   [PasswordField](src-old/form/password-field/usage.md) - A text field whose `type` is **password**
+-   [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md) - A widget that allows selection from a dropdown
+-   [SelectField](src-old/form/select-field/usage.md) - A widget that allows binary, single or multi selection from a list
     of options
--   [FileField](src/form/file-field/usage.md) - A form wrapper widget for the [FilePicker](src/form/file-picker/usage.md)
--   [DateField](src/form/date-field/usage.md) - A form wrapper widget for the [DatePicker](src/form/date-picker/usage.md)
--   [TimeField](src/form/time-field/usage.md) - A form wrapper widget for the [TimePicker](src/form/time-picker/usage.md)
+-   [FileField](src-old/form/file-field/usage.md) - A form wrapper widget for the [FilePicker](src-old/form/file-picker/usage.md)
+-   [DateField](src-old/form/date-field/usage.md) - A form wrapper widget for the [DatePicker](src-old/form/date-picker/usage.md)
+-   [TimeField](src-old/form/time-field/usage.md) - A form wrapper widget for the [TimePicker](src-old/form/time-picker/usage.md)
 
 ## Pickers
 
 Pickers allow you to select some complex data type
 
--   [FilePicker](src/form/file-picker/usage.md) - A simple file picker which supports drag-and-drop feature
--   [DatePicker](src/form/date-picker/usage.md) - A date picker which supports single and multiple date selection as
+-   [FilePicker](src-old/form/file-picker/usage.md) - A simple file picker which supports drag-and-drop feature
+-   [DatePicker](src-old/form/date-picker/usage.md) - A date picker which supports single and multiple date selection as
     well as month selection
--   [TimePicker](src/form/time-picker/usage.md) - A 12-hour time picker
+-   [TimePicker](src-old/form/time-picker/usage.md) - A 12-hour time picker
 
 ## List
 
@@ -89,17 +89,17 @@ Widgets under this category are for convenience
 
 ## Hooks
 
--   [useQueryParams](src/hooks/use-query-params/usage.md) - A hook that returns a object containing the URL search
+-   [useQueryParams](src-old/hooks/use-query-params/usage.md) - A hook that returns a object containing the URL search
     string parameters
--   [useLoadMore](src/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to implement a
+-   [useLoadMore](src-old/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to implement a
     load-more-items feature for a list of items that cannot be displayed in a ListView
--   [useCountdown](src/hooks/use-countdown/usage.md) - A hook which provides numeric countdown functionality
--   [useWindowBreakpoints](src/hooks/use-window-breakpoints/usage.md) - A hook which provides the window width category
+-   [useCountdown](src-old/hooks/use-countdown/usage.md) - A hook which provides numeric countdown functionality
+-   [useWindowBreakpoints](src-old/hooks/use-window-breakpoints/usage.md) - A hook which provides the window width category
     data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ## Utils
 
--   [debounce](src/misc/debounce/usage.md) - Creates a debounced function which is invoked after a specified delay after
+-   [debounce](src-old/misc/debounce/usage.md) - Creates a debounced function which is invoked after a specified delay after
     a caller has called it
 
 ## Theming
