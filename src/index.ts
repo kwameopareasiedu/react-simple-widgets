@@ -18,6 +18,8 @@ export * from "./widgets/object-view/object-view";
 export * from "./widgets/custom-field/custom-field";
 export * from "./widgets/field-decoration/field-decoration";
 export * from "./widgets/text-field/text-field";
+export * from "./widgets/text-area-field/text-area-field";
+export * from "./widgets/text-editor-field/text-editor-field";
 export * from "./widgets/password-field/password-field";
 
 export * from "./form/dropdown-field";

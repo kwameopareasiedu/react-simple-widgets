@@ -18,6 +18,7 @@ module.exports = {
         "../src/widgets/object-view/*.stories.tsx",
         "../src/widgets/field-decoration/*.stories.tsx",
         "../src/widgets/text-field/*.stories.tsx",
+        "../src/widgets/text-area-field/*.stories.tsx",
         "../src/widgets/text-editor-field/*.stories.tsx",
         "../src/widgets/password-field/*.stories.tsx",
     ],

@@ -1,0 +1,16 @@
+.react-simple-widget.text-area-field {
+    .field-decoration-content-container {
+        .field-decoration-content {
+            align-items: start;
+
+            .leading,
+            .trailing {
+                margin-top: 5px;
+            }
+
+            textarea {
+                min-height: 50px;
+            }
+        }
+    }
+}

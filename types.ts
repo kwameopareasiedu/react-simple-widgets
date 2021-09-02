@@ -228,5 +228,10 @@ export interface TextEditorField extends Pick<FieldDecoration, "label" | "helper
     onBlur?: () => void;
 }
 
+/** TextAreaField */
+export interface TextAreaField
+    extends InputHTMLAttributes<HTMLTextAreaElement>,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {}
+
 /** PasswordField */
-export type PasswordField = Omit<TextField, "trailing" | "type">
+export type PasswordField = Omit<TextField, "trailing" | "type">;

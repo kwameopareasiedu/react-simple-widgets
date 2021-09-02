@@ -1,8 +1,8 @@
 [Home](../../../README.md)
 
-# TextField
+# TextAreaField
 
-This widget is a simple text input form widget. Since it is intrinsically an input, it accepts all attributes of an `<input/>` tag.
+This widget is a simple text input form widget. Since it is intrinsically a textarea, it accepts all attributes of an `<textarea/>` tag.
 
 ## Usage
 
@@ -24,16 +24,16 @@ import { TextField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `helper?: string`
 
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+
+-   `leading?: any`
+
     See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
-- `leading?: any`
-
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
-
-- `trailing?: any`
+-   `trailing?: any`
 
     See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
