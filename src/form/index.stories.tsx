@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { TextField } from "./text-field";
-import { DialogProvider } from "../dialog-provider/dialog-provider";
+import { DialogProvider } from "../widgets/dialog-provider/dialog-provider";
 import { FieldDecorationType } from "./field-decoration/types";
 import { SelectFieldMode } from "./select-field/types";
 import { TextFieldMode } from "./text-field/types";

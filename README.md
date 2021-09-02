@@ -35,10 +35,10 @@ You can install these dependencies with `yarn add -D react react-router-dom form
 
 Providers wrap around you app and provide globally accessible functionality to all parts of your app
 
--   [DialogProvider](src/dialog-provider/usage.md) - Provides a simple dialog framework within your app
--   [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) - Provides an in-memory value storage which can
+-   [DialogProvider](src/widgets/dialog-provider/usage.md) - Provides a simple dialog framework within your app
+-   [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) - Provides an in-memory value storage which can
     utilize the local storage API to persist data
--   [FlashProvider](src/flash-provider/flash-provider-usage.md) - Provides a flash message framework built using the dialog
+-   [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) - Provides a flash message framework built using the dialog
     framework
 -   [TransitionProvider](src/transition-provider/usage.md) - Provides a page transition framework for
     navigating between different pages of your app
@@ -72,19 +72,19 @@ Pickers allow you to select some complex data type
 
 Widgets here operate on list data
 
--   [ListView](src/table-view/table-view-usage.md) - A widget that displays a list of items in a responsive tabular form
--   [ObjectView](src/collection/object-view/usage.md) - A widget that renders an object's data in a tabular form
+-   [ListView](src/widgets/table-view/table-view-usage.md) - A widget that displays a list of items in a responsive tabular form
+-   [ObjectView](src/widgets/object-view/usage.md) - A widget that renders an object's data in a tabular form
 
 ## Misc
 
 Widgets under this category are for convenience
 
--   [Loader](src/loader/loader-usage.md) - A widget that displays a spinner
--   [BusyButton](src/busy-button/busy-button-usage.md) - A button widget that displays a loading indicator if busy
--   [ConfirmDialog](src/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
+-   [Loader](src/widgets/loader/loader-usage.md) - A widget that displays a spinner
+-   [BusyButton](src/widgets/busy-button/busy-button-usage.md) - A button widget that displays a loading indicator if busy
+-   [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
     an action
--   [Breadcrumbs](src/breadcrumbs/breadcrumbs-usage.md) - A breadcrumb link container widget
--   [PageActions](src/action-bar/action-bar-usage.md) - A `div` that displays a row of spaced buttons or nothing if no
+-   [Breadcrumbs](src/widgets/breadcrumbs/breadcrumbs-usage.md) - A breadcrumb link container widget
+-   [PageActions](src/widgets/action-bar/action-bar-usage.md) - A `div` that displays a row of spaced buttons or nothing if no
     children are specified
 
 ## Hooks

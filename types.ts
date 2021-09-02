@@ -173,3 +173,14 @@ export interface Breadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
 export interface ActionBar extends AllHTMLAttributes<HTMLDivElement> {
     children?: any;
 }
+
+/** ObjectView */
+export type ObjectViewCellResolverFunction = (item: any) => any;
+
+export type ObjectViewCellResolver = string | ObjectViewCellResolverFunction;
+
+export interface ObjectView extends AllHTMLAttributes<HTMLTableElement>{
+    object: any;
+    props: Array<[string, ObjectViewCellResolver]>;
+    split?: number;
+}

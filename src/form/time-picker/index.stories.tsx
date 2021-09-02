@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { select, withKnobs } from "@storybook/addon-knobs";
 import { TimePicker } from "./index";
-import { DialogProvider } from "../../dialog-provider/dialog-provider";
+import { DialogProvider } from "../../widgets/dialog-provider/dialog-provider";
 
 export default {
     title: "Time Picker",

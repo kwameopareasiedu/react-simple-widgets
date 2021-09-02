@@ -1,8 +1,8 @@
 import "./index.scss";
 import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
-import { DialogHelper, DialogOptions, DialogSize } from "../../dialog-provider/dialog-provider-types";
-import { DialogProviderContext } from "../../dialog-provider/dialog-provider-context";
+import { DialogHelper, DialogOptions, DialogSize } from "../../widgets/dialog-provider/dialog-provider-types";
+import { DialogProviderContext } from "../../widgets/dialog-provider/dialog-provider-context";
 import { DatePickerMode, DatePicker as Props } from "./types";
 import { FieldDecoration } from "../field-decoration";
 

@@ -1,8 +1,8 @@
 import "./index.scss";
 import moment from "moment";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { DialogHelper, DialogSize } from "../../dialog-provider/dialog-provider-types";
-import { DialogProviderContext } from "../../dialog-provider/dialog-provider-context";
+import { DialogHelper, DialogSize } from "../../widgets/dialog-provider/dialog-provider-types";
+import { DialogProviderContext } from "../../widgets/dialog-provider/dialog-provider-context";
 import { FieldDecoration } from "../field-decoration";
 import { TimePicker as Props } from "./types";
 import DownIcon from "../../assets/down.svg";

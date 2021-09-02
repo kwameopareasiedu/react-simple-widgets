@@ -5,12 +5,12 @@
 -   `3.1.0`
 
     -   Added optional `builder` variable to `<FlashProvider/>` to build a custom flash view component
-        [FlashProvider](src/flash-provider/flash-provider-usage.md)
+        [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
 
 -   `3.0.3`
 
     -   Added optional `btnText` variable to `flashSuccess`, `flashInfo`, `flashWarning` and
-        `flashError` in [FlashProvider](src/flash-provider/flash-provider-usage.md)
+        `flashError` in [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
 
 -   `3.0.0`
 
@@ -19,14 +19,14 @@
 
 -   `2.1.0`
 
-    -   Added scroll-to-top feature to [ListView](src/table-view/table-view-usage.md) if the `items`
+    -   Added scroll-to-top feature to [ListView](src/widgets/table-view/table-view-usage.md) if the `items`
         list changes
     -   Fixed bug in [DatePicker](./src/form/date-picker/usage.md) causing the date to be cleared if the picker dialog is
         closed without selecting any date
-    -   Added `persistent` option to `DialogOptions` of [DialogProvider](src/dialog-provider/usage.md)
+    -   Added `persistent` option to `DialogOptions` of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
-    -   Changed [ListView](src/table-view/table-view-usage.md) widget loader from a circular loader to a horizontal loader
-    -   Added optional `emptyMessage` prop to [ListView](src/table-view/table-view-usage.md) widget
+    -   Changed [ListView](src/widgets/table-view/table-view-usage.md) widget loader from a circular loader to a horizontal loader
+    -   Added optional `emptyMessage` prop to [ListView](src/widgets/table-view/table-view-usage.md) widget
     -   Added new [PasswordField](src/form/password-field/usage.md) widget
 
 -   `2.0.2`
@@ -44,7 +44,7 @@
 
 -   `2.0.0`
 
-    -   `DialogSize.FULL` has been added to [DialogProvider](src/dialog-provider/usage.md)
+    -   `DialogSize.FULL` has been added to [DialogProvider](src/widgets/dialog-provider/usage.md)
         to make dialogs as wide as the window
     -   Added `leading`, `trailing` and `stickyFloatingLabel` props to all widgets which are composed
         of [FieldDecoration](src/form/field-decoration/usage.md). These include all the form field widgets
@@ -52,7 +52,7 @@
 -   `1.10.1`
 
     -   Fixed bug causing race conditions when `del` is used successively in
-        [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
+        [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
     -   Fixed bug causing `pageTransitionViewCount` to go below 0, which in turn caused `<Link/>`s
         outside `<PageTransitionView/>`s not to work in
         [PageTransitionProvider](src/transition-provider/usage.md)
@@ -60,7 +60,7 @@
 -   `1.10.0`
 
     -   Added start and end pages display if current `page > start + 3` and `page < end - 3`
-        respectively in [ListView](src/table-view/table-view-usage.md) widget
+        respectively in [ListView](src/widgets/table-view/table-view-usage.md) widget
 
 -   `1.8.0`
 
@@ -78,7 +78,7 @@
 
     -   Added [debounce](src/misc/debounce/usage.md) utility
     -   Added [useCountdown](src/hooks/use-countdown/usage.md) hook
-    -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
+    -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         to allow pre-existing local storage values to be added to the value store
 
 -   `1.7.2`
@@ -88,69 +88,69 @@
 
 -   `1.7.1`
 
-    -   Changed `display` of links in [Breadcrumbs](src/breadcrumbs/breadcrumbs-usage.md) from
+    -   Changed `display` of links in [Breadcrumbs](src/widgets/breadcrumbs/breadcrumbs-usage.md) from
         `inline-block` to `inline`
-    -   Modify [ListView](src/table-view/table-view-usage.md) to do nothing if options builder returns `null` or an empty
+    -   Modify [ListView](src/widgets/table-view/table-view-usage.md) to do nothing if options builder returns `null` or an empty
         array of options instead of displaying a dialog with no options
 
 -   `1.7.0`
 
-    -   Modified theme color of success messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
-    -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/flash-provider/flash-provider-usage.md)
-    -   Changed CSS property `word-break` of [ListView](src/table-view/table-view-usage.md) cells from `break-all`
+    -   Modified theme color of success messages of [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
+    -   Added CSS property `word-break: break-word` to messages of [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
+    -   Changed CSS property `word-break` of [ListView](src/widgets/table-view/table-view-usage.md) cells from `break-all`
         to `break-word`
-    -   Fixed bug causing inconsistent borders in [ListView](src/table-view/table-view-usage.md)
+    -   Fixed bug causing inconsistent borders in [ListView](src/widgets/table-view/table-view-usage.md)
         item options
-    -   Modified [ListView](src/table-view/table-view-usage.md) options to use a builder pattern instead of an array of
+    -   Modified [ListView](src/widgets/table-view/table-view-usage.md) options to use a builder pattern instead of an array of
         options. This allows for more control over options shown for each list item
 
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of
-        [ObjectView](src/collection/object-view/usage.md)
-    -   Added `word-break` styling to cells of [ListView](src/table-view/table-view-usage.md) to force text overflow if
+        [ObjectView](src/widgets/object-view/usage.md)
+    -   Added `word-break` styling to cells of [ListView](src/widgets/table-view/table-view-usage.md) to force text overflow if
         content cannot fit on one line
-    -   Added auto scroll-to-top-of-list feature to [ListView](src/table-view/table-view-usage.md)
+    -   Added auto scroll-to-top-of-list feature to [ListView](src/widgets/table-view/table-view-usage.md)
         when the items list is modified by a page change
     -   Modified [SelectField](src/form/select-field/usage.md) to accept `any` type for options values instead of
         just `string`
-    -   Reduces header vertical padding in [ListView](src/table-view/table-view-usage.md)
-    -   Added item options confirmation feature to [ListView](src/table-view/table-view-usage.md)
+    -   Reduces header vertical padding in [ListView](src/widgets/table-view/table-view-usage.md)
+    -   Added item options confirmation feature to [ListView](src/widgets/table-view/table-view-usage.md)
 
 -   `1.6.1`
 
-    -   Added inline styling to `Loader` in [BusyButton](src/busy-button/busy-button-usage.md)
+    -   Added inline styling to `Loader` in [BusyButton](src/widgets/busy-button/busy-button-usage.md)
 
 -   `1.6.0`
 
     -   Corrected path to [useLoadMore](src/hooks/use-load-more/usage.md) stories in its docs
-    -   Added story for `bind` property of [DialogProvider](src/dialog-provider/usage.md)
+    -   Added story for `bind` property of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
     -   Added _disabled_ styling to [FieldDecoration](src/form/field-decoration/usage.md) widget. Updated usage
         in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
-    -   Added `text-center` class to [Loader](src/loader/loader-usage.md) as its added in majority of use cases
-    -   Added [PageActions](src/action-bar/action-bar-usage.md) widget
+    -   Added `text-center` class to [Loader](src/widgets/loader/loader-usage.md) as its added in majority of use cases
+    -   Added [PageActions](src/widgets/action-bar/action-bar-usage.md) widget
 
 -   `1.5.0`
 
     -   Added [useLoadMore hook](src/hooks/use-load-more/usage.md)
-    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
+    -   Removed `initialLocalStorageKeys` prop from [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         widget. Once a value is persisted, it will automatically be remembered until removed, even when the page is
         refreshed
     -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
-        [ConfirmDialog](src/confirm-button/confirm-button-usage.md)
+        [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md)
 
 -   `1.4.1`
 
     -   Added overflow styling to [DatePicker](src/form/date-picker/usage.md)
         and [FilePicker](src/form/file-picker/usage.md)
         widgets
-    -   Increased `z-index` of [DialogProvider](src/dialog-provider/usage.md) dialog container div to 999999
+    -   Increased `z-index` of [DialogProvider](src/widgets/dialog-provider/usage.md) dialog container div to 999999
 
 -   `1.4.0`
 
-    -   Added `onClick` prop to [ListView](src/table-view/table-view-usage.md) widget
-    -   Added `theme` prop to [ConfirmDialog](src/confirm-button/confirm-button-usage.md) widget
+    -   Added `onClick` prop to [ListView](src/widgets/table-view/table-view-usage.md) widget
+    -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md) widget
     -   Adjusted label font size of [FieldDecoration](src/form/field-decoration/usage.md) to 87.5%
     -   Adjusted [FieldDecoration](src/form/field-decoration/usage.md) labels to be single lines
 
@@ -167,12 +167,12 @@
 
 -   `1.3.5`
 
-    -   Added the `clear` function to the [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md)
+    -   Added the `clear` function to the [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         which deletes all values in the store and removes them from the local storage if they are persisted
 
 -   `1.3.4`
 
-    -   Modified [ListView](src/table-view/table-view-usage.md) to limit styling to immediate children and not affect
+    -   Modified [ListView](src/widgets/table-view/table-view-usage.md) to limit styling to immediate children and not affect
         content within the cells
 
 -   `1.3.3`
@@ -192,12 +192,12 @@
 
 -   `1.3.1`
 
-    -   Modified [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) to store null values as-is instead of
+    -   Modified [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) to store null values as-is instead of
         an empty string
 
 -   `1.3.0`
 
-    -   Added `del` feature to [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) to remove values from the
+    -   Added `del` feature to [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) to remove values from the
         provider
 
 -   `1.2.4`
@@ -217,26 +217,26 @@
 
 -   `1.2.2`
 
-    -   Added a "No items to display" message to [ListView](src/table-view/table-view-usage.md) if list is empty
-    -   Added `options.busy` prop to [ListView](src/table-view/table-view-usage.md) to determine if a busy indicator should
+    -   Added a "No items to display" message to [ListView](src/widgets/table-view/table-view-usage.md) if list is empty
+    -   Added `options.busy` prop to [ListView](src/widgets/table-view/table-view-usage.md) to determine if a busy indicator should
         be displayed beside and item
 
 -   `1.2.1`
 
-    -   Fixed bug in [ValueStoreProvider](src/local-storage-provider/local-storage-provider-usage.md) making simultaneous value updates
+    -   Fixed bug in [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) making simultaneous value updates
         persist
     -   Added `placeholder` prop to [DatePicker](src/form/date-picker/usage.md)
 
 -   `1.2.0`
 
-    -   Grouped props of [ListView](src/table-view/table-view-usage.md). This puts related props in similar objects which
+    -   Grouped props of [ListView](src/widgets/table-view/table-view-usage.md). This puts related props in similar objects which
         are enabled when specified or disabled when not
-    -   Made `message` parameter of flash functions in [FlashProvider](src/flash-provider/flash-provider-usage.md)
+    -   Made `message` parameter of flash functions in [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
         optional
 
 -   `1.1.0`
 
     -   Added [useQueryParams hook](src/hooks/use-query-params/usage.md)
-    -   Added the [Loader](src/loader/loader-usage.md) widget
-    -   Added the `bind` prop to [DialogProvider](src/dialog-provider/usage.md)
+    -   Added the [Loader](src/widgets/loader/loader-usage.md) widget
+    -   Added the `bind` prop to [DialogProvider](src/widgets/dialog-provider/usage.md)
         to allow binding of properties from the host component to the dialog component

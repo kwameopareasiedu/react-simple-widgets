@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BusyButton } from "../../busy-button/busy-button";
+import { BusyButton } from "../../widgets/busy-button/busy-button";
 import { useLoadMore } from "./index";
 
 export default { title: "UseLoadMore" };

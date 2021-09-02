@@ -1,19 +1,20 @@
 import "./index.scss";
 
-export * from "./dialog-provider/dialog-provider-context";
-export * from "./dialog-provider/dialog-provider";
-export * from "./flash-provider/flash-provider-context";
-export * from "./flash-provider/flash-provider";
-export * from "./local-storage-provider/local-storage-provider-context";
-export * from "./local-storage-provider/local-storage-provider";
-export * from "./popup-menu/popup-menu";
-export * from "./table-view/table-view";
-export * from "./pagination/pagination";
-export * from "./loader/loader";
-export * from "./busy-button/busy-button";
-export * from "./confirm-button/confirm-button";
-export * from "./breadcrumbs/breadcrumbs";
-export * from "./action-bar/action-bar";
+export * from "./widgets/dialog-provider/dialog-provider-context";
+export * from "./widgets/dialog-provider/dialog-provider";
+export * from "./widgets/flash-provider/flash-provider-context";
+export * from "./widgets/flash-provider/flash-provider";
+export * from "./widgets/local-storage-provider/local-storage-provider-context";
+export * from "./widgets/local-storage-provider/local-storage-provider";
+export * from "./widgets/popup-menu/popup-menu";
+export * from "./widgets/table-view/table-view";
+export * from "./widgets/pagination/pagination";
+export * from "./widgets/loader/loader";
+export * from "./widgets/busy-button/busy-button";
+export * from "./widgets/confirm-button/confirm-button";
+export * from "./widgets/breadcrumbs/breadcrumbs";
+export * from "./widgets/action-bar/action-bar";
+export * from "./widgets/object-view/object-view";
 
 export * from "./form/field-decoration";
 export * from "./form/custom-field";
@@ -27,8 +28,6 @@ export * from "./form/date-picker";
 export * from "./form/date-field";
 export * from "./form/time-picker";
 export * from "./form/time-field";
-
-export * from "./collection/object-view";
 
 export * from "./hooks/use-countdown";
 export * from "./hooks/use-load-more";
