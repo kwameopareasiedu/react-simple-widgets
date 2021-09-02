@@ -26,6 +26,8 @@ export * from "./widgets/checkbox-field/checkbox-field";
 export * from "./widgets/select-field/select-field";
 export * from "./widgets/multi-select-field/multi-select-field";
 
+export * from "./utils/use-query-params/use-query-params";
+
 export * from "../src-old/form/file-picker";
 export * from "../src-old/form/file-field";
 export * from "../src-old/form/date-picker";
@@ -35,7 +37,6 @@ export * from "../src-old/form/time-field";
 
 export * from "../src-old/hooks/use-countdown";
 export * from "../src-old/hooks/use-load-more";
-export * from "../src-old/hooks/use-query-params";
 export * from "../src-old/hooks/use-window-breakpoints";
 
 export * from "../src-old/misc/debounce";

@@ -157,7 +157,7 @@
 -   `1.3.7`
 
     -   Added focus indicator to [SelectField](src/widgets/select-field/select-field-usage.md) options
-    -   Modified [useQueryParams](src-old/hooks/use-query-params/usage.md) to update `qp` state object if the whole location
+    -   Modified [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) to update `qp` state object if the whole location
         object changes instead of just `location.search`
 
 -   `1.3.6`
@@ -178,11 +178,11 @@
 -   `1.3.3`
 
     -   Replaced `query-string` with a simpler algorithm for query string to query parameter resolution
-        in [useQueryParams](src-old/hooks/use-query-params/usage.md)
+        in [useQueryParams](src/utils/use-query-params/use-query-params-usage.md)
 
 -   `1.3.2`
 
-    -   [useQueryParams](src-old/hooks/use-query-params/usage.md) now returns and empty object if no query parameter are
+    -   [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) now returns and empty object if no query parameter are
         present in the URL
     -   Modified [DatePicker](src-old/form/date-picker/usage.md) with `DatePickerMode.MULTI` to clear text selection when
         shift key is pressed while a date is selected
@@ -236,7 +236,7 @@
 
 -   `1.1.0`
 
-    -   Added [useQueryParams hook](src-old/hooks/use-query-params/usage.md)
+    -   Added [useQueryParams hook](src/utils/use-query-params/use-query-params-usage.md)
     -   Added the [Loader](src/widgets/loader/loader-usage.md) widget
     -   Added the `bind` prop to [DialogProvider](src/widgets/dialog-provider/usage.md)
         to allow binding of properties from the host component to the dialog component

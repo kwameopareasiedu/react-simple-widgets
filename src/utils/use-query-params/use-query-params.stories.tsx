@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { useQueryParams } from "./index";
+import { useQueryParams } from "./use-query-params";
 
 export default { title: "UseQueryParams" };
 

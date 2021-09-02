@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-/** A hook that parses the current window URL query string into a state object */
 export const useQueryParams = (): any => {
     const qs2qp = (search: string): any => {
         const parts = search.substring(1).split("&");

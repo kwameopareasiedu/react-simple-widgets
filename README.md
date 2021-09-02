@@ -89,7 +89,7 @@ Widgets under this category are for convenience
 
 ## Hooks
 
--   [useQueryParams](src-old/hooks/use-query-params/usage.md) - A hook that returns a object containing the URL search
+-   [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) - A hook that returns a object containing the URL search
     string parameters
 -   [useLoadMore](src-old/hooks/use-load-more/usage.md) - A hook that provides methods and state variables to implement a
     load-more-items feature for a list of items that cannot be displayed in a ListView
