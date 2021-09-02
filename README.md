@@ -53,7 +53,7 @@ These are customized form widgets for creating [Formik](https://jaredpalmer.com/
 -   [TextField](src/widgets/text-field/text-field-usage.md) - A text field that doubles as a rich text editor
 -   [PasswordField](src-old/form/password-field/usage.md) - A text field whose `type` is **password**
 -   [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md) - A widget that allows selection from a dropdown
--   [SelectField](src-old/form/select-field/usage.md) - A widget that allows binary, single or multi selection from a list
+-   [SelectField](src/widgets/select-field/select-field-usage.md) - A widget that allows binary, single or multi selection from a list
     of options
 -   [FileField](src-old/form/file-field/usage.md) - A form wrapper widget for the [FilePicker](src-old/form/file-picker/usage.md)
 -   [DateField](src-old/form/date-field/usage.md) - A form wrapper widget for the [DatePicker](src-old/form/date-picker/usage.md)

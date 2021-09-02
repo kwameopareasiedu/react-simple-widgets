@@ -245,3 +245,19 @@ export interface DropdownField
 export interface CheckBoxField
     extends Omit<InputHTMLAttributes<HTMLInputElement>, "type">,
         Pick<FieldDecoration, "label"> {}
+
+/** SelectField */
+export interface SelectOption {
+    label: string;
+    selected?: boolean;
+    onFocus?: () => void;
+    onSelect: () => void;
+}
+
+export interface SelectField extends Omit<AllHTMLAttributes<HTMLDivElement>, "label">, Pick<FieldDecoration, "label"> {
+    name: string;
+    label?: string;
+    inline?: boolean;
+    options: Array<[any, any]>;
+    onChange?: (value: any) => void;
+}

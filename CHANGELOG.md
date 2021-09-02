@@ -66,7 +66,7 @@
 
     -   Added [TimePicker](src-old/form/time-picker/usage.md) widget
     -   Added [TimeField](src-old/form/time-field/usage.md) widget
-    -   Modified [SelectField](src-old/form/select-field/usage.md) to make option labels `inline`
+    -   Modified [SelectField](src/widgets/select-field/select-field-usage.md) to make option labels `inline`
     -   Added [useWindowBreakpoints](src-old/hooks/use-window-breakpoints/usage.md) hook
 
 -   `1.7.4`
@@ -112,7 +112,7 @@
         content cannot fit on one line
     -   Added auto scroll-to-top-of-list feature to [ListView](src/widgets/table-view/table-view-usage.md)
         when the items list is modified by a page change
-    -   Modified [SelectField](src-old/form/select-field/usage.md) to accept `any` type for options values instead of
+    -   Modified [SelectField](src/widgets/select-field/select-field-usage.md) to accept `any` type for options values instead of
         just `string`
     -   Reduces header vertical padding in [ListView](src/widgets/table-view/table-view-usage.md)
     -   Added item options confirmation feature to [ListView](src/widgets/table-view/table-view-usage.md)
@@ -156,7 +156,7 @@
 
 -   `1.3.7`
 
-    -   Added focus indicator to [SelectField](src-old/form/select-field/usage.md) options
+    -   Added focus indicator to [SelectField](src/widgets/select-field/select-field-usage.md) options
     -   Modified [useQueryParams](src-old/hooks/use-query-params/usage.md) to update `qp` state object if the whole location
         object changes instead of just `location.search`
 

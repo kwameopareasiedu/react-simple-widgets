@@ -54,5 +54,5 @@ This widget is the base for the other form widgets provided in this library. You
 
 -   [TextField](../text-field/text-field.tsx)
 -   [DropdownField](../dropdown-field/dropdown-field.tsx)
--   [SelectField](../../../src-old/form/select-field/index.tsx)
+-   [SelectField](../select-field/select-field.tsx)
 -   [FileField](../../../src-old/form/file-field/index.tsx)
