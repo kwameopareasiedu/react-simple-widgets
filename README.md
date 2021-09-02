@@ -73,7 +73,7 @@ Pickers allow you to select some complex data type
 Widgets here operate on list data
 
 -   [ListView](src/widgets/table-view/table-view-usage.md) - A widget that displays a list of items in a responsive tabular form
--   [ObjectView](src/widgets/object-view/usage.md) - A widget that renders an object's data in a tabular form
+-   [ObjectView](src/widgets/object-view/object-view-usage.md) - A widget that renders an object's data in a tabular form
 
 ## Misc
 

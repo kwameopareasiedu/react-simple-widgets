@@ -107,7 +107,7 @@
 -   `1.6.2`
 
     -   Added `middle` vertical alignment to labels `<td/>` elements of
-        [ObjectView](src/widgets/object-view/usage.md)
+        [ObjectView](src/widgets/object-view/object-view-usage.md)
     -   Added `word-break` styling to cells of [ListView](src/widgets/table-view/table-view-usage.md) to force text overflow if
         content cannot fit on one line
     -   Added auto scroll-to-top-of-list feature to [ListView](src/widgets/table-view/table-view-usage.md)

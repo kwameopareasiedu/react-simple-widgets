@@ -32,10 +32,11 @@ import { TableView } from "react-simple-widgets";
 
   - The 1st element is the **label** which is displayed as the column header
 
-  -   The 2nd element is the **cell resolver**. `<TableView />` uses this to display a cell value for a particular column of each item rendered. Cell resolver can be one of the following:
+  -   The 2nd element is the **cell resolver**. `TableView` uses this to display a cell value for a particular column of each item rendered. Cell resolver can be one of the following:
       -   **Simple String**: (E.g. `property`) For each item, the cell value is `item.property`.
       -   **Dot Separated String**: (E.g. `nested.value`) For each item, the cell value is `item.nested.value`.
       -   **Function**: (E.g. `(item, itemIndex) => JSX.Element`) For each item, the function is called with the item and it's index. The returned JSX is then rendered in the cell.
+  -   The 3rd element is the sorting key for that columns. If specified, this key is passed as the active sort key to `onSort` when the table is sorted.
 
 - `headerRowBuilder?: (columnNames: Array<string>) => JSX.Element`
 
