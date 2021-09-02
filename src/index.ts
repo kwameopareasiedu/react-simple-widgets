@@ -22,6 +22,7 @@ export * from "./widgets/text-area-field/text-area-field";
 export * from "./widgets/text-editor-field/text-editor-field";
 export * from "./widgets/password-field/password-field";
 export * from "./widgets/dropdown-field/dropdown-field";
+export * from "./widgets/checkbox-field/checkbox-field";
 
 export * from "../src-old/form/select-field";
 export * from "../src-old/form/file-picker";

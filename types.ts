@@ -240,3 +240,8 @@ export type PasswordField = Omit<TextField, "trailing" | "type">;
 export interface DropdownField
     extends SelectHTMLAttributes<HTMLSelectElement>,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {}
+
+/** CheckboxField */
+export interface CheckBoxField
+    extends Omit<InputHTMLAttributes<HTMLInputElement>, "type">,
+        Pick<FieldDecoration, "label"> {}

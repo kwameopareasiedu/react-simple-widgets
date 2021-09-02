@@ -31,4 +31,4 @@ import { PasswordField } from "react-simple-widgets";
 
 ## Sidenotes
 
-> The `type` attribute is omitted because it is is controlled internally by `PasswordField`.
+> The `type` attribute is omitted because it is controlled internally by `PasswordField`.
