@@ -273,3 +273,8 @@ export interface MultiSelectField
     options: Array<[any, any]>;
     onChange?: (value: Array<any>) => void;
 }
+
+/** UseCountdown */
+export type UseCountdownState = [number, boolean, () => void, () => void];
+
+export type UseCountdown = (countdown: number) => UseCountdownState;

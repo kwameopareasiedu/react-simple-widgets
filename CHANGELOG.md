@@ -71,13 +71,13 @@
 
 -   `1.7.4`
 
-    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src-old/hooks/use-countdown/usage.md)
+    -   Fixed fatal error in `v1.7.3` when importing [useCountdown](src/utils/use-countdown/use-countdown-usage.md)
         hook
 
 -   `1.7.3`
 
     -   Added [debounce](src-old/misc/debounce/usage.md) utility
-    -   Added [useCountdown](src-old/hooks/use-countdown/usage.md) hook
+    -   Added [useCountdown](src/utils/use-countdown/use-countdown-usage.md) hook
     -   Added `initialStorageKeys` prop to [ValueStoreProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md)
         to allow pre-existing local storage values to be added to the value store
 

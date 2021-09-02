@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import { UseCountdown as Props } from "./types";
+import { UseCountdown, UseCountdownState } from "../../../types";
 
-export const useCountdown = (countdown: number): Props => {
+export const useCountdown: UseCountdown = (countdown: number): UseCountdownState => {
     const [count, setCount] = useState(countdown);
     const [running, setRunning] = useState(false);
     const intervalRef = useRef<any>();
@@ -24,5 +24,11 @@ export const useCountdown = (countdown: number): Props => {
         }, 1000);
     };
 
-    return { count, running, resetCountdown };
+    const stopCountdown = (): void => {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        setRunning(false);
+        setCount(0);
+    };
+
+    return [count, running, stopCountdown, resetCountdown];
 };

@@ -4,7 +4,7 @@ import { useQueryParams } from "./use-query-params";
 
 export default { title: "UseQueryParams" };
 
-export const usage = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
         const qp = useQueryParams();
 
