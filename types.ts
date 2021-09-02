@@ -1,4 +1,4 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, FunctionComponent } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider */
@@ -218,3 +218,12 @@ export interface FieldDecoration extends AllHTMLAttributes<HTMLDivElement> {
 export interface TextField
     extends InputHTMLAttributes<HTMLInputElement>,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {}
+
+/** TextEditorField */
+export interface TextEditorField extends Pick<FieldDecoration, "label" | "helper"> {
+    name: string;
+    disabled?: boolean;
+    onChange?: (data: any) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}
