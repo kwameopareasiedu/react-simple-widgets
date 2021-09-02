@@ -24,6 +24,7 @@ export * from "./widgets/password-field/password-field";
 export * from "./widgets/dropdown-field/dropdown-field";
 export * from "./widgets/checkbox-field/checkbox-field";
 export * from "./widgets/select-field/select-field";
+export * from "./widgets/multi-select-field/multi-select-field";
 
 export * from "../src-old/form/file-picker";
 export * from "../src-old/form/file-field";

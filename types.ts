@@ -249,6 +249,7 @@ export interface CheckBoxField
 /** SelectField */
 export interface SelectOption {
     label: string;
+    multi?: boolean;
     selected?: boolean;
     onFocus?: () => void;
     onSelect: () => void;
@@ -260,4 +261,15 @@ export interface SelectField extends Omit<AllHTMLAttributes<HTMLDivElement>, "la
     inline?: boolean;
     options: Array<[any, any]>;
     onChange?: (value: any) => void;
+}
+
+/** MultiSelectField */
+export interface MultiSelectField
+    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+        Pick<FieldDecoration, "label"> {
+    name: string;
+    label?: string;
+    inline?: boolean;
+    options: Array<[any, any]>;
+    onChange?: (value: Array<any>) => void;
 }

@@ -1,0 +1,30 @@
+.react-simple-widget.multi-select-field {
+    .field-decoration .field-decoration-content-container {
+        border: none;
+
+        .field-decoration-content {
+            display: block;
+        }
+    }
+}
+
+.react-simple-widget.multi-select-field.inline {
+    .field-decoration .field-decoration-content-container {
+        border: none;
+
+        .field-decoration-content {
+            display: block;
+
+            > .select-option {
+                display: inline-block;
+                width: auto;
+                margin-right: 12px;
+                margin-bottom: 2px;
+
+                input {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
-import { SelectField } from "./select-field";
+import { MultiSelectField } from "./multi-select-field";
 import { action } from "@storybook/addon-actions";
 
-export default { title: "SelectField", component: SelectField };
+export default { title: "MultiSelectField", component: MultiSelectField };
 
 export const Default = (): any => {
     const SampleForm = (): any => {
@@ -26,9 +26,9 @@ export const Default = (): any => {
                     {formik => (
                         <form onSubmit={formik.handleSubmit}>
                             <div className="mb-4">
-                                <SelectField
+                                <MultiSelectField
                                     name="field"
-                                    label="Select field"
+                                    label="Multi Select field"
                                     placeholder="Enter value"
                                     options={[
                                         ["Option 1", "option-1"],
@@ -39,10 +39,11 @@ export const Default = (): any => {
                                     ]}
                                 />
                             </div>
+
                             <div className="mb-4">
-                                <SelectField
+                                <MultiSelectField
                                     name="field"
-                                    label="Select field (Inline)"
+                                    label="Multi Select field (Inline)"
                                     placeholder="Enter value"
                                     options={[
                                         ["Option 1", "option-1"],
