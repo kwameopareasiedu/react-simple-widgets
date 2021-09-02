@@ -1,7 +1,7 @@
 import "./index.scss";
 import React, { useState } from "react";
-import { TextField } from "../text-field";
-import { TextField as Props, TextFieldMode } from "../text-field/types";
+import { TextField } from "../../widgets/text-field/text-field";
+import { TextField as Props, TextFieldMode } from "../../widgets/text-field/types";
 import VisibleIcon from "../../assets/eye.svg";
 import HiddenIcon from "../../assets/hide.svg";
 

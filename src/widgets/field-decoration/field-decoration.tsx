@@ -29,19 +29,31 @@ export const FieldDecoration = ({
         return classes.join(" ");
     };
 
+    const child = children({
+        onFieldFocus: (): void => setFocused(true),
+        onFieldBlur: (): void => setFocused(false)
+    });
+
     return (
         <div className={className()} {...rest}>
-            {label && <label>{label}</label>}
+            <div className="field-decoration-content-container">
+                {label && <label>{label}</label>}
 
-            <div className="field-decoration-content">
-                {leading && cloneElement(leading, { className: `leading ${leading.props.className || ""}` })}
+                <div className="field-decoration-content">
+                    {leading &&
+                        cloneElement(leading, {
+                            className: `leading ${leading.props.className || ""}`,
+                            disabled: disabled || leading.props.disabled
+                        })}
 
-                {children({
-                    onFieldFocus: (): void => setFocused(true),
-                    onFieldBlur: (): void => setFocused(false)
-                })}
+                    {cloneElement(child, { disabled: disabled || child.props.disabled })}
 
-                {trailing && cloneElement(trailing, { className: `leading ${trailing.props.className || ""}` })}
+                    {trailing &&
+                        cloneElement(trailing, {
+                            className: `leading ${trailing.props.className || ""}`,
+                            disabled: disabled || trailing.props.disabled
+                        })}
+                </div>
             </div>
 
             {(error || helper) && (

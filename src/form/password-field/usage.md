@@ -6,7 +6,7 @@ This widget is a form widget which masks text being typed into it
 
 ## Usage
 
-`PasswordField` is an extension of the [TextField](../text-field/usage.md) widget, hence it accepts
+`PasswordField` is an extension of the [TextField](../../widgets/text-field/text-field-usage.md) widget, hence it accepts
 all its props.
 
 ```jsx

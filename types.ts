@@ -1,7 +1,7 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from "react";
+import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, FunctionComponent } from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
-/** DialogProvider Types */
+/** DialogProvider */
 export enum DialogSize {
     SMALL,
     MEDIUM,
@@ -40,7 +40,7 @@ export interface DialogProvider {
     children: any;
 }
 
-/** FlashProvider Types */
+/** FlashProvider */
 export enum FlashType {
     ERROR,
     WARNING,
@@ -78,7 +78,7 @@ export interface FlashProvider {
     builder?: FlashViewBuilder;
 }
 
-/** LocalStorageProvider Types*/
+/** LocalStorageProvider */
 export interface LocalStorageProviderContext {
     getItem: (key: string) => string;
     setItem: (key: string, value: string) => void;
@@ -202,7 +202,7 @@ export interface FieldDecorationBuilderProps {
     onFieldBlur: () => void;
 }
 
-export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => any;
+export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => JSX.Element;
 
 export interface FieldDecoration extends AllHTMLAttributes<HTMLDivElement> {
     label?: any;
@@ -213,3 +213,8 @@ export interface FieldDecoration extends AllHTMLAttributes<HTMLDivElement> {
     trailing?: JSX.Element;
     children: FieldDecorationBuilder;
 }
+
+/** TextField */
+export interface TextField
+    extends InputHTMLAttributes<HTMLInputElement>,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {}

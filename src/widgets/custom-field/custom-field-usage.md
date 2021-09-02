@@ -52,7 +52,7 @@ import { CustomField } from "react-simple-widgets";
 
 This widget is the base for the other form widgets provided in this library. You can view each widget's source code to see how this widget is used
 
--   [TextField](../../form/text-field/index.tsx)
+-   [TextField](../text-field/text-field.tsx)
 -   [DropdownField](../../form/dropdown-field/index.tsx)
 -   [SelectField](../../form/select-field/index.tsx)
 -   [FileField](../../form/file-field/index.tsx)

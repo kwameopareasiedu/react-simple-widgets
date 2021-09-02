@@ -127,7 +127,7 @@
     -   Added story for `bind` property of [DialogProvider](src/widgets/dialog-provider/usage.md)
         widget
     -   Added _disabled_ styling to [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) widget. Updated usage
-        in [TextField](src/form/text-field/usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
+        in [TextField](src/widgets/text-field/text-field-usage.md) and [DropdownField](src/form/dropdown-field/usage.md)
     -   Added `text-center` class to [Loader](src/widgets/loader/loader-usage.md) as its added in majority of use cases
     -   Added [PageActions](src/widgets/action-bar/action-bar-usage.md) widget
 
@@ -206,7 +206,7 @@
         same as current URL
     -   Modified [PageTransitionProvider](src/transition-provider/usage.md) to ignore redirect if target URL is
         empty
-    -   Forwarded the `name` prop of [TextField](src/form/text-field/usage.md) and
+    -   Forwarded the `name` prop of [TextField](src/widgets/text-field/text-field-usage.md) and
         [DropdownField](src/form/dropdown-field/usage.md) to `input` and `select` components respectively to trigger
         browser added feature (such as auto-completion)
 

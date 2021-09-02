@@ -1,10 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
-import { TextField } from "./text-field";
+import { TextField } from "../widgets/text-field/text-field";
 import { DialogProvider } from "../widgets/dialog-provider/dialog-provider";
 import { FieldDecorationType } from "../widgets/field-decoration/types";
 import { SelectFieldMode } from "./select-field/types";
-import { TextFieldMode } from "./text-field/types";
+import { TextFieldMode } from "../widgets/text-field/types";
 import { DropdownField } from "./dropdown-field";
 import { PasswordField } from "./password-field";
 import { SelectField } from "./select-field";
