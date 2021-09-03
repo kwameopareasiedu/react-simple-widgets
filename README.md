@@ -99,7 +99,7 @@ Widgets under this category are for convenience
 
 ## Utils
 
--   [debounce](src-old/misc/debounce/usage.md) - Creates a debounced function which is invoked after a specified delay after
+-   [debounce](src/utils/debounce/usage.md) - Creates a debounced function which is invoked after a specified delay after
     a caller has called it
 
 ## Theming

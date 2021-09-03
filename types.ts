@@ -303,3 +303,6 @@ export interface UseWindowBreakpointsState {
 }
 
 export type UseWindowBreakpoints = () => UseWindowBreakpointsState;
+
+/** Debounce */
+export type Debounce = (label: string, callback: Function, delay: number) => void;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { debounce } from "./index";
+import { debounce } from "./debounce";
 
 export default { title: "Debounce" };
 
-export const usage = () => {
+export const Default = () => {
     const ExampleApp = (): any => {
         const [value, setValue] = useState("");
         const [debounced, setDebouncedValue] = useState("");
@@ -20,11 +20,15 @@ export const usage = () => {
                 />
 
                 <p className="text-center" style={{ color: "red" }}>
-                    Raw input value (Updates immediately when input value changes): <strong>{value}</strong>{" "}
+                    Raw input value (Updates immediately when input value changes):
+                    <br />
+                    <strong>{value}</strong>{" "}
                 </p>
 
                 <p className="text-center" style={{ color: "green" }}>
-                    Debounced input value (Will update 1s after any change is made): <strong>{debounced}</strong>{" "}
+                    Debounced input value (Will update 1s after any change is made):
+                    <br />
+                    <strong>{debounced}</strong>{" "}
                 </p>
             </div>
         );
