@@ -3,9 +3,9 @@ import { useWindowBreakpoints } from "./use-window-breakpoints";
 
 export default { title: "UseWindowBreakpoints" };
 
-export const usage = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
-        const { xs, sm, md, lg, xl, width: windowInnerWidth } = useWindowBreakpoints();
+        const { xs, sm, md, lg, xl, xxl, width: windowInnerWidth } = useWindowBreakpoints();
         const activeStyle: any = { fontSize: "1.2rem", fontWeight: "bold" };
         const defaultStyle: any = { opacity: 0.2, fontSize: "0.7rem" };
 
@@ -19,6 +19,7 @@ export const usage = (): any => {
                     <p style={md ? activeStyle : defaultStyle}>Medium screen</p>
                     <p style={lg ? activeStyle : defaultStyle}>Large screen</p>
                     <p style={xl ? activeStyle : defaultStyle}>Extra large screen</p>
+                    <p style={xxl ? activeStyle : defaultStyle}>Extra extra large screen</p>
                 </div>
 
                 <p className="text-center">

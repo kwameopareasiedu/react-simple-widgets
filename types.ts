@@ -274,6 +274,15 @@ export interface MultiSelectField
     onChange?: (value: Array<any>) => void;
 }
 
+/** GrowableItemsContainer */
+export interface GrowableItemsContainer extends AllHTMLAttributes<HTMLDivElement> {
+    busy: boolean;
+    total: number;
+    itemCount: number;
+    error?: boolean;
+    onLoadMore: () => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 
