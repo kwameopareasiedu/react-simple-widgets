@@ -19,7 +19,7 @@ export const PasswordField = ({ ...rest }: IPasswordField): any => {
                 {...rest}
                 type={inputType()}
                 trailing={
-                    <button className="toggle-btn">
+                    <button type="button" className="toggle-btn">
                         <img
                             alt="Visibility"
                             src={passwordVisible ? HiddenIcon : VisibleIcon}
