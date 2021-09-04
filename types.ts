@@ -298,7 +298,13 @@ export interface Calendar extends AllHTMLAttributes<HTMLDivElement> {
 /** DatePicker */
 export interface DatePicker extends AllHTMLAttributes<HTMLDivElement> {
     date: string;
-    onDateSelect: (value: string) => void;
+    onDateSelect: (date: string) => void;
+}
+
+/** MultiDatePicker */
+export interface MultiDatePicker extends AllHTMLAttributes<HTMLDivElement> {
+    dates: Array<string>;
+    onDatesSelect: (dates: Array<string>) => void;
 }
 
 /** UseQueryParams */

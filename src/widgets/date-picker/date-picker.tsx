@@ -22,10 +22,10 @@ export const DatePicker = ({ date, onDateSelect, className: _className, ...rest 
 
             {closePopup => (
                 <Calendar
-                    initialDate={date}
+                    initialDate={date || undefined}
+                    className="d-inline-block w-auto"
                     isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === date}
                     isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()}
-                    className="d-inline-block w-auto"
                     onDateSelect={date => {
                         onDateSelect(date);
                         closePopup();

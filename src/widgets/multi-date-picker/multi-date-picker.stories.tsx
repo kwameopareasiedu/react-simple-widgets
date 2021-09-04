@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import { DatePicker } from "./date-picker";
+import { MultiDatePicker } from "./multi-date-picker";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
 
 djs.extend(advancedFormat);
 
-export default { title: "DatePicker", component: DatePicker };
+export default { title: "MultiDatePicker", component: MultiDatePicker };
 
 export const usage = (): any => {
     const ExampleApp = (): any => {
-        const [date, setDate] = useState("2021-09-04");
+        const [date, setDate] = useState([]);
+
         return (
-            <DatePicker
+            <MultiDatePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onDateSelect={setDate}
-                date={date}
+                onDatesSelect={setDate}
+                dates={date}
             />
         );
     };
