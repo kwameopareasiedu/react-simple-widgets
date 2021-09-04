@@ -1,0 +1,23 @@
+.react-simple-widget.month-date-field {
+    .month-date-picker {
+        display: flex;
+    }
+
+    select {
+        padding-top: 0;
+        padding-bottom: 0;
+        flex: 1 1;
+    }
+
+    select:first-child {
+        border-top: none;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    select:last-child {
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+    }
+}

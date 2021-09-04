@@ -327,6 +327,13 @@ export interface MultiDateField
     onChange?: (dates: Array<string>) => void;
 }
 
+/** MonthDateField */
+export interface MonthDateField
+    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    onChange?: (date: string) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 
