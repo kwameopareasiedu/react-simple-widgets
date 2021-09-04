@@ -9,7 +9,7 @@ import React, {
     useRef,
     useState
 } from "react";
-import { PopupMenu as IPopupMenu } from "../../../types";
+import { PopupMenu as IPopupMenu, PopupMenuFunctionChild } from "../../../types";
 
 export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMenu): JSX.Element => {
     const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
@@ -20,6 +20,8 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
     const triggerRef: MutableRefObject<HTMLDivElement> = useRef();
     const optionsRef: MutableRefObject<HTMLDivElement> = useRef();
     const [firstAlignmentPass, setFirstAlignmentPass] = useState(false);
+    const functionOptionsMenu: PopupMenuFunctionChild =
+        Array.isArray(children) && typeof children[1] === "function" ? children[1] : null;
 
     const toggle = (): void => {
         setOptionsOpened(!optionsOpened);
@@ -105,9 +107,13 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
 
             {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}
 
-            {optionsOpened && optionsMenu && (
-                <div ref={optionsRef} className="popup-menu-options" onClick={toggle} style={optionsCssProperties}>
-                    {optionsMenu}
+            {optionsOpened && (functionOptionsMenu || optionsMenu) && (
+                <div
+                    ref={optionsRef}
+                    className="popup-menu-options"
+                    onClick={functionOptionsMenu ? null : toggle}
+                    style={optionsCssProperties}>
+                    {functionOptionsMenu ? functionOptionsMenu(() => setOptionsOpened(false)) : optionsMenu}
                 </div>
             )}
         </div>

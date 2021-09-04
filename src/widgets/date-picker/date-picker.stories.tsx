@@ -16,7 +16,17 @@ export const usage = (): any => {
             <div>
                 <PopupMenu>
                     <button className="btn btn-primary btn-sm">{djs(date).format("dddd, Do MMMM YYYY")}</button>
-                    <DatePicker className="d-inline-block w-auto" onDateSelect={setDate} date={date} />
+
+                    {closePopup => (
+                        <DatePicker
+                            className="d-inline-block w-auto"
+                            onDateSelect={date => {
+                                setDate(date);
+                                closePopup();
+                            }}
+                            date={date}
+                        />
+                    )}
                 </PopupMenu>
             </div>
         );
