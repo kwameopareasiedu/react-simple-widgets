@@ -307,6 +307,12 @@ export interface MultiDatePicker extends AllHTMLAttributes<HTMLDivElement> {
     onDatesSelect: (dates: Array<string>) => void;
 }
 
+/** MonthDatePicker */
+export interface MonthDatePicker extends AllHTMLAttributes<HTMLDivElement> {
+    date: string;
+    onDateSelect: (date: string) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 

@@ -29,6 +29,7 @@ export * from "./widgets/growable-items-container/growable-items-container";
 export * from "./widgets/calendar/calendar";
 export * from "./widgets/date-picker/date-picker";
 export * from "./widgets/multi-date-picker/multi-date-picker";
+export * from "./widgets/month-date-picker/month-date-picker";
 
 export * from "./utils/use-query-params/use-query-params";
 export * from "./utils/use-countdown/use-countdown";

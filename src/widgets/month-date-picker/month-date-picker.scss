@@ -1,0 +1,21 @@
+.react-simple-widget.month-date-picker {
+    select {
+        display: inline-block;
+        width: auto;
+    }
+
+    select:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+
+    select:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    select:focus {
+        box-shadow: none;
+    }
+}
