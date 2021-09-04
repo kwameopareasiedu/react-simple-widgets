@@ -12,7 +12,7 @@
 
 .popup-menu-options {
     position: fixed;
-    width: max-content;
+    width: max-content !important;
     animation: reveal-options var(--rsw-transition-duration) ease-out forwards;
     z-index: 3;
 }

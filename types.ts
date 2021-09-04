@@ -313,6 +313,13 @@ export interface MonthDatePicker extends AllHTMLAttributes<HTMLDivElement> {
     onDateSelect: (date: string) => void;
 }
 
+/** DateField */
+export interface DateField
+    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    onChange?: (date: string) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 

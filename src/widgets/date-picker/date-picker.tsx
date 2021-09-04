@@ -7,7 +7,13 @@ import { PopupMenu } from "../popup-menu/popup-menu";
 
 djs.extend(arraySupport);
 
-export const DatePicker = ({ date, onDateSelect, className: _className, ...rest }: IDatePicker): JSX.Element => {
+export const DatePicker = ({
+    date,
+    onDateSelect,
+    className: _className,
+    placeholder,
+    ...rest
+}: IDatePicker): JSX.Element => {
     const className = (): string => {
         const classes = ["react-simple-widget", "date-picker"];
         if (_className) classes.push(_className);
@@ -17,7 +23,7 @@ export const DatePicker = ({ date, onDateSelect, className: _className, ...rest 
     return (
         <PopupMenu>
             <div className={className()} {...rest}>
-                {djs(date).format("dddd, Do MMMM YYYY")}
+                {!date ? placeholder : djs(date).format("dddd, Do MMMM YYYY")}
             </div>
 
             {closePopup => (
