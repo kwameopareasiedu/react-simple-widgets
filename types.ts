@@ -287,6 +287,14 @@ export interface GrowableItemsContainer extends AllHTMLAttributes<HTMLDivElement
     onLoadMore: () => void;
 }
 
+/** Calendar */
+export interface Calendar extends AllHTMLAttributes<HTMLDivElement> {
+    initialDate: string;
+    isDateOutlined?: (year: number, month: number, day: number) => boolean;
+    isDateActive?: (year: number, month: number, day: number) => boolean;
+    onDateSelect: (date: string) => void;
+}
+
 /** DatePicker */
 export interface DatePicker extends AllHTMLAttributes<HTMLDivElement> {
     date: string;
