@@ -44,13 +44,3 @@ export const daySuffix = (day: number): string => {
 export const dateMonthDayOffset = (year: number, month: number): number => {
     return djs([year, month, 1]).day();
 };
-
-export const preventDefault = (fn?: () => void) => (e: any) => {
-    (e as Event).preventDefault();
-    if (fn) fn();
-};
-
-export const stopPropagation = (fn?: () => void) => (e: any) => {
-    (e as Event).stopPropagation();
-    if (fn) fn();
-};

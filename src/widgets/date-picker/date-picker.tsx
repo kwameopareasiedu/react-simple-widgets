@@ -1,24 +1,13 @@
 import "./date-picker.scss";
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DatePicker as IDatePicker } from "../../../types";
-import {
-    dateDay,
-    dateMonth,
-    dateMonthDayOffset,
-    dateYear,
-    days,
-    daySuffix,
-    months,
-    stopPropagation,
-    years
-} from "./date-picker-utils";
+import { dateDay, dateMonth, dateMonthDayOffset, dateYear, days, daySuffix, months, years } from "./date-picker-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 
 djs.extend(arraySupport);
 
 export const DatePicker = ({ date, onDateSelect, className: _className, ...rest }: IDatePicker): JSX.Element => {
-    const rootRef: MutableRefObject<HTMLDivElement> = useRef();
     const [displayYear, setDisplayYear] = useState(dateYear(date));
     const [displayMonth, setDisplayMonth] = useState(dateMonth(date));
     const [displayDay, setDisplayDay] = useState(dateDay(date));
@@ -67,7 +56,7 @@ export const DatePicker = ({ date, onDateSelect, className: _className, ...rest 
     }, [isCtrlPressed]);
 
     return (
-        <div ref={rootRef} className={className()} {...rest} onClick={stopPropagation()}>
+        <div className={className()} {...rest}>
             <header className="year-header d-flex align-items-center">
                 <p className="display-day text-center mb-0">
                     {displayDay}
@@ -117,7 +106,7 @@ export const DatePicker = ({ date, onDateSelect, className: _className, ...rest 
                                 className={`btn btn-link btn-sm text-decoration-none ${
                                     dayIndex - monthDayOffset + 1 === displayDay ? "active" : ""
                                 }`}
-                                onClick={stopPropagation(() => selectDisplayDay(dayIndex - monthDayOffset + 1))}>
+                                onClick={() => selectDisplayDay(dayIndex - monthDayOffset + 1)}>
                                 {dayIndex - monthDayOffset + 1}
                             </button>
                         );
