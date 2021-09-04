@@ -1,10 +1,10 @@
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { DateField as IDateField } from "../../../types";
-import { DatePicker } from "../date-picker/date-picker";
+import { MultiDateField as IMultiDateField } from "../../../types";
+import { MultiDatePicker } from "../multi-date-picker/multi-date-picker";
 
-export const DateField = ({
+export const MultiDateField = ({
     name,
     label,
     helper,
@@ -15,9 +15,9 @@ export const DateField = ({
     onFocus,
     onBlur,
     ...rest
-}: IDateField): any => {
+}: IMultiDateField): any => {
     return (
-        <div className="react-simple-widget date-field">
+        <div className="react-simple-widget multi-date-field">
             <CustomField name={name}>
                 {({ value, error, touched, setValue, setTouched }) => (
                     <FieldDecoration
@@ -28,11 +28,11 @@ export const DateField = ({
                         helper={helper}
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }) => (
-                            <DatePicker
-                                date={value}
-                                onDateSelect={date => {
-                                    setValue(date);
-                                    if (onChange) onChange(date);
+                            <MultiDatePicker
+                                dates={value}
+                                onDatesSelect={dates => {
+                                    setValue(dates);
+                                    if (onChange) onChange(dates);
                                 }}
                                 onFocus={e => {
                                     onFieldFocus();

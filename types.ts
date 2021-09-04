@@ -320,6 +320,13 @@ export interface DateField
     onChange?: (date: string) => void;
 }
 
+/** MultiDateField */
+export interface MultiDateField
+    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    onChange?: (dates: Array<string>) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 
