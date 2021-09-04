@@ -283,6 +283,12 @@ export interface GrowableItemsContainer extends AllHTMLAttributes<HTMLDivElement
     onLoadMore: () => void;
 }
 
+/** DatePicker */
+export interface DatePicker extends AllHTMLAttributes<HTMLDivElement> {
+    date: string;
+    onDateSelect: (value: string) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 
