@@ -2,7 +2,7 @@
 
 # DatePicker
 
-This widget allows you to select a single calendar date. Since it is intrinsically a div element, it accepts all attributes of the `<div/>` tag.
+This widget allows you to select a single calendar date. Since it is intrinsically a PopupMenu widget, it accepts all attributes of the `<PopupMenu/>` widget.
 
 ## Usage
 

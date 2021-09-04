@@ -11,7 +11,7 @@ import React, {
 } from "react";
 import { PopupMenu as IPopupMenu, PopupMenuFunctionChild } from "../../../types";
 
-export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMenu): JSX.Element => {
+export const PopupMenu = ({ children }: IPopupMenu): JSX.Element => {
     const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
 
     const [optionsOpened, setOptionsOpened] = useState(false);
@@ -28,12 +28,6 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
         // If trigger button originally had an onClick, call it also
         const onClick: Function = (triggerButton as ReactElement).props.onClick;
         if (onClick) onClick();
-    };
-
-    const className = (): string => {
-        const classes = ["react-simple-widget", "popup-menu"];
-        if (_className) classes.push(_className);
-        return classes.join(" ");
     };
 
     const alignOptionsMenu = (): void => {
@@ -102,7 +96,7 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
     }, [firstAlignmentPass]);
 
     return (
-        <div {...rest} className={className()}>
+        <React.Fragment>
             {cloneElement(triggerButton as any, { ref: triggerRef, onClick: toggle })}
 
             {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}
@@ -116,6 +110,6 @@ export const PopupMenu = ({ children, className: _className, ...rest }: IPopupMe
                     {functionOptionsMenu ? functionOptionsMenu(() => setOptionsOpened(false)) : optionsMenu}
                 </div>
             )}
-        </div>
+        </React.Fragment>
     );
 };

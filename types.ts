@@ -95,7 +95,7 @@ export type PopupMenuFunctionChild = (closePopup: () => void) => any;
 
 export type PopupMenuChild = string | JSX.Element | PopupMenuFunctionChild;
 
-export interface PopupMenu extends AllHTMLAttributes<HTMLDivElement> {
+export interface PopupMenu {
     children: PopupMenuChild | Array<PopupMenuChild>;
 }
 

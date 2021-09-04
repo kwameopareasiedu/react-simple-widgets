@@ -11,24 +11,12 @@ export default { title: "DatePicker", component: DatePicker };
 export const usage = (): any => {
     const ExampleApp = (): any => {
         const [date, setDate] = useState("2021-09-04");
-
         return (
-            <div>
-                <PopupMenu>
-                    <button className="btn btn-primary btn-sm">{djs(date).format("dddd, Do MMMM YYYY")}</button>
-
-                    {closePopup => (
-                        <DatePicker
-                            className="d-inline-block w-auto"
-                            onDateSelect={date => {
-                                setDate(date);
-                                closePopup();
-                            }}
-                            date={date}
-                        />
-                    )}
-                </PopupMenu>
-            </div>
+            <DatePicker
+                className="btn btn-outline-primary btn-sm d-inline-block w-auto"
+                onDateSelect={setDate}
+                date={date}
+            />
         );
     };
 
