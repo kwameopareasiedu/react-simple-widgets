@@ -34,6 +34,7 @@ export * from "./widgets/date-field/date-field";
 export * from "./widgets/multi-date-field/multi-date-field";
 export * from "./widgets/month-date-field/month-date-field";
 export * from "./widgets/time-picker/time-picker";
+export * from "./widgets/time-field/time-field";
 
 export * from "./utils/use-query-params/use-query-params";
 export * from "./utils/use-countdown/use-countdown";
@@ -42,6 +43,3 @@ export * from "./utils/debounce/debounce";
 
 // export * from "../src-old/form/file-picker";
 // export * from "../src-old/form/file-field";
-// export * from "../src-old/form/date-field";
-// export * from "../src-old/form/time-picker";
-// export * from "../src-old/form/time-field";
