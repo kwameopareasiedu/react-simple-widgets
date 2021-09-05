@@ -1,21 +1,8 @@
-import "./index.scss";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { DialogHelper, DialogOptions, DialogSize } from "../../widgets/dialog-provider/dialog-provider-types";
-import { DialogProviderContext } from "../../../src/widgets/dialog-provider/dialog-provider-context";
-import { FieldDecorationType } from "../../widgets/field-decoration/types";
-import { FieldDecoration } from "../../../src/widgets/field-decoration/field-decoration";
-import { FilePicker as Props } from "./types";
+import "./file-picker-dialog.scss";
+import React, { useEffect, useRef, useState } from "react";
+import { FilePickerDialog as IFilePickerDialog } from "../../../types";
 
-interface IFilePickerDialog {
-    label?: string;
-    limit?: number;
-    helper: DialogHelper;
-    extensions?: Array<string>;
-    validator?: (file: File) => string;
-}
-
-/** FilePickerDialog is the dialog widget that allows the user to select a file */
-const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFilePickerDialog) => {
+export const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFilePickerDialog) => {
     const [file, setFile] = useState<File>();
     const [error, setError] = useState(null);
     const triggerInputRef = useRef();
@@ -113,117 +100,26 @@ const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFile
                 {error && <p className="error">{error}</p>}
 
                 <div className="row">
-                    <div className="col-12 col-sm-6">
+                    <div className="col-6 d-grid">
                         <button
                             type="button"
-                            className="btn btn-primary btn-sm btn-block"
+                            className="btn btn-primary btn-sm"
                             onClick={(): void => helper.dismiss(file)}
                             disabled={!file}>
                             Select
                         </button>
                     </div>
-                    <div className="col-12 col-sm-6">
+
+                    <div className="col-6 d-grid">
                         <button
                             type="button"
-                            className="btn btn-link btn-sm btn-block"
+                            className="btn btn-link btn-sm"
                             onClick={(): void => helper.dismiss()}>
-                            Close
+                            Cancel
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-};
-
-/**
- * FilePicker is a widget that allows the user select a file from the file system. It uses the
- * dialog to show the picker and thus required DialogProvider to be an ancestor
- */
-export const FilePicker = ({
-    file,
-    error,
-    limit,
-    label,
-    leading,
-    trailing,
-    extensions,
-    decoration,
-    validator,
-    onFocus,
-    onBlur,
-    onChange
-}: Props) => {
-    const { showDialog } = useContext(DialogProviderContext);
-    const [dialogOpen, setDialogOpen] = useState(false);
-
-    const openFileDialog = (onFocus: () => void): void => {
-        if (dialogOpen) return;
-
-        const options: DialogOptions = {
-            size: DialogSize.SMALL,
-            onDismissed: (file: File) => {
-                if (file) onChange(file);
-                setDialogOpen(false);
-            }
-        };
-
-        showDialog(
-            helper => (
-                <FilePickerDialog
-                    helper={helper}
-                    label={label}
-                    limit={limit}
-                    extensions={extensions}
-                    validator={validator}
-                />
-            ),
-            options
-        );
-        setDialogOpen(true);
-        onFocus();
-    };
-
-    const onKeyUp = (e: React.KeyboardEvent, onFocus: () => void): void => {
-        if (e.key === " " || e.key === "Enter") {
-            e.preventDefault();
-            e.stopPropagation();
-            openFileDialog(onFocus);
-        }
-    };
-
-    return (
-        <div className="react-simple-widget file-picker">
-            <FieldDecoration
-                label={label}
-                error={error}
-                leading={leading}
-                trailing={trailing}
-                decoration={decoration}
-                stickyFloatingLabel={decoration === FieldDecorationType.FLOATING_LABEL ? true : !!file || dialogOpen}>
-                {({ onFieldFocus, onFieldBlur }): any => (
-                    <div
-                        className="trigger"
-                        onKeyUp={e => onKeyUp(e, onFieldFocus)}
-                        onClick={(): void => openFileDialog(onFieldFocus)}
-                        onFocus={() => {
-                            onFieldFocus();
-                            if (onFocus) onFocus();
-                        }}
-                        onBlur={() => {
-                            onFieldBlur();
-                            if (onBlur) onBlur();
-                        }}
-                        tabIndex={0}>
-                        {!file && <span className="no-selection">No file selected</span>}
-                        {file && <span className="meta">{file.name}</span>}
-
-                        <small>
-                            <i>Click to select a file</i>
-                        </small>
-                    </div>
-                )}
-            </FieldDecoration>
         </div>
     );
 };

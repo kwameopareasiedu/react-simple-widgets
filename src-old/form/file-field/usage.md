@@ -2,11 +2,11 @@
 
 # FileField
 
-This widget is a form wrapper over the [FilePicker](../file-picker/usage.md)
+This widget is a form wrapper over the [FilePicker](../../../src/widgets/file-picker/file-picker-usage.md)
 
 ## Usage
 
-`FileField` is an extension of the [FilePicker](../file-picker/usage.md) widget, hence it accepts
+`FileField` is an extension of the [FilePicker](../../../src/widgets/file-picker/file-picker-usage.md) widget, hence it accepts
 all its props (except the `file` props) as well as the props specified here. The `file` prop is
 provided by the [Formik](https://jaredpalmer.com/formik/) holder.
 

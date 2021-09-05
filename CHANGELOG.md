@@ -31,7 +31,7 @@
 
 -   `2.0.2`
 
-    -   Reduced top padding of [FilePicker](src-old/form/file-picker/usage.md) dialog
+    -   Reduced top padding of [FilePicker](src/widgets/file-picker/file-picker-usage.md) dialog
     -   Fixed the position of underline indicator in [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) when the
         error widget is visible
     -   Removed unused theming CSS variables from [ReadMe](./README.md)
@@ -143,7 +143,7 @@
 -   `1.4.1`
 
     -   Added overflow styling to [DatePicker](src-old/form/date-picker/usage.md)
-        and [FilePicker](src-old/form/file-picker/usage.md)
+        and [FilePicker](src/widgets/file-picker/file-picker-usage.md)
         widgets
     -   Increased `z-index` of [DialogProvider](src/widgets/dialog-provider/usage.md) dialog container div to 999999
 

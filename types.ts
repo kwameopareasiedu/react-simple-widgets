@@ -354,6 +354,20 @@ export interface TimeField
     onChange?: (time: string) => void;
 }
 
+/** FilePicker */
+export type FilePickerValidator = (file: File) => boolean;
+
+export interface FilePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+    limit?: number;
+    extensions?: Array<string>;
+    validator?: FilePickerValidator;
+    onChange?: (file: File) => void;
+}
+
+export interface FilePickerDialog extends FilePicker {
+    helper: DialogHelper;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 
