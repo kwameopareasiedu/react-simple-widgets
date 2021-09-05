@@ -11,7 +11,7 @@ import { MultiDatePicker } from "react-simple-widgets";
 
 <MultiDatePicker
     dates={dates}
-    onDatesSelect={onDatesSelect}
+    onChange={onDatesSelect}
 />
 ```
 
@@ -19,6 +19,6 @@ import { MultiDatePicker } from "react-simple-widgets";
 
     The selected dates of the widget in the format `YYYY-MM-DD`.
     
--   `onDatesSelect: (dates: Array<string>) => void`
+-   `onChange: (dates: Array<string>) => void`
 
     This function is called with the selected dates when the save button is clicked. The dates are of the format `YYYY-MM-DD`

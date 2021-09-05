@@ -14,7 +14,7 @@ export const Default = (): any => {
         return (
             <MultiDatePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onDatesSelect={setDate}
+                onChange={setDate}
                 dates={date}
             />
         );

@@ -19,7 +19,7 @@ export const Default = (): any => {
                 isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === date}
                 isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()}
                 className="d-inline-block w-auto"
-                onDateSelect={date => {
+                onChange={date => {
                     setDate(date);
                 }}
             />

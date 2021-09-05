@@ -23,5 +23,5 @@ import { CheckboxField } from "react-simple-widgets";
 
 ## Side Notes
 
-> The `type` attribute is omitted because it is set to `checkbox` internally.
+> The `type` attribute cannot be set externally because it is set to `checkbox` internally.
 

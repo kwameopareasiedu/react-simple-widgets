@@ -32,8 +32,9 @@ export const TextAreaField = ({
                                 name={name}
                                 value={value}
                                 onChange={e => {
-                                    setValue(e.target.value);
-                                    if (onChange) onChange(e);
+                                    const val = e.target.value;
+                                    setValue(val);
+                                    if (onChange) onChange(val);
                                 }}
                                 onFocus={e => {
                                     onFieldFocus();

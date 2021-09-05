@@ -15,7 +15,7 @@ export const Default = (): any => {
         return (
             <TimePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onTimeChange={time => {
+                onChange={time => {
                     action("Time changed")(time);
                     setTime(time);
                 }}

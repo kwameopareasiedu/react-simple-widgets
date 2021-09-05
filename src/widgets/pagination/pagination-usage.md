@@ -15,8 +15,8 @@ import { Pagination } from "react-simple-widgets";
     page={page}
     total={total}
     pageSize={pageSize}
-    onPageChanged={onPageChanged}
-/>;
+    onChange={onChange}
+/>
 ```
 
 - `page: number`
@@ -31,6 +31,6 @@ import { Pagination } from "react-simple-widgets";
 
   The number of items per page of the list
 
-- `onPageChanged: (page: number) => void`
+- `onChange: (page: number) => void`
 
   A callback which is invoked when a new page button is clicked. This is passed the page number of the button clicked.

@@ -11,7 +11,7 @@ export const Calendar = ({
     initialDate,
     isDateActive,
     isDateOutlined,
-    onDateSelect,
+    onChange,
     className: _className,
     ...rest
 }: ICalendar): JSX.Element => {
@@ -38,7 +38,7 @@ export const Calendar = ({
 
     const selectDisplayDay = (day: number): void => {
         setDisplayDay(day);
-        onDateSelect(djs([displayYear, displayMonth, day]).format("YYYY-MM-DD"));
+        onChange(djs([displayYear, displayMonth, day]).format("YYYY-MM-DD"));
     };
 
     const resetDisplayDate = (): void => {

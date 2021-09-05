@@ -17,8 +17,9 @@ export const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...res
                                     checked={value}
                                     type="checkbox"
                                     onChange={e => {
-                                        setValue(e.target.checked);
-                                        if (onChange) onChange(e);
+                                        const checked = e.target.checked;
+                                        setValue(checked);
+                                        if (onChange) onChange(checked);
                                     }}
                                     onFocus={e => {
                                         setTouched(true);

@@ -14,7 +14,7 @@ export const Default = (): any => {
         return (
             <MonthDatePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onDateSelect={setDate}
+                onChange={setDate}
                 date={date}
             />
         );

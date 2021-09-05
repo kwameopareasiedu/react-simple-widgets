@@ -1,11 +1,11 @@
-import "./time-field.scss";
+import "./file-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TimeField as ITimeField } from "../../../types";
-import { TimePicker } from "../time-picker/time-picker";
+import { FileField as IFileField } from "../../../types";
+import { FilePicker } from "../file-picker/file-picker";
 
-export const TimeField = ({
+export const FileField = ({
     name,
     label,
     helper,
@@ -16,11 +16,11 @@ export const TimeField = ({
     onFocus,
     onBlur,
     ...rest
-}: ITimeField): any => {
+}: IFileField): any => {
     return (
-        <div className="react-simple-widget time-field">
+        <div className="react-simple-widget file-field">
             <CustomField name={name}>
-                {({ value, error, touched, setValue, setTouched }) => (
+                {({ error, touched, setValue, setTouched }) => (
                     <FieldDecoration
                         label={label}
                         leading={leading}
@@ -29,11 +29,10 @@ export const TimeField = ({
                         helper={helper}
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }) => (
-                            <TimePicker
-                                time={value || undefined}
-                                onChange={time => {
-                                    setValue(time);
-                                    if (onChange) onChange(time);
+                            <FilePicker
+                                onChange={file => {
+                                    setValue(file);
+                                    if (onChange) onChange(file);
                                 }}
                                 onFocus={e => {
                                     onFieldFocus();

@@ -2,7 +2,7 @@ import "./file-picker-dialog.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { FilePickerDialog as IFilePickerDialog } from "../../../types";
 
-export const FilePickerDialog = ({ helper, limit, label, extensions, validator }: IFilePickerDialog) => {
+export const FilePickerDialog = ({ helper, limit, extensions, validator }: IFilePickerDialog) => {
     const [file, setFile] = useState<File>();
     const [error, setError] = useState(null);
     const triggerInputRef = useRef();
@@ -82,7 +82,9 @@ export const FilePickerDialog = ({ helper, limit, label, extensions, validator }
             <div className="card-body">
                 <input ref={triggerInputRef} type="file" onChange={(e): void => onFileDrop(e.target.files[0])} hidden />
 
-                {label && <label>{label}</label>}
+                <header className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="mb-0">Select File</p>
+                </header>
 
                 <div
                     ref={dropAreaRef}
@@ -111,10 +113,7 @@ export const FilePickerDialog = ({ helper, limit, label, extensions, validator }
                     </div>
 
                     <div className="col-6 d-grid">
-                        <button
-                            type="button"
-                            className="btn btn-link btn-sm"
-                            onClick={(): void => helper.dismiss()}>
+                        <button type="button" className="btn btn-link btn-sm" onClick={(): void => helper.dismiss()}>
                             Cancel
                         </button>
                     </div>

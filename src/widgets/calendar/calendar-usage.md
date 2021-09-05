@@ -14,7 +14,7 @@ import { Calendar } from "react-simple-widgets";
     initialDate={initialDate}
     isDateOutlined={isDateOutlined}
     isDateActive={isDateActive}
-    onDateSelect={onDateSelect}
+    onChange={onChange}
 />
 ```
 
@@ -30,6 +30,6 @@ import { Calendar } from "react-simple-widgets";
 
     During render, this function is called for every calendar day in the month. This function should return true if the calendar day should be made active.
 
-- `onDateSelect: (date: string) => void`
+- `onChange: (date: string) => void`
 
   This function is called with the selected date when the calendar date is clicked on. The date has the format `YYYY-MM-DD`.

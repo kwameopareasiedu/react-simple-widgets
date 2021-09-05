@@ -3,11 +3,13 @@
         padding: 20px 30px 30px;
     }
 
-    label {
-        font-size: 80%;
-        color: #999;
-        font-style: italic;
-        margin-bottom: 20px;
+    header {
+        p {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
     }
 
     .drop-area {

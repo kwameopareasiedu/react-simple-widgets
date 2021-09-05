@@ -1,15 +1,15 @@
 [Home](../../../README.md)
 
-# TimeField
+# FileField
 
-This widget is a time picker form widget. TimeField is intrinsically a `<TimePicker/>` widget and accepts all of its attributes.
+This widget is a file picker form widget. FileField is intrinsically a `<FilePicker/>` widget and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { TimeField } from "react-simple-widgets";
+import { FileField } from "react-simple-widgets";
 
-<TimeField
+<FileField
     name={name}
     label={label}
     helper={helper}

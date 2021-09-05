@@ -30,7 +30,7 @@ export const DateField = ({
                         {({ onFieldFocus, onFieldBlur }) => (
                             <DatePicker
                                 date={value}
-                                onDateSelect={date => {
+                                onChange={date => {
                                     setValue(date);
                                     if (onChange) onChange(date);
                                 }}

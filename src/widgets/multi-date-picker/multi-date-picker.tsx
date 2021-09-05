@@ -10,8 +10,8 @@ djs.extend(arraySupport);
 
 export const MultiDatePicker = ({
     dates: _dates,
-    onDatesSelect,
     className: _className,
+    onChange,
     ...rest
 }: IMultiDatePicker): JSX.Element => {
     const [dates, setDates] = useState([..._dates]);
@@ -52,7 +52,7 @@ export const MultiDatePicker = ({
                         initialDate={dates[0] || undefined}
                         isDateOutlined={isDateOutlined}
                         isDateActive={isDateActive}
-                        onDateSelect={date => {
+                        onChange={date => {
                             if (!dates.includes(date)) {
                                 setDates([...dates, date]);
                             } else {
@@ -90,10 +90,10 @@ export const MultiDatePicker = ({
                                 type="button"
                                 className="btn btn-primary btn-sm"
                                 onClick={() => {
-                                    onDatesSelect([...dates]);
+                                    onChange([...dates]);
                                     closePopup();
                                 }}>
-                                Save
+                                Ok
                             </button>
 
                             {dates.length > 0 && (

@@ -9,12 +9,7 @@ import { FieldDecoration } from "../field-decoration/field-decoration";
 
 djs.extend(arraySupport);
 
-export const MonthDatePicker = ({
-    date,
-    onDateSelect,
-    className: _className,
-    ...rest
-}: IMonthDatePicker): JSX.Element => {
+export const MonthDatePicker = ({ date, className: _className, onChange, ...rest }: IMonthDatePicker): JSX.Element => {
     const [displayYear, setDisplayYear] = useState(dateYear(date));
     const [displayMonth, setDisplayMonth] = useState(dateMonth(date));
 
@@ -37,7 +32,7 @@ export const MonthDatePicker = ({
     };
 
     useEffect(() => {
-        onDateSelect(djs([displayYear, displayMonth, 1]).format("YYYY-MM-DD"));
+        onChange(djs([displayYear, displayMonth, 1]).format("YYYY-MM-DD"));
     }, [displayMonth, displayYear]);
 
     return (

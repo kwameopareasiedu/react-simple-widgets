@@ -9,7 +9,7 @@ import { Meridian, timeHour, timeMeridian, timeMinute } from "./time-picker-util
 
 djs.extend(arraySupport);
 
-export const TimePicker = ({ time, onTimeChange, className: _className, ...rest }: ITimePicker): JSX.Element => {
+export const TimePicker = ({ time, onChange, className: _className, ...rest }: ITimePicker): JSX.Element => {
     const [displayHour, _setDisplayHour] = useState(timeHour(time) % 12);
     const [displayMinute, _setDisplayMinute] = useState(timeMinute(time));
     const [displayMeridian, setDisplayMeridian] = useState<Meridian>(timeMeridian(time));
@@ -46,8 +46,8 @@ export const TimePicker = ({ time, onTimeChange, className: _className, ...rest 
         const time = djs([2021, 1, 1, resolvedHour, displayMinute, 0]);
 
         if (!time.isValid()) {
-            onTimeChange(djs().format("HH:mm"));
-        } else onTimeChange(time.format("HH:mm"));
+            onChange(djs().format("HH:mm"));
+        } else onChange(time.format("HH:mm"));
     }, [displayHour, displayMinute, displayMeridian]);
 
     return (

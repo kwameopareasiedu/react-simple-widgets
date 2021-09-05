@@ -30,7 +30,7 @@ export const MultiDateField = ({
                         {({ onFieldFocus, onFieldBlur }) => (
                             <MultiDatePicker
                                 dates={value}
-                                onDatesSelect={dates => {
+                                onChange={dates => {
                                     setValue(dates);
                                     if (onChange) onChange(dates);
                                 }}

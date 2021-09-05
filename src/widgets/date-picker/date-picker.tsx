@@ -9,7 +9,7 @@ djs.extend(arraySupport);
 
 export const DatePicker = ({
     date,
-    onDateSelect,
+    onChange,
     className: _className,
     placeholder,
     ...rest
@@ -32,8 +32,8 @@ export const DatePicker = ({
                     className="d-inline-block w-auto"
                     isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === date}
                     isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()}
-                    onDateSelect={date => {
-                        onDateSelect(date);
+                    onChange={date => {
+                        onChange(date);
                         closePopup();
                     }}
                 />

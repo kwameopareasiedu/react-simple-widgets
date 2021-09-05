@@ -31,7 +31,7 @@ export const MonthDateField = ({
                         {({ onFieldFocus, onFieldBlur }) => (
                             <MonthDatePicker
                                 date={value || undefined}
-                                onDateSelect={date => {
+                                onChange={date => {
                                     setValue(date);
                                     if (onChange) onChange(date);
                                 }}

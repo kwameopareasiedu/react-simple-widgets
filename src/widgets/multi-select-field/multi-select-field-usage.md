@@ -15,7 +15,7 @@ import { MultiSelectField } from "react-simple-widgets";
     inline={inlne}
     options={options}
     onChange={onChange}
-/>;
+/>
 ```
 
 -   `name: string`

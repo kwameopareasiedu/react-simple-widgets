@@ -6,7 +6,7 @@ export const Pagination = ({
     page,
     total,
     pageSize,
-    onPageChange,
+    onChange,
     className: _className,
     ...rest
 }: IPagination): JSX.Element => {
@@ -34,24 +34,24 @@ export const Pagination = ({
                     type="button"
                     disabled={page === 1}
                     className="btn btn-link btn-sm"
-                    onClick={(): void => onPageChange(page - 1)}>
+                    onClick={(): void => onChange(page - 1)}>
                     Prev
                 </button>
 
                 {minPage > 1 && (
                     <React.Fragment>
-                        <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(1)}>
+                        <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(1)}>
                             1
                         </button>
 
                         {minPage > 2 && (
-                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(2)}>
+                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(2)}>
                                 2
                             </button>
                         )}
 
                         {minPage > 3 && (
-                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(3)}>
+                            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(3)}>
                                 3
                             </button>
                         )}
@@ -62,7 +62,7 @@ export const Pagination = ({
 
                 {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {
                     const isPrimary = i + minPage === page;
-                    const onClick = (): void => onPageChange(minPage + i);
+                    const onClick = (): void => onChange(minPage + i);
                     const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";
                     const props: any = { type: "button", className, onClick };
                     return (
@@ -80,7 +80,7 @@ export const Pagination = ({
                             <button
                                 type="button"
                                 className="btn btn-link btn-sm"
-                                onClick={(): void => onPageChange(pages - 2)}>
+                                onClick={(): void => onChange(pages - 2)}>
                                 {pages - 2}
                             </button>
                         )}
@@ -89,12 +89,12 @@ export const Pagination = ({
                             <button
                                 type="button"
                                 className="btn btn-link btn-sm"
-                                onClick={(): void => onPageChange(pages - 1)}>
+                                onClick={(): void => onChange(pages - 1)}>
                                 {pages - 1}
                             </button>
                         )}
 
-                        <button type="button" className="btn btn-link btn-sm" onClick={(): void => onPageChange(pages)}>
+                        <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(pages)}>
                             {pages}
                         </button>
                     </React.Fragment>
@@ -104,7 +104,7 @@ export const Pagination = ({
                     type="button"
                     className="btn btn-link btn-sm"
                     disabled={page === pages}
-                    onClick={(): void => onPageChange(page + 1)}>
+                    onClick={(): void => onChange(page + 1)}>
                     Next
                 </button>
             </div>

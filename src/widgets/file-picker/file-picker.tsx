@@ -6,7 +6,6 @@ import { FilePickerDialog } from "./file-picker-dialog";
 
 export const FilePicker = ({
     limit,
-    label,
     extensions,
     validator,
     className: _className,
@@ -28,15 +27,7 @@ export const FilePicker = ({
         if (dialogOpen) return;
 
         showDialog(
-            helper => (
-                <FilePickerDialog
-                    helper={helper}
-                    label={label}
-                    limit={limit}
-                    extensions={extensions}
-                    validator={validator}
-                />
-            ),
+            helper => <FilePickerDialog helper={helper} limit={limit} extensions={extensions} validator={validator} />,
             {
                 size: DialogSize.SMALL,
                 onDismissed: (file: File) => {
@@ -66,7 +57,7 @@ export const FilePicker = ({
             className={className()}
             onClick={e => {
                 openFileDialog();
-                onClick(e);
+                if (onClick) onClick(e);
             }}
             onKeyUp={onKeyUp}
             tabIndex={0}

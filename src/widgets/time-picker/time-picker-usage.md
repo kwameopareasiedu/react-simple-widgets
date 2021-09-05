@@ -11,7 +11,7 @@ import { TimePicker } from "react-simple-widgets";
 
 <TimePicker
     time={date}
-    onTimeChange={onTimeChange}
+    onChange={onTimeChange}
 />
 ```
 
@@ -19,7 +19,7 @@ import { TimePicker } from "react-simple-widgets";
 
     The selected date of the widget in the format `HH:mm`.
     
--   `onTimeChange: (time: string) => void`
+-   `onChange: (time: string) => void`
 
     This function is called with the selected time when the time changes. The time is in the format `HH:mm`.
 
