@@ -341,6 +341,12 @@ export interface MonthDateField
     onChange?: (date: string) => void;
 }
 
+/** TimePicker */
+export interface TimePicker extends AllHTMLAttributes<HTMLDivElement> {
+    time: string;
+    onTimeChange: (time: string) => void;
+}
+
 /** UseQueryParams */
 export type UseQueryParams = () => any;
 

@@ -33,6 +33,7 @@ export * from "./widgets/month-date-picker/month-date-picker";
 export * from "./widgets/date-field/date-field";
 export * from "./widgets/multi-date-field/multi-date-field";
 export * from "./widgets/month-date-field/month-date-field";
+export * from "./widgets/time-picker/time-picker";
 
 export * from "./utils/use-query-params/use-query-params";
 export * from "./utils/use-countdown/use-countdown";
