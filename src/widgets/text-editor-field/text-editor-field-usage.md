@@ -2,7 +2,7 @@
 
 # TextEditorField
 
-This widget is a WYSIWYG editor form widget which is built on top of [Quill rich text editor](https://quilljs.com/)
+This widget is a WYSIWYG editor form widget which is built on top of [Quill rich text editor](https://quilljs.com/).
 
 ## Usage
 

@@ -50,11 +50,9 @@ export const FlashView = ({ type, title, message, buttonText, onDismiss }: IFlas
                 <h5 className="flash-title">{title}</h5>
                 <div className="flash-message">{message || ""}</div>
 
-                <div className="d-grid">
-                    <button type="button" className="btn flash-button" onClick={onDismiss}>
-                        {buttonText || "Dismiss"}
-                    </button>
-                </div>
+                <button type="button" className="btn flash-button" onClick={onDismiss}>
+                    {buttonText || "Dismiss"}
+                </button>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@
 
 # SelectField
 
-This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. Since it is intrinsically a div element, it accepts all attributes of a `<div/>` tag.
+This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. SelectField is intrinsically a `<div/>` element and accepts all its attributes.
 
 ## Usage
 
@@ -15,7 +15,7 @@ import { SelectField } from "react-simple-widgets";
     inline={inlne}
     options={options}
     onChange={onChange}
-/>;
+/>
 ```
 
 -   `name: string`
@@ -28,7 +28,7 @@ import { SelectField } from "react-simple-widgets";
 
 -   `inline?: boolean`
 
-    If set to `true`, the radio options will be laid out horizontally instead of vertically.
+    If set to `true`, the radio options will be rendered horizontally instead of vertically.
 
 -   `options?: Array<[any, any]>`
 

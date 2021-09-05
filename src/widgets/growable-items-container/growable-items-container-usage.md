@@ -2,7 +2,7 @@
 
 # GrowableItemsContainer
 
-This is a widget that wraps a **growing list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. Since it is intrinsically a div element, it accepts all attributes of a `<div/>` tag.
+This widget that wraps a **growing list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. GrowableItemsContainer is intrinsically a `<div/>`  element and accepts all of its attributes.
 
 ## Usage
 
@@ -19,7 +19,7 @@ import { GrowableItemsContainer } from "react-simple-widgets";
 </GrowableItemsContainer>
 ```
 
--   `busy: boolea`
+-   `busy: boolean`
 
     Set to `true` to indicate the list of items is being fetched
 
@@ -35,7 +35,7 @@ import { GrowableItemsContainer } from "react-simple-widgets";
 
     The total number if items to be loaded. `GrowableItemsContainer` uses this together with `itemCount` to determine whether or not to show the load-more button.
     
--   `onLoadMore(resetBeforeLoad?: boolean) => void`
+-   `onLoadMore: () => void`
 
     This function is called when the either of the following happens:
     

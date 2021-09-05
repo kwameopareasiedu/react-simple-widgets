@@ -7,7 +7,7 @@ djs.extend(advancedFormat);
 
 export default { title: "MultiDatePicker", component: MultiDatePicker };
 
-export const usage = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
         const [date, setDate] = useState([]);
 

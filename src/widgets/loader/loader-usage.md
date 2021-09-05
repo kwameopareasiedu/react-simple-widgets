@@ -2,7 +2,7 @@
 
 # Loader
 
-Loader is a widget that displays a spinner. Since it is intrinsically a div, it accepts all attributes of a `<div/>` tag
+This widget displays a rotating spinner icon. Loader it is intrinsically a `<div/>` element and accepts all its attributes.
 
 ## Usage
 
@@ -16,3 +16,4 @@ import { Loader } from "react-simple-widgets";
 - `invert?: boolean`
 
   If set to `true`, the spinner border is set to white.
+

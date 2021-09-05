@@ -1,10 +1,10 @@
-[Home](../../../README.md) / ValueStoreProvider
+[Home](../../../README.md)
 
 # LocalStorageProvider
 
-The `LocalStorageProvider` is a value store for your application which syncs changes with the browser's local storage. You can use this to save simple strings across different parts of your application.
+The `LocalStorageProvider` is a reactive wrapper for the local storage API. It syncs changes to its state with the browser's local storage. You can use this to save simple strings across different parts of your application.
 
-**DO NOT store sensitive data to the local storage as this has absolutely no layer of security**
+**DO NOT store sensitive data in the local storage as this has absolutely no layer of security**
 
 The following guide demonstrates how to use the `LocalStorageProvider`
 
@@ -86,3 +86,4 @@ export function App() {
     );
 }
 ```
+

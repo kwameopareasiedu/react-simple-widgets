@@ -2,13 +2,13 @@
 
 # FlashProvider
 
-The `FlashProvider` allows your app to display different types of flash messages. `FlashProvider` uses dialogs to display these flash messages and thus depends on a [DialogProvider](../../dialog-provider/usage.md) ancestor to be available up your component tree.
+The `FlashProvider` allows your app to display different types of flash messages. `FlashProvider` uses dialogs to display these flash messages and requires a [DialogProvider](../../dialog-provider/usage.md) ancestor to be available up your component tree.
 
 The following guide demonstrates how to use the `FlashProvider`
 
 ## Wrap your app with the `FlashProvider` widget
 
-The first step to using the `FlashProvider` widget is to make it an ancestor of your app export. Again, since `FlashProvider` uses dialogs, the `DialogProvider` is also required to be an ancestor.
+The first step to using the `FlashProvider` widget is to make it an ancestor of your app export. Again, since `FlashProvider` uses dialogs, the `DialogProvider` is also required to be an ancestor widget.
 
 ```jsx
 import ReactDOM from "react-dom";
@@ -45,28 +45,46 @@ export function App() {
         <div id="app">
             <button
                 className="btn btn-danger btn-sm"
-                onClick={(): void => flashError("Error", message, () => alert("Error flash message"), "OK")}>
+                onClick={(): void => flashError("Error", message, () => alert("Error"), "OK")}>
                 Flash error
             </button>
 
             <button
                 className="btn btn-warning btn-sm"
-                onClick={(): void => flashWarning("Warning", <i>{message}</i>, () => alert("Warning flash message"))}>
+                onClick={(): void => flashWarning("Warning", <i>{message}</i>, () => alert("Warning"))}>
                 Flash warning
             </button>
 
             <button
                 className="btn btn-info btn-sm"
-                onClick={(): void => flashInfo("Info", <strong>{message}</strong>, () => alert("Info flash message"))}>
+                onClick={(): void => flashInfo("Info", <strong>{message}</strong>, () => alert("Info"))}>
                 Flash info
             </button>
 
             <button
                 className="btn btn-success btn-sm"
-                onClick={(): void => flashSuccess("Success", <u>{message}</u>, () => alert("Success flash message"))}>
+                onClick={(): void => flashSuccess("Success", <u>{message}</u>, () => alert("Success"))}>
                 Flash success
             </button>
         </div>
     );
 }
 ```
+
+Each flash function (`flashError`, `flashWarning`, `flashInfo` and `flashSuccess`) accepts the following arguments in this order:
+
+- `title: string`
+
+  The title of the flash message
+
+- `message?: any`
+
+  The flash message content. This can be a string or a `JSX.Element`
+
+- `onFlashDismissed?: () => void`
+
+  If specified, this function is called when the flash message is dismissed.
+
+- `btnText?: string`
+
+  A custom button text to show on the dismiss button

@@ -29,8 +29,8 @@ This makes the `DialogProvider` context available to the rest of the application
 
 `DialogProvider` can be used in two (2) ways:
 
-1. Showing a regular dialog. This is used to just display information
-2. Showing a value-returning dialog. This can return a value to the caller when closed
+1. Showing a **regular** dialog. This is used to just display information
+2. Showing a **value-returning** dialog. This can return a value to the caller when closed
 
 ### Show a regular dialog
 
@@ -180,4 +180,4 @@ export const App = () => {
 
 > Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the top-most dialog receives the keyboard event first.
 
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the app.
+> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the developer.

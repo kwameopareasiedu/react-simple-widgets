@@ -2,7 +2,7 @@
 
 # CheckboxField
 
-This widget is a check input form widget. Since it is intrinsically a checkbox, it accepts all attributes of an `<input/>` tag.
+This widget is a checkbox form widget. CheckboxField is intrinsically an `<input type="checkbox"/>` and it accepts all of its attributes..
 
 ## Usage
 
@@ -20,9 +20,8 @@ import { CheckboxField } from "react-simple-widgets";
 
     See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
-- ](../field-decoration/field-decoration-usage.md)
 
-## Sidenotes
+## Side Notes
 
 > The `type` attribute is omitted because it is set to `checkbox` internally.
 

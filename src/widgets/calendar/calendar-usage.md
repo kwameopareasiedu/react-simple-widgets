@@ -2,7 +2,8 @@
 
 # Calendar
 
-This widget displays a calendar and allows you to select a single calendar date. Since it is intrinsically a div element, it accepts all attributes of the `<div/>` tag.
+This widget displays a calendar which allows you to select dates. 
+Calendar is intrinsically a `<div/>` element and it accepts all of its attributes.
 
 ## Usage
 

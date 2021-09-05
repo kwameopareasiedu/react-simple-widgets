@@ -32,12 +32,19 @@ export const Calendar = ({
         const classes = ["btn", "btn-link", "btn-sm", "text-decoration-none"];
         if (isDateActive && isDateActive(displayYear, displayMonth, day)) classes.push("active");
         if (isDateOutlined && isDateOutlined(displayYear, displayMonth, day)) classes.push("outline");
+        if (djs([displayYear, displayMonth, day]).isSame(djs(), "day")) classes.push("current");
         return classes.join(" ");
     };
 
     const selectDisplayDay = (day: number): void => {
         setDisplayDay(day);
         onDateSelect(djs([displayYear, displayMonth, day]).format("YYYY-MM-DD"));
+    };
+
+    const resetDisplayDate = (): void => {
+        const current = djs();
+        setDisplayYear(current.year());
+        setDisplayMonth(current.month());
     };
 
     useEffect(() => {
@@ -71,7 +78,15 @@ export const Calendar = ({
 
     return (
         <div className={className()} {...rest}>
-            <header className="year-header d-flex align-items-center">
+            <header className="d-flex justify-content-between align-items-center">
+                <p className="mb-0">Select Date</p>
+
+                <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayDate}>
+                    <i className="fa fa-clock" />
+                </button>
+            </header>
+
+            <div className="controls d-flex align-items-center">
                 <p className="display-day text-center mb-0">
                     {displayDay}
                     <span>{daySuffix(displayDay)}</span>
@@ -98,7 +113,7 @@ export const Calendar = ({
                         </option>
                     ))}
                 </select>
-            </header>
+            </div>
 
             <div className="calendar-days">
                 {days.map(day => (

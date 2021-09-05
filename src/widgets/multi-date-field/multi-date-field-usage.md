@@ -2,7 +2,7 @@
 
 # MultiDateField
 
-This widget is a multi date picker input form widget. Since it is intrinsically a MultiDatePicker widget, it accepts all attributes of an `<MultiDatePicker/>` tag.
+This widget is a multi-date picker form widget. MultiDateField it is intrinsically a `<MultiDatePicker/>` widget and accepts all of its attributes.
 
 ## Usage
 

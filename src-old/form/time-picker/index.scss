@@ -54,15 +54,15 @@
         width: 100%;
         font-size: 80%;
         border-radius: 4px;
-        color: var(--rsw-primary-theme-color);
-        border: 1px solid var(--rsw-primary-theme-color);
+        color: var(--rsw-primary-color);
+        border: 1px solid var(--rsw-primary-color);
     }
 
     .meridian-section button:hover,
     .meridian-section button:focus,
     .meridian-section button.active {
         color: white;
-        background-color: var(--rsw-primary-theme-color);
+        background-color: var(--rsw-primary-color);
     }
 
     .meridian-section button:hover,

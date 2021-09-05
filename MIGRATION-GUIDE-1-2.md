@@ -117,7 +117,7 @@ migrate your applications from 1.x.x to 2.x.x
     See the [ListViewDocs](src/widgets/table-view/table-view-usage.md) for the description of the new
     attributes
 
-## ConfirmDialog
+## ConfirmButtonDialog
 
 -   `ConfirmDialogTheme` has been renamed to `Confirmation`
 

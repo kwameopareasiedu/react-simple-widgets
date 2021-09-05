@@ -2,8 +2,8 @@
 
 # ActionBar
 
-ActionBar is a widget that displays a row of spaced elements for a page. If no children are present, it returns null.
-ActionBar is intrinsically a `div` element and accepts all of it's attributes
+This widget displays a row of spaced elements. If no children are present, it returns `null`.
+ActionBar is intrinsically a `<div/>` element and accepts all of its attributes.
 
 ## Usage
 

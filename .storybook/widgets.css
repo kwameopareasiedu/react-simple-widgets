@@ -1,8 +1,9 @@
 body {
     --rsw-label-color: #777777;
     --rsw-error-color: #ff5555;
-    --rsw-primary-theme-color: #402897;
-    --rsw-secondary-theme-color: #b3b3b3;
+    --rsw-primary-color: #402897;
+    --rsw-primary-color-light: #40289722;
+    --rsw-secondary-color: #b3b3b3;
     --rsw-transition-duration: 0.15s;
 
     /* DialogProvider vars */
@@ -17,8 +18,4 @@ body {
 
     /* PopupMenu vars */
     --rsw-popup-menu-scrim-bg-color: #00000004;
-
-    --rsw-date-picker-header-bg-color: #40289711;
-    --rsw-field-decoration-label-bg-color: white;
-    --rsw-select-field-indicator-size: 1.5rem;
 }

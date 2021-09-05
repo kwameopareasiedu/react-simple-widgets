@@ -2,7 +2,7 @@
 
 # TableView
 
-This widget is a responsive table widget. It collapses the view into cards on smaller displays to allow content to fit on screen. Since it is intrinsically a table, it accepts all attributes of a `<table/>` tag
+This widget is a responsive table widget. It collapses the view into cards on smaller displays to allow content to fit on screen. TableView it is intrinsically a `<table/>` element and accepts all of its attributes.
 
 ## Usage
 

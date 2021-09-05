@@ -2,7 +2,7 @@
 
 # TextAreaField
 
-This widget is a simple text input form widget. Since it is intrinsically a textarea, it accepts all attributes of an `<textarea/>` tag.
+This widget is a text form widget. TextAreaField is intrinsically a `<textarea/>` element and accepts all of its attributes.
 
 ## Usage
 

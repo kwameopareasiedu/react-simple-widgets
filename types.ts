@@ -153,6 +153,7 @@ export interface Pagination extends AllHTMLAttributes<HTMLDivElement> {
 /** BusyButton */
 export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     busy?: boolean;
+    invert?: boolean;
 }
 
 /** Loader */
@@ -162,6 +163,12 @@ export interface Loader extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 /** ConfirmButton */
+export interface ConfirmButtonDialog {
+    message: any;
+    confirmButtonClassName: string;
+    helper: DialogHelper;
+}
+
 export interface ConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     message?: any;
     busy?: boolean;

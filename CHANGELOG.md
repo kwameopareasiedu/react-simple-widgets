@@ -138,7 +138,7 @@
         widget. Once a value is persisted, it will automatically be remembered until removed, even when the page is
         refreshed
     -   Changed `ConfirmDialogTheme.ERROR` to `ConfirmDialogTheme.DANGER` for
-        [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md)
+        [ConfirmButtonDialog](src/widgets/confirm-button/confirm-button-usage.md)
 
 -   `1.4.1`
 
@@ -150,7 +150,7 @@
 -   `1.4.0`
 
     -   Added `onClick` prop to [ListView](src/widgets/table-view/table-view-usage.md) widget
-    -   Added `theme` prop to [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md) widget
+    -   Added `theme` prop to [ConfirmButtonDialog](src/widgets/confirm-button/confirm-button-usage.md) widget
     -   Adjusted label font size of [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) to 87.5%
     -   Adjusted [FieldDecoration](src/widgets/field-decoration/field-decoration-usage.md) labels to be single lines
 

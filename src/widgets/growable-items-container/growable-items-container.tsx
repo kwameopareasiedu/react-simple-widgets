@@ -41,9 +41,13 @@ export const GrowableItemsContainer = ({
         <div {...rest} className={className()}>
             {children}
 
-            <div ref={loadMoreButtonContainerRef} className="text-center">
+            <div ref={loadMoreButtonContainerRef} className="text-center mt-2">
                 {(busy || error || itemCount < total) && (
-                    <BusyButton type="button" busy={busy} className="load-more-btn" onClick={onLoadMore}>
+                    <BusyButton
+                        type="button"
+                        busy={busy}
+                        className="load-more-btn btn btn-secondary btn-sm"
+                        onClick={onLoadMore}>
                         Load More
                     </BusyButton>
                 )}

@@ -2,7 +2,7 @@
 
 # ObjectView
 
-This widget renders properties of an object in a table. Since it is intrinsically a table, it accepts all attributes of a `<table/>` tag
+This widget renders properties of an object in a table. ObjectView is intrinsically a `<table/>` and it accepts all of its attributes.
 
 ## Usage
 
@@ -13,7 +13,7 @@ import { ObjectView } from "react-simple-widgets";
     object={object} 
     props={props} 
     split={split}
-/>;
+/>
 ```
 
 -   `object: any`

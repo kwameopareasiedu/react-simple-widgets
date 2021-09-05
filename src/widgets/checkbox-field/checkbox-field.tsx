@@ -1,5 +1,5 @@
 import "./checkbox-field.scss";
-import React, { Fragment } from "react";
+import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { CheckBoxField as ICheckBoxField } from "../../../types";

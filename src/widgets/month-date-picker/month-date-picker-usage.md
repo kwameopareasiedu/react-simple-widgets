@@ -2,7 +2,7 @@
 
 # MonthDatePicker
 
-This widget allows you to select a calendar month. Since it is intrinsically a div element, it accepts all attributes of the `<div/>` widget.
+This widget allows you to select a calendar month. MonthDatePicker is intrinsically a `<div/>` element and accepts all of its attributes.
 
 ## Usage
 

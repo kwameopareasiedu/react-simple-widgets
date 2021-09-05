@@ -1,14 +1,12 @@
-import "./confirm-dialog.scss";
+import "./confirm-button-dialog.scss";
 import React from "react";
-import { DialogHelper } from "../../../types";
+import { ConfirmButtonDialog as IConfirmButtonDialog } from "../../../types";
 
-interface IConfirmDialog {
-    message: any;
-    confirmButtonClassName: string;
-    helper: DialogHelper;
-}
-
-export const ConfirmDialog = ({ message, confirmButtonClassName:_confirmButtonClassName, helper }: IConfirmDialog): any => {
+export const ConfirmButtonDialog = ({
+    helper,
+    message,
+    confirmButtonClassName: _confirmButtonClassName
+}: IConfirmButtonDialog): any => {
     const confirmButtonClassName = (): string => {
         const classes = ["btn", "btn-sm"];
         if (_confirmButtonClassName) classes.push(_confirmButtonClassName);
@@ -16,7 +14,7 @@ export const ConfirmDialog = ({ message, confirmButtonClassName:_confirmButtonCl
     };
 
     return (
-        <div className="react-simple-widget confirm-dialog card">
+        <div className="react-simple-widget confirm-button-dialog card">
             <div className="card-body">
                 <div className="message-container">{message}</div>
 

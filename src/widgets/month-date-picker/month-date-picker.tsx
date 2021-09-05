@@ -4,6 +4,8 @@ import { MonthDatePicker as IMonthDatePicker } from "../../../types";
 import { dateMonth, dateYear, months, years } from "../calendar/calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
+import { PopupMenu } from "../popup-menu/popup-menu";
+import { FieldDecoration } from "../field-decoration/field-decoration";
 
 djs.extend(arraySupport);
 
@@ -22,33 +24,73 @@ export const MonthDatePicker = ({
         return classes.join(" ");
     };
 
+    const monthBtnClassName = (active: boolean): string => {
+        const classes = ["btn", "btn-link", "btn-sm", "text-decoration-none"];
+        if (active) classes.push("active");
+        return classes.join(" ");
+    };
+
+    const resetDisplayDate = (): void => {
+        const current = djs();
+        setDisplayYear(current.year());
+        setDisplayMonth(current.month());
+    };
+
     useEffect(() => {
         onDateSelect(djs([displayYear, displayMonth, 1]).format("YYYY-MM-DD"));
     }, [displayMonth, displayYear]);
 
     return (
-        <div className={className()} {...rest}>
-            <select
-                value={displayMonth}
-                className="form-select"
-                onChange={e => setDisplayMonth(parseInt(e.target.value))}>
-                {months.map((month, monthIndex) => (
-                    <option key={month} value={monthIndex}>
-                        {month}
-                    </option>
-                ))}
-            </select>
+        <PopupMenu>
+            <div className={className()} {...rest}>
+                {djs([displayYear, displayMonth, 1]).format("MMMM YYYY")}
+            </div>
 
-            <select
-                value={displayYear}
-                className="form-select"
-                onChange={e => setDisplayYear(parseInt(e.target.value))}>
-                {years.map(year => (
-                    <option key={year} value={year}>
-                        {year}
-                    </option>
-                ))}
-            </select>
-        </div>
+            {closePopup => (
+                <div className="react-simple-widget month-date-picker-popup card">
+                    <div className="card-body">
+                        <header className="d-flex justify-content-between align-items-center mb-3">
+                            <p className="mb-0">Select Date</p>
+
+                            <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayDate}>
+                                <i className="fa fa-clock" />
+                            </button>
+                        </header>
+
+                        <FieldDecoration label="Year" className="mb-4">
+                            {({ onFieldFocus, onFieldBlur }) => (
+                                <select
+                                    value={displayYear}
+                                    className="year-select"
+                                    onChange={e => setDisplayYear(parseInt(e.target.value))}
+                                    onFocus={onFieldFocus}
+                                    onBlur={onFieldBlur}>
+                                    {years.map(year => (
+                                        <option key={year} value={year}>
+                                            {year}
+                                        </option>
+                                    ))}
+                                </select>
+                            )}
+                        </FieldDecoration>
+
+                        <div className="month-select">
+                            {months.map((month, monthIndex) => (
+                                <button
+                                    key={month}
+                                    type="button"
+                                    className={monthBtnClassName(monthIndex === displayMonth)}
+                                    onClick={() => {
+                                        setDisplayMonth(monthIndex);
+                                        closePopup();
+                                    }}>
+                                    {month.substring(0, 3)}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </PopupMenu>
     );
 };

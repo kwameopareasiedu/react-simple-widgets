@@ -1,18 +1,16 @@
 .react-simple-widget.breadcrumbs {
-    padding: 8px 0;
-
     > * {
         position: relative;
         display: inline;
         margin-right: 8px;
         font-style: italic;
-        color: var(--rsw-secondary-theme-color);
+        color: var(--rsw-secondary-color);
         transition: color var(--rsw-transition-duration);
         text-decoration: none;
     }
 
     > *:hover {
-        color: var(--rsw-primary-theme-color);
+        color: var(--rsw-primary-color);
     }
 
     > *::after {
@@ -24,7 +22,7 @@
 
     > *:last-child {
         margin-right: 0;
-        color: var(--rsw-primary-theme-color);
+        color: var(--rsw-primary-color);
     }
 
     > *:last-child::after {

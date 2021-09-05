@@ -2,7 +2,7 @@
 
 # PasswordField
 
-This widget is a simple password input form widget. Since it is intrinsically an input, it accepts all attributes of an `<input/>` tag.
+This widget is a password form widget. PasswordField is intrinsically an `<input/>` element and accepts all its attributes.
 
 ## Usage
 
@@ -29,6 +29,6 @@ import { PasswordField } from "react-simple-widgets";
 
   See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
-## Sidenotes
+## Side Notes
 
-> The `type` attribute is omitted because it is controlled internally by `PasswordField`.
+> The `type` attribute cannot be set externally because it is controlled internally by `PasswordField`.

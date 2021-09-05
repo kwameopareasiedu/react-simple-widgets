@@ -4,7 +4,7 @@
 
         position: relative;
         border-radius: 4px;
-        border: var(--border-width) solid var(--rsw-secondary-theme-color);
+        border: var(--border-width) solid var(--rsw-secondary-color);
         padding: 8px 8px 4px;
 
         > label {
@@ -51,10 +51,10 @@
 
 .react-simple-widget.field-decoration.has-focus {
     .field-decoration-content-container {
-        border-color: var(--rsw-primary-theme-color);
+        border-color: var(--rsw-primary-color);
 
         > label {
-            color: var(--rsw-primary-theme-color);
+            color: var(--rsw-primary-color);
         }
     }
 }

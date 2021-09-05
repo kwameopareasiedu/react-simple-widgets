@@ -50,20 +50,16 @@ import { FieldDecoration } from "react-simple-widgets";
 
 -   `leading?: JSX.Element`
 
-    A component to render to the left of the wrapped component. You can use this to perhaps add an
-    icon before the component.
-
+    A component to render to the left of the wrapped component. You can use this to perhaps add an icon before the component.
+    
 -   `trailing?: JSX.Element`
 
-    A component to render to the right of the wrapped component. You can use this to perhaps add an
-    icon after the component.
-
+    A component to render to the right of the wrapped component. You can use this to perhaps add an icon after the component.
+    
 -   `onFieldFocus: () => void`
 
-    This should be called by the custom component when when receives focus. This will make
-    `FieldDecoration` apply the focus styling.
-
+    This should be called by the custom component when when receives focus. This will make `FieldDecoration` apply the focus styling.
+    
 -   `onFieldBlur: () => void`
 
-    This should be called by the custom component when when loses focus. This will make `FieldDecoration`
-    remove the focus styling.
+    This should be called by the custom component when when loses focus. This will make `FieldDecoration` remove the focus styling.

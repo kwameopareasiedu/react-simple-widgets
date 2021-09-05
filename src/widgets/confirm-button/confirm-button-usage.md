@@ -2,28 +2,24 @@
 
 # ConfirmButton
 
-ConfirmButton is a widget that shows a confirmation dialog to confirm an action. Since it is intrinsically a [BusyButton](../busy-button/busy-button.md), it accepts all attributes of a `<button/>` tag.
+This widget shows a confirmation dialog to confirm an action. ConfirmButton is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
 
-ConfirmDialog uses dialogs to display the confirmation prompts messages and thus depends on a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
+ConfirmButton uses dialogs to display the confirmation prompts messages. This requires a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
 
 ## Usage
 
 ```jsx
-import ReactDOM from "react-dom";
 import { DialogProvider, ConfirmButton } from "react-simple-widgets";
 
-ReactDOM.render(
-    <DialogProvider>
-        <ConfirmButton
-            busy={busy}
-            message={message}
-            onCancel={onCancel}
-            onConfirm={onConfirm}>
-            Start
-        </ConfirmButton>
-    </DialogProvider>,
-    document.getElementById("root")
-);
+<DialogProvider>
+    <ConfirmButton
+        busy={busy}
+        message={message}
+        onCancel={onCancel}
+        onConfirm={onConfirm}>
+        Start
+    </ConfirmButton>
+</DialogProvider>
 ```
 
 -   `busy?: boolean`

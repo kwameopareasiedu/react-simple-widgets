@@ -81,7 +81,7 @@ Widgets under this category are for convenience
 
 -   [Loader](src/widgets/loader/loader-usage.md) - A widget that displays a spinner
 -   [BusyButton](src/widgets/busy-button/busy-button-usage.md) - A button widget that displays a loading indicator if busy
--   [ConfirmDialog](src/widgets/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
+-   [ConfirmButtonDialog](src/widgets/confirm-button/confirm-button-usage.md) - A widget which displays a confirmation dialog before calling
     an action
 -   [Breadcrumbs](src/widgets/breadcrumbs/breadcrumbs-usage.md) - A breadcrumb link container widget
 -   [PageActions](src/widgets/action-bar/action-bar-usage.md) - A `div` that displays a row of spaced buttons or nothing if no
@@ -111,8 +111,8 @@ theme
 | ----------------------------- | -------------------------------------------------------- | ------------- |
 | `--rsw-label-color`           | Controls the label color of field decorator              | `#777777`     |
 | `--rsw-error-color`           | Controls the error color of components indicating errors | `#ff5555`     |
-| `--rsw-primary-theme-color`   | Controls the primary color used by all widgets           | `#209d58`     |
-| `--rsw-secondary-theme-color` | Controls the secondary color used by all widgets         | `#b3b3b3`     |
+| `--rsw-primary-color`   | Controls the primary color used by all widgets           | `#209d58`     |
+| `--rsw-secondary-color` | Controls the secondary color used by all widgets         | `#b3b3b3`     |
 | `--rsw-transition-duration`   | Controls the duration of transitions used by all widgets | `0.3s`        |
 
 The following variables are widget specific

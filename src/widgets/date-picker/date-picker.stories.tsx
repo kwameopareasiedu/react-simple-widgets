@@ -7,9 +7,10 @@ djs.extend(advancedFormat);
 
 export default { title: "DatePicker", component: DatePicker };
 
-export const usage = (): any => {
+export const Default = (): any => {
     const ExampleApp = (): any => {
-        const [date, setDate] = useState("2021-09-04");
+        const [date, setDate] = useState(djs().format("YYYY-MM-DD"));
+
         return (
             <DatePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"

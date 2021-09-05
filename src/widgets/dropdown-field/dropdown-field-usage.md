@@ -2,7 +2,7 @@
 
 # DropdownField
 
-This widget is a form widget which allows the user to select a value from a dropdown list
+This widget is a form widget which allows the user to select a value from a dropdown list. DropdownField is intrinsically a `<select/>` element and accepts all of its attributes.
 
 ## Usage
 
@@ -19,9 +19,6 @@ import { DropdownField } from "react-simple-widgets";
     <option value="value2">Value 2</option>
 </DropdownField>
 ```
-
-> This widget is intrinsically an `<select />` component and accepts all other attributes of
-> `select` tags in addition to the ones specified here.
 
 -   `name: string`
 
