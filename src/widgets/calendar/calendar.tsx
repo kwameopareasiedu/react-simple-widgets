@@ -133,6 +133,7 @@ export const Calendar = ({
 
                         return (
                             <button
+                                type="button"
                                 key={dayIndex}
                                 className={calendarDayClassName(day)}
                                 onClick={() => selectDisplayDay(day)}>
