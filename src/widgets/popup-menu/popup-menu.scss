@@ -1,0 +1,38 @@
+.popup-menu-scrim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--rsw-popup-menu-scrim-bg-color);
+    animation: fade-scrim-in var(--rsw-transition-duration) ease-out forwards;
+    overflow: auto;
+    z-index: 2;
+}
+
+.popup-menu-options {
+    position: fixed;
+    width: max-content !important;
+    animation: reveal-options var(--rsw-transition-duration) ease-out forwards;
+    z-index: 3;
+}
+
+@keyframes reveal-options {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-scrim-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

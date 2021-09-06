@@ -1,0 +1,44 @@
+.react-simple-widget.pagination {
+    display: block;
+    padding: 15px 8px;
+
+    .pagination-info {
+        margin-bottom: 12px;
+        color: #767676;
+
+        span {
+            color: var(--rsw-primary-color);
+            font-weight: 600;
+        }
+    }
+
+    button {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    button:focus,
+    button:hover,
+    button:active {
+        box-shadow: none;
+    }
+
+    button:first-child,
+    button:last-child {
+        padding: 0;
+    }
+
+    button:first-child {
+        margin-right: 8px;
+    }
+
+    button:last-child {
+        margin-left: 8px;
+    }
+
+    p,
+    button {
+        font-size: 85%;
+        font-style: italic;
+    }
+}

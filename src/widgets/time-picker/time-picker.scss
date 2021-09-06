@@ -1,0 +1,22 @@
+.react-simple-widget.time-picker-popup {
+    width: 200px;
+
+    header {
+        p {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        button {
+            i {
+                color: var(--rsw-primary-color);
+            }
+        }
+    }
+
+    .field-decoration {
+        flex: 1 1;
+    }
+}

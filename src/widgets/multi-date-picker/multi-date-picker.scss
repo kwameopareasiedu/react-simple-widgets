@@ -1,0 +1,67 @@
+.react-simple-widget.multi-date-picker-popup {
+    @media screen and(min-width: 576px) {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .selected-dates {
+        display: flex;
+        max-height: 200px;
+        margin-top: -4px;
+        padding-top: 4px;
+        background-color: white;
+        border-left: 2px solid var(--rsw-primary-color);
+        border-right: 2px solid var(--rsw-primary-color);
+        border-bottom: 2px solid var(--rsw-primary-color);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        flex-direction: column;
+        overflow: hidden;
+
+        @media screen and(min-width: 576px) {
+            max-height: 336px;
+            border: 2px solid var(--rsw-primary-color);
+            border-top: 2px solid var(--rsw-primary-color);
+            border-left: none;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 0;
+            background-color: white;
+            margin-top: 0;
+            padding-top: 0;
+            margin-left: -4px;
+            padding-left: 4px;
+            overflow: hidden;
+        }
+
+        label,
+        p {
+            font-size: 12px;
+            padding: 4px 12px;
+            border-bottom: 1px solid #e3e3e3;
+        }
+
+        p {
+            flex: 1 1;
+        }
+
+        .dates {
+            flex: 1 1;
+            overflow: auto;
+
+            .list-group-item {
+                small {
+                    flex: 1 1;
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+
+            button {
+                flex: 1 1;
+                border-radius: 0;
+            }
+        }
+    }
+}

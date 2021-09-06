@@ -1,0 +1,18 @@
+.react-simple-widget.select-option {
+    display: block;
+    white-space: nowrap;
+
+    > * {
+        vertical-align: middle;
+    }
+
+    input {
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+    }
+}
+
+.react-simple-widget.select-option:hover {
+    cursor: pointer;
+}

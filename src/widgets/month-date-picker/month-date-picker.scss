@@ -1,0 +1,45 @@
+.react-simple-widget.month-date-picker-popup {
+    header {
+        p {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        button {
+            i {
+                color: var(--rsw-primary-color);
+            }
+        }
+    }
+
+    select {
+        display: inline-block;
+        width: auto;
+        background-color: transparent;
+    }
+
+    .month-select {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+
+        button {
+            transition: background-color var(--rsw-transition-duration);
+            white-space: nowrap;
+            border-radius: 2px;
+        }
+
+        button:focus,
+        button:hover {
+            outline: none;
+            box-shadow: none;
+        }
+
+        button.active {
+            background-color: var(--rsw-primary-color);
+            color: white;
+            font-weight: bold;
+        }
+    }
+}

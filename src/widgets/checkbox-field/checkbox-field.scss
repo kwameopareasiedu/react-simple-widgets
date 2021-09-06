@@ -1,0 +1,26 @@
+.react-simple-widget.checkbox-field {
+    .field-decoration .field-decoration-content-container {
+        border: none;
+        padding: 0;
+
+        .field-decoration-content {
+            :not(.leading):not(.trailing) {
+                flex: none;
+
+                > * {
+                    vertical-align: middle;
+                }
+
+                input {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 8px;
+                }
+            }
+
+            :not(.leading):not(.trailing):hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

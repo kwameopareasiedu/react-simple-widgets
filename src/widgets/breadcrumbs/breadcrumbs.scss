@@ -1,0 +1,31 @@
+.react-simple-widget.breadcrumbs {
+    > * {
+        position: relative;
+        display: inline;
+        margin-right: 8px;
+        font-style: italic;
+        color: var(--rsw-secondary-color);
+        transition: color var(--rsw-transition-duration);
+        text-decoration: none;
+    }
+
+    > *:hover {
+        color: var(--rsw-primary-color);
+    }
+
+    > *::after {
+        margin-left: 8px;
+        font-size: 85%;
+        content: ">";
+        vertical-align: text-bottom;
+    }
+
+    > *:last-child {
+        margin-right: 0;
+        color: var(--rsw-primary-color);
+    }
+
+    > *:last-child::after {
+        content: "";
+    }
+}

@@ -1,0 +1,103 @@
+.react-simple-widget.calendar {
+    position: relative;
+    background-color: white;
+    border: 2px solid var(--rsw-primary-color);
+    border-radius: 4px;
+
+    header {
+        padding: 6px 12px;
+
+        p {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        button {
+            i {
+                color: var(--rsw-primary-color);
+            }
+        }
+    }
+
+    .controls {
+        p {
+            padding: 4px 12px;
+            transition: background-color var(--rsw-transition-duration);
+            flex: 1 1;
+        }
+
+        .display-day {
+            span {
+                font-size: 10px;
+                vertical-align: super;
+            }
+        }
+
+        select {
+            border: none;
+        }
+
+        select:focus {
+            box-shadow: none;
+            outline: none;
+            border: none;
+        }
+
+        select:last-child {
+            width: auto;
+        }
+    }
+
+    .calendar-days {
+        display: grid;
+        padding: 6px;
+        grid-template-columns: repeat(7, 1fr);
+        overflow: auto;
+
+        .weekday {
+            font-size: 85%;
+            padding-bottom: 4px;
+            text-align: center;
+            opacity: 0.75;
+        }
+
+        button {
+            transition: background-color var(--rsw-transition-duration);
+            border-radius: 2px;
+        }
+
+        button:focus,
+        button:hover {
+            outline: none;
+            box-shadow: none;
+        }
+
+        button.outline {
+            border: 2px solid var(--rsw-primary-color);
+            border-radius: 4px;
+        }
+
+        button.current {
+            color: var(--rsw-primary-color);
+            background-color: var(--rsw-primary-color-light);
+        }
+
+        button.active {
+            background-color: var(--rsw-primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        button:not(.active):hover {
+            cursor: pointer;
+            background-color: #f3f3f3;
+        }
+
+        button,
+        .offset {
+            padding: 6px 10px;
+        }
+    }
+}

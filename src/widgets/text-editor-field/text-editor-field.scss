@@ -1,0 +1,19 @@
+.react-simple-widget.text-editor-field {
+    .ql-toolbar {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .ql-container {
+        border: none;
+
+        .ql-editor {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }
+}
