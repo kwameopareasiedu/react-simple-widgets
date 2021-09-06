@@ -3,6 +3,7 @@
 # BusyButton
 
 This widget is a button that displays a spinner when busy is true.
+
 BusyButton is intrinsically a `<button/>` element and accepts all of its attributes.
 
 ## Usage

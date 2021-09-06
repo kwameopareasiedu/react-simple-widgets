@@ -2,7 +2,7 @@
 
 # Pagination
 
-Pagination is a widget that shows pagination data from a list meta. The pagination data include the **page number**, the **total number of items in the list**, and the **number of items per page (page size)**.
+This widget shows pagination data from a list meta. The pagination data include the **page number**, the **total number of items in the list**, and the **number of items per page (page size)**.
 
 This widget is usually used in conjunction with [TableView](../table-view/table-view-usage.md) widget to display pagination data of the list being viewed. Pagination is intrinsically a `<div/>` element and accepts all of its attributes.
 
