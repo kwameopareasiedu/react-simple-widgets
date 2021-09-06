@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.0.0--alpha--1-blue)![](https://img.shields.io/badge/react-v17.0.2+-blue)![](https://img.shields.io/badge/minified%20size-534.2%20kB-blue)[![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.0.0--alpha--2-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-534.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
@@ -16,13 +16,37 @@ If you love the library, consider leaving a star on the project page on [Github]
 
 ## Installing
 
+Install the latest version of `React Simple Widgets` by running the following command:
+
 ```bash
 yarn add --dev react-simple-widgets
 ```
 
-This libraries requires [React](https://reactjs.org/) and [Formik](https://jaredpalmer.com/formik/) as peer dependencies, so you need to have these installed in your application as well.
+## Peer Dependencies
 
-You can install these dependencies with `yarn add --dev react formik` or `npm i --dev react react-router-dom formik`
+`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React (v17.0.2+)](https://reactjs.org) and [Formik (v2.1.4+)](https://formik.org/). Install these by running the following command:
+
+```bash
+yarn add --dev react formik
+```
+
+## CSS Dependencies
+
+`React Simple Widgets` also depends on [Bootstrap CSS (v5.1.0+)](https://getbootstrap.com/) for base styling and [Font Awesome (v5.14.0+)](https://fontawesome.com/) for font icons. Include the following links in your `index.html` file:
+
+`Bootstrap`
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+```
+
+`Font Awesome`
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+```
+
+
 
 ## Migrating
 
@@ -116,7 +140,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 ## Utilities in this library
 
--   [debounce](src/utils/debounce/usage.md) - Calls a function after a specified delay after a caller has stopped calling it
+-   [debounce](src/utils/debounce/debounce-usage.md) - Calls a function after a specified delay after a caller has stopped calling it
 
 ## Theming
 
@@ -143,7 +167,7 @@ The following variables are widget specific
 | `--rsw-flash-view-success-theme-color` | Controls the theme color of success flash message dialogs created by the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) widget | `#6cd924`     |
 | `--rsw-popup-menu-scrim-bg-color`      | Controls the background color of the scrim that appears when a [PopupMenu](src/widgets/popup-menu/popup-menu-usage.md) is revealed | `#00000004`   |
 
-## Running storybook samples locally
+## Running Storybook Samples Locally
 
 This library is built with [Storybook](https://storybook.js.org/) and each widget has its own set of stories demonstrating use cases of the widget. When executed, Storybook will open a web page containing all the stories for you to interact with.
 
