@@ -140,7 +140,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 ## Utilities in this library
 
--   [debounce](src/utils/debounce/usage.md) - Calls a function after a specified delay after a caller has stopped calling it
+-   [debounce](src/utils/debounce/debounce-usage.md) - Calls a function after a specified delay after a caller has stopped calling it
 
 ## Theming
 
