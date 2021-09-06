@@ -24,7 +24,7 @@ yarn add --dev react-simple-widgets
 
 ## Peer Dependencies
 
-`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React (`v17.0.2`+)](https://reactjs.org) and [Formik (`v2.1.4`+)](https://formik.org/). Install these by running the following command:
+`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React (v17.0.2+)](https://reactjs.org) and [Formik (v2.1.4+)](https://formik.org/). Install these by running the following command:
 
 ```bash
 yarn add --dev react formik
@@ -32,7 +32,7 @@ yarn add --dev react formik
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap CSS (`v5.1.0`+)](https://getbootstrap.com/) for base styling and [Font Awesome (`v5.14.0`)](https://fontawesome.com/) for font icons. Include the following links in your `index.html` file:
+`React Simple Widgets` also depends on [Bootstrap CSS (v5.1.0+)](https://getbootstrap.com/) for base styling and [Font Awesome (v5.14.0+)](https://fontawesome.com/) for font icons. Include the following links in your `index.html` file:
 
 `Bootstrap`
 
