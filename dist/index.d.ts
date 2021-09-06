@@ -24,7 +24,7 @@ import {
     TextEditorField,
     PasswordField,
     DropdownField,
-    CheckBoxField,
+    CheckboxField,
     SelectField,
     MultiSelectField,
     GrowableItemsContainer,
@@ -70,7 +70,7 @@ export const TextAreaField: FunctionComponent<TextAreaField>;
 export const TextEditorField: FunctionComponent<TextEditorField>;
 export const PasswordField: FunctionComponent<PasswordField>;
 export const DropdownField: FunctionComponent<DropdownField>;
-export const CheckBoxField: FunctionComponent<CheckBoxField>;
+export const CheckboxField: FunctionComponent<CheckboxField>;
 export const SelectField: FunctionComponent<SelectField>;
 export const MultiSelectField: FunctionComponent<MultiSelectField>;
 export const GrowableItemsContainer: FunctionComponent<GrowableItemsContainer>;
