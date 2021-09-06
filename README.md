@@ -24,7 +24,7 @@ yarn add --dev react-simple-widgets
 
 ## Peer Dependencies
 
-`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React (v17.0.2+)](https://reactjs.org) and [Formik (v2.1.4+)](https://formik.org/). Install these by running the following command:
+`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React](https://reactjs.org) and [Formik](https://formik.org/). Install these by running the following command:
 
 ```bash
 yarn add --dev react formik
@@ -32,21 +32,7 @@ yarn add --dev react formik
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap CSS (v5.1.0+)](https://getbootstrap.com/) for base styling and [Font Awesome (v5.14.0+)](https://fontawesome.com/) for font icons. Include the following links in your `index.html` file:
-
-`Bootstrap`
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-```
-
-`Font Awesome`
-
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-```
-
-
+`React Simple Widgets` also depends on [Bootstrap 5.1.0+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
 
 ## Migrating
 

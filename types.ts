@@ -408,3 +408,22 @@ export type UseWindowBreakpoints = () => UseWindowBreakpointsState;
 
 /** Debounce */
 export type Debounce = (label: string, callback: Function, delay: number) => void;
+
+/** UseGrowableList */
+export type GrowableListLoadMoreTrigger = (resetPage?: boolean) => void;
+
+export type GrowableListOnLoadMore = (newItems: Array<any>, totalItems: number) => void;
+
+export type GrowableListOnLoadFailed = () => void;
+
+export type UseGrowableListState = [
+    Array<any>,
+    number,
+    number,
+    boolean,
+    GrowableListLoadMoreTrigger,
+    GrowableListOnLoadMore,
+    GrowableListOnLoadFailed
+];
+
+export type UseGrowableList = () => UseGrowableListState;

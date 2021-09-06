@@ -43,6 +43,7 @@ import {
     UseQueryParams,
     UseCountdown,
     UseWindowBreakpoints,
+    UseGrowableList,
     /* Utilities */
     Debounce
 } from "../types";
@@ -89,5 +90,6 @@ export const FileField: FunctionComponent<FileField>;
 export const useQueryParams: UseQueryParams;
 export const useCountdown: UseCountdown;
 export const useWindowBreakpoints: UseWindowBreakpoints;
+export const useGrowableList: UseGrowableList;
 /* Utilities */
 export const debounce: Debounce;

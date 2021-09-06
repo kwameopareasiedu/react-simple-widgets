@@ -41,4 +41,5 @@ export * from "./widgets/file-field/file-field";
 export * from "./utils/use-query-params/use-query-params";
 export * from "./utils/use-countdown/use-countdown";
 export * from "./utils/use-window-breakpoints/use-window-breakpoints";
+export * from "./utils/use-growable-list/use-growable-list";
 export * from "./utils/debounce/debounce";
