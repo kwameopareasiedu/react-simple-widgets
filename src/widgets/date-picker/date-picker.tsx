@@ -1,16 +1,19 @@
 import React from "react";
 import { DatePicker as IDatePicker } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";
 import { PopupMenu } from "../popup-menu/popup-menu";
 
 djs.extend(arraySupport);
+djs.extend(advancedFormat);
 
 export const DatePicker = ({
     date,
     onChange,
     className: _className,
+    displayFormat,
     placeholder,
     ...rest
 }: IDatePicker): JSX.Element => {
@@ -23,7 +26,7 @@ export const DatePicker = ({
     return (
         <PopupMenu>
             <div className={className()} {...rest}>
-                {!date ? placeholder : djs(date).format("dddd, Do MMMM YYYY")}
+                {!date ? placeholder : djs(date).format(displayFormat || "ddd, Do MMM YYYY")}
             </div>
 
             {closePopup => (

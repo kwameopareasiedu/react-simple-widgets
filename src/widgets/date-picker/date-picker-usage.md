@@ -11,6 +11,7 @@ import { DatePicker } from "react-simple-widgets";
 
 <DatePicker
     date={date}
+    displayFormat={displayFormat}
     onChange={onDateSelect}
 />
 ```
@@ -19,6 +20,10 @@ import { DatePicker } from "react-simple-widgets";
 
     The selected date of the widget in the format `YYYY-MM-DD`.
     
--   `onChange: (date: string) => void`
+-   `displayFormat?: string`
 
-    This function is called with the selected date when the calendar date is clicked on.
+    The format to display the selected date. Defaults to `ddd, Do MMM YYYY` (E.g. Wed, 8th Sep 2021).
+
+- `onChange: (date: string) => void`
+
+  This function is called with the selected date when the calendar date is clicked on.

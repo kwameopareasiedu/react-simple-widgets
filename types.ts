@@ -315,6 +315,7 @@ export interface Calendar extends Omit<AllHTMLAttributes<HTMLDivElement>, "onCha
 /** DatePicker */
 export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     date: string;
+    displayFormat?: string;
     onChange: (date: string) => void;
 }
 
