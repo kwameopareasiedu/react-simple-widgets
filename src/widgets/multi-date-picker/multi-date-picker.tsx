@@ -11,6 +11,7 @@ djs.extend(arraySupport);
 export const MultiDatePicker = ({
     dates: _dates,
     className: _className,
+    displayFormat,
     onChange,
     ...rest
 }: IMultiDatePicker): JSX.Element => {
@@ -41,7 +42,7 @@ export const MultiDatePicker = ({
         <PopupMenu>
             <div className={className()} {...rest}>
                 {_dates.length > 1 && `${dates.length} dates selected`}
-                {_dates.length === 1 && djs(dates[0]).format("dddd, Do MMMM YYYY")}
+                {_dates.length === 1 && djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
                 {_dates.length === 0 && "No date selected"}
             </div>
 

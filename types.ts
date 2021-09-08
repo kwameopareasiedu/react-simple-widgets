@@ -322,6 +322,7 @@ export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 /** MultiDatePicker */
 export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     dates: Array<string>;
+    displayFormat?: string;
     onChange: (dates: Array<string>) => void;
 }
 
