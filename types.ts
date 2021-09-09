@@ -382,7 +382,7 @@ export interface FilePickerDialog extends FilePicker {
 
 /** FileField */
 export interface FileField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+    extends Omit<FilePicker, "label" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (file: File) => void;
 }

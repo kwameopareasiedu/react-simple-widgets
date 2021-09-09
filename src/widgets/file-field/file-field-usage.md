@@ -2,7 +2,7 @@
 
 # FileField
 
-This widget is a file picker form widget. FileField is intrinsically a `<FilePicker/>` widget and accepts all of its attributes.
+This widget is a file picker form widget. FileField is intrinsically a [FilePicker](../file-picker/file-picker-usage.md) widget and accepts all of its attributes.
 
 ## Usage
 
