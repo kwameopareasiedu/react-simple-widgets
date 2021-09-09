@@ -9,10 +9,10 @@ import { Meridian, timeHour, timeMeridian, timeMinute } from "./time-picker-util
 
 djs.extend(arraySupport);
 
-export const TimePicker = ({ time, onChange, className: _className, ...rest }: ITimePicker): JSX.Element => {
-    const [displayHour, _setDisplayHour] = useState(timeHour(time) % 12);
-    const [displayMinute, _setDisplayMinute] = useState(timeMinute(time));
-    const [displayMeridian, setDisplayMeridian] = useState<Meridian>(timeMeridian(time));
+export const TimePicker = ({ value, onChange, className: _className, ...rest }: ITimePicker): JSX.Element => {
+    const [displayHour, _setDisplayHour] = useState(timeHour(value) % 12);
+    const [displayMinute, _setDisplayMinute] = useState(timeMinute(value));
+    const [displayMeridian, setDisplayMeridian] = useState<Meridian>(timeMeridian(value));
 
     const className = (): string => {
         const classes = ["react-simple-widget", "time-picker"];
@@ -53,7 +53,7 @@ export const TimePicker = ({ time, onChange, className: _className, ...rest }: I
     return (
         <PopupMenu>
             <div className={className()} {...rest}>
-                {djs(`2021-01-01T${time}`).format("h:mm A")}
+                {djs(`2021-01-01T${value}`).format("h:mm A")}
             </div>
 
             {closePopup => (

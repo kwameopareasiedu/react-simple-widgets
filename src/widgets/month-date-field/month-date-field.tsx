@@ -30,7 +30,7 @@ export const MonthDateField = ({
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }) => (
                             <MonthDatePicker
-                                date={value || undefined}
+                                value={value}
                                 onChange={date => {
                                     setValue(date);
                                     if (onChange) onChange(date);

@@ -2,7 +2,7 @@
 
 # MonthDatePicker
 
-This widget allows you to select a calendar month. MonthDatePicker is intrinsically a `<div/>` element and accepts all of its attributes.
+This widget allows you to select a calendar month. MonthDatePicker is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
@@ -10,12 +10,12 @@ This widget allows you to select a calendar month. MonthDatePicker is intrinsica
 import { MonthDatePicker } from "react-simple-widgets"; 
 
 <MonthDatePicker
-    date={date}
+    value={value}
     onChange={onDateSelect}
 />
 ```
 
--   `date: string`
+-   `value: string`
 
     The selected date of the widget in the format `YYYY-MM`.
     

@@ -2,7 +2,7 @@
 
 # DateField
 
-This widget is a date picker form widget. DateField is intrinsically a `<DatePicker/>` widget and accepts all its attributes.
+This widget is a date picker form widget. DateField is intrinsically a [DatePicker](../date-picker/date-picker-usage.md) widget and accepts all its attributes.
 
 ## Usage
 

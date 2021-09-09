@@ -314,67 +314,60 @@ export interface Calendar extends Omit<AllHTMLAttributes<HTMLDivElement>, "onCha
 
 /** DatePicker */
 export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
-    date: string;
+    value: string;
     displayFormat?: string;
-    onChange: (date: string) => void;
-}
-
-/** MultiDatePicker */
-export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
-    dates: Array<string>;
-    displayFormat?: string;
-    onChange: (dates: Array<string>) => void;
-}
-
-/** MonthDatePicker */
-export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
-    date: string;
     onChange: (date: string) => void;
 }
 
 /** DateField */
 export interface DateField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+    extends Omit<DatePicker, "label" | "value" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (date: string) => void;
 }
 
+/** MultiDatePicker */
+export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+    value: Array<string>;
+    displayFormat?: string;
+    onChange: (dates: Array<string>) => void;
+}
+
 /** MultiDateField */
 export interface MultiDateField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+    extends Omit<MultiDatePicker, "label" | "value"  | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (dates: Array<string>) => void;
 }
 
+/** MonthDatePicker */
+export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+    value: string;
+    onChange: (date: string) => void;
+}
+
 /** MonthDateField */
 export interface MonthDateField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+    extends Omit<MonthDatePicker, "label" | "value"  | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (date: string) => void;
 }
 
 /** TimePicker */
 export interface TimePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
-    time: string;
+    value: string;
     onChange: (time: string) => void;
 }
 
 /** TimeField */
 export interface TimeField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+    extends Omit<TimePicker, "label" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (time: string) => void;
 }
 
 /** FilePicker */
 export type FilePickerValidator = (file: File) => boolean;
-
-/** FileField */
-export interface FileField
-    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
-        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
-    onChange?: (file: File) => void;
-}
 
 export interface FilePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     limit?: number;
@@ -385,6 +378,13 @@ export interface FilePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 
 export interface FilePickerDialog extends FilePicker {
     helper: DialogHelper;
+}
+
+/** FileField */
+export interface FileField
+    extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
+        Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    onChange?: (file: File) => void;
 }
 
 /** UseQueryParams */

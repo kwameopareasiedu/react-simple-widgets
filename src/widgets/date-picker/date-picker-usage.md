@@ -2,7 +2,7 @@
 
 # DatePicker
 
-This widget displays a popup calendar to select a single calendar date. DatePicker is intrinsically a `<div/>` element and accepts all of its attributes.
+This widget displays a popup calendar to select a single calendar date. DatePicker is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
@@ -10,13 +10,13 @@ This widget displays a popup calendar to select a single calendar date. DatePick
 import { DatePicker } from "react-simple-widgets"; 
 
 <DatePicker
-    date={date}
+    value={value}
     displayFormat={displayFormat}
     onChange={onDateSelect}
 />
 ```
 
--   `date: string`
+-   `value: string`
 
     The selected date of the widget in the format `YYYY-MM-DD`.
     

@@ -5,11 +5,13 @@ import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";
 import { PopupMenu } from "../popup-menu/popup-menu";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 
 djs.extend(arraySupport);
+djs.extend(advancedFormat);
 
 export const MultiDatePicker = ({
-    dates: _dates,
+    value: _dates,
     className: _className,
     displayFormat,
     onChange,
