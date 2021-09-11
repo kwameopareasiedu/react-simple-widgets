@@ -6,12 +6,14 @@ import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { PopupMenu } from "../popup-menu/popup-menu";
 import { FieldDecoration } from "../field-decoration/field-decoration";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 
 djs.extend(arraySupport);
+djs.extend(advancedFormat);
 
-export const MonthDatePicker = ({ date, className: _className, onChange, ...rest }: IMonthDatePicker): JSX.Element => {
-    const [displayYear, setDisplayYear] = useState(dateYear(date));
-    const [displayMonth, setDisplayMonth] = useState(dateMonth(date));
+export const MonthDatePicker = ({ value, className: _className, onChange, ...rest }: IMonthDatePicker): JSX.Element => {
+    const [displayYear, setDisplayYear] = useState(dateYear(value));
+    const [displayMonth, setDisplayMonth] = useState(dateMonth(value));
 
     const className = (): string => {
         const classes = ["react-simple-widget", "month-date-picker"];

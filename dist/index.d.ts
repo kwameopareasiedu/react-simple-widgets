@@ -24,7 +24,7 @@ import {
     TextEditorField,
     PasswordField,
     DropdownField,
-    CheckBoxField,
+    CheckboxField,
     SelectField,
     MultiSelectField,
     GrowableItemsContainer,
@@ -43,6 +43,7 @@ import {
     UseQueryParams,
     UseCountdown,
     UseWindowBreakpoints,
+    UseGrowableList,
     /* Utilities */
     Debounce
 } from "../types";
@@ -70,7 +71,7 @@ export const TextAreaField: FunctionComponent<TextAreaField>;
 export const TextEditorField: FunctionComponent<TextEditorField>;
 export const PasswordField: FunctionComponent<PasswordField>;
 export const DropdownField: FunctionComponent<DropdownField>;
-export const CheckBoxField: FunctionComponent<CheckBoxField>;
+export const CheckboxField: FunctionComponent<CheckboxField>;
 export const SelectField: FunctionComponent<SelectField>;
 export const MultiSelectField: FunctionComponent<MultiSelectField>;
 export const GrowableItemsContainer: FunctionComponent<GrowableItemsContainer>;
@@ -89,5 +90,6 @@ export const FileField: FunctionComponent<FileField>;
 export const useQueryParams: UseQueryParams;
 export const useCountdown: UseCountdown;
 export const useWindowBreakpoints: UseWindowBreakpoints;
+export const useGrowableList: UseGrowableList;
 /* Utilities */
 export const debounce: Debounce;

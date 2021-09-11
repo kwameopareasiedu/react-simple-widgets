@@ -1,10 +1,10 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / ConfirmButton
 
 # ConfirmButton
 
-This widget shows a confirmation dialog to confirm an action. ConfirmButton is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
+This widget shows a confirmation dialog to confirm an action. `ConfirmButton` is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
 
-ConfirmButton uses dialogs to display the confirmation prompts messages. This requires a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
+`ConfirmButton` uses dialogs to display the confirmation prompts messages. This requires a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
 
 ## Usage
 
@@ -28,7 +28,7 @@ import { DialogProvider, ConfirmButton } from "react-simple-widgets";
     
 -   `message?: any`
 
-    The confirmation message to display in the dialog. This can be a string or a JSX element.
+    The confirmation message to display in the dialog. This can be a string or a `JSX.Element`.
 
 -   `onConfirm: () => void`
 

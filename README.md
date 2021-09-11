@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.0.0--alpha--2-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-534.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.0.0-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.1%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
@@ -24,37 +24,15 @@ yarn add --dev react-simple-widgets
 
 ## Peer Dependencies
 
-`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React (v17.0.2+)](https://reactjs.org) and [Formik (v2.1.4+)](https://formik.org/). Install these by running the following command:
+`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React](https://reactjs.org), [React DOM](https://reactjs.org), [React Router DOM](https://reactrouter.com/web/guides/quick-start) and [Formik](https://formik.org/). Install these by running the following command:
 
 ```bash
-yarn add --dev react formik
+yarn add --dev react react-dom react-router-dom formik
 ```
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap CSS (v5.1.0+)](https://getbootstrap.com/) for base styling and [Font Awesome (v5.14.0+)](https://fontawesome.com/) for font icons. Include the following links in your `index.html` file:
-
-`Bootstrap`
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-```
-
-`Font Awesome`
-
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-```
-
-
-
-## Migrating
-
-**_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
-
-**_See the [migration guide](MIGRATION-GUIDE-2-3.md) on how to upgrade from v2 to v3_**
-
-**_See the [migration guide](MIGRATION-GUIDE-3-4.md) on how to upgrade from v3 to v4_**
+`React Simple Widgets` also depends on [Bootstrap 5.1.0+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
 
 ## Widgets in the library
 
@@ -90,7 +68,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 -   [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) - A WYSIWYG editor form field build on top of the [Quill](https://quilljs.com/) rich text editor
 
--   [PasswordField](src-old/form/password-field/usage.md) - A simple password (`<input type="password"/>`) form widget
+-   [PasswordField](src/widgets/password-field/password-field-usage.md) - A simple password (`<input type="password"/>`) form widget
 
 -   [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md) - A simple drop down (`<select/>`) form widget
 
@@ -98,7 +76,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 -   [SelectField](src/widgets/select-field/select-field-usage.md) - A select widget that allows a single selection from a list of options
 
--   [MultiSelectField](src/widgets/mult-select-field/mult-select-field-usage.md) - A select widget that allows multiple selections from a list of options
+-   [MultiSelectField](src/widgets/multi-select-field/multi-select-field-usage.md) - A select widget that allows multiple selections from a list of options
 
 -   [FileField](src/widgets/file-field/file-field-usage.md) - A form widget for the uploading files built on top of [FilePicker](src/widgets/file-picker/file-picker-usage.md)
 
@@ -137,6 +115,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 -   [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) - A hook that returns a object containing the URL search string parameters
 -   [useCountdown](src/utils/use-countdown/use-countdown-usage.md) - A hook which provides numeric countdown functionality
 -   [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) - A hook which provides the window width category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
+-   [useGrowableList](src/utils/use-growable-list/use-growable-list-usage.md) - A hook which manages the state of growing list. Used with [GrowableItemsContainer](src/widgets/growable-items-container/growable-items-container-usage.md) to provide a load-more mechanism for a growing list
 
 ## Utilities in this library
 

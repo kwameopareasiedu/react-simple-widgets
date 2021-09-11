@@ -1,6 +1,9 @@
 import React from "react";
-import moment from "moment";
 import { ObjectView } from "./object-view";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import djs from "dayjs";
+
+djs.extend(advancedFormat);
 
 const object = {
     id: 1,
@@ -22,7 +25,7 @@ export const Default = (): any => (
         props={[
             ["ID", "id"],
             ["Name", "name"],
-            ["Created At", o => <strong>{moment(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
+            ["Created At", o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
             ["Nested value", "nested_object.nested_property.current_value"],
             ["Nested undefined value", "nested_object.nested_object.nested_property.current_value"]
         ]}
@@ -36,7 +39,7 @@ export const CustomSplit = (): any => (
         props={[
             ["ID", "id"],
             ["Name", "name"],
-            ["Created At", o => <strong>{moment(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
+            ["Created At", o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
             ["Nested value", "nested_object.nested_property.current_value"]
         ]}
     />

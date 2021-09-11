@@ -9,13 +9,13 @@ export default { title: "MultiDatePicker", component: MultiDatePicker };
 
 export const Default = (): any => {
     const ExampleApp = (): any => {
-        const [date, setDate] = useState([]);
+        const [dates, setDates] = useState([]);
 
         return (
             <MultiDatePicker
                 className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onChange={setDate}
-                dates={date}
+                onChange={setDates}
+                value={dates}
             />
         );
     };

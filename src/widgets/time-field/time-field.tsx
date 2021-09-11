@@ -30,7 +30,7 @@ export const TimeField = ({
                         disabled={disabled}>
                         {({ onFieldFocus, onFieldBlur }) => (
                             <TimePicker
-                                time={value || undefined}
+                                value={value || undefined}
                                 onChange={time => {
                                     setValue(time);
                                     if (onChange) onChange(time);

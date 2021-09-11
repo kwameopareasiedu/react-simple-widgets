@@ -2,7 +2,7 @@ import "./checkbox-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { CheckBoxField as ICheckBoxField } from "../../../types";
+import { CheckboxField as ICheckBoxField } from "../../../types";
 
 export const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: ICheckBoxField): any => {
     return (

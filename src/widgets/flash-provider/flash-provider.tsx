@@ -34,7 +34,7 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
                         btnText
                     });
                 } else if ((window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]) {
-                    (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]({
+                    return (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]({
                         type,
                         title,
                         message,

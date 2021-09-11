@@ -19,7 +19,7 @@ export const Default = (): any => {
                     action("Time changed")(time);
                     setTime(time);
                 }}
-                time={time}
+                value={time}
             />
         );
     };

@@ -1,7 +1,10 @@
-import moment from "moment";
 import React from "react";
 import { TableView } from "./table-view";
 import { PopupMenu } from "../popup-menu/popup-menu";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import djs from "dayjs";
+
+djs.extend(advancedFormat);
 
 const collection = [
     { name: "Item-01", created_at: "2019-01-01", nested: { value: "Item_01 nested property current value" } },
@@ -36,7 +39,7 @@ export const Default = (): any => {
             items={collection}
             props={[
                 ["Name", "name", "name"],
-                ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY"), "date"],
+                ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
                 ["Unknown", "status", "status"],
                 ["Nested", "nested.value", "nested"],
                 ["Unknown nested", "nested.other_value", "other"]

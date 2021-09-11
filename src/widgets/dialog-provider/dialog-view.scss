@@ -13,7 +13,11 @@
         margin: auto;
 
         > * {
-            margin: var(--rsw-dialog-view-vertical-margin) auto;
+            margin: var(--rsw-dialog-view-vertical-margin) 15px;
+
+            @media screen and (min-width: 576px) {
+                margin: var(--rsw-dialog-view-vertical-margin) auto;
+            }
         }
     }
 

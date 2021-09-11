@@ -1,4 +1,4 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / debounce
 
 # debounce
 
@@ -10,7 +10,7 @@ This way, the action can be triggering the function at 100 times per second, but
 
 ## Usage
 
-```jsx
+```tsx
 import { debounce } from "react-simple-widgets";
 
 debounce(label, function, delay);

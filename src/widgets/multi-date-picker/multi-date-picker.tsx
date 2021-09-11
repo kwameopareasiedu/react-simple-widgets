@@ -5,12 +5,15 @@ import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";
 import { PopupMenu } from "../popup-menu/popup-menu";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 
 djs.extend(arraySupport);
+djs.extend(advancedFormat);
 
 export const MultiDatePicker = ({
-    dates: _dates,
+    value: _dates,
     className: _className,
+    displayFormat,
     onChange,
     ...rest
 }: IMultiDatePicker): JSX.Element => {
@@ -41,7 +44,7 @@ export const MultiDatePicker = ({
         <PopupMenu>
             <div className={className()} {...rest}>
                 {_dates.length > 1 && `${dates.length} dates selected`}
-                {_dates.length === 1 && djs(dates[0]).format("dddd, Do MMMM YYYY")}
+                {_dates.length === 1 && djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
                 {_dates.length === 0 && "No date selected"}
             </div>
 

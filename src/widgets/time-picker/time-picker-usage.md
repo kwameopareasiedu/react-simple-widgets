@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / TimePicker
 
 # TimePicker
 
-This widget allows you to select a time. TimePicker is intrinsically a `<div/>` element and accepts all of its attributes.
+This widget allows you to select a time. `TimePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
@@ -10,14 +10,14 @@ This widget allows you to select a time. TimePicker is intrinsically a `<div/>` 
 import { TimePicker } from "react-simple-widgets"; 
 
 <TimePicker
-    time={date}
+    value={value}
     onChange={onTimeChange}
 />
 ```
 
--   `time: string`
+-   `value: string`
 
-    The selected date of the widget in the format `HH:mm`.
+    The selected date of the widget in the format `HH:mm`. (E.g. 16:35)
     
 -   `onChange: (time: string) => void`
 

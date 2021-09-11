@@ -1,55 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"/><style>html, body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Storybook</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="widgets.css" />
+        <style>
+            html,
+            body {
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
 
-  * {
-    box-sizing: border-box;
-  }</style><script>/* globals window */
-  /* eslint-disable no-underscore-dangle */
-  try {
-    if (window.top !== window) {
-      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
-    }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.warn('unable to connect to top frame for connecting dev tools');
-  }
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+        <script>
+            /* globals window */
+            /* eslint-disable no-underscore-dangle */
+            try {
+                if (window.top !== window) {
+                    window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+                }
+            } catch (e) {
+                // eslint-disable-next-line no-console
+                console.warn("unable to connect to top frame for connecting dev tools");
+            }
 
-  window.onerror = function onerror(message, source, line, column, err) {
-    if (window.CONFIG_TYPE !== 'DEVELOPMENT') return;
-    // eslint-disable-next-line no-var, vars-on-top
-    var xhr = new window.XMLHttpRequest();
-    xhr.open('POST', '/runtime-error');
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhr.send(
-      JSON.stringify({
-        /* eslint-disable object-shorthand */
-        message: message,
-        source: source,
-        line: line,
-        column: column,
-        error: err && { message: err.message, name: err.name, stack: err.stack },
-        origin: 'manager',
-        /* eslint-enable object-shorthand */
-      })
-    );
-  };</script><style>#root[hidden],
-      #docs-root[hidden] {
-        display: none !important;
-      }</style></head><body><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
-            
-        
-            
-              window['LOGLEVEL'] = "info";
-            
-        
-            
-        
-            
-        
-            
-              window['DOCS_MODE'] = false;</script><script src="runtime~main.c5bb7bdf5c4e5b46c2e4.manager.bundle.js"></script><script src="666.89622973001ba89d97e4.manager.bundle.js"></script><script src="main.e9ec51145f274b8ce39b.manager.bundle.js"></script></body></html>
+            window.onerror = function onerror(message, source, line, column, err) {
+                if (window.CONFIG_TYPE !== "DEVELOPMENT") return;
+                // eslint-disable-next-line no-var, vars-on-top
+                var xhr = new window.XMLHttpRequest();
+                xhr.open("POST", "/runtime-error");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.send(
+                    JSON.stringify({
+                        /* eslint-disable object-shorthand */
+                        message: message,
+                        source: source,
+                        line: line,
+                        column: column,
+                        error: err && { message: err.message, name: err.name, stack: err.stack },
+                        origin: "manager"
+                        /* eslint-enable object-shorthand */
+                    })
+                );
+            };
+        </script>
+        <style>
+            #root[hidden],
+            #docs-root[hidden] {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id="docs-root"></div>
+        <script>
+            window["CONFIG_TYPE"] = "PRODUCTION";
+
+            window["LOGLEVEL"] = "info";
+
+            window["DOCS_MODE"] = false;
+        </script>
+        <script src="runtime~main.d775059492f91a09d2f1.manager.bundle.js"></script>
+        <script src="666.43b3abf182ccac73bd6c.manager.bundle.js"></script>
+        <script src="main.42de9479747f909cb8ba.manager.bundle.js"></script>
+    </body>
+</html>

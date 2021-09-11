@@ -80,6 +80,24 @@ export const PopupMenu = ({ children }: IPopupMenu): JSX.Element => {
     };
 
     useEffect(() => {
+        const onScroll = (): void => {
+            setOptionsOpened(false);
+        };
+
+        if (optionsOpened) {
+            window.addEventListener("scroll", onScroll);
+            document.addEventListener("scroll", onScroll);
+            document.body.addEventListener("scroll", onScroll);
+        }
+
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            document.removeEventListener("scroll", onScroll);
+            document.body.removeEventListener("scroll", onScroll);
+        };
+    }, [optionsOpened]);
+
+    useEffect(() => {
         if (optionsOpened && optionsRef.current) {
             if (!firstAlignmentPass) setFirstAlignmentPass(true);
             alignOptionsMenu();

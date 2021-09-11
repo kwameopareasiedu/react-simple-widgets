@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / PasswordField
 
 # PasswordField
 
-This widget is a password form widget. PasswordField is intrinsically an `<input/>` element and accepts all its attributes.
+This widget is a password form widget. PasswordField is intrinsically an `input` element and accepts all its attributes.
 
 ## Usage
 

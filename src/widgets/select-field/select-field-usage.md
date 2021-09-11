@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / SelectField
 
 # SelectField
 
-This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. SelectField is intrinsically a `<div/>` element and accepts all its attributes.
+This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. `SelectField` is intrinsically a `div` element and accepts all its attributes.
 
 ## Usage
 

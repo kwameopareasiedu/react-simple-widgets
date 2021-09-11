@@ -88,3 +88,44 @@ Each flash function (`flashError`, `flashWarning`, `flashInfo` and `flashSuccess
 - `btnText?: string`
 
   A custom button text to show on the dismiss button
+
+## Custom Flash Dialogs
+
+If you want to customize the flash message view, you can provider the `builder` function attribute to `FlashProvider`. This function will be passed the flash object and must return a React component to display.
+
+```tsx
+import ReactDOM from "react-dom";
+import { DialogProvider, FlashProvider } from "react-simple-widgets";
+import { App } from "./app.tsx";
+
+ReactDOM.render(
+    <DialogProvider>
+        <FlashProvider builder={flash => /* Return custom flash view here */}>
+            <App />
+        </FlashProvider>
+    </DialogProvider>,
+    document.getElementById("root")
+);
+```
+
+As seen in the example above, the `builder` method is passed the `flash` object which contains the following data:
+
+- `type: FlashType`
+
+  This is the severity of the flash message. It can be one of `FlashType.ERROR`, `FlashType.WARNING`, `FlashType.INFO` and `FlashType.SUCCESS`.
+
+- `title: string`
+
+  The title of the flash message
+
+- `message: any`
+
+  The content of the flash message. This can be a string or a `JSX.Element`
+
+- `onFlashDismissed?: () => void`
+
+  An optional function to call when the flash is dismissed
+
+- `btnText?: string`
+
+  The dismiss button string. Defaults to "Dismissed"

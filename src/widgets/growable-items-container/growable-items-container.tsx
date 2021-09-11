@@ -47,7 +47,8 @@ export const GrowableItemsContainer = ({
                         type="button"
                         busy={busy}
                         className="load-more-btn btn btn-secondary btn-sm"
-                        onClick={onLoadMore}>
+                        onClick={onLoadMore}
+                        invert>
                         Load More
                     </BusyButton>
                 )}

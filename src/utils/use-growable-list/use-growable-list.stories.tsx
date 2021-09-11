@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { GrowableItemsContainer } from "./growable-items-container";
-import { TableView } from "../table-view/table-view";
-import { PopupMenu } from "../popup-menu/popup-menu";
+import { GrowableItemsContainer } from "../../widgets/growable-items-container/growable-items-container";
+import { TableView } from "../../widgets/table-view/table-view";
+import { PopupMenu } from "../../widgets/popup-menu/popup-menu";
+import { useGrowableList } from "./use-growable-list";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
 
 djs.extend(advancedFormat);
 
-export default { title: "GrowableItemsContainer", component: GrowableItemsContainer };
+export default { title: "UseGrowableList" };
 
 const collection = [
     { name: "Item-01", created_at: "2019-01-01", nested: { value: "Item_01 nested property current value" } },
@@ -34,19 +35,20 @@ const collection = [
 ];
 
 export const Default = (): any => {
-    const [page, setPage] = useState(1);
-    const [items, setItems] = useState({ results: [], total: 0 });
+    const [items, page, total, triggered, loadMore, onLoadSuccess, onLoadFailed] = useGrowableList();
     const [fetching, setFetching] = useState(true);
     const [error, setError] = useState(false);
 
     const fetchItems = (): void => {
         setTimeout(() => {
             if (Math.random() > 0.2) {
-                const newItems = [...items.results, ...collection.slice(3 * (page - 1), 3 * page)];
-                setItems({ results: newItems, total: collection.length });
-                setPage(page + 1);
+                const newItems = collection.slice(3 * (page - 1), 3 * page);
+                onLoadSuccess(newItems, collection.length);
                 setError(false);
-            } else setError(true);
+            } else {
+                setError(true);
+                onLoadFailed();
+            }
 
             setFetching(false);
         }, 1500);
@@ -54,17 +56,17 @@ export const Default = (): any => {
         setFetching(true);
     };
 
-    useEffect(fetchItems, []);
+    useEffect(fetchItems, [triggered]);
 
     return (
         <GrowableItemsContainer
             error={error}
             busy={fetching}
-            total={items.total}
-            itemCount={items.results.length}
-            onLoadMore={fetchItems}>
+            total={total}
+            itemCount={items.length}
+            onLoadMore={() => loadMore()}>
             <TableView
-                items={items.results}
+                items={items}
                 props={[
                     ["Name", "name", "name"],
                     ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
@@ -85,6 +87,12 @@ export const Default = (): any => {
                     </PopupMenu>
                 )}
             />
+
+            <div className="text-center">
+                <button type="button" className="btn btn-danger btn-sm" onClick={() => loadMore(true)}>
+                    Reset list
+                </button>
+            </div>
         </GrowableItemsContainer>
     );
 };

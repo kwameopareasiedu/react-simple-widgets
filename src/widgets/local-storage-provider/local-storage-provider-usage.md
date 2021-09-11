@@ -1,4 +1,4 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / LocalStorageProvider
 
 # LocalStorageProvider
 
@@ -38,7 +38,12 @@ import { useContext } from "react";
 import { LocalStorageProviderContext } from "react-simple-widgets";
 
 export function App() {
-    const { getItem, setItem, removeItem, clear } = useContext(LocalStorageProviderContext);
+    const { 
+        getItem, /* Retrieve an item from the local storage */
+        setItem, /* Store an item in the cache and local storage and rerender */
+        removeItem, /* Remove one or more items from the cache and local storage and rerender */
+        clear /* Clear all items stored with this provider from the cache and local storage rerender */
+    } = useContext(LocalStorageProviderContext);
 
     // Save a value to the provider store
     function saveValueInStore(key: string, value: any): void {
