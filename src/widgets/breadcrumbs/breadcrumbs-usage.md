@@ -1,9 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / Breadcrumbs
 
 # Breadcrumbs
 
-This widget provides breadcrumb styling for its `<a/>` children.
-Breadcrumbs is intrinsically a `<div/>` element and accepts all of its attributes.
+This widget provides breadcrumb styling for its `<a/>` children. `Breadcrumbs` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 

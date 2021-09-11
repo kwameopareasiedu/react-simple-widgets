@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / TimeField
 
 # TimeField
 
-This widget is a time picker form widget. TimeField is intrinsically a [TimePicker](../time-picker/time-picker-usage.md) widget and accepts all of its attributes.
+This widget is a time picker form widget. `TimeField` is intrinsically a [TimePicker](../time-picker/time-picker-usage.md) widget and accepts all of its attributes.
 
 ## Usage
 

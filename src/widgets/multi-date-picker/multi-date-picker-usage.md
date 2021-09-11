@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / MultiDatePicker
 
 # MultiDatePicker
 
-This widget allows you to select multiple calendar dates. MultiDatePicker is intrinsically a `div` element and accepts all of its attributes..
+This widget allows you to select multiple calendar dates. `MultiDatePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.0.0--beta--3-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-535.6%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.0.0--beta--4-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.1%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
@@ -24,10 +24,10 @@ yarn add --dev react-simple-widgets
 
 ## Peer Dependencies
 
-`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React](https://reactjs.org) and [Formik](https://formik.org/). Install these by running the following command:
+`React Simple Widgets` requires a few peer dependencies you must also have installed in your project. These are [React](https://reactjs.org), [React DOM](https://reactjs.org), [React Router DOM](https://reactrouter.com/web/guides/quick-start) and [Formik](https://formik.org/). Install these by running the following command:
 
 ```bash
-yarn add --dev react formik
+yarn add --dev react react-dom react-router-dom formik
 ```
 
 ## CSS Dependencies
@@ -76,7 +76,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 -   [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) - A WYSIWYG editor form field build on top of the [Quill](https://quilljs.com/) rich text editor
 
--   [PasswordField](src-old/form/password-field/usage.md) - A simple password (`<input type="password"/>`) form widget
+-   [PasswordField](src/widgets/password-field/password-field-usage.md) - A simple password (`<input type="password"/>`) form widget
 
 -   [DropdownField](src/widgets/dropdown-field/dropdown-field-usage.md) - A simple drop down (`<select/>`) form widget
 
@@ -84,7 +84,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 -   [SelectField](src/widgets/select-field/select-field-usage.md) - A select widget that allows a single selection from a list of options
 
--   [MultiSelectField](src/widgets/mult-select-field/mult-select-field-usage.md) - A select widget that allows multiple selections from a list of options
+-   [MultiSelectField](src/widgets/multi-select-field/multi-select-field-usage.md) - A select widget that allows multiple selections from a list of options
 
 -   [FileField](src/widgets/file-field/file-field-usage.md) - A form widget for the uploading files built on top of [FilePicker](src/widgets/file-picker/file-picker-usage.md)
 
@@ -123,6 +123,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 -   [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) - A hook that returns a object containing the URL search string parameters
 -   [useCountdown](src/utils/use-countdown/use-countdown-usage.md) - A hook which provides numeric countdown functionality
 -   [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) - A hook which provides the window width category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
+-   [useGrowableList](src/utils/use-growable-list/use-growable-list-usage.md) - A hook which manages the state of growing list. Used with [GrowableItemsContainer](src/widgets/growable-items-container/growable-items-container-usage.md) to provide a load-more mechanism for a growing list
 
 ## Utilities in this library
 

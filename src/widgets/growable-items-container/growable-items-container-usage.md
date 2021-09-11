@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / GrowableItemsContainer
 
 # GrowableItemsContainer
 
-This widget that wraps a **growing list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. GrowableItemsContainer is intrinsically a `<div/>`  element and accepts all of its attributes.
+This widget that wraps a **growing list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. `GrowableItemsContainer` is intrinsically a `div`  element and accepts all of its attributes.
 
 ## Usage
 

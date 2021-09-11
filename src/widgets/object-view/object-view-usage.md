@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / ObjectView
 
 # ObjectView
 
-This widget renders properties of an object in a table. ObjectView is intrinsically a `<table/>` and it accepts all of its attributes.
+This widget renders properties of an object in a table. `ObjectView` is intrinsically a `table` and it accepts all of its attributes.
 
 ## Usage
 

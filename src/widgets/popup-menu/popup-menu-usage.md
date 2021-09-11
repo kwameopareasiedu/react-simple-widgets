@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / PopupMenu
 
 # PopupMenu
 
-PopupMenu is a widget that shows a popup menu when the trigger button is clicked.
+This is a widget that shows a pop-up menu when the trigger button is clicked.
 
 ## Usage
 
@@ -45,4 +45,4 @@ import { PopupMenu } from "react-simple-widgets";
 
 > **A ```PopupMenu``` only renders the first two (2) children**. The first child must be the trigger button and the second should be the options menu displayed when the trigger button is clicked.
 
-> The PopupMenu also closes when the area around the options menu is clicked.
+> `PopupMenu` also closes when the area around the options menu is clicked or when the window is scrolled.

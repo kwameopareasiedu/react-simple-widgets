@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / MonthDatePicker
 
 # MonthDatePicker
 
-This widget allows you to select a calendar month. MonthDatePicker is intrinsically a `div` element and accepts all of its attributes.
+This widget allows you to select a calendar month. `MonthDatePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 

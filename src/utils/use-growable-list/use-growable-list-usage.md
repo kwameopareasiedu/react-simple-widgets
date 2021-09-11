@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / useGrowableList
 
 # useGrowableList
 
-This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of a growing list. This can be paired with the [GrowableItemsContainer](../../widgets/growable-items-container/growable-items-container.md) to provide a load-more mechanism for a particular list. The managed state are in the order:
+This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of a growing list. This can be paired with the [GrowableItemsContainer](../../widgets/growable-items-container/growable-items-container-usage.md) to provide a load-more mechanism for a particular list. The managed state are in the order:
 
 - List of items (`Array`)
 - Current page (`number`)

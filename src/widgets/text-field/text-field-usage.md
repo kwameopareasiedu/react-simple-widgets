@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / TextField
 
 # TextField
 
-This widget is a simple text input form widget. TextField is intrinsically an `<input/>` element and accepts all of its attributes.
+This widget is a simple text input form widget. `TextField` is intrinsically an `input` element and accepts all of its attributes.
 
 ## Usage
 

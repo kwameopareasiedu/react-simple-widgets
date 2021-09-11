@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { GrowableItemsContainer } from "./growable-items-container";
 import { TableView } from "../table-view/table-view";
 import { PopupMenu } from "../popup-menu/popup-menu";
-import moment from "moment";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import djs from "dayjs";
+
+djs.extend(advancedFormat);
 
 export default { title: "GrowableItemsContainer", component: GrowableItemsContainer };
 
@@ -64,7 +67,7 @@ export const Default = (): any => {
                 items={items.results}
                 props={[
                     ["Name", "name", "name"],
-                    ["Created at", item => moment(item.created_at).format("Do MMMM, YYYY"), "date"],
+                    ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
                     ["Unknown", "status", "status"],
                     ["Nested", "nested.value", "nested"],
                     ["Unknown nested", "nested.other_value", "other"]

@@ -1,4 +1,4 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / useQueryParams
 
 # useQueryParams
 
@@ -19,7 +19,11 @@ export function QueryParamsUsage() {
         console.log(qp);
         /* 
         	Query parameters have changed
-        	qp = { key1: value1, key2: value2, key3: value3 }
+        	qp = { 
+        		key1: value1, 
+        		key2: value2, 
+        		key3: value3 
+        	}
         */
     }, [qp]);
 

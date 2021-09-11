@@ -2,7 +2,7 @@
 
 # DialogProvider
 
-The `DialogProvider` provides a dialog API for your app. This widget renders dialogs on top of its children. This prevents any possible stacking context issues between the full page dialogs and components of your application (especially issues with any CSS grid you might have).
+The `DialogProvider` provides a dialog API for your app. This provider renders dialogs on top of its children. This prevents any possible stacking context issues between the full page dialogs and components of your application (especially issues with any CSS grid you might have).
 
 The following guide demonstrates how to use the `DialogProvider`.
 
@@ -78,7 +78,12 @@ export const App = () => {
             function (helper) {
                 return <MyDialog helper={helper} />;
             },
-            { size: DialogSize.SMALL /* DialogSize.SMALL, DialogSize.MEDIUM or DialogSize.WIDE. */ }
+            { 
+                size: DialogSize.SMALL, /* Dialog size: SMALL, MEDIUM, WIDE, FULL */
+                backgroundDismissible: false, /* Close if background is clicked. Defaults to false */
+                escapeDismissible: true, /* Close if escape key is pressed. Defaults to true */
+                onDismissed: () { /* Optional function to call after dialog is closed */ }
+            }
         );
     }
 
@@ -91,8 +96,6 @@ export const App = () => {
     );
 }
 ```
-
-
 
 ### Show a value-returning dialog
 
@@ -178,6 +181,6 @@ export const App = () => {
 
 ## Side Notes
 
-> Dialogs can be dismissed when the escape key is pressed. DialogProvider ensures that the top-most dialog receives the keyboard event first.
+> Dialogs can be dismissed when the escape key is pressed. `DialogProvider` ensures that the top-most dialog receives the keyboard event first.
 
-> DialogProvider only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the developer.
+> `DialogProvider` only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to the developer.

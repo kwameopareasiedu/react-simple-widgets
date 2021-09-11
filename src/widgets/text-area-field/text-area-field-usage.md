@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / TextAreaField
 
 # TextAreaField
 
-This widget is a text form widget. TextAreaField is intrinsically a `<textarea/>` element and accepts all of its attributes.
+This widget is a text form widget. `TextAreaField` is intrinsically a `textarea` element and accepts all of its attributes.
 
 ## Usage
 

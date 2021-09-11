@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / DatePicker
 
 # DatePicker
 
-This widget displays a popup calendar to select a single calendar date. DatePicker is intrinsically a `div` element and accepts all of its attributes.
+This widget displays a popup calendar to select a single calendar date. `DatePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 

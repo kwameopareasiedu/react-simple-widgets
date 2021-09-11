@@ -1,8 +1,8 @@
-[Home](../../../README.md)
+[Home](../../../README.md) / Loader
 
 # Loader
 
-This widget displays a rotating spinner icon. Loader it is intrinsically a `<div/>` element and accepts all its attributes.
+This widget displays a rotating spinner icon. `Loader` it is intrinsically a `div` element and accepts all its attributes.
 
 ## Usage
 
@@ -10,6 +10,7 @@ This widget displays a rotating spinner icon. Loader it is intrinsically a `<div
 import { Loader } from "react-simple-widgets";
 
 <Loader invert={invert} />
+
 <Loader>Hello world</Loader>
 ```
 
