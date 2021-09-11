@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.0.0--beta--4-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.1%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.0.0-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.1%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
@@ -33,14 +33,6 @@ yarn add --dev react react-dom react-router-dom formik
 ## CSS Dependencies
 
 `React Simple Widgets` also depends on [Bootstrap 5.1.0+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
-
-## Migrating
-
-**_See the [migration guide](MIGRATION-GUIDE-1-2.md) on how to upgrade from v1 to v2_**
-
-**_See the [migration guide](MIGRATION-GUIDE-2-3.md) on how to upgrade from v2 to v3_**
-
-**_See the [migration guide](MIGRATION-GUIDE-3-4.md) on how to upgrade from v3 to v4_**
 
 ## Widgets in the library
 
