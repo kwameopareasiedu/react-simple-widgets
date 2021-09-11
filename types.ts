@@ -335,7 +335,7 @@ export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>,
 
 /** MultiDateField */
 export interface MultiDateField
-    extends Omit<MultiDatePicker, "label" | "value"  | "onChange">,
+    extends Omit<MultiDatePicker, "label" | "value" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (dates: Array<string>) => void;
 }
@@ -348,7 +348,7 @@ export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>,
 
 /** MonthDateField */
 export interface MonthDateField
-    extends Omit<MonthDatePicker, "label" | "value"  | "onChange">,
+    extends Omit<MonthDatePicker, "label" | "value" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (date: string) => void;
 }
@@ -419,13 +419,13 @@ export type GrowableListOnLoadMore = (newItems: Array<any>, totalItems: number) 
 export type GrowableListOnLoadFailed = () => void;
 
 export type UseGrowableListState = [
-    Array<any>,
-    number,
-    number,
-    boolean,
-    GrowableListLoadMoreTrigger,
-    GrowableListOnLoadMore,
-    GrowableListOnLoadFailed
+    itemList: Array<any>,
+    currentPageNumber: number,
+    totalItemsInSource: number,
+    triggeredLoadMore: boolean,
+    loadMore: GrowableListLoadMoreTrigger,
+    onLoadMoreSuccess: GrowableListOnLoadMore,
+    onLoadMoreFailed: GrowableListOnLoadFailed
 ];
 
 export type UseGrowableList = () => UseGrowableListState;
