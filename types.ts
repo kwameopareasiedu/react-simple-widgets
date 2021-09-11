@@ -18,6 +18,7 @@ export interface Dialog {
 
 export interface DialogOptions {
     size?: DialogSize;
+    escapeDismissible?: boolean;
     backgroundDismissible?: boolean;
     onDismissed?: (returnValue?: any) => void;
 }

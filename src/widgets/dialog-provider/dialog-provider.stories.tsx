@@ -64,6 +64,23 @@ export const Default = (): any => {
         );
     };
 
+    const NonEscapeDismissibleDialog = ({ helper }: { helper: DialogHelper }): any => {
+        return (
+            <div className="card">
+                <div className="card-body">
+                    <p>
+                        Pressing the <code>Escape</code> key will not dismiss this dialog. Only clicking the button will
+                        dismiss it.
+                    </p>
+
+                    <button className="btn btn-secondary btn-sm" onClick={helper.dismiss}>
+                        Close dialog
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
     const Showcase = (): any => {
         const { showDialog } = useContext(DialogProviderContext);
 
@@ -89,6 +106,11 @@ export const Default = (): any => {
 
         const openBackgroundDismissibleDialog = (): void => {
             showDialog(() => <BackgroundDismissibleDialog />, { backgroundDismissible: true });
+        };
+
+        const openNonEscapeDismissibleDialog = (): void => {
+            openBackgroundDismissibleDialog();
+            showDialog(helper => <NonEscapeDismissibleDialog helper={helper} />, { escapeDismissible: false });
         };
 
         return (
@@ -119,6 +141,10 @@ export const Default = (): any => {
                 <span>&nbsp;</span>
                 <button className="btn btn-warning btn-sm" onClick={openBackgroundDismissibleDialog}>
                     Open background dismissible dialog
+                </button>
+                <span>&nbsp;</span>
+                <button className="btn btn-secondary btn-sm" onClick={openNonEscapeDismissibleDialog}>
+                    Open non-escape dismissible dialog
                 </button>
             </div>
         );
