@@ -2,6 +2,9 @@
 
 # Change Log
 
+- `4.1.0`
+  - Added optional `builder` attribute to [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) which allows for a custom confirmation dialog
+
 - `4.0.0`
   - **Major breaking changes across all widgets and widget props/attributes. See respective widget documentation to see what's changed**
   - Removed `TransitionProvider`. Use `<Link/>` from [React Router DOM](https://www.npmjs.com/package/react-router-dom) instead

@@ -10,6 +10,7 @@ export const ConfirmButton = ({
     children,
     onConfirm,
     onCancel,
+    builder,
     className,
     onClick: _onClick,
     ...rest
@@ -18,7 +19,10 @@ export const ConfirmButton = ({
 
     const confirm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
         showDialog(
-            helper => <ConfirmButtonDialog helper={helper} message={message} confirmButtonClassName={className} />,
+            helper => {
+                if (builder) return builder(helper, message);
+                return <ConfirmButtonDialog helper={helper} message={message} confirmButtonClassName={className} />;
+            },
             {
                 backgroundDismissible: true,
                 onDismissed: (proceed: boolean): void => {

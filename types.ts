@@ -170,9 +170,12 @@ export interface ConfirmButtonDialog {
     helper: DialogHelper;
 }
 
+export type ConfirmButtonDialogBuilder = (helper: DialogHelper, message: any) => JSX.Element;
+
 export interface ConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     message?: any;
     busy?: boolean;
+    builder?: ConfirmButtonDialogBuilder;
     onCancel?: () => void;
     onConfirm: () => void;
 }
