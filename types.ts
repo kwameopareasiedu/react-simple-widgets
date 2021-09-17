@@ -365,7 +365,7 @@ export interface TimePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 
 /** TimeField */
 export interface TimeField
-    extends Omit<TimePicker, "label" | "onChange">,
+    extends Omit<TimePicker, "label" | "value" | "onChange">,
         Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
     onChange?: (time: string) => void;
 }
