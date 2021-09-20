@@ -1,12 +1,14 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.1.0-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.1.2-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
 To find out if this library is right for you, we've compiled the [Storybook](https://storybook.js.org/) samples of all widgets in this library. [Click here](https://kwameopareasiedu.github.io/react-simple-widgets/) to test them out to seem if this library offers what you want before installing it in your project.
 
 ## Supporting
+
+[![](src/assets/support-us-on-patreon.png)](https://www.patreon.com/kwameopareasiedu)
 
 `React Simple Widgets` is currently maintained solely by the owner and will **always be free and open-source**. However, if you find this library helpful to your projects and would like to support the development, you can do so via my [Patreon](https://www.patreon.com/kwameopareasiedu) account. 
 

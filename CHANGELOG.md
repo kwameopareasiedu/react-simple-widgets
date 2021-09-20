@@ -2,6 +2,8 @@
 
 # Change Log
 
+- `4.1.2`
+  - Modified dismiss button in [FlashProvider](src/flash-provider/flash-provider-usage.md) dialog to have a 100% width
 - `4.1.1`
   - Omitted `value` from [TimeField](src/widgets/time-field/time-field-usage.md) type
 - `4.1.0`
