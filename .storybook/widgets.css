@@ -6,9 +6,6 @@ body {
     --rsw-secondary-color: #b3b3b3;
     --rsw-transition-duration: 0.15s;
 
-    /* DialogProvider vars */
-    --rsw-dialog-view-vertical-margin: 1.2rem;
-
     /* FlashProvider vars */
     --rsw-flash-view-default-theme-color: #e3e3e3;
     --rsw-flash-view-error-theme-color: #ff5555;

@@ -2,6 +2,9 @@
 
 # Change Log
 
+- `4.1.3`
+  - Fixed horizontal margin in [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) `DialogView` child
+  - Deleted `--rsw-dialog-view-vertical-margin` CSS variable
 - `4.1.2`
   - Modified dismiss button in [FlashProvider](src/flash-provider/flash-provider-usage.md) dialog to have a 100% width
 - `4.1.1`

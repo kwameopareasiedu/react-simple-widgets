@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.1.2-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-536.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.1.3-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-535.8%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
@@ -34,7 +34,7 @@ yarn add --dev react react-dom react-router-dom formik
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap 5.1.0+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
+`React Simple Widgets` also depends on [Bootstrap 5.1.1+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
 
 ## Widgets in the library
 
@@ -115,8 +115,11 @@ Here's a summary of the widgets in `React Simple Widgets`
 ## Hooks in this library
 
 -   [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) - A hook that returns a object containing the URL search string parameters
+
 -   [useCountdown](src/utils/use-countdown/use-countdown-usage.md) - A hook which provides numeric countdown functionality
+
 -   [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) - A hook which provides the window width category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
+
 -   [useGrowableList](src/utils/use-growable-list/use-growable-list-usage.md) - A hook which manages the state of growing list. Used with [GrowableItemsContainer](src/widgets/growable-items-container/growable-items-container-usage.md) to provide a load-more mechanism for a growing list
 
 ## Utilities in this library
@@ -141,7 +144,6 @@ The following variables are widget specific
 
 | CSS variable                           | Description                                                  | Default value |
 | -------------------------------------- | ------------------------------------------------------------ | ------------- |
-| `--rsw-dialog-view-vertical-margin`    | Controls the top and bottom margins of dialogs created by the [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) widget | `1.2rem`      |
 | `--rsw-flash-view-error-theme-color`   | Controls the theme color of error flash message dialogs created by the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) widget | `#ff5555`     |
 | `--rsw-flash-view-warning-theme-color` | Controls the theme color of warning flash message dialogs created by the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) widget | `#ffdd55`     |
 | `--rsw-flash-view-info-theme-color`    | Controls the theme color of information flash message dialogs created by the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) widget | `#55ddff`     |
@@ -162,6 +164,7 @@ To execute the storybook, follow these steps:
 
 -   [Kwame Opare Asiedu](https://github.com/kwameopareasiedu/)
 
-## Changelog
+## Change Log
 
-[View changelog](CHANGELOG.md)
+[View change log](CHANGELOG.md)
+
