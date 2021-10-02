@@ -2,6 +2,9 @@
 
 # Change Log
 
+- `4.1.4	
+  - Fixed [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) interface extension. [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) correctly extends [BusyButton](src/widgets/busy-button/busy-button-usage.md)
+  - Removed horizontal borders from [TableView](src/widgets/table-view/table-view-usage.md)
 - `4.1.3`
   - Fixed horizontal margin in [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) `DialogView` child
   - Deleted `--rsw-dialog-view-vertical-margin` CSS variable

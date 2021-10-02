@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-4.1.3-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-535.8%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-4.1.4-blue) ![](https://img.shields.io/badge/react-v17.0.2+-blue) ![](https://img.shields.io/badge/minified%20size-535.7%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more. 
 
