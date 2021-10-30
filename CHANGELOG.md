@@ -2,6 +2,9 @@
 
 # Change Log
 
+- `4.2.1`
+  - Added `set` and `unset` functions to qp object from [useQueryParams](src/utils/use-query-params/use-query-params-usage.md)
+  - Forwarded `disabled` and `readOnly` attributes to all form widgets
 - `4.1.4	
   - Fixed [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) interface extension. [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) correctly extends [BusyButton](src/widgets/busy-button/busy-button-usage.md)
   - Removed horizontal borders from [TableView](src/widgets/table-view/table-view-usage.md)
