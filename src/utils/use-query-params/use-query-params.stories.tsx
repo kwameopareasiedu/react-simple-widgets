@@ -14,7 +14,17 @@ export const Default = (): any => {
 
         return (
             <div>
-                <p className="mb-0">Open the console to view the query parameters</p>
+                <p className="mb-4">Open the console to view the query parameters</p>
+
+                <div className="d-flex align-items-center mb-4">
+                    <button className="btn btn-primary btn-sm me-2" onClick={() => qp.set("foo", "bar")}>
+                        Add query parameter
+                    </button>
+
+                    <button className="btn btn-danger btn-sm me-2" onClick={() => qp.unset("foo")}>
+                        Remove query parameter
+                    </button>
+                </div>
             </div>
         );
     };

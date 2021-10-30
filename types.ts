@@ -392,7 +392,13 @@ export interface FileField
 }
 
 /** UseQueryParams */
-export type UseQueryParams = () => any;
+export type UseQueryParamsState = {
+    set: (key: string, value: string) => void;
+    unset: (key: string) => void;
+    [k: string]: any;
+};
+
+export type UseQueryParams = () => UseQueryParamsState;
 
 /** UseCountdown */
 export type UseCountdownState = [number, boolean, () => void, () => void];
