@@ -2,7 +2,7 @@ import "./select-option.scss";
 import React from "react";
 import { SelectOption as ISelectOption } from "../../../types";
 
-export const SelectOption = ({ label, selected, onSelect, multi, onFocus }: ISelectOption) => {
+export const SelectOption = ({ label, selected, onSelect, multi, onFocus, ...rest }: ISelectOption) => {
     const className = (): string => {
         const classes = ["react-simple-widget", "select-option"];
         if (selected) classes.push("selected");
@@ -11,7 +11,13 @@ export const SelectOption = ({ label, selected, onSelect, multi, onFocus }: ISel
 
     return (
         <label className={className()}>
-            <input type={!multi ? "radio" : "checkbox"} checked={selected} onFocus={onFocus} onChange={onSelect} />
+            <input
+                type={!multi ? "radio" : "checkbox"}
+                checked={selected}
+                onFocus={onFocus}
+                onChange={onSelect}
+                {...rest}
+            />
             <span>{label}</span>
         </label>
     );

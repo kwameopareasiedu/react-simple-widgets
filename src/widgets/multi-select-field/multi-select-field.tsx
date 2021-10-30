@@ -10,6 +10,8 @@ export const MultiSelectField = ({
     label,
     options,
     inline,
+    disabled,
+    readOnly,
     className: _className,
     onChange,
     ...rest
@@ -50,6 +52,8 @@ export const MultiSelectField = ({
                                         onFocus={() => {
                                             setTouched(true);
                                         }}
+                                        readOnly={readOnly}
+                                        disabled={disabled}
                                         multi
                                     />
                                 ))}

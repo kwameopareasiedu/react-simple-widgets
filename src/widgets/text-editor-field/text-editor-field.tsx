@@ -35,6 +35,7 @@ export const TextEditorField = ({
                                         ["clean"]
                                     ]
                                 }}
+                                readOnly={disabled}
                                 onChange={content => {
                                     const div = document.createElement("div");
                                     div.innerHTML = content;

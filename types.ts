@@ -270,7 +270,7 @@ export interface CheckboxField
 }
 
 /** SelectField */
-export interface SelectOption {
+export interface SelectOption extends AllHTMLAttributes<HTMLInputElement> {
     label: string;
     multi?: boolean;
     selected?: boolean;
@@ -284,6 +284,8 @@ export interface SelectField
     name: string;
     label?: string;
     inline?: boolean;
+    readOnly?: boolean;
+    disabled?: boolean;
     options: Array<[any, any]>;
     onChange?: (value: any) => void;
 }
@@ -295,6 +297,8 @@ export interface MultiSelectField
     name: string;
     label?: string;
     inline?: boolean;
+    readOnly?: boolean;
+    disabled?: boolean;
     options: Array<[any, any]>;
     onChange?: (value: Array<any>) => void;
 }

@@ -10,6 +10,8 @@ export const SelectField = ({
     label,
     options,
     inline,
+    disabled,
+    readOnly,
     className: _className,
     onChange,
     ...rest
@@ -25,7 +27,7 @@ export const SelectField = ({
         <div className={className()} {...rest}>
             <CustomField name={name}>
                 {({ value, error, touched, setValue, setTouched }): any => (
-                    <FieldDecoration label={label} error={touched && error}>
+                    <FieldDecoration label={label} error={touched && error} disabled={disabled}>
                         {() => (
                             <Fragment>
                                 {options.map(([optionLabel, optionValue]) => (
@@ -33,6 +35,8 @@ export const SelectField = ({
                                         key={optionValue}
                                         label={optionLabel}
                                         selected={value === optionValue}
+                                        disabled={disabled}
+                                        readOnly={readOnly}
                                         onSelect={() => {
                                             setValue(optionValue);
                                             if (onChange) onChange(optionValue);
