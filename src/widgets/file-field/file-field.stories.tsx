@@ -29,7 +29,7 @@ export const Default = (): any => {
                             <div className="mb-4">
                                 <FileField
                                     name="field"
-                                    label="Month date field"
+                                    label="File field"
                                     placeholder="Click to select date"
                                     helper={`${formik.values.field.length} of 6`}
                                     leading={<i className="fa fa-calendar me-1" />}
