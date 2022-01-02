@@ -16,27 +16,33 @@ export const Default = (): any => {
         return (
             <div>
                 <button
-                    className="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm me-2 mb-2"
                     onClick={(): void => flashError("Error", <i>{message}</i>, () => alert("Dismissed"))}>
                     Flash error
                 </button>
-                <span>&nbsp;</span>
+
                 <button
-                    className="btn btn-warning btn-sm"
+                    className="btn btn-warning btn-sm me-2 mb-2"
                     onClick={(): void => flashWarning("Warning", <strong>{message}</strong>, () => alert("Dismissed"))}>
                     Flash warning
                 </button>
-                <span>&nbsp;</span>
+
                 <button
-                    className="btn btn-info btn-sm"
+                    className="btn btn-info btn-sm me-2 mb-2"
                     onClick={(): void => flashInfo("Info", <u>{message}</u>, () => alert("Dismissed"))}>
                     Flash info
                 </button>
-                <span>&nbsp;</span>
+
                 <button
-                    className="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm me-2 mb-2"
                     onClick={(): void => flashSuccess("Success", message, () => alert("Dismissed"))}>
                     Flash success
+                </button>
+
+                <button
+                    className="btn btn-light btn-sm me-2 mb-2"
+                    onClick={(): void => flashSuccess("Success", message, null, { closeTimerMs: 12000 })}>
+                    Flash (12s close timer)
                 </button>
             </div>
         );

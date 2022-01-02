@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { FlashType, FlashProvider as IFlashProvider } from "../../../types";
+import { FlashType, FlashProvider as IFlashProvider, FlashOptionalArgs } from "../../../types";
 import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
@@ -18,8 +18,11 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
         title: string,
         message: any,
         onFlashDismissed?: () => void,
-        btnText?: string
+        optionalArgs?: FlashOptionalArgs
     ): void => {
+        const btnText = optionalArgs?.btnText;
+        const closeTimer = optionalArgs?.closeTimerMs;
+
         showDialog(
             helper => {
                 if (builder) {
@@ -31,7 +34,8 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
                             if (onFlashDismissed) onFlashDismissed();
                             helper.dismiss();
                         },
-                        btnText
+                        btnText,
+                        closeTimerMs: closeTimer
                     });
                 } else if ((window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]) {
                     return (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]({
@@ -42,7 +46,8 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
                             if (onFlashDismissed) onFlashDismissed();
                             helper.dismiss();
                         },
-                        btnText
+                        btnText,
+                        closeTimer
                     });
                 } else {
                     return (
@@ -51,6 +56,7 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
                             title={title}
                             message={message}
                             buttonText={btnText}
+                            closeTimerMs={closeTimer}
                             onDismiss={helper.dismiss}
                         />
                     );
@@ -60,20 +66,40 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
         );
     };
 
-    const flashError = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void => {
-        flash(FlashType.ERROR, title, message, onFlashDismissed, btnText);
+    const flashError = (
+        title: string,
+        message?: any,
+        onFlashDismissed?: () => void,
+        optionalArgs?: FlashOptionalArgs
+    ): void => {
+        flash(FlashType.ERROR, title, message, onFlashDismissed, optionalArgs);
     };
 
-    const flashWarning = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void => {
-        flash(FlashType.WARNING, title, message, onFlashDismissed, btnText);
+    const flashWarning = (
+        title: string,
+        message?: any,
+        onFlashDismissed?: () => void,
+        optionalArgs?: FlashOptionalArgs
+    ): void => {
+        flash(FlashType.WARNING, title, message, onFlashDismissed, optionalArgs);
     };
 
-    const flashInfo = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void => {
-        flash(FlashType.INFO, title, message, onFlashDismissed, btnText);
+    const flashInfo = (
+        title: string,
+        message?: any,
+        onFlashDismissed?: () => void,
+        optionalArgs?: FlashOptionalArgs
+    ): void => {
+        flash(FlashType.INFO, title, message, onFlashDismissed, optionalArgs);
     };
 
-    const flashSuccess = (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string): void => {
-        flash(FlashType.SUCCESS, title, message, onFlashDismissed, btnText);
+    const flashSuccess = (
+        title: string,
+        message?: any,
+        onFlashDismissed?: () => void,
+        optionalArgs?: FlashOptionalArgs
+    ): void => {
+        flash(FlashType.SUCCESS, title, message, onFlashDismissed, optionalArgs);
     };
 
     return (

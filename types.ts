@@ -53,9 +53,22 @@ export interface Flash {
     type: FlashType;
     title: string;
     message: any;
-    onFlashDismissed?: () => void;
     btnText?: string;
+    closeTimerMs?: number;
+    onFlashDismissed?: () => void;
 }
+
+export interface FlashOptionalArgs {
+    btnText?: string;
+    closeTimerMs?: number;
+}
+
+export type FlashFunction = (
+    title: string,
+    message?: any,
+    onFlashDismissed?: () => void,
+    optionalArgs?: FlashOptionalArgs
+) => void;
 
 export type FlashViewBuilder = (flash: Flash) => JSX.Element;
 
@@ -64,14 +77,15 @@ export interface FlashView {
     title: string;
     message: string;
     buttonText: string;
+    closeTimerMs?: number;
     onDismiss: () => void;
 }
 
 export interface FlashProviderContext {
-    flashError: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashWarning: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashInfo: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
-    flashSuccess: (title: string, message?: any, onFlashDismissed?: () => void, btnText?: string) => void;
+    flashError: FlashFunction;
+    flashWarning: FlashFunction;
+    flashInfo: FlashFunction;
+    flashSuccess: FlashFunction;
 }
 
 export interface FlashProvider {

@@ -43,6 +43,14 @@
             box-shadow: none;
         }
     }
+
+    .flash-view-close-timer {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
 }
 
 .flash-view.react-simple-widget.flash-state-error {
