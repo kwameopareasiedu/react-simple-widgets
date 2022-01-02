@@ -1,7 +1,17 @@
-[Home](README.md)
+[Home](README.md) / Change Log
 
 # Change Log
 
+- `5.0.0`
+  - **Breaking changes**
+  - Updated [React Router DOM](https://github.com/remix-run/react-router#readme) to v6
+  - Added `validator` attribute to [Calendar](src/widgets/calendar/calendar-usage.md) widget
+  - Added `validator` attribute to [DatePicker](src/widgets/date-picker/date-picker-usage.md) widget
+  - Added `validator` attribute to [MultiDatePicker](src/widgets/multi-date-picker/multi-date-picker-usage.md) widget
+  - Added `validator` attribute to [MonthDatePicker](src/widgets/month-date-picker/month-date-picker-usage.md) widget
+  - Added auto-close feature to [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) framework
+  - Changed order of arguments in all flash functions provided by [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) framework
+  - Added documentation on `set` and `unset` functions in [useQueryParams](src/utils/use-query-params/use-query-params-usage.md)
 - `4.2.1`
   - Added `set` and `unset` functions to qp object from [useQueryParams](src/utils/use-query-params/use-query-params-usage.md)
   - Forwarded `disabled` and `readOnly` attributes to all form widgets

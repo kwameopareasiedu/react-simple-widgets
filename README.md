@@ -16,6 +16,10 @@ The funds would be used to get an active team of developers on the project and s
 
 If you love the library, consider leaving a star on the project page on [Github](https://github.com/kwameopareasiedu/react-simple-widgets).
 
+## Migrating
+
+> To upgrade from version 4.x.x to 5.0.0, use [this migration guide](MIGRATION-4-5.md).
+
 ## Installing
 
 Install the latest version of `React Simple Widgets` by running the following command:

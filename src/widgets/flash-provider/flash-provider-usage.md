@@ -66,6 +66,12 @@ export function App() {
                 onClick={(): void => flashSuccess("Success", <u>{message}</u>, () => alert("Success"))}>
                 Flash success
             </button>
+
+            <button
+                className="btn btn-light btn-sm me-2 mb-2"
+                onClick={(): void => flashSuccess("Auto Close Flash", "This flash auto-closes after 12s", null, { closeTimerMs: 12000 })}>
+                Flash (12s close timer)
+            </button>
         </div>
     );
 }
@@ -85,9 +91,17 @@ Each flash function (`flashError`, `flashWarning`, `flashInfo` and `flashSuccess
 
   If specified, this function is called when the flash message is dismissed.
 
-- `btnText?: string`
+- `optionalArgs: { btnText?: string, closeTimerMs?: number }`
 
-  A custom button text to show on the dismiss button
+  Optional arguments for default flash view
+
+  - `btnText?: string`
+
+    A custom button text to show on the dismiss button
+
+  - `closeTimerMs?: number`
+
+    Optional auto-close timer in milliseconds. If specified, the flash view will auto close after `closeTimerMs` elapses
 
 ## Custom Flash Dialogs
 
@@ -129,3 +143,11 @@ As seen in the example above, the `builder` method is passed the `flash` object 
 - `btnText?: string`
 
   The dismiss button string. Defaults to "Dismissed"
+
+- `closeTimerMs?: number`
+
+  Optional auto-close timer in milliseconds. If specified, the flash view will auto close after `closeTimerMs` elapses
+
+  
+
+  
