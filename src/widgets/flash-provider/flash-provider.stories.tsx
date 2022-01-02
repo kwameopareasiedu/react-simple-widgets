@@ -41,7 +41,11 @@ export const Default = (): any => {
 
                 <button
                     className="btn btn-light btn-sm me-2 mb-2"
-                    onClick={(): void => flashSuccess("Success", message, null, { closeTimerMs: 12000 })}>
+                    onClick={(): void =>
+                        flashSuccess("Auto Close Flash", "This flash auto-closes after 12s", null, {
+                            closeTimerMs: 12000
+                        })
+                    }>
                     Flash (12s close timer)
                 </button>
             </div>
