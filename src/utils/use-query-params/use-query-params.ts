@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { UseQueryParams, UseQueryParamsState } from "../../../types";
 
 export const useQueryParams: UseQueryParams = (): UseQueryParamsState => {
     const MODIFICATION_FN_NAMES = ["set", "unset"];
     const location = useLocation();
-    const { push } = useHistory();
+    const navigate = useNavigate();
 
     const qs2qp = (search: string): any => {
         const parts = search.substring(1).split("&");
@@ -58,7 +58,7 @@ export const useQueryParams: UseQueryParams = (): UseQueryParamsState => {
         const qs = qp2qs(qp);
 
         if (location.search !== qs) {
-            push(qs);
+            navigate(qs);
         }
     }, [qp]);
 
