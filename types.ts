@@ -317,6 +317,7 @@ export interface Calendar extends Omit<AllHTMLAttributes<HTMLDivElement>, "onCha
     initialDate: string;
     isDateOutlined?: (year: number, month: number, day: number) => boolean;
     isDateActive?: (year: number, month: number, day: number) => boolean;
+    validator?: (date: string) => string;
     onChange: (date: string) => void;
 }
 
@@ -324,6 +325,7 @@ export interface Calendar extends Omit<AllHTMLAttributes<HTMLDivElement>, "onCha
 export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     value: string;
     displayFormat?: string;
+    validator?: (date: string) => string;
     onChange: (date: string) => void;
 }
 
@@ -338,6 +340,7 @@ export interface DateField
 export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     value: Array<string>;
     displayFormat?: string;
+    validator?: (date: string) => string;
     onChange: (dates: Array<string>) => void;
 }
 
@@ -351,6 +354,7 @@ export interface MultiDateField
 /** MonthDatePicker */
 export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
     value: string;
+    validator?: (date: string) => string;
     onChange: (date: string) => void;
 }
 

@@ -11,9 +11,16 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 djs.extend(arraySupport);
 djs.extend(advancedFormat);
 
-export const MonthDatePicker = ({ value, className: _className, onChange, ...rest }: IMonthDatePicker): JSX.Element => {
+export const MonthDatePicker = ({
+    value,
+    className: _className,
+    validator,
+    onChange,
+    ...rest
+}: IMonthDatePicker): JSX.Element => {
     const [displayYear, setDisplayYear] = useState(dateYear(value));
     const [displayMonth, setDisplayMonth] = useState(dateMonth(value));
+    const [error, setError] = useState(null);
 
     const className = (): string => {
         const classes = ["react-simple-widget", "month-date-picker"];
@@ -79,12 +86,22 @@ export const MonthDatePicker = ({ value, className: _className, onChange, ...res
                                     className={monthBtnClassName(monthIndex === displayMonth)}
                                     onClick={() => {
                                         setDisplayMonth(monthIndex);
+
+                                        if (validator) {
+                                            const selectedDate = djs([displayYear, monthIndex, 1]).format("YYYY-MM-DD");
+                                            const error = validator(selectedDate);
+                                            if (error) return setError(error);
+                                            else setError(null);
+                                        } else setError(null);
+
                                         closePopup();
                                     }}>
                                     {month.substring(0, 3)}
                                 </button>
                             ))}
                         </div>
+
+                        {error && <div className="month-date-picker-error">{error}</div>}
                     </div>
                 </div>
             )}

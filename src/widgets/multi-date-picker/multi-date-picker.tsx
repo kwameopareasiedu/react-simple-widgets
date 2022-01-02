@@ -14,6 +14,7 @@ export const MultiDatePicker = ({
     value: _dates,
     className: _className,
     displayFormat,
+    validator,
     onChange,
     ...rest
 }: IMultiDatePicker): JSX.Element => {
@@ -55,6 +56,7 @@ export const MultiDatePicker = ({
                         initialDate={dates[0] || undefined}
                         isDateOutlined={isDateOutlined}
                         isDateActive={isDateActive}
+                        validator={validator}
                         onChange={date => {
                             if (!dates.includes(date)) {
                                 setDates([...dates, date]);

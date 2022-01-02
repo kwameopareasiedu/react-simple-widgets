@@ -100,4 +100,14 @@
             padding: 6px 10px;
         }
     }
+
+    .calendar-error {
+        text-align: center;
+        margin: 0;
+        padding: 12px;
+        font-size: 85%;
+        font-weight: bold;
+        color: var(--rsw-error-color);
+        border-top: 1px solid #e3e3e3;
+    }
 }

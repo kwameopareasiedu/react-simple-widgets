@@ -11,10 +11,11 @@ djs.extend(advancedFormat);
 
 export const DatePicker = ({
     value,
-    onChange,
+    validator,
     className: _className,
     displayFormat,
     placeholder,
+    onChange,
     ...rest
 }: IDatePicker): JSX.Element => {
     const className = (): string => {
@@ -35,6 +36,7 @@ export const DatePicker = ({
                     className="d-inline-block w-auto"
                     isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === value}
                     isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(value, "YYYY-MM-DD").date()}
+                    validator={validator}
                     onChange={date => {
                         onChange(date);
                         closePopup();

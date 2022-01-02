@@ -11,6 +11,7 @@ export const Calendar = ({
     initialDate,
     isDateActive,
     isDateOutlined,
+    validator,
     onChange,
     className: _className,
     ...rest
@@ -21,6 +22,7 @@ export const Calendar = ({
     const [daysInMonth, setDaysInMonth] = useState(djs([displayYear, displayMonth, displayDay]).daysInMonth());
     const [monthDayOffset, setMonthDayOffset] = useState(dateMonthDayOffset(displayYear, displayMonth));
     const [isCtrlPressed, setIsCtrlPressed] = useState(false);
+    const [error, setError] = useState(null);
 
     const className = (): string => {
         const classes = ["react-simple-widget", "calendar"];
@@ -37,8 +39,16 @@ export const Calendar = ({
     };
 
     const selectDisplayDay = (day: number): void => {
+        const selectedDate = djs([displayYear, displayMonth, day]).format("YYYY-MM-DD");
+
+        if (validator) {
+            const error = validator(selectedDate);
+            if (error) return setError(error);
+            else setError(null);
+        } else setError(null);
+
         setDisplayDay(day);
-        onChange(djs([displayYear, displayMonth, day]).format("YYYY-MM-DD"));
+        onChange(selectedDate);
     };
 
     const resetDisplayDate = (): void => {
@@ -118,7 +128,7 @@ export const Calendar = ({
             <div className="calendar-days">
                 {days.map(day => (
                     <div key={day} className="weekday">
-                        {day.substr(0, 2)}
+                        {day.substring(0, 2)}
                     </div>
                 ))}
 
@@ -142,6 +152,8 @@ export const Calendar = ({
                         );
                     })}
             </div>
+
+            {error && <p className="calendar-error">{error}</p>}
         </div>
     );
 };

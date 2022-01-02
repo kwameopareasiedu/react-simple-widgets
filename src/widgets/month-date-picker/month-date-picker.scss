@@ -42,4 +42,14 @@
             font-weight: bold;
         }
     }
+
+    .month-date-picker-error {
+        text-align: center;
+        margin-top: 12px;
+        padding-top: 12px;
+        font-size: 85%;
+        font-weight: bold;
+        color: var(--rsw-error-color);
+        border-top: 1px solid #e3e3e3;
+    }
 }

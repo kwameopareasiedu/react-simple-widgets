@@ -14,6 +14,7 @@ import { Calendar } from "react-simple-widgets";
     initialDate={initialDate}
     isDateOutlined={isDateOutlined}
     isDateActive={isDateActive}
+    validator={validator}
     onChange={onChange}
 />
 ```
@@ -30,6 +31,10 @@ import { Calendar } from "react-simple-widgets";
 
     During render, this function is called for every calendar day in the month. This function should return true if the calendar day should be made active.
 
+- `validator?: (date: string) => string`
+
+  If specified, the selected date is passed to this function to validate. This function should return a string error message or null if no error. If an error message is returned, `onChange` is not called with the selected date.
+  
 - `onChange: (date: string) => void`
 
   This function is called with the selected date when the calendar date is clicked on. The date has the format `YYYY-MM-DD`.
