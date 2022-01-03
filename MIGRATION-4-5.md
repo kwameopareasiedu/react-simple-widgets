@@ -40,9 +40,9 @@ flashSuccess (
     message: string, 
     onFlashDismissed: () => void, 
     optionalArgs?: {
-    	btnText?: string,
+        btnText?: string,
         closeTimerMs: number
-	}
+    }
 );
 
 // This goes for the flashInfo(), flashWarning() and flashError() functions also
