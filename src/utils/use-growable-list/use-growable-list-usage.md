@@ -17,45 +17,45 @@ This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of a gr
 import { useGrowableList, GrowableItemsContainer } from "react-simple-widgets";
 
 export function CountdownUsage() {
-    const [ items, page, total, triggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed ] = useGrowableList();
+  const [items, page, total, triggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed] = useGrowableList();
 
-    return (
-    	<GrowableItemsContainer
-            error={error}
-            busy={fetching}
-            total={total}
-            itemCount={items.length}
-            onLoadMore={() => loadMore(resetPage)}>
-            /* Render growing list here  */
-        </GrowableItemsContainer>
-    );
+  return (
+    <GrowableItemsContainer
+      error={error}
+      busy={fetching}
+      total={total}
+      itemCount={items.length}
+      onLoadMore={() => loadMore(resetPage)}>
+      /* Render growing list here */
+    </GrowableItemsContainer>
+  );
 }
 ```
 
--   `items: Array<any>`
+- `items: Array<any>`
 
-    The growing list of items
+  The growing list of items
 
--   `page: number`
+- `page: number`
 
-    The current page of items
+  The current page of items
 
 - `total: number`
 
   The total number of items to be expected from the data source
 
--   `triggered: boolean`
+- `triggered: boolean`
 
-    When a load-more is triggered, this state variable changes. *Use this in a `useEffect` to trigger a fetch*
+  When a load-more is triggered, this state variable changes. _Use this in a `useEffect` to trigger a fetch_
 
--   `loadMore: (resetPage?: boolean) => void`
+- `loadMore: (resetPage?: boolean) => void`
 
-    Call this function to trigger a load more. If you want to reset the page number of the data fetch, set `resetPage=true` 
-    
--   `onLoadMoreSuccess: (newItems: Array<any>, totalItems: number) => void`
+  Call this function to trigger a load more. If you want to reset the page number of the data fetch, set `resetPage=true`
 
-    Call this function with the `newItems` list returned from the data source as well as the `totalItems` count
-    
--   `onLoadMoreFailed: () => void`
+- `onLoadMoreSuccess: (newItems: Array<any>, totalItems: number) => void`
 
-    Call this function if the app failed to fetch the new items from the data source
+  Call this function with the `newItems` list returned from the data source as well as the `totalItems` count
+
+- `onLoadMoreFailed: () => void`
+
+  Call this function if the app failed to fetch the new items from the data source

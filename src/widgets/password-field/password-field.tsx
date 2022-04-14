@@ -6,28 +6,28 @@ import HiddenIcon from "../../assets/hide.svg";
 import VisibleIcon from "../../assets/eye.svg";
 
 export const PasswordField = ({ ...rest }: IPasswordField): any => {
-    const [passwordVisible, setPasswordVisible] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
-    const inputType = (): string => {
-        if (passwordVisible) return "text";
-        return "password";
-    };
+  const inputType = (): string => {
+    if (passwordVisible) return "text";
+    return "password";
+  };
 
-    return (
-        <div className="react-simple-widget password-field">
-            <TextField
-                {...rest}
-                type={inputType()}
-                trailing={
-                    <button type="button" className="toggle-btn">
-                        <img
-                            alt="Visibility"
-                            src={passwordVisible ? HiddenIcon : VisibleIcon}
-                            onClick={(): void => setPasswordVisible(!passwordVisible)}
-                        />
-                    </button>
-                }
+  return (
+    <div className="react-simple-widget password-field">
+      <TextField
+        {...rest}
+        type={inputType()}
+        trailing={
+          <button type="button" className="toggle-btn">
+            <img
+              alt="Visibility"
+              src={passwordVisible ? HiddenIcon : VisibleIcon}
+              onClick={(): void => setPasswordVisible(!passwordVisible)}
             />
-        </div>
-    );
+          </button>
+        }
+      />
+    </div>
+  );
 };

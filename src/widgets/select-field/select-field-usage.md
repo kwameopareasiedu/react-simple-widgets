@@ -9,31 +9,25 @@ This widget is a form widget which allows the user select value(s) from a list o
 ```jsx
 import { SelectField } from "react-simple-widgets";
 
-<SelectField
-    name={name}
-    label={label}
-    inline={inlne}
-    options={options}
-    onChange={onChange}
-/>
+<SelectField name={name} label={label} inline={inlne} options={options} onChange={onChange} />;
 ```
 
--   `name: string`
+- `name: string`
 
-    The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
+  The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
 
 - `label?: string`
 
   See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
--   `inline?: boolean`
+- `inline?: boolean`
 
-    If set to `true`, the radio options will be rendered horizontally instead of vertically.
+  If set to `true`, the radio options will be rendered horizontally instead of vertically.
 
--   `options?: Array<[any, any]>`
+- `options?: Array<[any, any]>`
 
-    The list of options for the widget. Each option is a two-element array of `[label, value]`.
-    
--   `onChange?: (value: any) => void`
+  The list of options for the widget. Each option is a two-element array of `[label, value]`.
 
-    If specified, this function is called with the selected value.
+- `onChange?: (value: any) => void`
+
+  If specified, this function is called with the selected value.

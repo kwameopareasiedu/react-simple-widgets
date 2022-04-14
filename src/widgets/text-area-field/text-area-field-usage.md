@@ -9,13 +9,7 @@ This widget is a text form widget. `TextAreaField` is intrinsically a `textarea`
 ```jsx
 import { TextField } from "react-simple-widgets";
 
-<TextField
-    name={name}
-    label={label}
-    helper={helper}
-    leading={leading}
-    trailing={trailing}
-/>
+<TextField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
 ```
 
 - `name: string`
@@ -30,10 +24,10 @@ import { TextField } from "react-simple-widgets";
 
   See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
--   `leading?: any`
+- `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
--   `trailing?: any`
+- `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)

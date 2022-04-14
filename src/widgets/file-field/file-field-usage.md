@@ -9,13 +9,7 @@ This widget is a file picker form widget. `FileField` is intrinsically a [FilePi
 ```jsx
 import { FileField } from "react-simple-widgets";
 
-<FileField
-    name={name}
-    label={label}
-    helper={helper}
-    leading={leading}
-    trailing={trailing}
-/>
+<FileField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
 ```
 
 - `name: string`
@@ -24,16 +18,16 @@ import { FileField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `helper?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)

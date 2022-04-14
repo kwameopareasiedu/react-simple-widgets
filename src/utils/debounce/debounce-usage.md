@@ -16,14 +16,14 @@ import { debounce } from "react-simple-widgets";
 debounce(label, function, delay);
 ```
 
--   `label: string`
+- `label: string`
 
-    The unique label for this function. This is used to identify the function in the function pool
+  The unique label for this function. This is used to identify the function in the function pool
 
--   `function: Function`
+- `function: Function`
 
-    The function to be debounced
+  The function to be debounced
 
--   `delay: number`
+- `delay: number`
 
-    The debounce delay of the function in milliseconds (ms)
+  The debounce delay of the function in milliseconds (ms)

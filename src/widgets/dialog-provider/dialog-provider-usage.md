@@ -16,10 +16,10 @@ import { DialogProvider } from "react-simple-widgets";
 import { App } from "./app.tsx";
 
 ReactDOM.render(
-    <DialogProvider>
-        <App />
-    </DialogProvider>,
-    document.getElementById("root")
+  <DialogProvider>
+    <App />
+  </DialogProvider>,
+  document.getElementById("root")
 );
 ```
 
@@ -42,22 +42,22 @@ First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 import { DialogHelper } from "react-simple-widgets/dist/constants";
 
 interface MyDialogProps {
-    helper: DialogHelper;
+  helper: DialogHelper;
 }
 
 export const MyDialog = ({ helper }: MyDialogProps) => {
-    return (
-        <div className="card">
-            <div className="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+  return (
+    <div className="card">
+      <div className="card-body">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 
-                <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
-                    Close dialog
-                </button>
-            </div>
-        </div>
-    );
-}
+        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
+          Close dialog
+        </button>
+      </div>
+    </div>
+  );
+};
 ```
 
 Next, we show `MyDialog` from our application.
@@ -78,7 +78,7 @@ export const App = () => {
             function (helper) {
                 return <MyDialog helper={helper} />;
             },
-            { 
+            {
                 size: DialogSize.SMALL, /* Dialog size: SMALL, MEDIUM, WIDE, FULL */
                 backgroundDismissible: false, /* Close if background is clicked. Defaults to false */
                 escapeDismissible: true, /* Close if escape key is pressed. Defaults to true */
@@ -107,32 +107,32 @@ This section illustrates how to show a dialog which returns a value to the calle
 import { DialogHelper } from "react-simple-widgets/dist/constants";
 
 interface MyDialogProps {
-    helper: DialogHelper;
+  helper: DialogHelper;
 }
 
 export const MyDialog = ({ helper }: MyDialogProps) => {
-    return (
-        <div className="card">
-            <div className="card-body">
-                <p>Select a value:</p>
+  return (
+    <div className="card">
+      <div className="card-body">
+        <p>Select a value:</p>
 
-                <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("A")}>
-                    Return A
-                </button>
-                <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("B")}>
-                    Return B
-                </button>
-                <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("C")}>
-                    Return C
-                </button>
+        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("A")}>
+          Return A
+        </button>
+        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("B")}>
+          Return B
+        </button>
+        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("C")}>
+          Return C
+        </button>
 
-                <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
-                    Select none
-                </button>
-            </div>
-        </div>
-    );
-}
+        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
+          Select none
+        </button>
+      </div>
+    </div>
+  );
+};
 ```
 
 Next, we show `MyDialog` from our application.
@@ -146,37 +146,37 @@ import { DialogSize } from "react-simple-widgets/dist/constants";
 import { MyDialog } from "./my-dialog.tsx";
 
 export const App = () => {
-    const { showDialog } = useContext(DialogProviderContext);
+  const { showDialog } = useContext(DialogProviderContext);
 
-    function openDialog() {
-        showDialog(
-            function (helper) {
-                return <MyDialog helper={helper} />;
-            },
-            {
-                size: DialogSize.SMALL,
-                dismissible: false,
-                onDismissed: val => {
-                    if (val) alert(`Dialog returned a value of ${val}`);
+  function openDialog() {
+    showDialog(
+      function (helper) {
+        return <MyDialog helper={helper} />;
+      },
+      {
+        size: DialogSize.SMALL,
+        dismissible: false,
+        onDismissed: val => {
+          if (val) alert(`Dialog returned a value of ${val}`);
 
-                    /*
+          /*
                         val should be "A", "B" or "C". If the dialog was closed without returning a 
                         value, val will be undefined so you should check before using the value for 
                         anything
                     */
-                }
-            }
-        );
-    }
-
-    return (
-        <div id="app">
-            <button className="btn btn-primary" onClick={openDialog}>
-                Open dialog
-            </button>
-        </div>
+        }
+      }
     );
-}
+  }
+
+  return (
+    <div id="app">
+      <button className="btn btn-primary" onClick={openDialog}>
+        Open dialog
+      </button>
+    </div>
+  );
+};
 ```
 
 ## Side Notes

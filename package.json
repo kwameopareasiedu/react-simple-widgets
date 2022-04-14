@@ -1,114 +1,114 @@
 {
-    "name": "react-simple-widgets",
-    "version": "5.1.0",
-    "description": "A collection of simple to use widgets for building react apps easily",
-    "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kwameopareasiedu/react-simple-widgets"
-    },
-    "bugs": {
-        "url": "https://github.com/kwameopareasiedu/react-simple-widgets/issues"
-    },
-    "author": "Kwame Opare Asiedu",
-    "license": "MIT",
-    "main": "dist/bundle.js",
-    "typings": "dist/index.d.ts",
-    "scripts": {
-        "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
-        "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
-        "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production && yarn build-storybook",
-        "copy-storybook-css": "cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs",
-        "build-storybook": "build-storybook -o ./docs",
-        "test": "jest",
-        "prepare": "husky install"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "@babel/core": "^7.17.9",
-        "@babel/plugin-transform-react-jsx": "^7.17.3",
-        "@babel/plugin-transform-spread": "^7.16.7",
-        "@babel/preset-env": "7.16.11",
-        "@babel/preset-react": "^7.16.7",
-        "@babel/preset-typescript": "^7.16.7",
-        "@jest/globals": "27.5.1",
-        "@rollup/plugin-image": "^2.0.5",
-        "@storybook/addon-actions": "6.4.22",
-        "@storybook/addon-knobs": "6.4.0",
-        "@storybook/addons": "6.4.22",
-        "@storybook/builder-webpack5": "^6.4.22",
-        "@storybook/manager-webpack5": "^6.4.22",
-        "@storybook/react": "6.4.22",
-        "@testing-library/react": "13.0.1",
-        "@testing-library/user-event": "14.1.0",
-        "@types/react": "18.0.5",
-        "@types/react-router-dom": "^5.3.3",
-        "@typescript-eslint/eslint-plugin": "5.19.0",
-        "@typescript-eslint/parser": "5.19.0",
-        "autoprefixer": "10.4.4",
-        "babel-loader": "^8.2.4",
-        "css-loader": "6.7.1",
-        "dayjs": "1.11.0",
-        "eslint": "^8.13.0",
-        "eslint-plugin-react": "^7.29.4",
-        "formik": "^2.1.4",
-        "husky": "7.0.4",
-        "jest": "27.5.1",
-        "node-sass": "7.0.1",
-        "postcss": "8.4.12",
-        "postcss-loader": "6.2.1",
-        "prettier": "2.6.2",
-        "react": "18.0.0",
-        "react-circular-progressbar": "^2.0.4",
-        "react-dom": "18.0.0",
-        "react-quill": "^1.3.5",
-        "react-router-dom": "^6.3.0",
-        "rollup": "^2.70.1",
-        "rollup-plugin-babel": "^4.4.0",
-        "rollup-plugin-commonjs": "^10.1.0",
-        "rollup-plugin-node-builtins": "^2.1.2",
-        "rollup-plugin-node-globals": "^1.4.0",
-        "rollup-plugin-node-resolve": "^5.2.0",
-        "rollup-plugin-postcss": "4.0.2",
-        "rollup-plugin-terser": "7.0.2",
-        "rollup-plugin-typescript2": "0.31.2",
-        "sass-loader": "12.6.0",
-        "style-loader": "3.3.1",
-        "ts-loader": "9.2.8",
-        "typescript": "4.6.3",
-        "url-loader": "^4.1.0",
-        "webpack": "5.72.0"
-    },
-    "peerDependencies": {
-        "formik": "^2.1.4",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-router-dom": "^5.2.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn build && yarn copy-storybook-css"
-        }
-    },
-    "jest": {
-        "moduleNameMapper": {
-            "\\.(s?css|jpg|png|svg)$": "<rootDir>/empty-module.js"
-        }
-    },
-    "keywords": [
-        "react",
-        "widget",
-        "form",
-        "context",
-        "provider",
-        "transition",
-        "list",
-        "flash",
-        "form",
-        "object",
-        "date",
-        "file",
-        "picker",
-        "breadcrumbs"
-    ]
+  "name": "react-simple-widgets",
+  "version": "5.1.0",
+  "description": "A collection of simple to use widgets for building react apps easily",
+  "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwameopareasiedu/react-simple-widgets"
+  },
+  "bugs": {
+    "url": "https://github.com/kwameopareasiedu/react-simple-widgets/issues"
+  },
+  "author": "Kwame Opare Asiedu",
+  "license": "MIT",
+  "main": "dist/bundle.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
+    "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
+    "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production && yarn build-storybook",
+    "copy-storybook-css": "cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs",
+    "build-storybook": "build-storybook -o ./docs",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "@babel/plugin-transform-spread": "^7.16.7",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@jest/globals": "27.5.1",
+    "@rollup/plugin-image": "^2.0.5",
+    "@storybook/addon-actions": "6.4.22",
+    "@storybook/addon-knobs": "6.4.0",
+    "@storybook/addons": "6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
+    "@storybook/react": "6.4.22",
+    "@testing-library/react": "13.0.1",
+    "@testing-library/user-event": "14.1.0",
+    "@types/react": "18.0.5",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "5.19.0",
+    "@typescript-eslint/parser": "5.19.0",
+    "autoprefixer": "10.4.4",
+    "babel-loader": "^8.2.4",
+    "css-loader": "6.7.1",
+    "dayjs": "1.11.0",
+    "eslint": "^8.13.0",
+    "eslint-plugin-react": "^7.29.4",
+    "formik": "^2.1.4",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "node-sass": "7.0.1",
+    "postcss": "8.4.12",
+    "postcss-loader": "6.2.1",
+    "prettier": "2.6.2",
+    "react": "18.0.0",
+    "react-circular-progressbar": "^2.0.4",
+    "react-dom": "18.0.0",
+    "react-quill": "^1.3.5",
+    "react-router-dom": "^6.3.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "4.0.2",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-typescript2": "0.31.2",
+    "sass-loader": "12.6.0",
+    "style-loader": "3.3.1",
+    "ts-loader": "9.2.8",
+    "typescript": "4.6.3",
+    "url-loader": "^4.1.0",
+    "webpack": "5.72.0"
+  },
+  "peerDependencies": {
+    "formik": "^2.1.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && yarn copy-storybook-css"
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(s?css|jpg|png|svg)$": "<rootDir>/empty-module.js"
+    }
+  },
+  "keywords": [
+    "react",
+    "widget",
+    "form",
+    "context",
+    "provider",
+    "transition",
+    "list",
+    "flash",
+    "form",
+    "object",
+    "date",
+    "file",
+    "picker",
+    "breadcrumbs"
+  ]
 }

@@ -11,31 +11,31 @@ import { useEffect } from "react";
 import { useWindowBreakpoints } from "react-simple-widgets";
 
 export function WindowBreakpointsUsage() {
-    const { xs, sm, md, lg, xl, xxl, width } = useWindowBreakpoints();
+  const { xs, sm, md, lg, xl, xxl, width } = useWindowBreakpoints();
 
-    useEffect(() => {
-        // Window width category has changed
-    }, [xs, sm, md, lg, xl, xxl, width]);
+  useEffect(() => {
+    // Window width category has changed
+  }, [xs, sm, md, lg, xl, xxl, width]);
 
-    return null;
+  return null;
 }
 ```
 
--   `xs: boolean`
+- `xs: boolean`
 
-    Indicates the window width is **extra-small** (less than 576px)
+  Indicates the window width is **extra-small** (less than 576px)
 
--   `sm: boolean`
+- `sm: boolean`
 
-    Indicates the window width is **small** (Between 576px and 768px)
+  Indicates the window width is **small** (Between 576px and 768px)
 
--   `md: boolean`
+- `md: boolean`
 
-    Indicates the window width is **medium** (Between 768px and 992px)
+  Indicates the window width is **medium** (Between 768px and 992px)
 
--   `lg: boolean`
+- `lg: boolean`
 
-    Indicates the window width is **large** (Between 992px and 1200px)
+  Indicates the window width is **large** (Between 992px and 1200px)
 
 - `xl: boolean`
 
@@ -45,6 +45,6 @@ export function WindowBreakpointsUsage() {
 
   Indicates the window width is **extra-extra-large** (Above 1400px)
 
--   `width: number`
+- `width: number`
 
-    The current `innerWidth` of the window
+  The current `innerWidth` of the window

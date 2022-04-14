@@ -9,20 +9,20 @@ djs.extend(advancedFormat);
 export default { title: "TimePicker", component: TimePicker };
 
 export const Default = (): any => {
-    const ExampleApp = (): any => {
-        const [time, setTime] = useState(djs().format("HH:mm"));
+  const ExampleApp = (): any => {
+    const [time, setTime] = useState(djs().format("HH:mm"));
 
-        return (
-            <TimePicker
-                className="btn btn-outline-primary btn-sm d-inline-block w-auto"
-                onChange={time => {
-                    action("Time changed")(time);
-                    setTime(time);
-                }}
-                value={time}
-            />
-        );
-    };
+    return (
+      <TimePicker
+        className="btn btn-outline-primary btn-sm d-inline-block w-auto"
+        onChange={time => {
+          action("Time changed")(time);
+          setTime(time);
+        }}
+        value={time}
+      />
+    );
+  };
 
-    return <ExampleApp />;
+  return <ExampleApp />;
 };

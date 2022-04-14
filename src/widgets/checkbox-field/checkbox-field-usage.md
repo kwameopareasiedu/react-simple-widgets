@@ -9,7 +9,7 @@ This widget is a checkbox form widget. CheckboxField is intrinsically an `<input
 ```jsx
 import { CheckboxField } from "react-simple-widgets";
 
-<CheckboxField name={name} label={label} />
+<CheckboxField name={name} label={label} />;
 ```
 
 - `name: string`
@@ -18,10 +18,8 @@ import { CheckboxField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
-
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 ## Side Notes
 
 > The `type` attribute cannot be set externally because it is set to `checkbox` internally.
-

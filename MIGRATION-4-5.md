@@ -18,9 +18,9 @@ const { flashSuccess } = useContext(FlashProviderContext);
 ...
 
 flashSuccess (
-    title: string, 
-    message: string, 
-    onFlashDismissed: () => void, 
+    title: string,
+    message: string,
+    onFlashDismissed: () => void,
     btnText?: string
 );
 
@@ -36,9 +36,9 @@ const { flashSuccess } = useContext(FlashProviderContext);
 ...
 
 flashSuccess (
-    title: string, 
-    message: string, 
-    onFlashDismissed: () => void, 
+    title: string,
+    message: string,
+    onFlashDismissed: () => void,
     optionalArgs?: {
         btnText?: string,
         closeTimerMs: number
@@ -67,7 +67,7 @@ The last argument in v4 (`btnText?: string`) has been replaced by the `optionalA
 
 ## Custom Flash Dialog Arguments
 
-In the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) framework, the flash object sent to custom flash dialogs has a new parameter. 
+In the [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) framework, the flash object sent to custom flash dialogs has a new parameter.
 
 - `closeTimerMs?: number`
 

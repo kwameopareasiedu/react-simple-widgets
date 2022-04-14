@@ -12,13 +12,8 @@ This widget allows you to select a file from the device either from a file-selec
 import { DialogProvider, FilePicker } from "react-simple-widgets";
 
 <DialogProvider>
-	<FilePicker
-        limit={limit}
-        extensions={extensions}
-        validator={validator}
-        onChange={onChange}
-    />
-</DialogProvider>
+  <FilePicker limit={limit} extensions={extensions} validator={validator} onChange={onChange} />
+</DialogProvider>;
 ```
 
 - `limit?: number`
@@ -31,10 +26,10 @@ import { DialogProvider, FilePicker } from "react-simple-widgets";
 
   > The extensions should not start with a dot (I.e. Use `["jpg", "png"]`, not `[".jpg", ".png"]`)
 
--   `validator?: (file: File) => string`
+- `validator?: (file: File) => string`
 
-    An optional validator function which is passed the selected file. It should return a string which is the error message or `null` otherwise
-    
--   `onChange?: (file: File) => void`
+  An optional validator function which is passed the selected file. It should return a string which is the error message or `null` otherwise
 
-    This function is called with the selected file when the user finalizes by pressing the select button
+- `onChange?: (file: File) => void`
+
+  This function is called with the selected file when the user finalizes by pressing the select button

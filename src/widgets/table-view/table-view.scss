@@ -1,65 +1,65 @@
 table.react-simple-widget.table-view {
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    > thead {
+  > thead {
+    display: none;
+
+    @media screen and (min-width: 576px) {
+      display: table-header-group;
+    }
+
+    th {
+      font-size: 85%;
+      font-style: italic;
+      vertical-align: middle;
+
+      img {
+        width: 10px;
+        margin-left: 4px;
+      }
+    }
+
+    th.sortable:hover {
+      cursor: pointer;
+    }
+  }
+
+  > tbody {
+    td.table-view-td-sm {
+      width: 100%;
+      padding: 15px;
+
+      @media screen and (min-width: 576px) {
         display: none;
+      }
 
-        @media screen and (min-width: 576px) {
-            display: table-header-group;
+      .table-view-row-content-item {
+        display: flex;
+
+        > span:first-child {
+          flex: 3 1;
+          font-size: 85%;
+          font-style: italic;
         }
 
-        th {
-            font-size: 85%;
-            font-style: italic;
-            vertical-align: middle;
-
-            img {
-                width: 10px;
-                margin-left: 4px;
-            }
+        > span:last-child {
+          flex: 7 1;
         }
+      }
 
-        th.sortable:hover {
-            cursor: pointer;
+      .table-view-row-content-item.options-content-item {
+        > span:last-child {
+          text-align: right;
         }
+      }
     }
 
-    > tbody {
-        td.table-view-td-sm {
-            width: 100%;
-            padding: 15px;
+    td.table-view-td {
+      display: none;
 
-            @media screen and (min-width: 576px) {
-                display: none;
-            }
-
-            .table-view-row-content-item {
-                display: flex;
-
-                > span:first-child {
-                    flex: 3 1;
-                    font-size: 85%;
-                    font-style: italic;
-                }
-
-                > span:last-child {
-                    flex: 7 1;
-                }
-            }
-
-            .table-view-row-content-item.options-content-item {
-                > span:last-child {
-                    text-align: right;
-                }
-            }
-        }
-
-        td.table-view-td {
-            display: none;
-
-            @media screen and (min-width: 576px) {
-                display: table-cell;
-            }
-        }
+      @media screen and (min-width: 576px) {
+        display: table-cell;
+      }
     }
+  }
 }

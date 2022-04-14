@@ -11,12 +11,7 @@ This widget shows pagination data from a list meta. The pagination data include 
 ```jsx
 import { Pagination } from "react-simple-widgets";
 
-<Pagination 
-    page={page}
-    total={total}
-    pageSize={pageSize}
-    onChange={onChange}
-/>
+<Pagination page={page} total={total} pageSize={pageSize} onChange={onChange} />;
 ```
 
 - `page: number`

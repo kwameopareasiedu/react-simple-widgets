@@ -17,4 +17,3 @@ import { Loader } from "react-simple-widgets";
 - `invert?: boolean`
 
   If set to `true`, the spinner border is set to white.
-

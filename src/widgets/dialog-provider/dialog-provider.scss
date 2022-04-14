@@ -1,14 +1,14 @@
 #dialog-view-container.react-simple-widget {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999999;
 
-    > * {
-        pointer-events: all;
-    }
+  > * {
+    pointer-events: all;
+  }
 }

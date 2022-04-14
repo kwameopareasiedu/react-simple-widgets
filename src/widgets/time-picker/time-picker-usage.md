@@ -7,19 +7,15 @@ This widget allows you to select a time. `TimePicker` is intrinsically a `div` e
 ## Usage
 
 ```jsx
-import { TimePicker } from "react-simple-widgets"; 
+import { TimePicker } from "react-simple-widgets";
 
-<TimePicker
-    value={value}
-    onChange={onTimeChange}
-/>
+<TimePicker value={value} onChange={onTimeChange} />;
 ```
 
--   `value: string`
+- `value: string`
 
-    The selected date of the widget in the format `HH:mm`. (E.g. 16:35)
-    
--   `onChange: (time: string) => void`
+  The selected date of the widget in the format `HH:mm`. (E.g. 16:35)
 
-    This function is called with the selected time when the time changes. The time is in the format `HH:mm`.
+- `onChange: (time: string) => void`
 
+  This function is called with the selected time when the time changes. The time is in the format `HH:mm`.
