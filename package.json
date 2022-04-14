@@ -12,7 +12,6 @@
   },
   "author": "Kwame Opare Asiedu",
   "license": "MIT",
-  "main": "dist/bundle.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
