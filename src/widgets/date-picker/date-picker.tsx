@@ -1,5 +1,5 @@
 import React from "react";
-import { DatePicker as IDatePicker } from "../../../types";
+import { DatePicker as DatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
@@ -17,7 +17,7 @@ export const DatePicker = ({
   placeholder,
   onChange,
   ...rest
-}: IDatePicker): JSX.Element => {
+}: DatePickerProps): JSX.Element => {
   const className = (): string => {
     const classes = ["react-simple-widget", "date-picker"];
     if (_className) classes.push(_className);

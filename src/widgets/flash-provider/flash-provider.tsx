@@ -1,17 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { FlashType, FlashProvider as IFlashProvider, FlashOptionalArgs } from "../../../types";
+import React, { useContext } from "react";
+import { FlashOptionalArgs, FlashProvider as FlashProviderProps, FlashType } from "../../../types";
 import { FlashProviderContext } from "./flash-provider-context";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FlashView } from "./flash-view";
 
-const FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY = "flash-provider-custom-builder-window-key";
-
-export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Element => {
+export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.Element => {
   const { showDialog } = useContext(DialogProviderContext);
-
-  useEffect(() => {
-    if (builder != null) (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY] = builder;
-  }, []);
 
   const flash = (
     type: FlashType,
@@ -36,18 +30,6 @@ export const FlashProvider = ({ children, builder }: IFlashProvider): JSX.Elemen
             },
             btnText,
             closeTimerMs: closeTimer
-          });
-        } else if ((window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]) {
-          return (window as any)[FLASH_PROVIDER_CUSTOM_BUILDER_WINDOW_KEY]({
-            type,
-            title,
-            message,
-            onFlashDismissed: () => {
-              if (onFlashDismissed) onFlashDismissed();
-              helper.dismiss();
-            },
-            btnText,
-            closeTimer
           });
         } else {
           return (

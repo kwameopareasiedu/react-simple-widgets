@@ -1,8 +1,8 @@
 import "./select-option.scss";
 import React from "react";
-import { SelectOption as ISelectOption } from "../../../types";
+import { SelectOption as SelectOptionProps } from "../../../types";
 
-export const SelectOption = ({ label, selected, onSelect, multi, onFocus, ...rest }: ISelectOption) => {
+export const SelectOption = ({ label, selected, onSelect, multi, onFocus, ...rest }: SelectOptionProps) => {
   const className = (): string => {
     const classes = ["react-simple-widget", "select-option"];
     if (selected) classes.push("selected");

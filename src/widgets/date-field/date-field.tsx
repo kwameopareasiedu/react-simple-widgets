@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { DateField as IDateField } from "../../../types";
+import { DateField as DateFieldProps } from "../../../types";
 import { DatePicker } from "../date-picker/date-picker";
 
 export const DateField = ({
@@ -15,7 +15,7 @@ export const DateField = ({
   onFocus,
   onBlur,
   ...rest
-}: IDateField): any => {
+}: DateFieldProps): any => {
   return (
     <div className="react-simple-widget date-field">
       <CustomField name={name}>

@@ -1,10 +1,10 @@
 import "./dialog-provider.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { Dialog, DialogBuilder, DialogOptions, DialogProvider as IDialogProvider } from "../../../types";
+import { Dialog, DialogBuilder, DialogOptions, DialogProvider as DialogProviderProps } from "../../../types";
 import { DialogProviderContext } from "./dialog-provider-context";
 import { DialogView } from "./dialog-view";
 
-export const DialogProvider = ({ children }: IDialogProvider): JSX.Element => {
+export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element => {
   const [dialogs, setDialogs] = useState<Array<Dialog>>([]);
   const escapeKeyHandlers = useRef<Array<(e: KeyboardEvent) => void>>([]);
   const bodyOverflowRef = useRef<string>(null);

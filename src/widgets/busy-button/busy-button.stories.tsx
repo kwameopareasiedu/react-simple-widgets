@@ -8,7 +8,7 @@ export const Default = () => {
 
   return (
     <BusyButton busy={busy} className="btn btn-primary btn-sm" onClick={() => setBusy(true)}>
-      Not busy
+      {busy ? "Busy" : "Not busy"}
     </BusyButton>
   );
 };

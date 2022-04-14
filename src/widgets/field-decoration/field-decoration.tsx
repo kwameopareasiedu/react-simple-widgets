@@ -1,6 +1,6 @@
 import "./field-decoration.scss";
 import React, { useState, cloneElement } from "react";
-import { FieldDecoration as IFieldDecoration } from "../../../types";
+import { FieldDecoration as FieldDecorationProps } from "../../../types";
 
 export const FieldDecoration = ({
   label,
@@ -12,7 +12,7 @@ export const FieldDecoration = ({
   children,
   className: _className,
   ...rest
-}: IFieldDecoration) => {
+}: FieldDecorationProps) => {
   const [focused, setFocused] = useState(false);
 
   const className = (): string => {

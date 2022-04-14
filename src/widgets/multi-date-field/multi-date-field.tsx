@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { MultiDateField as IMultiDateField } from "../../../types";
+import { MultiDateField as MultiDateFieldProps } from "../../../types";
 import { MultiDatePicker } from "../multi-date-picker/multi-date-picker";
 
 export const MultiDateField = ({
@@ -15,7 +15,7 @@ export const MultiDateField = ({
   onFocus,
   onBlur,
   ...rest
-}: IMultiDateField): any => {
+}: MultiDateFieldProps): any => {
   return (
     <div className="react-simple-widget multi-date-field">
       <CustomField name={name}>

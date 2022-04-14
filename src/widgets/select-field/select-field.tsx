@@ -1,7 +1,7 @@
 import "./select-field.scss";
 import React, { Fragment } from "react";
 import { CustomField } from "../custom-field/custom-field";
-import { SelectField as ISelectField } from "../../../types";
+import { SelectField as SelectFieldProps } from "../../../types";
 import { SelectOption } from "./select-option";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 
@@ -15,7 +15,7 @@ export const SelectField = ({
   className: _className,
   onChange,
   ...rest
-}: ISelectField): any => {
+}: SelectFieldProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "select-field"];
     if (_className) classes.push(_className);

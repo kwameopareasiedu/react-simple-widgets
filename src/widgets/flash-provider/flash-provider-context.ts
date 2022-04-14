@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { FlashProviderContext as IFlashProviderContext } from "../../../types";
+import { FlashProviderContext as FlashProviderContextProps } from "../../../types";
 
-export const FlashProviderContext = createContext<IFlashProviderContext>(null);
+export const FlashProviderContext = createContext<FlashProviderContextProps>(null);

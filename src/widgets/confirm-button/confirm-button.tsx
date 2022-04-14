@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ConfirmButton as IConfirmButton } from "../../../types";
+import { ConfirmButton as ConfirmButtonProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { ConfirmButtonDialog } from "./confirm-button-dialog";
 import { BusyButton } from "../busy-button/busy-button";
@@ -12,9 +12,9 @@ export const ConfirmButton = ({
   onCancel,
   builder,
   className,
-  onClick: _onClick,
+  onClick,
   ...rest
-}: IConfirmButton): any => {
+}: ConfirmButtonProps): any => {
   const { showDialog } = useContext(DialogProviderContext);
 
   const confirm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
@@ -32,7 +32,7 @@ export const ConfirmButton = ({
       }
     );
 
-    if (_onClick) _onClick(e);
+    if (onClick) onClick(e);
   };
 
   return (

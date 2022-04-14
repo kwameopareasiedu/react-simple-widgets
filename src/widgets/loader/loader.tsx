@@ -1,8 +1,8 @@
 import "./loader.scss";
 import React from "react";
-import { Loader as ILoader } from "../../../types";
+import { Loader as LoaderProps } from "../../../types";
 
-export const Loader = ({ className: _className, children, invert, ...rest }: ILoader): any => {
+export const Loader = ({ className: _className, children, invert, ...rest }: LoaderProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "loader"];
     if (_className) classes.push(_className);

@@ -2,7 +2,7 @@ import "./text-area-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TextAreaField as ITextAreaField } from "../../../types";
+import { TextAreaField as TextAreaFieldProps } from "../../../types";
 
 export const TextAreaField = ({
   name,
@@ -15,7 +15,7 @@ export const TextAreaField = ({
   onFocus,
   onBlur,
   ...rest
-}: ITextAreaField): any => {
+}: TextAreaFieldProps): any => {
   return (
     <div className="react-simple-widget text-area-field">
       <CustomField name={name}>

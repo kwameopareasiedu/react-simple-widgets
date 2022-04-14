@@ -1,6 +1,6 @@
 import "./growable-items-container.scss";
 import React, { MutableRefObject, useEffect, useRef } from "react";
-import { GrowableItemsContainer as IGrowableItemsContainer } from "../../../types";
+import { GrowableItemsContainer as GrowableItemsContainerProps } from "../../../types";
 import { BusyButton } from "../busy-button/busy-button";
 
 export const GrowableItemsContainer = ({
@@ -12,7 +12,7 @@ export const GrowableItemsContainer = ({
   className: _className,
   children,
   ...rest
-}: IGrowableItemsContainer): JSX.Element => {
+}: GrowableItemsContainerProps): JSX.Element => {
   const loadMoreButtonContainerRef: MutableRefObject<HTMLDivElement> = useRef();
 
   const className = (): string => {

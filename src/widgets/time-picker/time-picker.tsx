@@ -1,6 +1,6 @@
 import "./time-picker.scss";
 import React, { useEffect, useState } from "react";
-import { TimePicker as ITimePicker } from "../../../types";
+import { TimePicker as TimePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { PopupMenu } from "../popup-menu/popup-menu";
@@ -9,7 +9,7 @@ import { Meridian, timeHour, timeMeridian, timeMinute } from "./time-picker-util
 
 djs.extend(arraySupport);
 
-export const TimePicker = ({ value, onChange, className: _className, ...rest }: ITimePicker): JSX.Element => {
+export const TimePicker = ({ value, onChange, className: _className, ...rest }: TimePickerProps): JSX.Element => {
   const [displayHour, _setDisplayHour] = useState(timeHour(value) % 12);
   const [displayMinute, _setDisplayMinute] = useState(timeMinute(value));
   const [displayMeridian, setDisplayMeridian] = useState<Meridian>(timeMeridian(value));

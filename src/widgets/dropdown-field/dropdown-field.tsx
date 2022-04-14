@@ -2,7 +2,7 @@ import "./dropdown-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { DropdownField as IDropdownField } from "../../../types";
+import { DropdownField as DropdownFieldProps } from "../../../types";
 
 export const DropdownField = ({
   name,
@@ -16,7 +16,7 @@ export const DropdownField = ({
   onBlur,
   children,
   ...rest
-}: IDropdownField) => {
+}: DropdownFieldProps) => {
   return (
     <div className="react-simple-widget dropdown-field">
       <CustomField name={name}>

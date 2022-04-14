@@ -1,6 +1,6 @@
 import "./multi-date-picker.scss";
 import React, { useState } from "react";
-import { MultiDatePicker as IMultiDatePicker } from "../../../types";
+import { MultiDatePicker as MultiDatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";
@@ -17,7 +17,7 @@ export const MultiDatePicker = ({
   validator,
   onChange,
   ...rest
-}: IMultiDatePicker): JSX.Element => {
+}: MultiDatePickerProps): JSX.Element => {
   const [dates, setDates] = useState([..._dates]);
 
   const className = (): string => {

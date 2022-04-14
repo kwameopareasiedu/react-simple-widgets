@@ -1,27 +1,17 @@
 import "./popup-menu.scss";
-import React, {
-  Children,
-  cloneElement,
-  CSSProperties,
-  MutableRefObject,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState
-} from "react";
-import { PopupMenu as IPopupMenu, PopupMenuFunctionChild } from "../../../types";
+import React, { cloneElement, CSSProperties, MutableRefObject, ReactElement, useEffect, useRef, useState } from "react";
+import { PopupMenu as PopupMenuProps, PopupMenuChild } from "../../../types";
 
-export const PopupMenu = ({ children }: IPopupMenu): JSX.Element => {
+export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
   const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
 
   const [optionsOpened, setOptionsOpened] = useState(false);
   const [optionsCssProperties, setOptionsCssProperties] = useState<CSSProperties>(null);
-  const [triggerButton, optionsMenu] = Children.toArray(children);
+  const [triggerButton, optionsMenu] = children as Array<PopupMenuChild>;
   const triggerRef: MutableRefObject<HTMLDivElement> = useRef();
   const optionsRef: MutableRefObject<HTMLDivElement> = useRef();
   const [firstAlignmentPass, setFirstAlignmentPass] = useState(false);
-  const functionOptionsMenu: PopupMenuFunctionChild =
-    Array.isArray(children) && typeof children[1] === "function" ? children[1] : null;
+  const optionsMenuIsFunction = typeof optionsMenu === "function";
 
   const toggle = (): void => {
     setOptionsOpened(!optionsOpened);
@@ -115,17 +105,18 @@ export const PopupMenu = ({ children }: IPopupMenu): JSX.Element => {
 
   return (
     <React.Fragment>
-      {cloneElement(triggerButton as any, { ref: triggerRef, onClick: toggle })}
+      {cloneElement(triggerButton as ReactElement, { ref: triggerRef, onClick: toggle })}
 
       {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}
 
-      {optionsOpened && (functionOptionsMenu || optionsMenu) && (
+      {optionsOpened && optionsMenu && (
         <div
           ref={optionsRef}
           className="popup-menu-options"
-          onClick={functionOptionsMenu ? null : toggle}
+          // Onclick is set then optionsMenu is not a function
+          onClick={optionsMenuIsFunction ? null : toggle}
           style={optionsCssProperties}>
-          {functionOptionsMenu ? functionOptionsMenu(() => setOptionsOpened(false)) : optionsMenu}
+          {optionsMenuIsFunction ? optionsMenu(() => setOptionsOpened(false)) : optionsMenu}
         </div>
       )}
     </React.Fragment>

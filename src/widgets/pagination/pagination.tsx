@@ -1,6 +1,6 @@
 import "./pagination.scss";
 import React from "react";
-import { Pagination as IPagination } from "../../../types";
+import { Pagination as PaginationProps } from "../../../types";
 
 export const Pagination = ({
   page,
@@ -9,7 +9,7 @@ export const Pagination = ({
   onChange,
   className: _className,
   ...rest
-}: IPagination): JSX.Element => {
+}: PaginationProps): JSX.Element => {
   if (!page || !total || !pageSize) return null;
 
   const pages = Math.ceil(parseInt(String(total)) / parseInt(String(pageSize)));

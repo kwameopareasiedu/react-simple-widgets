@@ -3,7 +3,7 @@ import "./text-editor-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TextEditorField as ITextEditorField } from "../../../types";
+import { TextEditorField as TextEditorFieldProps } from "../../../types";
 import Quill from "react-quill";
 
 export const TextEditorField = ({
@@ -14,7 +14,7 @@ export const TextEditorField = ({
   onChange,
   onFocus,
   onBlur
-}: ITextEditorField): any => {
+}: TextEditorFieldProps): any => {
   return (
     <div className="react-simple-widget text-editor-field">
       <CustomField name={name}>

@@ -1,6 +1,6 @@
 import "./month-date-picker.scss";
 import React, { useEffect, useState } from "react";
-import { MonthDatePicker as IMonthDatePicker } from "../../../types";
+import { MonthDatePicker as MonthDatePickerProps } from "../../../types";
 import { dateMonth, dateYear, months, years } from "../calendar/calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
@@ -17,7 +17,7 @@ export const MonthDatePicker = ({
   validator,
   onChange,
   ...rest
-}: IMonthDatePicker): JSX.Element => {
+}: MonthDatePickerProps): JSX.Element => {
   const [displayYear, setDisplayYear] = useState(dateYear(value));
   const [displayMonth, setDisplayMonth] = useState(dateMonth(value));
   const [error, setError] = useState(null);

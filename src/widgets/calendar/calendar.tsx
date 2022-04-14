@@ -1,6 +1,6 @@
 import "./calendar.scss";
 import React, { useEffect, useState } from "react";
-import { Calendar as ICalendar } from "../../../types";
+import { Calendar as CalendarProps } from "../../../types";
 import { dateDay, dateMonth, dateMonthDayOffset, dateYear, days, daySuffix, months, years } from "./calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
@@ -15,7 +15,7 @@ export const Calendar = ({
   onChange,
   className: _className,
   ...rest
-}: ICalendar): JSX.Element => {
+}: CalendarProps): JSX.Element => {
   const [displayYear, setDisplayYear] = useState(dateYear(initialDate));
   const [displayMonth, setDisplayMonth] = useState(dateMonth(initialDate));
   const [displayDay, setDisplayDay] = useState(dateDay(initialDate));

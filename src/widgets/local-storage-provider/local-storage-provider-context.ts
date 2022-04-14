@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { LocalStorageProviderContext as ILocalStorageProviderContext } from "../../../types";
+import { LocalStorageProviderContext as LocalStorageProviderContextProps } from "../../../types";
 
-export const LocalStorageProviderContext = createContext<ILocalStorageProviderContext>(null);
+export const LocalStorageProviderContext = createContext<LocalStorageProviderContextProps>(null);

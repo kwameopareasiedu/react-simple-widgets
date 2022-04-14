@@ -2,7 +2,7 @@ import "./file-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { FileField as IFileField } from "../../../types";
+import { FileField as FileFieldProps } from "../../../types";
 import { FilePicker } from "../file-picker/file-picker";
 
 export const FileField = ({
@@ -16,7 +16,7 @@ export const FileField = ({
   onFocus,
   onBlur,
   ...rest
-}: IFileField): any => {
+}: FileFieldProps): any => {
   return (
     <div className="react-simple-widget file-field">
       <CustomField name={name}>

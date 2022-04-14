@@ -1,14 +1,19 @@
 import "./flash-view.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { FlashType, FlashView as IFlashView } from "../../../types";
+import { FlashType, FlashView as FlashViewProps } from "../../../types";
 import ErrorIcon from "../../assets/error.svg";
 import WarningIcon from "../../assets/warning.svg";
 import SuccessIcon from "../../assets/success.svg";
 import InfoIcon from "../../assets/info.svg";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 
-export const FlashView = ({ type, title, message, buttonText, closeTimerMs, onDismiss }: IFlashView): JSX.Element => {
+export const FlashView = ({
+  type,
+  title,
+  message,
+  buttonText,
+  closeTimerMs,
+  onDismiss
+}: FlashViewProps): JSX.Element => {
   const [closeTimer, setCloseTimer] = useState(closeTimerMs);
   const closeTimerIntervalRef = useRef<NodeJS.Timer>();
 
@@ -43,21 +48,6 @@ export const FlashView = ({ type, title, message, buttonText, closeTimerMs, onDi
         return InfoIcon;
       case FlashType.SUCCESS:
         return SuccessIcon;
-      default:
-        return null;
-    }
-  };
-
-  const closeTimerPathColor = (): string => {
-    switch (type) {
-      case FlashType.ERROR:
-        return "#ff5555";
-      case FlashType.WARNING:
-        return "#ffdd55";
-      case FlashType.INFO:
-        return "#55ddff";
-      case FlashType.SUCCESS:
-        return "#6cd924";
       default:
         return null;
     }
@@ -100,20 +90,11 @@ export const FlashView = ({ type, title, message, buttonText, closeTimerMs, onDi
       </div>
 
       {closeTimer > 0 && (
-        <div className="flash-view-close-timer">
-          <CircularProgressbar
-            value={closeTimer}
-            maxValue={closeTimerMs}
-            text={Math.ceil(closeTimer / 1000)
-              .toString()
-              .padStart(2, "0")}
-            strokeWidth={15}
-            styles={buildStyles({
-              pathColor: closeTimerPathColor(),
-              textSize: 36
-            })}
-          />
-        </div>
+        <p className="flash-view-close-timer mb-0">
+          {Math.ceil(closeTimer / 1000)
+            .toString()
+            .padStart(2, "0")}
+        </p>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import "./file-picker.scss";
 import React, { useContext, useState } from "react";
-import { DialogSize, FilePicker as IFilePicker } from "../../../types";
+import { DialogSize, FilePicker as FilePickerProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { FilePickerDialog } from "./file-picker-dialog";
 
@@ -12,7 +12,7 @@ export const FilePicker = ({
   onClick,
   onChange,
   ...rest
-}: IFilePicker) => {
+}: FilePickerProps) => {
   const { showDialog } = useContext(DialogProviderContext);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [fileName, setFileName] = useState(null);

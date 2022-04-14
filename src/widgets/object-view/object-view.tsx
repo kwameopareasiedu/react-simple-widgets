@@ -1,10 +1,10 @@
 import "./object-view.scss";
 import React from "react";
-import { ObjectView as IObjectView, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
+import { ObjectView as ObjectViewProps, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
 
 const EMPTY_STRING = "---";
 
-export const ObjectView = ({ object, props, split = 0.35, className: _className, ...rest }: IObjectView): any => {
+export const ObjectView = ({ object, props, split = 0.35, className: _className, ...rest }: ObjectViewProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "object-view", "table"];
     if (_className) classes.push(_className);

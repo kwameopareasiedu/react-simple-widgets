@@ -2,7 +2,7 @@ import "./time-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TimeField as ITimeField } from "../../../types";
+import { TimeField as TimeFieldProps } from "../../../types";
 import { TimePicker } from "../time-picker/time-picker";
 
 export const TimeField = ({
@@ -16,7 +16,7 @@ export const TimeField = ({
   onFocus,
   onBlur,
   ...rest
-}: ITimeField): any => {
+}: TimeFieldProps): any => {
   return (
     <div className="react-simple-widget time-field">
       <CustomField name={name}>

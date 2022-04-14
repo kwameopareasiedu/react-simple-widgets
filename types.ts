@@ -220,7 +220,7 @@ export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps
 
 export type CustomFieldErrorBuilder = (originalError: any) => string;
 
-export interface CustomField extends InputHTMLAttributes<HTMLInputElement> {
+export interface CustomField extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
   errorBuilder?: CustomFieldErrorBuilder;
   children: CustomFieldBuilder;
 }
@@ -233,7 +233,7 @@ export interface FieldDecorationBuilderProps {
 
 export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => JSX.Element;
 
-export interface FieldDecoration extends AllHTMLAttributes<HTMLDivElement> {
+export interface FieldDecoration extends Omit<AllHTMLAttributes<HTMLDivElement>, "children"> {
   label?: any;
   error?: any;
   helper?: any;

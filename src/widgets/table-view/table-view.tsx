@@ -2,7 +2,7 @@ import "./table-view.scss";
 import React, { useEffect, useMemo, useState } from "react";
 import {
   SortDirection,
-  TableView as ITableView,
+  TableView as TableViewProps,
   TableViewCellResolver,
   TableViewCellResolverFunction,
   TableViewSortData
@@ -24,7 +24,7 @@ export const TableView = ({
   optionsBuilder,
   onSort: _onSort,
   ...rest
-}: ITableView): JSX.Element => {
+}: TableViewProps): JSX.Element => {
   // Extract the table header row values from props, which are the 1st elements of the props
   const headerCellValues = useMemo(() => props.map(p => p[0]), [props]);
   // Extract the table body row values from props, which are the 2nd elements of the props

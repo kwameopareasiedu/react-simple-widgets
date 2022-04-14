@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { DialogProviderContext as IDialogProviderContext } from "../../../types";
+import { DialogProviderContext as DialogProviderContextProps } from "../../../types";
 
-export const DialogProviderContext = createContext<IDialogProviderContext>(null);
+export const DialogProviderContext = createContext<DialogProviderContextProps>(null);

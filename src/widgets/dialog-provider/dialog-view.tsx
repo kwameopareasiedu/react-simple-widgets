@@ -1,9 +1,9 @@
 import "./dialog-view.scss";
 import React, { useRef } from "react";
-import { DialogSize, DialogView as IDialogView } from "../../../types";
+import { DialogSize, DialogView as DialogViewProps } from "../../../types";
 
 /** DialogView, as the name implies, renders a dialog interface */
-export const DialogView = ({ dialog }: IDialogView): JSX.Element => {
+export const DialogView = ({ dialog }: DialogViewProps): JSX.Element => {
   const dialogContentRef = useRef<HTMLDivElement>();
 
   const dialogViewContentClassName = (): string => {

@@ -1,7 +1,7 @@
 import "./multi-select-field.scss";
 import React, { Fragment } from "react";
 import { CustomField } from "../custom-field/custom-field";
-import { MultiSelectField as IMultiSelectField } from "../../../types";
+import { MultiSelectField as MultiSelectFieldProps } from "../../../types";
 import { SelectOption } from "../select-field/select-option";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 
@@ -15,7 +15,7 @@ export const MultiSelectField = ({
   className: _className,
   onChange,
   ...rest
-}: IMultiSelectField): any => {
+}: MultiSelectFieldProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "multi-select-field"];
     if (_className) classes.push(_className);

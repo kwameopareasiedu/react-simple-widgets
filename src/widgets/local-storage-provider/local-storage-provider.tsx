@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LocalStorageProviderContext } from "./local-storage-provider-context";
-import { LocalStorageProvider as ILocalStorageProvider } from "../../../types";
+import { LocalStorageProvider as LocalStorageProviderProps } from "../../../types";
 
 const LOCAL_STORAGE_PROVIDER_KEYS = "react-simple-widgets-local-storage-provider-keys";
 
@@ -20,7 +20,7 @@ const initializeStore = (): any => {
   return values;
 };
 
-export const LocalStorageProvider = ({ children }: ILocalStorageProvider): any => {
+export const LocalStorageProvider = ({ children }: LocalStorageProviderProps): any => {
   const [values, setValues] = useState<{ [k: string]: any }>(initializeStore());
 
   const getItem = (key: string): any => values[key];

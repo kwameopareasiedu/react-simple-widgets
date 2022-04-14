@@ -1,8 +1,8 @@
 import "./file-picker-dialog.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { FilePickerDialog as IFilePickerDialog } from "../../../types";
+import { FilePickerDialog as FilePickerDialogProps } from "../../../types";
 
-export const FilePickerDialog = ({ helper, limit, extensions, validator }: IFilePickerDialog) => {
+export const FilePickerDialog = ({ helper, limit, extensions, validator }: FilePickerDialogProps) => {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState(null);
   const triggerInputRef = useRef();

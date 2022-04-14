@@ -2,7 +2,7 @@ import "./text-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TextField as ITextField } from "../../../types";
+import { TextField as TextFieldProps } from "../../../types";
 
 export const TextField = ({
   name,
@@ -15,7 +15,7 @@ export const TextField = ({
   onFocus,
   onBlur,
   ...rest
-}: ITextField): any => {
+}: TextFieldProps): any => {
   return (
     <div className="react-simple-widget text-field">
       <CustomField name={name}>

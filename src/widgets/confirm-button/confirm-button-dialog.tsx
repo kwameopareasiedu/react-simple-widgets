@@ -1,12 +1,12 @@
 import "./confirm-button-dialog.scss";
 import React from "react";
-import { ConfirmButtonDialog as IConfirmButtonDialog } from "../../../types";
+import { ConfirmButtonDialog as ConfirmButtonDialogProps } from "../../../types";
 
 export const ConfirmButtonDialog = ({
   helper,
   message,
   confirmButtonClassName: _confirmButtonClassName
-}: IConfirmButtonDialog): any => {
+}: ConfirmButtonDialogProps): any => {
   const confirmButtonClassName = (): string => {
     const classes = ["btn", "btn-sm"];
     if (_confirmButtonClassName) classes.push(_confirmButtonClassName);
