@@ -1,5 +1,5 @@
 import React from "react";
-import { ActionBar } from "./action-bar";
+import ActionBar from "./action-bar";
 
 export default { title: "ActionBar", component: ActionBar };
 

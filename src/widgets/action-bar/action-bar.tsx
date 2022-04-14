@@ -1,6 +1,6 @@
 import "./action-bar.scss";
 import React, { Children } from "react";
-import { ActionBar as ActionBarProps } from "../../../types";
+import { ActionBarProps } from "./action-bar-types";
 
 export const ActionBar = ({ children, className: _className, ...rest }: ActionBarProps): any => {
   if (Children.toArray(children).length === 0) return null;
