@@ -1,4 +1,3 @@
-import "./file-picker.scss";
 import React, { useContext, useState } from "react";
 import { DialogSize, FilePicker as FilePickerProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
