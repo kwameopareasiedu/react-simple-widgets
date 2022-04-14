@@ -317,11 +317,11 @@ export interface MultiSelectField
   onChange?: (value: Array<any>) => void;
 }
 
-/** GrowableItemsContainer */
-export interface GrowableItemsContainer extends AllHTMLAttributes<HTMLDivElement> {
+/** InfiniteList */
+export interface InfiniteList extends AllHTMLAttributes<HTMLDivElement> {
   busy: boolean;
   total: number;
-  itemCount: number;
+  count: number;
   error?: boolean;
   onLoadMore: () => void;
 }
@@ -443,21 +443,21 @@ export type UseWindowBreakpoints = () => UseWindowBreakpointsState;
 /** Debounce */
 export type Debounce = (label: string, callback: Function, delay: number) => void;
 
-/** UseGrowableList */
-export type GrowableListLoadMoreTrigger = (resetPage?: boolean) => void;
+/** UseInfiniteList */
+export type InfiniteListLoadMoreTrigger = (resetPage?: boolean) => void;
 
-export type GrowableListOnLoadMore = (newItems: Array<any>, totalItems: number) => void;
+export type InfiniteListOnLoadMore = (newItems: Array<any>, totalCount: number) => void;
 
-export type GrowableListOnLoadFailed = () => void;
+export type InfiniteListOnLoadFailed = () => void;
 
-export type UseGrowableListState = [
+export type UseInfiniteListState = [
   itemList: Array<any>,
   currentPageNumber: number,
   totalItemsInSource: number,
   triggeredLoadMore: boolean,
-  loadMore: GrowableListLoadMoreTrigger,
-  onLoadMoreSuccess: GrowableListOnLoadMore,
-  onLoadMoreFailed: GrowableListOnLoadFailed
+  loadMore: InfiniteListLoadMoreTrigger,
+  onLoadMoreSuccess: InfiniteListOnLoadMore,
+  onLoadMoreFailed: InfiniteListOnLoadFailed
 ];
 
-export type UseGrowableList = () => UseGrowableListState;
+export type UseInfiniteList = () => UseInfiniteListState;

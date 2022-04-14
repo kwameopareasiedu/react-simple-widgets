@@ -1,33 +1,33 @@
 import {
-  GrowableListLoadMoreTrigger,
-  GrowableListOnLoadFailed,
-  GrowableListOnLoadMore,
-  UseGrowableList,
-  UseGrowableListState
+  InfiniteListLoadMoreTrigger,
+  InfiniteListOnLoadFailed,
+  InfiniteListOnLoadMore,
+  UseInfiniteList,
+  UseInfiniteListState
 } from "../../../types";
 import { useState } from "react";
 
-export const useGrowableList: UseGrowableList = (): UseGrowableListState => {
+export const useInfiniteList: UseInfiniteList = (): UseInfiniteListState => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [triggered, setTriggered] = useState(false);
   const [items, setItems] = useState([]);
   const [resetPage, setResetPage] = useState(false);
 
-  const loadMore: GrowableListLoadMoreTrigger = (resetPage?: boolean): void => {
+  const loadMore: InfiniteListLoadMoreTrigger = (resetPage?: boolean): void => {
     setResetPage(resetPage);
     setPage(resetPage ? 1 : page + 1);
     setTriggered(!triggered);
   };
 
-  const onLoadMoreSuccess: GrowableListOnLoadMore = (newItems, totalItems): void => {
+  const onLoadMoreSuccess: InfiniteListOnLoadMore = (newItems, totalCount): void => {
     if (resetPage) {
       setItems([...newItems]);
     } else setItems([...items, ...newItems]);
-    setTotal(totalItems);
+    setTotal(totalCount);
   };
 
-  const onLoadMoreFailed: GrowableListOnLoadFailed = (): void => {
+  const onLoadMoreFailed: InfiniteListOnLoadFailed = (): void => {
     setPage(page - 1);
   };
 

@@ -1,22 +1,21 @@
-import "./growable-items-container.scss";
 import React, { MutableRefObject, useEffect, useRef } from "react";
-import { GrowableItemsContainer as GrowableItemsContainerProps } from "../../../types";
+import { InfiniteList as InfiniteListProps } from "../../../types";
 import { BusyButton } from "../busy-button/busy-button";
 
-export const GrowableItemsContainer = ({
+export const InfiniteList = ({
   busy,
-  itemCount,
+  count,
   total,
   error,
   onLoadMore,
   className: _className,
   children,
   ...rest
-}: GrowableItemsContainerProps): JSX.Element => {
+}: InfiniteListProps): JSX.Element => {
   const loadMoreButtonContainerRef: MutableRefObject<HTMLDivElement> = useRef();
 
   const className = (): string => {
-    const classes = ["react-simple-widget", "growable-items-container"];
+    const classes = ["react-simple-widget", "infinite-list"];
     if (_className) classes.push(_className);
     return classes.join(" ");
   };
@@ -27,7 +26,7 @@ export const GrowableItemsContainer = ({
 
       if (loadMoreButtonContainer) {
         const containerBottom = loadMoreButtonContainer.getBoundingClientRect().bottom;
-        if (!busy && itemCount < total && containerBottom < window.innerHeight) {
+        if (!busy && count < total && containerBottom < window.innerHeight) {
           onLoadMore();
         }
       }
@@ -35,14 +34,14 @@ export const GrowableItemsContainer = ({
 
     window.addEventListener("scroll", onWindowScroll);
     return () => window.removeEventListener("scroll", onWindowScroll);
-  }, [busy, itemCount, total]);
+  }, [busy, count, total]);
 
   return (
     <div {...rest} className={className()}>
       {children}
 
       <div ref={loadMoreButtonContainerRef} className="text-center mt-2">
-        {(busy || error || itemCount < total) && (
+        {(busy || error || count < total) && (
           <BusyButton
             type="button"
             busy={busy}

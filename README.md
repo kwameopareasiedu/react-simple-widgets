@@ -48,11 +48,11 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [LocalStorageProvider](src/widgets/local-storage-provider/local-storage-provider-usage.md) - Provides a reactive wrapper for the local storage API and syncs changes to its state with the browser's local storage
 
-- [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) - Provides a flash message framework built on top of the [DialogProvider](src/widgets/dialog-provider/usage.md) framework
+- [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md) - Provides a flash message framework built on top of the [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) framework
 
   ***
 
-- [FilePicker](src/widgets/file-picker/file-picker-usage.md) - A file pickerwidget which also supports drag-and-drop
+- [FilePicker](src/widgets/file-picker/file-picker-usage.md) - A file picker widget which also supports drag-and-drop
 
 - [DatePicker](src/widgets/date-picker/date-picker-usage.md) - A date picker widget which allows selection of a single date in `YYYY-MM-DD` format
 
@@ -114,7 +114,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [ActionBar](src/widgets/action-bar/action-bar-usage.md) - A widget that displays a row of spaced buttons or nothing if no children are specified
 
-- [GrowableItemsContainer](src/widgets/growable-items-container/growable-items-container-usage.md) - A widget that provides a load-more mechanism for a growing list of items
+- [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md) - A widget that provides a load-more mechanism for an infinite list of items
 
 ## Hooks in this library
 
@@ -124,7 +124,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [useWindowBreakpoints](src/utils/use-window-breakpoints/use-window-breakpoints-usage.md) - A hook which provides the window width category data according to [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
 
-- [useGrowableList](src/utils/use-growable-list/use-growable-list-usage.md) - A hook which manages the state of growing list. Used with [GrowableItemsContainer](src/widgets/growable-items-container/growable-items-container-usage.md) to provide a load-more mechanism for a growing list
+- [useInfiniteList](src/utils/use-infinite-list/use-infinite-list-usage.md) - A hook which manages the state of an infinite list. Used with [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md) to provide a load-more mechanism for said infinite list
 
 ## Utilities in this library
 
