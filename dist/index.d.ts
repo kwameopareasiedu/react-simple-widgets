@@ -1,1 +1,1 @@
-export * from "./action-bar";
+export { default as ActionBar } from "./action-bar";
