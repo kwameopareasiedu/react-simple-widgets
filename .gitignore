@@ -2,6 +2,9 @@
 .vscode
 .sass-cache
 node_modules
+dist
+!dist/index.d.ts
+!dist/index.js
 
 *.iml
 *.tgz

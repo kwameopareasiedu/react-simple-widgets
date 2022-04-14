@@ -200,7 +200,7 @@ export interface Breadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 /** ActionBar */
-export interface ActionBar extends AllHTMLAttributes<HTMLDivElement> {
+export interface ActionBarProps extends AllHTMLAttributes<HTMLDivElement> {
   children?: any;
 }
 

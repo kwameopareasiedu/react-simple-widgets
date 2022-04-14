@@ -1,6 +1,6 @@
 {
   "name": "react-simple-widgets",
-  "version": "6.0.0-testing-01",
+  "version": "6.0.0-testing-02",
   "description": "A collection of simple to use widgets for building react apps easily",
   "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
   "repository": {
@@ -17,7 +17,7 @@
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
     "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
-    "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production && yarn build-storybook",
+    "build": "rollup -c rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
     "copy-storybook-css": "cp .storybook/widgets.css docs/widgets.css && git add dist/bundle.js docs",
     "build-storybook": "build-storybook -o ./docs",
     "test": "jest",

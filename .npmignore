@@ -1,3 +1,4 @@
+.husky
 .idea
 .vscode
 .sass-cache
@@ -8,9 +9,12 @@ docs
 
 *.tgz
 *.iml
+*.md
+*.log
 .babelrc.js
 .eslintrc
 .gitignore
 .prettierrc
+empty-module.js
 rollup.config.js
 tsconfig.json
