@@ -27,7 +27,7 @@ import {
   CheckboxField,
   SelectField,
   MultiSelectField,
-  GrowableItemsContainer,
+  InfiniteList,
   Calendar,
   DatePicker,
   MultiDatePicker,
@@ -43,7 +43,7 @@ import {
   UseQueryParams,
   UseCountdown,
   UseWindowBreakpoints,
-  UseGrowableList,
+  UseInfiniteList,
   /* Utilities */
   Debounce
 } from "../types";
@@ -74,7 +74,7 @@ export const DropdownField: FunctionComponent<DropdownField>;
 export const CheckboxField: FunctionComponent<CheckboxField>;
 export const SelectField: FunctionComponent<SelectField>;
 export const MultiSelectField: FunctionComponent<MultiSelectField>;
-export const GrowableItemsContainer: FunctionComponent<GrowableItemsContainer>;
+export const InfiniteList: FunctionComponent<InfiniteList>;
 export const Calendar: FunctionComponent<Calendar>;
 export const DatePicker: FunctionComponent<DatePicker>;
 export const MultiDatePicker: FunctionComponent<MultiDatePicker>;
@@ -90,6 +90,6 @@ export const FileField: FunctionComponent<FileField>;
 export const useQueryParams: UseQueryParams;
 export const useCountdown: UseCountdown;
 export const useWindowBreakpoints: UseWindowBreakpoints;
-export const useGrowableList: UseGrowableList;
+export const useInfiniteList: UseInfiniteList;
 /* Utilities */
 export const debounce: Debounce;
