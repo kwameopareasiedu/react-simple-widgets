@@ -7,7 +7,8 @@ This widget is a date picker form widget. `DateField` is intrinsically a [DatePi
 ## Usage
 
 ```jsx
-import { DateField } from "react-simple-widgets";
+import DateField from "react-simple-widgets/dist/date-field";
+// or import { DateField } from "react-simple-widgets";
 
 <DateField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
 ```

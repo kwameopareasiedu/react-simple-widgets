@@ -1,10 +1,10 @@
 import React from "react";
 import CustomField from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { DateField as DateFieldProps } from "../../../types";
+import { DateFieldProps } from "../../../types";
 import { DatePicker } from "../date-picker/date-picker";
 
-export const DateField = ({
+const DateField = ({
   name,
   label,
   helper,
@@ -52,3 +52,5 @@ export const DateField = ({
     </div>
   );
 };
+
+export default DateField;

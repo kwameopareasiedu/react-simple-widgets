@@ -344,7 +344,7 @@ export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 }
 
 /** DateField */
-export interface DateField
+export interface DateFieldProps
   extends Omit<DatePicker, "label" | "value" | "onChange">,
     Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (date: string) => void;
