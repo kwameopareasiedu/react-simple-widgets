@@ -2,8 +2,8 @@
 .vscode
 .sass-cache
 node_modules
-dist
-!dist/index.d.ts
+dist/**.*
+!dist/*.d.ts
 !dist/index.js
 
 *.iml
