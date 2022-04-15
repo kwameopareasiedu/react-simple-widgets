@@ -4,6 +4,7 @@
 
 - `6.0.0 (Breaking)`
   - Compiled separate ES modules for each element to enable tree shaking and much smaller app size.
+    > Instead of using `import { TableView } from "react-simple-widgets`, use `import { TableView } from "react-simple-widgets/dist/table-view`
   - Upgraded [React](https://reactjs.org/) and [ReactDOM](https://reactjs.org/) to v18
   - Renamed `GrowableItemsContainer` widget to [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md)
   - Renamed `useGrowableList` hook to [useInfiniteList](src/utils/use-infinite-list/use-infinite-list-usage.md)
