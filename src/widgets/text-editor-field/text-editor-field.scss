@@ -10,6 +10,11 @@
     padding-right: 0;
   }
 
+  .ql-toolbar + .ql-toolbar {
+    display: none;
+    pointer-events: none;
+  }
+
   .ql-container {
     border: none;
 

@@ -1,3 +1,3 @@
-import { UseInfiniteList } from "../types";
+import { UseQueryParams } from "../types";
 
-export declare const useInfiniteList: UseInfiniteList;
+export declare const useQueryParams: UseQueryParams;
