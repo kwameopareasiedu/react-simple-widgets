@@ -2,20 +2,16 @@
 
 # MultiDateField
 
-This widget is a multi-date picker form widget. `MultiDateField` it is intrinsically a [MultiDatePicker](../multi-date-picker/multi-date-picker-usage.md) widget and accepts all of its attributes.
+This widget is a multi-date picker form widget. 
+
+`MultiDateField` it is intrinsically a [MultiDatePicker](../multi-date-picker/multi-date-picker-usage.md) widget and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { MultiDateField } from "react-simple-widgets";
+import { MultiDateField } from "react-simple-widgets/dist/multi-date-field";
 
-<MultiDateField
-    name={name}
-    label={label}
-    helper={helper}
-    leading={leading}
-    trailing={trailing}
-/>
+<MultiDateField name label helper leading trailing />;
 ```
 
 - `name: string`
@@ -24,16 +20,16 @@ import { MultiDateField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `helper?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)

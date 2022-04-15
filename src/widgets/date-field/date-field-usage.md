@@ -7,15 +7,9 @@ This widget is a date picker form widget. `DateField` is intrinsically a [DatePi
 ## Usage
 
 ```jsx
-import { DateField } from "react-simple-widgets";
+import { DateField } from "react-simple-widgets/dist/date-field";
 
-<DateField
-    name={name}
-    label={label}
-    helper={helper}
-    leading={leading}
-    trailing={trailing}
-/>
+<DateField name label helper leading trailing />;
 ```
 
 - `name: string`
@@ -24,16 +18,16 @@ import { DateField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `helper?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)

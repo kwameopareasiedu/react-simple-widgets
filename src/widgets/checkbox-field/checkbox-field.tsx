@@ -2,39 +2,39 @@ import "./checkbox-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { CheckboxField as ICheckBoxField } from "../../../types";
+import { CheckboxFieldProps } from "../../../types";
 
-export const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: ICheckBoxField): any => {
-    return (
-        <div className="react-simple-widget checkbox-field">
-            <CustomField name={name}>
-                {({ value, error, touched, setValue, setTouched }) => (
-                    <FieldDecoration error={touched && error} disabled={disabled}>
-                        {() => (
-                            <label>
-                                <input
-                                    name={name}
-                                    checked={value}
-                                    type="checkbox"
-                                    disabled={disabled}
-                                    onChange={e => {
-                                        const checked = e.target.checked;
-                                        setValue(checked);
-                                        if (onChange) onChange(checked);
-                                    }}
-                                    onFocus={e => {
-                                        setTouched(true);
-                                        if (onFocus) onFocus(e);
-                                    }}
-                                    {...rest}
-                                />
+export const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: CheckboxFieldProps): any => {
+  return (
+    <div className="react-simple-widget checkbox-field">
+      <CustomField name={name}>
+        {({ value, error, touched, setValue, setTouched }) => (
+          <FieldDecoration error={touched && error} disabled={disabled}>
+            {() => (
+              <label>
+                <input
+                  name={name}
+                  checked={value}
+                  type="checkbox"
+                  disabled={disabled}
+                  onChange={e => {
+                    const checked = e.target.checked;
+                    setValue(checked);
+                    if (onChange) onChange(checked);
+                  }}
+                  onFocus={e => {
+                    setTouched(true);
+                    if (onFocus) onFocus(e);
+                  }}
+                  {...rest}
+                />
 
-                                <span className="mb-0">{label}</span>
-                            </label>
-                        )}
-                    </FieldDecoration>
-                )}
-            </CustomField>
-        </div>
-    );
+                <span className="mb-0">{label}</span>
+              </label>
+            )}
+          </FieldDecoration>
+        )}
+      </CustomField>
+    </div>
+  );
 };

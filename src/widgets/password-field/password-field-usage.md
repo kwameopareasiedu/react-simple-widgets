@@ -7,23 +7,18 @@ This widget is a password form widget. PasswordField is intrinsically an `input`
 ## Usage
 
 ```jsx
-import { PasswordField } from "react-simple-widgets";
+import { PasswordField } from "react-simple-widgets/dist/password-field";
 
-<PasswordField
-    name={name}
-    label={label}
-    leading={leading}
-    helper={helper}
-/>
+<PasswordField name label leading helper />;
 ```
 
 - `name: string`
 
   The key of the widget's value in the [Formik](https://jaredpalmer.com/formik/) provider
 
--   `label?: string`
+- `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `leading?: any`
 

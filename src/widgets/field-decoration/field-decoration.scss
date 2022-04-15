@@ -1,65 +1,67 @@
+@import "../../common";
+
 .react-simple-widget.field-decoration {
-    .field-decoration-content-container {
-        --border-width: 2px;
+  .field-decoration-content-container {
+    --border-width: 2px;
 
-        position: relative;
-        border-radius: 4px;
-        border: var(--border-width) solid var(--rsw-secondary-color);
-        padding: 8px 8px 4px;
+    position: relative;
+    border-radius: 4px;
+    border: var(--border-width) solid var(--rsw-secondary-color);
+    padding: 8px 8px 4px;
 
-        > label {
-            position: absolute;
-            top: -10px;
-            left: 6px;
-            margin: 0;
-            padding: 0 4px;
-            font-size: 75%;
-            color: var(--rsw-label-color);
-            background-color: white;
-        }
-
-        > .field-decoration-content {
-            display: flex;
-            align-items: center;
-
-            > :not(.leading):not(.trailing) {
-                flex: 1 1;
-                width: 100%;
-                outline: none;
-                border: none;
-            }
-        }
+    > label {
+      position: absolute;
+      top: -10px;
+      left: 6px;
+      margin: 0;
+      padding: 0 4px;
+      font-size: 75%;
+      color: var(--rsw-label-color);
+      background-color: white;
     }
 
-    > .field-decoration-footer {
-        display: flex;
-        padding: 0 10px;
-        justify-content: flex-end;
+    > .field-decoration-content {
+      display: flex;
+      align-items: center;
 
-        .helper,
-        .error {
-            margin: 0;
-            font-size: 75%;
-        }
-
-        .error {
-            color: var(--rsw-error-color);
-            flex: 1 1;
-        }
+      > :not(.leading):not(.trailing) {
+        flex: 1 1;
+        width: 100%;
+        outline: none;
+        border: none;
+      }
     }
+  }
+
+  > .field-decoration-footer {
+    display: flex;
+    padding: 0 10px;
+    justify-content: flex-end;
+
+    .helper,
+    .error {
+      margin: 0;
+      font-size: 75%;
+    }
+
+    .error {
+      color: var(--rsw-error-color);
+      flex: 1 1;
+    }
+  }
 }
 
 .react-simple-widget.field-decoration.has-focus {
-    .field-decoration-content-container {
-        border-color: var(--rsw-primary-color);
+  .field-decoration-content-container {
+    border-color: var(--rsw-primary-color);
 
-        > label {
-            color: var(--rsw-primary-color);
-        }
+    > label {
+      color: var(--rsw-primary-color);
     }
+  }
 }
 
 .react-simple-widget.field-decoration.disabled {
-    opacity: 0.5;
-    pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }

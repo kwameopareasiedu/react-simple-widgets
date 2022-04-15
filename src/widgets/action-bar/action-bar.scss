@@ -1,9 +1,11 @@
-.react-simple-widget.action-bar {
-    > * {
-        margin-right: 8px;
-    }
+@import "../../common";
 
-    > :last-child {
-        margin-right: 0;
-    }
+.react-simple-widget.action-bar {
+  > * {
+    margin-right: 8px;
+  }
+
+  > :last-child {
+    margin-right: 0;
+  }
 }

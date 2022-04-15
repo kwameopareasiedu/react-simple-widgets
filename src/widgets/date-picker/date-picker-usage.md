@@ -2,33 +2,30 @@
 
 # DatePicker
 
-This widget displays a popup calendar to select a single calendar date. `DatePicker` is intrinsically a `div` element and accepts all of its attributes.
+This widget displays a popup calendar to select a single calendar date. 
+
+`DatePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { DatePicker } from "react-simple-widgets"; 
+import { DatePicker } from "react-simple-widgets/dist/date-picker";
 
-<DatePicker
-    value={value}
-    displayFormat={displayFormat}
-    validator={validator}
-    onChange={onDateSelect}
-/>
+<DatePicker value displayFormat validator onChange />;
 ```
 
--   `value: string`
+- `value: string`
 
-    The selected date of the widget in the format `YYYY-MM-DD`.
-    
--   `displayFormat?: string`
+  The selected date of the widget in the format `YYYY-MM-DD`.
 
-    The format to display the selected date. Defaults to `ddd, Do MMM YYYY` (E.g. Wed, 8th Sep 2021).
+- `displayFormat?: string`
+
+  The format to display the selected date. Defaults to `ddd, Do MMM YYYY` (E.g. Fri, 15th Apr 2022).
 
 - `validator?: (date: string) => string`
 
   If specified, the selected date is passed to this function to validate. This function should return a string error message or null if no error. If an error message is returned, `onChange` is not called with the selected date.
-  
+
 - `onChange: (date: string) => void`
 
   This function is called with the selected date when the calendar date is clicked on.

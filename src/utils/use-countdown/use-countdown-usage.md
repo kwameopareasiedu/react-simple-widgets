@@ -12,31 +12,31 @@ This is a React [hook](https://reactjs.org/docs/hooks-intro.html) that provides 
 ## Usage
 
 ```jsx
-import { useCountdown } from "react-simple-widgets";
+import { useCountdown } from "react-simple-widgets/dist/use-countdown";
 
 export function CountdownUsage() {
-    const [ count, running, stopCountdown, resetCountdown ] = useCountdown(delay);
+  const [count, running, stopCountdown, resetCountdown] = useCountdown(delay);
 
-    return null;
+  return null;
 }
 ```
 
--   `delay: number`
+- `delay: number`
 
-    The duration of the countdown in seconds
+  The duration of the countdown in seconds
 
--   `count: number`
+- `count: number`
 
-    The numeric count state variable
+  The numeric count state variable
 
--   `running: boolean`
+- `running: boolean`
 
-    The running status of the countdown. If the countdown ends, this will be `false` and vice-versa
+  The running status of the countdown. If the countdown ends, this will be `false` and vice-versa
 
--   `stopCountdown: () => void`
+- `stopCountdown: () => void`
 
-    This function stops the countdown
-    
--   `resetCountdown: () => void`
+  This function stops the countdown
 
-    This function starts the countdown if not running and resets it if it is already running
+- `resetCountdown: () => void`
+
+  This function starts the countdown if not running and resets it if it is already running

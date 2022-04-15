@@ -2,20 +2,16 @@
 
 # TextField
 
-This widget is a simple text input form widget. `TextField` is intrinsically an `input` element and accepts all of its attributes.
+This widget is a simple text input form widget. 
+
+`TextField` is intrinsically an `input` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
 import { TextField } from "react-simple-widgets";
 
-<TextField
-    name={name}
-    label={label}
-    helper={helper}
-    leading={leading}
-    trailing={trailing}
-/>
+<TextField name label helper leading trailing />;
 ```
 
 - `name: string`
@@ -24,16 +20,16 @@ import { TextField } from "react-simple-widgets";
 
 - `label?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `helper?: string`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `leading?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
 
 - `trailing?: any`
 
-    See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)
+  See [FieldDecoration docs](../field-decoration/field-decoration-usage.md)

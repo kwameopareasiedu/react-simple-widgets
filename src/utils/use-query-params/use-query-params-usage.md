@@ -10,35 +10,35 @@ This is a React [hook](https://reactjs.org/docs/hooks-intro.html) that parses th
 // https://my-awesome-site.com?key1=value1&key2=value2&key3=value3
 
 import { useEffect } from "react";
-import { useQueryParams } from "react-simple-widgets";
+import { useQueryParams } from "react-simple-widgets/dist/use-query-params";
 
 export function QueryParamsUsage() {
-    const qp = useQueryParams();
+  const qp = useQueryParams();
 
-    useEffect(() => {
-        console.log(qp);
-        /* 
-        	Query parameters have changed
-        	qp = { 
-        		key1: value1, 
-        		key2: value2, 
-        		key3: value3 
-        	}
-        */
-    }, [qp]);
+  useEffect(() => {
+    console.log(qp);
+    /* 
+      Query parameters have changed
+      qp = { 
+        key1: value1, 
+        key2: value2, 
+        key3: value3 
+      }
+    */
+  }, [qp]);
 
-    return null;
+  return null;
 }
 ```
 
 - `qp.set: (key: string, value: string) => void`
 
-  The function that adds a query parameter to the current URL which changes the URL in the browser's address bar. 
+  The function that adds a query parameter to the current URL which changes the URL in the browser's address bar.
 
-  >If the current URL is `https://awesomesite.com/public`, calling `qp.set("foo", "bar")` will change the URL to `https://awesomesite.com/public?foo=bar`
+  > If the current URL is `https://awesomesite.com/public`, calling `qp.set("foo", "bar")` will change the URL to `https://awesomesite.com/public?foo=bar`
 
 - `qp.unset: (key: string) => void`
 
-  The function that removes a query parameter from the current URL which changes the URL in the browsers address bar. 
+  The function that removes a query parameter from the current URL which changes the URL in the browsers address bar.
 
-  >If the current URL is `https://awesomesite.com/public?foo=bar`, calling `qp.unset("foo")` will change the URL to `https://awesomesite.com/public`
+  > If the current URL is `https://awesomesite.com/public?foo=bar`, calling `qp.unset("foo")` will change the URL to `https://awesomesite.com/public`

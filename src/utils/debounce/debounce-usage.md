@@ -11,19 +11,19 @@ This way, the action can be triggering the function at 100 times per second, but
 ## Usage
 
 ```tsx
-import { debounce } from "react-simple-widgets";
+import { debounce } from "react-simple-widgets/dist/debounce";
 
-debounce(label, function, delay);
+debounce(label, Function, delay);
 ```
 
--   `label: string`
+- `label: string`
 
-    The unique label for this function. This is used to identify the function in the function pool
+  The unique label for this function. This is used to identify the function in the function pool
 
--   `function: Function`
+- `function: Function`
 
-    The function to be debounced
+  The function to be debounced
 
--   `delay: number`
+- `delay: number`
 
-    The debounce delay of the function in milliseconds (ms)
+  The debounce delay of the function in milliseconds (ms)

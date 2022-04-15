@@ -2,8 +2,10 @@
 .vscode
 .sass-cache
 node_modules
+dist/**.*
+!dist/*.d.ts
+
 *.iml
 *.tgz
 *.ini
-
 *.log
