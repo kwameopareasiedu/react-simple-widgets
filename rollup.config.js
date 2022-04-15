@@ -35,10 +35,11 @@ export default {
     "src/widgets/multi-date-picker/multi-date-picker",
     "src/widgets/multi-select-field/multi-select-field",
     "src/widgets/object-view/object-view",
-    "src/widgets/pagination/pagination"
+    "src/widgets/pagination/pagination",
     // "src/widgets/password-field/password-field",
-    // "src/widgets/popup-menu/popup-menu",
-    // "src/widgets/table-view/table-view",
+    "src/widgets/popup-menu/popup-menu",
+    // "src/widgets/select-field/select-field",
+    "src/widgets/table-view/table-view"
     // "src/widgets/text-area-field/text-area-field",
     // "src/widgets/text-editor-field/text-editor-field",
     // "src/widgets/text-field/text-field",

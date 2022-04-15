@@ -1,6 +1,6 @@
 import "./popup-menu.scss";
 import React, { cloneElement, CSSProperties, MutableRefObject, ReactElement, useEffect, useRef, useState } from "react";
-import { PopupMenu as PopupMenuProps, PopupMenuChild } from "../../../types";
+import { PopupMenuProps, PopupMenuChild } from "../../../types";
 
 export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
   const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;

@@ -2,23 +2,16 @@
 
 # TableView
 
-This widget is a responsive table widget. It collapses the view into cards on smaller displays to allow content to fit on screen. `TableView` it is intrinsically a `table` element and accepts all of its attributes.
+This widget is a responsive table widget. It collapses the view into cards on smaller displays to allow content to fit on screen.
+
+`TableView` it is intrinsically a `table` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { TableView } from "react-simple-widgets";
+import { TableView } from "react-simple-widgets/dist/table-view";
 
-<TableView
-  items={items}
-  props={props}
-  headerRowBuilder={headerRowBuilder}
-  bodyRowBuilder={bodyRowBuilder}
-  footerRowBuilder={footerRowBuilder}
-  captionBuilder={captionBuilder}
-  optionsBuilder={optionsBuilder}
-  onSort={onSort}
-/>;
+<TableView items props headerRowBuilder bodyRowBuilder footerRowBuilder captionBuilder optionsBuilder onSort />;
 ```
 
 - `items: Array<any>`

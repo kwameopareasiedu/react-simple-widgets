@@ -110,7 +110,7 @@ export type PopupMenuFunctionChild = (closePopup: () => void) => any;
 
 export type PopupMenuChild = string | JSX.Element | PopupMenuFunctionChild;
 
-export interface PopupMenu {
+export interface PopupMenuProps {
   children: PopupMenuChild | Array<PopupMenuChild>;
 }
 
@@ -146,7 +146,7 @@ export type TableViewOptionsBuilder = (item: any, itemIndex?: number) => JSX.Ele
 
 export type TableViewSortChangeCallback = (prop: string, direction: SortDirection) => void;
 
-export interface TableView extends AllHTMLAttributes<HTMLTableElement> {
+export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
   items: Array<any>;
   props: Array<[string, TableViewCellResolver, string?]>;
   headerRowBuilder?: TableViewHeaderRowBuilder;

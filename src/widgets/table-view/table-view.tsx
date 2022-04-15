@@ -2,7 +2,7 @@ import "./table-view.scss";
 import React, { useEffect, useMemo, useState } from "react";
 import {
   SortDirection,
-  TableView as TableViewProps,
+  TableViewProps,
   TableViewCellResolver,
   TableViewCellResolverFunction,
   TableViewSortData
