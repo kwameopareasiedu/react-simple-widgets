@@ -7,7 +7,8 @@ This widget is a form field wrapper for an input component whose value is to be 
 ## Usage
 
 ```jsx
-import { CustomField } from "react-simple-widgets";
+import CustomField from "react-simple-widgets/dist/custom-fields";
+// or import { CustomField } from "react-simple-widgets";
 
 <CustomField name={name} errorBuilder={errorBuilder}>
   {({ value, touched, error, setValue, setTouched, setError }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomField } from "../custom-field/custom-field";
+import CustomField from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { DateField as DateFieldProps } from "../../../types";
 import { DatePicker } from "../date-picker/date-picker";

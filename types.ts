@@ -220,7 +220,7 @@ export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps
 
 export type CustomFieldErrorBuilder = (originalError: any) => string;
 
-export interface CustomField extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
+export interface CustomFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
   errorBuilder?: CustomFieldErrorBuilder;
   children: CustomFieldBuilder;
 }
