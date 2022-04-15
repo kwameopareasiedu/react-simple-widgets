@@ -2,14 +2,16 @@
 
 # MultiDatePicker
 
-This widget allows you to select multiple calendar dates. `MultiDatePicker` is intrinsically a `div` element and accepts all of its attributes.
+This widget allows you to select multiple calendar dates.
+
+`MultiDatePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { MultiDatePicker } from "react-simple-widgets";
+import { MultiDatePicker } from "react-simple-widgets/dist/multi-date-picker";
 
-<MultiDatePicker value={value} displayFormat={displayFormat} validator={validator} onChange={onDatesSelect} />;
+<MultiDatePicker value={value} displayFormat validator onChange />;
 ```
 
 - `value: Array<string>`

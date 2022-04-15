@@ -1,6 +1,6 @@
 import "./multi-date-picker.scss";
 import React, { useState } from "react";
-import { MultiDatePicker as MultiDatePickerProps } from "../../../types";
+import { MultiDatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";

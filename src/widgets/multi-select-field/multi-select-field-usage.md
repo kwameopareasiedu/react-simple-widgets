@@ -2,14 +2,16 @@
 
 # MultiSelectField
 
-This widget is a form widget which allows the user select multiple value(s) from a list of options using radio inputs. `MultiSelectField` is intrinsically a `div` element and it accepts all of its attributes.
+This widget is a form widget which allows the user select multiple value(s) from a list of options using radio inputs. 
+
+`MultiSelectField` is intrinsically a `div` element and it accepts all of its attributes.
 
 ## Usage
 
 ```jsx
 import { MultiSelectField } from "react-simple-widgets";
 
-<MultiSelectField name={name} label={label} inline={inlne} options={options} onChange={onChange} />;
+<MultiSelectField name label inline options onChange />;
 ```
 
 - `name: string`

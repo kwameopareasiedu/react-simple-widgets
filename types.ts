@@ -308,7 +308,7 @@ export interface SelectField
 }
 
 /** MultiSelectField */
-export interface MultiSelectField
+export interface MultiSelectFieldProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
     Pick<FieldDecorationProps, "label"> {
   name: string;
@@ -354,7 +354,7 @@ export interface DateFieldProps
 }
 
 /** MultiDatePicker */
-export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface MultiDatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: Array<string>;
   displayFormat?: string;
   validator?: (date: string) => string;
@@ -362,8 +362,8 @@ export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>,
 }
 
 /** MultiDateField */
-export interface MultiDateField
-  extends Omit<MultiDatePicker, "label" | "value" | "onChange">,
+export interface MultiDateFieldProps
+  extends Omit<MultiDatePickerProps, "label" | "value" | "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (dates: Array<string>) => void;
 }

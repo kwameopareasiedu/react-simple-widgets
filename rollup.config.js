@@ -30,10 +30,10 @@ export default {
     "src/widgets/loader/loader",
     "src/widgets/local-storage-provider/local-storage-provider",
     "src/widgets/month-date-field/month-date-field",
-    "src/widgets/month-date-picker/month-date-picker"
-    // "src/widgets/multi-date-field/multi-date-field",
-    // "src/widgets/multi-date-picker/multi-date-picker",
-    // "src/widgets/multi-select-field/multi-select-field",
+    "src/widgets/month-date-picker/month-date-picker",
+    "src/widgets/multi-date-field/multi-date-field",
+    "src/widgets/multi-date-picker/multi-date-picker",
+    "src/widgets/multi-select-field/multi-select-field"
     // "src/widgets/object-view/object-view",
     // "src/widgets/pagination/pagination",
     // "src/widgets/password-field/password-field",
