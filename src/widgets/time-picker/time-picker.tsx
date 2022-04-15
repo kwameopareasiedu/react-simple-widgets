@@ -1,6 +1,6 @@
 import "./time-picker.scss";
 import React, { useEffect, useState } from "react";
-import { TimePicker as TimePickerProps } from "../../../types";
+import { TimePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { PopupMenu } from "../popup-menu/popup-menu";

@@ -42,9 +42,9 @@ export default {
     "src/widgets/table-view/table-view",
     "src/widgets/text-area-field/text-area-field",
     "src/widgets/text-editor-field/text-editor-field",
-    "src/widgets/text-field/text-field"
-    // "src/widgets/time-field/time-field",
-    // "src/widgets/time-picker/time-picker",
+    "src/widgets/text-field/text-field",
+    "src/widgets/time-field/time-field",
+    "src/widgets/time-picker/time-picker"
     // "src/utils/debounce/debounce",
     // "src/utils/use-countdown/use-countdown",
     // "src/utils/use-infinite-list/use-infinite-list",

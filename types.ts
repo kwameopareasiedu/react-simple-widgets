@@ -383,14 +383,14 @@ export interface MonthDateFieldProps
 }
 
 /** TimePicker */
-export interface TimePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface TimePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   onChange: (time: string) => void;
 }
 
 /** TimeField */
-export interface TimeField
-  extends Omit<TimePicker, "label" | "value" | "onChange">,
+export interface TimeFieldProps
+  extends Omit<TimePickerProps, "label" | "value" | "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (time: string) => void;
 }

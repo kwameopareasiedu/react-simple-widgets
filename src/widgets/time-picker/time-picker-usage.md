@@ -2,14 +2,16 @@
 
 # TimePicker
 
-This widget allows you to select a time. `TimePicker` is intrinsically a `div` element and accepts all of its attributes.
+This widget allows you to select a time. 
+
+`TimePicker` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { TimePicker } from "react-simple-widgets";
+import { TimePicker } from "react-simple-widgets/dist/time-picker";
 
-<TimePicker value={value} onChange={onTimeChange} />;
+<TimePicker value onChange />;
 ```
 
 - `value: string`
