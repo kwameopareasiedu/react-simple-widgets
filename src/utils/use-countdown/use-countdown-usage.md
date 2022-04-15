@@ -12,7 +12,7 @@ This is a React [hook](https://reactjs.org/docs/hooks-intro.html) that provides 
 ## Usage
 
 ```jsx
-import { useCountdown } from "react-simple-widgets";
+import { useCountdown } from "react-simple-widgets/dist/use-countdown";
 
 export function CountdownUsage() {
   const [count, running, stopCountdown, resetCountdown] = useCountdown(delay);

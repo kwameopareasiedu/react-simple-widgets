@@ -2,7 +2,7 @@
 
 # useInfiniteList
 
-This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of an infinite list. This can be paired with the [InfiniteList](../../widgets/infinite-list/infinite-list-usage.md) to provide a load-more mechanism for a particular list. The managed state are in the order:
+This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of an infinite list. The managed state are in the order:
 
 - List of items (`Array`)
 - Current page (`number`)
@@ -11,21 +11,19 @@ This [hook](https://reactjs.org/docs/hooks-intro.html) manages the state of an i
 - Load more items success callback (`Function`)
 - Load more items error callback (`Function`)
 
+> `useInfiniteList` can be paired with the [InfiniteList](../../widgets/infinite-list/infinite-list-usage.md) to provide a load-more mechanism for a particular list.
+
 ## Usage
 
 ```jsx
-import { useInfiniteList, InfiniteList } from "react-simple-widgets";
+import { useInfiniteList } from "react-simple-widgets/dist/use-infinite-list";
+import { InfiniteList } from "react-simple-widgets/dist/infinite-list";
 
 export function CountdownUsage() {
   const [items, page, total, triggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed] = useInfiniteList();
 
   return (
-    <InfiniteList
-      error={error}
-      busy={fetching}
-      total={total}
-      count={items.length}
-      onLoadMore={() => loadMore(resetPage)}>
+    <InfiniteList error busy total count onLoadMore>
       /* Render infinite list here */
     </InfiniteList>
   );

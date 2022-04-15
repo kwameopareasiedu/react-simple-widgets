@@ -44,12 +44,12 @@ export default {
     "src/widgets/text-editor-field/text-editor-field",
     "src/widgets/text-field/text-field",
     "src/widgets/time-field/time-field",
-    "src/widgets/time-picker/time-picker"
-    // "src/utils/debounce/debounce",
-    // "src/utils/use-countdown/use-countdown",
-    // "src/utils/use-infinite-list/use-infinite-list",
-    // "src/utils/use-query-params/use-query-params",
-    // "src/utils/use-window-breakpoints/use-window-breakpoints"
+    "src/widgets/time-picker/time-picker",
+    "src/utils/debounce/debounce",
+    "src/utils/use-countdown/use-countdown",
+    "src/utils/use-infinite-list/use-infinite-list",
+    "src/utils/use-query-params/use-query-params",
+    "src/utils/use-window-breakpoints/use-window-breakpoints"
   ],
   output: {
     dir: path.resolve(__dirname, "./dist"),

@@ -2,13 +2,15 @@
 
 # useWindowBreakpoints
 
-This is a React [hook](https://reactjs.org/docs/hooks-intro.html) that allow your app to be aware of the current window width category. The categories are computed using [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
+This is a React [hook](https://reactjs.org/docs/hooks-intro.html) that allow your app to be aware of the current window width category.
+
+> The categories are computed using [Bootstrap's breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/#available-breakpoints)
 
 ## Usage
 
 ```jsx
 import { useEffect } from "react";
-import { useWindowBreakpoints } from "react-simple-widgets";
+import { useWindowBreakpoints } from "react-simple-widgets/dist/use-window-breakpoints";
 
 export function WindowBreakpointsUsage() {
   const { xs, sm, md, lg, xl, xxl, width } = useWindowBreakpoints();
