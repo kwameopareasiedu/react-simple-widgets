@@ -3,7 +3,7 @@ import "./text-editor-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { TextEditorField as TextEditorFieldProps } from "../../../types";
+import { TextEditorFieldProps } from "../../../types";
 import Quill from "react-quill";
 
 export const TextEditorField = ({

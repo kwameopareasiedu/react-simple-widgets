@@ -247,14 +247,14 @@ export interface FieldDecorationProps extends Omit<AllHTMLAttributes<HTMLDivElem
 }
 
 /** TextField */
-export interface TextField
+export interface TextFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
 }
 
 /** TextEditorField */
-export interface TextEditorField extends Pick<FieldDecorationProps, "label" | "helper"> {
+export interface TextEditorFieldProps extends Pick<FieldDecorationProps, "label" | "helper"> {
   name: string;
   disabled?: boolean;
   onChange?: (data: any) => void;
@@ -263,14 +263,14 @@ export interface TextEditorField extends Pick<FieldDecorationProps, "label" | "h
 }
 
 /** TextAreaField */
-export interface TextAreaField
+export interface TextAreaFieldProps
   extends Omit<InputHTMLAttributes<HTMLTextAreaElement>, "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
 }
 
 /** PasswordField */
-export type PasswordFieldProps = Omit<TextField, "trailing" | "type">;
+export type PasswordFieldProps = Omit<TextFieldProps, "trailing" | "type">;
 
 /** DropdownField */
 export interface DropdownFieldProps

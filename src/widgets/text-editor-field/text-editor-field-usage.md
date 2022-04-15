@@ -2,22 +2,14 @@
 
 # TextEditorField
 
-This widget is a WYSIWYG editor form widget which is built on top of [Quill rich text editor](https://quilljs.com/).
+This widget is a WYSIWYG editor form widget which is built on top of the [Quill rich text editor](https://quilljs.com/).
 
 ## Usage
 
 ```jsx
-import { TextEditorField } from "react-simple-widgets";
+import { TextEditorField } from "react-simple-widgets/dist/text-editor-field";
 
-<TextEditorField
-  name={name}
-  label={label}
-  helper={helper}
-  disabled={disabled}
-  onChange={onEditorChange}
-  onFocus={onEditorFocus}
-  onBlur={onEditorBlur}
-/>;
+<TextEditorField name label helper disabled onChange onFocus onBlur />;
 ```
 
 - `name: string`

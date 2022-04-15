@@ -2,14 +2,16 @@
 
 # TextAreaField
 
-This widget is a text form widget. `TextAreaField` is intrinsically a `textarea` element and accepts all of its attributes.
+This widget is a text form widget. 
+
+`TextAreaField` is intrinsically a `textarea` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { TextField } from "react-simple-widgets";
+import { TextAreaField } from "react-simple-widgets/dist/test-area-field";
 
-<TextField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
+<TextAreaField name label helper leading trailing />;
 ```
 
 - `name: string`
