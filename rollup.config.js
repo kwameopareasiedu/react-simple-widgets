@@ -28,9 +28,9 @@ export default {
     "src/widgets/flash-provider/flash-provider",
     "src/widgets/infinite-list/infinite-list",
     "src/widgets/loader/loader",
-    "src/widgets/local-storage-provider/local-storage-provider"
-    // "src/widgets/month-date-field/month-date-field",
-    // "src/widgets/month-date-picker/month-date-picker",
+    "src/widgets/local-storage-provider/local-storage-provider",
+    "src/widgets/month-date-field/month-date-field",
+    "src/widgets/month-date-picker/month-date-picker"
     // "src/widgets/multi-date-field/multi-date-field",
     // "src/widgets/multi-date-picker/multi-date-picker",
     // "src/widgets/multi-select-field/multi-select-field",

@@ -369,15 +369,15 @@ export interface MultiDateField
 }
 
 /** MonthDatePicker */
-export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface MonthDatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   validator?: (date: string) => string;
   onChange: (date: string) => void;
 }
 
 /** MonthDateField */
-export interface MonthDateField
-  extends Omit<MonthDatePicker, "label" | "value" | "onChange">,
+export interface MonthDateFieldProps
+  extends Omit<MonthDatePickerProps, "label" | "value" | "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (date: string) => void;
 }

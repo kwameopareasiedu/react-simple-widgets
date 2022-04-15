@@ -1,6 +1,6 @@
 import "./month-date-picker.scss";
 import React, { useEffect, useState } from "react";
-import { MonthDatePicker as MonthDatePickerProps } from "../../../types";
+import { MonthDatePickerProps } from "../../../types";
 import { dateMonth, dateYear, months, years } from "../calendar/calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
