@@ -1,6 +1,6 @@
 import "./select-option.scss";
 import React from "react";
-import { SelectOption as SelectOptionProps } from "../../../types";
+import { SelectOptionProps } from "../../../types";
 
 export const SelectOption = ({ label, selected, onSelect, multi, onFocus, ...rest }: SelectOptionProps) => {
   const className = (): string => {

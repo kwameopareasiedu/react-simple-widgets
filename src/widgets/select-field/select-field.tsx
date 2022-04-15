@@ -1,7 +1,7 @@
 import "./select-field.scss";
 import React, { Fragment } from "react";
 import { CustomField } from "../custom-field/custom-field";
-import { SelectField as SelectFieldProps } from "../../../types";
+import { SelectFieldProps } from "../../../types";
 import { SelectOption } from "./select-option";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 

@@ -1,6 +1,6 @@
 import "./password-field.scss";
 import React, { useState } from "react";
-import { PasswordField as PasswordFieldProps } from "../../../types";
+import { PasswordFieldProps } from "../../../types";
 import { TextField } from "../text-field/text-field";
 import HiddenIcon from "../../assets/hide.svg";
 import VisibleIcon from "../../assets/eye.svg";

@@ -2,14 +2,16 @@
 
 # SelectField
 
-This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. `SelectField` is intrinsically a `div` element and accepts all its attributes.
+This widget is a form widget which allows the user select value(s) from a list of options using radio inputs. 
+
+`SelectField` is intrinsically a `div` element and accepts all its attributes.
 
 ## Usage
 
 ```jsx
-import { SelectField } from "react-simple-widgets";
+import { SelectField } from "react-simple-widgets/dist/select-field";
 
-<SelectField name={name} label={label} inline={inlne} options={options} onChange={onChange} />;
+<SelectField name label inline options onChange />;
 ```
 
 - `name: string`

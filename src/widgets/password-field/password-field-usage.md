@@ -7,9 +7,9 @@ This widget is a password form widget. PasswordField is intrinsically an `input`
 ## Usage
 
 ```jsx
-import { PasswordField } from "react-simple-widgets";
+import { PasswordField } from "react-simple-widgets/dist/password-field";
 
-<PasswordField name={name} label={label} leading={leading} helper={helper} />;
+<PasswordField name label leading helper />;
 ```
 
 - `name: string`

@@ -90,7 +90,7 @@ Each flash function (`flashError`, `flashWarning`, `flashInfo` and `flashSuccess
 
   The flash message content. This can be a string or a `JSX.Element`
 
-- `onFlashDismissed?: () => void`
+- `onDismissed?: () => void`
 
   If specified, this function is called when the flash message is dismissed.
 
@@ -143,7 +143,7 @@ As seen in the example above, the `builder` method is passed the `flash` object 
 
   The content of the flash message. This can be a string or a `JSX.Element`
 
-- `onFlashDismissed?: () => void`
+- `onDismissed?: () => void`
 
   An optional function to call when the flash is dismissed
 

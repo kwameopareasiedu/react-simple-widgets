@@ -270,7 +270,7 @@ export interface TextAreaField
 }
 
 /** PasswordField */
-export type PasswordField = Omit<TextField, "trailing" | "type">;
+export type PasswordFieldProps = Omit<TextField, "trailing" | "type">;
 
 /** DropdownField */
 export interface DropdownFieldProps
@@ -287,7 +287,7 @@ export interface CheckboxFieldProps
 }
 
 /** SelectField */
-export interface SelectOption extends AllHTMLAttributes<HTMLInputElement> {
+export interface SelectOptionProps extends AllHTMLAttributes<HTMLInputElement> {
   label: string;
   multi?: boolean;
   selected?: boolean;
@@ -295,7 +295,7 @@ export interface SelectOption extends AllHTMLAttributes<HTMLInputElement> {
   onSelect: () => void;
 }
 
-export interface SelectField
+export interface SelectFieldProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
     Pick<FieldDecorationProps, "label"> {
   name: string;
