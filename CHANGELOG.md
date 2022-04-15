@@ -2,8 +2,15 @@
 
 # Change Log
 
-- `5.0.0`
-  - **Breaking changes**
+- `6.0.0 (Breaking)`
+  - Compiled separate ES modules for each element to enable tree shaking and much smaller app size.
+  - Upgraded [React](https://reactjs.org/) and [ReactDOM](https://reactjs.org/) to v18
+  - Renamed `GrowableItemsContainer` widget to [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md)
+  - Renamed `useGrowableList` hook to [useInfiniteList](src/utils/use-infinite-list/use-infinite-list-usage.md)
+  - Renamed `onFlashDismissed` to `onDismissed` for custom flash dialogs in [FlashProvider](src/widgets/flash-provider/flash-provider-usage.md)
+  - Added `confirmButtonClassName` and `cancelButtonClassName` attributes to [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md). These help target the confirmation and cancel buttons in the popup dialog
+
+- `5.0.0 (Breaking)`
   - Updated [React Router DOM](https://github.com/remix-run/react-router#readme) to v6
   - Added `validator` attribute to [Calendar](src/widgets/calendar/calendar-usage.md) widget
   - Added `validator` attribute to [DatePicker](src/widgets/date-picker/date-picker-usage.md) widget
@@ -27,8 +34,7 @@
   - Omitted `value` from [TimeField](src/widgets/time-field/time-field-usage.md) type
 - `4.1.0`
   - Added optional `builder` attribute to [ConfirmButton](src/widgets/confirm-button/confirm-button-usage.md) which allows for a custom confirmation dialog
-- `4.0.0`
-  - **Major breaking changes across all widgets and widget props/attributes. See respective widget documentation to see what's changed**
+- `4.0.0 (Breaking)`
   - Removed `TransitionProvider`. Use `<Link/>` from [React Router DOM](https://www.npmjs.com/package/react-router-dom) instead
   - Renamed `ValueStoreProvider` to `LocalStorageProvider`
   - Renamed `PageActions` to `ActionBar`

@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-6.0.0-alpha-01-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/minified%20size-544.2%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-6.0.0-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/minified%20size-197%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more.
 
@@ -15,10 +15,6 @@ To find out if this library is right for you, we've compiled the [Storybook](htt
 The funds would be used to get an active team of developers on the project and speed up updates. You are not obligated to this, but every support goes a long way to help bring you enterprise-grade tools and services.
 
 If you love the library, consider leaving a star on the project page on [Github](https://github.com/kwameopareasiedu/react-simple-widgets).
-
-## Migrating
-
-> To upgrade from version 4.x.x to 5.0.0, use [this migration guide](MIGRATION-4-5.md).
 
 ## Installing
 
@@ -38,9 +34,9 @@ yarn add --dev react react-dom react-router-dom formik
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap 5.1.1+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
+`React Simple Widgets` also depends on [Bootstrap 5.1.3+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
 
-## Widgets in the library
+## Widgets
 
 Here's a summary of the widgets in `React Simple Widgets`
 
@@ -116,7 +112,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md) - A widget that provides a load-more mechanism for an infinite list of items
 
-## Hooks in this library
+## Hooks
 
 - [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) - A hook that returns a object containing the URL search string parameters
 
@@ -126,7 +122,7 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [useInfiniteList](src/utils/use-infinite-list/use-infinite-list-usage.md) - A hook which manages the state of an infinite list. Used with [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md) to provide a load-more mechanism for said infinite list
 
-## Utilities in this library
+## Utilities
 
 - [debounce](src/utils/debounce/debounce-usage.md) - Calls a function after a specified delay after a caller has stopped calling it
 
