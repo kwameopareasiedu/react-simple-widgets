@@ -1,6 +1,6 @@
 import "./field-decoration.scss";
 import React, { useState, cloneElement } from "react";
-import { FieldDecoration as FieldDecorationProps } from "../../../types";
+import { FieldDecorationProps } from "../../../types";
 
 export const FieldDecoration = ({
   label,

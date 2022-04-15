@@ -13,18 +13,9 @@ This widget wraps its child and decorates it with the following:
 ## Usage
 
 ```jsx
-import { FieldDecoration } from "react-simple-widgets";
+import { FieldDecoration } from "react-simple-widgets/dist/field-decoration";
 
-<FieldDecoration
-  label="Flat field"
-  leading={<i className="fa fa-user me-2" />}
-  trailing={
-    <button className="btn bt-light btn-sm">
-      <i className="fa fa-redo" />
-    </button>
-  }
-  error="This is a test error"
-  helper="Max length: 10 chars">
+<FieldDecoration label leading trailing error helper>
   {({ onFieldFocus, onFieldBlur }) => (
     <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} placeholder="Enter name here" />
   )}

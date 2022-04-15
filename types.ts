@@ -236,7 +236,7 @@ export interface FieldDecorationBuilderProps {
 
 export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => JSX.Element;
 
-export interface FieldDecoration extends Omit<AllHTMLAttributes<HTMLDivElement>, "children"> {
+export interface FieldDecorationProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "children"> {
   label?: any;
   error?: any;
   helper?: any;
@@ -249,12 +249,12 @@ export interface FieldDecoration extends Omit<AllHTMLAttributes<HTMLDivElement>,
 /** TextField */
 export interface TextField
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
 }
 
 /** TextEditorField */
-export interface TextEditorField extends Pick<FieldDecoration, "label" | "helper"> {
+export interface TextEditorField extends Pick<FieldDecorationProps, "label" | "helper"> {
   name: string;
   disabled?: boolean;
   onChange?: (data: any) => void;
@@ -265,7 +265,7 @@ export interface TextEditorField extends Pick<FieldDecoration, "label" | "helper
 /** TextAreaField */
 export interface TextAreaField
   extends Omit<InputHTMLAttributes<HTMLTextAreaElement>, "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
 }
 
@@ -275,14 +275,14 @@ export type PasswordField = Omit<TextField, "trailing" | "type">;
 /** DropdownField */
 export interface DropdownFieldProps
   extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
 }
 
 /** CheckboxField */
 export interface CheckboxFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange">,
-    Pick<FieldDecoration, "label"> {
+    Pick<FieldDecorationProps, "label"> {
   onChange?: (checked: boolean) => void;
 }
 
@@ -297,7 +297,7 @@ export interface SelectOption extends AllHTMLAttributes<HTMLInputElement> {
 
 export interface SelectField
   extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
-    Pick<FieldDecoration, "label"> {
+    Pick<FieldDecorationProps, "label"> {
   name: string;
   label?: string;
   inline?: boolean;
@@ -310,7 +310,7 @@ export interface SelectField
 /** MultiSelectField */
 export interface MultiSelectField
   extends Omit<AllHTMLAttributes<HTMLDivElement>, "label" | "onChange">,
-    Pick<FieldDecoration, "label"> {
+    Pick<FieldDecorationProps, "label"> {
   name: string;
   label?: string;
   inline?: boolean;
@@ -349,7 +349,7 @@ export interface DatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>,
 /** DateField */
 export interface DateFieldProps
   extends Omit<DatePickerProps, "label" | "value" | "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (date: string) => void;
 }
 
@@ -364,7 +364,7 @@ export interface MultiDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>,
 /** MultiDateField */
 export interface MultiDateField
   extends Omit<MultiDatePicker, "label" | "value" | "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (dates: Array<string>) => void;
 }
 
@@ -378,7 +378,7 @@ export interface MonthDatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>,
 /** MonthDateField */
 export interface MonthDateField
   extends Omit<MonthDatePicker, "label" | "value" | "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (date: string) => void;
 }
 
@@ -391,7 +391,7 @@ export interface TimePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 /** TimeField */
 export interface TimeField
   extends Omit<TimePicker, "label" | "value" | "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (time: string) => void;
 }
 
@@ -412,7 +412,7 @@ export interface FilePickerDialog extends FilePicker {
 /** FileField */
 export interface FileField
   extends Omit<FilePicker, "label" | "onChange">,
-    Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (file: File) => void;
 }
 

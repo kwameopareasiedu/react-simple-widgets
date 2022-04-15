@@ -21,8 +21,8 @@ export default {
     "src/widgets/date-field/date-field",
     "src/widgets/date-picker/date-picker",
     "src/widgets/dialog-provider/dialog-provider",
-    "src/widgets/dropdown-field/dropdown-field"
-    // "src/widgets/field-decoration/field-decoration",
+    "src/widgets/dropdown-field/dropdown-field",
+    "src/widgets/field-decoration/field-decoration"
     // "src/widgets/file-field/file-field",
     // "src/widgets/file-picker/file-picker",
     // "src/widgets/flash-provider/flash-provider-context",
