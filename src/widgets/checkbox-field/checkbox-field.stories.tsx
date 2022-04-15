@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
-import { CheckboxField } from "./checkbox-field";
+import CheckboxField from "./checkbox-field";
 import { action } from "@storybook/addon-actions";
 
 export default { title: "CheckboxField", component: CheckboxField };

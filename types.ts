@@ -277,7 +277,7 @@ export interface DropdownField
 }
 
 /** CheckboxField */
-export interface CheckboxField
+export interface CheckboxFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange">,
     Pick<FieldDecoration, "label"> {
   onChange?: (checked: boolean) => void;

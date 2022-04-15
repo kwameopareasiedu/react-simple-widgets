@@ -7,7 +7,8 @@ This widget is a checkbox form widget. CheckboxField is intrinsically an `<input
 ## Usage
 
 ```jsx
-import { CheckboxField } from "react-simple-widgets";
+import CheckboxField from "react-simple-widgets/dist/checkbox-field";
+// or import { CheckboxField } from "react-simple-widgets";
 
 <CheckboxField name={name} label={label} />;
 ```
