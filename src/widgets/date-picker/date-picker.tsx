@@ -1,5 +1,5 @@
 import React from "react";
-import { DatePicker as DatePickerProps } from "../../../types";
+import { DatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
@@ -9,7 +9,7 @@ import { PopupMenu } from "../popup-menu/popup-menu";
 djs.extend(arraySupport);
 djs.extend(advancedFormat);
 
-export const DatePicker = ({
+const DatePicker = ({
   value,
   validator,
   className: _className,
@@ -46,3 +46,5 @@ export const DatePicker = ({
     </PopupMenu>
   );
 };
+
+export default DatePicker;

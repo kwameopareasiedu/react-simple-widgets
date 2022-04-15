@@ -18,8 +18,8 @@ export default {
     "src/widgets/checkbox-field/checkbox-field",
     "src/widgets/confirm-button/confirm-button",
     "src/widgets/custom-field/custom-field",
-    "src/widgets/date-field/date-field"
-    // "src/widgets/date-picker/date-picker",
+    "src/widgets/date-field/date-field",
+    "src/widgets/date-picker/date-picker"
     // "src/widgets/dialog-provider/dialog-provider-context",
     // "src/widgets/dialog-provider/dialog-provider",
     // "src/widgets/dropdown-field/dropdown-field",

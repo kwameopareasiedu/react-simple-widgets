@@ -6,3 +6,4 @@ export { default as CheckboxField } from "./checkbox-field";
 export { default as ConfirmButton } from "./confirm-button";
 export { default as CustomField } from "./custom-field";
 export { default as DateField } from "./date-field";
+export { default as DatePicker } from "./date-picker";

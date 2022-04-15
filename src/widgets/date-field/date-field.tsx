@@ -2,7 +2,7 @@ import React from "react";
 import CustomField from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { DateFieldProps } from "../../../types";
-import { DatePicker } from "../date-picker/date-picker";
+import DatePicker from "../date-picker/date-picker";
 
 const DateField = ({
   name,

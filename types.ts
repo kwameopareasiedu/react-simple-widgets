@@ -336,7 +336,7 @@ export interface CalendarProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "
 }
 
 /** DatePicker */
-export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface DatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   displayFormat?: string;
   validator?: (date: string) => string;
@@ -345,7 +345,7 @@ export interface DatePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 
 /** DateField */
 export interface DateFieldProps
-  extends Omit<DatePicker, "label" | "value" | "onChange">,
+  extends Omit<DatePickerProps, "label" | "value" | "onChange">,
     Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (date: string) => void;
 }
