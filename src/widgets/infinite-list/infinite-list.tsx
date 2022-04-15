@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useEffect, useRef } from "react";
-import { InfiniteList as InfiniteListProps } from "../../../types";
+import { InfiniteListProps } from "../../../types";
 import { BusyButton } from "../busy-button/busy-button";
 
 export const InfiniteList = ({

@@ -2,19 +2,16 @@
 
 # InfiniteList
 
-This widget that wraps an **infinite list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. `InfiniteList` is intrinsically a `div` element and accepts all of its attributes.
+This widget that wraps an **infinite list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. 
+
+`InfiniteList` is intrinsically a `div` element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { InfiniteList } from "react-simple-widgets";
+import { InfiniteList } from "react-simple-widgets/dist/infinite-list";
 
-<InfiniteList
-  error={error}
-  busy={fetching}
-  total={items.total}
-  count={items.results.length}
-  onLoadMore={fetchItems}>
+<InfiniteList error busy total count onLoadMore>
   {/* Infinite items here */}
 </InfiniteList>;
 ```

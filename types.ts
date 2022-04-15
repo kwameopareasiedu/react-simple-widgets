@@ -321,7 +321,7 @@ export interface MultiSelectField
 }
 
 /** InfiniteList */
-export interface InfiniteList extends AllHTMLAttributes<HTMLDivElement> {
+export interface InfiniteListProps extends AllHTMLAttributes<HTMLDivElement> {
   busy: boolean;
   total: number;
   count: number;
