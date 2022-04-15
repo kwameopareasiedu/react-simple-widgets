@@ -1,6 +1,4 @@
 import { FC } from "react";
 import { ConfirmButtonProps } from "../types";
 
-declare const ConfirmButton: FC<ConfirmButtonProps>;
-
-export = ConfirmButton;
+export const ConfirmButton: FC<ConfirmButtonProps>;

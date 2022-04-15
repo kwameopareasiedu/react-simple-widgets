@@ -1,6 +1,6 @@
 import "./multi-select-field.scss";
 import React, { Fragment } from "react";
-import CustomField from "../custom-field/custom-field";
+import { CustomField } from "../custom-field/custom-field";
 import { MultiSelectField as MultiSelectFieldProps } from "../../../types";
 import { SelectOption } from "../select-field/select-option";
 import { FieldDecoration } from "../field-decoration/field-decoration";

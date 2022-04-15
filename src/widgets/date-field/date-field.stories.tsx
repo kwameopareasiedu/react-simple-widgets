@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
-import DateField from "./date-field";
+import { DateField } from "./date-field";
 import { action } from "@storybook/addon-actions";
 
 export default { title: "DateField", component: DateField };

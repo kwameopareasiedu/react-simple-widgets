@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DatePicker from "./date-picker";
+import { DatePicker } from "./date-picker";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
 

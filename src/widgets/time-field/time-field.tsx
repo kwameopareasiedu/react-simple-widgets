@@ -1,6 +1,6 @@
 import "./time-field.scss";
 import React from "react";
-import CustomField from "../custom-field/custom-field";
+import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { TimeField as TimeFieldProps } from "../../../types";
 import { TimePicker } from "../time-picker/time-picker";

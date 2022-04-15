@@ -7,7 +7,7 @@ import djs from "dayjs";
 
 djs.extend(arraySupport);
 
-const Calendar = ({
+export const Calendar = ({
   initialDate,
   isDateActive,
   isDateOutlined,
@@ -151,5 +151,3 @@ const Calendar = ({
     </div>
   );
 };
-
-export default Calendar;

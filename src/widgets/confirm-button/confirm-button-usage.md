@@ -9,9 +9,8 @@ This widget shows a confirmation dialog to confirm an action. `ConfirmButton` is
 ## Usage
 
 ```jsx
-import DialogProvider from "react-simple-widgets/dist/dialog-provider";
-import ConfirmButton from "react-simple-widgets/dist/confirm-button";
-// or import { DialogProvider, ConfirmButton } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 
 <DialogProvider>
   <ConfirmButton busy={busy} message={message} onCancel={onCancel} onConfirm={onConfirm}>
@@ -41,13 +40,17 @@ import ConfirmButton from "react-simple-widgets/dist/confirm-button";
 If you want to customize the confirmation dialog, you can provider the `builder` function attribute to `ConfirmButton`. This function will be passed the dialog helper object and the confirmation message and must return a React component to display.
 
 ```tsx
-import { DialogProvider, ConfirmButton } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 
 <DialogProvider>
-    <ConfirmButton builder={(helper, message) => /* Return custom confirmation dialog here */}>
-        Start
-    </ConfirmButton>
-</DialogProvider>
+  <ConfirmButton
+    builder={(helper, message) => {
+      /* Return custom confirmation dialog here */
+    }}>
+    Start
+  </ConfirmButton>
+</DialogProvider>;
 ```
 
 > The `helper` is a [DialogHelper](../dialog-provider/dialog-provider-usage.md) object. This contains a `dismiss()` function which is used to dismiss the dialog.

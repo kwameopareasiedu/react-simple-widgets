@@ -8,8 +8,7 @@ This widget provides breadcrumb styling for its `<a/>` children. `Breadcrumbs` i
 
 ```jsx
 import { Link } from "react-router-dom";
-import Breadcrumbs from "react-simple-widgets/dist/breadcrumbs";
-// or import { Breadcrumbs } from "react-simple-widgets";
+import { Breadcrumbs } from "react-simple-widgets/dist/breadcrumbs";
 
 <Breadcrumbs>
   <Link to="">Home</Link>

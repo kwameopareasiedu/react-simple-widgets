@@ -1,6 +1,4 @@
 import { FC } from "react";
 import { DateFieldProps } from "../types";
 
-declare const DateField: FC<DateFieldProps>;
-
-export = DateField;
+export const DateField: FC<DateFieldProps>;

@@ -3,7 +3,14 @@ import React from "react";
 import { BusyButtonProps } from "../../../types";
 import { Loader } from "../loader/loader";
 
-const BusyButton = ({ busy, invert, disabled, className: _className, children, ...rest }: BusyButtonProps): any => {
+export const BusyButton = ({
+  busy,
+  invert,
+  disabled,
+  className: _className,
+  children,
+  ...rest
+}: BusyButtonProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "busy-button"];
     if (_className) classes.push(_className);
@@ -17,5 +24,3 @@ const BusyButton = ({ busy, invert, disabled, className: _className, children, .
     </button>
   );
 };
-
-export default BusyButton;

@@ -8,8 +8,7 @@ Calendar is intrinsically a `<div/>` element and it accepts all of its attribute
 ## Usage
 
 ```jsx
-import Calendar from "react-simple-widgets/dist/calendar";
-// or import { Calendar } from "react-simple-widgets";
+import { Calendar } from "react-simple-widgets/dist/calendar";
 
 <Calendar
   initialDate={initialDate}

@@ -19,9 +19,8 @@ export default {
     "src/widgets/confirm-button/confirm-button",
     "src/widgets/custom-field/custom-field",
     "src/widgets/date-field/date-field",
-    "src/widgets/date-picker/date-picker"
-    // "src/widgets/dialog-provider/dialog-provider-context",
-    // "src/widgets/dialog-provider/dialog-provider",
+    "src/widgets/date-picker/date-picker",
+    "src/widgets/dialog-provider/dialog-provider"
     // "src/widgets/dropdown-field/dropdown-field",
     // "src/widgets/field-decoration/field-decoration",
     // "src/widgets/file-field/file-field",

@@ -1,10 +1,10 @@
 import "./checkbox-field.scss";
 import React from "react";
-import CustomField from "../custom-field/custom-field";
+import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { CheckboxFieldProps } from "../../../types";
 
-const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: CheckboxFieldProps): any => {
+export const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: CheckboxFieldProps): any => {
   return (
     <div className="react-simple-widget checkbox-field">
       <CustomField name={name}>
@@ -38,5 +38,3 @@ const CheckboxField = ({ name, label, disabled, onChange, onFocus, ...rest }: Ch
     </div>
   );
 };
-
-export default CheckboxField;

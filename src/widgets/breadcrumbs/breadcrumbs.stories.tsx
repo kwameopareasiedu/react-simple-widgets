@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcrumbs from "./breadcrumbs";
+import { Breadcrumbs } from "./breadcrumbs";
 import { BrowserRouter, Link } from "react-router-dom";
 
 export default { title: "Breadcrumbs", component: Breadcrumbs };

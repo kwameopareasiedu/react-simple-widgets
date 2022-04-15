@@ -7,8 +7,7 @@ This widget displays a popup calendar to select a single calendar date. `DatePic
 ## Usage
 
 ```jsx
-import DatePicker from "react-simple-widgets/dist/date-picker";
-// or import { DatePicker } from "react-simple-widgets";
+import { DatePicker } from "react-simple-widgets/dist/date-picker";
 
 <DatePicker value={value} displayFormat={displayFormat} validator={validator} onChange={onDateSelect} />;
 ```
