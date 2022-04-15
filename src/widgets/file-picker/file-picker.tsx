@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { DialogSize, FilePicker as FilePickerProps } from "../../../types";
-import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
+import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FilePickerDialog } from "./file-picker-dialog";
 
 export const FilePicker = ({

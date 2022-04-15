@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FlashOptionalArgs, FlashProvider as FlashProviderProps, FlashType } from "../../../types";
 import { FlashProviderContext } from "./flash-provider-context";
-import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
+import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FlashView } from "./flash-view";
 
 export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.Element => {

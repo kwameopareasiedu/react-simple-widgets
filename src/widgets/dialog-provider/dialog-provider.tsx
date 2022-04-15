@@ -1,8 +1,15 @@
 import "./dialog-provider.scss";
-import React, { useEffect, useRef, useState } from "react";
-import { Dialog, DialogBuilder, DialogOptions, DialogProvider as DialogProviderProps } from "../../../types";
-import { DialogProviderContext } from "./dialog-provider-context";
+import React, { createContext, useEffect, useRef, useState } from "react";
+import {
+  Dialog,
+  DialogBuilder,
+  DialogOptions,
+  DialogProviderContext as Context,
+  DialogProviderProps
+} from "../../../types";
 import { DialogView } from "./dialog-view";
+
+export const DialogProviderContext = createContext<Context>(null);
 
 export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element => {
   const [dialogs, setDialogs] = useState<Array<Dialog>>([]);
@@ -11,46 +18,41 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
 
   const showDialog = (builder: DialogBuilder, options?: DialogOptions): void => {
     const dialog: Dialog = { id: Math.random().toString() };
-    const dialogOptions: DialogOptions = options || {};
 
     const onDismiss = (returnValue?: any) => {
       setDialogs(dialogs => dialogs.filter(d => d !== dialog));
-      if (dialogOptions.onDismissed) dialogOptions.onDismissed(returnValue);
+      if (options?.onDismissed) options?.onDismissed(returnValue);
 
-      // Remove the associated window escape handler from the stack
+      // Remove the associated escape handler from the stack
       const handler = escapeKeyHandlers.current.splice(0, 1)[0];
       if (handler) window.removeEventListener("keyup", handler);
     };
 
     dialog.onDismiss = onDismiss;
-    dialog.options = dialogOptions;
+    dialog.options = options || {};
     dialog.widget = builder({ dismiss: onDismiss });
+    setupEscapeHandler(onDismiss, options?.escapeDismissible);
     setDialogs(dialogs => [...dialogs, dialog]);
-
-    setupDialogWindowEscapeHandler(
-      onDismiss,
-      dialogOptions.escapeDismissible != undefined ? dialogOptions.escapeDismissible : true
-    );
 
     // TODO: Implement window pop state to handle back button on mobile devices
   };
 
-  const setupDialogWindowEscapeHandler = (dismiss: Function, escapeDismissible: boolean): void => {
-    const handler = (e: KeyboardEvent): void => {
+  const setupEscapeHandler = (dismiss: Function, escapeDismissible: boolean): void => {
+    const escapeHandler = (e: KeyboardEvent): void => {
       if (e.key === "Escape" && !e.defaultPrevented) {
         e.stopImmediatePropagation();
         e.stopPropagation();
 
         if (escapeDismissible) {
           dismiss();
-          escapeKeyHandlers.current = escapeKeyHandlers.current.filter(h => h != handler);
-          window.removeEventListener("keyup", handler);
+          escapeKeyHandlers.current = escapeKeyHandlers.current.filter(h => h != escapeHandler);
+          window.removeEventListener("keyup", escapeHandler);
         }
       }
     };
 
     // Insert the new handler at the first position
-    escapeKeyHandlers.current.unshift(handler);
+    escapeKeyHandlers.current.unshift(escapeHandler);
 
     // Re-register the handler array so that the new handler receives the keyup event first
     for (const handler of escapeKeyHandlers.current) window.removeEventListener("keyup", handler);

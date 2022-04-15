@@ -2,13 +2,6 @@ import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTM
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider */
-export enum DialogSize {
-  SMALL,
-  MEDIUM,
-  WIDE,
-  FULL
-}
-
 export interface Dialog {
   id: string;
   widget?: JSX.Element;
@@ -23,13 +16,20 @@ export interface DialogOptions {
   onDismissed?: (returnValue?: any) => void;
 }
 
+export enum DialogSize {
+  SMALL,
+  MEDIUM,
+  WIDE,
+  FULL
+}
+
 export interface DialogHelper {
   dismiss: (returnValue?: any) => void;
 }
 
 export type DialogBuilder = (helper: DialogHelper) => JSX.Element;
 
-export interface DialogView {
+export interface DialogViewProps {
   dialog: Dialog;
 }
 
@@ -37,7 +37,7 @@ export interface DialogProviderContext {
   showDialog: (builder: DialogBuilder, options?: DialogOptions) => void;
 }
 
-export interface DialogProvider {
+export interface DialogProviderProps {
   children: any;
 }
 

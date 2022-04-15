@@ -12,7 +12,7 @@ The first step to using the `DialogProvider` widget is to make it an ancestor of
 
 ```jsx
 import ReactDOM from "react-dom";
-import { DialogProvider } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { App } from "./app.tsx";
 
 ReactDOM.render(
@@ -39,7 +39,7 @@ First, create a dialog component in a file (We are using `my-dialog.tsx` here).
 `my-dialog.tsx`
 
 ```tsx
-import { DialogHelper } from "react-simple-widgets/dist/constants";
+import { DialogHelper } from "react-simple-widgets/types";
 
 interface MyDialogProps {
   helper: DialogHelper;
@@ -66,35 +66,35 @@ Next, we show `MyDialog` from our application.
 
 ```tsx
 import { useContext } from "react";
-import { DialogProviderContext } from "react-simple-widgets";
-import { DialogSize } from "react-simple-widgets/dist/constants";
+import { DialogProviderContext } from "react-simple-widgets/dist/dialog-provider";
+import { DialogSize } from "react-simple-widgets/types";
 import { MyDialog } from "./my-dialog.tsx";
 
 export const App = () => {
-    const { showDialog } = useContext(DialogProviderContext);
+  const { showDialog } = useContext(DialogProviderContext);
 
-    const openDialog = () => {
-        showDialog(
-            function (helper) {
-                return <MyDialog helper={helper} />;
-            },
-            {
-                size: DialogSize.SMALL, /* Dialog size: SMALL, MEDIUM, WIDE, FULL */
-                backgroundDismissible: false, /* Close if background is clicked. Defaults to false */
-                escapeDismissible: true, /* Close if escape key is pressed. Defaults to true */
-                onDismissed: () { /* Optional function to call after dialog is closed */ }
-            }
-        );
-    }
-
-    return (
-        <div id="app">
-            <button className="btn btn-primary btn-sm" onClick={openDialog}>
-                Open dialog
-            </button>
-        </div>
+  const openDialog = () => {
+    showDialog(
+      function (helper) {
+        return <MyDialog helper={helper} />;
+      },
+      {
+        size: DialogSize.SMALL /* Dialog size: SMALL, MEDIUM, WIDE, FULL */,
+        backgroundDismissible: false /* Close if background is clicked. Defaults to false */,
+        escapeDismissible: true /* Close if escape key is pressed. Defaults to true */,
+        onDismissed: () => {} /* Optional function to call after dialog is closed */
+      }
     );
-}
+  };
+
+  return (
+    <div id="app">
+      <button className="btn btn-primary btn-sm" onClick={openDialog}>
+        Open dialog
+      </button>
+    </div>
+  );
+};
 ```
 
 ### Show a value-returning dialog
@@ -104,7 +104,7 @@ This section illustrates how to show a dialog which returns a value to the calle
 `my-dialog.tsx`
 
 ```tsx
-import { DialogHelper } from "react-simple-widgets/dist/constants";
+import { DialogHelper } from "react-simple-widgets/types";
 
 interface MyDialogProps {
   helper: DialogHelper;
@@ -141,8 +141,8 @@ Next, we show `MyDialog` from our application.
 
 ```tsx
 import { useContext } from "react";
-import { DialogProviderContext } from "react-simple-widgets";
-import { DialogSize } from "react-simple-widgets/dist/constants";
+import { DialogProviderContext } from "react-simple-widgets/dist/dialog-provider";
+import { DialogSize } from "react-simple-widgets/types";
 import { MyDialog } from "./my-dialog.tsx";
 
 export const App = () => {
@@ -160,10 +160,10 @@ export const App = () => {
           if (val) alert(`Dialog returned a value of ${val}`);
 
           /*
-                        val should be "A", "B" or "C". If the dialog was closed without returning a 
-                        value, val will be undefined so you should check before using the value for 
-                        anything
-                    */
+            val will be "A", "B" or "C". If the dialog was closed without returning a 
+            value, val will be undefined so you should check before using the value for 
+            anything
+          */
         }
       }
     );

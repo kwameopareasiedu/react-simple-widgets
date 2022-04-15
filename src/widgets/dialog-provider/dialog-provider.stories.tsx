@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { DialogProvider } from "./dialog-provider";
-import { DialogProviderContext } from "./dialog-provider-context";
+import { DialogProvider, DialogProviderContext } from "./dialog-provider";
 import { DialogSize, DialogHelper } from "../../../types";
 import { Meta } from "@storybook/react";
 
