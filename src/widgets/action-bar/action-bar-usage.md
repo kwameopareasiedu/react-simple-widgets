@@ -8,8 +8,7 @@ This widget displays a row of spaced elements. If no children are present, it re
 
 ```jsx
 import ActionBar from "react-simple-widgets/dist/action-bar";
-// Or
-// import { ActionBar } from "react-simple-widgets";
+// or import { ActionBar } from "react-simple-widgets";
 
 <ActionBar className="mb-4">
   <button className="btn btn-primary btn-sm">Action #1</button>

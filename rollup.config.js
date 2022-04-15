@@ -12,9 +12,9 @@ import image from "@rollup/plugin-image";
 export default {
   input: [
     "src/widgets/action-bar/action-bar",
-    "src/widgets/breadcrumbs/breadcrumbs"
+    "src/widgets/breadcrumbs/breadcrumbs",
     // "src/widgets/busy-button/busy-button",
-    // "src/widgets/calendar/calendar",
+    "src/widgets/calendar/calendar"
     // "src/widgets/checkbox-field/checkbox-field",
     // "src/widgets/confirm-button/confirm-button",
     // "src/widgets/custom-field/custom-field",

@@ -327,7 +327,7 @@ export interface InfiniteList extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 /** Calendar */
-export interface Calendar extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface CalendarProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   initialDate: string;
   isDateOutlined?: (year: number, month: number, day: number) => boolean;
   isDateActive?: (year: number, month: number, day: number) => boolean;

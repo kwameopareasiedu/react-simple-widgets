@@ -3,7 +3,7 @@ import { DatePicker as DatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
-import { Calendar } from "../calendar/calendar";
+import Calendar from "../calendar/calendar";
 import { PopupMenu } from "../popup-menu/popup-menu";
 
 djs.extend(arraySupport);

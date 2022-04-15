@@ -1,13 +1,13 @@
 import "./calendar.scss";
 import React, { useEffect, useState } from "react";
-import { Calendar as CalendarProps } from "../../../types";
+import { CalendarProps } from "../../../types";
 import { dateDay, dateMonth, dateMonthDayOffset, dateYear, days, daySuffix, months, years } from "./calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 
 djs.extend(arraySupport);
 
-export const Calendar = ({
+const Calendar = ({
   initialDate,
   isDateActive,
   isDateOutlined,
@@ -151,3 +151,5 @@ export const Calendar = ({
     </div>
   );
 };
+
+export default Calendar;

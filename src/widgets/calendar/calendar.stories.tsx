@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
-import { Calendar } from "./calendar";
+import Calendar from "./calendar";
 import arraySupport from "dayjs/plugin/arraySupport";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import djs from "dayjs";
