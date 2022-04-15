@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { DialogProviderProps, DialogProviderContext } from "../types";
+import { Context, FC } from "react";
+import { DialogProviderProps, DialogProviderContext as C } from "../types";
 
-export const DialogProviderContext: DialogProviderContext;
+export declare type DialogProviderContext = Context<C>;
 
-export const DialogProvider: FC<DialogProviderProps>;
+export declare const DialogProvider: FC<DialogProviderProps>;

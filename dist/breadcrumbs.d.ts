@@ -1,4 +1,4 @@
 import { FC } from "react";
 import { BreadcrumbsProps } from "../types";
 
-export const Breadcrumbs: FC<BreadcrumbsProps>;
+export declare const Breadcrumbs: FC<BreadcrumbsProps>;

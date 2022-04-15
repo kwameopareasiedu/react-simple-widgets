@@ -9,7 +9,7 @@ This widget is a date picker form widget. `DateField` is intrinsically a [DatePi
 ```jsx
 import { DateField } from "react-simple-widgets/dist/date-field";
 
-<DateField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
+<DateField name label helper leading trailing />;
 ```
 
 - `name: string`

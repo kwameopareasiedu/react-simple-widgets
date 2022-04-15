@@ -7,6 +7,8 @@ import { BusyButton } from "../busy-button/busy-button";
 export const ConfirmButton = ({
   busy,
   message,
+  confirmButtonClassName,
+  cancelButtonClassName,
   children,
   onConfirm,
   onCancel,
@@ -21,9 +23,17 @@ export const ConfirmButton = ({
     showDialog(
       helper => {
         if (builder) return builder(helper, message);
-        return <ConfirmButtonDialog helper={helper} message={message} confirmButtonClassName={className} />;
+        return (
+          <ConfirmButtonDialog
+            helper={helper}
+            message={message}
+            confirmButtonClassName={confirmButtonClassName}
+            cancelButtonClassName={cancelButtonClassName}
+          />
+        );
       },
       {
+        escapeDismissible: true,
         backgroundDismissible: true,
         onDismissed: (proceed: boolean): void => {
           if (proceed) return onConfirm();

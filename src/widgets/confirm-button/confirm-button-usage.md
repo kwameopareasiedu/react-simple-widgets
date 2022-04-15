@@ -2,9 +2,11 @@
 
 # ConfirmButton
 
-This widget shows a confirmation dialog to confirm an action. `ConfirmButton` is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
+This widget shows a confirmation dialog to confirm an action. 
 
-`ConfirmButton` uses dialogs to display the confirmation prompts messages. This requires a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
+`ConfirmButton` is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
+
+> `ConfirmButton` uses dialogs to display the confirmation prompts messages. This requires a [DialogProvider](../../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
 
 ## Usage
 
@@ -13,7 +15,7 @@ import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 
 <DialogProvider>
-  <ConfirmButton busy={busy} message={message} onCancel={onCancel} onConfirm={onConfirm}>
+  <ConfirmButton busy message confirmButtonClassName cancelButtonClassName onConfirm onCancel>
     Start
   </ConfirmButton>
 </DialogProvider>;
@@ -26,6 +28,14 @@ import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 - `message?: any`
 
   The confirmation message to display in the dialog. This can be a string or a `JSX.Element`.
+
+- `confirmButtonClassName?: string`
+
+  The class name of the confirmation button in the popup dialog
+
+- `cancelButtonClassName?: string`
+
+  The class name of the cancel button in the popup dialog
 
 - `onConfirm: () => void`
 
@@ -55,6 +65,6 @@ import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 
 > The `helper` is a [DialogHelper](../dialog-provider/dialog-provider-usage.md) object. This contains a `dismiss()` function which is used to dismiss the dialog.
 
-> When the confirm button in your custom dialog is clicked, ** `helper.dismiss(true)` must be called to trigger the `ConfirmButton` to call the `onConfirm` callback**.
+> When the confirm button in your custom dialog is clicked, **`helper.dismiss(true)` must be called to trigger the `ConfirmButton` to call the `onConfirm` callback**.
 
-> If the cancel button is clicked in your custom dialog, ** `helper.dismiss(false)` must be called to trigger the `ConfirmButton` to call the onCancel callback (if provided)**.
+> If the cancel button is clicked in your custom dialog, **`helper.dismiss(false)` must be called to trigger the `ConfirmButton` to call the onCancel callback (if provided)**.

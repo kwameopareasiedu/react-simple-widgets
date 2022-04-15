@@ -1,4 +1,4 @@
 import { FC } from "react";
 import { DatePickerProps } from "../types";
 
-export const DatePicker: FC<DatePickerProps>;
+export declare const DatePicker: FC<DatePickerProps>;

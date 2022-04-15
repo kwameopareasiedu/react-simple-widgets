@@ -5,14 +5,9 @@ import { ConfirmButtonDialogProps } from "../../../types";
 export const ConfirmButtonDialog = ({
   helper,
   message,
-  confirmButtonClassName: _confirmButtonClassName
+  confirmButtonClassName,
+  cancelButtonClassName
 }: ConfirmButtonDialogProps): any => {
-  const confirmButtonClassName = (): string => {
-    const classes = ["btn", "btn-sm"];
-    if (_confirmButtonClassName) classes.push(_confirmButtonClassName);
-    return classes.join(" ");
-  };
-
   return (
     <div className="react-simple-widget confirm-button-dialog card">
       <div className="card-body">
@@ -20,13 +15,19 @@ export const ConfirmButtonDialog = ({
 
         <div className="row">
           <div className="col-6 d-grid">
-            <button type="button" className={confirmButtonClassName()} onClick={() => helper.dismiss(true)}>
+            <button
+              type="button"
+              className={confirmButtonClassName || "btn btn-sm btn-primary"}
+              onClick={() => helper.dismiss(true)}>
               Confirm
             </button>
           </div>
 
           <div className="col-6 d-grid">
-            <button type="button" className="btn btn-light btn-sm" onClick={(): void => helper.dismiss(false)}>
+            <button
+              type="button"
+              className={cancelButtonClassName || "btn btn-light btn-sm"}
+              onClick={(): void => helper.dismiss(false)}>
               Cancel
             </button>
           </div>

@@ -1,4 +1,4 @@
 import { FC } from "react";
 import { BusyButtonProps } from "../types";
 
-export const BusyButton: FC<BusyButtonProps>;
+export declare const BusyButton: FC<BusyButtonProps>;
