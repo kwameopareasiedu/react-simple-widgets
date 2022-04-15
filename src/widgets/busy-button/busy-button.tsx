@@ -1,16 +1,9 @@
 import "./busy-button.scss";
 import React from "react";
-import { BusyButton as BusyButtonProps } from "../../../types";
+import { BusyButtonProps } from "../../../types";
 import { Loader } from "../loader/loader";
 
-export const BusyButton = ({
-  busy,
-  invert,
-  disabled,
-  className: _className,
-  children,
-  ...rest
-}: BusyButtonProps): any => {
+const BusyButton = ({ busy, invert, disabled, className: _className, children, ...rest }: BusyButtonProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "busy-button"];
     if (_className) classes.push(_className);
@@ -24,3 +17,5 @@ export const BusyButton = ({
     </button>
   );
 };
+
+export default BusyButton;

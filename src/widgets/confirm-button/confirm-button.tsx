@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ConfirmButton as ConfirmButtonProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
 import { ConfirmButtonDialog } from "./confirm-button-dialog";
-import { BusyButton } from "../busy-button/busy-button";
+import BusyButton from "../busy-button/busy-button";
 
 export const ConfirmButton = ({
   busy,

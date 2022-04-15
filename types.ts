@@ -166,7 +166,7 @@ export interface Pagination extends Omit<AllHTMLAttributes<HTMLDivElement>, "onC
 }
 
 /** BusyButton */
-export interface BusyButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface BusyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   busy?: boolean;
   invert?: boolean;
 }
@@ -186,7 +186,7 @@ export interface ConfirmButtonDialog {
 
 export type ConfirmButtonDialogBuilder = (helper: DialogHelper, message: any) => JSX.Element;
 
-export interface ConfirmButton extends BusyButton {
+export interface ConfirmButton extends BusyButtonProps {
   message?: any;
   busy?: boolean;
   builder?: ConfirmButtonDialogBuilder;

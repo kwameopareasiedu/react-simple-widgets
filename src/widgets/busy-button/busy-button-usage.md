@@ -7,7 +7,8 @@ This widget is a button that displays a spinner when busy is true. `BusyButton` 
 ## Usage
 
 ```jsx
-import { BusyButton } from "react-simple-widgets";
+import BusyButton from "react-simple-widgets/dist/busy-button";
+// or import { BusyButton } from "react-simple-widgets";
 
 <BusyButton busy={busy}>Click Me!</BusyButton>;
 ```

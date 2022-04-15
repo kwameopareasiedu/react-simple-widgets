@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BusyButton } from "./busy-button";
+import BusyButton from "./busy-button";
 
 export default { title: "BusyButton", component: BusyButton };
 
