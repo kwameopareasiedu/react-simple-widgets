@@ -1,6 +1,6 @@
 {
   "name": "react-simple-widgets",
-  "version": "6.0.0-testing-04",
+  "version": "6.0.0-testing-05",
   "description": "A collection of simple to use widgets for building react apps easily",
   "homepage": "https://github.com/kwameopareasiedu/react-simple-widgets#readme",
   "repository": {
@@ -12,8 +12,6 @@
   },
   "author": "Kwame Opare Asiedu",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook -s .storybook",
     "watch": "rollup -c rollup.config.js --watch --environment INCLUDE_DEPS,BUILD:development",
