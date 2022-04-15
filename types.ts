@@ -273,7 +273,7 @@ export interface TextAreaField
 export type PasswordField = Omit<TextField, "trailing" | "type">;
 
 /** DropdownField */
-export interface DropdownField
+export interface DropdownFieldProps
   extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange">,
     Pick<FieldDecoration, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (value: string) => void;
