@@ -398,20 +398,20 @@ export interface TimeField
 /** FilePicker */
 export type FilePickerValidator = (file: File) => boolean;
 
-export interface FilePicker extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface FilePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   limit?: number;
   extensions?: Array<string>;
   validator?: FilePickerValidator;
   onChange?: (file: File) => void;
 }
 
-export interface FilePickerDialog extends FilePicker {
+export interface FilePickerDialogProps extends FilePickerProps {
   helper: DialogHelper;
 }
 
 /** FileField */
 export interface FileField
-  extends Omit<FilePicker, "label" | "onChange">,
+  extends Omit<FilePickerProps, "label" | "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (file: File) => void;
 }

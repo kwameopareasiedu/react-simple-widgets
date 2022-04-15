@@ -2,17 +2,19 @@
 
 # FilePicker
 
-This widget allows you to select a file from the device either from a file-select dialog or by drag-n-drop. `FilePicker` is intrinsically a `div` element and accepts all of its attributes.
+This widget allows you to select a file from the device either from a file-select dialog or by drag-n-drop. 
 
-`FilePicker` uses dialogs to display the file selection prompt. This requires a [DialogProvider](../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
+`FilePicker` is intrinsically a `div` element and accepts all of its attributes.
+
+> `FilePicker` uses dialogs to display the file selection prompt. This requires a [DialogProvider](../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
 
 ## Usage
 
 ```jsx
-import { DialogProvider, FilePicker } from "react-simple-widgets";
+import { DialogProvider, FilePicker } from "react-simple-widgets/dist/file-picker";
 
 <DialogProvider>
-  <FilePicker limit={limit} extensions={extensions} validator={validator} onChange={onChange} />
+  <FilePicker limit extensions validator onChange />
 </DialogProvider>;
 ```
 
@@ -24,7 +26,7 @@ import { DialogProvider, FilePicker } from "react-simple-widgets";
 
   The list of valid extensions. If specified, and the selected file's extension is not included, an error message is displayed and the select button is disabled.
 
-  > The extensions should not start with a dot (I.e. Use `["jpg", "png"]`, not `[".jpg", ".png"]`)
+  > **The extensions should not start with a dot (I.e. Use `["jpg", "png"]` instead of `[".jpg", ".png"]`)**
 
 - `validator?: (file: File) => string`
 
