@@ -15,8 +15,8 @@ export default {
     "src/widgets/breadcrumbs/breadcrumbs",
     "src/widgets/busy-button/busy-button",
     "src/widgets/calendar/calendar",
-    "src/widgets/checkbox-field/checkbox-field"
-    // "src/widgets/confirm-button/confirm-button",
+    "src/widgets/checkbox-field/checkbox-field",
+    "src/widgets/confirm-button/confirm-button"
     // "src/widgets/custom-field/custom-field",
     // "src/widgets/date-field/date-field",
     // "src/widgets/date-picker/date-picker",

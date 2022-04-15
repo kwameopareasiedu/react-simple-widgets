@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
-import { ConfirmButton } from "./confirm-button";
+import ConfirmButton from "./confirm-button";
 import { DialogProvider } from "../dialog-provider/dialog-provider";
 import { DialogHelper } from "../../../types";
 

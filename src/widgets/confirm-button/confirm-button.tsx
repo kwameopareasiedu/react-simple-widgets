@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { ConfirmButton as ConfirmButtonProps } from "../../../types";
+import { ConfirmButtonProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider-context";
-import { ConfirmButtonDialog } from "./confirm-button-dialog";
+import ConfirmButtonDialog from "./confirm-button-dialog";
 import BusyButton from "../busy-button/busy-button";
 
-export const ConfirmButton = ({
+const ConfirmButton = ({
   busy,
   message,
   children,
@@ -41,3 +41,5 @@ export const ConfirmButton = ({
     </BusyButton>
   );
 };
+
+export default ConfirmButton;

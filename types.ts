@@ -178,7 +178,7 @@ export interface Loader extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 /** ConfirmButton */
-export interface ConfirmButtonDialog {
+export interface ConfirmButtonDialogProps {
   message: any;
   confirmButtonClassName: string;
   helper: DialogHelper;
@@ -186,7 +186,7 @@ export interface ConfirmButtonDialog {
 
 export type ConfirmButtonDialogBuilder = (helper: DialogHelper, message: any) => JSX.Element;
 
-export interface ConfirmButton extends BusyButtonProps {
+export interface ConfirmButtonProps extends BusyButtonProps {
   message?: any;
   busy?: boolean;
   builder?: ConfirmButtonDialogBuilder;

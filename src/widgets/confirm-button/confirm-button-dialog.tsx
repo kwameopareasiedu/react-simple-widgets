@@ -1,8 +1,8 @@
 import "./confirm-button-dialog.scss";
 import React from "react";
-import { ConfirmButtonDialog as ConfirmButtonDialogProps } from "../../../types";
+import { ConfirmButtonDialogProps } from "../../../types";
 
-export const ConfirmButtonDialog = ({
+const ConfirmButtonDialog = ({
   helper,
   message,
   confirmButtonClassName: _confirmButtonClassName
@@ -35,3 +35,5 @@ export const ConfirmButtonDialog = ({
     </div>
   );
 };
+
+export default ConfirmButtonDialog;

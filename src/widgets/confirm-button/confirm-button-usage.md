@@ -9,7 +9,9 @@ This widget shows a confirmation dialog to confirm an action. `ConfirmButton` is
 ## Usage
 
 ```jsx
-import { DialogProvider, ConfirmButton } from "react-simple-widgets";
+import DialogProvider from "react-simple-widgets/dist/dialog-provider";
+import ConfirmButton from "react-simple-widgets/dist/confirm-button";
+// or import { DialogProvider, ConfirmButton } from "react-simple-widgets";
 
 <DialogProvider>
   <ConfirmButton busy={busy} message={message} onCancel={onCancel} onConfirm={onConfirm}>
