@@ -195,7 +195,7 @@ export interface ConfirmButton extends BusyButton {
 }
 
 /** Breadcrumbs */
-export interface Breadcrumbs extends AllHTMLAttributes<HTMLDivElement> {
+export interface BreadcrumbsProps extends AllHTMLAttributes<HTMLDivElement> {
   children?: any;
 }
 

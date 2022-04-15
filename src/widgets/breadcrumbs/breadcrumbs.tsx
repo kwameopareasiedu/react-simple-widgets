@@ -1,8 +1,8 @@
 import "./breadcrumbs.scss";
 import React from "react";
-import { Breadcrumbs as BreadcrumbsProps } from "../../../types";
+import { BreadcrumbsProps } from "../../../types";
 
-export const Breadcrumbs = ({ children, className: _className, ...rest }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ children, className: _className, ...rest }: BreadcrumbsProps) => {
   const className = (): string => {
     const classes = ["react-simple-widget", "breadcrumbs"];
     if (_className) classes.push(_className);
@@ -15,3 +15,5 @@ export const Breadcrumbs = ({ children, className: _className, ...rest }: Breadc
     </div>
   );
 };
+
+export default Breadcrumbs;
