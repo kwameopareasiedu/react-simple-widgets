@@ -33,9 +33,9 @@ export default {
     "src/widgets/month-date-picker/month-date-picker",
     "src/widgets/multi-date-field/multi-date-field",
     "src/widgets/multi-date-picker/multi-date-picker",
-    "src/widgets/multi-select-field/multi-select-field"
-    // "src/widgets/object-view/object-view",
-    // "src/widgets/pagination/pagination",
+    "src/widgets/multi-select-field/multi-select-field",
+    "src/widgets/object-view/object-view",
+    "src/widgets/pagination/pagination"
     // "src/widgets/password-field/password-field",
     // "src/widgets/popup-menu/popup-menu",
     // "src/widgets/table-view/table-view",

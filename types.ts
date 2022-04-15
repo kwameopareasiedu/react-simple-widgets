@@ -158,7 +158,7 @@ export interface TableView extends AllHTMLAttributes<HTMLTableElement> {
 }
 
 /** Pagination */
-export interface Pagination extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface PaginationProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   page: number;
   total: number;
   pageSize: number;
@@ -212,7 +212,7 @@ export type ObjectViewCellResolverFunction = (item: any) => any;
 
 export type ObjectViewCellResolver = string | ObjectViewCellResolverFunction;
 
-export interface ObjectView extends AllHTMLAttributes<HTMLTableElement> {
+export interface ObjectViewProps extends AllHTMLAttributes<HTMLTableElement> {
   object: any;
   props: Array<[string, ObjectViewCellResolver]>;
   split?: number;

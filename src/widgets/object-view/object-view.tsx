@@ -1,6 +1,6 @@
 import "./object-view.scss";
 import React from "react";
-import { ObjectView as ObjectViewProps, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
+import { ObjectViewProps, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
 
 const EMPTY_STRING = "---";
 

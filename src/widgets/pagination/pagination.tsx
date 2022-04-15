@@ -1,6 +1,6 @@
 import "./pagination.scss";
 import React from "react";
-import { Pagination as PaginationProps } from "../../../types";
+import { PaginationProps } from "../../../types";
 
 export const Pagination = ({
   page,
