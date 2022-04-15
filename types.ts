@@ -410,7 +410,7 @@ export interface FilePickerDialogProps extends FilePickerProps {
 }
 
 /** FileField */
-export interface FileField
+export interface FileFieldProps
   extends Omit<FilePickerProps, "label" | "onChange">,
     Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
   onChange?: (file: File) => void;

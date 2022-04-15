@@ -11,7 +11,8 @@ This widget allows you to select a file from the device either from a file-selec
 ## Usage
 
 ```jsx
-import { DialogProvider, FilePicker } from "react-simple-widgets/dist/file-picker";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { FilePicker } from "react-simple-widgets/dist/file-picker";
 
 <DialogProvider>
   <FilePicker limit extensions validator onChange />

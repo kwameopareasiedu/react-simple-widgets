@@ -2,7 +2,7 @@ import "./file-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { FileField as FileFieldProps } from "../../../types";
+import { FileFieldProps } from "../../../types";
 import { FilePicker } from "../file-picker/file-picker";
 
 export const FileField = ({

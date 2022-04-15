@@ -2,14 +2,21 @@
 
 # FileField
 
-This widget is a file picker form widget. `FileField` is intrinsically a [FilePicker](../file-picker/file-picker-usage.md) widget and accepts all of its attributes.
+This widget is a file picker form widget. 
+
+`FileField` is intrinsically a [FilePicker](../file-picker/file-picker-usage.md) widget and accepts all of its attributes.
+
+> `FilePicker` uses dialogs to display the file selection prompt. This requires a [DialogProvider](../dialog-provider/dialog-provider-usage.md) ancestor to be available up your widget tree.
 
 ## Usage
 
 ```jsx
-import { FileField } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { FileField } from "react-simple-widgets/dist/file-field";
 
-<FileField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
+<DialogProvider>
+    <FileField name label helper leading trailing />;
+</DialogProvider>;
 ```
 
 - `name: string`

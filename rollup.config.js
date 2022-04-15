@@ -23,7 +23,7 @@ export default {
     "src/widgets/dialog-provider/dialog-provider",
     "src/widgets/dropdown-field/dropdown-field",
     "src/widgets/field-decoration/field-decoration",
-    // "src/widgets/file-field/file-field",
+    "src/widgets/file-field/file-field",
     "src/widgets/file-picker/file-picker",
     "src/widgets/flash-provider/flash-provider"
     // "src/widgets/infinite-list/infinite-list",
