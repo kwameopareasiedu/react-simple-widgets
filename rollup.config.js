@@ -24,9 +24,8 @@ export default {
     "src/widgets/dropdown-field/dropdown-field",
     "src/widgets/field-decoration/field-decoration",
     // "src/widgets/file-field/file-field",
-    "src/widgets/file-picker/file-picker"
-    // "src/widgets/flash-provider/flash-provider-context",
-    // "src/widgets/flash-provider/flash-provider",
+    "src/widgets/file-picker/file-picker",
+    "src/widgets/flash-provider/flash-provider"
     // "src/widgets/infinite-list/infinite-list",
     // "src/widgets/loader/loader",
     // "src/widgets/local-storage-provider/local-storage-provider-context",

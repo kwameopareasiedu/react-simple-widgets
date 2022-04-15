@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { FlashProvider } from "./flash-provider";
-import { FlashProviderContext } from "./flash-provider-context";
+import { FlashProvider, FlashProviderContext } from "./flash-provider";
 import { DialogProvider } from "../dialog-provider/dialog-provider";
 
 export default {

@@ -6,13 +6,14 @@ The `FlashProvider` allows your app to display different types of flash messages
 
 The following guide demonstrates how to use the `FlashProvider`
 
-## Wrap your app with the `FlashProvider` widget
+## 1. Wrap your app with the `FlashProvider` widget
 
 The first step to using the `FlashProvider` widget is to make it an ancestor of your app export. Again, since `FlashProvider` uses dialogs, the `DialogProvider` is also required to be an ancestor widget.
 
 ```jsx
 import ReactDOM from "react-dom";
-import { DialogProvider, FlashProvider } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { FlashProvider } from "react-simple-widgets/dist/flash-provider";
 import { App } from "./app.tsx";
 
 ReactDOM.render(
@@ -27,7 +28,7 @@ ReactDOM.render(
 
 This makes the `FlashProvider` context available to the rest of the application. The context contains the function needed to display flash messages.
 
-## Show flash message within your app
+## 2. Show flash message within your app
 
 The code example below illustrates how to utilize each function provided by the provider context.
 
@@ -35,7 +36,7 @@ The code example below illustrates how to utilize each function provided by the 
 
 ```tsx
 import { useContext } from "react";
-import { FlashProviderContext } from "react-simple-widgets";
+import { FlashProviderContext } from "react-simple-widgets/dist/flash-provider";
 
 export function App() {
   const { flashError, flashWarning, flashInfo, flashSuccess } = useContext(FlashProviderContext);
@@ -93,7 +94,7 @@ Each flash function (`flashError`, `flashWarning`, `flashInfo` and `flashSuccess
 
   If specified, this function is called when the flash message is dismissed.
 
-- `optionalArgs: { btnText?: string, closeTimerMs?: number }`
+- `optionalArgs?: { btnText?: string, closeTimerMs?: number }`
 
   Optional arguments for default flash view
 
@@ -111,16 +112,20 @@ If you want to customize the flash message view, you can provider the `builder` 
 
 ```tsx
 import ReactDOM from "react-dom";
-import { DialogProvider, FlashProvider } from "react-simple-widgets";
+import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
+import { FlashProvider } from "react-simple-widgets/dist/flash-provider";
 import { App } from "./app.tsx";
 
 ReactDOM.render(
-    <DialogProvider>
-        <FlashProvider builder={flash => /* Return custom flash view here */}>
-            <App />
-        </FlashProvider>
-    </DialogProvider>,
-    document.getElementById("root")
+  <DialogProvider>
+    <FlashProvider
+      builder={flash => {
+        /* Return custom flash view here */
+      }}>
+      <App />
+    </FlashProvider>
+  </DialogProvider>,
+  document.getElementById("root")
 );
 ```
 

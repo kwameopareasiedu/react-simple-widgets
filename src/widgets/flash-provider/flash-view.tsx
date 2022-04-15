@@ -1,6 +1,6 @@
 import "./flash-view.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { FlashType, FlashView as FlashViewProps } from "../../../types";
+import { FlashType, FlashViewProps } from "../../../types";
 import ErrorIcon from "../../assets/error.svg";
 import WarningIcon from "../../assets/warning.svg";
 import SuccessIcon from "../../assets/success.svg";

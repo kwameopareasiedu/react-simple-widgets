@@ -42,20 +42,20 @@ export interface DialogProviderProps {
 }
 
 /** FlashProvider */
-export enum FlashType {
-  ERROR,
-  WARNING,
-  INFO,
-  SUCCESS
-}
-
 export interface Flash {
   type: FlashType;
   title: string;
   message: any;
   btnText?: string;
   closeTimerMs?: number;
-  onFlashDismissed?: () => void;
+  onDismissed?: () => void;
+}
+
+export enum FlashType {
+  ERROR,
+  WARNING,
+  INFO,
+  SUCCESS
 }
 
 export interface FlashOptionalArgs {
@@ -72,7 +72,7 @@ export type FlashFunction = (
 
 export type FlashViewBuilder = (flash: Flash) => JSX.Element;
 
-export interface FlashView {
+export interface FlashViewProps {
   type: FlashType;
   title: string;
   message: string;
@@ -88,7 +88,7 @@ export interface FlashProviderContext {
   flashSuccess: FlashFunction;
 }
 
-export interface FlashProvider {
+export interface FlashProviderProps {
   children: any;
   builder?: FlashViewBuilder;
 }

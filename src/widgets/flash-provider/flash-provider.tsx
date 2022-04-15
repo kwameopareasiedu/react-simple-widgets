@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import { FlashOptionalArgs, FlashProvider as FlashProviderProps, FlashType } from "../../../types";
-import { FlashProviderContext } from "./flash-provider-context";
+import React, { createContext, useContext } from "react";
+import { FlashOptionalArgs, FlashProviderProps, FlashProviderContext as Context, FlashType } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FlashView } from "./flash-view";
+
+export const FlashProviderContext = createContext<Context>(null);
 
 export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.Element => {
   const { showDialog } = useContext(DialogProviderContext);
@@ -11,7 +12,7 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
     type: FlashType,
     title: string,
     message: any,
-    onFlashDismissed?: () => void,
+    onDismissed?: () => void,
     optionalArgs?: FlashOptionalArgs
   ): void => {
     const btnText = optionalArgs?.btnText;
@@ -24,8 +25,8 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
             type,
             title,
             message,
-            onFlashDismissed: () => {
-              if (onFlashDismissed) onFlashDismissed();
+            onDismissed: () => {
+              if (onDismissed) onDismissed();
               helper.dismiss();
             },
             btnText,
@@ -44,44 +45,44 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
           );
         }
       },
-      { onDismissed: onFlashDismissed }
+      { onDismissed }
     );
   };
 
   const flashError = (
     title: string,
     message?: any,
-    onFlashDismissed?: () => void,
+    onDismissed?: () => void,
     optionalArgs?: FlashOptionalArgs
   ): void => {
-    flash(FlashType.ERROR, title, message, onFlashDismissed, optionalArgs);
+    flash(FlashType.ERROR, title, message, onDismissed, optionalArgs);
   };
 
   const flashWarning = (
     title: string,
     message?: any,
-    onFlashDismissed?: () => void,
+    onDismissed?: () => void,
     optionalArgs?: FlashOptionalArgs
   ): void => {
-    flash(FlashType.WARNING, title, message, onFlashDismissed, optionalArgs);
+    flash(FlashType.WARNING, title, message, onDismissed, optionalArgs);
   };
 
   const flashInfo = (
     title: string,
     message?: any,
-    onFlashDismissed?: () => void,
+    onDismissed?: () => void,
     optionalArgs?: FlashOptionalArgs
   ): void => {
-    flash(FlashType.INFO, title, message, onFlashDismissed, optionalArgs);
+    flash(FlashType.INFO, title, message, onDismissed, optionalArgs);
   };
 
   const flashSuccess = (
     title: string,
     message?: any,
-    onFlashDismissed?: () => void,
+    onDismissed?: () => void,
     optionalArgs?: FlashOptionalArgs
   ): void => {
-    flash(FlashType.SUCCESS, title, message, onFlashDismissed, optionalArgs);
+    flash(FlashType.SUCCESS, title, message, onDismissed, optionalArgs);
   };
 
   return (
