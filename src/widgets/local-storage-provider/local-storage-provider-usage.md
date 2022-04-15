@@ -4,20 +4,20 @@
 
 The `LocalStorageProvider` is a reactive wrapper for the local storage API. It syncs changes to its state with the browser's local storage. You can use this to save simple strings across different parts of your application.
 
-**DO NOT store sensitive data in the local storage as this has absolutely no layer of security**
+> **DO NOT store sensitive data in the local storage as this has absolutely no layer of security**
 
 The following guide demonstrates how to use the `LocalStorageProvider`
 
-## Wrap your app with the `LocalStorageProvider` widget
+## 1. Wrap your app with the `LocalStorageProvider` widget
 
 The first step to using the `LocalStorageProvider` widget is to make it an ancestor of your app export.
 
 ```jsx
 import ReactDOM from "react-dom";
-import { LocalStorageProvider } from "react-simple-widgets";
+import { LocalStorageProvider } from "react-simple-widgets/dist/local-storage-provider";
 import { App } from "./app.tsx";
 
-ReactDOM.render(
+ReactDOM.createRoot(
   <LocalStorageProvider>
     <App />
   </LocalStorageProvider>,
@@ -35,7 +35,7 @@ The code example below illustrates how to utilize each function in the provider
 
 ```tsx
 import { useContext } from "react";
-import { LocalStorageProviderContext } from "react-simple-widgets";
+import { LocalStorageProviderContext } from "react-simple-widgets/dist/local-storage-provider";
 
 export function App() {
   const {

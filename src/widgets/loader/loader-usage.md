@@ -9,7 +9,7 @@ This widget displays a rotating spinner icon.
 ## Usage
 
 ```jsx
-import { Loader } from "react-simple-widgets";
+import { Loader } from "react-simple-widgets/dist/loader";
 
 <Loader invert />
 

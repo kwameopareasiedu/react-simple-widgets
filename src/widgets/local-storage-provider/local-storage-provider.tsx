@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { LocalStorageProviderContext } from "./local-storage-provider-context";
-import { LocalStorageProvider as LocalStorageProviderProps } from "../../../types";
+import React, { createContext, useState } from "react";
+import { LocalStorageProviderProps, LocalStorageProviderContext as Context } from "../../../types";
+
+export const LocalStorageProviderContext = createContext<Context>(null);
 
 const LOCAL_STORAGE_PROVIDER_KEYS = "react-simple-widgets-local-storage-provider-keys";
 

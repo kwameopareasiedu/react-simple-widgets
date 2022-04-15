@@ -16,7 +16,7 @@ import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { FlashProvider } from "react-simple-widgets/dist/flash-provider";
 import { App } from "./app.tsx";
 
-ReactDOM.render(
+ReactDOM.createRoot(
   <DialogProvider>
     <FlashProvider>
       <App />
@@ -116,7 +116,7 @@ import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { FlashProvider } from "react-simple-widgets/dist/flash-provider";
 import { App } from "./app.tsx";
 
-ReactDOM.render(
+ReactDOM.createRoot(
   <DialogProvider>
     <FlashProvider
       builder={flash => {

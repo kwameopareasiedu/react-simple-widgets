@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { LocalStorageProvider } from "./local-storage-provider";
-import { LocalStorageProviderContext } from "./local-storage-provider-context";
+import { LocalStorageProvider, LocalStorageProviderContext } from "./local-storage-provider";
 
 export default {
   title: "LocalStorageProvider",

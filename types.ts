@@ -101,7 +101,7 @@ export interface LocalStorageProviderContext {
   clear: () => void;
 }
 
-export interface LocalStorageProvider {
+export interface LocalStorageProviderProps {
   children: any;
 }
 
