@@ -1,6 +1,6 @@
 import "./loader.scss";
 import React from "react";
-import { Loader as LoaderProps } from "../../../types";
+import { LoaderProps } from "../../../types";
 
 export const Loader = ({ className: _className, children, invert, ...rest }: LoaderProps): any => {
   const className = (): string => {

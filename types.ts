@@ -172,7 +172,7 @@ export interface BusyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 /** Loader */
-export interface Loader extends AllHTMLAttributes<HTMLDivElement> {
+export interface LoaderProps extends AllHTMLAttributes<HTMLDivElement> {
   children?: any;
   invert?: boolean;
 }

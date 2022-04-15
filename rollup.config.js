@@ -26,8 +26,8 @@ export default {
     "src/widgets/file-field/file-field",
     "src/widgets/file-picker/file-picker",
     "src/widgets/flash-provider/flash-provider",
-    "src/widgets/infinite-list/infinite-list"
-    // "src/widgets/loader/loader",
+    "src/widgets/infinite-list/infinite-list",
+    "src/widgets/loader/loader"
     // "src/widgets/local-storage-provider/local-storage-provider-context",
     // "src/widgets/local-storage-provider/local-storage-provider",
     // "src/widgets/month-date-field/month-date-field",
