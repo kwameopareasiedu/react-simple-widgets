@@ -256,6 +256,7 @@ export interface TextFieldProps
 /** TextEditorField */
 export interface TextEditorFieldProps extends Pick<FieldDecorationProps, "label" | "helper"> {
   name: string;
+  asText?: boolean;
   disabled?: boolean;
   onChange?: (data: any) => void;
   onFocus?: () => void;
