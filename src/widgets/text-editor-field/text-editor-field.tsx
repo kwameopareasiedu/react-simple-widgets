@@ -109,6 +109,7 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
       }),
       loadExternal(scriptId, "script", (tag: HTMLScriptElement) => {
         tag.src = "https://cdn.quilljs.com/1.3.6/quill.min.js";
+        tag.crossOrigin = "anonymous";
       })
     ])
       .then(() => {
