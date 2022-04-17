@@ -38,6 +38,7 @@ export const Default = (): any => {
                   name="textField"
                   label="Text field"
                   helper="Value is text representation of HTML"
+                  theme="bubble"
                   asText
                 />
               </div>

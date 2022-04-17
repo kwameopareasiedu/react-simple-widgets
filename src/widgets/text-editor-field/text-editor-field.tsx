@@ -7,6 +7,7 @@ import { TextEditorFieldProps } from "../../../types";
 export const TextEditorField = ({
   name,
   label,
+  theme,
   helper,
   asText,
   disabled,
@@ -21,6 +22,7 @@ export const TextEditorField = ({
           <FieldDecoration label={label} error={touched && error} helper={helper} disabled={disabled}>
             {({ onFieldFocus, onFieldBlur }) => (
               <TextEditor
+                theme={theme}
                 value={value}
                 readOnly={disabled}
                 onChange={html => {
@@ -57,12 +59,16 @@ export const TextEditorField = ({
 interface TextEditorProps {
   value: string;
   readOnly: boolean;
+  theme?: "snow" | "bubble";
   onChange: (value: string) => void;
   onFocus: () => void;
   onBlur: () => void;
 }
 
-const TextEditor = ({ value, onChange, onFocus, onBlur }: TextEditorProps): JSX.Element => {
+const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps): JSX.Element => {
+  if (["snow", "bubble"].includes(theme)) theme = theme.toLowerCase() as "snow" | "bubble";
+  else theme = "snow";
+
   const [linkId] = useState(`quill-stylesheet-${generateRnd()}`);
   const [scriptId] = useState(`quill-script-${generateRnd()}`);
   const ref = useRef<HTMLDivElement>();
@@ -97,7 +103,7 @@ const TextEditor = ({ value, onChange, onFocus, onBlur }: TextEditorProps): JSX.
     Promise.all([
       loadExternal(linkId, "link", (tag: HTMLLinkElement) => {
         tag.type = "text/css";
-        tag.href = "https://cdn.quilljs.com/1.3.6/quill.snow.css";
+        tag.href = `https://cdn.quilljs.com/1.3.6/quill.${theme}.css`;
         tag.rel = "stylesheet";
       }),
       loadExternal(scriptId, "script", (tag: HTMLScriptElement) => {
@@ -117,7 +123,8 @@ const TextEditor = ({ value, onChange, onFocus, onBlur }: TextEditorProps): JSX.
               ["link"],
               ["clean"]
             ]
-          }
+          },
+          theme
         });
 
         quill.on("text-change", () => {
@@ -137,8 +144,9 @@ const TextEditor = ({ value, onChange, onFocus, onBlur }: TextEditorProps): JSX.
     return () => {
       // Remove link and script tags when unmounted
       const linkTag = document.getElementById(linkId);
-      const scriptTag = document.getElementById(scriptId);
       if (linkTag) document.body.removeChild(linkTag);
+
+      const scriptTag = document.getElementById(scriptId);
       if (scriptTag) document.body.removeChild(scriptTag);
     };
   }, []);

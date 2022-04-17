@@ -5,6 +5,7 @@ declare module "*.svg" {
 
 declare interface QuillOptions {
   modules?: { toolbar: any };
+  theme?: string;
 }
 
 type DangerouslyPasteHTML2 = (html: string, source: "api") => void;
