@@ -7,11 +7,15 @@ export default { title: "TextEditorField", component: TextEditorField };
 
 export const Default = (): any => {
   const SampleForm = (): any => {
-    const initialValues: any = { field: "" };
+    const initialValues: any = {
+      htmlField: "<p>Hello World!</p>",
+      textField: ""
+    };
 
     const validate = (values: any) => {
       const errors: any = {};
-      if (!values.field) errors.field = "Required";
+      if (!values.htmlField) errors.htmlField = "Required";
+      if (!values.textField) errors.textField = "Required";
       return errors;
     };
 
@@ -26,7 +30,17 @@ export const Default = (): any => {
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
-                <TextEditorField name="field" label="Text field" helper={`${formik.values.field.length} of 6`} />
+                <TextEditorField name="htmlField" label="Text field" helper="Value is HTML content" />
+              </div>
+
+              <div className="mb-4">
+                <TextEditorField
+                  name="textField"
+                  label="Text field"
+                  helper="Value is text representation of HTML"
+                  theme="bubble"
+                  asText
+                />
               </div>
 
               <div className="d-grid">

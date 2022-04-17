@@ -2,6 +2,11 @@
 
 # Change Log
 
+- `6.1.0`
+  - Implemented lazy loading of [Quill](https://quilljs.com) in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md). This reduces overall size by up to 81%.
+  - Added optional `theme` attribute to [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to control the appearance of the editor
+  - Added optional `asText` attribute to [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md). This determines whether the editor emits plain text instead of HTML
+
 - `6.0.0 (Breaking)`
   - Compiled separate ES modules for each element to enable tree shaking and much smaller app size.
     > Instead of using `import { TableView } from "react-simple-widgets`, use `import { TableView } from "react-simple-widgets/dist/table-view`
