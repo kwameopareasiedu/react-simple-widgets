@@ -103,39 +103,44 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
     Promise.all([
       loadExternal(linkId, "link", (tag: HTMLLinkElement) => {
         tag.type = "text/css";
-        tag.href = `https://cdn.quilljs.com/1.3.6/quill.${theme}.css`;
         tag.rel = "stylesheet";
+        tag.href = `https://cdn.quilljs.com/1.3.6/quill.${theme}.css`;
+        tag.crossOrigin = "anonymous";
       }),
       loadExternal(scriptId, "script", (tag: HTMLScriptElement) => {
         tag.src = "https://cdn.quilljs.com/1.3.6/quill.min.js";
       })
-    ]).then(() => {
-      if (ref.current) {
-        const quill = new Quill(ref.current, {
-          modules: {
-            toolbar: [
-              [{ header: [1, 2, 3, false] }],
-              ["bold", "italic", "underline", "strike", "blockquote"],
-              [{ color: [] }, { background: [] }],
-              [{ font: [] }],
-              [{ align: [] }],
-              [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
-              ["link"],
-              ["clean"]
-            ]
-          },
-          theme
-        });
+    ])
+      .then(() => {
+        if (ref.current) {
+          const quill = new Quill(ref.current, {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, 3, false] }],
+                ["bold", "italic", "underline", "strike", "blockquote"],
+                [{ color: [] }, { background: [] }],
+                [{ font: [] }],
+                [{ align: [] }],
+                [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+                ["link"],
+                ["clean"]
+              ]
+            },
+            theme
+          });
 
-        quill.on("text-change", () => {
-          onChange(quill.root.innerHTML);
-        });
+          quill.on("text-change", () => {
+            onChange(quill.root.innerHTML);
+          });
 
-        if (value) quill.clipboard.dangerouslyPasteHTML(0, value, "api");
+          if (value) quill.clipboard.dangerouslyPasteHTML(0, value, "api");
 
-        editor.current = quill;
-      }
-    });
+          editor.current = quill;
+        }
+      })
+      .catch(err => {
+        console.error("React Simple Widgets - TextEditor dependencies failed to load", err);
+      });
   };
 
   useEffect(() => {
