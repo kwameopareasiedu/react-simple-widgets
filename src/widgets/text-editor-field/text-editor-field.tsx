@@ -32,10 +32,14 @@ export const TextEditorField = ({
                     const text = div.textContent;
 
                     setValue(text);
-                    onChange?.call(this, text);
+                    if (onChange) {
+                      onChange(text);
+                    }
                   } else {
                     setValue(html);
-                    onChange?.call(this, html);
+                    if (onChange) {
+                      onChange(html);
+                    }
                   }
                 }}
                 onFocus={() => {
