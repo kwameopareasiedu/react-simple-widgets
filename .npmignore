@@ -11,10 +11,12 @@ docs
 *.iml
 *.md
 *.log
-.babelrc.js
-.eslintrc
+.eslintrc.json
 .gitignore
-.prettierrc
+.prettierrc.json
+babel.config.js
 empty-module.js
+index.d.ts
+postcss.config.js
 rollup.config.js
 tsconfig.json
