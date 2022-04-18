@@ -2,6 +2,9 @@
 
 # Change Log
 
+- `6.1.1`
+  - Change `onChange?.call()` to `onChange()` in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to prevent issues with `this`
+
 - `6.1.0`
   - Implemented lazy loading of [Quill](https://quilljs.com) in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md). This reduces overall size by up to 81%.
   - Added optional `theme` attribute to [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to control the appearance of the editor
