@@ -418,6 +418,14 @@ export interface FileFieldProps
   onChange?: (file: File) => void;
 }
 
+/** TagInput */
+export interface TagInputProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+  value: Array<string>;
+  onChange: (value: Array<string>) => void;
+  onInputError?: (error: string) => void;
+  validator?: (value: string) => string | undefined;
+}
+
 /** UseQueryParams */
 export type UseQueryParamsState = {
   set: (key: string, value: string) => void;

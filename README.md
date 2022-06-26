@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-6.1.1-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/unpacked%20size-176.8%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-6.2.0-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/unpacked%20size-176.8%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more.
 
@@ -111,6 +111,8 @@ Here's a summary of the widgets in `React Simple Widgets`
 - [ActionBar](src/widgets/action-bar/action-bar-usage.md) - A widget that displays a row of spaced buttons or nothing if no children are specified
 
 - [InfiniteList](src/widgets/infinite-list/infinite-list-usage.md) - A widget that provides a load-more mechanism for an infinite list of items
+
+- [TagInput](src/widgets/tag-input/tag-input-usage.md) - A widget allows multiple tags to be entered into the text input using the **Enter** or **Tab** keys
 
 ## Hooks
 
