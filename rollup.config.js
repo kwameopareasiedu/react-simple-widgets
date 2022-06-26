@@ -40,6 +40,8 @@ export default {
     "src/widgets/popup-menu/popup-menu",
     "src/widgets/select-field/select-field",
     "src/widgets/table-view/table-view",
+    "src/widgets/tag-field/tag-field",
+    "src/widgets/tag-input/tag-input",
     "src/widgets/text-area-field/text-area-field",
     "src/widgets/text-editor-field/text-editor-field",
     "src/widgets/text-field/text-field",
