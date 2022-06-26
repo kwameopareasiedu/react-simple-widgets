@@ -421,9 +421,16 @@ export interface FileFieldProps
 /** TagInput */
 export interface TagInputProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: Array<string>;
-  onChange: (value: Array<string>) => void;
-  onInputError?: (error: string) => void;
   validator?: (value: string) => string | undefined;
+  onInputError?: (error: string) => void;
+  onChange: (value: Array<string>) => void;
+}
+
+/** TagField */
+export interface TagFieldProps
+  extends Omit<TagInputProps, "label" | "value" | "onChange">,
+    Pick<FieldDecorationProps, "label" | "leading" | "trailing" | "helper"> {
+  onChange?: (value: Array<string>) => void;
 }
 
 /** UseQueryParams */

@@ -1,17 +1,17 @@
-[Home](../../../README.md) / TextField
+[Home](../../../README.md) / TagField
 
-# TextField
+# TagField
 
-This widget is a simple text input form widget. 
+This widget is a tag input form widget
 
-`TextField` is intrinsically an `input` element and accepts all of its attributes.
+`TagField` is intrinsically a [TagInput](../tag-input/tag-input-usage.md)  element and accepts all of its attributes.
 
 ## Usage
 
 ```jsx
-import { TextField } from "react-simple-widgets/dist/text-field";
+import { TagField } from "react-simple-widgets/dist/tag-field";
 
-<TextField name label helper leading trailing />;
+<TagField name label helper leading trailing />;
 ```
 
 - `name: string`

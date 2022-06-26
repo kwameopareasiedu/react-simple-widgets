@@ -9,7 +9,7 @@ This widget is a form widget which allows the user select multiple value(s) from
 ## Usage
 
 ```jsx
-import { MultiSelectField } from "react-simple-widgets";
+import { MultiSelectField } from "react-simple-widgets/dist/multi-select-field";
 
 <MultiSelectField name label inline options onChange />;
 ```

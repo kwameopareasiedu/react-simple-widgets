@@ -90,6 +90,8 @@ Here's a summary of the widgets in `React Simple Widgets`
 
 - [TimeField](src/widgets/time-field/time-field-usage.md) - A form widget for selecting a single time built on top of [TimePicker](src/widgets/time-picker/time-picker-usage.md)
 
+- [TagField](src/widgets/tag-field/tag-field-usage.md) - A form widget for multi-tag input built on top of [TagInput](src/widgets/tag-input/tag-input-usage.md)
+
   ***
 
 - [PopupMenu](src/widgets/popup-menu/popup-menu-usage.md) - A widget that revals a popup menu when a trigger element is clicked
