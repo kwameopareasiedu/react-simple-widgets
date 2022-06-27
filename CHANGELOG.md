@@ -5,6 +5,7 @@
 - `6.2.0`
   - Added [TagInput](src/widgets/tag-input/tag-input-usage.md) widget
   - Added [TagField](src/widgets/tag-field/tag-field-usage.md) widget
+  - Added `helper.send(msg?)` to [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) widget which allows dialogs to send messages to the host **without closing the dialog**
 
 - `6.1.1`
   - Change `onChange?.call()` to `onChange()` in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to prevent issues with `this`

@@ -14,6 +14,7 @@ export interface DialogOptions {
   escapeDismissible?: boolean;
   backgroundDismissible?: boolean;
   onDismissed?: (returnValue?: any) => void;
+  onMessage?: (message?: any) => void;
 }
 
 export enum DialogSize {
@@ -25,6 +26,7 @@ export enum DialogSize {
 
 export interface DialogHelper {
   dismiss: (returnValue?: any) => void;
+  send: (message: any) => void;
 }
 
 export type DialogBuilder = (helper: DialogHelper) => JSX.Element;

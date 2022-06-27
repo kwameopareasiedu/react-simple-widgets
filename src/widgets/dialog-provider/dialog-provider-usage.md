@@ -2,7 +2,7 @@
 
 # DialogProvider
 
-The `DialogProvider` provides a dialog API for your app. This provider renders dialogs on top of its children. This prevents any possible stacking context issues between the full page dialogs and components of your application (especially issues with any CSS grid you might have).
+The `DialogProvider` provides a dialog API for your app. This provider renders dialogs on top of your app which prevents any possible stacking context issues with components of your application (especially if you are using CSS grid in that component).
 
 > `DialogProvider` only controls the positioning and display of your dialogs. The UI of the dialog is entirely up to your app.
 
@@ -137,7 +137,7 @@ export const MyDialog = ({ helper }: MyDialogProps) => {
 };
 ```
 
-Next, we show `MyDialog` from our application.
+Next, we show `MyDialog` from our application. We'll add an `onDismissed` function to our options which is called when the dialog is dismissed.
 
 `app.tsx`
 
@@ -157,7 +157,7 @@ export const App = () => {
       },
       {
         size: DialogSize.SMALL,
-        dismissible: false,
+        escapeDismissible: false,
         onDismissed: val => {
           if (val) alert(`Dialog returned a value of ${val}`);
 
@@ -180,3 +180,79 @@ export const App = () => {
   );
 };
 ```
+
+### 2c. Send messages from the dialog
+
+This section illustrates how to send messages from a dialog to the host **while it is still open**. First, create a dialog component in a file (We are using `my-dialog.tsx` here).
+
+`my-dialog.tsx`
+
+```tsx
+import { DialogHelper } from "react-simple-widgets/types";
+
+interface MyDialogProps {
+  helper: DialogHelper;
+}
+
+export const MyDialog = ({ helper }: MyDialogProps) => {
+  return (
+    <div className="card">
+      <div className="card-body">
+        <p>
+          Click the button to send a message to the host <strong>without closing the dialog</strong>
+        </p>
+
+        {/* We send a message of "Hello" when this button is pressed */}
+        <button className="btn btn-primary btn-sm me-2" onClick={() => helper.send("Hello")}>
+          Send message (Hello)
+        </button>
+
+        <button className="btn btn-link btn-sm" onClick={helper.dismiss}>
+          Close dialog
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+Next, we show `MyDialog` from our application. We'll add an `onMessage` function to our options which is called when the dialog sends a message (I.e. when `helper.send()` is called.
+
+`app.tsx`
+
+```tsx
+import { useContext } from "react";
+import { DialogProviderContext } from "react-simple-widgets/dist/dialog-provider";
+import { DialogSize } from "react-simple-widgets/types";
+import { MyDialog } from "./my-dialog.tsx";
+
+export const App = () => {
+  const { showDialog } = useContext(DialogProviderContext);
+
+  function openDialog() {
+    showDialog(
+      function (helper) {
+        return <MyDialog helper={helper} />;
+      },
+      {
+        size: DialogSize.SMALL,
+        escapeDismissible: false,
+        onMessage: message => {
+          alert(`Dialog sent a message: ${message}`);
+
+          /* message will be "Hello" */
+        }
+      }
+    );
+  }
+
+  return (
+    <div id="app">
+      <button className="btn btn-primary" onClick={openDialog}>
+        Open dialog
+      </button>
+    </div>
+  );
+};
+```
+

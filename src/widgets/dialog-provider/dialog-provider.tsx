@@ -28,16 +28,23 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
       if (handler) window.removeEventListener("keyup", handler);
     };
 
+    const onSend = (message?: any) => {
+      if (options?.onMessage) options?.onMessage(message);
+    };
+
     dialog.onDismiss = onDismiss;
     dialog.options = options || {};
-    dialog.widget = builder({ dismiss: onDismiss });
+    dialog.widget = builder({
+      dismiss: onDismiss,
+      send: onSend
+    });
     setupEscapeHandler(onDismiss, options?.escapeDismissible);
     setDialogs(dialogs => [...dialogs, dialog]);
 
     // TODO: Implement window pop state to handle back button on mobile devices
   };
 
-  const setupEscapeHandler = (dismiss: Function, escapeDismissible: boolean): void => {
+  const setupEscapeHandler = (dismiss: Function, escapeDismissible = true): void => {
     const escapeHandler = (e: KeyboardEvent): void => {
       if (e.key === "Escape" && !e.defaultPrevented) {
         e.stopImmediatePropagation();
