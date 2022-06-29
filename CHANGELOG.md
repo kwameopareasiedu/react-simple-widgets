@@ -2,20 +2,28 @@
 
 # Change Log
 
+- `6.3.0`
+
+  - Added optional `mobileTableCols` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which preserves the table view in mobile view if set. It also limits the number of columns to render in mobile view.
+
 - `6.2.0`
+
   - Added [TagInput](src/widgets/tag-input/tag-input-usage.md) widget
   - Added [TagField](src/widgets/tag-field/tag-field-usage.md) widget
   - Added `helper.send(msg?)` to [DialogProvider](src/widgets/dialog-provider/dialog-provider-usage.md) widget which allows dialogs to send messages to the host **without closing the dialog**
 
 - `6.1.1`
+
   - Change `onChange?.call()` to `onChange()` in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to prevent issues with `this`
 
 - `6.1.0`
+
   - Implemented lazy loading of [Quill](https://quilljs.com) in [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md). This reduces overall size by up to 81%.
   - Added optional `theme` attribute to [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md) to control the appearance of the editor
   - Added optional `asText` attribute to [TextEditorField](src/widgets/text-editor-field/text-editor-field-usage.md). This determines whether the editor emits plain text instead of HTML
 
 - `6.0.0 (Breaking)`
+
   - Compiled separate ES modules for each element to enable tree shaking and much smaller app size.
     > Instead of using `import { TableView } from "react-simple-widgets`, use `import { TableView } from "react-simple-widgets/dist/table-view`
   - Upgraded [React](https://reactjs.org/) and [ReactDOM](https://reactjs.org/) to v18
