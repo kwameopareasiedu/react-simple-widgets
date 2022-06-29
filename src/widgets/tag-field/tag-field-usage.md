@@ -4,7 +4,7 @@
 
 This widget is a tag input form widget
 
-`TagField` is intrinsically a [TagInput](../tag-input/tag-input-usage.md)  element and accepts all of its attributes.
+`TagField` is intrinsically a [TagInput](../tag-input/tag-input-usage.md) element and accepts all of its attributes.
 
 ## Usage
 

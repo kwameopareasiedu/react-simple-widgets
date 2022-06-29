@@ -2,7 +2,7 @@
 
 # InfiniteList
 
-This widget that wraps an **infinite list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically. 
+This widget that wraps an **infinite list** of items and provides a load-more mechanism. If the window scrolls to the load more button and the end of list hasn't been reached the widget triggers the load-more automatically.
 
 `InfiniteList` is intrinsically a `div` element and accepts all of its attributes.
 

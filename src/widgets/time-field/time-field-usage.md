@@ -2,7 +2,7 @@
 
 # TimeField
 
-This widget is a time picker form widget. 
+This widget is a time picker form widget.
 
 `TimeField` is intrinsically a [TimePicker](../time-picker/time-picker-usage.md) widget and accepts all of its attributes.
 

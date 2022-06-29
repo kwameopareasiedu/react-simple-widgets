@@ -2,7 +2,7 @@
 
 # TextField
 
-This widget is a simple text input form widget. 
+This widget is a simple text input form widget.
 
 `TextField` is intrinsically an `input` element and accepts all of its attributes.
 

@@ -8,7 +8,6 @@ This is a widget that shows a pop-up menu when the trigger button is clicked.
 
 > `PopupMenu` also closes when the area around the options menu is clicked or when the window is scrolled.
 
-
 ## Usage
 
 ```jsx

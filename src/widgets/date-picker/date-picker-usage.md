@@ -2,7 +2,7 @@
 
 # DatePicker
 
-This widget displays a popup calendar to select a single calendar date. 
+This widget displays a popup calendar to select a single calendar date.
 
 `DatePicker` is intrinsically a `div` element and accepts all of its attributes.
 

@@ -2,7 +2,7 @@
 
 # ActionBar
 
-This widget displays a row of spaced elements. If no children are present, it returns `null`. 
+This widget displays a row of spaced elements. If no children are present, it returns `null`.
 
 `ActionBar` is intrinsically a `div` element and accepts all of its attributes.
 

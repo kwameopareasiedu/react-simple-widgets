@@ -2,7 +2,7 @@
 
 # DropdownField
 
-This widget is a form widget which allows the user to select a value from a dropdown list. 
+This widget is a form widget which allows the user to select a value from a dropdown list.
 
 `DropdownField` is intrinsically a `select` element and accepts all of its attributes.
 

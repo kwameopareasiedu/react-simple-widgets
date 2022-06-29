@@ -2,7 +2,7 @@
 
 # MultiSelectField
 
-This widget is a form widget which allows the user select multiple value(s) from a list of options using radio inputs. 
+This widget is a form widget which allows the user select multiple value(s) from a list of options using radio inputs.
 
 `MultiSelectField` is intrinsically a `div` element and it accepts all of its attributes.
 

@@ -2,7 +2,7 @@
 
 # Loader
 
-This widget displays a rotating spinner icon. 
+This widget displays a rotating spinner icon.
 
 `Loader` it is intrinsically a `div` element and accepts all its attributes.
 

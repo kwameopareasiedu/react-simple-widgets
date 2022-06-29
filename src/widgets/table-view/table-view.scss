@@ -6,6 +6,10 @@ table.react-simple-widget.table-view {
   > thead {
     display: none;
 
+    &.persistent {
+      display: table-header-group;
+    }
+
     @media screen and (min-width: 576px) {
       display: table-header-group;
     }
@@ -28,7 +32,6 @@ table.react-simple-widget.table-view {
 
   > tbody {
     td.table-view-td-sm {
-      width: 100%;
       padding: 15px;
 
       @media screen and (min-width: 576px) {

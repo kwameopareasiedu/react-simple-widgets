@@ -73,3 +73,20 @@ export const Default = (): any => {
     />
   );
 };
+
+export const MobileTable = (): any => {
+  return (
+    <TableView
+      items={collection}
+      mobileTableCols={3}
+      className="table-bordered table-striped"
+      props={[
+        ["Name", "name", "name"],
+        ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
+        ["Unknown", "status", "status"],
+        ["Nested", "nested.value", "nested"],
+        ["Unknown nested", "nested.other_value", "other"]
+      ]}
+    />
+  );
+};

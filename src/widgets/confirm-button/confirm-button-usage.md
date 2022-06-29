@@ -2,7 +2,7 @@
 
 # ConfirmButton
 
-This widget shows a confirmation dialog to confirm an action. 
+This widget shows a confirmation dialog to confirm an action.
 
 `ConfirmButton` is intrinsically a [BusyButton](../busy-button/busy-button.md) and accepts all of its attributes.
 

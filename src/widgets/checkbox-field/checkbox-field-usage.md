@@ -2,7 +2,7 @@
 
 # CheckboxField
 
-This widget is a checkbox form widget. 
+This widget is a checkbox form widget.
 
 CheckboxField is intrinsically an `<input type="checkbox"/>` and accepts all of its attributes.
 

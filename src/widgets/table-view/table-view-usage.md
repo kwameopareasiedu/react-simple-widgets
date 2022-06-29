@@ -11,7 +11,17 @@ This widget is a responsive table widget. It collapses the view into cards on sm
 ```jsx
 import { TableView } from "react-simple-widgets/dist/table-view";
 
-<TableView items props headerRowBuilder bodyRowBuilder footerRowBuilder captionBuilder optionsBuilder onSort />;
+<TableView
+  items
+  props
+  mobileTableCols
+  headerRowBuilder
+  bodyRowBuilder
+  footerRowBuilder
+  captionBuilder
+  optionsBuilder
+  onSort
+/>;
 ```
 
 - `items: Array<any>`
@@ -30,6 +40,10 @@ import { TableView } from "react-simple-widgets/dist/table-view";
     - **Dot Separated String**: (E.g. `nested.value`) For each item, the cell value is `item.nested.value`.
     - **Function**: (E.g. `(item, itemIndex) => JSX.Element`) For each item, the function is called with the item and it's index. The returned JSX is then rendered in the cell.
   - The 3rd element is the sorting key for that columns. If specified, this key is passed as the active sort key to `onSort` when the table is sorted.
+
+- `mobileTableCols?: number`
+
+  By default, the mobile view displays items as a list of cards. If you want to preserve the table columns in mobile view, `mobileTableCols` specifies the number of columns to display in mobile view.
 
 - `headerRowBuilder?: (columnNames: Array<string>) => JSX.Element`
 

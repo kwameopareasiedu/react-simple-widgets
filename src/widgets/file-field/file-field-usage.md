@@ -2,7 +2,7 @@
 
 # FileField
 
-This widget is a file picker form widget. 
+This widget is a file picker form widget.
 
 `FileField` is intrinsically a [FilePicker](../file-picker/file-picker-usage.md) widget and accepts all of its attributes.
 
@@ -15,7 +15,7 @@ import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { FileField } from "react-simple-widgets/dist/file-field";
 
 <DialogProvider>
-    <FileField name label helper leading trailing />;
+  <FileField name label helper leading trailing />;
 </DialogProvider>;
 ```
 

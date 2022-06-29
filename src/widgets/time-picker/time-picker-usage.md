@@ -2,7 +2,7 @@
 
 # TimePicker
 
-This widget allows you to select a time. 
+This widget allows you to select a time.
 
 `TimePicker` is intrinsically a `div` element and accepts all of its attributes.
 

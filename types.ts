@@ -150,6 +150,7 @@ export type TableViewSortChangeCallback = (prop: string, direction: SortDirectio
 
 export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
   items: Array<any>;
+  mobileTableCols?: number;
   props: Array<[string, TableViewCellResolver, string?]>;
   headerRowBuilder?: TableViewHeaderRowBuilder;
   bodyRowBuilder?: TableViewBodyRowBuilder;

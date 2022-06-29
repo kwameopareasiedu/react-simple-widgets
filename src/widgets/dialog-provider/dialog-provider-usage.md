@@ -213,7 +213,7 @@ export const MyDialog = ({ helper }: MyDialogProps) => {
       </div>
     </div>
   );
-}
+};
 ```
 
 Next, we show `MyDialog` from our application. We'll add an `onMessage` function to our options which is called when the dialog sends a message (I.e. when `helper.send()` is called.
@@ -255,4 +255,3 @@ export const App = () => {
   );
 };
 ```
-

@@ -2,7 +2,7 @@
 
 # MonthDateField
 
-This widget is a month date picker form widget. 
+This widget is a month date picker form widget.
 
 `MonthDateField` is intrinsically a [MonthDatePicker](../month-date-picker/month-date-picker-usage.md) widget and accepts all of its attributes.
 

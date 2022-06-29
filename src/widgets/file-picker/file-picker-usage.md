@@ -2,7 +2,7 @@
 
 # FilePicker
 
-This widget allows you to select a file from the device either from a file-select dialog or by drag-n-drop. 
+This widget allows you to select a file from the device either from a file-select dialog or by drag-n-drop.
 
 `FilePicker` is intrinsically a `div` element and accepts all of its attributes.
 
