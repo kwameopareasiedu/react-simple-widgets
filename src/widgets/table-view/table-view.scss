@@ -1,6 +1,8 @@
 @import "../../common";
 
 table.react-simple-widget.table-view {
+  box-shadow: 2px 2px 6px #e3e3e3;
+  border-radius: 4px;
   margin-bottom: 0;
 
   > thead {
@@ -16,23 +18,49 @@ table.react-simple-widget.table-view {
 
     th {
       font-size: 85%;
-      font-style: italic;
       vertical-align: middle;
+      padding-bottom: 1.2rem;
+      padding-top: 1.2rem;
+      font-weight: 500;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+
+      &.sortable {
+        display: table-cell;
+      }
+
+      &.sortable:hover {
+        cursor: pointer;
+      }
 
       img {
         width: 10px;
         margin-left: 4px;
       }
     }
-
-    th.sortable:hover {
-      cursor: pointer;
-    }
   }
 
   > tbody {
+    border-top: 1px solid #e3e3e3;
+
     td.table-view-td-sm {
-      padding: 15px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #efefef;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
 
       @media screen and (min-width: 576px) {
         display: none;
@@ -61,6 +89,17 @@ table.react-simple-widget.table-view {
 
     td.table-view-td {
       display: none;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #efefef;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
 
       @media screen and (min-width: 576px) {
         display: table-cell;
