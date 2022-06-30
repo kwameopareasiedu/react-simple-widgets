@@ -1,6 +1,6 @@
 {
   "name": "react-simple-widgets",
-  "version": "6.4.0-testing-01",
+  "version": "6.3.1",
   "description": "A collection of simple to use widgets for building react apps easily",
   "exports": {
     "./dist/action-bar": "./dist/action-bar.js",
