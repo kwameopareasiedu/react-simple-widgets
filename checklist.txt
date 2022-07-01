@@ -1,0 +1,6 @@
+Checklist
+1. All widgets/utils must have usage.md and stories.tsx files
+2. All widgets/utils must be specified in rollup.config.js
+3. All widgets/utils must have a declarations file in dist folder
+4. Generated ES modules of all widget/utils must be exported in dist/index.js
+5. Declaration files of all widget/utils must be exported in dist/index.d.ts

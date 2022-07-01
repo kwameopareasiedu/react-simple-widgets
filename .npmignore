@@ -14,7 +14,8 @@ docs
 .eslintrc.json
 .gitignore
 .prettierrc.json
-babel.config.js
+babel.config.json
+checklist.txt
 empty-module.js
 index.d.ts
 postcss.config.js
