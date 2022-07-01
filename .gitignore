@@ -4,6 +4,7 @@
 node_modules
 dist/**.*
 !dist/*.d.ts
+!dist/index.js
 
 *.iml
 *.tgz

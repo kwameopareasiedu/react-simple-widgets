@@ -2,6 +2,11 @@
 
 # Change Log
 
+- `6.4.0`
+
+  - Fixed flex input in [TagInput](src/widgets/tag-input/tag-input-usage.md) widget
+  - Exported ESM modules in `dist/index.js` with typings in `dist/index.d.ts`. This maintains its compatibility with IDE autocomplete features and tree-shaking bundlers.
+
 - `6.3.0`
 
   - Added optional `mobileTableCols` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which preserves the table view in mobile view if set. It also limits the number of columns to render in mobile view.
