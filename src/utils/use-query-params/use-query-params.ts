@@ -3,17 +3,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { UseQueryParams, UseQueryParamsState } from "../../../types";
 
 export const useQueryParams: UseQueryParams = (): UseQueryParamsState => {
-  const MODIFICATION_FN_NAMES = ["set", "unset"];
-  const location = useLocation();
+  const { search } = useLocation();
   const navigate = useNavigate();
 
   const qs2qp = (search: string): any => {
     const parts = search.substring(1).split("&");
     const cleanParts = parts.filter(part => !!part);
-    return cleanParts.reduce(
-      (acc, part) => ({ ...acc, [part.split("=")[0]]: decodeURIComponent(part.split("=")[1]) }),
-      {}
-    );
+
+    return cleanParts.reduce((acc, part) => {
+      const key = part.split("=")[0];
+      const val = decodeURIComponent(part.split("=")[1]);
+      return { ...acc, [key]: val };
+    }, {});
   };
 
   const qp2qs = (qp: any): string => {
@@ -23,7 +24,7 @@ export const useQueryParams: UseQueryParams = (): UseQueryParamsState => {
     for (const key of keys) {
       const val = qp[key];
 
-      if (!MODIFICATION_FN_NAMES.includes(key) && ![null, undefined].includes(val)) {
+      if (![null, undefined].includes(val)) {
         if (qs === "") {
           qs += `?${key}=${val}`;
         } else qs += `&${key}=${val}`;
@@ -33,34 +34,51 @@ export const useQueryParams: UseQueryParams = (): UseQueryParamsState => {
     return qs;
   };
 
-  const set = (key: string, value: string): void => {
-    if (MODIFICATION_FN_NAMES.includes(key)) return;
-    setQP({ ...qp, [key]: encodeURIComponent(value) });
+  const addQp = (key: string, value: string): void => {
+    if (params[key] === value) return;
+    setParams({ ...params, [key]: encodeURIComponent(value) });
   };
 
-  const unset = (key: string): void => {
-    if (MODIFICATION_FN_NAMES.includes(key)) return;
-    delete qp[key];
-    setQP({ ...qp });
-  };
+  const delQp = (key: string | Array<string>): void => {
+    let shouldUpdate = false;
+    const paramKeys = Object.keys(params);
 
-  const [qp, setQP] = useState<UseQueryParamsState>({ ...qs2qp(location.search), set, unset });
-
-  useEffect(() => {
-    const _qp = qs2qp(location.search);
-
-    if (JSON.stringify(qp) !== JSON.stringify(_qp)) {
-      setQP({ ...qs2qp(location.search), set, unset });
+    if (Array.isArray(key)) {
+      for (const k of key) {
+        if (paramKeys.includes(k)) {
+          shouldUpdate = true;
+          delete params[k];
+        }
+      }
+    } else {
+      if (paramKeys.includes(key)) {
+        shouldUpdate = true;
+        delete params[key];
+      }
     }
-  }, [location.search]);
+
+    if (shouldUpdate) {
+      setParams({ ...params });
+    }
+  };
+
+  const [params, setParams] = useState<any>(qs2qp(search));
 
   useEffect(() => {
-    const qs = qp2qs(qp);
+    const urlParams = qs2qp(search);
 
-    if (location.search !== qs) {
+    if (JSON.stringify(params) !== JSON.stringify(urlParams)) {
+      setParams(urlParams);
+    }
+  }, [search]);
+
+  useEffect(() => {
+    const qs = qp2qs(params);
+
+    if (search !== qs) {
       navigate(qs);
     }
-  }, [qp]);
+  }, [params]);
 
-  return qp;
+  return { qp: params, addQp, delQp };
 };

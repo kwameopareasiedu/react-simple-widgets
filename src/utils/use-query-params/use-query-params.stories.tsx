@@ -6,10 +6,10 @@ export default { title: "UseQueryParams" };
 
 export const Default = (): any => {
   const ExampleApp = (): any => {
-    const qp = useQueryParams();
+    const { qp, addQp, delQp } = useQueryParams();
 
     useEffect(() => {
-      console.log(qp);
+      console.log([`foo1=${qp.foo1}`, `foo2=${qp.foo2}`]);
     }, [qp]);
 
     return (
@@ -26,12 +26,22 @@ export const Default = (): any => {
         </div>
 
         <div className="d-flex align-items-center mb-4">
-          <button className="btn btn-primary btn-sm me-2" onClick={() => qp.set("foo", "bar")}>
-            Add query parameter &quot;foo&quot;=&quot;bar&quot;
+          <button className="btn btn-primary btn-sm me-2" onClick={() => addQp("foo1", "bar1")}>
+            Add query parameter &quot;foo1&quot;=&quot;bar1&quot;
           </button>
 
-          <button className="btn btn-danger btn-sm me-2" onClick={() => qp.unset("foo")}>
-            Remove query parameter &quot;foo&quot;=&quot;bar&quot;
+          <button className="btn btn-danger btn-sm me-2" onClick={() => delQp("foo1")}>
+            Remove query parameter &quot;foo1&quot;=&quot;bar1&quot;
+          </button>
+        </div>
+
+        <div className="d-flex align-items-center mb-4">
+          <button className="btn btn-primary btn-sm me-2" onClick={() => addQp("foo2", "bar2")}>
+            Add query parameter &quot;foo2&quot;=&quot;bar2&quot;
+          </button>
+
+          <button className="btn btn-danger btn-sm me-2" onClick={() => delQp(["foo2"])}>
+            Remove query parameter &quot;foo2&quot;=&quot;bar2&quot;
           </button>
         </div>
       </div>

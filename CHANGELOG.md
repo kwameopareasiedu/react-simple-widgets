@@ -2,6 +2,11 @@
 
 # Change Log
 
+- `6.5.0 (Breaking)`
+
+  - Changed return type of [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) hook to an object with query parameters `qp` and functions to modify the query parameters `addQp()` and `delQp()`.
+  - Fixed bug in [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) causing additional parameters to overwrite existing parameters.
+
 - `6.4.0`
 
   - Fixed flex input in [TagInput](src/widgets/tag-input/tag-input-usage.md) widget

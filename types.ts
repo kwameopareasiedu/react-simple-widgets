@@ -438,9 +438,9 @@ export interface TagFieldProps
 
 /** UseQueryParams */
 export type UseQueryParamsState = {
-  set: (key: string, value: string) => void;
-  unset: (key: string) => void;
-  [k: string]: any;
+  qp: any;
+  addQp: (key: string, value: string) => void;
+  delQp: (key: string | Array<string>) => void;
 };
 
 export type UseQueryParams = () => UseQueryParamsState;
