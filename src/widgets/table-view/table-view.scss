@@ -104,5 +104,12 @@ table.react-simple-widget.table-view {
         display: table-cell;
       }
     }
+
+    .empty-message-tr {
+      .default {
+        font-size: 80%;
+        text-align: center;
+      }
+    }
   }
 }

@@ -148,12 +148,15 @@ export type TableViewOptionsBuilder = (item: any, itemIndex?: number) => JSX.Ele
 
 export type TableViewSortChangeCallback = (prop: string, direction: SortDirection) => void;
 
+export type TableViewEmptyRowBuilder = () => JSX.Element;
+
 export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
   items: Array<any>;
   mobileTableCols?: number;
   props: Array<[string, TableViewCellResolver, string?]>;
   headerRowBuilder?: TableViewHeaderRowBuilder;
   bodyRowBuilder?: TableViewBodyRowBuilder;
+  emptyRowBuilder?: TableViewEmptyRowBuilder;
   footerRowBuilder?: TableViewFooterRowBuilder;
   captionBuilder?: TableViewCaptionBuilder;
   optionsBuilder?: TableViewOptionsBuilder;

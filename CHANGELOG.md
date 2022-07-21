@@ -2,6 +2,10 @@
 
 # Change Log
 
+- `6.6.0`
+
+  - Added optional `emptyRowBuilder` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which renders a message when the items list is empty.
+
 - `6.5.0 (Breaking)`
 
   - Changed return type of [useQueryParams](src/utils/use-query-params/use-query-params-usage.md) hook to an object with query parameters `qp` and functions to modify the query parameters `addQp()` and `delQp()`.

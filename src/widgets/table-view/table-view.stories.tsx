@@ -90,3 +90,19 @@ export const MobileTable = (): any => {
     />
   );
 };
+
+export const NoItems = (): any => {
+  return (
+    <TableView
+      items={[]}
+      className="table-bordered table-striped"
+      props={[
+        ["Name", "name", "name"],
+        ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
+        ["Unknown", "status", "status"],
+        ["Nested", "nested.value", "nested"],
+        ["Unknown nested", "nested.other_value", "other"]
+      ]}
+    />
+  );
+};

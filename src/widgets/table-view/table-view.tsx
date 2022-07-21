@@ -21,6 +21,7 @@ export const TableView = ({
   className: _className,
   headerRowBuilder: _headerRowBuilder,
   bodyRowBuilder: _bodyRowBuilder,
+  emptyRowBuilder: _emptyRowBuilder,
   footerRowBuilder,
   captionBuilder,
   optionsBuilder,
@@ -147,6 +148,20 @@ export const TableView = ({
     } else return EMPTY_STRING;
   };
 
+  const emptyRowBuilder = (): JSX.Element => {
+    return (
+      <tr className="empty-message-tr">
+        {!_emptyRowBuilder ? (
+          <td className="default" colSpan={props.length}>
+            No items to display
+          </td>
+        ) : (
+          _emptyRowBuilder()
+        )}
+      </tr>
+    );
+  };
+
   const sortIndicatorBuilder = (sortProp: string): JSX.Element => {
     if (sortProp === sort.prop) {
       if (sort.direction === SortDirection.NONE) return <img src={SortNoneImg} alt="Sort none icon" />;
@@ -182,6 +197,8 @@ export const TableView = ({
         {items.map((item, itemIndex) => {
           return bodyRowBuilder(item, itemIndex);
         })}
+
+        {items.length === 0 && emptyRowBuilder()}
       </tbody>
 
       {footerRowBuilder && <tfoot>{footerRowBuilder()}</tfoot>}

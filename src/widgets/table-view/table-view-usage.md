@@ -17,6 +17,7 @@ import { TableView } from "react-simple-widgets/dist/table-view";
   mobileTableCols
   headerRowBuilder
   bodyRowBuilder
+  emptyRowBuilder
   footerRowBuilder
   captionBuilder
   optionsBuilder
@@ -53,13 +54,17 @@ import { TableView } from "react-simple-widgets/dist/table-view";
 
   An optional function used to override rendering of the table `<tbody>` rows. This function must return a `<tr>` element.
 
+- `emptyRowBuilder?: () => JSX.Element`
+
+  An optional function used to render the empty message if `items` is empty. The default message is "_No items to display_". Note that the output of this function is wrapped in a `<tr>` element.
+
 - `footerRowBuilder?: () => JSX.Element`
 
-  An optional function used to override rendering of the table `<tfoot>` row. This function must return a `<tr>` element.
+  An optional function used to render the table `<tfoot>` row. This function must return a `<tr>` element.
 
 - `captionBuilder?: () => JSX.Element`
 
-  An optional function used to override rendering of the table `<caption>` element.
+  An optional function used to render the table `<caption>` element.
 
 - `optionsBuilder?: (item: any, itemIndex?: number) => JSX.Element`
 
