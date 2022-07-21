@@ -105,11 +105,15 @@ table.react-simple-widget.table-view {
       }
     }
 
-    .empty-message-tr {
+    tr.empty-message-tr {
       .default {
         font-size: 80%;
         text-align: center;
       }
+    }
+
+    tr.clickable:hover {
+      cursor: pointer;
     }
   }
 }

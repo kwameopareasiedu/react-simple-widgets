@@ -2,6 +2,7 @@ import React from "react";
 import { TableView } from "./table-view";
 import { PopupMenu } from "../popup-menu/popup-menu";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import { action } from "@storybook/addon-actions";
 import djs from "dayjs";
 
 djs.extend(advancedFormat);
@@ -103,6 +104,27 @@ export const NoItems = (): any => {
         ["Nested", "nested.value", "nested"],
         ["Unknown nested", "nested.other_value", "other"]
       ]}
+    />
+  );
+};
+
+export const RowClickable = (): any => {
+  const onRowClick = action("Row Click");
+
+  return (
+    <TableView
+      items={collection.slice(0, 5)}
+      className="table-bordered table-striped"
+      props={[
+        ["Name", "name", "name"],
+        ["Created at", item => djs(item.created_at).format("Do MMMM, YYYY"), "date"],
+        ["Unknown", "status", "status"],
+        ["Nested", "nested.value", "nested"],
+        ["Unknown nested", "nested.other_value", "other"]
+      ]}
+      onRowClick={(item, itemIndex) => {
+        onRowClick(item, itemIndex);
+      }}
     />
   );
 };

@@ -150,6 +150,8 @@ export type TableViewSortChangeCallback = (prop: string, direction: SortDirectio
 
 export type TableViewEmptyRowBuilder = () => JSX.Element;
 
+export type TableViewRowClickCallback = (item: any, itemIndex?: number) => void;
+
 export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
   items: Array<any>;
   mobileTableCols?: number;
@@ -161,6 +163,7 @@ export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
   captionBuilder?: TableViewCaptionBuilder;
   optionsBuilder?: TableViewOptionsBuilder;
   onSort?: TableViewSortChangeCallback;
+  onRowClick?: TableViewRowClickCallback;
 }
 
 /** Pagination */

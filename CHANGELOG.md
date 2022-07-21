@@ -5,6 +5,7 @@
 - `6.6.0`
 
   - Added optional `emptyRowBuilder` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which renders a message when the items list is empty.
+  - Added optional `onRowClick` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which is called when a table row is clicked.
 
 - `6.5.0 (Breaking)`
 

@@ -22,6 +22,7 @@ import { TableView } from "react-simple-widgets/dist/table-view";
   captionBuilder
   optionsBuilder
   onSort
+  onRowClick
 />;
 ```
 
@@ -73,3 +74,7 @@ import { TableView } from "react-simple-widgets/dist/table-view";
 - `onSort?: (prop: string, direction: SortDirection) => void`
 
   An optional callback function which is called when the header sorting changes. It is passed the column sort key (`prop`) and the direction of the sort. direction can be `SortDirection.NONE`, `SortDirection.ASC` or `SortDirection.DESC`.
+
+- `onRowClick?: (item: any, itemIndex?: number) => void`
+
+  An optional callback function which is called when a table row is clicked. The function is passed the item and index of that `<tr>`. If specified the cursor will change to a pointer when hovered.

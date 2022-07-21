@@ -26,6 +26,7 @@ export const TableView = ({
   captionBuilder,
   optionsBuilder,
   onSort: _onSort,
+  onRowClick: _onRowClick,
   ...rest
 }: TableViewProps): JSX.Element => {
   const { xs, sm } = useWindowBreakpoints();
@@ -79,7 +80,7 @@ export const TableView = ({
     if (_bodyRowBuilder) return _bodyRowBuilder(item, bodyCellResolvers, itemIndex);
 
     return (
-      <tr key={itemIndex}>
+      <tr key={itemIndex} className={_onRowClick ? "clickable" : undefined} onClick={() => onRowClick(item, itemIndex)}>
         {/* Mobile screen columns */}
         {useMobileTable ? (
           resolveArray(bodyCellResolvers).map((resolver, resolverIndex) => {
@@ -177,6 +178,11 @@ export const TableView = ({
       else if (sort.direction === SortDirection.ASC) setSort({ ...sort, direction: SortDirection.DESC });
       else if (sort.direction === SortDirection.DESC) setSort({ ...sort, direction: SortDirection.NONE });
     } else setSort({ prop: sortProp, direction: SortDirection.ASC });
+  };
+
+  const onRowClick = (item: any, itemIndex: number): void => {
+    if (!_onRowClick) return;
+    _onRowClick(item, itemIndex);
   };
 
   const resolveArray = <T,>(arr: Array<T>): Array<T> => {
