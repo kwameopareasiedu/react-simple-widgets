@@ -1,6 +1,6 @@
 {
   "name": "react-simple-widgets",
-  "version": "6.6.0",
+  "version": "6.6.1",
   "description": "A collection of simple to use widgets for building react apps easily",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
