@@ -3,7 +3,15 @@ import React from "react";
 import { afterEach, describe, expect, it } from "@jest/globals";
 import { cleanup, render } from "@testing-library/react";
 import { Default as CalendarExample } from "./calendar.stories";
-import { dateDay, dateMonth, dateYear, days, daySuffix, months, years } from "./calendar-utils";
+import {
+  dateDay,
+  dateMonth,
+  dateYear,
+  days,
+  daySuffix,
+  months,
+  years
+} from "./calendar-utils";
 import djs from "dayjs";
 
 afterEach(cleanup);
@@ -36,6 +44,8 @@ describe("Calendar Tests", () => {
 
   it("should open calendar when button is clicked", async () => {
     const { container } = render(<CalendarExample />);
-    expect(container.querySelector(".react-simple-widget.calendar")).not.toBe(null);
+    expect(container.querySelector(".react-simple-widget.calendar")).not.toBe(
+      null
+    );
   });
 });

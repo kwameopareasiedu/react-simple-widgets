@@ -17,7 +17,12 @@ import { FieldDecoration } from "react-simple-widgets/dist/field-decoration";
 
 <FieldDecoration label leading trailing error helper>
   {({ onFieldFocus, onFieldBlur }) => (
-    <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} placeholder="Enter name here" />
+    <input
+      type="text"
+      onFocus={onFieldFocus}
+      onBlur={onFieldBlur}
+      placeholder="Enter name here"
+    />
   )}
 </FieldDecoration>;
 ```

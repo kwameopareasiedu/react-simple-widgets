@@ -23,7 +23,10 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">

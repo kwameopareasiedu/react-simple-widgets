@@ -1,12 +1,21 @@
 import "./popup-menu.scss";
-import React, { cloneElement, CSSProperties, MutableRefObject, ReactElement, useEffect, useRef, useState } from "react";
+import React, {
+  cloneElement,
+  CSSProperties,
+  MutableRefObject,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 import { PopupMenuProps, PopupMenuChild } from "../../../types";
 
 export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
   const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
 
   const [optionsOpened, setOptionsOpened] = useState(false);
-  const [optionsCssProperties, setOptionsCssProperties] = useState<CSSProperties>(null);
+  const [optionsCssProperties, setOptionsCssProperties] =
+    useState<CSSProperties>(null);
   const [triggerButton, optionsMenu] = children as Array<PopupMenuChild>;
   const triggerRef: MutableRefObject<HTMLDivElement> = useRef();
   const optionsRef: MutableRefObject<HTMLDivElement> = useRef();
@@ -21,7 +30,12 @@ export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
   };
 
   const alignOptionsMenu = (): void => {
-    const { left: tLeft, right: tRight, bottom: tBottom, top: tTop } = triggerRef.current.getBoundingClientRect();
+    const {
+      left: tLeft,
+      right: tRight,
+      bottom: tBottom,
+      top: tTop
+    } = triggerRef.current.getBoundingClientRect();
     const { right: oRight } = optionsRef.current.getBoundingClientRect();
 
     const heightAboveTrigger = tBottom;
@@ -31,7 +45,8 @@ export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
     const displayOptionsBelowTrigger = optionsHeight <= heightBelowTrigger;
     const displayOptionsAboveTrigger = optionsHeight < heightAboveTrigger;
     const optionsIsCutoffAtRight =
-      oRight + UNKNOWN_RIGHT_OFFSET_PERCENTAGE * document.body.clientWidth > document.body.clientWidth;
+      oRight + UNKNOWN_RIGHT_OFFSET_PERCENTAGE * document.body.clientWidth >
+      document.body.clientWidth;
     const optionsTransformOrigin = [0, 0];
     const properties: CSSProperties = {};
 
@@ -105,7 +120,10 @@ export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
 
   return (
     <React.Fragment>
-      {cloneElement(triggerButton as ReactElement, { ref: triggerRef, onClick: toggle })}
+      {cloneElement(triggerButton as ReactElement, {
+        ref: triggerRef,
+        onClick: toggle
+      })}
 
       {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}
 
@@ -116,7 +134,9 @@ export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
           // Onclick is set then optionsMenu is not a function
           onClick={optionsMenuIsFunction ? null : toggle}
           style={optionsCssProperties}>
-          {optionsMenuIsFunction ? optionsMenu(() => setOptionsOpened(false)) : optionsMenu}
+          {optionsMenuIsFunction
+            ? optionsMenu(() => setOptionsOpened(false))
+            : optionsMenu}
         </div>
       )}
     </React.Fragment>

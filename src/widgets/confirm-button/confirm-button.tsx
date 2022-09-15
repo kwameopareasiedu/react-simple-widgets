@@ -19,7 +19,9 @@ export const ConfirmButton = ({
 }: ConfirmButtonProps): any => {
   const { showDialog } = useContext(DialogProviderContext);
 
-  const confirm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+  const confirm = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
     showDialog(
       helper => {
         if (builder) return builder(helper, message);

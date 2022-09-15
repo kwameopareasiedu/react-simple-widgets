@@ -19,7 +19,11 @@ export const TextEditorField = ({
     <div className="react-simple-widget text-editor-field">
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
-          <FieldDecoration label={label} error={touched && error} helper={helper} disabled={disabled}>
+          <FieldDecoration
+            label={label}
+            error={touched && error}
+            helper={helper}
+            disabled={disabled}>
             {({ onFieldFocus, onFieldBlur }) => (
               <TextEditor
                 theme={theme}
@@ -69,8 +73,15 @@ interface TextEditorProps {
   onBlur: () => void;
 }
 
-const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps): JSX.Element => {
-  if (["snow", "bubble"].includes(theme)) theme = theme.toLowerCase() as "snow" | "bubble";
+const TextEditor = ({
+  value,
+  theme,
+  onChange,
+  onFocus,
+  onBlur
+}: TextEditorProps): JSX.Element => {
+  if (["snow", "bubble"].includes(theme))
+    theme = theme.toLowerCase() as "snow" | "bubble";
   else theme = "snow";
 
   const [linkId] = useState(`quill-stylesheet-${generateRnd()}`);
@@ -82,7 +93,11 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
     return Math.random().toString().replace(/\d\./, "");
   }
 
-  const loadExternal = (id: string, type: string, customize: (tag: HTMLElement) => void): Promise<void> => {
+  const loadExternal = (
+    id: string,
+    type: string,
+    customize: (tag: HTMLElement) => void
+  ): Promise<void> => {
     return new Promise((resolve, reject) => {
       // Check if tag already exists
       const existingTag = document.getElementById(id);
@@ -126,7 +141,12 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
                 [{ color: [] }, { background: [] }],
                 [{ font: [] }],
                 [{ align: [] }],
-                [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+                [
+                  { list: "ordered" },
+                  { list: "bullet" },
+                  { indent: "-1" },
+                  { indent: "+1" }
+                ],
                 ["link"],
                 ["clean"]
               ]
@@ -144,7 +164,10 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
         }
       })
       .catch(err => {
-        console.error("React Simple Widgets - TextEditor dependencies failed to load", err);
+        console.error(
+          "React Simple Widgets - TextEditor dependencies failed to load",
+          err
+        );
       });
   };
 

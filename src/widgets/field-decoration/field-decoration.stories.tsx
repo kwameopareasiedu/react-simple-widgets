@@ -16,7 +16,12 @@ export const Default = (): any => {
       error="This is a test error"
       helper="Max length: 10 chars">
       {({ onFieldFocus, onFieldBlur }) => (
-        <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} placeholder="Enter name here" />
+        <input
+          type="text"
+          onFocus={onFieldFocus}
+          onBlur={onFieldBlur}
+          placeholder="Enter name here"
+        />
       )}
     </FieldDecoration>
   );
@@ -36,7 +41,12 @@ export const Disabled = (): any => {
       helper="Max length: 10 chars"
       disabled>
       {({ onFieldFocus, onFieldBlur }) => (
-        <input type="text" onFocus={onFieldFocus} onBlur={onFieldBlur} placeholder="Enter name here" />
+        <input
+          type="text"
+          onFocus={onFieldFocus}
+          onBlur={onFieldBlur}
+          placeholder="Enter name here"
+        />
       )}
     </FieldDecoration>
   );

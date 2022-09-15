@@ -17,8 +17,9 @@ export const Default = (): any => {
         <div className="alert alert-primary mb-4">
           <p className="mb-0">
             <span>
-              Because Storybook renders in an <code>iframe</code>, query parameters added will not be seen in the
-              browser&apos;s address bar.
+              Because Storybook renders in an <code>iframe</code>, query
+              parameters added will not be seen in the browser&apos;s address
+              bar.
             </span>
             <br />
             <strong>Open the console to view the query parameters</strong>
@@ -26,21 +27,29 @@ export const Default = (): any => {
         </div>
 
         <div className="d-flex align-items-center mb-4">
-          <button className="btn btn-primary btn-sm me-2" onClick={() => addQp("foo1", "bar1")}>
+          <button
+            className="btn btn-primary btn-sm me-2"
+            onClick={() => addQp("foo1", "bar1")}>
             Add query parameter &quot;foo1&quot;=&quot;bar1&quot;
           </button>
 
-          <button className="btn btn-danger btn-sm me-2" onClick={() => delQp("foo1")}>
+          <button
+            className="btn btn-danger btn-sm me-2"
+            onClick={() => delQp("foo1")}>
             Remove query parameter &quot;foo1&quot;=&quot;bar1&quot;
           </button>
         </div>
 
         <div className="d-flex align-items-center mb-4">
-          <button className="btn btn-primary btn-sm me-2" onClick={() => addQp("foo2", "bar2")}>
+          <button
+            className="btn btn-primary btn-sm me-2"
+            onClick={() => addQp("foo2", "bar2")}>
             Add query parameter &quot;foo2&quot;=&quot;bar2&quot;
           </button>
 
-          <button className="btn btn-danger btn-sm me-2" onClick={() => delQp(["foo2"])}>
+          <button
+            className="btn btn-danger btn-sm me-2"
+            onClick={() => delQp(["foo2"])}>
             Remove query parameter &quot;foo2&quot;=&quot;bar2&quot;
           </button>
         </div>

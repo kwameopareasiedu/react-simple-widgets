@@ -70,13 +70,22 @@ export const TagInput = ({
         <span key={option.toString()} className="option">
           <small className="me-1">{option.toString()}</small>
 
-          <button type="button" className="align-middle" onClick={() => removeValueItem(i)}>
+          <button
+            type="button"
+            className="align-middle"
+            onClick={() => removeValueItem(i)}>
             <i className="fa fa-times small " />
           </button>
         </span>
       ))}
 
-      <input ref={inputRef} type="text" placeholder={placeholder} onKeyDown={onInputKeyDown} tabIndex={0} />
+      <input
+        ref={inputRef}
+        type="text"
+        placeholder={placeholder}
+        onKeyDown={onInputKeyDown}
+        tabIndex={0}
+      />
     </div>
   );
 };

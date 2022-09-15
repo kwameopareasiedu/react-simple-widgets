@@ -31,13 +31,18 @@ export const DialogView = ({ dialog }: DialogViewProps): JSX.Element => {
   const onBackgroundClick = (e: React.MouseEvent): void => {
     const dialogContent: HTMLDivElement = dialogContentRef.current;
 
-    if (!dialogContent.contains(e.target as Node) && dialog.options.backgroundDismissible) {
+    if (
+      !dialogContent.contains(e.target as Node) &&
+      dialog.options.backgroundDismissible
+    ) {
       dialog.onDismiss();
     }
   };
 
   return (
-    <div className="react-simple-widget dialog-view" onClick={onBackgroundClick}>
+    <div
+      className="react-simple-widget dialog-view"
+      onClick={onBackgroundClick}>
       <div ref={dialogContentRef} className={dialogViewContentClassName()}>
         {dialog.widget}
       </div>

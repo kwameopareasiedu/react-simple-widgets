@@ -20,7 +20,15 @@ import { useInfiniteList } from "react-simple-widgets/dist/use-infinite-list";
 import { InfiniteList } from "react-simple-widgets/dist/infinite-list";
 
 export function CountdownUsage() {
-  const [items, page, total, triggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed] = useInfiniteList();
+  const [
+    items,
+    page,
+    total,
+    triggered,
+    loadMore,
+    onLoadMoreSuccess,
+    onLoadMoreFailed
+  ] = useInfiniteList();
 
   return (
     <InfiniteList error busy total count onLoadMore>

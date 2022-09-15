@@ -68,7 +68,9 @@ export function App() {
         value={getItem("value-1")}
         onChange={e => saveValueInStore("value-1", e.target.value, true)}
       />
-      <button onClick={() => deleteValueInStore("value-1")}>Clear Value 1</button>
+      <button onClick={() => deleteValueInStore("value-1")}>
+        Clear Value 1
+      </button>
 
       <label htmlFor="input-2">Value 2 (Saved in local storage)</label>
       <input
@@ -76,11 +78,19 @@ export function App() {
         value={getItem("value-2")}
         onChange={e => saveValueInStore("value-2", e.target.value, true)}
       />
-      <button onClick={() => deleteValueInStore("value-2")}>Clear Value 2</button>
+      <button onClick={() => deleteValueInStore("value-2")}>
+        Clear Value 2
+      </button>
 
       <label htmlFor="input-3">Value 3</label>
-      <input id="input-3" value={getItem("value-3")} onChange={e => saveValueInStore("value-3", e.target.value)} />
-      <button onClick={() => deleteValueInStore("value-3")}>Clear Value 3</button>
+      <input
+        id="input-3"
+        value={getItem("value-3")}
+        onChange={e => saveValueInStore("value-3", e.target.value)}
+      />
+      <button onClick={() => deleteValueInStore("value-3")}>
+        Clear Value 3
+      </button>
 
       <button onClick={clearValuesInStore}>Clear all values in store</button>
     </div>

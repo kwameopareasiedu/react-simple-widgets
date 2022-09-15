@@ -1,4 +1,9 @@
-import { AllHTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttributes } from "react";
+import {
+  AllHTMLAttributes,
+  ButtonHTMLAttributes,
+  InputHTMLAttributes,
+  SelectHTMLAttributes
+} from "react";
 import { FieldHelperProps, FieldInputProps, FieldMetaProps } from "formik";
 
 /** DialogProvider */
@@ -128,11 +133,17 @@ export interface TableViewSortData {
   direction: SortDirection;
 }
 
-export type TableViewCellResolverFunction = (item: any, itemIndex?: number) => any;
+export type TableViewCellResolverFunction = (
+  item: any,
+  itemIndex?: number
+) => any;
 
 export type TableViewCellResolver = string | TableViewCellResolverFunction;
 
-export type TableViewHeaderRowBuilder = (columnValues: Array<string>, sort?: TableViewSortData) => JSX.Element;
+export type TableViewHeaderRowBuilder = (
+  columnValues: Array<string>,
+  sort?: TableViewSortData
+) => JSX.Element;
 
 export type TableViewBodyRowBuilder = (
   item: any,
@@ -144,9 +155,15 @@ export type TableViewFooterRowBuilder = () => JSX.Element;
 
 export type TableViewCaptionBuilder = () => JSX.Element;
 
-export type TableViewOptionsBuilder = (item: any, itemIndex?: number) => JSX.Element;
+export type TableViewOptionsBuilder = (
+  item: any,
+  itemIndex?: number
+) => JSX.Element;
 
-export type TableViewSortChangeCallback = (prop: string, direction: SortDirection) => void;
+export type TableViewSortChangeCallback = (
+  prop: string,
+  direction: SortDirection
+) => void;
 
 export type TableViewEmptyRowBuilder = () => JSX.Element;
 
@@ -167,7 +184,8 @@ export interface TableViewProps extends AllHTMLAttributes<HTMLTableElement> {
 }
 
 /** Pagination */
-export interface PaginationProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface PaginationProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   page: number;
   total: number;
   pageSize: number;
@@ -175,7 +193,8 @@ export interface PaginationProps extends Omit<AllHTMLAttributes<HTMLDivElement>,
 }
 
 /** BusyButton */
-export interface BusyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface BusyButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   busy?: boolean;
   invert?: boolean;
 }
@@ -194,7 +213,10 @@ export interface ConfirmButtonDialogProps {
   cancelButtonClassName?: string;
 }
 
-export type ConfirmButtonDialogBuilder = (helper: DialogHelper, message: any) => JSX.Element;
+export type ConfirmButtonDialogBuilder = (
+  helper: DialogHelper,
+  message: any
+) => JSX.Element;
 
 export interface ConfirmButtonProps extends BusyButtonProps {
   message?: any;
@@ -228,11 +250,14 @@ export interface ObjectViewProps extends AllHTMLAttributes<HTMLTableElement> {
 }
 
 /** CustomField */
-export type CustomFieldBuilder = (options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>) => any;
+export type CustomFieldBuilder = (
+  options: FieldMetaProps<any> & FieldInputProps<any> & FieldHelperProps<any>
+) => any;
 
 export type CustomFieldErrorBuilder = (originalError: any) => string;
 
-export interface CustomFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
+export interface CustomFieldProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
   errorBuilder?: CustomFieldErrorBuilder;
   children: CustomFieldBuilder;
 }
@@ -243,9 +268,12 @@ export interface FieldDecorationBuilderProps {
   onFieldBlur: () => void;
 }
 
-export type FieldDecorationBuilder = (hooks: FieldDecorationBuilderProps) => JSX.Element;
+export type FieldDecorationBuilder = (
+  hooks: FieldDecorationBuilderProps
+) => JSX.Element;
 
-export interface FieldDecorationProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "children"> {
+export interface FieldDecorationProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "children"> {
   label?: any;
   error?: any;
   helper?: any;
@@ -263,7 +291,8 @@ export interface TextFieldProps
 }
 
 /** TextEditorField */
-export interface TextEditorFieldProps extends Pick<FieldDecorationProps, "label" | "helper"> {
+export interface TextEditorFieldProps
+  extends Pick<FieldDecorationProps, "label" | "helper"> {
   name: string;
   theme?: "snow" | "bubble";
   asText?: boolean;
@@ -341,7 +370,8 @@ export interface InfiniteListProps extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 /** Calendar */
-export interface CalendarProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface CalendarProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   initialDate: string;
   isDateOutlined?: (year: number, month: number, day: number) => boolean;
   isDateActive?: (year: number, month: number, day: number) => boolean;
@@ -350,7 +380,8 @@ export interface CalendarProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "
 }
 
 /** DatePicker */
-export interface DatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface DatePickerProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   displayFormat?: string;
   validator?: (date: string) => string;
@@ -365,7 +396,8 @@ export interface DateFieldProps
 }
 
 /** MultiDatePicker */
-export interface MultiDatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface MultiDatePickerProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: Array<string>;
   displayFormat?: string;
   validator?: (date: string) => string;
@@ -380,7 +412,8 @@ export interface MultiDateFieldProps
 }
 
 /** MonthDatePicker */
-export interface MonthDatePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface MonthDatePickerProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   validator?: (date: string) => string;
   onChange: (date: string) => void;
@@ -394,7 +427,8 @@ export interface MonthDateFieldProps
 }
 
 /** TimePicker */
-export interface TimePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface TimePickerProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string;
   onChange: (time: string) => void;
 }
@@ -409,7 +443,8 @@ export interface TimeFieldProps
 /** FilePicker */
 export type FilePickerValidator = (file: File) => boolean;
 
-export interface FilePickerProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface FilePickerProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   limit?: number;
   extensions?: Array<string>;
   validator?: FilePickerValidator;
@@ -428,7 +463,8 @@ export interface FileFieldProps
 }
 
 /** TagInput */
-export interface TagInputProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface TagInputProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onChange"> {
   value: Array<string>;
   validator?: (value: string) => string | undefined;
   onInputError?: (error: string) => void;
@@ -470,12 +506,19 @@ export interface UseWindowBreakpointsState {
 export type UseWindowBreakpoints = () => UseWindowBreakpointsState;
 
 /** Debounce */
-export type Debounce = (label: string, callback: Function, delay: number) => void;
+export type Debounce = (
+  label: string,
+  callback: Function,
+  delay: number
+) => void;
 
 /** UseInfiniteList */
 export type InfiniteListLoadMoreTrigger = (resetPage?: boolean) => void;
 
-export type InfiniteListOnLoadMore = (newItems: Array<any>, totalCount: number) => void;
+export type InfiniteListOnLoadMore = (
+  newItems: Array<any>,
+  totalCount: number
+) => void;
 
 export type InfiniteListOnLoadFailed = () => void;
 

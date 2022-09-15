@@ -12,7 +12,11 @@ export const Default = (): any => {
     const [date, setDate] = useState(djs().format("YYYY-MM-DD"));
 
     return (
-      <DatePicker className="btn btn-outline-primary btn-sm d-inline-block w-auto" onChange={setDate} value={date} />
+      <DatePicker
+        className="btn btn-outline-primary btn-sm d-inline-block w-auto"
+        onChange={setDate}
+        value={date}
+      />
     );
   };
 

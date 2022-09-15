@@ -45,7 +45,8 @@ export const MultiDatePicker = ({
     <PopupMenu>
       <div className={className()} {...rest}>
         {_dates.length > 1 && `${dates.length} dates selected`}
-        {_dates.length === 1 && djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
+        {_dates.length === 1 &&
+          djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
         {_dates.length === 0 && "No date selected"}
       </div>
 
@@ -74,8 +75,12 @@ export const MultiDatePicker = ({
             ) : (
               <div className=" dates list-group list-group-flush">
                 {dates.map(date => (
-                  <div key={date} className="list-group-item d-flex align-items-center py-0">
-                    <small className="me-2">{djs(date, "YYYY-MM-DD").format("ddd, Do MMMM YYYY")}</small>
+                  <div
+                    key={date}
+                    className="list-group-item d-flex align-items-center py-0">
+                    <small className="me-2">
+                      {djs(date, "YYYY-MM-DD").format("ddd, Do MMMM YYYY")}
+                    </small>
 
                     <button
                       type="button"
@@ -100,12 +105,18 @@ export const MultiDatePicker = ({
               </button>
 
               {dates.length > 0 && (
-                <button type="button" className="btn btn-link btn-sm text-decoration-none" onClick={() => setDates([])}>
+                <button
+                  type="button"
+                  className="btn btn-link btn-sm text-decoration-none"
+                  onClick={() => setDates([])}>
                   Clear
                 </button>
               )}
 
-              <button type="button" className="btn btn-link btn-sm text-decoration-none" onClick={closePopup}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm text-decoration-none"
+                onClick={closePopup}>
                 Cancel
               </button>
             </div>

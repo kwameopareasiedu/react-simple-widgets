@@ -20,7 +20,10 @@ export const useInfiniteList: UseInfiniteList = (): UseInfiniteListState => {
     setTriggered(!triggered);
   };
 
-  const onLoadMoreSuccess: InfiniteListOnLoadMore = (newItems, totalCount): void => {
+  const onLoadMoreSuccess: InfiniteListOnLoadMore = (
+    newItems,
+    totalCount
+  ): void => {
     if (resetPage) {
       setItems([...newItems]);
     } else setItems([...items, ...newItems]);
@@ -31,5 +34,13 @@ export const useInfiniteList: UseInfiniteList = (): UseInfiniteListState => {
     setPage(page - 1);
   };
 
-  return [items, page, total, triggered, loadMore, onLoadMoreSuccess, onLoadMoreFailed];
+  return [
+    items,
+    page,
+    total,
+    triggered,
+    loadMore,
+    onLoadMoreSuccess,
+    onLoadMoreFailed
+  ];
 };

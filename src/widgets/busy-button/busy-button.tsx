@@ -19,7 +19,14 @@ export const BusyButton = ({
 
   return (
     <button className={className()} disabled={busy || disabled} {...rest}>
-      {busy && <Loader className="d-inline" role="status" aria-hidden="true" invert={invert} />}
+      {busy && (
+        <Loader
+          className="d-inline"
+          role="status"
+          aria-hidden="true"
+          invert={invert}
+        />
+      )}
       {children}
     </button>
   );

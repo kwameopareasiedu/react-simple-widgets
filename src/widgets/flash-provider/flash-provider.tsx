@@ -1,11 +1,19 @@
 import React, { createContext, useContext } from "react";
-import { FlashOptionalArgs, FlashProviderProps, FlashProviderContext as Context, FlashType } from "../../../types";
+import {
+  FlashOptionalArgs,
+  FlashProviderProps,
+  FlashProviderContext as Context,
+  FlashType
+} from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FlashView } from "./flash-view";
 
 export const FlashProviderContext = createContext<Context>(null);
 
-export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.Element => {
+export const FlashProvider = ({
+  children,
+  builder
+}: FlashProviderProps): JSX.Element => {
   const { showDialog } = useContext(DialogProviderContext);
 
   const flash = (
@@ -86,7 +94,8 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
   };
 
   return (
-    <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
+    <FlashProviderContext.Provider
+      value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
       {children}
     </FlashProviderContext.Provider>
   );

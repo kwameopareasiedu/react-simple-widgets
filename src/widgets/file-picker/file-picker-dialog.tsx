@@ -2,7 +2,12 @@ import "./file-picker-dialog.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { FilePickerDialogProps } from "../../../types";
 
-export const FilePickerDialog = ({ helper, limit, extensions, validator }: FilePickerDialogProps) => {
+export const FilePickerDialog = ({
+  helper,
+  limit,
+  extensions,
+  validator
+}: FilePickerDialogProps) => {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState(null);
   const triggerInputRef = useRef();
@@ -58,16 +63,23 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
 
     const errors = [];
     const fn = file.name;
-    const extension = fn.substring(fn.lastIndexOf(".") + 1, fn.length).toLowerCase();
+    const extension = fn
+      .substring(fn.lastIndexOf(".") + 1, fn.length)
+      .toLowerCase();
     const validationError = validator && validator(file);
 
     if (extensions && !extensions.includes(extension.toLowerCase()))
       errors.push(`Valid extensions are: ${extensions.join(", ")}`);
-    if (limit && limit > 0 && file.size > limit) errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
+    if (limit && limit > 0 && file.size > limit)
+      errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
     if (validationError) errors.push(validationError);
 
     if (errors.length > 1)
-      setError(errors.slice(0, errors.length - 1).join(", ") + " and " + errors[errors.length - 1]);
+      setError(
+        errors.slice(0, errors.length - 1).join(", ") +
+          " and " +
+          errors[errors.length - 1]
+      );
     else if (errors.length === 1) setError(errors[0]);
 
     if (errors.length === 0) {
@@ -79,7 +91,12 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
   return (
     <div className="react-simple-widget file-picker-dialog card">
       <div className="card-body">
-        <input ref={triggerInputRef} type="file" onChange={(e): void => onFileDrop(e.target.files[0])} hidden />
+        <input
+          ref={triggerInputRef}
+          type="file"
+          onChange={(e): void => onFileDrop(e.target.files[0])}
+          hidden
+        />
 
         <header className="d-flex justify-content-between align-items-center mb-3">
           <p className="mb-0">Select File</p>
@@ -112,7 +129,10 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
           </div>
 
           <div className="col-6 d-grid">
-            <button type="button" className="btn btn-link btn-sm" onClick={(): void => helper.dismiss()}>
+            <button
+              type="button"
+              className="btn btn-link btn-sm"
+              onClick={(): void => helper.dismiss()}>
               Cancel
             </button>
           </div>

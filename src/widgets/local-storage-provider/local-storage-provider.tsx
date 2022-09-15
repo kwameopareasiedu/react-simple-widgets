@@ -1,9 +1,13 @@
 import React, { createContext, useState } from "react";
-import { LocalStorageProviderProps, LocalStorageProviderContext as Context } from "../../../types";
+import {
+  LocalStorageProviderProps,
+  LocalStorageProviderContext as Context
+} from "../../../types";
 
 export const LocalStorageProviderContext = createContext<Context>(null);
 
-const LOCAL_STORAGE_PROVIDER_KEYS = "react-simple-widgets-local-storage-provider-keys";
+const LOCAL_STORAGE_PROVIDER_KEYS =
+  "react-simple-widgets-local-storage-provider-keys";
 
 const initializeStore = (): any => {
   const values: { [k: string]: any } = {};
@@ -21,7 +25,9 @@ const initializeStore = (): any => {
   return values;
 };
 
-export const LocalStorageProvider = ({ children }: LocalStorageProviderProps): any => {
+export const LocalStorageProvider = ({
+  children
+}: LocalStorageProviderProps): any => {
   const [values, setValues] = useState<{ [k: string]: any }>(initializeStore());
 
   const getItem = (key: string): any => values[key];
@@ -49,7 +55,10 @@ export const LocalStorageProvider = ({ children }: LocalStorageProviderProps): a
     const updatedKeys = parsedKeys.filter(k => !keys.includes(k));
 
     for (const key of keys) localStorage.removeItem(key);
-    localStorage.setItem(LOCAL_STORAGE_PROVIDER_KEYS, JSON.stringify(updatedKeys));
+    localStorage.setItem(
+      LOCAL_STORAGE_PROVIDER_KEYS,
+      JSON.stringify(updatedKeys)
+    );
   };
 
   const clear = (): void => {
@@ -66,7 +75,8 @@ export const LocalStorageProvider = ({ children }: LocalStorageProviderProps): a
   };
 
   return (
-    <LocalStorageProviderContext.Provider value={{ getItem, setItem, removeItems, clear }}>
+    <LocalStorageProviderContext.Provider
+      value={{ getItem, setItem, removeItems, clear }}>
       {children}
     </LocalStorageProviderContext.Provider>
   );

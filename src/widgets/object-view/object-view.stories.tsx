@@ -25,9 +25,15 @@ export const Default = (): any => (
     props={[
       ["ID", "id"],
       ["Name", "name"],
-      ["Created At", o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
+      [
+        "Created At",
+        o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>
+      ],
       ["Nested value", "nested_object.nested_property.current_value"],
-      ["Nested undefined value", "nested_object.nested_object.nested_property.current_value"]
+      [
+        "Nested undefined value",
+        "nested_object.nested_object.nested_property.current_value"
+      ]
     ]}
   />
 );
@@ -39,7 +45,10 @@ export const CustomSplit = (): any => (
     props={[
       ["ID", "id"],
       ["Name", "name"],
-      ["Created At", o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>],
+      [
+        "Created At",
+        o => <strong>{djs(o.created_at).format("dddd DD-MMMM-YYYY")}</strong>
+      ],
       ["Nested value", "nested_object.nested_property.current_value"]
     ]}
   />

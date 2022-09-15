@@ -2,7 +2,11 @@ import "./action-bar.scss";
 import React, { Children } from "react";
 import { ActionBarProps } from "../../../types";
 
-export const ActionBar = ({ children, className: _className, ...rest }: ActionBarProps): any => {
+export const ActionBar = ({
+  children,
+  className: _className,
+  ...rest
+}: ActionBarProps): any => {
   if (Children.toArray(children).length === 0) return null;
 
   const className = (): string => {

@@ -35,8 +35,14 @@ export const TableView = ({
   // Extract the table body row values from props, which are the 2nd elements of the props
   const bodyCellResolvers = useMemo(() => props.map(p => p[1]), [props]);
   // Extract the column sort keys from props, which are the 3rd elements of the props (If they exist)
-  const headerSortKeys = useMemo(() => (props[0][2] ? props.map(p => p[2]) : null), [props]);
-  const [sort, setSort] = useState<TableViewSortData>({ direction: SortDirection.NONE, prop: null });
+  const headerSortKeys = useMemo(
+    () => (props[0][2] ? props.map(p => p[2]) : null),
+    [props]
+  );
+  const [sort, setSort] = useState<TableViewSortData>({
+    direction: SortDirection.NONE,
+    prop: null
+  });
   const mobileTableCols = Math.max(0, _mobileTableCols || 0);
   const useMobileTable = mobileTableCols > 0;
 
@@ -49,7 +55,8 @@ export const TableView = ({
   const headerRowBuilder = (): JSX.Element => {
     // If a custom header row build function is provided, delegate the header UI
     // build to it by passing it the header values and column sort data
-    if (_headerRowBuilder) return _headerRowBuilder(resolveArray(headerCellValues), sort);
+    if (_headerRowBuilder)
+      return _headerRowBuilder(resolveArray(headerCellValues), sort);
 
     return (
       <tr>
@@ -61,7 +68,10 @@ export const TableView = ({
           const canSort = _onSort && sortProp;
 
           return (
-            <th key={value} className={canSort ? "sortable" : ""} onClick={canSort ? () => onSort(sortProp) : null}>
+            <th
+              key={value}
+              className={canSort ? "sortable" : ""}
+              onClick={canSort ? () => onSort(sortProp) : null}>
               {value}
               {canSort && sortIndicatorBuilder(sortProp)}
             </th>
@@ -77,10 +87,14 @@ export const TableView = ({
   const bodyRowBuilder = (item: any, itemIndex: number): JSX.Element => {
     // If a custom body row build function is provided, delegate the row UI
     // build to it by passing it the item, the cell resolvers and the index
-    if (_bodyRowBuilder) return _bodyRowBuilder(item, bodyCellResolvers, itemIndex);
+    if (_bodyRowBuilder)
+      return _bodyRowBuilder(item, bodyCellResolvers, itemIndex);
 
     return (
-      <tr key={itemIndex} className={_onRowClick ? "clickable" : undefined} onClick={() => onRowClick(item, itemIndex)}>
+      <tr
+        key={itemIndex}
+        className={_onRowClick ? "clickable" : undefined}
+        onClick={() => onRowClick(item, itemIndex)}>
         {/* Mobile screen columns */}
         {useMobileTable ? (
           resolveArray(bodyCellResolvers).map((resolver, resolverIndex) => {
@@ -95,7 +109,9 @@ export const TableView = ({
             <div className="table-view-row-content">
               {bodyCellResolvers.map((resolver, resolverIndex) => {
                 return (
-                  <div key={resolverIndex} className="table-view-row-content-item">
+                  <div
+                    key={resolverIndex}
+                    className="table-view-row-content-item">
                     <span>{headerCellValues[resolverIndex]}</span>
                     <span>{resolveCellValue(item, resolver, itemIndex)}</span>
                   </div>
@@ -122,12 +138,18 @@ export const TableView = ({
         })}
 
         {/* Large screen options column */}
-        {optionsBuilder && <td className="table-view-td">{optionsBuilder(item, itemIndex)}</td>}
+        {optionsBuilder && (
+          <td className="table-view-td">{optionsBuilder(item, itemIndex)}</td>
+        )}
       </tr>
     );
   };
 
-  const resolveCellValue = (item: any, resolver: TableViewCellResolver, itemIndex: number): any => {
+  const resolveCellValue = (
+    item: any,
+    resolver: TableViewCellResolver,
+    itemIndex: number
+  ): any => {
     if (!item) {
       return EMPTY_STRING;
     } else if (typeof resolver === "string") {
@@ -165,18 +187,24 @@ export const TableView = ({
 
   const sortIndicatorBuilder = (sortProp: string): JSX.Element => {
     if (sortProp === sort.prop) {
-      if (sort.direction === SortDirection.NONE) return <img src={SortNoneImg} alt="Sort none icon" />;
-      else if (sort.direction === SortDirection.ASC) return <img src={SortUpImg} alt="Sort up icon" />;
-      else if (sort.direction === SortDirection.DESC) return <img src={SortDownImg} alt="Sort down icon" />;
+      if (sort.direction === SortDirection.NONE)
+        return <img src={SortNoneImg} alt="Sort none icon" />;
+      else if (sort.direction === SortDirection.ASC)
+        return <img src={SortUpImg} alt="Sort up icon" />;
+      else if (sort.direction === SortDirection.DESC)
+        return <img src={SortDownImg} alt="Sort down icon" />;
     } else return <img src={SortNoneImg} alt="Sort none icon" />;
   };
 
   const onSort = (sortProp: string): void => {
     if (sortProp === sort.prop) {
       // If column sort property is same as state value, cycle through sort directions
-      if (sort.direction === SortDirection.NONE) setSort({ ...sort, direction: SortDirection.ASC });
-      else if (sort.direction === SortDirection.ASC) setSort({ ...sort, direction: SortDirection.DESC });
-      else if (sort.direction === SortDirection.DESC) setSort({ ...sort, direction: SortDirection.NONE });
+      if (sort.direction === SortDirection.NONE)
+        setSort({ ...sort, direction: SortDirection.ASC });
+      else if (sort.direction === SortDirection.ASC)
+        setSort({ ...sort, direction: SortDirection.DESC });
+      else if (sort.direction === SortDirection.DESC)
+        setSort({ ...sort, direction: SortDirection.NONE });
     } else setSort({ prop: sortProp, direction: SortDirection.ASC });
   };
 
@@ -197,7 +225,9 @@ export const TableView = ({
 
   return (
     <table className={className()} {...rest}>
-      <thead className={useMobileTable ? "persistent" : null}>{headerRowBuilder()}</thead>
+      <thead className={useMobileTable ? "persistent" : null}>
+        {headerRowBuilder()}
+      </thead>
 
       <tbody>
         {items.map((item, itemIndex) => {

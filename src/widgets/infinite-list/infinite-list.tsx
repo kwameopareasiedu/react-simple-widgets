@@ -25,7 +25,8 @@ export const InfiniteList = ({
       const loadMoreButtonContainer = loadMoreButtonContainerRef.current;
 
       if (loadMoreButtonContainer) {
-        const containerBottom = loadMoreButtonContainer.getBoundingClientRect().bottom;
+        const containerBottom =
+          loadMoreButtonContainer.getBoundingClientRect().bottom;
         if (!busy && count < total && containerBottom < window.innerHeight) {
           onLoadMore();
         }

@@ -1,7 +1,16 @@
 import "./calendar.scss";
 import React, { useEffect, useState } from "react";
 import { CalendarProps } from "../../../types";
-import { dateDay, dateMonth, dateMonthDayOffset, dateYear, days, daySuffix, months, years } from "./calendar-utils";
+import {
+  dateDay,
+  dateMonth,
+  dateMonthDayOffset,
+  dateYear,
+  days,
+  daySuffix,
+  months,
+  years
+} from "./calendar-utils";
 import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 
@@ -19,8 +28,12 @@ export const Calendar = ({
   const [displayYear, setDisplayYear] = useState(dateYear(initialDate));
   const [displayMonth, setDisplayMonth] = useState(dateMonth(initialDate));
   const [displayDay, setDisplayDay] = useState(dateDay(initialDate));
-  const [daysInMonth, setDaysInMonth] = useState(djs([displayYear, displayMonth, displayDay]).daysInMonth());
-  const [monthDayOffset, setMonthDayOffset] = useState(dateMonthDayOffset(displayYear, displayMonth));
+  const [daysInMonth, setDaysInMonth] = useState(
+    djs([displayYear, displayMonth, displayDay]).daysInMonth()
+  );
+  const [monthDayOffset, setMonthDayOffset] = useState(
+    dateMonthDayOffset(displayYear, displayMonth)
+  );
   const [isCtrlPressed, setIsCtrlPressed] = useState(false);
   const [error, setError] = useState(null);
 
@@ -32,14 +45,19 @@ export const Calendar = ({
 
   const calendarDayClassName = (day: number): string => {
     const classes = ["btn", "btn-link", "btn-sm", "text-decoration-none"];
-    if (isDateActive && isDateActive(displayYear, displayMonth, day)) classes.push("active");
-    if (isDateOutlined && isDateOutlined(displayYear, displayMonth, day)) classes.push("outline");
-    if (djs([displayYear, displayMonth, day]).isSame(djs(), "day")) classes.push("current");
+    if (isDateActive && isDateActive(displayYear, displayMonth, day))
+      classes.push("active");
+    if (isDateOutlined && isDateOutlined(displayYear, displayMonth, day))
+      classes.push("outline");
+    if (djs([displayYear, displayMonth, day]).isSame(djs(), "day"))
+      classes.push("current");
     return classes.join(" ");
   };
 
   const selectDisplayDay = (day: number): void => {
-    const selectedDate = djs([displayYear, displayMonth, day]).format("YYYY-MM-DD");
+    const selectedDate = djs([displayYear, displayMonth, day]).format(
+      "YYYY-MM-DD"
+    );
 
     if (validator) {
       const error = validator(selectedDate);
@@ -91,7 +109,10 @@ export const Calendar = ({
       <header className="d-flex justify-content-between align-items-center">
         <p className="mb-0">Select Date</p>
 
-        <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayDate}>
+        <button
+          type="button"
+          className="btn btn-light btn-sm"
+          onClick={resetDisplayDate}>
           <i className="fa fa-clock" />
         </button>
       </header>
@@ -102,7 +123,10 @@ export const Calendar = ({
           <span>{daySuffix(displayDay)}</span>
         </p>
 
-        <select value={displayMonth} className="form-select" onChange={e => setDisplayMonth(parseInt(e.target.value))}>
+        <select
+          value={displayMonth}
+          className="form-select"
+          onChange={e => setDisplayMonth(parseInt(e.target.value))}>
           {months.map((month, monthIndex) => (
             <option key={month} value={monthIndex}>
               {month}
@@ -110,7 +134,10 @@ export const Calendar = ({
           ))}
         </select>
 
-        <select value={displayYear} className="form-select" onChange={e => setDisplayYear(parseInt(e.target.value))}>
+        <select
+          value={displayYear}
+          className="form-select"
+          onChange={e => setDisplayYear(parseInt(e.target.value))}>
           {years.map(year => (
             <option key={year} value={year}>
               {year}

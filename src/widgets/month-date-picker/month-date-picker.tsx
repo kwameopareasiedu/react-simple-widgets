@@ -56,7 +56,10 @@ export const MonthDatePicker = ({
             <header className="d-flex justify-content-between align-items-center mb-3">
               <p className="mb-0">Select Date</p>
 
-              <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayDate}>
+              <button
+                type="button"
+                className="btn btn-light btn-sm"
+                onClick={resetDisplayDate}>
                 <i className="fa fa-clock" />
               </button>
             </header>
@@ -88,7 +91,11 @@ export const MonthDatePicker = ({
                     setDisplayMonth(monthIndex);
 
                     if (validator) {
-                      const selectedDate = djs([displayYear, monthIndex, 1]).format("YYYY-MM-DD");
+                      const selectedDate = djs([
+                        displayYear,
+                        monthIndex,
+                        1
+                      ]).format("YYYY-MM-DD");
                       const error = validator(selectedDate);
                       if (error) return setError(error);
                       else setError(null);

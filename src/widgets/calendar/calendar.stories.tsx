@@ -18,7 +18,9 @@ export const Default = (): any => {
       <Calendar
         initialDate={date}
         isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === date}
-        isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()}
+        isDateOutlined={(y, m, d) =>
+          djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()
+        }
         className="d-inline-block w-auto"
         onChange={date => {
           setDate(date);
@@ -49,8 +51,12 @@ export const WithValidator = (): any => {
 
         <Calendar
           initialDate={date}
-          isDateActive={(y, m, d) => djs([y, m, d]).format("YYYY-MM-DD") === date}
-          isDateOutlined={(y, m, d) => djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()}
+          isDateActive={(y, m, d) =>
+            djs([y, m, d]).format("YYYY-MM-DD") === date
+          }
+          isDateOutlined={(y, m, d) =>
+            djs([y, m, d]).date() === djs(date, "YYYY-MM-DD").date()
+          }
           className="d-inline-block w-auto"
           validator={validator}
           onChange={date => {

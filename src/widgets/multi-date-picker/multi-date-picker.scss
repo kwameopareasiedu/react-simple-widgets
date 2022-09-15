@@ -1,7 +1,7 @@
 @import "../../common";
 
 .react-simple-widget.multi-date-picker-popup {
-  @media screen and(min-width: 576px) {
+  @media screen and (min-width: 576px) {
     display: flex;
     align-items: stretch;
   }
@@ -20,7 +20,7 @@
     flex-direction: column;
     overflow: hidden;
 
-    @media screen and(min-width: 576px) {
+    @media screen and (min-width: 576px) {
       max-height: 336px;
       border: 2px solid var(--rsw-primary-color);
       border-top: 2px solid var(--rsw-primary-color);

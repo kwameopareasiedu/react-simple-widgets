@@ -18,7 +18,9 @@ describe("DialogProvider Tests", () => {
     expect(await findByText("Open wide dialog")).not.toBe(null);
     expect(await findByText("Open all dialogs")).not.toBe(null);
     expect(await findByText("Open dialog for value")).not.toBe(null);
-    expect(await findByText("Open background dismissible dialog")).not.toBe(null);
+    expect(await findByText("Open background dismissible dialog")).not.toBe(
+      null
+    );
   });
 
   it("should open a dialog when button is pressed", async () => {
@@ -75,7 +77,9 @@ describe("DialogProvider Tests", () => {
 
   it("should close a dismissible dialog when background is clicked", async () => {
     const { findByText, container } = render(<DialogProviderExample />);
-    const openDismissibleDialogBtn = await findByText("Open background dismissible dialog");
+    const openDismissibleDialogBtn = await findByText(
+      "Open background dismissible dialog"
+    );
 
     fireEvent.click(openDismissibleDialogBtn);
     fireEvent.click(container.querySelector(".dialog-view"));

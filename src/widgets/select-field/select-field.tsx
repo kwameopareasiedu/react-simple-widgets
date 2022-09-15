@@ -27,7 +27,10 @@ export const SelectField = ({
     <div className={className()} {...rest}>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }): any => (
-          <FieldDecoration label={label} error={touched && error} disabled={disabled}>
+          <FieldDecoration
+            label={label}
+            error={touched && error}
+            disabled={disabled}>
             {() => (
               <Fragment>
                 {options.map(([optionLabel, optionValue]) => (

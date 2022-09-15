@@ -5,14 +5,26 @@ import arraySupport from "dayjs/plugin/arraySupport";
 import djs from "dayjs";
 import { PopupMenu } from "../popup-menu/popup-menu";
 import { FieldDecoration } from "../field-decoration/field-decoration";
-import { Meridian, timeHour, timeMeridian, timeMinute } from "./time-picker-utils";
+import {
+  Meridian,
+  timeHour,
+  timeMeridian,
+  timeMinute
+} from "./time-picker-utils";
 
 djs.extend(arraySupport);
 
-export const TimePicker = ({ value, onChange, className: _className, ...rest }: TimePickerProps): JSX.Element => {
+export const TimePicker = ({
+  value,
+  onChange,
+  className: _className,
+  ...rest
+}: TimePickerProps): JSX.Element => {
   const [displayHour, _setDisplayHour] = useState(timeHour(value) % 12);
   const [displayMinute, _setDisplayMinute] = useState(timeMinute(value));
-  const [displayMeridian, setDisplayMeridian] = useState<Meridian>(timeMeridian(value));
+  const [displayMeridian, setDisplayMeridian] = useState<Meridian>(
+    timeMeridian(value)
+  );
 
   const className = (): string => {
     const classes = ["react-simple-widget", "time-picker"];
@@ -41,7 +53,8 @@ export const TimePicker = ({ value, onChange, className: _className, ...rest }: 
   };
 
   useEffect(() => {
-    let resolvedHour = displayMeridian === "AM" && displayHour === 12 ? 0 : displayHour;
+    let resolvedHour =
+      displayMeridian === "AM" && displayHour === 12 ? 0 : displayHour;
     resolvedHour += displayMeridian === "PM" && displayHour !== 12 ? 12 : 0;
     const time = djs([2021, 1, 1, resolvedHour, displayMinute, 0]);
 
@@ -62,7 +75,10 @@ export const TimePicker = ({ value, onChange, className: _className, ...rest }: 
             <header className="d-flex justify-content-between align-items-center mb-3">
               <p className="mb-0">Select Time</p>
 
-              <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayTime}>
+              <button
+                type="button"
+                className="btn btn-light btn-sm"
+                onClick={resetDisplayTime}>
                 <i className="fa fa-clock" />
               </button>
             </header>
@@ -98,21 +114,32 @@ export const TimePicker = ({ value, onChange, className: _className, ...rest }: 
             <div className="w-100 btn-group mb-3">
               <button
                 type="button"
-                className={displayMeridian === "AM" ? "btn btn-secondary btn-sm" : "btn btn-light btn-sm"}
+                className={
+                  displayMeridian === "AM"
+                    ? "btn btn-secondary btn-sm"
+                    : "btn btn-light btn-sm"
+                }
                 onClick={() => setDisplayMeridian("AM")}>
                 AM
               </button>
 
               <button
                 type="button"
-                className={displayMeridian === "PM" ? "btn btn-secondary btn-sm" : "btn btn-light btn-sm"}
+                className={
+                  displayMeridian === "PM"
+                    ? "btn btn-secondary btn-sm"
+                    : "btn btn-light btn-sm"
+                }
                 onClick={() => setDisplayMeridian("PM")}>
                 PM
               </button>
             </div>
 
             <div className="d-grid">
-              <button type="button" className="btn btn-primary btn-sm" onClick={closePopup}>
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={closePopup}>
                 Ok
               </button>
             </div>

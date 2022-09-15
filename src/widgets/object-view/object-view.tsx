@@ -1,10 +1,20 @@
 import "./object-view.scss";
 import React from "react";
-import { ObjectViewProps, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
+import {
+  ObjectViewProps,
+  ObjectViewCellResolver,
+  ObjectViewCellResolverFunction
+} from "../../../types";
 
 const EMPTY_STRING = "---";
 
-export const ObjectView = ({ object, props, split = 0.35, className: _className, ...rest }: ObjectViewProps): any => {
+export const ObjectView = ({
+  object,
+  props,
+  split = 0.35,
+  className: _className,
+  ...rest
+}: ObjectViewProps): any => {
   const className = (): string => {
     const classes = ["react-simple-widget", "object-view", "table"];
     if (_className) classes.push(_className);
@@ -40,7 +50,9 @@ export const ObjectView = ({ object, props, split = 0.35, className: _className,
             <td className="prop-label" style={{ width: `${split * 100}%` }}>
               {prop[0]}
             </td>
-            <td className="prop-value" style={{ width: `${(1 - split) * 100}%` }}>
+            <td
+              className="prop-value"
+              style={{ width: `${(1 - split) * 100}%` }}>
               {resolveCellValue(prop[1])}
             </td>
           </tr>

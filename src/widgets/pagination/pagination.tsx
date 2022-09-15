@@ -25,8 +25,9 @@ export const Pagination = ({
   return (
     <div className={className()} {...rest}>
       <div className="pagination-info">
-        Showing <span>{(page - 1) * pageSize + 1}</span> - <span>{Math.min(total, page * pageSize)}</span> of{" "}
-        <span>{total}</span> items
+        Showing <span>{(page - 1) * pageSize + 1}</span> -{" "}
+        <span>{Math.min(total, page * pageSize)}</span> of <span>{total}</span>{" "}
+        items
       </div>
 
       <div className="pagination-actions">
@@ -40,18 +41,27 @@ export const Pagination = ({
 
         {minPage > 1 && (
           <React.Fragment>
-            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(1)}>
+            <button
+              type="button"
+              className="btn btn-link btn-sm"
+              onClick={(): void => onChange(1)}>
               1
             </button>
 
             {minPage > 2 && (
-              <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(2)}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm"
+                onClick={(): void => onChange(2)}>
                 2
               </button>
             )}
 
             {minPage > 3 && (
-              <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(3)}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm"
+                onClick={(): void => onChange(3)}>
                 3
               </button>
             )}
@@ -63,7 +73,9 @@ export const Pagination = ({
         {Array.from(new Array(maxPage - minPage + 1)).map((_, i) => {
           const isPrimary = i + minPage === page;
           const onClick = (): void => onChange(minPage + i);
-          const className = isPrimary ? "btn btn-primary btn-sm" : "btn btn-link btn-sm";
+          const className = isPrimary
+            ? "btn btn-primary btn-sm"
+            : "btn btn-link btn-sm";
           const props: any = { type: "button", className, onClick };
           return (
             <button key={i} {...props}>
@@ -77,18 +89,27 @@ export const Pagination = ({
             <span>...</span>
 
             {maxPage < pages - 2 && (
-              <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(pages - 2)}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm"
+                onClick={(): void => onChange(pages - 2)}>
                 {pages - 2}
               </button>
             )}
 
             {maxPage < pages - 1 && (
-              <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(pages - 1)}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm"
+                onClick={(): void => onChange(pages - 1)}>
                 {pages - 1}
               </button>
             )}
 
-            <button type="button" className="btn btn-link btn-sm" onClick={(): void => onChange(pages)}>
+            <button
+              type="button"
+              className="btn btn-link btn-sm"
+              onClick={(): void => onChange(pages)}>
               {pages}
             </button>
           </React.Fragment>

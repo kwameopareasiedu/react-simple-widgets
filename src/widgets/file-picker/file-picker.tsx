@@ -26,7 +26,14 @@ export const FilePicker = ({
     if (dialogOpen) return;
 
     showDialog(
-      helper => <FilePickerDialog helper={helper} limit={limit} extensions={extensions} validator={validator} />,
+      helper => (
+        <FilePickerDialog
+          helper={helper}
+          limit={limit}
+          extensions={extensions}
+          validator={validator}
+        />
+      ),
       {
         size: DialogSize.SMALL,
         onDismissed: (file: File) => {
