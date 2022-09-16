@@ -52,7 +52,8 @@ export default {
     "src/utils/use-countdown/use-countdown",
     "src/utils/use-infinite-list/use-infinite-list",
     "src/utils/use-query-params/use-query-params",
-    "src/utils/use-window-breakpoints/use-window-breakpoints"
+    "src/utils/use-window-breakpoints/use-window-breakpoints",
+    "src/style"
   ],
   output: {
     dir: path.resolve(__dirname, "./dist"),
