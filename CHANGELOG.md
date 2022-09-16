@@ -2,6 +2,11 @@
 
 # Change Log
 
+- `6.7.0 (Breaking)`
+
+  - Integrated [styled-components](https://styled-components.com/) into widgets which prevents CSS variables from being redeclared many times in browser by each component's `scss` file.
+  - Moved CSS variables and global styles to [src/style.tsx](src/style.tsx) which must be imported at the start of your app.
+
 - `6.6.0`
 
   - Added optional `emptyRowBuilder` attribute to [TableView](src/widgets/table-view/table-view-usage.md) which renders a message when the items list is empty.
