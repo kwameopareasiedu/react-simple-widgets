@@ -35,7 +35,7 @@ export const Default = (): any => {
               <div className="mb-4">
                 <TextEditorField
                   name="htmlField"
-                  label="Text field"
+                  label="Text editor field"
                   helper="Value is HTML content"
                 />
               </div>
@@ -43,7 +43,7 @@ export const Default = (): any => {
               <div className="mb-4">
                 <TextEditorField
                   name="textField"
-                  label="Text field"
+                  label="Text editor field"
                   helper="Value is text representation of HTML"
                   theme="bubble"
                   asText

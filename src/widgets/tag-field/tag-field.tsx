@@ -3,6 +3,11 @@ import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { TagFieldProps } from "../../../types";
 import { TagInput } from "../tag-input/tag-input";
+import styled from "styled-components";
+
+const TagFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget tag-field " + props.className
+}))``;
 
 export const TagField = ({
   name,
@@ -19,7 +24,7 @@ export const TagField = ({
   ...rest
 }: TagFieldProps): any => {
   return (
-    <div className="react-simple-widget tag-field">
+    <TagFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -53,6 +58,6 @@ export const TagField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </TagFieldRoot>
   );
 };

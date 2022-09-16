@@ -31,7 +31,6 @@ export const Default = (): any => {
               <div className="mb-4">
                 <MultiDateField
                   name="field"
-                  maxLength={6}
                   label="Multi Date field"
                   placeholder="Click to select dates"
                   helper={`${formik.values.field.length} of 6`}

@@ -1,24 +1,143 @@
-import "./table-view.scss";
 import React, { useEffect, useMemo, useState } from "react";
 import {
   SortDirection,
-  TableViewProps,
   TableViewCellResolver,
   TableViewCellResolverFunction,
+  TableViewProps,
   TableViewSortData
 } from "../../../types";
 import SortNoneImg from "../../assets/sort-none.svg";
 import SortUpImg from "../../assets/sort-up.svg";
 import SortDownImg from "../../assets/sort-down.svg";
 import { useWindowBreakpoints } from "../../utils/use-window-breakpoints/use-window-breakpoints";
+import styled from "styled-components";
 
 const EMPTY_STRING = "---";
+
+const TableViewRoot = styled.table.attrs(props => ({
+  className: "react-simple-widget table-view table " + props.className
+}))`
+  border-radius: 4px;
+  margin-bottom: 0;
+
+  > thead {
+    display: none;
+
+    &.persistent {
+      display: table-header-group;
+    }
+
+    @media screen and (min-width: 576px) {
+      display: table-header-group;
+    }
+
+    th {
+      font-size: 85%;
+      vertical-align: middle;
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+      font-weight: 500;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+
+      &.sortable {
+        display: table-cell;
+      }
+
+      &.sortable:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 10px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  > tbody {
+    border-top: 1px solid #e3e3e3;
+
+    td.table-view-td-sm {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #efefef;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+
+      @media screen and (min-width: 576px) {
+        display: none;
+      }
+
+      .table-view-row-content-item {
+        display: flex;
+
+        > span:first-child {
+          flex: 3 1;
+          font-size: 85%;
+          font-style: italic;
+        }
+
+        > span:last-child {
+          flex: 7 1;
+        }
+      }
+
+      .table-view-row-content-item.options-content-item {
+        > span:last-child {
+          text-align: right;
+        }
+      }
+    }
+
+    td.table-view-td {
+      display: none;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #efefef;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+
+      @media screen and (min-width: 576px) {
+        display: table-cell;
+      }
+    }
+
+    tr.empty-message-tr {
+      .default {
+        font-size: 80%;
+        text-align: center;
+      }
+    }
+
+    tr.clickable:hover {
+      cursor: pointer;
+    }
+  }
+`;
 
 export const TableView = ({
   items,
   props,
   mobileTableCols: _mobileTableCols,
-  className: _className,
   headerRowBuilder: _headerRowBuilder,
   bodyRowBuilder: _bodyRowBuilder,
   emptyRowBuilder: _emptyRowBuilder,
@@ -45,12 +164,6 @@ export const TableView = ({
   });
   const mobileTableCols = Math.max(0, _mobileTableCols || 0);
   const useMobileTable = mobileTableCols > 0;
-
-  const className = (): string => {
-    const classes = ["react-simple-widget ", "table-view", "table"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const headerRowBuilder = (): JSX.Element => {
     // If a custom header row build function is provided, delegate the header UI
@@ -224,7 +337,7 @@ export const TableView = ({
   }, [sort]);
 
   return (
-    <table className={className()} {...rest}>
+    <TableViewRoot {...rest}>
       <thead className={useMobileTable ? "persistent" : null}>
         {headerRowBuilder()}
       </thead>
@@ -240,6 +353,6 @@ export const TableView = ({
       {footerRowBuilder && <tfoot>{footerRowBuilder()}</tfoot>}
 
       {captionBuilder && <caption>{captionBuilder()}</caption>}
-    </table>
+    </TableViewRoot>
   );
 };

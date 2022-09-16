@@ -1,4 +1,3 @@
-import "./time-picker.scss";
 import React, { useEffect, useState } from "react";
 import { TimePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
@@ -11,13 +10,42 @@ import {
   timeMeridian,
   timeMinute
 } from "./time-picker-utils";
+import styled from "styled-components";
 
 djs.extend(arraySupport);
+
+const TimePickerRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget time-picker " + props.className
+}))``;
+
+const TimePickerPopupRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget time-picker-popup " + props.className
+}))`
+  width: 200px;
+
+  header {
+    p {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    button {
+      i {
+        color: var(--rsw-primary-color);
+      }
+    }
+  }
+
+  .field-decoration {
+    flex: 1 1;
+  }
+`;
 
 export const TimePicker = ({
   value,
   onChange,
-  className: _className,
   ...rest
 }: TimePickerProps): JSX.Element => {
   const [displayHour, _setDisplayHour] = useState(timeHour(value) % 12);
@@ -25,12 +53,6 @@ export const TimePicker = ({
   const [displayMeridian, setDisplayMeridian] = useState<Meridian>(
     timeMeridian(value)
   );
-
-  const className = (): string => {
-    const classes = ["react-simple-widget", "time-picker"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const setDisplayHour = (hour: string): void => {
     let val = parseInt(hour);
@@ -65,12 +87,12 @@ export const TimePicker = ({
 
   return (
     <PopupMenu>
-      <div className={className()} {...rest}>
+      <TimePickerRoot {...rest}>
         {djs(`2021-01-01T${value}`).format("h:mm A")}
-      </div>
+      </TimePickerRoot>
 
       {closePopup => (
-        <div className="react-simple-widget time-picker-popup card">
+        <TimePickerPopupRoot className="card">
           <div className="card-body">
             <header className="d-flex justify-content-between align-items-center mb-3">
               <p className="mb-0">Select Time</p>
@@ -144,7 +166,7 @@ export const TimePicker = ({
               </button>
             </div>
           </div>
-        </div>
+        </TimePickerPopupRoot>
       )}
     </PopupMenu>
   );

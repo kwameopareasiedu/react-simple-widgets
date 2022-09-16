@@ -1,26 +1,29 @@
-import "./object-view.scss";
 import React from "react";
 import {
-  ObjectViewProps,
   ObjectViewCellResolver,
-  ObjectViewCellResolverFunction
+  ObjectViewCellResolverFunction,
+  ObjectViewProps
 } from "../../../types";
+import styled from "styled-components";
 
 const EMPTY_STRING = "---";
+
+const ObjectViewRoot = styled.table.attrs(props => ({
+  className: "react-simple-widget object-view table " + props.className
+}))`
+  .prop-label {
+    font-size: 85%;
+    font-style: italic;
+    vertical-align: middle;
+  }
+`;
 
 export const ObjectView = ({
   object,
   props,
   split = 0.35,
-  className: _className,
   ...rest
 }: ObjectViewProps): any => {
-  const className = (): string => {
-    const classes = ["react-simple-widget", "object-view", "table"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
-
   const resolveCellValue = (resolver: ObjectViewCellResolver): any => {
     if (!object) return EMPTY_STRING;
     else if (typeof resolver === "string") {
@@ -43,7 +46,7 @@ export const ObjectView = ({
   };
 
   return (
-    <table className={className()} {...rest}>
+    <ObjectViewRoot {...rest}>
       <tbody>
         {props.map((prop, i: number) => (
           <tr key={i}>
@@ -58,6 +61,6 @@ export const ObjectView = ({
           </tr>
         ))}
       </tbody>
-    </table>
+    </ObjectViewRoot>
   );
 };

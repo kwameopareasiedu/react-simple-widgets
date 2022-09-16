@@ -1,8 +1,12 @@
-import "./text-editor-field.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { TextEditorFieldProps } from "../../../types";
+import styled from "styled-components";
+
+const TextEditorFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget text-editor-field " + props.className
+}))``;
 
 export const TextEditorField = ({
   name,
@@ -16,7 +20,7 @@ export const TextEditorField = ({
   onBlur
 }: TextEditorFieldProps): any => {
   return (
-    <div className="react-simple-widget text-editor-field">
+    <TextEditorFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -60,7 +64,7 @@ export const TextEditorField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </TextEditorFieldRoot>
   );
 };
 
@@ -72,6 +76,28 @@ interface TextEditorProps {
   onFocus: () => void;
   onBlur: () => void;
 }
+
+const TextEditorRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget text-editor " + props.className
+}))`
+  .ql-toolbar {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .ql-container {
+    border: none !important;
+
+    .ql-editor {
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+    }
+  }
+`;
 
 const TextEditor = ({
   value,
@@ -185,8 +211,8 @@ const TextEditor = ({
   }, []);
 
   return (
-    <div className="text-editor" onFocus={onFocus} onBlur={onBlur}>
+    <TextEditorRoot onFocus={onFocus} onBlur={onBlur}>
       <div ref={ref} />
-    </div>
+    </TextEditorRoot>
   );
 };

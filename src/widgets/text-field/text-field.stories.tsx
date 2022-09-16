@@ -33,7 +33,6 @@ export const Default = (): any => {
                   name="field"
                   label="Text field"
                   placeholder="Enter value"
-                  maxLength={6}
                   helper={`${formik.values.field.length} of 6`}
                   leading={<i className="fa fa-user me-1" />}
                 />

@@ -1,4 +1,3 @@
-import "./popup-menu.scss";
 import React, {
   cloneElement,
   CSSProperties,
@@ -9,6 +8,49 @@ import React, {
   useState
 } from "react";
 import { PopupMenuProps, PopupMenuChild } from "../../../types";
+import styled, { keyframes } from "styled-components";
+
+const revealOptions = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const fadeScrimIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }`;
+
+const PopupMenuScrim = styled.div.attrs(props => ({
+  className: "react-simple-widget popup-menu-scrim " + props.className
+}))`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--rsw-popup-menu-scrim-bg-color);
+  animation: ${fadeScrimIn} var(--rsw-transition-duration) ease-out forwards;
+  overflow: auto;
+  z-index: 2;
+`;
+
+const PopupMenuOptions = styled.div.attrs(props => ({
+  className: "react-simple-widget popup-menu-options " + props.className
+}))`
+  position: fixed;
+  width: max-content !important;
+  animation: ${revealOptions} var(--rsw-transition-duration) ease-out forwards;
+  z-index: 3;
+`;
 
 export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
   const UNKNOWN_RIGHT_OFFSET_PERCENTAGE = 0.06;
@@ -125,19 +167,18 @@ export const PopupMenu = ({ children }: PopupMenuProps): JSX.Element => {
         onClick: toggle
       })}
 
-      {optionsOpened && <div className="popup-menu-scrim" onClick={toggle} />}
+      {optionsOpened && <PopupMenuScrim onClick={toggle} />}
 
       {optionsOpened && optionsMenu && (
-        <div
+        <PopupMenuOptions
           ref={optionsRef}
-          className="popup-menu-options"
-          // Onclick is set then optionsMenu is not a function
+          // OnClick is set if optionsMenu is not a function
           onClick={optionsMenuIsFunction ? null : toggle}
           style={optionsCssProperties}>
           {optionsMenuIsFunction
             ? optionsMenu(() => setOptionsOpened(false))
             : optionsMenu}
-        </div>
+        </PopupMenuOptions>
       )}
     </React.Fragment>
   );
