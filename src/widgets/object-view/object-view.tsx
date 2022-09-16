@@ -1,16 +1,29 @@
-import "./object-view.scss";
 import React from "react";
-import { ObjectViewProps, ObjectViewCellResolver, ObjectViewCellResolverFunction } from "../../../types";
+import {
+  ObjectViewCellResolver,
+  ObjectViewCellResolverFunction,
+  ObjectViewProps
+} from "../../../types";
+import styled from "styled-components";
 
 const EMPTY_STRING = "---";
 
-export const ObjectView = ({ object, props, split = 0.35, className: _className, ...rest }: ObjectViewProps): any => {
-  const className = (): string => {
-    const classes = ["react-simple-widget", "object-view", "table"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
+const ObjectViewRoot = styled.table.attrs(props => ({
+  className: "react-simple-widget object-view table " + props.className
+}))`
+  .prop-label {
+    font-size: 85%;
+    font-style: italic;
+    vertical-align: middle;
+  }
+`;
 
+export const ObjectView = ({
+  object,
+  props,
+  split = 0.35,
+  ...rest
+}: ObjectViewProps): any => {
   const resolveCellValue = (resolver: ObjectViewCellResolver): any => {
     if (!object) return EMPTY_STRING;
     else if (typeof resolver === "string") {
@@ -33,19 +46,21 @@ export const ObjectView = ({ object, props, split = 0.35, className: _className,
   };
 
   return (
-    <table className={className()} {...rest}>
+    <ObjectViewRoot {...rest}>
       <tbody>
         {props.map((prop, i: number) => (
           <tr key={i}>
             <td className="prop-label" style={{ width: `${split * 100}%` }}>
               {prop[0]}
             </td>
-            <td className="prop-value" style={{ width: `${(1 - split) * 100}%` }}>
+            <td
+              className="prop-value"
+              style={{ width: `${(1 - split) * 100}%` }}>
               {resolveCellValue(prop[1])}
             </td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </ObjectViewRoot>
   );
 };

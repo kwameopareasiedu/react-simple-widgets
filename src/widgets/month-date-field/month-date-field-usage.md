@@ -11,7 +11,13 @@ This widget is a month date picker form widget.
 ```jsx
 import { MonthDateField } from "react-simple-widgets/dist/month-date-field";
 
-<MonthDateField name={name} label={label} helper={helper} leading={leading} trailing={trailing} />;
+<MonthDateField
+  name={name}
+  label={label}
+  helper={helper}
+  leading={leading}
+  trailing={trailing}
+/>;
 ```
 
 - `name: string`

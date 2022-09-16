@@ -9,7 +9,17 @@ This widget is a WYSIWYG editor form widget which is built on top of the [Quill 
 ```jsx
 import { TextEditorField } from "react-simple-widgets/dist/text-editor-field";
 
-<TextEditorField name theme label helper asText disabled onChange onFocus onBlur />;
+<TextEditorField
+  name
+  theme
+  label
+  helper
+  asText
+  disabled
+  onChange
+  onFocus
+  onBlur
+/>;
 ```
 
 - `name: string`

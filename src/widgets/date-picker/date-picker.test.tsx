@@ -15,8 +15,14 @@ describe("DatePicker Tests", () => {
     const { container } = render(<DatePickerExample />);
 
     expect(container.querySelector(".react-simple-widget.calendar")).toBe(null);
-    expect(container.querySelector(".react-simple-widget.date-picker")).not.toBe(null);
-    fireEvent.click(container.querySelector(".react-simple-widget.date-picker"));
-    expect(container.querySelector(".react-simple-widget.calendar")).not.toBe(null);
+    expect(
+      container.querySelector(".react-simple-widget.date-picker")
+    ).not.toBe(null);
+    fireEvent.click(
+      container.querySelector(".react-simple-widget.date-picker")
+    );
+    expect(container.querySelector(".react-simple-widget.calendar")).not.toBe(
+      null
+    );
   });
 });

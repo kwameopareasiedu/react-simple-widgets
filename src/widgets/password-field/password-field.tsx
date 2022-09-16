@@ -1,9 +1,26 @@
-import "./password-field.scss";
 import React, { useState } from "react";
 import { PasswordFieldProps } from "../../../types";
 import { TextField } from "../text-field/text-field";
 import HiddenIcon from "../../assets/hide.svg";
 import VisibleIcon from "../../assets/eye.svg";
+import styled from "styled-components";
+
+const PasswordFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget password-field " + props.className
+}))`
+  .toggle-btn {
+    width: 35px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .toggle-btn:focus,
+  .toggle-btn:hover {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+`;
 
 export const PasswordField = ({ ...rest }: PasswordFieldProps): any => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -14,7 +31,7 @@ export const PasswordField = ({ ...rest }: PasswordFieldProps): any => {
   };
 
   return (
-    <div className="react-simple-widget password-field">
+    <PasswordFieldRoot>
       <TextField
         {...rest}
         type={inputType()}
@@ -28,6 +45,6 @@ export const PasswordField = ({ ...rest }: PasswordFieldProps): any => {
           </button>
         }
       />
-    </div>
+    </PasswordFieldRoot>
   );
 };

@@ -3,6 +3,11 @@ import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { MultiDateFieldProps } from "../../../types";
 import { MultiDatePicker } from "../multi-date-picker/multi-date-picker";
+import styled from "styled-components";
+
+const MultiDateFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget multi-date-field " + props.className
+}))``;
 
 export const MultiDateField = ({
   name,
@@ -17,7 +22,7 @@ export const MultiDateField = ({
   ...rest
 }: MultiDateFieldProps): any => {
   return (
-    <div className="react-simple-widget multi-date-field">
+    <MultiDateFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -49,6 +54,6 @@ export const MultiDateField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </MultiDateFieldRoot>
   );
 };

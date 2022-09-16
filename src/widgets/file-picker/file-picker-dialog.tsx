@@ -1,8 +1,101 @@
-import "./file-picker-dialog.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { FilePickerDialogProps } from "../../../types";
+import styled from "styled-components";
 
-export const FilePickerDialog = ({ helper, limit, extensions, validator }: FilePickerDialogProps) => {
+const FilePickerDialogRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget file-picker-dialog " + props.className
+}))`
+  .card-body {
+    padding: 20px 30px 30px;
+  }
+
+  header {
+    p {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .drop-area {
+    border: 2px dashed #aeaeae;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 40px 70px;
+
+    p {
+      margin: 0;
+      color: #888;
+      font-size: 90%;
+    }
+
+    p.or-separator {
+      position: relative;
+      font-size: 80%;
+    }
+
+    p.or-separator::before,
+    p.or-separator::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      width: calc(50% - 15px);
+      background-color: #e3e3e3;
+    }
+
+    p.or-separator::after {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  .drop-area:hover {
+    cursor: pointer;
+    border-style: solid;
+  }
+
+  .drop-area:focus,
+  .drop-area:active {
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
+    border-color: var(--rsw-primary-color);
+  }
+
+  .meta,
+  .error {
+    color: #888;
+    padding: 8px 30px;
+    margin: 0 -30px 20px;
+    background-color: #efefef;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .error {
+    font-size: 80%;
+    color: var(--rsw-error-color);
+    font-weight: bold;
+  }
+
+  button.btn-primary {
+    margin-bottom: 0.5rem;
+
+    @media screen and (min-width: 576px) {
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export const FilePickerDialog = ({
+  helper,
+  limit,
+  extensions,
+  validator
+}: FilePickerDialogProps) => {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState(null);
   const triggerInputRef = useRef();
@@ -58,16 +151,23 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
 
     const errors = [];
     const fn = file.name;
-    const extension = fn.substring(fn.lastIndexOf(".") + 1, fn.length).toLowerCase();
+    const extension = fn
+      .substring(fn.lastIndexOf(".") + 1, fn.length)
+      .toLowerCase();
     const validationError = validator && validator(file);
 
     if (extensions && !extensions.includes(extension.toLowerCase()))
       errors.push(`Valid extensions are: ${extensions.join(", ")}`);
-    if (limit && limit > 0 && file.size > limit) errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
+    if (limit && limit > 0 && file.size > limit)
+      errors.push(`File has exceeded the ${friendlyFileSize(limit)} limit`);
     if (validationError) errors.push(validationError);
 
     if (errors.length > 1)
-      setError(errors.slice(0, errors.length - 1).join(", ") + " and " + errors[errors.length - 1]);
+      setError(
+        errors.slice(0, errors.length - 1).join(", ") +
+          " and " +
+          errors[errors.length - 1]
+      );
     else if (errors.length === 1) setError(errors[0]);
 
     if (errors.length === 0) {
@@ -77,9 +177,14 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
   };
 
   return (
-    <div className="react-simple-widget file-picker-dialog card">
+    <FilePickerDialogRoot className="card">
       <div className="card-body">
-        <input ref={triggerInputRef} type="file" onChange={(e): void => onFileDrop(e.target.files[0])} hidden />
+        <input
+          ref={triggerInputRef}
+          type="file"
+          onChange={(e): void => onFileDrop(e.target.files[0])}
+          hidden
+        />
 
         <header className="d-flex justify-content-between align-items-center mb-3">
           <p className="mb-0">Select File</p>
@@ -112,12 +217,15 @@ export const FilePickerDialog = ({ helper, limit, extensions, validator }: FileP
           </div>
 
           <div className="col-6 d-grid">
-            <button type="button" className="btn btn-link btn-sm" onClick={(): void => helper.dismiss()}>
+            <button
+              type="button"
+              className="btn btn-link btn-sm"
+              onClick={(): void => helper.dismiss()}>
               Cancel
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </FilePickerDialogRoot>
   );
 };

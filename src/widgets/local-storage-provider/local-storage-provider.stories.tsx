@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import { LocalStorageProvider, LocalStorageProviderContext } from "./local-storage-provider";
+import {
+  LocalStorageProvider,
+  LocalStorageProviderContext
+} from "./local-storage-provider";
 
 export default {
   title: "LocalStorageProvider",
@@ -8,12 +11,15 @@ export default {
 
 export const Default = (): any => {
   const ExampleApp = (): any => {
-    const { getItem, setItem, removeItems, clear } = useContext(LocalStorageProviderContext);
+    const { getItem, setItem, removeItems, clear } = useContext(
+      LocalStorageProviderContext
+    );
 
     return (
       <div>
         <p className="text-center">
-          Change the values in the fields and observe which values changes in your localStorage tab
+          Change the values in the fields and observe which values changes in
+          your localStorage tab
         </p>
 
         <div className="card">
@@ -29,10 +35,14 @@ export const Default = (): any => {
                 <input
                   className="form-control"
                   value={getItem("favourite-web-framework") || ""}
-                  onChange={e => setItem("favourite-web-framework", e.target.value)}
+                  onChange={e =>
+                    setItem("favourite-web-framework", e.target.value)
+                  }
                 />
 
-                <button className="btn btn-link btn-sm" onClick={(): void => removeItems("favourite-web-framework")}>
+                <button
+                  className="btn btn-link btn-sm"
+                  onClick={(): void => removeItems("favourite-web-framework")}>
                   Remove key for this input
                 </button>
               </div>
@@ -47,10 +57,16 @@ export const Default = (): any => {
                 <input
                   className="form-control"
                   value={getItem("favourite-mobile-framework") || ""}
-                  onChange={e => setItem("favourite-mobile-framework", e.target.value)}
+                  onChange={e =>
+                    setItem("favourite-mobile-framework", e.target.value)
+                  }
                 />
 
-                <button className="btn btn-link btn-sm" onClick={(): void => removeItems("favourite-mobile-framework")}>
+                <button
+                  className="btn btn-link btn-sm"
+                  onClick={(): void =>
+                    removeItems("favourite-mobile-framework")
+                  }>
                   Remove key for this input
                 </button>
               </div>
@@ -67,12 +83,16 @@ export const Default = (): any => {
             <input
               className="form-control"
               value={getItem("favourite-desktop-framework") || ""}
-              onChange={e => setItem("favourite-desktop-framework", e.target.value)}
+              onChange={e =>
+                setItem("favourite-desktop-framework", e.target.value)
+              }
             />
 
             <br />
 
-            <p className="text-center">Now refresh the page to see the data persistence</p>
+            <p className="text-center">
+              Now refresh the page to see the data persistence
+            </p>
           </div>
         </div>
 

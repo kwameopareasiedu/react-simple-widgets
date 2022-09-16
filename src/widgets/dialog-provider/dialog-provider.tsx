@@ -1,4 +1,3 @@
-import "./dialog-provider.scss";
 import React, { createContext, useEffect, useRef, useState } from "react";
 import {
   Dialog,
@@ -8,15 +7,38 @@ import {
   DialogProviderProps
 } from "../../../types";
 import { DialogView } from "./dialog-view";
+import styled from "styled-components";
 
 export const DialogProviderContext = createContext<Context>(null);
 
-export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element => {
+const DialogProviderRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget dialog-provider " + props.className
+}))`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999999;
+
+  > * {
+    pointer-events: all;
+  }
+`;
+
+export const DialogProvider = ({
+  children
+}: DialogProviderProps): JSX.Element => {
   const [dialogs, setDialogs] = useState<Array<Dialog>>([]);
   const escapeKeyHandlers = useRef<Array<(e: KeyboardEvent) => void>>([]);
   const bodyOverflowRef = useRef<string>(null);
 
-  const showDialog = (builder: DialogBuilder, options?: DialogOptions): void => {
+  const showDialog = (
+    builder: DialogBuilder,
+    options?: DialogOptions
+  ): void => {
     const dialog: Dialog = { id: Math.random().toString() };
 
     const onDismiss = (returnValue?: any) => {
@@ -44,7 +66,10 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
     // TODO: Implement window pop state to handle back button on mobile devices
   };
 
-  const setupEscapeHandler = (dismiss: Function, escapeDismissible = true): void => {
+  const setupEscapeHandler = (
+    dismiss: Function,
+    escapeDismissible = true
+  ): void => {
     const escapeHandler = (e: KeyboardEvent): void => {
       if (e.key === "Escape" && !e.defaultPrevented) {
         e.stopImmediatePropagation();
@@ -52,7 +77,9 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
 
         if (escapeDismissible) {
           dismiss();
-          escapeKeyHandlers.current = escapeKeyHandlers.current.filter(h => h != escapeHandler);
+          escapeKeyHandlers.current = escapeKeyHandlers.current.filter(
+            h => h != escapeHandler
+          );
           window.removeEventListener("keyup", escapeHandler);
         }
       }
@@ -62,8 +89,10 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
     escapeKeyHandlers.current.unshift(escapeHandler);
 
     // Re-register the handler array so that the new handler receives the keyup event first
-    for (const handler of escapeKeyHandlers.current) window.removeEventListener("keyup", handler);
-    for (const handler of escapeKeyHandlers.current) window.addEventListener("keyup", handler);
+    for (const handler of escapeKeyHandlers.current)
+      window.removeEventListener("keyup", handler);
+    for (const handler of escapeKeyHandlers.current)
+      window.addEventListener("keyup", handler);
   };
 
   useEffect(() => {
@@ -82,11 +111,11 @@ export const DialogProvider = ({ children }: DialogProviderProps): JSX.Element =
   return (
     <DialogProviderContext.Provider value={{ showDialog }}>
       {children}
-      <div id="dialog-view-container" className="react-simple-widget">
+      <DialogProviderRoot>
         {dialogs.map(dialog => (
           <DialogView key={dialog.id} dialog={dialog} />
         ))}
-      </div>
+      </DialogProviderRoot>
     </DialogProviderContext.Provider>
   );
 };

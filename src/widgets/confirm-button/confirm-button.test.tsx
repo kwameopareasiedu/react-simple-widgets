@@ -22,7 +22,9 @@ describe("ConfirmButton Tests", () => {
     const startButtons = await findAllByText("Start");
     fireEvent.click(startButtons[0]);
     expect(
-      await findByText("Proceeding will disable the button for two (2) seconds. Do you want to proceed?")
+      await findByText(
+        "Proceeding will disable the button for two (2) seconds. Do you want to proceed?"
+      )
     ).not.toBe(null);
   });
 });

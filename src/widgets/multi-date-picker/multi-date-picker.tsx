@@ -1,4 +1,3 @@
-import "./multi-date-picker.scss";
 import React, { useState } from "react";
 import { MultiDatePickerProps } from "../../../types";
 import arraySupport from "dayjs/plugin/arraySupport";
@@ -6,25 +5,104 @@ import djs from "dayjs";
 import { Calendar } from "../calendar/calendar";
 import { PopupMenu } from "../popup-menu/popup-menu";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import styled from "styled-components";
 
 djs.extend(arraySupport);
 djs.extend(advancedFormat);
 
+const MultiDateFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget multi-date-picker " + props.className
+}))``;
+
+const MultiDateFieldPopupRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget multi-date-picker-popup " + props.className
+}))`
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .calendar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @media screen and (min-width: 576px) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 4px;
+    }
+  }
+
+  .selected-dates {
+    display: flex;
+    max-height: 200px;
+    margin-top: -4px;
+    padding-top: 4px;
+    background-color: white;
+    border-left: 2px solid var(--rsw-primary-color);
+    border-right: 2px solid var(--rsw-primary-color);
+    border-bottom: 2px solid var(--rsw-primary-color);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media screen and (min-width: 576px) {
+      max-height: 336px;
+      border: 2px solid var(--rsw-primary-color);
+      border-top: 2px solid var(--rsw-primary-color);
+      border-left: none;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 0;
+      background-color: white;
+      margin-top: 0;
+      padding-top: 0;
+      margin-left: -4px;
+      padding-left: 4px;
+      overflow: hidden;
+    }
+
+    label,
+    p {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    p {
+      flex: 1 1;
+    }
+
+    .dates {
+      flex: 1 1;
+      overflow: auto;
+
+      .list-group-item {
+        small {
+          flex: 1 1;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+
+      button {
+        flex: 1 1;
+        border-radius: 0;
+      }
+    }
+  }
+`;
+
 export const MultiDatePicker = ({
   value: _dates,
-  className: _className,
   displayFormat,
   validator,
   onChange,
   ...rest
 }: MultiDatePickerProps): JSX.Element => {
   const [dates, setDates] = useState([..._dates]);
-
-  const className = (): string => {
-    const classes = ["react-simple-widget", "multi-date-picker"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const isDateActive = (year: number, month: number, day: number) => {
     const formatted = djs([year, month, day]).format("YYYY-MM-DD");
@@ -43,14 +121,15 @@ export const MultiDatePicker = ({
 
   return (
     <PopupMenu>
-      <div className={className()} {...rest}>
+      <MultiDateFieldRoot {...rest}>
         {_dates.length > 1 && `${dates.length} dates selected`}
-        {_dates.length === 1 && djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
+        {_dates.length === 1 &&
+          djs(dates[0]).format(displayFormat || "ddd, Do MMM YYYY")}
         {_dates.length === 0 && "No date selected"}
-      </div>
+      </MultiDateFieldRoot>
 
       {closePopup => (
-        <div className="react-simple-widget multi-date-picker-popup">
+        <MultiDateFieldPopupRoot>
           <Calendar
             className="d-inline-block w-auto"
             initialDate={dates[0] || undefined}
@@ -74,8 +153,12 @@ export const MultiDatePicker = ({
             ) : (
               <div className=" dates list-group list-group-flush">
                 {dates.map(date => (
-                  <div key={date} className="list-group-item d-flex align-items-center py-0">
-                    <small className="me-2">{djs(date, "YYYY-MM-DD").format("ddd, Do MMMM YYYY")}</small>
+                  <div
+                    key={date}
+                    className="list-group-item d-flex align-items-center py-0">
+                    <small className="me-2">
+                      {djs(date, "YYYY-MM-DD").format("ddd, Do MMMM YYYY")}
+                    </small>
 
                     <button
                       type="button"
@@ -100,17 +183,23 @@ export const MultiDatePicker = ({
               </button>
 
               {dates.length > 0 && (
-                <button type="button" className="btn btn-link btn-sm text-decoration-none" onClick={() => setDates([])}>
+                <button
+                  type="button"
+                  className="btn btn-link btn-sm text-decoration-none"
+                  onClick={() => setDates([])}>
                   Clear
                 </button>
               )}
 
-              <button type="button" className="btn btn-link btn-sm text-decoration-none" onClick={closePopup}>
+              <button
+                type="button"
+                className="btn btn-link btn-sm text-decoration-none"
+                onClick={closePopup}>
                 Cancel
               </button>
             </div>
           </div>
-        </div>
+        </MultiDateFieldPopupRoot>
       )}
     </PopupMenu>
   );

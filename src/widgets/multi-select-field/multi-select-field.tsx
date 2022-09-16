@@ -1,9 +1,42 @@
-import "./multi-select-field.scss";
 import React, { Fragment } from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { MultiSelectFieldProps } from "../../../types";
 import { SelectOption } from "../select-field/select-option";
 import { FieldDecoration } from "../field-decoration/field-decoration";
+import styled from "styled-components";
+
+const MultiSelectFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget multi-select-field " + props.className
+}))`
+  &.inline {
+    .field-decoration .field-decoration-content-container {
+      border: none;
+
+      .field-decoration-content {
+        display: block;
+
+        > .select-option {
+          display: inline-block;
+          width: auto;
+          margin-right: 12px;
+          margin-bottom: 2px;
+
+          input {
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .field-decoration .field-decoration-content-container {
+    border: none;
+
+    .field-decoration-content {
+      display: block;
+    }
+  }
+`;
 
 export const MultiSelectField = ({
   name,
@@ -12,19 +45,19 @@ export const MultiSelectField = ({
   inline,
   disabled,
   readOnly,
-  className: _className,
+  className,
   onChange,
   ...rest
 }: MultiSelectFieldProps): any => {
-  const className = (): string => {
-    const classes = ["react-simple-widget", "multi-select-field"];
-    if (_className) classes.push(_className);
+  const additionalClassNames = (): string => {
+    const classes = [];
+    if (className) classes.push(className);
     if (inline) classes.push("inline");
     return classes.join(" ");
   };
 
   return (
-    <div className={className()} {...rest}>
+    <MultiSelectFieldRoot className={additionalClassNames()} {...rest}>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }): any => (
           <FieldDecoration label={label} error={touched && error}>
@@ -62,6 +95,6 @@ export const MultiSelectField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </MultiSelectFieldRoot>
   );
 };

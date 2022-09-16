@@ -39,39 +39,53 @@ import { useContext } from "react";
 import { FlashProviderContext } from "react-simple-widgets/dist/flash-provider";
 
 export function App() {
-  const { flashError, flashWarning, flashInfo, flashSuccess } = useContext(FlashProviderContext);
+  const { flashError, flashWarning, flashInfo, flashSuccess } =
+    useContext(FlashProviderContext);
   const message = "This is a flash message";
 
   return (
     <div id="app">
       <button
         className="btn btn-danger btn-sm"
-        onClick={(): void => flashError("Error", message, () => alert("Error"), "OK")}>
+        onClick={(): void =>
+          flashError("Error", message, () => alert("Error"), "OK")
+        }>
         Flash error
       </button>
 
       <button
         className="btn btn-warning btn-sm"
-        onClick={(): void => flashWarning("Warning", <i>{message}</i>, () => alert("Warning"))}>
+        onClick={(): void =>
+          flashWarning("Warning", <i>{message}</i>, () => alert("Warning"))
+        }>
         Flash warning
       </button>
 
       <button
         className="btn btn-info btn-sm"
-        onClick={(): void => flashInfo("Info", <strong>{message}</strong>, () => alert("Info"))}>
+        onClick={(): void =>
+          flashInfo("Info", <strong>{message}</strong>, () => alert("Info"))
+        }>
         Flash info
       </button>
 
       <button
         className="btn btn-success btn-sm"
-        onClick={(): void => flashSuccess("Success", <u>{message}</u>, () => alert("Success"))}>
+        onClick={(): void =>
+          flashSuccess("Success", <u>{message}</u>, () => alert("Success"))
+        }>
         Flash success
       </button>
 
       <button
         className="btn btn-light btn-sm me-2 mb-2"
         onClick={(): void =>
-          flashSuccess("Auto Close Flash", "This flash auto-closes after 12s", null, { closeTimerMs: 12000 })
+          flashSuccess(
+            "Auto Close Flash",
+            "This flash auto-closes after 12s",
+            null,
+            { closeTimerMs: 12000 }
+          )
         }>
         Flash (12s close timer)
       </button>

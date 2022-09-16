@@ -8,6 +8,7 @@ import globals from "rollup-plugin-node-globals";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import image from "@rollup/plugin-image";
+import is from "react-is";
 
 export default {
   input: [
@@ -51,7 +52,8 @@ export default {
     "src/utils/use-countdown/use-countdown",
     "src/utils/use-infinite-list/use-infinite-list",
     "src/utils/use-query-params/use-query-params",
-    "src/utils/use-window-breakpoints/use-window-breakpoints"
+    "src/utils/use-window-breakpoints/use-window-breakpoints",
+    "src/style"
   ],
   output: {
     dir: path.resolve(__dirname, "./dist"),
@@ -62,7 +64,11 @@ export default {
       extensions: [".ts", ".tsx", ".js", ".jsx", ".scss", ".css"],
       preferBuiltins: true
     }),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        "react-is": Object.keys(is)
+      }
+    }),
     globals(),
     builtins(),
     typescript({ declaration: true }),

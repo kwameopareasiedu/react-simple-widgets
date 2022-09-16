@@ -15,7 +15,13 @@ import { DialogProvider } from "react-simple-widgets/dist/dialog-provider";
 import { ConfirmButton } from "react-simple-widgets/dist/confirm-button";
 
 <DialogProvider>
-  <ConfirmButton busy message confirmButtonClassName cancelButtonClassName onConfirm onCancel>
+  <ConfirmButton
+    busy
+    message
+    confirmButtonClassName
+    cancelButtonClassName
+    onConfirm
+    onCancel>
     Start
   </ConfirmButton>
 </DialogProvider>;

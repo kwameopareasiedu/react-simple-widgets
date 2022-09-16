@@ -14,8 +14,10 @@ export const Default = (): any => {
       <div className="card">
         <div className="card-body">
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-            malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+            Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+            pede.
           </p>
 
           <button className="btn btn-secondary btn-sm" onClick={helper.dismiss}>
@@ -31,22 +33,31 @@ export const Default = (): any => {
       <div className="card">
         <div className="card-body">
           <p>
-            Click on a button to close the dialog and <strong>return a value to the host</strong>
+            Click on a button to close the dialog and{" "}
+            <strong>return a value to the host</strong>
           </p>
 
-          <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("A")}>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={() => helper.dismiss("A")}>
             A
           </button>
           <span>&nbsp;</span>
-          <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("B")}>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={() => helper.dismiss("B")}>
             B
           </button>
           <span>&nbsp;</span>
-          <button className="btn btn-secondary btn-sm" onClick={() => helper.dismiss("C")}>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={() => helper.dismiss("C")}>
             C
           </button>
           <span>&nbsp;</span>
-          <button className="btn btn-link btn-sm" onClick={() => helper.dismiss()}>
+          <button
+            className="btn btn-link btn-sm"
+            onClick={() => helper.dismiss()}>
             Cancel
           </button>
         </div>
@@ -64,12 +75,17 @@ export const Default = (): any => {
     );
   };
 
-  const NonEscapeDismissibleDialog = ({ helper }: { helper: DialogHelper }): any => {
+  const NonEscapeDismissibleDialog = ({
+    helper
+  }: {
+    helper: DialogHelper;
+  }): any => {
     return (
       <div className="card">
         <div className="card-body">
           <p>
-            Pressing the <code>Escape</code> key will not dismiss this dialog. Only clicking the button will dismiss it.
+            Pressing the <code>Escape</code> key will not dismiss this dialog.
+            Only clicking the button will dismiss it.
           </p>
 
           <button className="btn btn-secondary btn-sm" onClick={helper.dismiss}>
@@ -85,10 +101,13 @@ export const Default = (): any => {
       <div className="card">
         <div className="card-body">
           <p>
-            Click the button to send a message to the host <strong>without closing the dialog</strong>
+            Click the button to send a message to the host{" "}
+            <strong>without closing the dialog</strong>
           </p>
 
-          <button className="btn btn-primary btn-sm me-2" onClick={() => helper.send("Hello")}>
+          <button
+            className="btn btn-primary btn-sm me-2"
+            onClick={() => helper.send("Hello")}>
             Send message (Hello)
           </button>
 
@@ -124,11 +143,15 @@ export const Default = (): any => {
     };
 
     const openBackgroundDismissibleDialog = (): void => {
-      showDialog(() => <BackgroundDismissibleDialog />, { backgroundDismissible: true });
+      showDialog(() => <BackgroundDismissibleDialog />, {
+        backgroundDismissible: true
+      });
     };
 
     const openNonEscapeDismissibleDialog = (): void => {
-      showDialog(helper => <NonEscapeDismissibleDialog helper={helper} />, { escapeDismissible: false });
+      showDialog(helper => <NonEscapeDismissibleDialog helper={helper} />, {
+        escapeDismissible: false
+      });
     };
 
     const openMessageDialog = (): void => {
@@ -141,19 +164,27 @@ export const Default = (): any => {
 
     return (
       <div>
-        <button className="btn btn-primary btn-sm mb-2" onClick={(): void => openDialog(DialogSize.SMALL)}>
+        <button
+          className="btn btn-primary btn-sm mb-2"
+          onClick={(): void => openDialog(DialogSize.SMALL)}>
           Open small dialog
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-primary btn-sm mb-2" onClick={(): void => openDialog(DialogSize.MEDIUM)}>
+        <button
+          className="btn btn-primary btn-sm mb-2"
+          onClick={(): void => openDialog(DialogSize.MEDIUM)}>
           Open medium dialog
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-primary btn-sm mb-2" onClick={(): void => openDialog(DialogSize.WIDE)}>
+        <button
+          className="btn btn-primary btn-sm mb-2"
+          onClick={(): void => openDialog(DialogSize.WIDE)}>
           Open wide dialog
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-primary btn-sm mb-2" onClick={(): void => openDialog(DialogSize.FULL)}>
+        <button
+          className="btn btn-primary btn-sm mb-2"
+          onClick={(): void => openDialog(DialogSize.FULL)}>
           Open full dialog
         </button>
         <span>&nbsp;</span>
@@ -161,19 +192,27 @@ export const Default = (): any => {
           Open all dialogs
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-success btn-sm mb-2" onClick={openDialogForValue}>
+        <button
+          className="btn btn-success btn-sm mb-2"
+          onClick={openDialogForValue}>
           Open dialog for value
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-warning btn-sm mb-2" onClick={openBackgroundDismissibleDialog}>
+        <button
+          className="btn btn-warning btn-sm mb-2"
+          onClick={openBackgroundDismissibleDialog}>
           Open background dismissible dialog
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-secondary btn-sm mb-2" onClick={openNonEscapeDismissibleDialog}>
+        <button
+          className="btn btn-secondary btn-sm mb-2"
+          onClick={openNonEscapeDismissibleDialog}>
           Open non-escape dismissible dialog
         </button>
         <span>&nbsp;</span>
-        <button className="btn btn-secondary btn-sm mb-2" onClick={openMessageDialog}>
+        <button
+          className="btn btn-secondary btn-sm mb-2"
+          onClick={openMessageDialog}>
           Open message dialog
         </button>
       </div>

@@ -21,7 +21,12 @@ export const Default = () => {
         <ConfirmButton
           busy={busy}
           className="btn btn-primary btn-sm me-2"
-          message={<p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>}
+          message={
+            <p>
+              Proceeding will disable the button for two (2) seconds. Do you
+              want to proceed?
+            </p>
+          }
           onCancel={action("Dialog dismissed")}
           onConfirm={interceptSetBusy}>
           Start
@@ -30,7 +35,12 @@ export const Default = () => {
         <ConfirmButton
           busy={busy}
           className="btn btn-success btn-sm me-2"
-          message={<p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>}
+          message={
+            <p>
+              Proceeding will disable the button for two (2) seconds. Do you
+              want to proceed?
+            </p>
+          }
           onCancel={action("Dialog dismissed")}
           onConfirm={interceptSetBusy}>
           Start
@@ -39,7 +49,12 @@ export const Default = () => {
         <ConfirmButton
           busy={busy}
           className="btn btn-warning btn-sm me-2"
-          message={<p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>}
+          message={
+            <p>
+              Proceeding will disable the button for two (2) seconds. Do you
+              want to proceed?
+            </p>
+          }
           onCancel={action("Dialog dismissed")}
           onConfirm={interceptSetBusy}>
           Start
@@ -48,7 +63,12 @@ export const Default = () => {
         <ConfirmButton
           busy={busy}
           className="btn btn-danger btn-sm"
-          message={<p>Proceeding will disable the button for two (2) seconds. Do you want to proceed?</p>}
+          message={
+            <p>
+              Proceeding will disable the button for two (2) seconds. Do you
+              want to proceed?
+            </p>
+          }
           onCancel={action("Dialog dismissed")}
           onConfirm={interceptSetBusy}>
           Start
@@ -70,7 +90,10 @@ export const CustomConfirmDialog = () => {
     message: any;
   }
 
-  const CustomConfirmDialog = ({ helper, message }: ICustomConfirmDialog): any => {
+  const CustomConfirmDialog = ({
+    helper,
+    message
+  }: ICustomConfirmDialog): any => {
     return (
       <div className="card">
         <div className="card-body">
@@ -81,13 +104,19 @@ export const CustomConfirmDialog = () => {
           </p>
 
           <div className="d-grid mb-2">
-            <button type="button" className="btn btn-primary" onClick={() => helper.dismiss(true)}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => helper.dismiss(true)}>
               Confirm
             </button>
           </div>
 
           <div className="d-grid">
-            <button type="button" className="btn btn-light" onClick={() => helper.dismiss(false)}>
+            <button
+              type="button"
+              className="btn btn-light"
+              onClick={() => helper.dismiss(false)}>
               Cancel
             </button>
           </div>
@@ -111,7 +140,9 @@ export const CustomConfirmDialog = () => {
           busy={busy}
           className="btn btn-primary btn-sm me-2"
           message="Proceeding will disable the button for two (2) seconds. Do you want to proceed?"
-          builder={(helper, message) => <CustomConfirmDialog helper={helper} message={message} />}
+          builder={(helper, message) => (
+            <CustomConfirmDialog helper={helper} message={message} />
+          )}
           onCancel={action("Dialog dismissed")}
           onConfirm={interceptSetBusy}>
           Start (With Custom Confirm Dialog)

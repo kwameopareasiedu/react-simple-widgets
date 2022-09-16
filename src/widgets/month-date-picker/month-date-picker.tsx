@@ -1,4 +1,3 @@
-import "./month-date-picker.scss";
 import React, { useEffect, useState } from "react";
 import { MonthDatePickerProps } from "../../../types";
 import { dateMonth, dateYear, months, years } from "../calendar/calendar-utils";
@@ -7,13 +6,75 @@ import djs from "dayjs";
 import { PopupMenu } from "../popup-menu/popup-menu";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import styled from "styled-components";
 
 djs.extend(arraySupport);
 djs.extend(advancedFormat);
 
+const MonthDatePickerRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget month-date-picker " + props.className
+}))``;
+
+const MonthDatePickerPopupRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget month-date-picker-popup " + props.className
+}))`
+  header {
+    p {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    button {
+      i {
+        color: var(--rsw-primary-color);
+      }
+    }
+  }
+
+  select {
+    display: inline-block;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .month-select {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+
+    button {
+      transition: background-color var(--rsw-transition-duration);
+      white-space: nowrap;
+      border-radius: 2px;
+    }
+
+    button:focus,
+    button:hover {
+      outline: none;
+      box-shadow: none;
+    }
+
+    button.active {
+      background-color: var(--rsw-primary-color);
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  .month-date-picker-error {
+    text-align: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    font-size: 85%;
+    font-weight: bold;
+    color: var(--rsw-error-color);
+    border-top: 1px solid #e3e3e3;
+  }
+`;
+
 export const MonthDatePicker = ({
   value,
-  className: _className,
   validator,
   onChange,
   ...rest
@@ -21,12 +82,6 @@ export const MonthDatePicker = ({
   const [displayYear, setDisplayYear] = useState(dateYear(value));
   const [displayMonth, setDisplayMonth] = useState(dateMonth(value));
   const [error, setError] = useState(null);
-
-  const className = (): string => {
-    const classes = ["react-simple-widget", "month-date-picker"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const monthBtnClassName = (active: boolean): string => {
     const classes = ["btn", "btn-link", "btn-sm", "text-decoration-none"];
@@ -46,17 +101,20 @@ export const MonthDatePicker = ({
 
   return (
     <PopupMenu>
-      <div className={className()} {...rest}>
+      <MonthDatePickerRoot {...rest}>
         {djs([displayYear, displayMonth, 1]).format("MMMM YYYY")}
-      </div>
+      </MonthDatePickerRoot>
 
       {closePopup => (
-        <div className="react-simple-widget month-date-picker-popup card">
+        <MonthDatePickerPopupRoot className="card">
           <div className="card-body">
             <header className="d-flex justify-content-between align-items-center mb-3">
               <p className="mb-0">Select Date</p>
 
-              <button type="button" className="btn btn-light btn-sm" onClick={resetDisplayDate}>
+              <button
+                type="button"
+                className="btn btn-light btn-sm"
+                onClick={resetDisplayDate}>
                 <i className="fa fa-clock" />
               </button>
             </header>
@@ -88,7 +146,11 @@ export const MonthDatePicker = ({
                     setDisplayMonth(monthIndex);
 
                     if (validator) {
-                      const selectedDate = djs([displayYear, monthIndex, 1]).format("YYYY-MM-DD");
+                      const selectedDate = djs([
+                        displayYear,
+                        monthIndex,
+                        1
+                      ]).format("YYYY-MM-DD");
                       const error = validator(selectedDate);
                       if (error) return setError(error);
                       else setError(null);
@@ -103,7 +165,7 @@ export const MonthDatePicker = ({
 
             {error && <div className="month-date-picker-error">{error}</div>}
           </div>
-        </div>
+        </MonthDatePickerPopupRoot>
       )}
     </PopupMenu>
   );

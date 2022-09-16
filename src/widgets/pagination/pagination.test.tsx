@@ -13,7 +13,9 @@ describe("Pagination Tests", () => {
 
   it("should show correct page ranges", async () => {
     const { container } = render(<PaginationExample />);
-    expect((await container.querySelector(".pagination-info")).textContent).toBe("Showing 1 - 10 of 140 items");
+    expect(
+      (await container.querySelector(".pagination-info")).textContent
+    ).toBe("Showing 1 - 10 of 140 items");
   });
 
   it("should show correct page buttons", async () => {

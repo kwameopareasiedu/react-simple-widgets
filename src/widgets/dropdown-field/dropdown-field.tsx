@@ -1,8 +1,12 @@
-import "./dropdown-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { DropdownFieldProps } from "../../../types";
+import styled from "styled-components";
+
+const DropdownFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget dropdown-field " + props.className
+}))``;
 
 export const DropdownField = ({
   name,
@@ -18,7 +22,7 @@ export const DropdownField = ({
   ...rest
 }: DropdownFieldProps) => {
   return (
-    <div className="react-simple-widget dropdown-field">
+    <DropdownFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setTouched, setValue }): any => (
           <FieldDecoration
@@ -53,6 +57,6 @@ export const DropdownField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </DropdownFieldRoot>
   );
 };

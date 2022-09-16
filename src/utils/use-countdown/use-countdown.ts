@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import { UseCountdown, UseCountdownState } from "../../../types";
 
-export const useCountdown: UseCountdown = (countdown: number): UseCountdownState => {
+export const useCountdown: UseCountdown = (
+  countdown: number
+): UseCountdownState => {
   const [count, setCount] = useState(countdown);
   const [running, setRunning] = useState(false);
   const intervalRef = useRef<any>();

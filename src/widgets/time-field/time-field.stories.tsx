@@ -22,13 +22,16 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
                 <TimeField
                   name="field"
-                  label="Month date field"
+                  label="Time field"
                   placeholder="Click to select date"
                   helper={`${formik.values.field.length} of 6`}
                   leading={<i className="fa fa-calendar me-1" />}

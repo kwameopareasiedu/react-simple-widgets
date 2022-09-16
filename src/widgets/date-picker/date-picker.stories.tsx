@@ -12,7 +12,11 @@ export const Default = (): any => {
     const [date, setDate] = useState(djs().format("YYYY-MM-DD"));
 
     return (
-      <DatePicker className="btn btn-outline-primary btn-sm d-inline-block w-auto" onChange={setDate} value={date} />
+      <DatePicker
+        className="btn btn-outline-primary btn-sm d-inline-block w-auto"
+        onChange={setDate}
+        value={date}
+      />
     );
   };
 
@@ -25,7 +29,7 @@ export const WithValidator = (): any => {
 
     const validator = (date: string): string => {
       if (djs(date).isBefore(djs())) {
-        return "Must be after this today";
+        return "Must be after today";
       } else return null;
     };
 

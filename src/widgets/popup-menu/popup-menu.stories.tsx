@@ -18,20 +18,30 @@ export const Default = () => (
 
     <div className="d-flex justify-content-between">
       <PopupMenu>
-        <button className="btn btn-link btn-sm border-0 text-decoration-none">Options</button>
+        <button className="btn btn-link btn-sm border-0 text-decoration-none">
+          Options
+        </button>
 
         <div className="card">
           <ul className="list-group list-group-flush">
-            <button className="list-group-item" onClick={() => console.log("Option 1 clicked!")}>
+            <button
+              className="list-group-item"
+              onClick={() => console.log("Option 1 clicked!")}>
               This is option 1
             </button>
-            <button className="list-group-item" onClick={() => console.log("Option 2 clicked!")}>
+            <button
+              className="list-group-item"
+              onClick={() => console.log("Option 2 clicked!")}>
               Option 2
             </button>
-            <button className="list-group-item" onClick={() => console.log("Option 3 clicked!")}>
+            <button
+              className="list-group-item"
+              onClick={() => console.log("Option 3 clicked!")}>
               Option 3
             </button>
-            <button className="list-group-item" onClick={() => console.log("Option 4 clicked!")}>
+            <button
+              className="list-group-item"
+              onClick={() => console.log("Option 4 clicked!")}>
               Option 4
             </button>
           </ul>
@@ -39,7 +49,9 @@ export const Default = () => (
       </PopupMenu>
 
       <PopupMenu>
-        <button className="btn btn-link btn-sm border-0 text-decoration-none">Options</button>
+        <button className="btn btn-link btn-sm border-0 text-decoration-none">
+          Options
+        </button>
 
         {closePopup => (
           <div className="card">

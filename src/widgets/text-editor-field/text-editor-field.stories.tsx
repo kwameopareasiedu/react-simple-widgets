@@ -26,17 +26,24 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
-                <TextEditorField name="htmlField" label="Text field" helper="Value is HTML content" />
+                <TextEditorField
+                  name="htmlField"
+                  label="Text editor field"
+                  helper="Value is HTML content"
+                />
               </div>
 
               <div className="mb-4">
                 <TextEditorField
                   name="textField"
-                  label="Text field"
+                  label="Text editor field"
                   helper="Value is text representation of HTML"
                   theme="bubble"
                   asText

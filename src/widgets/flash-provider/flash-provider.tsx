@@ -1,11 +1,19 @@
 import React, { createContext, useContext } from "react";
-import { FlashOptionalArgs, FlashProviderProps, FlashProviderContext as Context, FlashType } from "../../../types";
+import {
+  FlashOptionalArgs,
+  FlashProviderProps,
+  FlashProviderContext as Context,
+  FlashType
+} from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FlashView } from "./flash-view";
 
 export const FlashProviderContext = createContext<Context>(null);
 
-export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.Element => {
+export const FlashProvider = ({
+  children,
+  builder
+}: FlashProviderProps): JSX.Element => {
   const { showDialog } = useContext(DialogProviderContext);
 
   const flash = (
@@ -16,7 +24,7 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
     optionalArgs?: FlashOptionalArgs
   ): void => {
     const btnText = optionalArgs?.btnText;
-    const closeTimer = optionalArgs?.closeTimerMs;
+    const closeTimerMs = optionalArgs?.closeTimerMs;
 
     showDialog(
       helper => {
@@ -25,12 +33,12 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
             type,
             title,
             message,
+            btnText,
+            closeTimerMs,
             onDismissed: () => {
               if (onDismissed) onDismissed();
               helper.dismiss();
-            },
-            btnText,
-            closeTimerMs: closeTimer
+            }
           });
         } else {
           return (
@@ -39,7 +47,7 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
               title={title}
               message={message}
               buttonText={btnText}
-              closeTimerMs={closeTimer}
+              closeTimerMs={closeTimerMs}
               onDismiss={helper.dismiss}
             />
           );
@@ -86,7 +94,8 @@ export const FlashProvider = ({ children, builder }: FlashProviderProps): JSX.El
   };
 
   return (
-    <FlashProviderContext.Provider value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
+    <FlashProviderContext.Provider
+      value={{ flashError, flashWarning, flashInfo, flashSuccess }}>
       {children}
     </FlashProviderContext.Provider>
   );

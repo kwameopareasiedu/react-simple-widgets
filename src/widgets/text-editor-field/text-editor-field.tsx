@@ -1,8 +1,12 @@
-import "./text-editor-field.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { TextEditorFieldProps } from "../../../types";
+import styled from "styled-components";
+
+const TextEditorFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget text-editor-field " + props.className
+}))``;
 
 export const TextEditorField = ({
   name,
@@ -16,10 +20,14 @@ export const TextEditorField = ({
   onBlur
 }: TextEditorFieldProps): any => {
   return (
-    <div className="react-simple-widget text-editor-field">
+    <TextEditorFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
-          <FieldDecoration label={label} error={touched && error} helper={helper} disabled={disabled}>
+          <FieldDecoration
+            label={label}
+            error={touched && error}
+            helper={helper}
+            disabled={disabled}>
             {({ onFieldFocus, onFieldBlur }) => (
               <TextEditor
                 theme={theme}
@@ -56,7 +64,7 @@ export const TextEditorField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </TextEditorFieldRoot>
   );
 };
 
@@ -69,8 +77,42 @@ interface TextEditorProps {
   onBlur: () => void;
 }
 
-const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps): JSX.Element => {
-  if (["snow", "bubble"].includes(theme)) theme = theme.toLowerCase() as "snow" | "bubble";
+const TextEditorRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget text-editor " + props.className
+}))`
+  .ql-toolbar {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .ql-toolbar + .ql-toolbar {
+    display: none;
+    pointer-events: none;
+  }
+
+  .ql-container {
+    border: none !important;
+
+    .ql-editor {
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+    }
+  }
+`;
+
+const TextEditor = ({
+  value,
+  theme,
+  onChange,
+  onFocus,
+  onBlur
+}: TextEditorProps): JSX.Element => {
+  if (["snow", "bubble"].includes(theme))
+    theme = theme.toLowerCase() as "snow" | "bubble";
   else theme = "snow";
 
   const [linkId] = useState(`quill-stylesheet-${generateRnd()}`);
@@ -82,7 +124,11 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
     return Math.random().toString().replace(/\d\./, "");
   }
 
-  const loadExternal = (id: string, type: string, customize: (tag: HTMLElement) => void): Promise<void> => {
+  const loadExternal = (
+    id: string,
+    type: string,
+    customize: (tag: HTMLElement) => void
+  ): Promise<void> => {
     return new Promise((resolve, reject) => {
       // Check if tag already exists
       const existingTag = document.getElementById(id);
@@ -126,7 +172,12 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
                 [{ color: [] }, { background: [] }],
                 [{ font: [] }],
                 [{ align: [] }],
-                [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+                [
+                  { list: "ordered" },
+                  { list: "bullet" },
+                  { indent: "-1" },
+                  { indent: "+1" }
+                ],
                 ["link"],
                 ["clean"]
               ]
@@ -144,7 +195,10 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
         }
       })
       .catch(err => {
-        console.error("React Simple Widgets - TextEditor dependencies failed to load", err);
+        console.error(
+          "React Simple Widgets - TextEditor dependencies failed to load",
+          err
+        );
       });
   };
 
@@ -162,8 +216,8 @@ const TextEditor = ({ value, theme, onChange, onFocus, onBlur }: TextEditorProps
   }, []);
 
   return (
-    <div className="text-editor" onFocus={onFocus} onBlur={onBlur}>
+    <TextEditorRoot onFocus={onFocus} onBlur={onBlur}>
       <div ref={ref} />
-    </div>
+    </TextEditorRoot>
   );
 };

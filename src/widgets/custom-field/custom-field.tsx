@@ -1,7 +1,11 @@
 import { useField } from "formik";
 import { CustomFieldProps } from "../../../types";
 
-export const CustomField = ({ children, errorBuilder: _errorBuilder, ...rest }: CustomFieldProps): any => {
+export const CustomField = ({
+  children,
+  errorBuilder: _errorBuilder,
+  ...rest
+}: CustomFieldProps): any => {
   const [field, meta, helper] = useField(rest as any);
 
   const errorBuilder = (error: any): string => {
@@ -21,5 +25,10 @@ export const CustomField = ({ children, errorBuilder: _errorBuilder, ...rest }: 
     }
   };
 
-  return children({ ...field, ...meta, ...helper, error: errorBuilder(meta.error) });
+  return children({
+    ...field,
+    ...meta,
+    ...helper,
+    error: errorBuilder(meta.error)
+  });
 };

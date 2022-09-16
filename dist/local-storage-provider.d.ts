@@ -1,5 +1,8 @@
 import { Context, FC } from "react";
-import { LocalStorageProviderProps, LocalStorageProviderContext as C } from "../types";
+import {
+  LocalStorageProviderProps,
+  LocalStorageProviderContext as C
+} from "../types";
 
 export declare const LocalStorageProviderContext: Context<C>;
 

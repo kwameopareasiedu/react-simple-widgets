@@ -1,6 +1,6 @@
 # React Simple Widgets
 
-![](https://img.shields.io/badge/version-6.6.1-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/unpacked%20size-146.3%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
+![](https://img.shields.io/badge/version-6.7.0-blue) ![](https://img.shields.io/badge/react-v18.0.0-blue) ![](https://img.shields.io/badge/unpacked%20size-573.7%20kB-blue) [![](https://img.shields.io/badge/github-star-lightgrey)](https://github.com/kwameopareasiedu/react-simple-widgets)
 
 `React Simple Widgets` is a collection of **composable**, **customizable** widgets to help accelerate your React app development. These widgets perform commonly needed tasks within your app such as dialogs, flash messages, lists and more.
 
@@ -34,7 +34,27 @@ yarn add --dev react react-dom react-router-dom formik
 
 ## CSS Dependencies
 
-`React Simple Widgets` also depends on [Bootstrap 5.1.3+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
+`React Simple Widgets` also depends on [Bootstrap 5.2.1+](https://getbootstrap.com/) for base styling and [Font Awesome 5.14.0+](https://fontawesome.com/) for font icons. These must be included in the `index.html` of your project.
+
+## Global Style
+
+From `v6.7.0` onward, the global styles for the library must be imported at the start of your app
+```jsx
+import ReactDOM from "react-dom";
+import { RSWGlobalStyle } from "react-simple-widgets/dist/style";
+import App from "./app";
+/* Other imports */
+
+const root = document.getElementById("root");
+
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <RSWGlobalStyle />
+    <App/>
+  </React.StrictMode>
+);
+
+```
 
 ## Widgets
 

@@ -1,8 +1,27 @@
-import "./text-area-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { TextAreaFieldProps } from "../../../types";
+import styled from "styled-components";
+
+const TextAreaFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget text-area-field " + props.className
+}))`
+  .field-decoration-content-container {
+    .field-decoration-content {
+      align-items: start;
+
+      .leading,
+      .trailing {
+        margin-top: 5px;
+      }
+
+      textarea {
+        min-height: 50px;
+      }
+    }
+  }
+`;
 
 export const TextAreaField = ({
   name,
@@ -17,7 +36,7 @@ export const TextAreaField = ({
   ...rest
 }: TextAreaFieldProps): any => {
   return (
-    <div className="react-simple-widget text-area-field">
+    <TextAreaFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -51,6 +70,6 @@ export const TextAreaField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </TextAreaFieldRoot>
   );
 };

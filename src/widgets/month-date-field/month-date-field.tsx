@@ -1,9 +1,35 @@
-import "./month-date-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { MonthDateFieldProps } from "../../../types";
 import { MonthDatePicker } from "../month-date-picker/month-date-picker";
+import styled from "styled-components";
+
+const MonthDateFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget month-date-field " + props.className
+}))`
+  .month-date-picker {
+    display: flex;
+  }
+
+  select {
+    padding-top: 0;
+    padding-bottom: 0;
+    flex: 1 1;
+  }
+
+  select:first-child {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  select:last-child {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+  }
+`;
 
 export const MonthDateField = ({
   name,
@@ -18,7 +44,7 @@ export const MonthDateField = ({
   ...rest
 }: MonthDateFieldProps): any => {
   return (
-    <div className="react-simple-widget month-date-field">
+    <MonthDateFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -50,6 +76,6 @@ export const MonthDateField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </MonthDateFieldRoot>
   );
 };

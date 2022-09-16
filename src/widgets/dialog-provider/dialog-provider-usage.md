@@ -53,7 +53,9 @@ export const MyDialog = ({ helper }: MyDialogProps) => {
       <div className="card-body">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 
-        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => helper.dismiss()}>
           Close dialog
         </button>
       </div>
@@ -82,9 +84,12 @@ export const App = () => {
       },
       {
         size: DialogSize.SMALL /* Dialog size: SMALL, MEDIUM, WIDE, FULL */,
-        backgroundDismissible: false /* Close if background is clicked. Defaults to false */,
-        escapeDismissible: true /* Close if escape key is pressed. Defaults to true */,
-        onDismissed: () => {} /* Optional function to call after dialog is closed */
+        backgroundDismissible:
+          false /* Close if background is clicked. Defaults to false */,
+        escapeDismissible:
+          true /* Close if escape key is pressed. Defaults to true */,
+        onDismissed:
+          () => {} /* Optional function to call after dialog is closed */
       }
     );
   };
@@ -118,17 +123,25 @@ export const MyDialog = ({ helper }: MyDialogProps) => {
       <div className="card-body">
         <p>Select a value:</p>
 
-        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("A")}>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => helper.dismiss("A")}>
           Return A
         </button>
-        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("B")}>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => helper.dismiss("B")}>
           Return B
         </button>
-        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss("C")}>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => helper.dismiss("C")}>
           Return C
         </button>
 
-        <button className="btn btn-primary btn-sm" onClick={() => helper.dismiss()}>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => helper.dismiss()}>
           Select none
         </button>
       </div>
@@ -199,11 +212,14 @@ export const MyDialog = ({ helper }: MyDialogProps) => {
     <div className="card">
       <div className="card-body">
         <p>
-          Click the button to send a message to the host <strong>without closing the dialog</strong>
+          Click the button to send a message to the host{" "}
+          <strong>without closing the dialog</strong>
         </p>
 
         {/* We send a message of "Hello" when this button is pressed */}
-        <button className="btn btn-primary btn-sm me-2" onClick={() => helper.send("Hello")}>
+        <button
+          className="btn btn-primary btn-sm me-2"
+          onClick={() => helper.send("Hello")}>
           Send message (Hello)
         </button>
 

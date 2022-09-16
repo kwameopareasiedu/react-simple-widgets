@@ -22,13 +22,15 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
                 <MultiDateField
                   name="field"
-                  maxLength={6}
                   label="Multi Date field"
                   placeholder="Click to select dates"
                   helper={`${formik.values.field.length} of 6`}

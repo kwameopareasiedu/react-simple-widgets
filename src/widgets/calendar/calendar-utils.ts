@@ -3,7 +3,10 @@ import djs from "dayjs";
 
 djs.extend(arraySupport);
 
-export const years = Array.from(new Array(200), (v, i) => djs().year() + i - 120);
+export const years = Array.from(
+  new Array(200),
+  (v, i) => djs().year() + i - 120
+);
 
 export const months = [
   "January",

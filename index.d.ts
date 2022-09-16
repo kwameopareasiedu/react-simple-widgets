@@ -10,7 +10,11 @@ declare interface QuillOptions {
 
 type DangerouslyPasteHTML2 = (html: string, source: "api") => void;
 
-type DangerouslyPasteHTML3 = (index: number, html: string, source: "api") => void;
+type DangerouslyPasteHTML3 = (
+  index: number,
+  html: string,
+  source: "api"
+) => void;
 
 declare class QuillClipboard {
   declare dangerouslyPasteHTML: DangerouslyPasteHTML2 & DangerouslyPasteHTML3;

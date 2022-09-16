@@ -12,7 +12,8 @@ export const Default = (): any => {
     const validate = (values: any) => {
       const errors: any = {};
       if (!Array.isArray(values.field)) errors.field = "Must be an array";
-      if (Array.isArray(values.field) && values.field.length < 2) errors.field = "At least two tags are required";
+      if (Array.isArray(values.field) && values.field.length < 2)
+        errors.field = "At least two tags are required";
       return errors;
     };
 
@@ -23,7 +24,10 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">

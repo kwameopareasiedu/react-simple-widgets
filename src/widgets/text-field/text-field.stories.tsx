@@ -22,7 +22,10 @@ export const Default = (): any => {
 
     return (
       <div id="sample-form">
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={onSubmit}>
           {formik => (
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
@@ -30,7 +33,6 @@ export const Default = (): any => {
                   name="field"
                   label="Text field"
                   placeholder="Enter value"
-                  maxLength={6}
                   helper={`${formik.values.field.length} of 6`}
                   leading={<i className="fa fa-user me-1" />}
                 />

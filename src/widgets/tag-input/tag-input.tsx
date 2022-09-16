@@ -1,31 +1,66 @@
-import "./tag-input.scss";
 import React, { useRef } from "react";
 import { TagInputProps } from "../../../types";
+import styled from "styled-components";
+
+const TagInputRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget tag-input " + props.className
+}))`
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  &:hover {
+    cursor: text;
+  }
+
+  .option {
+    padding: 2px 6px;
+    margin: 0 2px 2px 0;
+    background-color: #f3f3f3;
+
+    button {
+      padding: 0;
+      background: none;
+      outline: none;
+      border: none;
+    }
+  }
+
+  .option:last-child {
+    margin-right: 6px;
+  }
+
+  input,
+  input:focus,
+  input:hover {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  input {
+    width: 0;
+    flex-grow: 1;
+  }
+`;
 
 export const TagInput = ({
   value,
   onChange,
   validator,
   placeholder,
-  className: _className,
   onInputError,
+  onClick: _onClick,
   ...rest
 }: TagInputProps): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>();
   const inputRef = useRef<HTMLInputElement>();
-
-  const className = (): string => {
-    const classes = ["react-simple-widget tag-input"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
     if (containerRef.current === e.target) {
       inputRef.current.focus();
     }
 
-    if (rest.onClick) rest.onClick(e);
+    if (_onClick) _onClick(e);
   };
 
   const onInputKeyDown = (e: React.KeyboardEvent): void => {
@@ -65,18 +100,27 @@ export const TagInput = ({
   };
 
   return (
-    <div {...rest} ref={containerRef} className={className()} onClick={onClick}>
+    <TagInputRoot {...rest} ref={containerRef} onClick={onClick}>
       {value.map((option, i) => (
         <span key={option.toString()} className="option">
           <small className="me-1">{option.toString()}</small>
 
-          <button type="button" className="align-middle" onClick={() => removeValueItem(i)}>
+          <button
+            type="button"
+            className="align-middle"
+            onClick={() => removeValueItem(i)}>
             <i className="fa fa-times small " />
           </button>
         </span>
       ))}
 
-      <input ref={inputRef} type="text" placeholder={placeholder} onKeyDown={onInputKeyDown} tabIndex={0} />
-    </div>
+      <input
+        ref={inputRef}
+        type="text"
+        placeholder={placeholder}
+        onKeyDown={onInputKeyDown}
+        tabIndex={0}
+      />
+    </TagInputRoot>
   );
 };

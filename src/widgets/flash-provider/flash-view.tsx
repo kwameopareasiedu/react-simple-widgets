@@ -1,10 +1,99 @@
-import "./flash-view.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { FlashType, FlashViewProps } from "../../../types";
 import ErrorIcon from "../../assets/error.svg";
 import WarningIcon from "../../assets/warning.svg";
 import SuccessIcon from "../../assets/success.svg";
 import InfoIcon from "../../assets/info.svg";
+import styled from "styled-components";
+
+const FlashViewRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget flash-view " + props.className
+}))`
+  --flash-title-color: #e3e3e3;
+
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &.flash-state-error {
+    --flash-title-color: var(--rsw-flash-view-error-theme-color);
+
+    .card-body .flash-button {
+      color: white;
+    }
+  }
+
+  &.flash-state-warning {
+    --flash-title-color: var(--rsw-flash-view-warning-theme-color);
+
+    .card-body .flash-button {
+      color: #333333;
+    }
+  }
+
+  &.flash-state-info {
+    --flash-title-color: var(--rsw-flash-view-info-theme-color);
+
+    .card-body .flash-button {
+      color: #333333;
+    }
+  }
+
+  &.flash-state-success {
+    --flash-title-color: var(--rsw-flash-view-success-theme-color);
+
+    .card-body .flash-button {
+      color: white;
+    }
+  }
+
+  .card-body {
+    padding: 25px;
+    color: #545454;
+
+    .flash-icon {
+      width: 50px;
+      margin-bottom: 15px;
+    }
+
+    .flash-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: var(--flash-title-color);
+    }
+
+    .flash-message {
+      margin-bottom: 15px;
+      word-break: break-word;
+    }
+
+    .flash-button {
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 8px;
+      background-color: var(--flash-title-color);
+      transition: box-shadow 0.5s;
+      overflow: hidden;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    .flash-button:hover {
+      box-shadow: none;
+    }
+  }
+
+  .flash-view-close-timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+`;
 
 export const FlashView = ({
   type,
@@ -17,8 +106,8 @@ export const FlashView = ({
   const [closeTimer, setCloseTimer] = useState(closeTimerMs);
   const closeTimerIntervalRef = useRef<NodeJS.Timer>();
 
-  const className = (): string => {
-    const classes = ["react-simple-widget", "flash-view", "card"];
+  const additionalClassNames = (): string => {
+    const classes = ["card"];
 
     switch (type) {
       case FlashType.ERROR:
@@ -79,7 +168,7 @@ export const FlashView = ({
   }, [closeTimer]);
 
   return (
-    <div className={className()}>
+    <FlashViewRoot className={additionalClassNames()}>
       <div className="card-body text-center">
         <img src={icon()} alt="Flash icon" className="flash-icon" />
         <h5 className="flash-title">{title}</h5>
@@ -96,6 +185,6 @@ export const FlashView = ({
             .padStart(2, "0")}
         </p>
       )}
-    </div>
+    </FlashViewRoot>
   );
 };

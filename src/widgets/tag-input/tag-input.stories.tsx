@@ -6,5 +6,12 @@ export default { title: "TagInput", component: TagInput };
 export const Default = (): any => {
   const [tags, setTags] = useState([]);
 
-  return <TagInput className="form-control" placeholder="Enter tags" value={tags} onChange={setTags} />;
+  return (
+    <TagInput
+      className="form-control"
+      placeholder="Enter tags"
+      value={tags}
+      onChange={setTags}
+    />
+  );
 };

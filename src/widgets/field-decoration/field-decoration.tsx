@@ -1,6 +1,78 @@
-import "./field-decoration.scss";
 import React, { useState, cloneElement } from "react";
 import { FieldDecorationProps } from "../../../types";
+import styled from "styled-components";
+
+const FieldDecorationRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget field-decoration " + props.className
+}))`
+  &.has-focus {
+    .field-decoration-content-container {
+      border-color: var(--rsw-primary-color);
+
+      > label {
+        color: var(--rsw-primary-color);
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  .field-decoration-content-container {
+    --border-width: 2px;
+
+    position: relative;
+    border-radius: 4px;
+    border: var(--border-width) solid var(--rsw-secondary-color);
+    padding: 8px 8px 4px;
+
+    > label {
+      position: absolute;
+      top: -10px;
+      left: 6px;
+      margin: 0;
+      padding: 0 4px;
+      font-size: 75%;
+      color: var(--rsw-label-color);
+      background-color: white;
+    }
+
+    > .field-decoration-content {
+      display: flex;
+      align-items: center;
+
+      > :not(.leading):not(.trailing) {
+        flex: 1 1;
+        width: 100%;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+
+  > .field-decoration-footer {
+    display: flex;
+    padding: 0 10px;
+    justify-content: flex-end;
+
+    .helper,
+    .error {
+      margin: 0;
+      font-size: 75%;
+    }
+
+    .error {
+      color: var(--rsw-error-color);
+      flex: 1 1;
+    }
+  }
+`;
 
 export const FieldDecoration = ({
   label,
@@ -10,15 +82,15 @@ export const FieldDecoration = ({
   helper,
   disabled,
   children,
-  className: _className,
+  className,
   ...rest
 }: FieldDecorationProps) => {
   const [focused, setFocused] = useState(false);
 
-  const className = (): string => {
-    const classes = ["react-simple-widget", "field-decoration"];
+  const additionalClassNames = (): string => {
+    const classes = [];
 
-    if (_className) classes.push(_className);
+    if (className) classes.push(className);
     if (leading) classes.push("has-leading");
     if (trailing) classes.push("has-trailing");
     if (focused) classes.push("has-focus");
@@ -35,7 +107,7 @@ export const FieldDecoration = ({
   });
 
   return (
-    <div className={className()} {...rest}>
+    <FieldDecorationRoot className={additionalClassNames()} {...rest}>
       <div className="field-decoration-content-container">
         {label && <label>{label}</label>}
 
@@ -62,6 +134,6 @@ export const FieldDecoration = ({
           {helper && <div className="helper">{helper}</div>}
         </div>
       )}
-    </div>
+    </FieldDecorationRoot>
   );
 };

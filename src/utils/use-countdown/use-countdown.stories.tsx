@@ -10,13 +10,23 @@ export const Default = () => {
     return (
       <div style={{ padding: "30px" }}>
         <div className="mb-4">
-          <button className="btn btn-primary btn-sm" onClick={resetCountdown} disabled={running}>
-            {!running ? "Start 10s countdown" : `Button will be enabled in ${count} second${count > 1 ? "s" : ""}`}
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={resetCountdown}
+            disabled={running}>
+            {!running
+              ? "Start 10s countdown"
+              : `Button will be enabled in ${count} second${
+                  count > 1 ? "s" : ""
+                }`}
           </button>
         </div>
 
         <div className="mb-4">
-          <button className="btn btn-danger btn-sm" onClick={stopCountdown} disabled={!running}>
+          <button
+            className="btn btn-danger btn-sm"
+            onClick={stopCountdown}
+            disabled={!running}>
             Cancel
           </button>
         </div>
