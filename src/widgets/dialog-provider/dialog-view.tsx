@@ -1,6 +1,47 @@
-import "./dialog-view.scss";
 import React, { useRef } from "react";
 import { DialogSize, DialogViewProps } from "../../../types";
+import styled from "styled-components";
+
+const DialogViewRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget dialog-view " + props.className
+}))`
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000099;
+  overflow: auto;
+
+  .dialog-view-content {
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+  }
+
+  .dialog-view-content.small-dialog {
+    @media screen and (min-width: 576px) {
+      max-width: 360px;
+    }
+  }
+
+  .dialog-view-content.medium-dialog {
+    @media screen and (min-width: 768px) {
+      max-width: 480px;
+    }
+  }
+
+  .dialog-view-content.wide-dialog {
+    @media screen and (min-width: 992px) {
+      max-width: 640px;
+    }
+  }
+
+  .dialog-view-content.full-dialog {
+    max-width: 100%;
+  }
+`;
 
 /** DialogView, as the name implies, renders a dialog interface */
 export const DialogView = ({ dialog }: DialogViewProps): JSX.Element => {
@@ -40,12 +81,10 @@ export const DialogView = ({ dialog }: DialogViewProps): JSX.Element => {
   };
 
   return (
-    <div
-      className="react-simple-widget dialog-view"
-      onClick={onBackgroundClick}>
+    <DialogViewRoot onClick={onBackgroundClick}>
       <div ref={dialogContentRef} className={dialogViewContentClassName()}>
         {dialog.widget}
       </div>
-    </div>
+    </DialogViewRoot>
   );
 };

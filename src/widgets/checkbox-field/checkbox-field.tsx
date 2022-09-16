@@ -1,8 +1,38 @@
-import "./checkbox-field.scss";
 import React from "react";
 import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { CheckboxFieldProps } from "../../../types";
+import styled from "styled-components";
+
+const CheckboxFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget checkbox-field " + props.className
+}))`
+  .field-decoration .field-decoration-content-container {
+    border: none;
+    padding: 0;
+
+    .field-decoration-content {
+      :not(.leading):not(.trailing) {
+        flex: none;
+
+        > * {
+          vertical-align: middle;
+        }
+
+        input {
+          width: 15px;
+          height: 15px;
+          margin-right: 8px;
+          vertical-align: middle;
+        }
+      }
+
+      :not(.leading):not(.trailing):hover {
+        cursor: pointer;
+      }
+    }
+  }
+`;
 
 export const CheckboxField = ({
   name,
@@ -13,7 +43,7 @@ export const CheckboxField = ({
   ...rest
 }: CheckboxFieldProps): any => {
   return (
-    <div className="react-simple-widget checkbox-field">
+    <CheckboxFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration error={touched && error} disabled={disabled}>
@@ -42,6 +72,6 @@ export const CheckboxField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </CheckboxFieldRoot>
   );
 };

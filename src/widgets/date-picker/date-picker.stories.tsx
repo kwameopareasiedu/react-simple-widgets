@@ -29,7 +29,7 @@ export const WithValidator = (): any => {
 
     const validator = (date: string): string => {
       if (djs(date).isBefore(djs())) {
-        return "Must be after this today";
+        return "Must be after today";
       } else return null;
     };
 

@@ -20,7 +20,7 @@ export const BusyButton = ({
 }: BusyButtonProps): any => {
   return (
     <BusyButtonRoot disabled={busy || disabled} {...rest}>
-      {busy && <Loader role="status" invert={invert} />}
+      {busy && <Loader role="status" className="me-2" invert={invert} />}
       {children}
     </BusyButtonRoot>
   );

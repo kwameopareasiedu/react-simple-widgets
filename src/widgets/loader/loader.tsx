@@ -8,13 +8,16 @@ const LoaderRoot = styled.div.attrs((props: LoaderProps) => ({
 }))`
   .spinner-border {
     color: ${props => (props.invert ? "white" : "initial")};
+    vertical-align: sub;
   }
 `;
 
 export const Loader = ({ children, invert, ...rest }: LoaderProps): any => {
   return (
     <LoaderRoot {...rest} invert={invert}>
-      <span className="spinner-border spinner-border-sm me-2" />
+      <span
+        className={`spinner-border spinner-border-sm ${children ? "me-2" : ""}`}
+      />
       {children}
     </LoaderRoot>
   );

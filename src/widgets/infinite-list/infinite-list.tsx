@@ -1,6 +1,11 @@
 import React, { MutableRefObject, useEffect, useRef } from "react";
 import { InfiniteListProps } from "../../../types";
 import { BusyButton } from "../busy-button/busy-button";
+import styled from "styled-components";
+
+const InfiniteListRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget infinite-list " + props.className
+}))``;
 
 export const InfiniteList = ({
   busy,
@@ -8,17 +13,10 @@ export const InfiniteList = ({
   total,
   error,
   onLoadMore,
-  className: _className,
   children,
   ...rest
 }: InfiniteListProps): JSX.Element => {
   const loadMoreButtonContainerRef: MutableRefObject<HTMLDivElement> = useRef();
-
-  const className = (): string => {
-    const classes = ["react-simple-widget", "infinite-list"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   useEffect(() => {
     const onWindowScroll = () => {
@@ -38,7 +36,7 @@ export const InfiniteList = ({
   }, [busy, count, total]);
 
   return (
-    <div {...rest} className={className()}>
+    <InfiniteListRoot {...rest}>
       {children}
 
       <div ref={loadMoreButtonContainerRef} className="text-center mt-2">
@@ -53,6 +51,6 @@ export const InfiniteList = ({
           </BusyButton>
         )}
       </div>
-    </div>
+    </InfiniteListRoot>
   );
 };

@@ -1,4 +1,3 @@
-import "./dialog-provider.scss";
 import React, { createContext, useEffect, useRef, useState } from "react";
 import {
   Dialog,
@@ -8,8 +7,26 @@ import {
   DialogProviderProps
 } from "../../../types";
 import { DialogView } from "./dialog-view";
+import styled from "styled-components";
 
 export const DialogProviderContext = createContext<Context>(null);
+
+const DialogProviderRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget dialog-provider " + props.className
+}))`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999999;
+
+  > * {
+    pointer-events: all;
+  }
+`;
 
 export const DialogProvider = ({
   children
@@ -94,11 +111,11 @@ export const DialogProvider = ({
   return (
     <DialogProviderContext.Provider value={{ showDialog }}>
       {children}
-      <div id="dialog-view-container" className="react-simple-widget">
+      <DialogProviderRoot>
         {dialogs.map(dialog => (
           <DialogView key={dialog.id} dialog={dialog} />
         ))}
-      </div>
+      </DialogProviderRoot>
     </DialogProviderContext.Provider>
   );
 };

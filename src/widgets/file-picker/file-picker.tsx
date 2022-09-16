@@ -2,25 +2,24 @@ import React, { useContext, useState } from "react";
 import { DialogSize, FilePickerProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { FilePickerDialog } from "./file-picker-dialog";
+import styled from "styled-components";
+
+const FilePickerRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget file-picker " + props.className
+}))``;
 
 export const FilePicker = ({
   limit,
   extensions,
   validator,
-  className: _className,
   onClick,
   onChange,
+  children,
   ...rest
 }: FilePickerProps) => {
   const { showDialog } = useContext(DialogProviderContext);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [fileName, setFileName] = useState(null);
-
-  const className = (): string => {
-    const classes = ["react-simple-widget", "file-picker"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
 
   const openFileDialog = (): void => {
     if (dialogOpen) return;
@@ -59,8 +58,7 @@ export const FilePicker = ({
   };
 
   return (
-    <div
-      className={className()}
+    <FilePickerRoot
       onClick={e => {
         openFileDialog();
         if (onClick) onClick(e);
@@ -69,10 +67,12 @@ export const FilePicker = ({
       tabIndex={0}
       {...rest}>
       {!fileName ? (
-        <span className="no-selection">No file selected. Click to upload</span>
+        <span className="no-selection">
+          {children || "No file selected. Click to upload"}
+        </span>
       ) : (
         <span className="meta">{fileName}</span>
       )}
-    </div>
+    </FilePickerRoot>
   );
 };

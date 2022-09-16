@@ -3,6 +3,11 @@ import { CustomField } from "../custom-field/custom-field";
 import { FieldDecoration } from "../field-decoration/field-decoration";
 import { DateFieldProps } from "../../../types";
 import { DatePicker } from "../date-picker/date-picker";
+import styled from "styled-components";
+
+const DateFieldRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget date-field " + props.className
+}))``;
 
 export const DateField = ({
   name,
@@ -17,7 +22,7 @@ export const DateField = ({
   ...rest
 }: DateFieldProps): any => {
   return (
-    <div className="react-simple-widget date-field">
+    <DateFieldRoot>
       <CustomField name={name}>
         {({ value, error, touched, setValue, setTouched }) => (
           <FieldDecoration
@@ -49,6 +54,6 @@ export const DateField = ({
           </FieldDecoration>
         )}
       </CustomField>
-    </div>
+    </DateFieldRoot>
   );
 };

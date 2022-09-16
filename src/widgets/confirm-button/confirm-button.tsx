@@ -3,9 +3,13 @@ import { ConfirmButtonProps } from "../../../types";
 import { DialogProviderContext } from "../dialog-provider/dialog-provider";
 import { ConfirmButtonDialog } from "./confirm-button-dialog";
 import { BusyButton } from "../busy-button/busy-button";
+import styled from "styled-components";
+
+const ConfirmButtonRoot = styled(BusyButton).attrs(props => ({
+  className: "react-simple-widget confirm-button " + props.className
+}))``;
 
 export const ConfirmButton = ({
-  busy,
   message,
   confirmButtonClassName,
   cancelButtonClassName,
@@ -13,7 +17,6 @@ export const ConfirmButton = ({
   onConfirm,
   onCancel,
   builder,
-  className,
   onClick,
   ...rest
 }: ConfirmButtonProps): any => {
@@ -48,8 +51,8 @@ export const ConfirmButton = ({
   };
 
   return (
-    <BusyButton busy={busy} className={className} onClick={confirm} {...rest}>
+    <ConfirmButtonRoot onClick={confirm} {...rest}>
       {children}
-    </BusyButton>
+    </ConfirmButtonRoot>
   );
 };

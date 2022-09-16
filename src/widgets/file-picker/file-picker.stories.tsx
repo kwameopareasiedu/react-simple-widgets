@@ -25,9 +25,9 @@ export const usage = (): any => {
             limit={1024 * 1024}
             className="btn btn-primary btn-sm"
             extensions={["jpg", "png"]}
-            label="Select file"
-            onChange={setFile}
-          />
+            onChange={setFile}>
+            Select File
+          </FilePicker>
         </div>
       </div>
     );

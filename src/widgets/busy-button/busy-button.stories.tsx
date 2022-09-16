@@ -17,7 +17,7 @@ export const Default = () => {
 };
 
 export const Busy = () => (
-  <BusyButton busy={true} className="btn btn-primary btn-sm">
+  <BusyButton busy={true} className="btn btn-primary btn-sm" invert>
     Busy
   </BusyButton>
 );

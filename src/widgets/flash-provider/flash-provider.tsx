@@ -24,7 +24,7 @@ export const FlashProvider = ({
     optionalArgs?: FlashOptionalArgs
   ): void => {
     const btnText = optionalArgs?.btnText;
-    const closeTimer = optionalArgs?.closeTimerMs;
+    const closeTimerMs = optionalArgs?.closeTimerMs;
 
     showDialog(
       helper => {
@@ -33,12 +33,12 @@ export const FlashProvider = ({
             type,
             title,
             message,
+            btnText,
+            closeTimerMs,
             onDismissed: () => {
               if (onDismissed) onDismissed();
               helper.dismiss();
-            },
-            btnText,
-            closeTimerMs: closeTimer
+            }
           });
         } else {
           return (
@@ -47,7 +47,7 @@ export const FlashProvider = ({
               title={title}
               message={message}
               buttonText={btnText}
-              closeTimerMs={closeTimer}
+              closeTimerMs={closeTimerMs}
               onDismiss={helper.dismiss}
             />
           );

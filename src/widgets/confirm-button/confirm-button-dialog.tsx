@@ -1,6 +1,18 @@
-import "./confirm-button-dialog.scss";
 import React from "react";
 import { ConfirmButtonDialogProps } from "../../../types";
+import styled from "styled-components";
+
+const ConfirmButtonDialogRoot = styled.div.attrs(props => ({
+  className: "react-simple-widget confirm-button-dialog " + props.className
+}))`
+  .card-body {
+    padding: 1.75rem;
+
+    button {
+      margin: 0 !important;
+    }
+  }
+`;
 
 export const ConfirmButtonDialog = ({
   helper,
@@ -9,7 +21,7 @@ export const ConfirmButtonDialog = ({
   cancelButtonClassName
 }: ConfirmButtonDialogProps): any => {
   return (
-    <div className="react-simple-widget confirm-button-dialog card">
+    <ConfirmButtonDialogRoot className="card">
       <div className="card-body">
         <div className="message-container">{message}</div>
 
@@ -33,6 +45,6 @@ export const ConfirmButtonDialog = ({
           </div>
         </div>
       </div>
-    </div>
+    </ConfirmButtonDialogRoot>
   );
 };
