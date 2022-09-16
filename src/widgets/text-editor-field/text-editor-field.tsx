@@ -89,6 +89,11 @@ const TextEditorRoot = styled.div.attrs(props => ({
     padding-right: 0 !important;
   }
 
+  .ql-toolbar + .ql-toolbar {
+    display: none;
+    pointer-events: none;
+  }
+
   .ql-container {
     border: none !important;
 
