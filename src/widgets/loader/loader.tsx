@@ -1,24 +1,21 @@
-import "./loader.scss";
 import React from "react";
 import { LoaderProps } from "../../../types";
+import styled from "styled-components";
 
-export const Loader = ({
-  className: _className,
-  children,
-  invert,
-  ...rest
-}: LoaderProps): any => {
-  const className = (): string => {
-    const classes = ["react-simple-widget", "loader"];
-    if (_className) classes.push(_className);
-    if (invert) classes.push("invert");
-    return classes.join(" ");
-  };
+const LoaderRoot = styled.div.attrs((props: LoaderProps) => ({
+  className: "react-simple-widget loader " + props.className,
+  invert: props.invert || false
+}))`
+  .spinner-border {
+    color: ${props => (props.invert ? "white" : "initial")};
+  }
+`;
 
+export const Loader = ({ children, invert, ...rest }: LoaderProps): any => {
   return (
-    <div className={className()} {...rest}>
+    <LoaderRoot {...rest} invert={invert}>
       <span className="spinner-border spinner-border-sm me-2" />
       {children}
-    </div>
+    </LoaderRoot>
   );
 };

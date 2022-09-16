@@ -1,33 +1,27 @@
-import "./busy-button.scss";
 import React from "react";
 import { BusyButtonProps } from "../../../types";
 import { Loader } from "../loader/loader";
+import styled from "styled-components";
+
+const BusyButtonRoot = styled.button.attrs(props => ({
+  className: "react-simple-widget busy-button " + props.className
+}))`
+  .react-simple-widget.loader {
+    display: inline;
+  }
+`;
 
 export const BusyButton = ({
   busy,
   invert,
   disabled,
-  className: _className,
   children,
   ...rest
 }: BusyButtonProps): any => {
-  const className = (): string => {
-    const classes = ["react-simple-widget", "busy-button"];
-    if (_className) classes.push(_className);
-    return classes.join(" ");
-  };
-
   return (
-    <button className={className()} disabled={busy || disabled} {...rest}>
-      {busy && (
-        <Loader
-          className="d-inline"
-          role="status"
-          aria-hidden="true"
-          invert={invert}
-        />
-      )}
+    <BusyButtonRoot disabled={busy || disabled} {...rest}>
+      {busy && <Loader role="status" invert={invert} />}
       {children}
-    </button>
+    </BusyButtonRoot>
   );
 };
