@@ -31,6 +31,7 @@
     "@babel/preset-env": "7.19.1",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@emotion/react": "^11.10.4",
     "@jest/globals": "29.0.3",
     "@rollup/plugin-image": "^2.0.5",
     "@storybook/addon-actions": "6.5.12",

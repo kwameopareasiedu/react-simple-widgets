@@ -1,7 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import React from "react";
+import { Global, css } from "@emotion/react";
 
-export const RSWGlobalStyle = createGlobalStyle`
-  html {
+const globalStyle = css`
+  body {
     --rsw-primary-color: #402897;
     --rsw-primary-color-light: #40289722;
     --rsw-secondary-color: #b3b3b3;
@@ -20,3 +21,7 @@ export const RSWGlobalStyle = createGlobalStyle`
     --rsw-popup-menu-scrim-bg-color: #00000004;
   }
 `;
+
+export const RSWGlobalStyle = (): JSX.Element => {
+  return <Global styles={globalStyle} />;
+};
